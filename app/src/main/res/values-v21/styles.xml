@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SplashTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/logo_bg</item>
+        <item name="android:navigationBarColor">@color/logo_bg</item>
+        <item name="android:statusBarColor">@color/logo_bg</item>
+    </style>
+
+    <style name="AppTheme.ButtonColor" parent="@style/Widget.Material3.Button.IconButton.Filled">
+        <item name="android:textColor">?colorSurface</item>
+        <item name="android:backgroundTint">?attr/colorTertiary</item>
+    </style>
+
+    <style name="RTE_ToolbarBaseThemeDark" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorSecondaryContainer</item>
+        <item name="android:navigationBarColor">@color/md_black_1000</item>
+    </style>
+
+    <style name="RTE_ToolbarBaseThemeLight" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorSecondaryContainer</item>
+    </style>
+</resources>

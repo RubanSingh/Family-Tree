@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.google.android.material.textview.MaterialTextView
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="@string/trees"
+        app:titleTextAppearance="?attr/textAppearanceHeadlineLarge"
+        tools:ignore="RelativeOverlap" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/trees_dark_theme"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@id/trees_settings"
+        android:tint="@color/text"
+        app:srcCompat="@drawable/ic_dark_mode_black_24dp" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/trees_settings"
+        style="?android:attr/actionButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:tint="@color/text"
+        app:srcCompat="@drawable/gear" />
+</RelativeLayout>

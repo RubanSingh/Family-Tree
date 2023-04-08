@@ -1,0 +1,1173 @@
+<resources>
+
+    <style name="SplashTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/logo_bg</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/m3_blue_primary</item>
+        <item name="colorOnPrimary">@color/m3_blue_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_blue_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_blue_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_blue_secondary</item>
+        <item name="colorOnSecondary">@color/m3_blue_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_blue_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_blue_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_blue_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_blue_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_blue_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_blue_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_blue_on_background</item>
+        <item name="colorSurface">@color/m3_blue_surface</item>
+        <item name="colorOnSurface">@color/m3_blue_on_surface</item>
+        <item name="colorOutline">@color/m3_blue_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_blue_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_blue_on_surface_variant</item>
+
+        <item name="android:windowBackground">@color/background</item>
+        <!-- TextView -->
+        <!--<item name="android:textAppearanceSmall">@style/AppTheme.BasicText</item>-->
+        <item name="android:textAppearanceSmall">@style/AppTheme.BasicText</item>
+        <!-- RadioButton, SwitchCompat, CheckBox -->
+        <item name="android:textAppearance">@style/AppTheme.BasicText</item>
+        <!-- PopupMenu, options menu item -->
+        <item name="android:itemTextAppearance">@style/AppTheme.BasicText</item>
+        <item name="textAppearancePopupMenuHeader">@style/AppTheme.LittleTitle</item>
+    </style>
+
+    <!-- Redtheme. -->
+    <style name="RedTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_red_primary</item>
+        <item name="colorOnPrimary">@color/m3_red_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_red_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_red_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_red_secondary</item>
+        <item name="colorOnSecondary">@color/m3_red_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_red_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_red_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_red_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_red_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_red_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_red_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="background">@color/m3_red_background</item>
+        <item name="colorOnBackground">@color/m3_red_on_background</item>
+        <item name="colorSurface">@color/m3_red_surface</item>
+        <item name="colorOnSurface">@color/m3_red_on_surface</item>
+        <item name="colorOutline">@color/m3_red_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_red_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_red_on_surface_variant</item>
+    </style>
+
+    <!-- Redtheme. -->
+    <style name="RedTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_red_primary</item>
+        <item name="colorOnPrimary">@color/m3_red_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_red_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_red_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_red_secondary</item>
+        <item name="colorOnSecondary">@color/m3_red_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_red_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_red_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_red_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_red_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_red_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_red_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="background">@color/m3_red_background</item>
+        <item name="colorOnBackground">@color/m3_red_on_background</item>
+        <item name="colorSurface">@color/m3_red_surface</item>
+        <item name="colorOnSurface">@color/m3_red_on_surface</item>
+        <item name="colorOutline">@color/m3_red_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_red_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_red_on_surface_variant</item>
+    </style>
+
+    <!-- pink theme. -->
+    <style name="PinkTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_pink_primary</item>
+        <item name="colorOnPrimary">@color/m3_pink_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_pink_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_pink_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_pink_secondary</item>
+        <item name="colorOnSecondary">@color/m3_pink_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_pink_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_pink_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_pink_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_pink_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_pink_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_pink_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_pink_on_background</item>
+        <item name="colorSurface">@color/m3_pink_surface</item>
+        <item name="colorOnSurface">@color/m3_pink_on_surface</item>
+        <item name="colorOutline">@color/m3_pink_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_pink_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_pink_on_surface_variant</item>
+    </style>
+
+    <!-- pink theme. -->
+    <style name="PinkTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_pink_primary</item>
+        <item name="colorOnPrimary">@color/m3_pink_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_pink_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_pink_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_pink_secondary</item>
+        <item name="colorOnSecondary">@color/m3_pink_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_pink_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_pink_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_pink_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_pink_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_pink_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_pink_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_pink_on_background</item>
+        <item name="colorSurface">@color/m3_pink_surface</item>
+        <item name="colorOnSurface">@color/m3_pink_on_surface</item>
+        <item name="colorOutline">@color/m3_pink_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_pink_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_pink_on_surface_variant</item>
+    </style>
+
+    <!-- purple theme. -->
+    <style name="PurpleTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_purple_primary</item>
+        <item name="colorOnPrimary">@color/m3_purple_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_purple_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_purple_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_purple_secondary</item>
+        <item name="colorOnSecondary">@color/m3_purple_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_purple_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_purple_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_purple_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_purple_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_purple_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_purple_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_purple_on_background</item>
+        <item name="colorSurface">@color/m3_purple_surface</item>
+        <item name="colorOnSurface">@color/m3_purple_on_surface</item>
+        <item name="colorOutline">@color/m3_purple_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_purple_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_purple_on_surface_variant</item>
+    </style>
+
+    <!-- purple theme. -->
+    <style name="PurpleTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_purple_primary</item>
+        <item name="colorOnPrimary">@color/m3_purple_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_purple_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_purple_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_purple_secondary</item>
+        <item name="colorOnSecondary">@color/m3_purple_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_purple_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_purple_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_purple_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_purple_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_purple_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_purple_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_purple_on_background</item>
+        <item name="colorSurface">@color/m3_purple_surface</item>
+        <item name="colorOnSurface">@color/m3_purple_on_surface</item>
+        <item name="colorOutline">@color/m3_purple_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_purple_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_purple_on_surface_variant</item>
+    </style>
+
+    <!-- deep purple theme. -->
+    <style name="DeepPurpleTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_deep_purple_primary</item>
+        <item name="colorOnPrimary">@color/m3_deep_purple_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_deep_purple_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_deep_purple_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_deep_purple_secondary</item>
+        <item name="colorOnSecondary">@color/m3_deep_purple_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_deep_purple_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_deep_purple_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_deep_purple_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_deep_purple_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_deep_purple_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_deep_purple_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_deep_purple_on_background</item>
+        <item name="colorSurface">@color/m3_deep_purple_surface</item>
+        <item name="colorOnSurface">@color/m3_deep_purple_on_surface</item>
+        <item name="colorOutline">@color/m3_deep_purple_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_deep_purple_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_deep_purple_on_surface_variant</item>
+    </style>
+
+    <!-- deep purple theme. -->
+    <style name="DeepPurpleTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_deep_purple_primary</item>
+        <item name="colorOnPrimary">@color/m3_deep_purple_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_deep_purple_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_deep_purple_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_deep_purple_secondary</item>
+        <item name="colorOnSecondary">@color/m3_deep_purple_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_deep_purple_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_deep_purple_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_deep_purple_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_deep_purple_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_deep_purple_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_deep_purple_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_deep_purple_on_background</item>
+        <item name="colorSurface">@color/m3_deep_purple_surface</item>
+        <item name="colorOnSurface">@color/m3_deep_purple_on_surface</item>
+        <item name="colorOutline">@color/m3_deep_purple_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_deep_purple_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_deep_purple_on_surface_variant</item>
+    </style>
+
+    <!-- indigo theme. -->
+    <style name="IndigoTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_indigo_primary</item>
+        <item name="colorOnPrimary">@color/m3_indigo_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_indigo_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_indigo_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_indigo_secondary</item>
+        <item name="colorOnSecondary">@color/m3_indigo_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_indigo_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_indigo_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_indigo_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_indigo_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_indigo_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_indigo_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_indigo_on_background</item>
+        <item name="colorSurface">@color/m3_indigo_surface</item>
+        <item name="colorOnSurface">@color/m3_indigo_on_surface</item>
+        <item name="colorOutline">@color/m3_indigo_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_indigo_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_indigo_on_surface_variant</item>
+    </style>
+
+    <!-- indigo theme. -->
+    <style name="IndigoTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_indigo_primary</item>
+        <item name="colorOnPrimary">@color/m3_indigo_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_indigo_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_indigo_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_indigo_secondary</item>
+        <item name="colorOnSecondary">@color/m3_indigo_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_indigo_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_indigo_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_indigo_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_indigo_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_indigo_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_indigo_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_indigo_on_background</item>
+        <item name="colorSurface">@color/m3_indigo_surface</item>
+        <item name="colorOnSurface">@color/m3_indigo_on_surface</item>
+        <item name="colorOutline">@color/m3_indigo_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_indigo_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_indigo_on_surface_variant</item>
+    </style>
+
+    <!-- blue theme. -->
+    <style name="BlueTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_blue_primary</item>
+        <item name="colorOnPrimary">@color/m3_blue_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_blue_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_blue_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_blue_secondary</item>
+        <item name="colorOnSecondary">@color/m3_blue_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_blue_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_blue_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_blue_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_blue_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_blue_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_blue_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_blue_on_background</item>
+        <item name="colorSurface">@color/m3_blue_surface</item>
+        <item name="colorOnSurface">@color/m3_blue_on_surface</item>
+        <item name="colorOutline">@color/m3_blue_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_blue_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_blue_on_surface_variant</item>
+    </style>
+
+    <!-- blue theme. -->
+    <style name="BlueTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_blue_primary</item>
+        <item name="colorOnPrimary">@color/m3_blue_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_blue_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_blue_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_blue_secondary</item>
+        <item name="colorOnSecondary">@color/m3_blue_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_blue_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_blue_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_blue_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_blue_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_blue_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_blue_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_blue_on_background</item>
+        <item name="colorSurface">@color/m3_blue_surface</item>
+        <item name="colorOnSurface">@color/m3_blue_on_surface</item>
+        <item name="colorOutline">@color/m3_blue_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_blue_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_blue_on_surface_variant</item>
+    </style>
+
+    <!-- light blue theme. -->
+    <style name="LightBlueTheme" parent="RTE_ToolbarBaseThemeLight">
+        <item name="colorPrimary">@color/m3_light_blue_primary</item>
+        <item name="colorOnPrimary">@color/m3_light_blue_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_light_blue_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_light_blue_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_light_blue_secondary</item>
+        <item name="colorOnSecondary">@color/m3_light_blue_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_light_blue_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_light_blue_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_light_blue_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_light_blue_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_light_blue_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_light_blue_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_light_blue_on_background</item>
+        <item name="colorSurface">@color/m3_light_blue_surface</item>
+        <item name="colorOnSurface">@color/m3_light_blue_on_surface</item>
+        <item name="colorOutline">@color/m3_light_blue_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_light_blue_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_light_blue_on_surface_variant</item>
+    </style>
+
+    <!-- light blue theme. -->
+    <style name="LightBlueTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <item name="colorPrimary">@color/m3_light_blue_primary</item>
+        <item name="colorOnPrimary">@color/m3_light_blue_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_light_blue_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_light_blue_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_light_blue_secondary</item>
+        <item name="colorOnSecondary">@color/m3_light_blue_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_light_blue_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_light_blue_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_light_blue_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_light_blue_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_light_blue_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_light_blue_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_light_blue_on_background</item>
+        <item name="colorSurface">@color/m3_light_blue_surface</item>
+        <item name="colorOnSurface">@color/m3_light_blue_on_surface</item>
+        <item name="colorOutline">@color/m3_light_blue_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_light_blue_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_light_blue_on_surface_variant</item>
+    </style>
+
+    <!-- cyan theme. -->
+    <style name="CyanTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_cyan_primary</item>
+        <item name="colorOnPrimary">@color/m3_cyan_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_cyan_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_cyan_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_cyan_secondary</item>
+        <item name="colorOnSecondary">@color/m3_cyan_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_cyan_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_cyan_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_cyan_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_cyan_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_cyan_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_cyan_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_cyan_on_background</item>
+        <item name="colorSurface">@color/m3_cyan_surface</item>
+        <item name="colorOnSurface">@color/m3_cyan_on_surface</item>
+        <item name="colorOutline">@color/m3_cyan_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_cyan_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_cyan_on_surface_variant</item>
+    </style>
+
+    <!-- cyan theme. -->
+    <style name="CyanTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_cyan_primary</item>
+        <item name="colorOnPrimary">@color/m3_cyan_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_cyan_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_cyan_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_cyan_secondary</item>
+        <item name="colorOnSecondary">@color/m3_cyan_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_cyan_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_cyan_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_cyan_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_cyan_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_cyan_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_cyan_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_cyan_on_background</item>
+        <item name="colorSurface">@color/m3_cyan_surface</item>
+        <item name="colorOnSurface">@color/m3_cyan_on_surface</item>
+        <item name="colorOutline">@color/m3_cyan_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_cyan_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_cyan_on_surface_variant</item>
+    </style>
+
+    <!-- teal theme. -->
+    <style name="TealTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_teal_primary</item>
+        <item name="colorOnPrimary">@color/m3_teal_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_teal_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_teal_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_teal_secondary</item>
+        <item name="colorOnSecondary">@color/m3_teal_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_teal_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_teal_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_teal_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_teal_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_teal_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_teal_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_teal_on_background</item>
+        <item name="colorSurface">@color/m3_teal_surface</item>
+        <item name="colorOnSurface">@color/m3_teal_on_surface</item>
+        <item name="colorOutline">@color/m3_teal_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_teal_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_teal_on_surface_variant</item>
+    </style>
+
+    <!-- teal theme. -->
+    <style name="TealTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_teal_primary</item>
+        <item name="colorOnPrimary">@color/m3_teal_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_teal_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_teal_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_teal_secondary</item>
+        <item name="colorOnSecondary">@color/m3_teal_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_teal_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_teal_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_teal_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_teal_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_teal_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_teal_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_teal_on_background</item>
+        <item name="colorSurface">@color/m3_teal_surface</item>
+        <item name="colorOnSurface">@color/m3_teal_on_surface</item>
+        <item name="colorOutline">@color/m3_teal_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_teal_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_teal_on_surface_variant</item>
+    </style>
+
+    <!-- green theme. -->
+    <style name="GreenTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_green_primary</item>
+        <item name="colorOnPrimary">@color/m3_green_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_green_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_green_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_green_secondary</item>
+        <item name="colorOnSecondary">@color/m3_green_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_green_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_green_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_green_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_green_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_green_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_green_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_green_on_background</item>
+        <item name="colorSurface">@color/m3_green_surface</item>
+        <item name="colorOnSurface">@color/m3_green_on_surface</item>
+        <item name="colorOutline">@color/m3_green_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_green_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_green_on_surface_variant</item>
+    </style>
+
+    <!-- green theme. -->
+    <style name="GreenTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_green_primary</item>
+        <item name="colorOnPrimary">@color/m3_green_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_green_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_green_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_green_secondary</item>
+        <item name="colorOnSecondary">@color/m3_green_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_green_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_green_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_green_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_green_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_green_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_green_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_green_on_background</item>
+        <item name="colorSurface">@color/m3_green_surface</item>
+        <item name="colorOnSurface">@color/m3_green_on_surface</item>
+        <item name="colorOutline">@color/m3_green_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_green_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_green_on_surface_variant</item>
+    </style>
+
+    <!-- light green theme. -->
+    <style name="LightGreenTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_light_green_primary</item>
+        <item name="colorOnPrimary">@color/m3_light_green_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_light_green_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_light_green_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_light_green_secondary</item>
+        <item name="colorOnSecondary">@color/m3_light_green_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_light_green_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_light_green_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_light_green_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_light_green_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_light_green_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_light_green_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_light_green_on_background</item>
+        <item name="colorSurface">@color/m3_light_green_surface</item>
+        <item name="colorOnSurface">@color/m3_light_green_on_surface</item>
+        <item name="colorOutline">@color/m3_light_green_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_light_green_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_light_green_on_surface_variant</item>
+    </style>
+
+    <!-- light green theme. -->
+    <style name="LightGreenTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_light_green_primary</item>
+        <item name="colorOnPrimary">@color/m3_light_green_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_light_green_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_light_green_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_light_green_secondary</item>
+        <item name="colorOnSecondary">@color/m3_light_green_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_light_green_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_light_green_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_light_green_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_light_green_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_light_green_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_light_green_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_light_green_on_background</item>
+        <item name="colorSurface">@color/m3_light_green_surface</item>
+        <item name="colorOnSurface">@color/m3_light_green_on_surface</item>
+        <item name="colorOutline">@color/m3_light_green_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_light_green_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_light_green_on_surface_variant</item>
+    </style>
+
+    <!-- lime theme. -->
+    <style name="LimeTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_lime_primary</item>
+        <item name="colorOnPrimary">@color/m3_lime_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_lime_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_lime_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_lime_secondary</item>
+        <item name="colorOnSecondary">@color/m3_lime_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_lime_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_lime_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_lime_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_lime_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_lime_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_lime_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_lime_on_background</item>
+        <item name="colorSurface">@color/m3_lime_surface</item>
+        <item name="colorOnSurface">@color/m3_lime_on_surface</item>
+        <item name="colorOutline">@color/m3_lime_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_lime_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_lime_on_surface_variant</item>
+    </style>
+
+    <!-- lime theme. -->
+    <style name="LimeTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_lime_primary</item>
+        <item name="colorOnPrimary">@color/m3_lime_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_lime_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_lime_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_lime_secondary</item>
+        <item name="colorOnSecondary">@color/m3_lime_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_lime_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_lime_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_lime_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_lime_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_lime_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_lime_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_lime_on_background</item>
+        <item name="colorSurface">@color/m3_lime_surface</item>
+        <item name="colorOnSurface">@color/m3_lime_on_surface</item>
+        <item name="colorOutline">@color/m3_lime_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_lime_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_lime_on_surface_variant</item>
+    </style>
+
+    <!-- yellow theme. -->
+    <style name="YellowTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_yellow_primary</item>
+        <item name="colorOnPrimary">@color/m3_yellow_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_yellow_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_yellow_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_yellow_secondary</item>
+        <item name="colorOnSecondary">@color/m3_yellow_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_yellow_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_yellow_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_yellow_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_yellow_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_yellow_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_yellow_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_yellow_on_background</item>
+        <item name="colorSurface">@color/m3_yellow_surface</item>
+        <item name="colorOnSurface">@color/m3_yellow_on_surface</item>
+        <item name="colorOutline">@color/m3_yellow_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_yellow_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_yellow_on_surface_variant</item>
+    </style>
+
+    <!-- yellow theme. -->
+    <style name="YellowTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_yellow_primary</item>
+        <item name="colorOnPrimary">@color/m3_yellow_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_yellow_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_yellow_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_yellow_secondary</item>
+        <item name="colorOnSecondary">@color/m3_yellow_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_yellow_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_yellow_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_yellow_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_yellow_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_yellow_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_yellow_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_yellow_on_background</item>
+        <item name="colorSurface">@color/m3_yellow_surface</item>
+        <item name="colorOnSurface">@color/m3_yellow_on_surface</item>
+        <item name="colorOutline">@color/m3_yellow_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_yellow_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_yellow_on_surface_variant</item>
+    </style>
+
+    <!-- amber theme. -->
+    <style name="AmberTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_amber_primary</item>
+        <item name="colorOnPrimary">@color/m3_amber_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_amber_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_amber_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_amber_secondary</item>
+        <item name="colorOnSecondary">@color/m3_amber_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_amber_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_amber_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_amber_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_amber_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_amber_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_amber_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_amber_on_background</item>
+        <item name="colorSurface">@color/m3_amber_surface</item>
+        <item name="colorOnSurface">@color/m3_amber_on_surface</item>
+        <item name="colorOutline">@color/m3_amber_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_amber_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_amber_on_surface_variant</item>
+    </style>
+
+    <!-- amber theme. -->
+    <style name="AmberTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_amber_primary</item>
+        <item name="colorOnPrimary">@color/m3_amber_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_amber_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_amber_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_amber_secondary</item>
+        <item name="colorOnSecondary">@color/m3_amber_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_amber_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_amber_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_amber_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_amber_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_amber_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_amber_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_amber_on_background</item>
+        <item name="colorSurface">@color/m3_amber_surface</item>
+        <item name="colorOnSurface">@color/m3_amber_on_surface</item>
+        <item name="colorOutline">@color/m3_amber_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_amber_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_amber_on_surface_variant</item>
+    </style>
+
+    <!-- orange theme. -->
+    <style name="OrangeTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_orange_primary</item>
+        <item name="colorOnPrimary">@color/m3_orange_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_orange_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_orange_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_orange_secondary</item>
+        <item name="colorOnSecondary">@color/m3_orange_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_orange_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_orange_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_orange_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_orange_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_orange_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_orange_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_orange_on_background</item>
+        <item name="colorSurface">@color/m3_orange_surface</item>
+        <item name="colorOnSurface">@color/m3_orange_on_surface</item>
+        <item name="colorOutline">@color/m3_orange_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_orange_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_orange_on_surface_variant</item>
+    </style>
+
+    <!-- orange theme. -->
+    <style name="OrangeTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_orange_primary</item>
+        <item name="colorOnPrimary">@color/m3_orange_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_orange_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_orange_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_orange_secondary</item>
+        <item name="colorOnSecondary">@color/m3_orange_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_orange_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_orange_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_orange_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_orange_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_orange_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_orange_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_orange_on_background</item>
+        <item name="colorSurface">@color/m3_orange_surface</item>
+        <item name="colorOnSurface">@color/m3_orange_on_surface</item>
+        <item name="colorOutline">@color/m3_orange_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_orange_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_orange_on_surface_variant</item>
+    </style>
+
+    <!-- deep orange theme. -->
+    <style name="DeepOrangeTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_deep_orange_primary</item>
+        <item name="colorOnPrimary">@color/m3_deep_orange_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_deep_orange_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_deep_orange_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_deep_orange_secondary</item>
+        <item name="colorOnSecondary">@color/m3_deep_orange_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_deep_orange_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_deep_orange_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_deep_orange_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_deep_orange_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_deep_orange_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_deep_orange_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_deep_orange_on_background</item>
+        <item name="colorSurface">@color/m3_deep_orange_surface</item>
+        <item name="colorOnSurface">@color/m3_deep_orange_on_surface</item>
+        <item name="colorOutline">@color/m3_deep_orange_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_deep_orange_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_deep_orange_on_surface_variant</item>
+    </style>
+
+    <!-- deep orange theme. -->
+    <style name="DeepOrangeTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_deep_orange_primary</item>
+        <item name="colorOnPrimary">@color/m3_deep_orange_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_deep_orange_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_deep_orange_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_deep_orange_secondary</item>
+        <item name="colorOnSecondary">@color/m3_deep_orange_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_deep_orange_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_deep_orange_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_deep_orange_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_deep_orange_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_deep_orange_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_deep_orange_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_deep_orange_on_background</item>
+        <item name="colorSurface">@color/m3_deep_orange_surface</item>
+        <item name="colorOnSurface">@color/m3_deep_orange_on_surface</item>
+        <item name="colorOutline">@color/m3_deep_orange_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_deep_orange_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_deep_orange_on_surface_variant</item>
+    </style>
+
+    <!-- brown theme. -->
+    <style name="BrownTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_brown_primary</item>
+        <item name="colorOnPrimary">@color/m3_brown_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_brown_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_brown_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_brown_secondary</item>
+        <item name="colorOnSecondary">@color/m3_brown_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_brown_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_brown_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_brown_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_brown_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_brown_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_brown_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_brown_on_background</item>
+        <item name="colorSurface">@color/m3_brown_surface</item>
+        <item name="colorOnSurface">@color/m3_brown_on_surface</item>
+        <item name="colorOutline">@color/m3_brown_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_brown_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_brown_on_surface_variant</item>
+    </style>
+
+    <!-- brown theme. -->
+    <style name="BrownTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_brown_primary</item>
+        <item name="colorOnPrimary">@color/m3_brown_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_brown_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_brown_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_brown_secondary</item>
+        <item name="colorOnSecondary">@color/m3_brown_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_brown_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_brown_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_brown_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_brown_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_brown_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_brown_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_brown_on_background</item>
+        <item name="colorSurface">@color/m3_brown_surface</item>
+        <item name="colorOnSurface">@color/m3_brown_on_surface</item>
+        <item name="colorOutline">@color/m3_brown_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_brown_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_brown_on_surface_variant</item>
+    </style>
+
+    <!-- grey theme. -->
+    <style name="GreyTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_grey_primary</item>
+        <item name="colorOnPrimary">@color/m3_grey_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_grey_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_grey_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_grey_secondary</item>
+        <item name="colorOnSecondary">@color/m3_grey_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_grey_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_grey_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_grey_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_grey_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_grey_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_grey_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_grey_on_background</item>
+        <item name="colorSurface">@color/m3_grey_surface</item>
+        <item name="colorOnSurface">@color/m3_grey_on_surface</item>
+        <item name="colorOutline">@color/m3_grey_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_grey_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_grey_on_surface_variant</item>
+    </style>
+
+    <!-- grey theme. -->
+    <style name="GreyTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_grey_primary</item>
+        <item name="colorOnPrimary">@color/m3_grey_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_grey_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_grey_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_grey_secondary</item>
+        <item name="colorOnSecondary">@color/m3_grey_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_grey_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_grey_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_grey_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_grey_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_grey_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_grey_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_grey_on_background</item>
+        <item name="colorSurface">@color/m3_grey_surface</item>
+        <item name="colorOnSurface">@color/m3_grey_on_surface</item>
+        <item name="colorOutline">@color/m3_grey_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_grey_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_grey_on_surface_variant</item>
+    </style>
+
+    <!-- blue grey theme. -->
+    <style name="BlueGreyTheme" parent="RTE_ToolbarBaseThemeLight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_blue_grey_primary</item>
+        <item name="colorOnPrimary">@color/m3_blue_grey_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_blue_grey_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_blue_grey_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_blue_grey_secondary</item>
+        <item name="colorOnSecondary">@color/m3_blue_grey_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_blue_grey_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_blue_grey_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_blue_grey_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_blue_grey_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_blue_grey_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_blue_grey_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_blue_grey_on_background</item>
+        <item name="colorSurface">@color/m3_blue_grey_surface</item>
+        <item name="colorOnSurface">@color/m3_blue_grey_on_surface</item>
+        <item name="colorOutline">@color/m3_blue_grey_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_blue_grey_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_blue_grey_on_surface_variant</item>
+    </style>
+
+    <!-- blue grey theme. -->
+    <style name="BlueGreyTheme_Dark" parent="RTE_ToolbarBaseThemeDark">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/m3_blue_grey_primary</item>
+        <item name="colorOnPrimary">@color/m3_blue_grey_on_primary</item>
+        <item name="colorPrimaryContainer">@color/m3_blue_grey_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/m3_blue_grey_on_primary_container</item>
+        <item name="colorSecondary">@color/m3_blue_grey_secondary</item>
+        <item name="colorOnSecondary">@color/m3_blue_grey_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/m3_blue_grey_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/m3_blue_grey_on_secondary_container</item>
+        <item name="colorTertiary">@color/m3_blue_grey_tertiary</item>
+        <item name="colorOnTertiary">@color/m3_blue_grey_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/m3_blue_grey_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/m3_blue_grey_on_tertiary_container</item>
+        <item name="colorError">@color/m3_red_error</item>
+        <item name="colorOnError">@color/m3_red_on_error</item>
+        <item name="colorErrorContainer">@color/m3_red_error_container</item>
+        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
+        <item name="colorOnBackground">@color/m3_blue_grey_on_background</item>
+        <item name="colorSurface">@color/m3_blue_grey_surface</item>
+        <item name="colorOnSurface">@color/m3_blue_grey_on_surface</item>
+        <item name="colorOutline">@color/m3_blue_grey_outline</item>
+        <item name="colorSurfaceVariant">@color/m3_blue_grey_surface_variant</item>
+        <item name="colorOnSurfaceInverse">@color/m3_blue_grey_on_surface_variant</item>
+    </style>
+
+    <!-- DARK THEME -->
+    <style name="RTE_ToolbarBaseThemeDark" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <!-- LIGHT THEME -->
+    <style name="RTE_ToolbarBaseThemeLight" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <!-- dark theme. -->
+    <style name="DarkTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="popupTheme">@style/ThemeOverlay.Material3.Dialog.Alert</item>
+        <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+    <style name="AppTheme.BasicText">
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppTheme.Title">
+        <item name="android:textColor">@color/gray_text</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.LittleTitle">
+        <item name="android:textColor">@color/gray_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTheme.Suggestion">
+        <item name="android:textColor">@color/text_veiled</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="AppTheme.ExpandedAppBar">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTheme.CollapsedAppBar">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.Slug">
+        <item name="android:textColor">@color/gray_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@drawable/slug_background</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="AppTheme.Navigator" parent="ThemeOverlay.AppCompat">
+        <item name="colorPrimary">@color/primary</item> <!-- Selected text and icon -->
+        <item name="colorControlHighlight">@color/accent</item> <!-- Selected background -->
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ActionBar">
+        <item name="colorControlNormal">#FFF</item> <!-- Buttons -->
+        <item name="android:textColorPrimary">#FFF</item> <!-- Text -->
+    </style>
+
+    <style name="TintaBianca" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.Wheel">
+        <item name="android:background">@drawable/ruota_sfondo</item>
+        <item name="android:descendantFocusability">blocksDescendants</item>
+        <!-- Hides the dividing lines from API 23 -->
+        <item name="colorControlNormal">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.ButtonColor" parent="@style/Widget.Material3.Button.IconButton.Filled">
+        <item name="android:textColor">?colorSurface</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="AppTheme.ButtonNormal" parent="@style/Widget.Material3.Button.IconButton.Filled">
+        <item name="android:textColor">?colorSurface</item>
+    </style>
+
+    <attr name="spouseColor" format="reference|color" />
+    <attr name="linesColor" format="reference|color" />
+
+    <style name="diagramScreen" parent="AppTheme">
+        <item name="spouseColor">@color/partner_screen</item>
+        <item name="linesColor">@color/diagram_lines_screen</item>
+    </style>
+
+    <style name="diagramPrint" parent="AppTheme">
+        <item name="spouseColor">@color/partner_print</item>
+        <item name="linesColor">@color/diagram_lines_print</item>
+    </style>
+
+</resources>

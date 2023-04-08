@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="primary">#720426</color>
+	<color name="primary_dark">#4C0219</color>
+	<color name="primary_light">#960f3e</color>
+	<color name="accent">#DD7803</color>
+	<color name="accent_medium">#AA6009</color>
+	<color name="accent_light">#7C4901</color>
+	<color name="background">#000</color>
+	<color name="back_element">#222</color>
+	<color name="back_veiled">#BB000000</color>
+	<color name="text">#FFF</color>
+	<color name="gray_text">#AAA</color>
+	<color name="text_veiled">#AAFFFFFF</color>
+	<color name="consumed">#555</color>
+	<color name="partner_screen">#66000000</color>
+	<color name="partner_print">#111</color>
+	<color name="diagram_lines_screen">#DDD</color>
+	<color name="source">#884B00</color>
+	<color name="source_citation">#B17000</color>
+	<color name="repository">#49423B</color>
+	<color name="repository_citation">#7C7369</color>
+
+	<!--    M3 RED-->
+	<color name="m3_red_primary">#ffb3aa</color>
+	<color name="m3_red_on_primary">#680006</color>
+	<color name="m3_red_primary_container">#93000d</color>
+	<color name="m3_red_on_primary_container">#ffdad5</color>
+
+	<color name="m3_red_secondary">#e7bdb9</color>
+	<color name="m3_red_on_secondary">#442927</color>
+	<color name="m3_red_secondary_container">#5d3f3c</color>
+	<color name="m3_red_on_secondary_container">#ffdad6</color>
+
+	<color name="m3_red_tertiary">#e1c38c</color>
+	<color name="m3_red_on_tertiary">#3f2d04</color>
+	<color name="m3_red_tertiary_container">#584419</color>
+	<color name="m3_red_on_tertiary_container">#fedea5</color>
+
+	<color name="m3_red_error">#ffb4a9</color>
+	<color name="m3_red_on_error">#680003</color>
+	<color name="m3_red_error_container">#930006</color>
+	<color name="m3_red_on_error_container">#ffdad4</color>
+
+	<color name="m3_red_background">#201a19</color>
+	<color name="m3_red_on_background">#ede0de</color>
+	<color name="m3_red_surface">#201a19</color>
+	<color name="m3_red_on_surface">#ede0de</color>
+
+	<color name="m3_red_outline">#9f8c8a</color>
+	<color name="m3_red_surface_variant">#534341</color>
+	<color name="m3_red_on_surface_variant">#d7c1bf</color>
+
+
+	<!--    M3 Pink-->
+	<color name="m3_pink_primary">#ffb1c1</color>
+	<color name="m3_pink_on_primary">#660026</color>
+	<color name="m3_pink_primary_container">#900039</color>
+	<color name="m3_pink_on_primary_container">#ffd9e0</color>
+
+	<color name="m3_pink_secondary">#e4bcc2</color>
+	<color name="m3_pink_on_secondary">#43292e</color>
+	<color name="m3_pink_secondary_container">#5c3f44</color>
+	<color name="m3_pink_on_secondary_container">#ffdadf</color>
+
+	<color name="m3_pink_tertiary">#ebbe90</color>
+	<color name="m3_pink_on_tertiary">#462a08</color>
+	<color name="m3_pink_tertiary_container">#5f401d</color>
+	<color name="m3_pink_on_tertiary_container">#ffdcb8</color>
+
+	<color name="m3_pink_outline">#9e8c8e</color>
+	<color name="m3_pink_surface_variant">#514345</color>
+	<color name="m3_pink_on_surface_variant">#d6c2c4</color>
+
+	<color name="m3_pink_background">#201a1b</color>
+	<color name="m3_pink_on_background">#ecdfe0</color>
+	<color name="m3_pink_surface">#201a1b</color>
+	<color name="m3_pink_on_surface">#ecdfe0</color>
+
+	<!--    M3 Purples-->
+	<color name="m3_purple_primary">#edb1ff</color>
+	<color name="m3_purple_on_primary">#510073</color>
+	<color name="m3_purple_primary_container">#721199</color>
+	<color name="m3_purple_on_primary_container">#fad8ff</color>
+
+	<color name="m3_purple_secondary">#d4c0d7</color>
+	<color name="m3_purple_on_secondary">#392c3d</color>
+	<color name="m3_purple_secondary_container">#504254</color>
+	<color name="m3_purple_on_secondary_container">#f1dcf3</color>
+
+	<color name="m3_purple_tertiary">#f5b7b4</color>
+	<color name="m3_purple_on_tertiary">#4c2524</color>
+	<color name="m3_purple_tertiary_container">#663b39</color>
+	<color name="m3_purple_on_tertiary_container">#ffdad7</color>
+
+	<color name="m3_purple_outline">#988e98</color>
+	<color name="m3_purple_surface_variant">#4c444d</color>
+	<color name="m3_purple_on_surface_variant">#cec3cd</color>
+
+	<color name="m3_purple_background">#1e1a1e</color>
+	<color name="m3_purple_on_background">#e8e0e5</color>
+	<color name="m3_purple_surface">#1e1a1e</color>
+	<color name="m3_purple_on_surface">#e8e0e5</color>
+
+	<!--    M3 deep purples-->
+	<color name="m3_deep_purple_primary">#d0bdff</color>
+	<color name="m3_deep_purple_on_primary">#380490</color>
+	<color name="m3_deep_purple_primary_container">#502ca7</color>
+	<color name="m3_deep_purple_on_primary_container">#e9ddff</color>
+
+	<color name="m3_deep_purple_secondary">#cbc2dc</color>
+	<color name="m3_deep_purple_on_secondary">#332d41</color>
+	<color name="m3_deep_purple_secondary_container">#4a4458</color>
+	<color name="m3_deep_purple_on_secondary_container">#e8dff8</color>
+
+	<color name="m3_deep_purple_tertiary">#efb7c8</color>
+	<color name="m3_deep_purple_on_tertiary">#492532</color>
+	<color name="m3_deep_purple_tertiary_container">#633b49</color>
+	<color name="m3_deep_purple_on_tertiary_container">#ffd9e5</color>
+
+	<color name="m3_deep_purple_outline">#948f99</color>
+	<color name="m3_deep_purple_surface_variant">#48454e</color>
+	<color name="m3_deep_purple_on_surface_variant">#cac4d0</color>
+
+	<color name="m3_deep_purple_background">#1c1b1e</color>
+	<color name="m3_deep_purple_on_background">#e8e0e5</color>
+	<color name="m3_deep_purple_surface">#1c1b1e</color>
+	<color name="m3_deep_purple_on_surface">#e8e0e5</color>
+
+	<!--    M3 indigo-->
+	<color name="m3_indigo_primary">#bac3ff</color>
+	<color name="m3_indigo_on_primary">#112286</color>
+	<color name="m3_indigo_primary_container">#2d3c9c</color>
+	<color name="m3_indigo_on_primary_container">#dde0ff</color>
+
+	<color name="m3_indigo_secondary">#c4c5dd</color>
+	<color name="m3_indigo_on_secondary">#2d2f42</color>
+	<color name="m3_indigo_secondary_container">#434559</color>
+	<color name="m3_indigo_on_secondary_container">#e0e1fa</color>
+
+	<color name="m3_indigo_tertiary">#e6bad7</color>
+	<color name="m3_indigo_on_tertiary">#45263d</color>
+	<color name="m3_indigo_tertiary_container">#5d3c54</color>
+	<color name="m3_indigo_on_tertiary_container">#ffd7f2</color>
+
+	<color name="m3_indigo_outline">#91909a</color>
+	<color name="m3_indigo_surface_variant">#46464e</color>
+	<color name="m3_indigo_on_surface_variant">#c6c5cf</color>
+
+	<color name="m3_indigo_background">#1b1b1f</color>
+	<color name="m3_indigo_on_background">#e4e1e6</color>
+	<color name="m3_indigo_surface">#1b1b1f</color>
+	<color name="m3_indigo_on_surface">#e4e1e6</color>
+
+	<!--    M3 blue-->
+	<color name="m3_blue_primary">#a4c8ff</color>
+	<color name="m3_blue_on_primary">#003060</color>
+	<color name="m3_blue_primary_container">#004788</color>
+	<color name="m3_blue_on_primary_container">#d3e3ff</color>
+
+	<color name="m3_blue_secondary">#bcc7dc</color>
+	<color name="m3_blue_on_secondary">#273141</color>
+	<color name="m3_blue_secondary_container">#3d4758</color>
+	<color name="m3_blue_on_secondary_container">#d8e3f8</color>
+
+	<color name="m3_blue_tertiary">#dabde2</color>
+	<color name="m3_blue_on_tertiary">#3d2846</color>
+	<color name="m3_blue_tertiary_container">#553f5d</color>
+	<color name="m3_blue_on_tertiary_container">#f7d8ff</color>
+
+	<color name="m3_blue_outline">#8e919a</color>
+	<color name="m3_blue_surface_variant">#43474e</color>
+	<color name="m3_blue_on_surface_variant">#c3c6cf</color>
+
+	<color name="m3_blue_background">#1b1b1d</color>
+	<color name="m3_blue_on_background">#e3e2e6</color>
+	<color name="m3_blue_surface">#1b1b1d</color>
+	<color name="m3_blue_on_surface">#e3e2e6</color>
+
+	<!--    M3 light blue-->
+	<color name="m3_light_blue_primary">#94ccff</color>
+	<color name="m3_light_blue_on_primary">#003354</color>
+	<color name="m3_light_blue_primary_container">#004a76</color>
+	<color name="m3_light_blue_on_primary_container">#cce5ff</color>
+
+	<color name="m3_light_blue_secondary">#b9c8da</color>
+	<color name="m3_light_blue_on_secondary">#233240</color>
+	<color name="m3_light_blue_secondary_container">#3a4857</color>
+	<color name="m3_light_blue_on_secondary_container">#d5e4f6</color>
+
+	<color name="m3_light_blue_tertiary">#d3bfe6</color>
+	<color name="m3_light_blue_on_tertiary">#382a49</color>
+	<color name="m3_light_blue_tertiary_container">#4f4061</color>
+	<color name="m3_light_blue_on_tertiary_container">#efdbff</color>
+
+	<color name="m3_light_blue_outline">#8c9198</color>
+	<color name="m3_light_blue_surface_variant">#42474d</color>
+	<color name="m3_light_blue_on_surface_variant">#c2c7ce</color>
+
+	<color name="m3_light_blue_background">#1a1c1e</color>
+	<color name="m3_light_blue_on_background">#e2e2e5</color>
+	<color name="m3_light_blue_surface">#1a1c1e</color>
+	<color name="m3_light_blue_on_surface">#e2e2e5</color>
+
+	<!--    M3 cyan-->
+	<color name="m3_cyan_primary">#4fd8eb</color>
+	<color name="m3_cyan_on_primary">#00363d</color>
+	<color name="m3_cyan_primary_container">#004f59</color>
+	<color name="m3_cyan_on_primary_container">#90f1ff</color>
+
+	<color name="m3_cyan_secondary">#b9c8da</color>
+	<color name="m3_cyan_on_secondary">#233240</color>
+	<color name="m3_cyan_secondary_container">#3a4857</color>
+	<color name="m3_cyan_on_secondary_container">#d5e4f6</color>
+
+	<color name="m3_cyan_tertiary">#d3bfe6</color>
+	<color name="m3_cyan_on_tertiary">#382a49</color>
+	<color name="m3_cyan_tertiary_container">#4f4061</color>
+	<color name="m3_cyan_on_tertiary_container">#efdbff</color>
+
+	<color name="m3_cyan_outline">#8c9198</color>
+	<color name="m3_cyan_surface_variant">#42474d</color>
+	<color name="m3_cyan_on_surface_variant">#c2c7ce</color>
+
+	<color name="m3_cyan_background">#191c1d</color>
+	<color name="m3_cyan_on_background">#e0e3e3</color>
+	<color name="m3_cyan_surface">#191c1d</color>
+	<color name="m3_cyan_on_surface">#e0e3e3</color>
+
+	<!--    M3 teal-->
+	<color name="m3_teal_primary">#55dbc6</color>
+	<color name="m3_teal_on_primary">#003730</color>
+	<color name="m3_teal_primary_container">#005045</color>
+	<color name="m3_teal_on_primary_container">#75f8e2</color>
+
+	<color name="m3_teal_secondary">#b1ccc5</color>
+	<color name="m3_teal_on_secondary">#1c3530</color>
+	<color name="m3_teal_secondary_container">#334b46</color>
+	<color name="m3_teal_on_secondary_container">#cde8e1</color>
+
+	<color name="m3_teal_tertiary">#accae5</color>
+	<color name="m3_teal_on_tertiary">#133348</color>
+	<color name="m3_teal_tertiary_container">#2c4a60</color>
+	<color name="m3_teal_on_tertiary_container">#c9e6ff</color>
+
+	<color name="m3_teal_outline">#899390</color>
+	<color name="m3_teal_surface_variant">#3f4946</color>
+	<color name="m3_teal_on_surface_variant">#bec9c5</color>
+
+	<color name="m3_teal_background">#191c1b</color>
+	<color name="m3_teal_on_background">#e1e3e1</color>
+	<color name="m3_teal_surface">#191c1b</color>
+	<color name="m3_teal_on_surface">#e1e3e1</color>
+
+	<!--    M3 green-->
+	<color name="m3_green_primary">#82db7e</color>
+	<color name="m3_green_on_primary">#003907</color>
+	<color name="m3_green_primary_container">#00530e</color>
+	<color name="m3_green_on_primary_container">#9ef898</color>
+
+	<color name="m3_green_secondary">#b9ccb3</color>
+	<color name="m3_green_on_secondary">#253423</color>
+	<color name="m3_green_secondary_container">#3b4b38</color>
+	<color name="m3_green_on_secondary_container">#d6e8cf</color>
+
+	<color name="m3_green_tertiary">#a1cfd4</color>
+	<color name="m3_green_on_tertiary">#00363b</color>
+	<color name="m3_green_tertiary_container">#1e4d52</color>
+	<color name="m3_green_on_tertiary_container">#bcebf0</color>
+
+	<color name="m3_green_outline">#8c9288</color>
+	<color name="m3_green_surface_variant">#424840</color>
+	<color name="m3_green_on_surface_variant">#c2c8bd</color>
+
+	<color name="m3_green_background">#1a1c19</color>
+	<color name="m3_green_on_background">#e2e3dd</color>
+	<color name="m3_green_surface">#1a1c19</color>
+	<color name="m3_green_on_surface">#e2e3dd</color>
+
+	<!--    M3 light green-->
+	<color name="m3_light_green_primary">#9cd769</color>
+	<color name="m3_light_green_on_primary">#183800</color>
+	<color name="m3_light_green_primary_container">#265100</color>
+	<color name="m3_light_green_on_primary_container">#b7f481</color>
+
+	<color name="m3_light_green_secondary">#becbae</color>
+	<color name="m3_light_green_on_secondary">#29341f</color>
+	<color name="m3_light_green_secondary_container">#3f4a34</color>
+	<color name="m3_light_green_on_secondary_container">#dae7c9</color>
+
+	<color name="m3_light_green_tertiary">#a0cfcd</color>
+	<color name="m3_light_green_on_tertiary">#003736</color>
+	<color name="m3_light_green_tertiary_container">#1e4e4d</color>
+	<color name="m3_light_green_on_tertiary_container">#bbece9</color>
+
+	<color name="m3_light_green_outline">#8e9286</color>
+	<color name="m3_light_green_surface_variant">#44483e</color>
+	<color name="m3_light_green_on_surface_variant">#c4c8ba</color>
+
+	<color name="m3_light_green_background">#1a1c17</color>
+	<color name="m3_light_green_on_background">#e3e3dc</color>
+	<color name="m3_light_green_surface">#1a1c17</color>
+	<color name="m3_light_green_on_surface">#e3e3dc</color>
+
+	<!--    M3 lime-->
+	<color name="m3_lime_primary">#bfd046</color>
+	<color name="m3_lime_on_primary">#2d3400</color>
+	<color name="m3_lime_primary_container">#414b00</color>
+	<color name="m3_lime_on_primary_container">#dbec5f</color>
+
+	<color name="m3_lime_secondary">#c6c9a6</color>
+	<color name="m3_lime_on_secondary">#2f321a</color>
+	<color name="m3_lime_secondary_container">#46492f</color>
+	<color name="m3_lime_on_secondary_container">#e3e5c2</color>
+
+	<color name="m3_lime_tertiary">#a2d0c2</color>
+	<color name="m3_lime_on_tertiary">#05372d</color>
+	<color name="m3_lime_tertiary_container">#224e43</color>
+	<color name="m3_lime_on_tertiary_container">#bdecdd</color>
+
+	<color name="m3_lime_outline">#929283</color>
+	<color name="m3_lime_surface_variant">#47483b</color>
+	<color name="m3_lime_on_surface_variant">#c8c7b7</color>
+
+	<color name="m3_lime_background">#1c1c17</color>
+	<color name="m3_lime_on_background">#e5e3da</color>
+	<color name="m3_lime_surface">#1c1c17</color>
+	<color name="m3_lime_on_surface">#e5e3da</color>
+
+	<!--    M3 yellow-->
+	<color name="m3_yellow_primary">#e8c41d</color>
+	<color name="m3_yellow_on_primary">#402d00</color>
+	<color name="m3_yellow_primary_container">#5c4200</color>
+	<color name="m3_yellow_on_primary_container">#ffe15f</color>
+
+	<color name="m3_yellow_secondary">#d8c4a0</color>
+	<color name="m3_yellow_on_secondary">#3b2f16</color>
+	<color name="m3_yellow_secondary_container">#52452a</color>
+	<color name="m3_yellow_on_secondary_container">#f5e0bb</color>
+
+	<color name="m3_yellow_tertiary">#b0cfa9</color>
+	<color name="m3_yellow_on_tertiary">#1e361c</color>
+	<color name="m3_yellow_tertiary_container">#334d30</color>
+	<color name="m3_yellow_on_tertiary_container">#ccebc4</color>
+
+	<color name="m3_yellow_outline">#998f7f</color>
+	<color name="m3_yellow_surface_variant">#4d4639</color>
+	<color name="m3_yellow_on_surface_variant">#d0c5b4</color>
+
+	<color name="m3_yellow_background">#1d1b16</color>
+	<color name="m3_yellow_on_background">#e8e2d9</color>
+	<color name="m3_yellow_surface">#1d1b16</color>
+	<color name="m3_yellow_on_surface">#e8e2d9</color>
+
+	<!--    M3 amber-->
+	<color name="m3_amber_primary">#ffb85f</color>
+	<color name="m3_amber_on_primary">#482900</color>
+	<color name="m3_amber_primary_container">#673d00</color>
+	<color name="m3_amber_on_primary_container">#ffddb8</color>
+
+	<color name="m3_amber_secondary">#dfc1a2</color>
+	<color name="m3_amber_on_secondary">#3f2d17</color>
+	<color name="m3_amber_secondary_container">#58432c</color>
+	<color name="m3_amber_on_secondary_container">#fdddbd</color>
+
+	<color name="m3_amber_tertiary">#bdcd9d</color>
+	<color name="m3_amber_on_tertiary">#283412</color>
+	<color name="m3_amber_tertiary_container">#3e4b27</color>
+	<color name="m3_amber_on_tertiary_container">#d9e9b8</color>
+
+	<color name="m3_amber_outline">#9d8e81</color>
+	<color name="m3_amber_surface_variant">#50453a</color>
+	<color name="m3_amber_on_surface_variant">#d4c4b5</color>
+
+	<color name="m3_amber_background">#1f1b16</color>
+	<color name="m3_amber_on_background">#ebe1d9</color>
+	<color name="m3_amber_surface">#1f1b16</color>
+	<color name="m3_amber_on_surface">#ebe1d9</color>
+
+	<!--    M3 orange-->
+	<color name="m3_orange_primary">#ffb683</color>
+	<color name="m3_orange_on_primary">#512400</color>
+	<color name="m3_orange_primary_container">#733600</color>
+	<color name="m3_orange_on_primary_container">#ffdbc4</color>
+
+	<color name="m3_orange_secondary">#e4bfa8</color>
+	<color name="m3_orange_on_secondary">#422b1b</color>
+	<color name="m3_orange_secondary_container">#5b4130</color>
+	<color name="m3_orange_on_secondary_container">#ffdbc4</color>
+
+	<color name="m3_orange_tertiary">#c9ca93</color>
+	<color name="m3_orange_on_tertiary">#31320a</color>
+	<color name="m3_orange_tertiary_container">#48491f</color>
+	<color name="m3_orange_on_tertiary_container">#e5e6ad</color>
+
+	<color name="m3_orange_outline">#9f8d83</color>
+	<color name="m3_orange_surface_variant">#52443b</color>
+	<color name="m3_orange_on_surface_variant">#d7c3b8</color>
+
+	<color name="m3_orange_background">#201a17</color>
+	<color name="m3_orange_on_background">#ece0db</color>
+	<color name="m3_orange_surface">#201a17</color>
+	<color name="m3_orange_on_surface">#ece0db</color>
+
+	<!--    M3 deep orange-->
+	<color name="m3_deep_orange_primary">#ffb49d</color>
+	<color name="m3_deep_orange_on_primary">#611300</color>
+	<color name="m3_deep_orange_primary_container">#891f00</color>
+	<color name="m3_deep_orange_on_primary_container">#ffdacf</color>
+
+	<color name="m3_deep_orange_secondary">#e7bdb2</color>
+	<color name="m3_deep_orange_on_secondary">#442a22</color>
+	<color name="m3_deep_orange_secondary_container">#5d4038</color>
+	<color name="m3_deep_orange_on_secondary_container">#ffdacf</color>
+
+	<color name="m3_deep_orange_tertiary">#d8c58d</color>
+	<color name="m3_deep_orange_on_tertiary">#3a2f04</color>
+	<color name="m3_deep_orange_tertiary_container">#53461a</color>
+	<color name="m3_deep_orange_on_tertiary_container">#f6e1a6</color>
+
+	<color name="m3_deep_orange_outline">#a08c87</color>
+	<color name="m3_deep_orange_surface_variant">#53433f</color>
+	<color name="m3_deep_orange_on_surface_variant">#d8c2bc</color>
+
+	<color name="m3_deep_orange_background">#201a18</color>
+	<color name="m3_deep_orange_on_background">#ede0dd</color>
+	<color name="m3_deep_orange_surface">#201a18</color>
+	<color name="m3_deep_orange_on_surface">#ede0dd</color>
+
+	<!--    M3 brown-->
+	<color name="m3_brown_primary">#ffb59c</color>
+	<color name="m3_brown_on_primary">#5d1700</color>
+	<color name="m3_brown_primary_container">#7c2d12</color>
+	<color name="m3_brown_on_primary_container">#ffdbcf</color>
+
+	<color name="m3_brown_secondary">#e7bdb1</color>
+	<color name="m3_brown_on_secondary">#442a22</color>
+	<color name="m3_brown_secondary_container">#5d4037</color>
+	<color name="m3_brown_on_secondary_container">#ffdbcf</color>
+
+	<color name="m3_brown_tertiary">#d7c68d</color>
+	<color name="m3_brown_on_tertiary">#3a3005</color>
+	<color name="m3_brown_tertiary_container">#524619</color>
+	<color name="m3_brown_on_tertiary_container">#f4e2a7</color>
+
+	<color name="m3_brown_outline">#a08d87</color>
+	<color name="m3_brown_surface_variant">#53433f</color>
+	<color name="m3_brown_on_surface_variant">#d9c2bc</color>
+
+	<color name="m3_brown_background">#201a18</color>
+	<color name="m3_brown_on_background">#ede0dc</color>
+	<color name="m3_brown_surface">#201a18</color>
+	<color name="m3_brown_on_surface">#ede0dc</color>
+
+	<!--    M3 grey-->
+	<color name="m3_grey_primary">#b1cbd0</color>
+	<color name="m3_grey_on_primary">#1c3438</color>
+	<color name="m3_grey_primary_container">#334b4f</color>
+	<color name="m3_grey_on_primary_container">#cde7ec</color>
+
+	<color name="m3_grey_secondary">#b1cbd0</color>
+	<color name="m3_grey_on_secondary">#1c3438</color>
+	<color name="m3_grey_secondary_container">#334b4f</color>
+	<color name="m3_grey_on_secondary_container">#cde7ec</color>
+
+	<color name="m3_grey_tertiary">#bac6ea</color>
+	<color name="m3_grey_on_tertiary">#24304d</color>
+	<color name="m3_grey_tertiary_container">#3b4664</color>
+	<color name="m3_grey_on_tertiary_container">#d9e2ff</color>
+
+	<color name="m3_grey_outline">#899294</color>
+	<color name="m3_grey_surface_variant">#3f484a</color>
+	<color name="m3_grey_on_surface_variant">#bfc8ca</color>
+
+	<color name="m3_grey_background">#191c1d</color>
+	<color name="m3_grey_on_background">#e0e3e3</color>
+	<color name="m3_grey_surface">#191c1d</color>
+	<color name="m3_grey_on_surface">#e0e3e3</color>
+
+	<!--    M3 blue grey-->
+	<color name="m3_blue_grey_primary">#b4cad6</color>
+	<color name="m3_blue_grey_on_primary">#1f333c</color>
+	<color name="m3_blue_grey_primary_container">#354a53</color>
+	<color name="m3_blue_grey_on_primary_container">#cfe6f2</color>
+
+	<color name="m3_blue_grey_secondary">#b4cad6</color>
+	<color name="m3_blue_grey_on_secondary">#1f333c</color>
+	<color name="m3_blue_grey_secondary_container">#354a53</color>
+	<color name="m3_blue_grey_on_secondary_container">#cfe6f2</color>
+
+	<color name="m3_blue_grey_tertiary">#c6c3eb</color>
+	<color name="m3_blue_grey_on_tertiary">#2e2d4c</color>
+	<color name="m3_blue_grey_tertiary_container">#454365</color>
+	<color name="m3_blue_grey_on_tertiary_container">#e2dfff</color>
+
+	<color name="m3_blue_grey_outline">#8a9296</color>
+	<color name="m3_blue_grey_surface_variant">#40484c</color>
+	<color name="m3_blue_grey_on_surface_variant">#c0c8cd</color>
+
+	<color name="m3_blue_grey_background">#191c1e</color>
+	<color name="m3_blue_grey_on_background">#e1e3e5</color>
+	<color name="m3_blue_grey_surface">#191c1e</color>
+	<color name="m3_blue_grey_on_surface">#e1e3e5</color>
+
+</resources>
