@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?attr/colorSecondaryContainer" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/opzioni_salva"
+        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/auto_save"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        app:useMaterialThemeColors="false" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/opzioni_carica"
+        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/load_tree_startup"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/opzioni_esperto"
+        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/show_advanced_functions"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/dark_theme"
+        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/dark_theme"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/opzioni_language"
+        style="@style/Widget.Material3.CheckedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/theme"
+        style="@style/Widget.Material3.CheckedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/theme"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/rate_app"
+        style="@style/Widget.Material3.CheckedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/rate"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/feedback"
+        style="@style/Widget.Material3.CheckedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/feedback"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/share"
+        style="@style/Widget.Material3.CheckedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/share"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/opzioni_lapide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/about"
+        android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+</LinearLayout>

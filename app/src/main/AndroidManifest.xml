@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="dna.familytree"
+    android:installLocation="auto">
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="22" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:name="dna.familytree.Global"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name=".services.FirebaseService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"
+            tools:replace="android:value" />
+
+        <activity
+            android:name="dna.familytree.LauncherActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- <intent-filter>
+                 <action android:name="android.intent.action.VIEW" />
+                 <category android:name="android.intent.category.BROWSABLE" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                 <data
+                     android:host="www.familygem.app"
+                     android:path="/share.php"
+                     android:scheme="https" />
+             </intent-filter>-->
+            <!--<intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="www.familygem.app"
+                    android:pathPattern="/condivisi/.*.zip"
+                    android:scheme="https" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="dna.familytree.TreesController"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="dna.familytree.theme.ThemeController"
+            android:label="@string/theme" />
+        <activity
+            android:name="dna.familytree.NewTreeController"
+            android:label="@string/new_tree"
+            android:parentActivityName="dna.familytree.TreesController" />
+        <activity
+            android:name="dna.familytree.PrincipalController"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="dna.familytree.SettingsController"
+            android:label="@string/settings"
+            android:parentActivityName="dna.familytree.TreesController" />
+        <activity
+            android:name="dna.familytree.AboutController"
+            android:label="@string/about"
+            android:parentActivityName="dna.familytree.SettingsController" />
+        <activity
+            android:name="dna.familytree.InfoController"
+            android:label="@string/tree_info"
+            android:parentActivityName="dna.familytree.TreesController" />
+        <activity
+            android:name="dna.familytree.MediaFoldersController"
+            android:label="@string/media_folders" />
+        <activity
+            android:name="dna.familytree.share.SharingController"
+            android:label="@string/share_tree"
+            android:parentActivityName="dna.familytree.TreesController" />
+        <activity
+            android:name="dna.familytree.share.CompareController"
+            android:label="@string/tree_with_news"
+            android:parentActivityName="dna.familytree.TreesController" />
+        <activity
+            android:name="dna.familytree.share.ProcessController"
+            android:label="@string/import_news"
+            android:parentActivityName="dna.familytree.share.CompareController" />
+        <activity
+            android:name="dna.familytree.share.ConfirmationController"
+            android:label="@string/confirm_news"
+            android:parentActivityName="dna.familytree.share.CompareController" />
+        <activity
+            android:name="dna.familytree.DiagramSettingsController"
+            android:label="@string/diagram_settings"
+            android:parentActivityName="dna.familytree.PrincipalController" />
+        <activity
+            android:name="dna.familytree.ProfileController"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="dna.familytree.detail.FamilyController" />
+        <activity android:name="dna.familytree.detail.NameController" />
+        <activity android:name="dna.familytree.detail.RepositoryController" />
+        <activity android:name="dna.familytree.detail.RepositoryRefController" />
+        <activity android:name="dna.familytree.detail.NoteController" />
+        <activity android:name="dna.familytree.detail.SourceController" />
+        <activity android:name="dna.familytree.detail.SourceCitationController" />
+        <activity android:name="dna.familytree.detail.MediaController" />
+        <activity android:name="dna.familytree.detail.EventController" />
+        <activity android:name="dna.familytree.detail.AddressController" />
+        <activity android:name="dna.familytree.detail.SubmitterController" />
+        <activity android:name="dna.familytree.detail.ExtensionController" />
+        <activity android:name="dna.familytree.detail.ChangeController" />
+        <activity
+            android:name="dna.familytree.ImageController"
+            android:parentActivityName="dna.familytree.detail.MediaController"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="dna.familytree.PersonEditorController" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+        <receiver
+            android:name="dna.familytree.NotifyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+            <data android:mimeType="*/*" />
+        </intent>
+    </queries>
+</manifest>

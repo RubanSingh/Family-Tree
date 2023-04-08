@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="?attr/colorSecondaryContainer" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:padding="30dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_download_shared"
+                    style="@style/AppTheme.ButtonColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:minWidth="350dp"
+                    android:text="@string/download_shared_tree" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_empty_tree"
+                    style="@style/AppTheme.ButtonColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:minWidth="350dp"
+                    android:text="@string/empty_tree" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_download_example"
+                    style="@style/AppTheme.ButtonNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:minWidth="350dp"
+                    android:text="@string/download_example" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_import_gedcom"
+                    style="@style/AppTheme.ButtonNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:minWidth="350dp"
+                    android:text="@string/import_gedcom" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_recover_backup"
+                    style="@style/AppTheme.ButtonNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="350dp"
+                    android:text="@string/import_backup" />
+            </LinearLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/new_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:indeterminate="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
