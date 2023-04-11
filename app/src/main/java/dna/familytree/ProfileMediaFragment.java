@@ -72,19 +72,19 @@ public class ProfileMediaFragment extends BaseFragment {
                 medCont.media.setPrimary(null);
             media.setPrimary("Y");
             if (media.getId() != null) // Per aggiornare la data cambiamento nel Media record piuttosto che nella Person
-                U.save(true, media);
+                AppUtils.save(true, media);
             else
-                U.save(true, one);
+                AppUtils.save(true, one);
             refresh();
             return true;
         } else if (id == 1) { // Scollega
             MediaFragment.disconnectMedia(media.getId(), (MediaContainer)container);
-            U.save(true, one);
+            AppUtils.save(true, one);
             refresh();
             return true;
         } else if (id == 2) { // Elimina
             Object[] capi = MediaFragment.deleteMedia(media, null);
-            U.save(true, capi);
+            AppUtils.save(true, capi);
             refresh();
             return true;
         }

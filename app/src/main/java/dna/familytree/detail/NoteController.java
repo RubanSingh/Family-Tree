@@ -8,7 +8,7 @@ import dna.familytree.DetailController;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.visitor.NoteReferences;
 
@@ -31,20 +31,20 @@ public class NoteController extends DetailController {
         place(getString(R.string.text), "Value", true, true);
         place(getString(R.string.rin), "Rin", false, false);
         placeExtensions(n);
-        U.placeSourceCitations(box, n);
-        U.placeChangeDate(box, n.getChange());
+        AppUtils.placeSourceCitations(box, n);
+        AppUtils.placeChangeDate(box, n.getChange());
         if (n.getId() != null) {
             NoteReferences noteRefs = new NoteReferences(Global.gc, n.getId(), false);
             if (noteRefs.count > 0)
-                U.placeCabinet(box, noteRefs.leaders.toArray(), R.string.shared_by);
+                AppUtils.placeCabinet(box, noteRefs.leaders.toArray(), R.string.shared_by);
         } else if (((Activity)box.getContext()).getIntent().getBooleanExtra("fromNotes", false)) {
-            U.placeCabinet(box, Memory.firstObject(), R.string.written_in);
+            AppUtils.placeCabinet(box, Memory.getLeaderObject(), R.string.written_in);
         }
     }
 
     @Override
     public void delete() {
-        U.updateChangeDate(U.deleteNote(n, null));
+        AppUtils.updateChangeDate(AppUtils.deleteNote(n, null));
     }
 
     @Override

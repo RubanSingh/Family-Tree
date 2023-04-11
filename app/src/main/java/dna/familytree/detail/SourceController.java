@@ -15,7 +15,7 @@ import org.folg.gedcom.model.Source;
 import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.list.SourcesFragment;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.visitor.ListOfSourceCitations;
@@ -65,7 +65,7 @@ public class SourceController extends DetailController {
             TextView textView = refView.findViewById(R.id.citazione_testo);
             if (txt.isEmpty()) textView.setVisibility(View.GONE);
             else textView.setText(txt.substring(0, txt.length() - 1));
-            U.placeNotes(refView.findViewById(R.id.citazione_note), repositoryRef, false);
+            AppUtils.placeNotes(refView.findViewById(R.id.citazione_note), repositoryRef, false);
             refView.setOnClickListener(v -> {
                 Memory.add(repositoryRef);
                 startActivity(new Intent(SourceController.this, RepositoryRefController.class));
@@ -73,16 +73,16 @@ public class SourceController extends DetailController {
             registerForContextMenu(refView);
             refView.setTag(R.id.tag_object, repositoryRef); // For the context menu
         }
-        U.placeNotes(box, f, true);
-        U.placeMedia(box, f, true);
-        U.placeChangeDate(box, f.getChange());
+        AppUtils.placeNotes(box, f, true);
+        AppUtils.placeMedia(box, f, true);
+        AppUtils.placeChangeDate(box, f.getChange());
         if (!citations.list.isEmpty())
-            U.placeCabinet(box, citations.getProgenitors(), R.string.cited_by);
+            AppUtils.placeCabinet(box, citations.getProgenitors(), R.string.cited_by);
     }
 
     @Override
     public void delete() {
-        U.updateChangeDate(SourcesFragment.deleteSource(f));
+        AppUtils.updateChangeDate(SourcesFragment.deleteSource(f));
     }
 
     @Override

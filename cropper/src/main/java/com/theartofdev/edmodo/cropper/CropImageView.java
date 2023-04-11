@@ -185,9 +185,9 @@ public class CropImageView extends FrameLayout {
     CropImageOptions options = null;
     Intent intent = context instanceof Activity ? ((Activity) context).getIntent() : null;
     if (intent != null) {
-      Bundle bundle = intent.getBundleExtra(CropImage.CROP_IMAGE_EXTRA_BUNDLE);
+      Bundle bundle = intent.getBundleExtra(CropImageConstant.CROP_IMAGE_EXTRA_BUNDLE);
       if (bundle != null) {
-        options = bundle.getParcelable(CropImage.CROP_IMAGE_EXTRA_OPTIONS);
+        options = bundle.getParcelable(CropImageConstant.CROP_IMAGE_EXTRA_OPTIONS);
       }
     }
 
@@ -2041,7 +2041,7 @@ public class CropImageView extends FrameLayout {
     /** sample size used creating the crop bitmap to lower its size */
     private final int mSampleSize;
 
-    CropResult(
+    public CropResult(
         Bitmap originalBitmap,
         Uri originalUri,
         Bitmap bitmap,

@@ -62,6 +62,7 @@ import dna.familytree.constant.Relation;
 import dna.familytree.detail.FamilyController;
 import dna.familytree.list.PersonsFragment;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.FileUtils;
 import dna.familytree.util.LoggerUtils;
 import graph.gedcom.Bond;
 import graph.gedcom.CurveLine;
@@ -121,7 +122,7 @@ public class DiagramFragment extends BaseFragment {
                         break;
                     case 1: // Export PDF
                         AnalyticsUtil.logEventExportPDFTree(getFirebaseAnalytics());
-                        F.saveDocument(null, this, Global.settings.openTree, "application/pdf", "pdf", 903);
+                        FileUtils.saveDocument(null, this, Global.settings.openTree, "application/pdf", "pdf", 903);
                         break;
                     default:
                         return false;
@@ -160,7 +161,7 @@ public class DiagramFragment extends BaseFragment {
             box.removeAllViews();
             box.setAlpha(0);
 
-            String[] ids = {Global.indi, Global.settings.getCurrentTree().root, U.trovaRadice(gc)};
+            String[] ids = {Global.indi, Global.settings.getCurrentTree().root, AppUtils.trovaRadice(gc)};
             for (String id : ids) {
                 fulcrum = gc.getPerson(id);
                 if (fulcrum != null)
@@ -430,29 +431,29 @@ public class DiagramFragment extends BaseFragment {
             }
 
             ShapeableImageView shapeableImageView = view.findViewById(R.id.card_photo);
-            F.showMainImageForPerson(Global.gc, person, shapeableImageView);
+            FileUtils.showMainImageForPerson(Global.gc, person, shapeableImageView);
             Drawable imageDrawable = shapeableImageView.getDrawable();
 
             TextView vistaNome = view.findViewById(R.id.card_name);
-            String nome = U.properName(person, true);
+            String nome = AppUtils.properName(person, true);
             if (nome.isEmpty() && view.findViewById(R.id.card_photo).getVisibility() == View.VISIBLE)
                 vistaNome.setVisibility(View.GONE);
             else vistaNome.setText(nome);
             TextView vistaTitolo = view.findViewById(R.id.card_title);
-            String titolo = U.titolo(person);
+            String titolo = AppUtils.titolo(person);
             if (titolo.isEmpty()) vistaTitolo.setVisibility(View.GONE);
             else vistaTitolo.setText(titolo);
             TextView vistaDati = view.findViewById(R.id.card_data);
-            String dati = U.twoDates(person, true);
+            String dati = AppUtils.twoDates(person, true);
             if (dati.isEmpty()) vistaDati.setVisibility(View.GONE);
             else vistaDati.setText(dati);
-            if (!U.isDead(person))
+            if (!AppUtils.isDead(person))
                 view.findViewById(R.id.card_mourn).setVisibility(View.GONE);
             registerForContextMenu(this);
             setOnClickListener(v -> {
                 if (person.getId().equals(Global.indi)) {
                     AnalyticsUtil.logEventPersonEditProfile(getFirebaseAnalytics());
-                    Memory.setFirst(person);
+                    Memory.setLeader(person);
                     startActivity(new Intent(getContext(), ProfileController.class));
                 } else {
                     clickCard(person);
@@ -506,7 +507,7 @@ public class DiagramFragment extends BaseFragment {
                 bondLayout.addView(year, yearParams);
             }
             setOnClickListener(view -> {
-                Memory.setFirst(familyNode.spouseFamily);
+                Memory.setLeader(familyNode.spouseFamily);
                 startActivity(new Intent(context, FamilyController.class));
             });
         }
@@ -559,7 +560,7 @@ public class DiagramFragment extends BaseFragment {
             getLayoutInflater().inflate(R.layout.diagram_asterisk, this, true);
             registerForContextMenu(this);
             setOnClickListener(v -> {
-                Memory.setFirst(personNode.person);
+                Memory.setLeader(personNode.person);
                 startActivity(new Intent(getContext(), ProfileController.class));
             });
         }
@@ -665,7 +666,7 @@ public class DiagramFragment extends BaseFragment {
         List<Family> families = fulcrum.getParentFamilies(gc);
         if (families.size() > 1) {
             new MaterialAlertDialogBuilder(getContext()).setTitle(R.string.which_family)
-                    .setItems(U.elencoFamiglie(families), (dialog, which) -> {
+                    .setItems(AppUtils.elencoFamiglie(families), (dialog, which) -> {
                         completeSelect(fulcrum, which);
                     }).show();
         } else {
@@ -740,7 +741,7 @@ public class DiagramFragment extends BaseFragment {
         if (familyLabels[1] != null)
             menu.add(0, 2, 0, familyLabels[1]);
         menu.add(0, 3, 0, R.string.new_relative);
-        if (U.linkablePersons(pers))
+        if (AppUtils.linkablePersons(pers))
             menu.add(0, 4, 0, R.string.link_person);
         menu.add(0, 5, 0, R.string.modify);
         if (!pers.getParentFamilies(gc).isEmpty() || !pers.getSpouseFamilies(gc).isEmpty())
@@ -762,17 +763,17 @@ public class DiagramFragment extends BaseFragment {
                 completeSelect(pers, Global.familyNum == 0 ? 1 : 0);
         } else if (id == 0) { // Apri scheda individuo
             AnalyticsUtil.logEventOpenProfile(getFirebaseAnalytics());
-            Memory.setFirst(pers);
+            Memory.setLeader(pers);
             startActivity(new Intent(getContext(), ProfileController.class));
         } else if (id == 1) { // Famiglia come figlio
             if (idPersona.equals(Global.indi)) { // Se è fulcro apre direttamente la famiglia
                 AnalyticsUtil.logEventOpenFamily(getFirebaseAnalytics());
-                Memory.setFirst(parentFam);
+                Memory.setLeader(parentFam);
                 startActivity(new Intent(getContext(), FamilyController.class));
             } else
-                U.askWhichParentsToShow(getContext(), pers, 2);
+                AppUtils.askWhichParentsToShow(getContext(), pers, 2);
         } else if (id == 2) { // Famiglia come coniuge
-            U.askWhichSpouceToShow(getContext(), pers, null);
+            AppUtils.askWhichSpouceToShow(getContext(), pers, null);
         } else if (id == 3) { // Collega persona nuova
             if (Global.settings.expert) {
                 DialogFragment dialog = new NewRelativeDialog(pers, parentFam, spouseFam, true, null);
@@ -783,7 +784,7 @@ public class DiagramFragment extends BaseFragment {
                     Intent intent = new Intent(getContext(), PersonEditorController.class);
                     intent.putExtra("idIndividuo", idPersona);
                     intent.putExtra("relazione", quale + 1);
-                    if (U.controllaMultiMatrimoni(intent, getContext(), null)) // aggiunge 'idFamiglia' o 'collocazione'
+                    if (AppUtils.controllaMultiMatrimoni(intent, getContext(), null)) // aggiunge 'idFamiglia' o 'collocazione'
                         return; // se pivot è sposo in più famiglie, chiede a chi aggiungere un coniuge o un figlio
                     startActivity(intent);
                 }).show();
@@ -799,7 +800,7 @@ public class DiagramFragment extends BaseFragment {
                     intent.putExtra("idIndividuo", idPersona);
                     intent.putExtra(Choice.PERSON, true);
                     intent.putExtra("relazione", quale + 1);
-                    if (U.controllaMultiMatrimoni(intent, getContext(), DiagramFragment.this))
+                    if (AppUtils.controllaMultiMatrimoni(intent, getContext(), DiagramFragment.this))
                         return;
                     startActivityForResult(intent, 1401);
                 }).show();
@@ -825,16 +826,16 @@ public class DiagramFragment extends BaseFragment {
             }
             ripristina();
             Family[] modificateArr = modificate.toArray(new Family[0]);
-            U.controllaFamiglieVuote(requireContext(), this::ripristina, false, modificateArr);
-            U.updateChangeDate(pers);
-            U.save(true, (Object[])modificateArr);
+            AppUtils.controllaFamiglieVuote(requireContext(), this::ripristina, false, modificateArr);
+            AppUtils.updateChangeDate(pers);
+            AppUtils.save(true, (Object[])modificateArr);
         } else if (id == 7) { // Elimina
             AnalyticsUtil.logEventPersonDeleteProfile(getFirebaseAnalytics());
             new MaterialAlertDialogBuilder(requireContext()).setMessage(R.string.really_delete_person)
                     .setPositiveButton(R.string.delete, (dialog, i) -> {
                         Family[] famiglie = PersonsFragment.deletePerson(getContext(), idPersona);
                         ripristina();
-                        U.controllaFamiglieVuote(getContext(), this::ripristina, false, famiglie);
+                        AppUtils.controllaFamiglieVuote(getContext(), this::ripristina, false, famiglie);
                     }).setNeutralButton(R.string.cancel, null).show();
         } else
             return false;
@@ -857,7 +858,7 @@ public class DiagramFragment extends BaseFragment {
                         data.getStringExtra("idFamiglia"),
                         data.getIntExtra("relazione", 0),
                         data.getStringExtra("collocazione"));
-                U.save(true, modificati);
+                AppUtils.save(true, modificati);
             } // Export diagram to PDF
             else if (requestCode == 903) {
                 // Stylize diagram for print

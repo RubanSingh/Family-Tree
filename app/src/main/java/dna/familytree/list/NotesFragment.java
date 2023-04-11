@@ -27,7 +27,7 @@ import java.util.List;
 import dna.familytree.BaseFragment;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.detail.NoteController;
 import dna.familytree.util.AnalyticsUtil;
@@ -90,7 +90,7 @@ public class NotesFragment extends BaseFragment implements NotesAdapter.ItemClic
         } else { // Opens the note detail
             Intent intent = new Intent(getContext(), NoteController.class);
             if (note.getId() != null) { // Shared note
-                Memory.setFirst(note);
+                Memory.setLeader(note);
             } else { // Simple note
                 new FindStack(gc, note);
                 intent.putExtra("fromNotes", true);
@@ -102,8 +102,8 @@ public class NotesFragment extends BaseFragment implements NotesAdapter.ItemClic
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == 0) { // Delete
-            Object[] leaders = U.deleteNote(adapter.selectedNote, null);
-            U.save(false, leaders);
+            Object[] leaders = AppUtils.deleteNote(adapter.selectedNote, null);
+            AppUtils.save(false, leaders);
             getActivity().recreate();
         } else {
             return false;
@@ -138,7 +138,7 @@ public class NotesFragment extends BaseFragment implements NotesAdapter.ItemClic
      */
     public static void newNote(Context context, Object container) {
         Note note = new Note();
-        String id = U.newID(gc, Note.class);
+        String id = AppUtils.newID(gc, Note.class);
         note.setId(id);
         note.setValue("");
         gc.addNote(note);
@@ -147,8 +147,8 @@ public class NotesFragment extends BaseFragment implements NotesAdapter.ItemClic
             noteRef.setRef(id);
             ((NoteContainer)container).addNoteRef(noteRef);
         }
-        U.save(true, note);
-        Memory.setFirst(note);
+        AppUtils.save(true, note);
+        Memory.setLeader(note);
         context.startActivity(new Intent(context, NoteController.class));
     }
 

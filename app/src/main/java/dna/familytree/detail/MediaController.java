@@ -22,11 +22,11 @@ import java.util.List;
 
 import dna.familytree.ImageController;
 import dna.familytree.DetailController;
-import dna.familytree.F;
+import dna.familytree.util.FileUtils;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.list.MediaFragment;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.util.LoggerUtils;
@@ -63,27 +63,27 @@ public class MediaController extends DetailController {
         place(getString(R.string.blob), "Blob", false, true);
         //m.getFileTag(); // The tag, could be 'FILE' or '_FILE'
         placeExtensions(m);
-        U.placeNotes(box, m, true);
-        U.placeChangeDate(box, m.getChange());
+        AppUtils.placeNotes(box, m, true);
+        AppUtils.placeChangeDate(box, m.getChange());
         // List of records in which the media is used
         MediaReferences mediaReferences = new MediaReferences(gc, m, false);
         if (mediaReferences.leaders.size() > 0)
-            U.placeCabinet(box, mediaReferences.leaders.toArray(), R.string.used_by);
+            AppUtils.placeCabinet(box, mediaReferences.leaders.toArray(), R.string.used_by);
         else if (((Activity)box.getContext()).getIntent().getBooleanExtra("daSolo", false))
-            U.placeCabinet(box, Memory.firstObject(), R.string.into);
+            AppUtils.placeCabinet(box, Memory.getLeaderObject(), R.string.into);
     }
 
     void displayMedia(Media media, int position) {
         imageView = LayoutInflater.from(this).inflate(R.layout.immagine_immagine, box, false);
         box.addView(imageView, position);
         ImageView imageView = this.imageView.findViewById(R.id.immagine_foto);
-        F.showImage(media, imageView, this.imageView.findViewById(R.id.immagine_circolo));
+        FileUtils.showImage(media, imageView, this.imageView.findViewById(R.id.immagine_circolo));
         this.imageView.setOnClickListener(vista -> {
             String path = (String)imageView.getTag(R.id.tag_percorso);
             Uri uri = (Uri)imageView.getTag(R.id.tag_uri);
             int fileType = (int)imageView.getTag(R.id.tag_file_type);
             if (fileType == 0) { // Placeholder instead of image, the media has to be found
-                F.displayImageCaptureDialog(this, null, 5173, null);
+                FileUtils.displayImageCaptureDialog(this, null, 5173, null);
             } else if (fileType == 2 || fileType == 3) { // Open the media with some other app
                 // TODO: if the type is 3 but it is a url (web page without images) tries to open it as a file://
                 if (path != null) {
@@ -133,7 +133,7 @@ public class MediaController extends DetailController {
 
     @Override
     public void delete() {
-        U.updateChangeDate(MediaFragment.deleteMedia(m, null));
+        AppUtils.updateChangeDate(MediaFragment.deleteMedia(m, null));
     }
 
     @Override

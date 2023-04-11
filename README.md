@@ -20,5 +20,5 @@ This program is free software: you can redistribute it and/or modify it under th
 
 ## About
 Family Tree is written in Java within Eclipse and Android Studio.  
-Project taken from Family Gem base software. 
-Author is John Ruban Singh, an Indian programmer and genealogy enthusiast.
+Project started on beginning of 2018.  
+Author is Michele Salvador, an Italian programmer and genealogy enthusiast.

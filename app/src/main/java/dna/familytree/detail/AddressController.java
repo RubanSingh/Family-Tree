@@ -5,7 +5,7 @@ import org.folg.gedcom.model.Address;
 import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class AddressController extends DetailController {
@@ -33,7 +33,7 @@ public class AddressController extends DetailController {
     @Override
     public void delete() {
         deleteAddress(Memory.getSecondToLastObject());
-        U.updateChangeDate(Memory.firstObject());
+        AppUtils.updateChangeDate(Memory.getLeaderObject());
         Memory.setInstanceAndAllSubsequentToNull(a);
     }
 

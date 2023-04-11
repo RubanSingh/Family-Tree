@@ -7,7 +7,7 @@ import org.folg.gedcom.model.DateTime;
 
 import dna.familytree.DetailController;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 /**
@@ -27,12 +27,12 @@ public class ChangeController extends DetailController {
         DateTime dateTime = c.getDateTime();
         if (dateTime != null) {
             if (dateTime.getValue() != null)
-                U.place(box, getString(R.string.value), dateTime.getValue());
+                AppUtils.place(box, getString(R.string.value), dateTime.getValue());
             if (dateTime.getTime() != null)
-                U.place(box, getString(R.string.time), dateTime.getTime());
+                AppUtils.place(box, getString(R.string.time), dateTime.getTime());
         }
         placeExtensions(c);
-        U.placeNotes(box, c, true);
+        AppUtils.placeNotes(box, c, true);
     }
 
     // Options menu not needed

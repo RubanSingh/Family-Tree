@@ -1098,6 +1098,12 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="AppTheme.Link">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:background">@drawable/link_underline</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+
     <style name="AppTheme.ExpandedAppBar">
         <item name="android:textSize">24sp</item>
     </style>
@@ -1170,4 +1176,15 @@
         <item name="linesColor">@color/diagram_lines_print</item>
     </style>
 
+    <style name="AppTheme.AdAttribution">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:text">@string/ad_attribution</item>
+        <item name="android:background">#FFCC66</item>
+        <item name="android:width">15dp</item>
+        <item name="android:height">15dp</item>
+    </style>
 </resources>

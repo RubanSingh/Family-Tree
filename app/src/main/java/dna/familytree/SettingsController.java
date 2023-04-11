@@ -24,9 +24,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
+import dna.familytree.constant.Extra;
 import dna.familytree.theme.ThemeController;
 import dna.familytree.util.AnalyticsUtil;
-import dna.familytree.util.AppUtils;
+import dna.familytree.util.AppClientUtils;
 import dna.familytree.util.LoggerUtils;
 import dna.familytree.util.MemoryUtil;
 
@@ -45,26 +46,34 @@ public class SettingsController extends BaseController {
         // Themes
         TextView themes = findViewById(R.id.theme);
         themes.setOnClickListener(view -> {
-            Intent intent = new Intent(SettingsController.this, ThemeController.class);
-            startActivity(intent);
+            if (Global.settings.premium) {
+                Intent intent = new Intent(SettingsController.this, ThemeController.class);
+                startActivity(intent);
+            } else {
+                AnalyticsUtil.logEventPremiumAction(SettingsController.this.getFirebaseAnalytics());
+                Intent purchaseIntent = new Intent(this, PurchaseController.class);
+                purchaseIntent.putExtra(Extra.STRING, R.string.theme);
+                startActivity(purchaseIntent);
+                finish();
+            }
         });
 
         // Rate App
         TextView rateApp = findViewById(R.id.rate_app);
         rateApp.setOnClickListener(view -> {
-            AppUtils.rateApp(this,getPackageName());
+            AppClientUtils.rateApp(this, getPackageName());
         });
 
         // Feedback
         TextView feedback = findViewById(R.id.feedback);
         feedback.setOnClickListener(view -> {
-            AppUtils.setFeedback(this);
+            AppClientUtils.setFeedback(this);
         });
 
         // Share App
         TextView share = findViewById(R.id.share);
         share.setOnClickListener(view -> {
-            AppUtils.shareAppLink(this);
+            AppClientUtils.shareAppLink(this);
         });
 
         //dark theme
@@ -99,8 +108,16 @@ public class SettingsController extends BaseController {
         expert.setChecked(Global.settings.expert);
         expert.setOnCheckedChangeListener((widget, active) -> {
             AnalyticsUtil.logEventSettingsExpertMode(getFirebaseAnalytics());
-            Global.settings.expert = active;
-            Global.settings.save();
+            if (Global.settings.premium) {
+                Global.settings.expert = active;
+                Global.settings.save();
+            } else {
+                AnalyticsUtil.logEventPremiumAction(SettingsController.this.getFirebaseAnalytics());
+                Intent purchaseIntent = new Intent(this, PurchaseController.class);
+                purchaseIntent.putExtra(Extra.STRING, R.string.show_advanced_functions);
+                startActivity(purchaseIntent);
+                finish();
+            }
         });
 
         // Language picker

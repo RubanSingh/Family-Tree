@@ -376,6 +376,25 @@
     <string name="feedback">Feedback</string>
     <string name="app_mail">digitalailabs@gmail.com</string>
     <string name="share">Share App</string>
+    <string name="merge_tree">Merge tree</string>
+    <string name="family_tree_premium">Family Tree Premium</string>
+    <string name="update_playstore">Please update Play Store app.</string>
+    <string name="premium_activated">Premium activated.</string>
+    <string name="lifetime">Lifetime</string>
+    <string name="unlock_function">This feature can be unlocked with Family Tree Premium.</string>
+    <string name="choose_output">Choose the destination:</string>
+    <string name="generate_new">Generate a new tree from the two</string>
+    <string name="merge">Merge</string>
+    <string name="merge_into">Merge %2$s into %1$s</string>
+    <string name="merge_complete">Merge completed.</string>
+    <string name="select_tree">Select a tree to merge:</string>
+    <string name="next">Next</string>
+    <string name="are_same_person">Are they the same person?</string>
+    <string name="more_premium">More about Premium</string>
+    <string name="get_premium">Get Premium</string>
+    <string name="gedcom_media_zip">GEDCOM with %d media in a ZIP file</string>
+    <string name="gedcom_only">GEDCOM file only</string>
+    <string name="ad_attribution">Ad</string>
 
     <string-array name="default_theme_names" translatable="false">
         <item>Red</item>

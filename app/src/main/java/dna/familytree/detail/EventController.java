@@ -10,7 +10,7 @@ import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.ProfileFactsFragment;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class EventController extends DetailController {
@@ -26,9 +26,9 @@ public class EventController extends DetailController {
     @Override
     public void format() {
         e = (EventFact)cast(EventFact.class);
-        if (Memory.firstObject() instanceof Family) {
-            getToolbar().setTitle(writeEventTitle((Family)Memory.firstObject(), e));
-            setTitle(writeEventTitle((Family)Memory.firstObject(), e));
+        if (Memory.getLeaderObject() instanceof Family) {
+            getToolbar().setTitle(writeEventTitle((Family)Memory.getLeaderObject(), e));
+            setTitle(writeEventTitle((Family)Memory.getLeaderObject(), e));
         } else {
             getToolbar().setTitle(ProfileFactsFragment.writeEventTitle(e)); // The title includes e.getDisplayType()
             setTitle(ProfileFactsFragment.writeEventTitle(e));
@@ -57,15 +57,15 @@ public class EventController extends DetailController {
         place(getString(R.string.user_id), "Uid", false, false);
         // Other methods are "WwwTag", "EmailTag", "UidTag"
         placeExtensions(e);
-        U.placeNotes(box, e, true);
-        U.placeMedia(box, e, true);
-        U.placeSourceCitations(box, e);
+        AppUtils.placeNotes(box, e, true);
+        AppUtils.placeMedia(box, e, true);
+        AppUtils.placeSourceCitations(box, e);
     }
 
     @Override
     public void delete() {
         ((PersonFamilyCommonContainer)Memory.getSecondToLastObject()).getEventsFacts().remove(e);
-        U.updateChangeDate(Memory.firstObject());
+        AppUtils.updateChangeDate(Memory.getLeaderObject());
         Memory.setInstanceAndAllSubsequentToNull(e);
     }
 

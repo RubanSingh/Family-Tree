@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
@@ -10,8 +11,8 @@ android {
 		applicationId "dna.familytree"
 		minSdkVersion 19
 		targetSdkVersion 33
-		versionCode 1
-		versionName '1.0'
+		versionCode 6
+		versionName '1.5'
 		vectorDrawables.useSupportLibrary = true
 		resConfigs 'ar', 'ckb', 'cs', 'da', 'de', 'en', 'eo', 'es', 'fa', 'fr', 'hr', 'hu', 'in', 'it', 'iw', 'kn', 'mr', 'nb', 'nl', 'pl', 'pt', 'ru', 'sk', 'sl', 'sr', 'ti', 'tr', 'uk', 'zh'
 
@@ -21,6 +22,10 @@ android {
 
 	dexOptions {
 		javaMaxHeapSize "4G"
+	}
+
+	dataBinding {
+		enabled true
 	}
 
 	buildTypes {
@@ -51,11 +56,14 @@ dependencies {
 	implementation 'commons-io:commons-io:2.8.0' // Versions from 2.9.0 to 2.11.0 give NoClassDefFoundError on old devices
 	implementation 'com.google.code.gson:gson:2.10'
 	implementation 'commons-net:commons-net:3.8.0'
-	implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+	implementation 'androidx.lifecycle:lifecycle-process:2.6.1'
 	implementation files('libs/gedcom-1.14.0-SNAPSHOT.jar')
 	implementation files('libs/slf4j-api-1.7.25.jar')
-	implementation 'androidx.work:work-runtime:2.7.1'
+	implementation 'androidx.work:work-runtime:2.8.1'
 	implementation 'androidx.appcompat:appcompat:1.7.0-alpha01'
+
+	implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+
 	implementation 'com.android.installreferrer:installreferrer:2.2'
 	implementation 'com.google.android.material:material:1.8.0'
 	implementation 'com.google.android.flexbox:flexbox:3.0.0'
@@ -79,9 +87,14 @@ dependencies {
 	implementation("com.google.guava:guava:30.1.1-android")
 
 	//firebase analytics,crashlytics,performance
-	implementation platform('com.google.firebase:firebase-bom:28.4.1')
-	implementation 'com.google.firebase:firebase-analytics'
+	implementation platform('com.google.firebase:firebase-bom:31.4.0')
+	implementation 'com.google.firebase:firebase-analytics:21.2.1'
 	implementation 'com.google.firebase:firebase-crashlytics:18.3.6'
 	implementation 'com.google.firebase:firebase-messaging:23.1.2'
 	implementation 'com.google.firebase:firebase-perf'
+
+	//purchase
+	implementation 'com.android.billingclient:billing:5.1.0'
+
+	implementation 'com.google.android.gms:play-services-ads:22.0.0'
 }

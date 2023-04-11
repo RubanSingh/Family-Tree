@@ -35,7 +35,7 @@ import dna.familytree.BaseFragment;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.detail.FamilyController;
 import dna.familytree.util.AnalyticsUtil;
 
@@ -53,7 +53,10 @@ public class FamiliesFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = inflater.inflate(R.layout.scrollview, container, false);
+        showSmallNativeAd(view);
+
         layout = view.findViewById(R.id.scrollview_layout);
+
         if (gc != null) {
             familyList = new ArrayList<>();
             refresh(What.RELOAD);
@@ -63,9 +66,9 @@ public class FamiliesFragment extends BaseFragment {
             view.findViewById(R.id.fab).setOnClickListener(v -> {
                 AnalyticsUtil.logEventAddFamily(getFirebaseAnalytics());
                 Family newFamily = newFamily(true);
-                U.save(true, newFamily);
+                AppUtils.save(true, newFamily);
                 // If the user returns immediately back to this fragment, the new empty family is displayed in the list
-                Memory.setFirst(newFamily);
+                Memory.setLeader(newFamily);
                 startActivity(new Intent(getContext(), FamilyController.class));
             });
         }
@@ -97,15 +100,15 @@ public class FamiliesFragment extends BaseFragment {
         }
         StringBuilder parents = new StringBuilder();
         for (Person husband : wrapper.family.getHusbands(gc))
-            parents.append(U.properName(husband)).append("\n");
+            parents.append(AppUtils.properName(husband)).append("\n");
         for (Person wife : wrapper.family.getWives(gc))
-            parents.append(U.properName(wife)).append("\n");
+            parents.append(AppUtils.properName(wife)).append("\n");
         if (parents.length() > 0)
             parents = new StringBuilder(parents.substring(0, parents.length() - 1)); // Just to remove the final '\n' TODO: does StringBuilder has .trim()?
         ((TextView)familyView.findViewById(R.id.family_parents)).setText(parents.toString());
         StringBuilder children = new StringBuilder();
         for (Person child : wrapper.family.getChildren(gc))
-            children.append(U.properName(child)).append("\n");
+            children.append(AppUtils.properName(child)).append("\n");
         if (children.length() > 0)
             children = new StringBuilder(children.substring(0, children.length() - 1));
         TextView childrenView = familyView.findViewById(R.id.family_children);
@@ -117,7 +120,7 @@ public class FamiliesFragment extends BaseFragment {
         registerForContextMenu(familyView);
         familyView.setOnClickListener(v -> {
             AnalyticsUtil.logEventEditFamily(getFirebaseAnalytics());
-            Memory.setFirst(wrapper.family);
+            Memory.setLeader(wrapper.family);
             layout.getContext().startActivity(new Intent(layout.getContext(), FamilyController.class));
         });
         familyView.setTag(wrapper.id); // For 'Delete' item in the context menu here in FamiliesFragment
@@ -165,12 +168,12 @@ public class FamiliesFragment extends BaseFragment {
         gc.createIndexes(); // Necessary to update persons
         Memory.setInstanceAndAllSubsequentToNull(family);
         Global.familyNum = 0; // In the case that is deleted exactly the family referenced in Global.familyNum
-        U.save(true, members.toArray(new Object[0]));
+        AppUtils.save(true, members.toArray(new Object[0]));
     }
 
     public static Family newFamily(boolean addToGedcom) {
         Family newFamily = new Family();
-        newFamily.setId(U.newID(gc, Family.class));
+        newFamily.setId(AppUtils.newID(gc, Family.class));
         if (addToGedcom)
             gc.addFamily(newFamily);
         return newFamily;
@@ -189,7 +192,7 @@ public class FamiliesFragment extends BaseFragment {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == 0) { // Edit ID
-            U.editId(getContext(), selected, () -> this.refresh(What.UPDATE));
+            AppUtils.editId(getContext(), selected, () -> this.refresh(What.UPDATE));
         } else if (item.getItemId() == 1) { // Delete
             AnalyticsUtil.logEventDeleteFamily(getFirebaseAnalytics());
             if (selected.getHusbandRefs().size() + selected.getWifeRefs().size() + selected.getChildRefs().size() > 0) {
@@ -230,12 +233,12 @@ public class FamiliesFragment extends BaseFragment {
                 switch (order) {
                     case 1: // Sorts by ID
                         if (idsAreNumeric)
-                            return U.extractNum(f1.id) - U.extractNum(f2.id);
+                            return AppUtils.extractNum(f1.id) - AppUtils.extractNum(f2.id);
                         else
                             return f1.id.compareToIgnoreCase(f2.id);
                     case 2:
                         if (idsAreNumeric)
-                            return U.extractNum(f2.id) - U.extractNum(f1.id);
+                            return AppUtils.extractNum(f2.id) - AppUtils.extractNum(f1.id);
                         else
                             return f2.id.compareToIgnoreCase(f1.id);
                     case 3: // Sorts by surname
@@ -261,6 +264,11 @@ public class FamiliesFragment extends BaseFragment {
                 }
                 return 0;
             });
+            // Updates families sorting in global GEDCOM
+            List<Family> sortedFamilies = new ArrayList<>();
+            for (FamilyWrapper wrapper : familyList) sortedFamilies.add(wrapper.family);
+            gc.setFamilies(sortedFamilies);
+            //AppUtils.saveJson(gc, Global.settings.openTree); // Immediately saves families sorting
         }
     }
 
@@ -301,11 +309,11 @@ public class FamiliesFragment extends BaseFragment {
          */
         private String familySurname(boolean lowerCase) {
             if (!family.getHusbands(gc).isEmpty())
-                return U.surname(family.getHusbands(gc).get(0), lowerCase);
+                return AppUtils.surname(family.getHusbands(gc).get(0), lowerCase);
             if (!family.getWives(gc).isEmpty())
-                return U.surname(family.getWives(gc).get(0), lowerCase);
+                return AppUtils.surname(family.getWives(gc).get(0), lowerCase);
             if (!family.getChildren(gc).isEmpty())
-                return U.surname(family.getChildren(gc).get(0), lowerCase);
+                return AppUtils.surname(family.getChildren(gc).get(0), lowerCase);
             return null;
         }
 
@@ -338,7 +346,6 @@ public class FamiliesFragment extends BaseFragment {
                 order = id * 2 - 1;
             sortFamilies();
             refresh(What.BASIC);
-            //U.saveJson(false); // Saves the sorting of families
             return true;
         }
         return false;

@@ -73,6 +73,9 @@ public abstract class AnalyticsUtil {
     private static final String EVENT_PERSONS_SORT_AGE_NAME = "PersonSortAge";
     private static final String EVENT_PERSONS_SORT_RELATIVES_ID = "persons_sort_relatives";
     private static final String EVENT_PERSONS_SORT_RELATIVES_NAME = "PersonSortRelatives";
+
+    private static final String EVENT_PURCHASE_COMPLETED_ID = "purchase_completed";
+    private static final String EVENT_PURCHASE_COMPLETED_NAME = "PurchaseCompleted";
     private static final String EVENT_FAMILY_DELETE_ID = "family_delete";
     private static final String EVENT_FAMILY_DELETE_NAME = "FamilyDelete";
     private static final String EVENT_FAMILY_EDIT_ID = "family_edit";
@@ -103,6 +106,12 @@ public abstract class AnalyticsUtil {
 
     private static final String EVENT_CHANGE_DARK_THEME_ID = "change_dark_theme";
     private static final String EVENT_CHANGE_DARK_THEME_NAME = "ChangeDarkTheme";
+
+    private static final String EVENT_PREMIUM_ID = "action_premium";
+    private static final String EVENT_PREMIUM_NAME = "ActionPremium";
+
+    private static final String EVENT_MERGE_TREE_ID = "merge_tree";
+    private static final String EVENT_MERGE_TREE_NAME = "MergeTree";
 
     private static final String EVENT_FEEDBACK_ID = "settings_feedback";
     private static final String EVENT_FEEDBACK_NAME = "SettingsFeedback";
@@ -540,9 +549,16 @@ public abstract class AnalyticsUtil {
      * Log Event SortRelatives.
      */
     public static void logEventSortRelatives(FirebaseAnalytics firebaseAnalytics) {
+
+    }
+
+    /**
+     * Log Event Purchase Completion.
+     */
+    public static void logEventSortPurchaseCompleted(FirebaseAnalytics firebaseAnalytics) {
         Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, EVENT_PERSONS_SORT_RELATIVES_ID);
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, EVENT_PERSONS_SORT_RELATIVES_NAME);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, EVENT_PURCHASE_COMPLETED_ID);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, EVENT_PURCHASE_COMPLETED_NAME);
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
     }
 
@@ -1067,6 +1083,20 @@ public abstract class AnalyticsUtil {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, EVENT_CHANGE_DARK_THEME_ID);
         bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, EVENT_CHANGE_DARK_THEME_NAME);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+    }
+
+    public static void logEventPremiumAction(FirebaseAnalytics firebaseAnalytics) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, EVENT_PREMIUM_ID);
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, EVENT_PREMIUM_NAME);
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+    }
+
+    public static void logEventMergeTree(FirebaseAnalytics firebaseAnalytics) {
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, EVENT_MERGE_TREE_ID);
+        bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, EVENT_MERGE_TREE_NAME);
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
     }
 

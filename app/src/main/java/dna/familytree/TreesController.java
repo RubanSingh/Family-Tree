@@ -47,8 +47,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dna.familytree.constant.Code;
+import dna.familytree.merge.MergeController;
+import dna.familytree.constant.Extra;
 import dna.familytree.share.SharingController;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.FileUtils;
 import dna.familytree.util.LoggerUtils;
 import dna.familytree.util.MemoryUtil;
 import dna.familytree.visitor.MediaList;
@@ -69,6 +73,7 @@ public class TreesController extends BaseController {
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
         setContentView(R.layout.trees);
+        showNativeAd();
         ListView listView = findViewById(R.id.trees_list);
         progress = findViewById(R.id.trees_progress);
         welcome = new SpeechBubble(this, R.string.tap_add_tree);
@@ -110,9 +115,9 @@ public class TreesController extends BaseController {
                     View treeView = super.getView(position, convertView, parent);
                     int treeId = Integer.parseInt(treeList.get(position).get("id"));
                     Settings.Tree tree = Global.settings.getTree(treeId);
-                    boolean derivato = tree.grade == 20;
-                    boolean esaurito = tree.grade == 30;
-                    if (derivato) {
+                    boolean derived = tree.grade == 20;
+                    boolean exhausted = tree.grade == 30;
+                    if (derived) {
                         treeView.setBackgroundColor(getResources().getColor(R.color.accent_medium));
                         ((TextView)treeView.findViewById(R.id.albero_dati)).setTextColor(getResources().getColor(R.color.text));
                         treeView.setOnClickListener(v -> {
@@ -123,7 +128,7 @@ public class TreesController extends BaseController {
                                 Toast.makeText(TreesController.this, R.string.something_wrong, Toast.LENGTH_LONG).show();
                             }
                         });
-                    } else if (esaurito) {
+                    } else if (exhausted) {
                         treeView.setBackgroundColor(getResources().getColor(R.color.consumed));
                         ((TextView)treeView.findViewById(R.id.albero_titolo)).setTextColor(getResources().getColor(R.color.gray_text));
                         treeView.setOnClickListener(v -> {
@@ -148,36 +153,38 @@ public class TreesController extends BaseController {
                         });
                     }
                     treeView.findViewById(R.id.albero_menu).setOnClickListener(vista -> {
-                        boolean esiste = new File(getFilesDir(), treeId + ".json").exists();
+                        boolean exists = new File(getFilesDir(), treeId + ".json").exists();
                         PopupMenu popup = new PopupMenu(TreesController.this, vista);
                         Menu menu = popup.getMenu();
                         if (treeId == Global.settings.openTree && Global.shouldSave)
                             menu.add(0, -1, 0, R.string.save);
-                        if ((Global.settings.expert && derivato) || (Global.settings.expert && esaurito))
+                        if ((Global.settings.expert && derived) || (Global.settings.expert && exhausted))
                             menu.add(0, 0, 0, R.string.open);
-                        if (!esaurito || Global.settings.expert)
+                        if (!exhausted || Global.settings.expert)
                             menu.add(0, 1, 0, R.string.tree_info);
-                        if ((!derivato && !esaurito) || Global.settings.expert)
+                        if ((!derived && !exhausted) || Global.settings.expert)
                             menu.add(0, 2, 0, R.string.rename);
-                        if (esiste && (!derivato || Global.settings.expert) && !esaurito)
+                        if (exists && (!derived || Global.settings.expert) && !exhausted)
                             menu.add(0, 3, 0, R.string.media_folders);
-                        if (!esaurito)
+                        if (!exhausted)
                             menu.add(0, 4, 0, R.string.find_errors);
-                        if (esiste && !derivato && !esaurito) // non si può ri-condividere un albero ricevuto indietro, anche se sei esperto..
+                        if (exists && !derived && !exhausted) // non si può ri-condividere un albero ricevuto indietro, anche se sei esperto..
                             menu.add(0, 5, 0, R.string.share_tree);
-                        if (esiste && !derivato && !esaurito && Global.settings.expert && Global.settings.trees.size() > 1
+                        if (exists && !derived && !exhausted && /*Global.settings.expert &&*/ Global.settings.trees.size() > 1)
+                            menu.add(0, 6, 0, R.string.merge_tree);
+                        if (exists && !derived && !exhausted && Global.settings.expert && Global.settings.trees.size() > 1
                                 && tree.shares != null && tree.grade != 0) // cioè dev'essere 9 o 10
-                            menu.add(0, 6, 0, R.string.compare);
-                        if (esiste && Global.settings.expert && !esaurito)
-                            menu.add(0, 7, 0, R.string.export_gedcom);
-                        if (esiste && Global.settings.expert)
-                            menu.add(0, 8, 0, R.string.make_backup);
-                        menu.add(0, 9, 0, R.string.delete);
+                            menu.add(0, 7, 0, R.string.compare);
+                        if (exists && Global.settings.expert && !exhausted)
+                            menu.add(0, 8, 0, R.string.export_gedcom);
+                        if (exists && Global.settings.expert)
+                            menu.add(0, 9, 0, R.string.make_backup);
+                        menu.add(0, 10, 0, R.string.delete);
                         popup.show();
                         popup.setOnMenuItemClickListener(item -> {
                             int id = item.getItemId();
                             if (id == -1) { // Salva
-                                U.saveJson(Global.gc, treeId);
+                                AppUtils.saveJson(Global.gc, treeId);
                                 Global.shouldSave = false;
                             } else if (id == 0) { // Apre un albero derivato
                                 openGedcom(treeId, true);
@@ -185,7 +192,7 @@ public class TreesController extends BaseController {
                             } else if (id == 1) { // Info Gedcom
                                 AnalyticsUtil.logEventInfoTree(getFirebaseAnalytics());
                                 Intent intent = new Intent(TreesController.this, InfoController.class);
-                                intent.putExtra("idAlbero", treeId);
+                                intent.putExtra(Extra.TREE_ID, treeId);
                                 startActivity(intent);
                             } else if (id == 2) { // Rinomina albero
                                 AnalyticsUtil.logEventRenameTree(getFirebaseAnalytics());
@@ -213,40 +220,57 @@ public class TreesController extends BaseController {
                             } else if (id == 3) { // Media folders
                                 AnalyticsUtil.logEventMediaFolders(getFirebaseAnalytics());
                                 startActivity(new Intent(TreesController.this, MediaFoldersController.class)
-                                        .putExtra("idAlbero", treeId)
+                                        .putExtra(Extra.TREE_ID, treeId)
                                 );
-                            } else if (id == 4) { // Correggi errori
+                            } else if (id == 4) { // Find errors
                                 AnalyticsUtil.logEventFindErrors(getFirebaseAnalytics());
                                 findErrors(treeId, false);
-                            } else if (id == 5) { // Condividi albero
+                            } else if (id == 5) { // Share tree
                                 AnalyticsUtil.logEventShareTree(getFirebaseAnalytics());
                                 startActivity(new Intent(TreesController.this, SharingController.class)
-                                        .putExtra("idAlbero", treeId)
+                                        .putExtra(Extra.TREE_ID, treeId)
                                 );
-                            } else if (id == 6) { // Confronta con alberi esistenti
+                            } else if (id == 6) { // Merge with another tree
+                                AnalyticsUtil.logEventMergeTree(TreesController.this.getFirebaseAnalytics());
+                                startActivity(new Intent(TreesController.this, MergeController.class)
+                                        .putExtra(Extra.TREE_ID, treeId));
+                            } else if (id == 7) { // Compare with existing trees
                                 if (NewTreeController.confronta(TreesController.this, tree, false)) {
                                     tree.grade = 20;
                                     aggiornaLista();
                                 } else
                                     Toast.makeText(TreesController.this, R.string.no_results, Toast.LENGTH_LONG).show();
-                            } else if (id == 7) { // Esporta Gedcom
+                            } else if (id == 8) { // Export GEDCOM
                                 AnalyticsUtil.logEventExportTree(getFirebaseAnalytics());
                                 if (exporter.openTree(treeId)) {
-                                    String mime = "application/octet-stream";
-                                    String ext = "ged";
-                                    int code = 636;
-                                    if (exporter.numMediaFilesToAttach() > 0) {
-                                        mime = "application/zip";
-                                        ext = "zip";
-                                        code = 6219;
+                                    final String[] mime = {"application/octet-stream"};
+                                    final String[] ext = {"ged"};
+                                    final int[] code = {Code.GEDCOM_FILE};
+
+                                    int totMedia = exporter.countMediaFilesToAttach();
+                                    if (totMedia > 0) {
+                                        String[] choices = {getString(R.string.gedcom_media_zip, totMedia),
+                                                getString(R.string.gedcom_only)};
+                                        new MaterialAlertDialogBuilder(TreesController.this)
+                                                .setTitle(R.string.export_gedcom)
+                                                .setSingleChoiceItems(choices, -1, (dialog, selected) -> {
+                                                    if (selected == 0) {
+                                                        mime[0] = "application/zip";
+                                                        ext[0] = "zip";
+                                                        code[0] = Code.ZIPPED_GEDCOM_FILE;
+                                                    }
+                                                    FileUtils.saveDocument(TreesController.this, null, treeId, mime[0], ext[0], code[0]);
+                                                    dialog.dismiss();
+                                                }).show();
+                                    } else {
+                                        FileUtils.saveDocument(TreesController.this, null, treeId, mime[0], ext[0], code[0]);
                                     }
-                                    F.saveDocument(TreesController.this, null, treeId, mime, ext, code);
                                 }
-                            } else if (id == 8) { // Fai backup
+                            } else if (id == 9) { // Export ZIP backup
                                 AnalyticsUtil.logEventBackupTree(getFirebaseAnalytics());
                                 if (exporter.openTree(treeId))
-                                    F.saveDocument(TreesController.this, null, treeId, "application/zip", "zip", 327);
-                            } else if (id == 9) {    // Elimina albero
+                                    FileUtils.saveDocument(TreesController.this, null, treeId, "application/zip", "zip", Code.ZIP_BACKUP);
+                            } else if (id == 10) {    // Delete tree
                                 AnalyticsUtil.logEventDeleteTree(getFirebaseAnalytics());
                                 new MaterialAlertDialogBuilder(TreesController.this).setMessage(R.string.really_delete_tree)
                                         .setPositiveButton(R.string.delete, (dialog, id1) -> {
@@ -278,7 +302,7 @@ public class TreesController extends BaseController {
 
         // Automatic load of last opened tree of previous session
         if (!birthdayNotifyTapped(getIntent()) && !autoOpenedTree
-                && getIntent().getBooleanExtra("apriAlberoAutomaticamente", false) && Global.settings.openTree > 0) {
+                && getIntent().getBooleanExtra(Extra.AUTO_LOAD_TREE, false) && Global.settings.openTree > 0) {
             listView.post(() -> {
                 if (openGedcom(Global.settings.openTree, false)) {
                     progress.setVisibility(View.VISIBLE);
@@ -308,6 +332,16 @@ public class TreesController extends BaseController {
                     AnalyticsUtil.logEventDarkTheme(TreesController.this.getFirebaseAnalytics());
                 }
         );
+
+        //premium mode
+        treesBar.findViewById(R.id.trees_premium).setOnClickListener(v -> {
+                    AnalyticsUtil.logEventPremiumAction(TreesController.this.getFirebaseAnalytics());
+                    Intent purchaseIntent = new Intent(this, PurchaseController.class);
+                    purchaseIntent.putExtra(Extra.STRING, R.string.family_tree_premium);
+                    startActivity(purchaseIntent);
+                }
+        );
+
         bar.addView(treesBar);
         setSupportActionBar(bar);
     }
@@ -395,7 +429,7 @@ public class TreesController extends BaseController {
                             irc.endConnection();
                         } catch (Exception e) {
                             LoggerUtils.ErrorLog(TAG, "Exception in recuperaReferrer", e);
-                            U.toast(TreesController.this, e.getLocalizedMessage());
+                            AppUtils.toast(TreesController.this, e.getLocalizedMessage());
                         }
                         break;
                     // App Play Store inesistente sul device o comunque risponde in modo errato
@@ -411,7 +445,7 @@ public class TreesController extends BaseController {
             @Override
             public void onInstallReferrerServiceDisconnected() {
                 // Mai visto comparire
-                U.toast(TreesController.this, "Install Referrer Service Disconnected");
+                AppUtils.toast(TreesController.this, "Install Referrer Service Disconnected");
             }
         });
     }
@@ -473,7 +507,7 @@ public class TreesController extends BaseController {
     }
 
     // Read the Json and return a Gedcom
-    static Gedcom readJson(int treeId) {
+    public static Gedcom readJson(int treeId) {
         Gedcom gedcom;
         File file = new File(Global.context.getFilesDir(), treeId + ".json");
         StringBuilder text = new StringBuilder();
@@ -540,12 +574,11 @@ public class TreesController extends BaseController {
         if (resultCode == AppCompatActivity.RESULT_OK) {
             Uri uri = data.getData();
             boolean result = false;
-            if (requestCode == 636) { // Esporta il GEDCOM
+            if (requestCode == Code.GEDCOM_FILE) { // Export GEDCOM file only
                 result = exporter.exportGedcom(uri);
-            } else if (requestCode == 6219) { // Esporta il GEDCOM zippato coi media
+            } else if (requestCode == Code.ZIPPED_GEDCOM_FILE) { // Export GEDCOM with media in a ZIP file
                 result = exporter.exportGedcomToZip(uri);
-            } // Esporta il backup ZIP
-            else if (requestCode == 327) {
+            } else if (requestCode == Code.ZIP_BACKUP) { // Export ZIP backup
                 result = exporter.exportZipBackup(null, -1, uri);
             }
             if (result)
@@ -570,7 +603,7 @@ public class TreesController extends BaseController {
         if (albero.root != null && radica == null) {
             if (!gc.getPeople().isEmpty()) {
                 if (correct) {
-                    albero.root = U.trovaRadice(gc);
+                    albero.root = AppUtils.trovaRadice(gc);
                     Global.settings.save();
                 } else errors++;
             } else { // albero senza persone
@@ -583,7 +616,7 @@ public class TreesController extends BaseController {
         // Oppure non è indicata una radice in preferenze pur essendoci persone nell'albero
         if (radica == null && !gc.getPeople().isEmpty()) {
             if (correct) {
-                albero.root = U.trovaRadice(gc);
+                albero.root = AppUtils.trovaRadice(gc);
                 Global.settings.save();
             } else errors++;
         }
@@ -852,7 +885,7 @@ public class TreesController extends BaseController {
                 dialog.setPositiveButton(R.string.correct, (dialogo, i) -> {
                     dialogo.cancel();
                     Gedcom gcCorretto = findErrors(treeId, true);
-                    U.saveJson(gcCorretto, treeId);
+                    AppUtils.saveJson(gcCorretto, treeId);
                     Global.gc = null; // così se era aperto poi lo ricarica corretto
                     findErrors(treeId, false);    // riapre per ammirere il risultato
                     aggiornaLista();

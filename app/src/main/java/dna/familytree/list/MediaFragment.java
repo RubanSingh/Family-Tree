@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageConstant;
 
 import org.folg.gedcom.model.Media;
 import org.folg.gedcom.model.MediaContainer;
@@ -29,12 +29,14 @@ import java.util.Iterator;
 import java.util.Set;
 
 import dna.familytree.BaseFragment;
-import dna.familytree.F;
+import dna.familytree.constant.Extra;
+import dna.familytree.cropper.CropImage;
+import dna.familytree.util.FileUtils;
 import dna.familytree.Global;
 import dna.familytree.MediaFoldersController;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.visitor.FindStack;
@@ -65,7 +67,7 @@ public class MediaFragment extends BaseFragment {
             recyclerView.setAdapter(adapter);
             view.findViewById(R.id.fab).setOnClickListener(v -> {
                 AnalyticsUtil.logEventAddMedia(getFirebaseAnalytics());
-                F.displayImageCaptureDialog(getContext(), MediaFragment.this, 4546, null);
+                FileUtils.displayImageCaptureDialog(getContext(), MediaFragment.this, 4546, null);
             });
         }
         return view;
@@ -97,7 +99,7 @@ public class MediaFragment extends BaseFragment {
 
     public static Media newMedia(Object container) {
         Media media = new Media();
-        media.setId(U.newID(gc, Media.class));
+        media.setId(AppUtils.newID(gc, Media.class));
         media.setFileTag("FILE"); // Necessary to then export the GEDCOM
         gc.addMedia(media);
         if (container != null) {
@@ -141,8 +143,8 @@ public class MediaFragment extends BaseFragment {
             if (container.getMedia().isEmpty())
                 container.setMedia(null);
             leaders = new HashSet<>(); // Set with only one leader object
-            leaders.add(Memory.firstObject());
-            Memory.clearStackAndRemove(); // Deletes the stack just created
+            leaders.add(Memory.getLeaderObject());
+            Memory.stepBack(); // Deletes the stack just created
         }
         Memory.setInstanceAndAllSubsequentToNull(media);
         if (view != null)
@@ -158,15 +160,15 @@ public class MediaFragment extends BaseFragment {
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 4546) { // File taken from the supplier app is saved in the Media and possibly cropped
                 Media media = newMedia(null);
-                if (F.proposeCropping(getContext(), this, data, media)) { // Checks if it is an image (therefore it can be cropped)
-                    U.save(false, media);
+                if (FileUtils.proposeCropping(getContext(), this, data, media)) { // Checks if it is an image (therefore it can be cropped)
+                    AppUtils.save(false, media);
                     // onRestart() + recreate() must not be triggered otherwise the arrival fragment will be no longer the same
                     return;
                 }
             } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-                F.endImageCropping(data);
+                FileUtils.endImageCropping(data);
             }
-            U.save(true, Global.croppedMedia);
+            AppUtils.save(true, Global.croppedMedia);
         } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) // If user clicks the back arrow in CropImage
             Global.edited = true;
     }
@@ -186,7 +188,7 @@ public class MediaFragment extends BaseFragment {
             AnalyticsUtil.logEventDeleteMedia(getFirebaseAnalytics());
             Object[] modified = deleteMedia(media, null);
             recreate();
-            U.save(false, modified);
+            AppUtils.save(false, modified);
             return true;
         }
         return false;
@@ -202,7 +204,7 @@ public class MediaFragment extends BaseFragment {
         if (item.getItemId() == 0) {
             AnalyticsUtil.logEventEditMedia(getFirebaseAnalytics());
             startActivity(new Intent(getContext(), MediaFoldersController.class)
-                    .putExtra("idAlbero", Global.settings.openTree)
+                    .putExtra(Extra.TREE_ID, Global.settings.openTree)
             );
             return true;
         }
@@ -211,7 +213,7 @@ public class MediaFragment extends BaseFragment {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permission, @NonNull int[] grantResults) {
-        F.permissionsResult(getContext(), this, requestCode, permission, grantResults, null);
+        FileUtils.permissionsResult(getContext(), this, requestCode, permission, grantResults, null);
     }
 
     @Override

@@ -10,7 +10,6 @@ import androidx.cardview.widget.CardView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
-import org.apache.commons.io.FileUtils;
 import org.folg.gedcom.model.ChildRef;
 import org.folg.gedcom.model.Family;
 import org.folg.gedcom.model.Media;
@@ -28,12 +27,12 @@ import java.io.File;
 import java.io.IOException;
 
 import dna.familytree.BaseController;
-import dna.familytree.F;
+import dna.familytree.util.FileUtils;
 import dna.familytree.Global;
 import dna.familytree.R;
 import dna.familytree.Settings;
 import dna.familytree.TreesController;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.visitor.ListOfSourceCitations;
 import dna.familytree.visitor.MediaContainers;
@@ -153,7 +152,7 @@ public class ConfirmationController extends BaseController {
                         }
                     }
                 }
-                if (changed) U.saveJson(Global.gc2, Global.treeId2);
+                if (changed) AppUtils.saveJson(Global.gc2, Global.treeId2);
 
                 // Regular addition / replacement / deletion of records from tree2 to tree
                 for (Comparison.Front front : Comparison.getList()) {
@@ -213,7 +212,7 @@ public class ConfirmationController extends BaseController {
                             }
                     }
                 }
-                U.saveJson(Global.gc, Global.settings.openTree);
+                AppUtils.saveJson(Global.gc, Global.settings.openTree);
 
                 // If all updates are imported proposes to delete the shared tree
                 boolean allOk = true;
@@ -256,8 +255,8 @@ public class ConfirmationController extends BaseController {
      * Returns the highest ID of a certain class taking in count old and new tree.
      */
     String maxId(Class aClass) {
-        String id = U.newID(Global.gc, aClass); // New ID against old tree records
-        String id2 = U.newID(Global.gc2, aClass); // and against new tree
+        String id = AppUtils.newID(Global.gc, aClass); // New ID against old tree records
+        String id2 = AppUtils.newID(Global.gc2, aClass); // and against new tree
         if (Integer.parseInt(id.substring(1)) > Integer.parseInt(id2.substring(1))) // Removes the initial letter
             return id;
         else
@@ -277,7 +276,7 @@ public class ConfirmationController extends BaseController {
     }
 
     void copyFiles(Media media) {
-        String origin = F.mediaPath(Global.treeId2, media);
+        String origin = FileUtils.mediaPath(Global.treeId2, media);
         if (origin != null) {
             File originFile = new File(origin);
             File externalDir = getExternalFilesDir(String.valueOf(Global.settings.openTree));
@@ -289,9 +288,9 @@ public class ConfirmationController extends BaseController {
                 // Then use the already existing file
                 media.setFile(twinFile.getAbsolutePath());
             } else { // Otherwise copies the new file
-                File destinationFile = F.nextAvailableFileName(externalDir.getAbsolutePath(), fileName);
+                File destinationFile = FileUtils.nextAvailableFileName(externalDir.getAbsolutePath(), fileName);
                 try {
-                    FileUtils.copyFile(originFile, destinationFile);
+                    org.apache.commons.io.FileUtils.copyFile(originFile, destinationFile);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

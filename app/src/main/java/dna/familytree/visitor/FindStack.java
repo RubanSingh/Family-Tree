@@ -47,7 +47,7 @@ public class FindStack extends Visitor {
             step.object = object;
             step.tag = tag;
             if (!isLeader)
-                step.clearStackOnBackPressed = true; // Marks it to delete when onBackPressed()
+                step.deleteOnBackPressed = true; // Marks it to delete when onBackPressed()
             stack.add(step);
         }
         if (object.equals(target)) {

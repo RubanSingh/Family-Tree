@@ -5,7 +5,7 @@ import org.folg.gedcom.model.Submitter;
 import dna.familytree.DetailController;
 import dna.familytree.list.SubmittersFragment;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class SubmitterController extends DetailController {
@@ -28,7 +28,7 @@ public class SubmitterController extends DetailController {
         place(getString(R.string.language), "Language");
         place(getString(R.string.rin), "Rin", false, false);
         placeExtensions(a);
-        U.placeChangeDate(box, a.getChange());
+        AppUtils.placeChangeDate(box, a.getChange());
     }
 
     @Override

@@ -16,6 +16,9 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <!--For apps targeting Android 13 or higher & GMA SDK version 20.3.0 or lower -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
     <application
         android:name="dna.familytree.Global"
         android:allowBackup="true"
@@ -45,12 +48,16 @@
         </service>
 
         <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-xxxxxxxxxxxxxx~xxxxxxxxx"/>
+
+        <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"
             tools:replace="android:value" />
 
         <activity
-            android:name="dna.familytree.LauncherActivity"
+            android:name="dna.familytree.LauncherController"
             android:exported="true"
             android:noHistory="true"
             android:theme="@style/SplashTheme">
@@ -58,24 +65,6 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- <intent-filter>
-                 <action android:name="android.intent.action.VIEW" />
-                 <category android:name="android.intent.category.BROWSABLE" />
-                 <category android:name="android.intent.category.DEFAULT" />
-                 <data
-                     android:host="www.familygem.app"
-                     android:path="/share.php"
-                     android:scheme="https" />
-             </intent-filter>-->
-            <!--<intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data
-                    android:host="www.familygem.app"
-                    android:pathPattern="/condivisi/.*.zip"
-                    android:scheme="https" />
-            </intent-filter>-->
         </activity>
         <activity
             android:name="dna.familytree.TreesController"
@@ -109,6 +98,10 @@
             android:name="dna.familytree.share.SharingController"
             android:label="@string/share_tree"
             android:parentActivityName="dna.familytree.TreesController" />
+        <activity
+            android:name=".merge.MergeController"
+            android:label="@string/merge_tree"
+            android:parentActivityName=".TreesController" />
         <activity
             android:name="dna.familytree.share.CompareController"
             android:label="@string/tree_with_news"
@@ -146,8 +139,8 @@
             android:parentActivityName="dna.familytree.detail.MediaController"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="dna.familytree.PersonEditorController" />
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
-
+        <activity android:name=".cropper.CropImageController" />
+        <activity android:name=".PurchaseController" />
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"

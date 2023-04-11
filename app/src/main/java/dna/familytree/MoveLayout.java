@@ -228,7 +228,7 @@ public class MoveLayout extends FrameLayout {
 	protected void onDraw(Canvas canvas) {
 		// Pass the max possible size of a bitmap to the graph, so it can distribute lines in groups
 		if( graph.needMaxBitmapSize() ) {
-			graph.setMaxBitmapSize(U.pxToDp(canvas.getMaximumBitmapWidth()) // 4096 on my old physical devices, 16384 on the new ones
+			graph.setMaxBitmapSize(AppUtils.pxToDp(canvas.getMaximumBitmapWidth()) // 4096 on my old physical devices, 16384 on the new ones
 					- 10); // The space actually occupied by a path is a little bit larger
 		}
 	}

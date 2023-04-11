@@ -48,7 +48,7 @@ import java.util.TimerTask;
 
 import dna.familytree.BaseFragment;
 import dna.familytree.DiagramFragment;
-import dna.familytree.F;
+import dna.familytree.util.FileUtils;
 import dna.familytree.GedcomDateConverter;
 import dna.familytree.Global;
 import dna.familytree.Memory;
@@ -56,7 +56,7 @@ import dna.familytree.PersonEditorController;
 import dna.familytree.ProfileController;
 import dna.familytree.ProfileFactsFragment;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.constant.Format;
 import dna.familytree.constant.Gender;
@@ -92,6 +92,7 @@ public class PersonsFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = inflater.inflate(R.layout.recycler_view, container, false);
+        showSmallNativeAd(view);
         if (gc != null) {
             establishPeople();
             RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
@@ -109,7 +110,7 @@ public class PersonsFragment extends BaseFragment {
             StateListDrawable thumbDrawable = (StateListDrawable)ContextCompat.getDrawable(getContext(), R.drawable.scroll_thumb);
             Drawable lineDrawable = ContextCompat.getDrawable(getContext(), R.drawable.empty);
             new FastScrollerEx(recyclerView, thumbDrawable, lineDrawable, thumbDrawable, lineDrawable,
-                    U.dpToPx(40), U.dpToPx(100), 0, true, U.dpToPx(80));
+                    AppUtils.dpToPx(40), AppUtils.dpToPx(100), 0, true, AppUtils.dpToPx(80));
         }
         return view;
     }
@@ -178,7 +179,7 @@ public class PersonsFragment extends BaseFragment {
             if (order == Order.ID_ASC || order == Order.ID_DESC)
                 label = person.getId();
             else if (order == Order.SURNAME_ASC || order == Order.SURNAME_DESC)
-                label = U.surname(person);
+                label = AppUtils.surname(person);
             else if (order == Order.KIN_ASC || order == Order.KIN_DESC)
                 label = String.valueOf(selectedPeople.get(position).relatives);
             TextView infoView = indiView.findViewById(R.id.person_info);
@@ -191,12 +192,12 @@ public class PersonsFragment extends BaseFragment {
             }
 
             TextView nameView = indiView.findViewById(R.id.person_name);
-            String name = U.properName(person);
+            String name = AppUtils.properName(person);
             nameView.setText(name);
             nameView.setVisibility((name.isEmpty() && label != null) ? View.GONE : View.VISIBLE);
 
             TextView titleView = indiView.findViewById(R.id.person_title);
-            String title = U.titolo(person);
+            String title = AppUtils.titolo(person);
             if (title.isEmpty())
                 titleView.setVisibility(View.GONE);
             else {
@@ -218,9 +219,9 @@ public class PersonsFragment extends BaseFragment {
             indiView.findViewById(R.id.person_border).setBackgroundResource(border);
             ShapeableImageView shapeableImageView = indiView.findViewById(R.id.person_image);
 
-            U.details(person, indiView.findViewById(R.id.person_details));
-            F.showMainImageForPerson(Global.gc, person, shapeableImageView);
-            indiView.findViewById(R.id.person_mourning).setVisibility(U.isDead(person) ? View.VISIBLE : View.GONE);
+            AppUtils.details(person, indiView.findViewById(R.id.person_details));
+            FileUtils.showMainImageForPerson(Global.gc, person, shapeableImageView);
+            indiView.findViewById(R.id.person_mourning).setVisibility(AppUtils.isDead(person) ? View.VISIBLE : View.GONE);
         }
 
         @Override
@@ -320,7 +321,7 @@ public class PersonsFragment extends BaseFragment {
                 getActivity().setResult(AppCompatActivity.RESULT_OK, intent);
                 getActivity().finish();
             } else { // Normal link to the profile
-                Memory.setFirst(relative);
+                Memory.setLeader(relative);
                 startActivity(new Intent(getContext(), ProfileController.class));
             }
         }
@@ -362,12 +363,12 @@ public class PersonsFragment extends BaseFragment {
             switch (order) {
                 case ID_ASC: // Sort for GEDCOM ID
                     if (idsAreNumeric)
-                        return U.extractNum(p1.getId()) - U.extractNum(p2.getId());
+                        return AppUtils.extractNum(p1.getId()) - AppUtils.extractNum(p2.getId());
                     else
                         return p1.getId().compareToIgnoreCase(p2.getId());
                 case ID_DESC:
                     if (idsAreNumeric)
-                        return U.extractNum(p2.getId()) - U.extractNum(p1.getId());
+                        return AppUtils.extractNum(p2.getId()) - AppUtils.extractNum(p1.getId());
                     else
                         return p2.getId().compareToIgnoreCase(p1.getId());
                 case SURNAME_ASC: // Sort for surname
@@ -516,7 +517,7 @@ public class PersonsFragment extends BaseFragment {
             // Write one string concatenating all names and personal events
             text = "";
             for (Name name : person.getNames()) {
-                text += U.firstAndLastName(name, " ") + " ";
+                text += AppUtils.firstAndLastName(name, " ") + " ";
             }
             for (EventFact event : person.getEventsFacts()) {
                 if (!("SEX".equals(event.getTag()) || "Y".equals(event.getValue()))) // Sex and 'Yes' excluded
@@ -556,7 +557,7 @@ public class PersonsFragment extends BaseFragment {
                 // If the person is still alive the end is now
                 LocalDate now = LocalDate.now();
                 if (end == null && startDate.isBefore(now)
-                        && Years.yearsBetween(startDate, now).getYears() <= 120 && !U.isDead(person)) {
+                        && Years.yearsBetween(startDate, now).getYears() <= 120 && !AppUtils.isDead(person)) {
                     end = new GedcomDateConverter(now.toDate());
                 }
                 if (end != null && end.isSingleKind() && !end.data1.isFormat(Format.D_M)) {
@@ -646,12 +647,12 @@ public class PersonsFragment extends BaseFragment {
         int id = item.getItemId();
         if (id == 0) {    // Apri Diagramma
             AnalyticsUtil.logEventOpenDiagram(getFirebaseAnalytics());
-            U.askWhichParentsToShow(getContext(), gc.getPerson(indiId), 1);
+            AppUtils.askWhichParentsToShow(getContext(), gc.getPerson(indiId), 1);
         } else if (id == 1) { // Famiglia come figlio
             AnalyticsUtil.logEventOpenFamily(getFirebaseAnalytics());
-            U.askWhichParentsToShow(getContext(), gc.getPerson(indiId), 2);
+            AppUtils.askWhichParentsToShow(getContext(), gc.getPerson(indiId), 2);
         } else if (id == 2) { // Famiglia come coniuge
-            U.askWhichSpouceToShow(getContext(), gc.getPerson(indiId), null);
+            AppUtils.askWhichSpouceToShow(getContext(), gc.getPerson(indiId), null);
         } else if (id == 3) { // Modifica
             AnalyticsUtil.logEventPersonEditProfile(getFirebaseAnalytics());
             Intent intent = new Intent(getContext(), PersonEditorController.class);
@@ -659,7 +660,7 @@ public class PersonsFragment extends BaseFragment {
             startActivity(intent);
         } else if (id == 4) { // Edit ID
             AnalyticsUtil.logEventPersonEditIdProfile(getFirebaseAnalytics());
-            U.editId(getContext(), gc.getPerson(indiId), adapter::notifyDataSetChanged);
+            AppUtils.editId(getContext(), gc.getPerson(indiId), adapter::notifyDataSetChanged);
         } else if (id == 5) { // Elimina
             AnalyticsUtil.logEventPersonDeleteProfile(getFirebaseAnalytics());
             new MaterialAlertDialogBuilder(requireContext()).setMessage(R.string.really_delete_person)
@@ -670,7 +671,7 @@ public class PersonsFragment extends BaseFragment {
                         adapter.notifyItemRemoved(position);
                         adapter.notifyItemRangeChanged(position, selectedPeople.size() - position);
                         furnishToolbar();
-                        U.controllaFamiglieVuote(getContext(), null, false, famiglie);
+                        AppUtils.controllaFamiglieVuote(getContext(), null, false, famiglie);
                     }).setNeutralButton(R.string.cancel, null).show();
         } else {
             return false;
@@ -714,7 +715,7 @@ public class PersonsFragment extends BaseFragment {
         Memory.setInstanceAndAllSubsequentToNull(person);
         gc.getPeople().remove(person);
         gc.createIndexes(); // Necessary
-        String newRootId = U.trovaRadice(gc); // Todo dovrebbe essere: trovaParentePiuProssimo
+        String newRootId = AppUtils.trovaRadice(gc); // Todo dovrebbe essere: trovaParentePiuProssimo
         if (Global.settings.getCurrentTree().root != null && Global.settings.getCurrentTree().root.equals(personId)) {
             Global.settings.getCurrentTree().root = newRootId;
         }
@@ -722,7 +723,7 @@ public class PersonsFragment extends BaseFragment {
         if (Global.indi != null && Global.indi.equals(personId))
             Global.indi = newRootId;
         Toast.makeText(context, R.string.person_deleted, Toast.LENGTH_SHORT).show();
-        U.save(true, (Object[])families);
+        AppUtils.save(true, (Object[])families);
         return families;
     }
 

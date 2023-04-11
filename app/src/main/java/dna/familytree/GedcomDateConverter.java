@@ -76,7 +76,7 @@ public class GedcomDateConverter {
             doubleDate = false; // Resets it
             if (dataGc.indexOf('/') > 0) {
                 String[] tata = dataGc.split("[/ ]");
-                if (tata.length > 1 && tata[tata.length - 2].length() < 3 && U.extractNum(tata[tata.length - 2]) <= 12)
+                if (tata.length > 1 && tata[tata.length - 2].length() < 3 && AppUtils.extractNum(tata[tata.length - 2]) <= 12)
                     dataGc = dataGc.replace('/', ' ');
                 else
                     doubleDate = true;

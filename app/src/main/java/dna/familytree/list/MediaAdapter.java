@@ -21,13 +21,13 @@ import org.folg.gedcom.model.Person;
 import java.util.List;
 
 import dna.familytree.DetailController;
-import dna.familytree.F;
+import dna.familytree.util.FileUtils;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.PrincipalController;
 import dna.familytree.ProfileController;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.detail.MediaController;
 import dna.familytree.visitor.FindStack;
@@ -111,14 +111,14 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.gestoreVista
                 else // nelle AppCompatActivity
                     attiva.registerForContextMenu(vista);
             } else {
-                RecyclerView.LayoutParams parami = new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT, U.dpToPx(110));
-                int margin = U.dpToPx(5);
+                RecyclerView.LayoutParams parami = new RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT, AppUtils.dpToPx(110));
+                int margin = AppUtils.dpToPx(5);
                 parami.setMargins(margin, margin, margin, margin);
                 vista.setLayoutParams(parami);
                 vistaTesto.setVisibility(View.GONE);
                 vistaNumero.setVisibility(View.GONE);
             }
-            F.showImage(media, vistaImmagine, vista.findViewById(R.id.media_circolo));
+            FileUtils.showImage(media, vistaImmagine, vista.findViewById(R.id.media_circolo));
         }
 
         @Override
@@ -135,7 +135,7 @@ public class MediaAdapter extends RecyclerView.Adapter<MediaAdapter.gestoreVista
             } else {
                 Intent intent = new Intent(v.getContext(), MediaController.class);
                 if (media.getId() != null) { // tutti i Media record
-                    Memory.setFirst(media);
+                    Memory.setLeader(media);
                 } else if ((activity instanceof ProfileController && contenitore instanceof Person) // media di primo livello nell'Indi
                         || activity instanceof DetailController) { // normale apertura nei Dettagli
                     Memory.add(media);

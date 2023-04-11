@@ -8,7 +8,6 @@ import android.provider.OpenableColumns;
 
 import androidx.documentfile.provider.DocumentFile;
 
-import org.apache.commons.io.FileUtils;
 import org.folg.gedcom.model.Gedcom;
 import org.folg.gedcom.model.Header;
 import org.folg.gedcom.model.Media;
@@ -27,6 +26,7 @@ import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import dna.familytree.util.FileUtils;
 import dna.familytree.util.LoggerUtils;
 import dna.familytree.visitor.MediaList;
 
@@ -71,7 +71,7 @@ public class Exporter {
         try {
             writer.write(gedcom, gedcomFile);
             OutputStream out = context.getContentResolver().openOutputStream(targetUri);
-            FileUtils.copyFile(gedcomFile, out);
+            org.apache.commons.io.FileUtils.copyFile(gedcomFile, out);
             out.flush();
             out.close();
         } catch (Exception e) {
@@ -143,12 +143,12 @@ public class Exporter {
     /**
      * Returns the number of media files to attach.
      */
-    public int numMediaFilesToAttach() {
+    public int countMediaFilesToAttach() {
         MediaList mediaList = new MediaList(gedcom, 0);
         gedcom.accept(mediaList);
         int numFiles = 0;
         for (Media med : mediaList.list) {
-            if (F.mediaPath(treeId, med) != null || F.mediaUri(treeId, med) != null)
+            if (FileUtils.mediaPath(treeId, med) != null || FileUtils.mediaUri(treeId, med) != null)
                 numFiles++;
         }
         return numFiles;
@@ -183,11 +183,11 @@ public class Exporter {
             Media med = new Media();
             med.setFile(path);
             // Paths
-            String mediaPath = F.mediaPath(treeId, med);
+            String mediaPath = FileUtils.mediaPath(treeId, med);
             if (mediaPath != null)
                 collection.put(DocumentFile.fromFile(new File(mediaPath)), 2); // todo canRead() ?
             else { // URIs
-                Uri mediaUri = F.mediaUri(treeId, med);
+                Uri mediaUri = FileUtils.mediaUri(treeId, med);
                 if (mediaUri != null)
                     collection.put(DocumentFile.fromSingleUri(context, mediaUri), 2);
             }
@@ -201,7 +201,7 @@ public class Exporter {
             gedcom.setHeader(NewTreeController.createHeader(gedcomFilename));
         else {
             header.setFile(gedcomFilename);
-            header.setDateTime(U.actualDateTime());
+            header.setDateTime(AppUtils.actualDateTime());
         }
     }
 

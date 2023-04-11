@@ -9,7 +9,7 @@ import dna.familytree.DetailController;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class NameController extends DetailController {
@@ -48,16 +48,16 @@ public class NameController extends DetailController {
         place(getString(R.string.romanized), "Romn", Global.settings.expert, false);
         place(getString(R.string.phonetic), "Fone", Global.settings.expert, false);
         placeExtensions(n);
-        U.placeNotes(box, n, true);
-        U.placeMedia(box, n, true); // Per GEDCOM 5.5.1 a Name should not contain Media
-        U.placeSourceCitations(box, n);
+        AppUtils.placeNotes(box, n, true);
+        AppUtils.placeMedia(box, n, true); // Per GEDCOM 5.5.1 a Name should not contain Media
+        AppUtils.placeSourceCitations(box, n);
     }
 
     @Override
     public void delete() {
         Person currentPerson = gc.getPerson(Global.indi);
         currentPerson.getNames().remove(n);
-        U.updateChangeDate(currentPerson);
+        AppUtils.updateChangeDate(currentPerson);
         Memory.setInstanceAndAllSubsequentToNull(n);
     }
 

@@ -23,6 +23,7 @@ import org.folg.gedcom.model.Submitter;
 import java.io.File;
 import java.util.Locale;
 
+import dna.familytree.constant.Extra;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.visitor.MediaList;
 
@@ -37,7 +38,7 @@ public class InfoController extends BaseController {
         setToolbar();
         LinearLayout scatola = findViewById(R.id.info_scatola);
 
-        final int treeId = getIntent().getIntExtra("idAlbero", 1);
+        final int treeId = getIntent().getIntExtra(Extra.TREE_ID, 1);
         final Settings.Tree tree = Global.settings.getTree(treeId);
         final File file = new File(getFilesDir(), treeId + ".json");
         String i = getText(R.string.title) + ": " + tree.title;
@@ -67,7 +68,7 @@ public class InfoController extends BaseController {
                         + "\n" + getText(R.string.sources) + ": " + gc.getSources().size()
                         + "\n" + getText(R.string.repositories) + ": " + gc.getRepositories().size();
                 if (tree.root != null) {
-                    i += "\n" + getText(R.string.root) + ": " + U.properName(gc.getPerson(tree.root));
+                    i += "\n" + getText(R.string.root) + ": " + AppUtils.properName(gc.getPerson(tree.root));
                 }
                 if (tree.shares != null && !tree.shares.isEmpty()) {
                     i += "\n\n" + getText(R.string.shares) + ":";
@@ -88,7 +89,7 @@ public class InfoController extends BaseController {
                 bottoneHeader.setText(R.string.create_header);
                 bottoneHeader.setOnClickListener(view -> {
                     gc.setHeader(NewTreeController.createHeader(file.getName()));
-                    U.saveJson(gc, treeId);
+                    AppUtils.saveJson(gc, treeId);
                     recreate();
                 });
             } else {
@@ -138,7 +139,7 @@ public class InfoController extends BaseController {
                     poni(getText(R.string.time), h.getDateTime().getTime());
                 }
                 spazio();
-                for (Extension est : U.findExtensions(h)) {    // ogni estensione nella sua riga
+                for (Extension est : AppUtils.findExtensions(h)) {    // ogni estensione nella sua riga
                     poni(est.name, est.text);
                 }
                 spazio();
@@ -178,15 +179,15 @@ public class InfoController extends BaseController {
                     versioneGc.setForm("LINEAGE-LINKED");
                     h.setDestination(null);
 
-                    U.saveJson(gc, treeId);
+                    AppUtils.saveJson(gc, treeId);
                     recreate();
                 });
 
-                U.placeNotes(scatola, h, true);
+                AppUtils.placeNotes(scatola, h, true);
             }
             // Estensioni del Gedcom, ovvero tag non standard di livello 0 zero
-            for (Extension est : U.findExtensions(gc)) {
-                U.place(scatola, est.name, est.text);
+            for (Extension est : AppUtils.findExtensions(gc)) {
+                AppUtils.place(scatola, est.name, est.text);
             }
         } else
             bottoneHeader.setVisibility(View.GONE);
@@ -216,7 +217,7 @@ public class InfoController extends BaseController {
     // Refresh the data displayed below the tree title in TreesActivity list
     static void refreshData(Gedcom gedcom, Settings.Tree treeItem) {
         treeItem.persons = gedcom.getPeople().size();
-        treeItem.generations = quanteGenerazioni(gedcom, U.getRootId(gedcom, treeItem));
+        treeItem.generations = quanteGenerazioni(gedcom, AppUtils.getRootId(gedcom, treeItem));
         MediaList visitaMedia = new MediaList(gedcom, 0);
         gedcom.accept(visitaMedia);
         treeItem.media = visitaMedia.list.size();
