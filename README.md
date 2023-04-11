@@ -6,6 +6,7 @@ At the moment it's completely free and open source.
 
 ## Features
 With Family Tree you can:
+- Material 3 version of Family Tree
 - Create a family tree from scratch, entering names, dates, places, various events, photos and sources.
 - Import an existing family tree through a GEDCOM file and modify it as you want.
 - Export the family tree you created (via GEDCOM again) to import in every other genealogy program.
@@ -20,5 +21,4 @@ This program is free software: you can redistribute it and/or modify it under th
 
 ## About
 Family Tree is written in Java within Eclipse and Android Studio.  
-Project started on beginning of 2018.  
-Author is Michele Salvador, an Italian programmer and genealogy enthusiast.
+Material 3 version of Family Gem and Project taken from Family Gem base software. 
