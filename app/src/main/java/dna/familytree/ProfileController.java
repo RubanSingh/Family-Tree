@@ -30,7 +30,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import org.folg.gedcom.model.EventFact;
 import org.folg.gedcom.model.Family;
@@ -48,6 +47,7 @@ import java.util.List;
 
 import dna.familytree.constant.Choice;
 import dna.familytree.constant.Gender;
+import dna.familytree.cropper.CropImage;
 import dna.familytree.detail.EventController;
 import dna.familytree.detail.NameController;
 import dna.familytree.detail.NoteController;
@@ -56,6 +56,7 @@ import dna.familytree.list.MediaFragment;
 import dna.familytree.list.NotesFragment;
 import dna.familytree.list.PersonsFragment;
 import dna.familytree.list.SourcesFragment;
+import dna.familytree.util.FileUtils;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 public class ProfileController extends BaseController {
@@ -69,21 +70,21 @@ public class ProfileController extends BaseController {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        U.ensureGlobalGedcomNotNull(gc);
-        one = (Person)Memory.getObject();
-        // Se l'app va in background e viene stoppata, 'Memory' è resettata e quindi 'one' sarà null
+        AppUtils.ensureGlobalGedcomNotNull(gc);
+        one = (Person)Memory.getLastObject();
+        // If the app goes into the background and is stopped, 'Memory' is reset and therefore 'one' will be null
         if (one == null && bundle != null) {
-            one = gc.getPerson(bundle.getString("idUno")); // In bundle è salvato l'id dell'individuo
-            Memory.setFirst(one); // Altrimenti la memoria è senza una pila
+            one = gc.getPerson(bundle.getString("idUno")); // The individual's id is saved in the bundle
+            Memory.setLeader(one); // Otherwise the memory is without a stack
         }
-        if (one == null) return; // Capita raramente che il bundle non faccia il suo lavoro
+        if (one == null) return; // Rarely does the bundle not do its job
         Global.indi = one.getId();
         setContentView(R.layout.individuo);
 
         // Barra
         Toolbar toolbar = findViewById(R.id.profile_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // fa comparire la freccia indietro e il menu
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // brings up the back arrow and menu
 
         // Assegna alla vista pagina un adapter che gestisce le tre schede
         ViewPager viewPager = findViewById(R.id.profile_pager);
@@ -179,12 +180,12 @@ public class ProfileController extends BaseController {
         if (Global.settings.expert) {
             idView.setText("INDI " + one.getId());
             idView.setOnClickListener(v -> {
-                U.editId(this, one, this::refresh);
+                AppUtils.editId(this, one, this::refresh);
             });
         } else idView.setVisibility(View.GONE);
         // Person name in the header
         CollapsingToolbarLayout toolbarLayout = findViewById(R.id.profile_toolbar_layout);
-        toolbarLayout.setTitle(U.properName(one));
+        toolbarLayout.setTitle(AppUtils.properName(one));
         toolbarLayout.setExpandedTitleTextAppearance(R.style.AppTheme_ExpandedAppBar);
         toolbarLayout.setCollapsedTitleTextAppearance(R.style.AppTheme_CollapsedAppBar);
         setImages();
@@ -247,7 +248,7 @@ public class ProfileController extends BaseController {
                     break;
                 case 2: // Individuo Familiari
                     menu.add(0, 30, 0, R.string.new_relative);
-                    if (U.linkablePersons(one))
+                    if (AppUtils.linkablePersons(one))
                         menu.add(0, 31, 0, R.string.link_person);
             }
             popup.show();
@@ -260,10 +261,10 @@ public class ProfileController extends BaseController {
                         break;
                     // Media
                     case 10: // Cerca media locale
-                        F.displayImageCaptureDialog(this, null, 2173, one);
+                        FileUtils.displayImageCaptureDialog(this, null, 2173, one);
                         break;
                     case 11: // Cerca oggetto media
-                        F.displayImageCaptureDialog(this, null, 2174, one);
+                        FileUtils.displayImageCaptureDialog(this, null, 2174, one);
                         break;
                     case 12: // Link media in MediaFragment
                         Intent inten = new Intent(this, PrincipalController.class);
@@ -276,7 +277,7 @@ public class ProfileController extends BaseController {
                         one.addName(name);
                         Memory.add(name);
                         startActivity(new Intent(this, NameController.class));
-                        U.save(true, one);
+                        AppUtils.save(true, one);
                         break;
                     case 21: // Create sex
                         String[] sexNames = {getString(R.string.male), getString(R.string.female), getString(R.string.unknown)};
@@ -290,7 +291,7 @@ public class ProfileController extends BaseController {
                                     dialog.dismiss();
                                     ProfileFactsFragment.updateMaritalRoles(one);
                                     refresh();
-                                    U.save(true, one);
+                                    AppUtils.save(true, one);
                                 }).show();
                         break;
                     case 22: // Create note
@@ -300,7 +301,7 @@ public class ProfileController extends BaseController {
                         Memory.add(note);
                         startActivity(new Intent(this, NoteController.class));
                         // todo? Dettaglio.edita(View vistaValore);
-                        U.save(true, one);
+                        AppUtils.save(true, one);
                         break;
                     case 23: // Create shared note
                         NotesFragment.newNote(this, one);
@@ -316,7 +317,7 @@ public class ProfileController extends BaseController {
                         one.addSourceCitation(citaz);
                         Memory.add(citaz);
                         startActivity(new Intent(this, SourceCitationController.class));
-                        U.save(true, one);
+                        AppUtils.save(true, one);
                         break;
                     case 26: // Nuova fonte
                         SourcesFragment.newSource(this, one);
@@ -336,7 +337,7 @@ public class ProfileController extends BaseController {
                                 Intent intent1 = new Intent(getApplicationContext(), PersonEditorController.class);
                                 intent1.putExtra("idIndividuo", one.getId());
                                 intent1.putExtra("relazione", quale + 1);
-                                if (U.controllaMultiMatrimoni(intent1, this, null))
+                                if (AppUtils.controllaMultiMatrimoni(intent1, this, null))
                                     return;
                                 startActivity(intent1);
                             }).show();
@@ -352,7 +353,7 @@ public class ProfileController extends BaseController {
                                 intent2.putExtra("idIndividuo", one.getId());
                                 intent2.putExtra(Choice.PERSON, true);
                                 intent2.putExtra("relazione", quale + 1);
-                                if (U.controllaMultiMatrimoni(intent2, this, null))
+                                if (AppUtils.controllaMultiMatrimoni(intent2, this, null))
                                     return;
                                 startActivityForResult(intent2, 1401);
                             }).show();
@@ -386,7 +387,7 @@ public class ProfileController extends BaseController {
                         one.addEventFact(nuovoEvento);
                         Memory.add(nuovoEvento);
                         startActivity(new Intent(this, EventController.class));
-                        U.save(true, one);
+                        AppUtils.save(true, one);
                 }
                 return true;
             });
@@ -398,13 +399,13 @@ public class ProfileController extends BaseController {
        ToDo but not in case of a video preview, or image downloaded from the web with ZuppaMedia */
     void setImages() {
         ImageView imageView = findViewById(R.id.profile_image);
-        Media media = F.showMainImageForPerson(Global.gc, one, imageView);
+        Media media = FileUtils.showMainImageForPerson(Global.gc, one, imageView);
         // Same image blurred on background
         if (media != null) {
-            String path = F.mediaPath(Global.settings.openTree, media);
+            String path = FileUtils.mediaPath(Global.settings.openTree, media);
             Uri uri = null;
             if (path == null)
-                uri = F.mediaUri(Global.settings.openTree, media);
+                uri = FileUtils.mediaUri(Global.settings.openTree, media);
             if (path != null || uri != null) {
                 RequestCreator creator;
                 ImageView backImageView = findViewById(R.id.profile_background);
@@ -425,7 +426,7 @@ public class ProfileController extends BaseController {
     public void refresh() {
         // Name in the header
         CollapsingToolbarLayout toolbarLayout = findViewById(R.id.profile_toolbar_layout);
-        toolbarLayout.setTitle(U.properName(one));
+        toolbarLayout.setTitle(AppUtils.properName(one));
         // Header images
         setImages();
         // ID in the header
@@ -457,20 +458,20 @@ public class ProfileController extends BaseController {
                 Media media = new Media();
                 media.setFileTag("FILE");
                 one.addMedia(media);
-                if (F.proposeCropping(this, null, data, media)) { // restituisce true se è un'immagine ritagliabile
-                    U.save(true, one);
+                if (FileUtils.proposeCropping(this, null, data, media)) { // restituisce true se è un'immagine ritagliabile
+                    AppUtils.save(true, one);
                     return;
                 }
             } else if (requestCode == 2174) { // File dalle app in nuovo Media condiviso, con proposta di ritagliarlo
                 Media media = MediaFragment.newMedia(one);
-                if (F.proposeCropping(this, null, data, media)) {
-                    U.save(true, media, one);
+                if (FileUtils.proposeCropping(this, null, data, media)) {
+                    AppUtils.save(true, media, one);
                     return;
                 }
             } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
                 // Ottiene l'immagine ritagliata da Android Image Cropper
-                F.endImageCropping(data);
-                U.save(true); // la data di cambio per i Media condivisi viene già salvata nel passaggio precedente
+                FileUtils.endImageCropping(data);
+                AppUtils.save(true); // la data di cambio per i Media condivisi viene già salvata nel passaggio precedente
                 // todo passargli Global.mediaCroppato ?
                 return;
             } else if (requestCode == 43614) { // Media from MediaFragment
@@ -492,17 +493,17 @@ public class ProfileController extends BaseController {
                         data.getStringExtra("idFamiglia"),
                         data.getIntExtra("relazione", 0),
                         data.getStringExtra("collocazione"));
-                U.save(true, modificati);
+                AppUtils.save(true, modificati);
                 return;
             }
-            U.save(true, one);
+            AppUtils.save(true, one);
         } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) // se clic su freccia indietro in Crop Image
             Global.edited = true;
     }
 
     @Override
     public void onBackPressed() {
-        Memory.clearStackAndRemove();
+        Memory.stepBack();
         super.onBackPressed();
     }
 
@@ -525,18 +526,18 @@ public class ProfileController extends BaseController {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case 0: // DiagramFragment
-                U.askWhichParentsToShow(this, one, 1);
+                AppUtils.askWhichParentsToShow(this, one, 1);
                 return true;
             case 1: // Family as child
-                U.askWhichParentsToShow(this, one, 2);
+                AppUtils.askWhichParentsToShow(this, one, 2);
                 return true;
             case 2: // Family as partner
-                U.askWhichSpouceToShow(this, one, null);
+                AppUtils.askWhichSpouceToShow(this, one, null);
                 return true;
             case 3: // Set as root
                 Global.settings.getCurrentTree().root = one.getId();
                 Global.settings.save();
-                Toast.makeText(this, getString(R.string.this_is_root, U.properName(one)), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.this_is_root, AppUtils.properName(one)), Toast.LENGTH_LONG).show();
                 return true;
             case 4: // Edit
                 Intent intent1 = new Intent(this, PersonEditorController.class);
@@ -547,7 +548,7 @@ public class ProfileController extends BaseController {
                 new MaterialAlertDialogBuilder(this).setMessage(R.string.really_delete_person)
                         .setPositiveButton(R.string.delete, (dialog, i) -> {
                             Family[] famiglie = PersonsFragment.deletePerson(this, one.getId());
-                            if (!U.controllaFamiglieVuote(this, this::onBackPressed, true, famiglie))
+                            if (!AppUtils.controllaFamiglieVuote(this, this::onBackPressed, true, famiglie))
                                 onBackPressed();
                         }).setNeutralButton(R.string.cancel, null).show();
                 return true;
@@ -560,6 +561,6 @@ public class ProfileController extends BaseController {
     @Override
     public void onRequestPermissionsResult(int codice, String[] permessi, int[] accordi) {
         super.onRequestPermissionsResult(codice, permessi, accordi);
-        F.permissionsResult(this, null, codice, permessi, accordi, one);
+        FileUtils.permissionsResult(this, null, codice, permessi, accordi, one);
     }
 }

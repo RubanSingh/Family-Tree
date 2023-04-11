@@ -28,7 +28,7 @@ import dna.familytree.Memory;
 import dna.familytree.NewTreeController;
 import dna.familytree.R;
 import dna.familytree.InfoController;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.detail.SubmitterController;
 import dna.familytree.util.AnalyticsUtil;
 
@@ -48,7 +48,7 @@ public class SubmittersFragment extends BaseFragment {
             ((TextView)vistaPezzo.findViewById(R.id.item_name)).setText(InfoController.submitterName(autor));
             vistaPezzo.findViewById(R.id.item_num).setVisibility(View.GONE);
             vistaPezzo.setOnClickListener(v -> {
-                Memory.setFirst(autor);
+                Memory.setLeader(autor);
                 startActivity(new Intent(getContext(), SubmitterController.class));
             });
             registerForContextMenu(vistaPezzo);
@@ -56,7 +56,7 @@ public class SubmittersFragment extends BaseFragment {
         }
         vista.findViewById(R.id.fab).setOnClickListener(v -> {
             createSubmitter(getContext());
-            U.save(true);
+            AppUtils.save(true);
         });
         return vista;
     }
@@ -78,12 +78,12 @@ public class SubmittersFragment extends BaseFragment {
     // Create a new submitter. Receiving a context open them for editing.
     public static Submitter createSubmitter(Context context) {
         Submitter subm = new Submitter();
-        subm.setId(U.newID(gc, Submitter.class));
+        subm.setId(AppUtils.newID(gc, Submitter.class));
         subm.setName("");
-        U.updateChangeDate(subm);
+        AppUtils.updateChangeDate(subm);
         gc.addSubmitter(subm);
         if (context != null) {
-            Memory.setFirst(subm);
+            Memory.setLeader(subm);
             context.startActivity(new Intent(context, SubmitterController.class));
         }
         return subm;
@@ -96,7 +96,7 @@ public class SubmittersFragment extends BaseFragment {
             gc.setHeader(header);
         }
         header.setSubmitterRef(submitter.getId());
-        U.save(false, submitter);
+        AppUtils.save(false, submitter);
     }
 
     Submitter submitter;
@@ -106,7 +106,7 @@ public class SubmittersFragment extends BaseFragment {
         submitter = (Submitter)vista.getTag();
         if (gc.getHeader() == null || gc.getHeader().getSubmitter(gc) == null || !gc.getHeader().getSubmitter(gc).equals(submitter))
             menu.add(0, 0, 0, R.string.make_default);
-        if (!U.submitterHasShared(submitter)) // Can be deleted only if he has never shared
+        if (!AppUtils.submitterHasShared(submitter)) // Can be deleted only if he has never shared
             menu.add(0, 1, 0, R.string.delete);
         // todo spiegare perché non può essere eliminato?
     }
@@ -120,7 +120,7 @@ public class SubmittersFragment extends BaseFragment {
             case 1:
                 // Todo conferma elimina
                 deleteSubmitter(submitter);
-                U.save(false);
+                AppUtils.save(false);
                 getActivity().recreate();
                 return true;
         }

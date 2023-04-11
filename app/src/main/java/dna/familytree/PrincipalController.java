@@ -39,6 +39,7 @@ import dna.familytree.list.NotesFragment;
 import dna.familytree.list.RepositoriesFragment;
 import dna.familytree.list.SourcesFragment;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.FileUtils;
 import dna.familytree.visitor.MediaList;
 import dna.familytree.visitor.NoteList;
 
@@ -56,6 +57,7 @@ public class PrincipalController extends BaseController implements NavigationVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principe);
+        showInterstitialAd();
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -69,7 +71,7 @@ public class PrincipalController extends BaseController implements NavigationVie
         menuPrincipe = findViewById(R.id.menu);
         menuPrincipe.setNavigationItemSelectedListener(this);
         Global.mainView = scatolissima;
-        U.ensureGlobalGedcomNotNull(gc);
+        AppUtils.ensureGlobalGedcomNotNull(gc);
         furnishMenu();
 
         if (savedInstanceState == null) {  // carica la home solo la prima volta, non ruotando lo schermo
@@ -167,7 +169,7 @@ public class PrincipalController extends BaseController implements NavigationVie
                 int caso = new Random().nextInt(cercaMedia.list.size());
                 for (Media med : cercaMedia.list)
                     if (--caso < 0) { // arriva a -1
-                        F.showImage(med, imageView, null);
+                        FileUtils.showImage(med, imageView, null);
                         imageView.setVisibility(ImageView.VISIBLE);
                         break;
                     }
@@ -219,7 +221,7 @@ public class PrincipalController extends BaseController implements NavigationVie
         Button saveButton = menuHeader.findViewById(R.id.menu_salva);
         saveButton.setOnClickListener(view -> {
             view.setVisibility(View.GONE);
-            U.saveJson(Global.gc, Global.settings.openTree);
+            AppUtils.saveJson(Global.gc, Global.settings.openTree);
             scatolissima.closeDrawer(GravityCompat.START);
             Global.shouldSave = false;
             Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
@@ -231,7 +233,7 @@ public class PrincipalController extends BaseController implements NavigationVie
             popup.setOnMenuItemClickListener(item -> {
                 if (item.getItemId() == 0) {
                     TreesController.openGedcom(Global.settings.openTree, false);
-                    U.askWhichParentsToShow(this, null, 0); // Semplicemente ricarica il diagramma
+                    AppUtils.askWhichParentsToShow(this, null, 0); // Semplicemente ricarica il diagramma
                     scatolissima.closeDrawer(GravityCompat.START);
                     //saveButton.setVisibility(View.GONE);
                     Global.edited = false;
@@ -289,7 +291,7 @@ public class PrincipalController extends BaseController implements NavigationVie
                     Global.indi = Global.settings.getCurrentTree().root;
                     cosaAprire = 1; // Eventualmente chiede dei molteplici genitori
                 }
-                U.askWhichParentsToShow(this, Global.gc.getPerson(Global.indi), cosaAprire);
+                AppUtils.askWhichParentsToShow(this, Global.gc.getPerson(Global.indi), cosaAprire);
             } else {
                 FragmentManager fm = getSupportFragmentManager();
                 // Rimuove frammento precedente dalla storia se è lo stesso che stiamo per vedere

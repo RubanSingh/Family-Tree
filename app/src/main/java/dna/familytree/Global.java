@@ -5,9 +5,14 @@ import android.content.res.Configuration;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.multidex.MultiDexApplication;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.material.color.DynamicColors;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 
@@ -63,6 +68,16 @@ public class Global extends MultiDexApplication {
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         memoryUtil = MemoryUtil.getInstance(this);
+
+        //apply dynamic theme colors
+        DynamicColors.applyToActivitiesIfAvailable(this);
+
+        //Call the function to initialize AdMob SDK
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+            }
+        });
 
         applyDarkMode();
         start(context);

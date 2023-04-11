@@ -80,8 +80,8 @@ class Notifier {
             if (birth != null) {
                 int years = findAge(birth);
                 if (years >= 0) {
-                    tree.birthdays.add(new Settings.Birthday(person.getId(), U.givenName(person),
-                            U.properName(person), nextBirthday(birth), years));
+                    tree.birthdays.add(new Settings.Birthday(person.getId(), AppUtils.givenName(person),
+                            AppUtils.properName(person), nextBirthday(birth), years));
                 }
             }
         }
@@ -90,7 +90,7 @@ class Notifier {
 
     // Possibly finds the birth Date of a person
     private Date findBirth(Person person) {
-        if (!U.isDead(person)) {
+        if (!AppUtils.isDead(person)) {
             for (EventFact event : person.getEventsFacts()) {
                 if (event.getTag().equals("BIRT") && event.getDate() != null) {
                     GedcomDateConverter datator = new GedcomDateConverter(event.getDate());

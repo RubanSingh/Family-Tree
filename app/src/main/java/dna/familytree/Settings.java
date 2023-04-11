@@ -6,6 +6,7 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 
 import org.apache.commons.io.FileUtils;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -32,7 +33,7 @@ public class Settings {
      * If 'settings.json' is deleted it re-becomes "start" and then immediately null.
      */
     String referrer;
-    List<Tree> trees;
+    public List<Tree> trees;
     /**
      * Number of the tree currently opened. '0' means not any particular tree.
      * Must be consistent with the {@link Global#gc} opened tree.
@@ -50,6 +51,7 @@ public class Settings {
      */
     public boolean expert;
     public boolean shareAgreement;
+    public boolean premium;
     Diagram diagram;
 
     /**
@@ -63,13 +65,17 @@ public class Settings {
         diagram = new Diagram().init();
     }
 
-    int max() {
+    public int max() {
         int num = 0;
         for (Tree tree : trees) {
             if (tree.id > num)
                 num = tree.id;
         }
         return num;
+    }
+
+    public void addTree(Tree tree) {
+        trees.add(tree);
     }
 
     void aggiungi(Tree tree) {
@@ -162,10 +168,10 @@ public class Settings {
     public static class Tree {
         public int id;
         public String title;
-        Set<String> dirs;
-        Set<String> uris;
+        public Set<String> dirs;
+        public Set<String> uris;
         int persons;
-        int generations;
+        public int generations;
         int media;
         public String root;
         public List<Share> shares; // Dati identificativi delle condivisioni attraverso il tempo e lo spazio
@@ -186,7 +192,7 @@ public class Settings {
         public int grade;
         Set<Birthday> birthdays;
 
-        Tree(int id, String title, String dir, int persons, int generations, String root, List<Share> shares, int grade) {
+        public Tree(int id, String title, String dir, int persons, int generations, String root, List<Share> shares, int grade) {
             this.id = id;
             this.title = title;
             dirs = new LinkedHashSet<>();

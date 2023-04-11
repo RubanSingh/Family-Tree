@@ -32,7 +32,6 @@ import androidx.core.util.Pair;
 import com.google.android.flexbox.FlexboxLayout;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.theartofdev.edmodo.cropper.CropImage;
 
 import org.folg.gedcom.model.Address;
 import org.folg.gedcom.model.ChildRef;
@@ -65,6 +64,7 @@ import java.util.Collections;
 import java.util.List;
 
 import dna.familytree.constant.Choice;
+import dna.familytree.cropper.CropImage;
 import dna.familytree.detail.AddressController;
 import dna.familytree.detail.EventController;
 import dna.familytree.detail.ExtensionController;
@@ -80,6 +80,7 @@ import dna.familytree.list.RepositoriesFragment;
 import dna.familytree.list.SourcesFragment;
 import dna.familytree.list.SubmittersFragment;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.FileUtils;
 import dna.familytree.util.LoggerUtils;
 import dna.familytree.visitor.FindStack;
 
@@ -99,15 +100,16 @@ public abstract class DetailController extends BaseController {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_detail);
+        showNativeAd();
         Toolbar toolbar = getToolbar();
         setSupportActionBar(toolbar);
         box = findViewById(R.id.detail_box);
         fab = findViewById(R.id.fab);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        U.ensureGlobalGedcomNotNull(gc);
+        AppUtils.ensureGlobalGedcomNotNull(gc);
 
-        object = Memory.getObject();
+        object = Memory.getLastObject();
         if (object == null) {
             onBackPressed(); // Skip all previous details without object
         } else
@@ -183,9 +185,9 @@ public abstract class DetailController extends BaseController {
                     intent.putExtra(Choice.NOTE, true);
                     startActivityForResult(intent, 7074);
                 } else if (id == 106) { // Search for local media
-                    F.displayImageCaptureDialog(this, null, 4173, (MediaContainer)object);
+                    FileUtils.displayImageCaptureDialog(this, null, 4173, (MediaContainer)object);
                 } else if (id == 107) { // Search for shared media
-                    F.displayImageCaptureDialog(this, null, 4174, (MediaContainer)object);
+                    FileUtils.displayImageCaptureDialog(this, null, 4174, (MediaContainer)object);
                 } else if (id == 108) { // Link shared media
                     Intent intent = new Intent(this, PrincipalController.class);
                     intent.putExtra(Choice.MEDIA, true);
@@ -241,7 +243,7 @@ public abstract class DetailController extends BaseController {
                     toBeSaved = true;
                 }
                 if (toBeSaved)
-                    U.save(true, object);
+                    AppUtils.save(true, object);
                 return true;
             });
         });
@@ -282,7 +284,7 @@ public abstract class DetailController extends BaseController {
             if (!(!Global.settings.expert && ((Family)object).getHusbandRefs().size() + ((Family)object).getWifeRefs().size() >= 2))
                 newMemberMenu.add(0, 120, 0, hasChildren ? R.string.parent : R.string.partner);
             newMemberMenu.add(0, 121, 0, R.string.child);
-            if (U.linkablePersons(oneFamilyMember)) {
+            if (AppUtils.linkablePersons(oneFamilyMember)) {
                 SubMenu linkMemberMenu = menu.addSubMenu(0, 100, 0, R.string.link_person);
                 if (!(!Global.settings.expert && ((Family)object).getHusbandRefs().size() + ((Family)object).getWifeRefs().size() >= 2))
                     linkMemberMenu.add(0, 122, 0, hasChildren ? R.string.parent : R.string.partner);
@@ -347,7 +349,7 @@ public abstract class DetailController extends BaseController {
             if (requestCode == 34417) { // Family member chosen in PersonsFragment
                 Person personToBeAdded = gc.getPerson(data.getStringExtra("idParente")); //TODO translate
                 FamilyController.connect(personToBeAdded, (Family)object, data.getIntExtra("relazione", 0));
-                U.save(true, Memory.firstObject());
+                AppUtils.save(true, Memory.getLeaderObject());
                 return;
             } else if (requestCode == 5065) { // Source chosen in SourcesFragment
                 SourceCitation sourceCitation = new SourceCitation();
@@ -362,14 +364,14 @@ public abstract class DetailController extends BaseController {
                 Media media = new Media();
                 media.setFileTag("FILE");
                 ((MediaContainer)object).addMedia(media);
-                if (F.proposeCropping(this, null, data, media)) {
-                    U.save(false, Memory.firstObject());
+                if (FileUtils.proposeCropping(this, null, data, media)) {
+                    AppUtils.save(false, Memory.getLeaderObject());
                     return;
                 }
             } else if (requestCode == 4174) { // File coming from SAF or other app becomes shared media
                 Media media = MediaFragment.newMedia(object);
-                if (F.proposeCropping(this, null, data, media)) {
-                    U.save(false, media, Memory.firstObject());
+                if (FileUtils.proposeCropping(this, null, data, media)) {
+                    AppUtils.save(false, media, Memory.getLeaderObject());
                     return;
                 }
             } else if (requestCode == 43616) { // Media from MediaFragment
@@ -381,12 +383,12 @@ public abstract class DetailController extends BaseController {
                 archRef.setRef(data.getStringExtra("repoId"));
                 ((Source)object).setRepositoryRef(archRef);
             } else if (requestCode == 5173) { // Save in Media a file chosen with the apps from MediaActivity
-                if (F.proposeCropping(this, null, data, (Media)object)) {
-                    U.save(false, Memory.firstObject());
+                if (FileUtils.proposeCropping(this, null, data, (Media)object)) {
+                    AppUtils.save(false, Memory.getLeaderObject());
                     return;
                 }
             } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-                F.endImageCropping(data);
+                FileUtils.endImageCropping(data);
             }
             // From the context menu 'Choose...'
             if (requestCode == 5390) { // Sets the repository that has been chosen in the RepositoriesFragment list by RepositoryRefActivity
@@ -395,7 +397,7 @@ public abstract class DetailController extends BaseController {
                 ((SourceCitation)object).setRef(data.getStringExtra("sourceId"));
             }
             // 'true' indicates to reload both this Detail thanks to the following onRestart(), and ProfileActivity or FamilyActivity
-            U.save(true, Memory.firstObject());
+            AppUtils.save(true, Memory.getLeaderObject());
         } else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE)
             Global.edited = true;
     }
@@ -432,10 +434,10 @@ public abstract class DetailController extends BaseController {
         FlexboxLayout slugLayout = findViewById(R.id.dettaglio_bava);
         if (Global.settings.expert) {
             slugLayout.removeAllViews();
-            for (final Memory.Step step : Memory.getStepStack()) {
+            for (final Memory.Step step : Memory.getLastStack()) {
                 View stepView = LayoutInflater.from(this).inflate(R.layout.pezzo_bava, box, false);
                 TextView stepText = stepView.findViewById(R.id.bava_goccia);
-                if (Memory.getStepStack().indexOf(step) < Memory.getStepStack().size() - 1) {
+                if (Memory.getLastStack().indexOf(step) < Memory.getLastStack().size() - 1) {
                     if (step.object instanceof Visitable) // GedcomTag extensions are not Visitable and it is impossible to find the stack of them
                         stepView.setOnClickListener(v -> {
                             new FindStack(gc, step.object);
@@ -450,7 +452,7 @@ public abstract class DetailController extends BaseController {
                     label += " " + id; // Id for main records INDI, FAMI, REPO... e.g. 'SOUR S123'
                     stepView.setOnClickListener(v -> {
                         concludeOtherPiece();
-                        U.editId(this, (ExtensionContainer)object, this::refresh);
+                        AppUtils.editId(this, (ExtensionContainer)object, this::refresh);
                     });
                 }
                 stepText.setText(label);
@@ -595,8 +597,8 @@ public abstract class DetailController extends BaseController {
             };
             // Family EventFacts can have notes and media
             LinearLayout noteLayout = pieceView.findViewById(R.id.fatto_note);
-            U.placeNotes(noteLayout, object, false);
-            U.placeMedia(noteLayout, object, false);
+            AppUtils.placeNotes(noteLayout, object, false);
+            AppUtils.placeMedia(noteLayout, object, false);
         } else if (object instanceof GedcomTag) { // Extension
             click = v -> {
                 Memory.add(object);
@@ -610,7 +612,7 @@ public abstract class DetailController extends BaseController {
     }
 
     public void placeExtensions(ExtensionContainer container) {
-        for (Extension ext : U.findExtensions(container)) {
+        for (Extension ext : AppUtils.findExtensions(container)) {
             placePiece(ext.name, ext.text, ext.gedcomTag, false);
         }
     }
@@ -658,10 +660,10 @@ public abstract class DetailController extends BaseController {
         String tit;
         switch (event.getTag()) {
             case "MARR":
-                tit = U.areMarried(family) ? getString(R.string.marriage) : getString(R.string.relationship);
+                tit = AppUtils.areMarried(family) ? getString(R.string.marriage) : getString(R.string.relationship);
                 break;
             case "DIV":
-                tit = U.areMarried(family) ? getString(R.string.divorce) : getString(R.string.separation);
+                tit = AppUtils.areMarried(family) ? getString(R.string.divorce) : getString(R.string.separation);
                 break;
             case "EVEN":
                 tit = getString(R.string.event);
@@ -811,8 +813,8 @@ public abstract class DetailController extends BaseController {
         }
         ((TextView)pieceView.findViewById(R.id.fatto_testo)).setText(text);
         restore(pieceView);
-        U.save(true, Memory.firstObject());
-		/*if( Memory.getStepStack().size() == 1 ) {
+        AppUtils.save(true, Memory.getLeaderObject());
+		/*if( Memory.getLastStack().size() == 1 ) {
 			refresh(); // TODO: The record change date should be updated, but perhaps without reloading everything
 		}*/
         // Refreshes the image in MediaActivity if the File path has been edited
@@ -820,7 +822,7 @@ public abstract class DetailController extends BaseController {
             ((MediaController)this).updateImage();
             // If a submitter has been edited, asks to reference him in the Gedcom header
         else if (object instanceof Submitter)
-            U.autorePrincipale(this, ((Submitter)object).getId());
+            AppUtils.autorePrincipale(this, ((Submitter)object).getId());
         else if (this instanceof EventController)
             refresh(); // To update the title bar
     }
@@ -856,7 +858,7 @@ public abstract class DetailController extends BaseController {
             }
             if (object instanceof Family)
                 menu.add(0, 4, 0, R.string.delete);
-            else if (!(object instanceof Submitter && U.submitterHasShared((Submitter)object))) // Submitter who shared cannot be deleted
+            else if (!(object instanceof Submitter && AppUtils.submitterHasShared((Submitter)object))) // Submitter who shared cannot be deleted
                 menu.add(0, 5, 0, R.string.delete);
         }
         return true;
@@ -873,7 +875,7 @@ public abstract class DetailController extends BaseController {
         } else if (id == 2) { // Image: crop
             cropImage(box);
         } else if (id == 3) { // Image: choose
-            F.displayImageCaptureDialog(this, null, 5173, null);
+            FileUtils.displayImageCaptureDialog(this, null, 5173, null);
         } else if (id == 4) { // Family
             Family fam = (Family)object;
             if (fam.getHusbandRefs().size() + fam.getWifeRefs().size() + fam.getChildRefs().size() > 0) {
@@ -889,7 +891,7 @@ public abstract class DetailController extends BaseController {
         } else if (id == 5) { // All the others objects
             // TODO: confirm deletion of all objects
             delete();
-            U.save(true); // The update of the change dates takes place in the Overrides of delete()
+            AppUtils.save(true); // The update of the change dates takes place in the Overrides of delete()
             onBackPressed();
         } else if (id == android.R.id.home) {
             onBackPressed();
@@ -908,7 +910,7 @@ public abstract class DetailController extends BaseController {
         super.onBackPressed();
         if (object instanceof EventFact)
             EventController.cleanUpTag((EventFact)object);
-        Memory.clearStackAndRemove();
+        Memory.stepBack();
     }
 
     public void delete() {
@@ -1009,7 +1011,7 @@ public abstract class DetailController extends BaseController {
             case 50: // Address
             case 55: // Event
             case 60: // Extension
-                U.copyToClipboard(((TextView)pieceView.findViewById(R.id.fatto_titolo)).getText(),
+                AppUtils.copyToClipboard(((TextView)pieceView.findViewById(R.id.fatto_titolo)).getText(),
                         ((TextView)pieceView.findViewById(R.id.fatto_testo)).getText());
                 return true;
             case 1: // Delete editable piece
@@ -1022,17 +1024,17 @@ public abstract class DetailController extends BaseController {
                 }
                 break;
             case 10: // Diagram
-                U.askWhichParentsToShow(this, person, 1);
+                AppUtils.askWhichParentsToShow(this, person, 1);
                 return true;
             case 11: // Person card
-                Memory.setFirst(person);
+                Memory.setLeader(person);
                 startActivity(new Intent(this, ProfileController.class));
                 return true;
             case 12: // Family (as child)
-                U.askWhichParentsToShow(this, person, 2);
+                AppUtils.askWhichParentsToShow(this, person, 2);
                 return true;
             case 13: // Family (as partner)
-                U.askWhichSpouceToShow(this, person, null);
+                AppUtils.askWhichSpouceToShow(this, person, null);
                 return true;
             case 14: // Move up child
                 Family fa = (Family)object;
@@ -1057,7 +1059,7 @@ public abstract class DetailController extends BaseController {
             case 18: // Unlink family member
                 FamilyController.disconnect((SpouseFamilyRef)pieceView.getTag(R.id.tag_spouse_family_ref),
                         (SpouseRef)pieceView.getTag(R.id.tag_spouse_ref));
-                U.updateChangeDate(person);
+                AppUtils.updateChangeDate(person);
                 findAnotherRepresentativeOfTheFamily(person);
                 break;
             case 19: // Delete family member
@@ -1069,17 +1071,17 @@ public abstract class DetailController extends BaseController {
                         }).setNeutralButton(R.string.cancel, null).show();
                 return true;
             case 20: // Copy note text
-                U.copyToClipboard(getText(R.string.note), ((TextView)pieceView.findViewById(R.id.note_text)).getText());
+                AppUtils.copyToClipboard(getText(R.string.note), ((TextView)pieceView.findViewById(R.id.note_text)).getText());
                 return true;
             case 21: // Unlink note
-                U.disconnectNote((Note)pieceObject, object, null);
+                AppUtils.disconnectNote((Note)pieceObject, object, null);
                 break;
             case 22: // Delete note
-                Object[] leaders = U.deleteNote((Note)pieceObject, pieceView);
-                U.save(true, leaders);
+                Object[] leaders = AppUtils.deleteNote((Note)pieceObject, pieceView);
+                AppUtils.save(true, leaders);
                 return true;
             case 30: // Copy source citation
-                U.copyToClipboard(getText(R.string.source_citation),
+                AppUtils.copyToClipboard(getText(R.string.source_citation),
                         ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText() + "\n"
                                 + ((TextView)pieceView.findViewById(R.id.citazione_testo)).getText());
                 return true;
@@ -1095,7 +1097,7 @@ public abstract class DetailController extends BaseController {
                 break;
             case 41: // Delete media
                 Object[] mediaLeaders = MediaFragment.deleteMedia((Media)pieceObject, null);
-                U.save(true, mediaLeaders); // A shared media may need to update the dates of multiple leaders
+                AppUtils.save(true, mediaLeaders); // A shared media may need to update the dates of multiple leaders
                 refresh();
                 return true;
             case 51: // Delete address
@@ -1114,10 +1116,10 @@ public abstract class DetailController extends BaseController {
                 Memory.setInstanceAndAllSubsequentToNull(pieceObject);
                 break;
             case 61: // Delete extension
-                U.deleteExtension((GedcomTag)pieceObject, object, null);
+                AppUtils.deleteExtension((GedcomTag)pieceObject, object, null);
                 break;
             case 70: // Copy source text
-                U.copyToClipboard(getText(R.string.source), ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText());
+                AppUtils.copyToClipboard(getText(R.string.source), ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText());
                 return true;
             case 71: // Choose source in SourcesFragment
                 Intent inte = new Intent(this, PrincipalController.class);
@@ -1125,7 +1127,7 @@ public abstract class DetailController extends BaseController {
                 startActivityForResult(inte, 7047);
                 return true;
             case 80: // Copy repository citation text
-                U.copyToClipboard(getText(R.string.repository_citation),
+                AppUtils.copyToClipboard(getText(R.string.repository_citation),
                         ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText() + "\n"
                                 + ((TextView)pieceView.findViewById(R.id.citazione_testo)).getText());
                 return true;
@@ -1134,7 +1136,7 @@ public abstract class DetailController extends BaseController {
                 Memory.setInstanceAndAllSubsequentToNull(pieceObject);
                 break;
             case 90: // Copy repository text
-                U.copyToClipboard(getText(R.string.repository), ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText());
+                AppUtils.copyToClipboard(getText(R.string.repository), ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText());
                 return true;
             case 91: // Choose repository in RepositoriesFragment
                 Intent intn = new Intent(this, PrincipalController.class);
@@ -1145,7 +1147,7 @@ public abstract class DetailController extends BaseController {
                 cropImage(pieceView);
                 return true;
             case 101: // Choose image
-                F.displayImageCaptureDialog(this, null, 5173, null);
+                FileUtils.displayImageCaptureDialog(this, null, 5173, null);
                 return true;
             default:
                 return false;
@@ -1153,9 +1155,9 @@ public abstract class DetailController extends BaseController {
         /* At first recreates the page and then saves the tree, which for large trees can take a few seconds
         closeContextMenu(); // Useless. Closing the menu waits for the end of saving,
                 unless you put saveJson() inside a postDelayed() of at least 500 ms */
-        U.updateChangeDate(Memory.firstObject());
+        AppUtils.updateChangeDate(Memory.getLeaderObject());
         refresh();
-        U.save(true, (Object[])null);
+        AppUtils.save(true, (Object[])null);
         return true;
     }
 
@@ -1187,7 +1189,7 @@ public abstract class DetailController extends BaseController {
             mediaFile = new File(path);
         Uri mediaUri = (Uri)imageView.getTag(R.id.tag_uri);
         Global.croppedMedia = (Media)object;
-        F.cropImage(this, mediaFile, mediaUri, null);
+        FileUtils.cropImage(this, mediaFile, mediaUri, null);
     }
 
     /**
@@ -1205,7 +1207,7 @@ public abstract class DetailController extends BaseController {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        F.permissionsResult(this, null, requestCode, permissions, grantResults,
+        FileUtils.permissionsResult(this, null, requestCode, permissions, grantResults,
                 // MediaActivity has 'object' instance of Media, not of MediaContainer
                 object instanceof MediaContainer ? (MediaContainer)object : null);
 

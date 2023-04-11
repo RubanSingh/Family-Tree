@@ -22,7 +22,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+import dna.familytree.constant.Extra;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.FileUtils;
 
 // Activity where you can see the list of media folders, add them, delete them
 public class MediaFoldersController extends BaseController {
@@ -35,7 +37,7 @@ public class MediaFoldersController extends BaseController {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.cartelle_media);
-        treeId = getIntent().getIntExtra("idAlbero", 0);
+        treeId = getIntent().getIntExtra(Extra.TREE_ID, 0);
         dirs = new ArrayList<>(Global.settings.getTree(treeId).dirs);
         uris = new ArrayList<>(Global.settings.getTree(treeId).uris);
         updateList();
@@ -55,7 +57,7 @@ public class MediaFoldersController extends BaseController {
                 };
             }
 
-            final int perm = F.checkMultiplePermissions(this, requiredPermissions);
+            final int perm = FileUtils.checkMultiplePermissions(this, requiredPermissions);
             if (perm == PackageManager.PERMISSION_DENIED)
                 ActivityCompat.requestPermissions(this, requiredPermissions, 3517);
             else if (perm == PackageManager.PERMISSION_GRANTED)
@@ -182,13 +184,13 @@ public class MediaFoldersController extends BaseController {
             if (uri != null) {
                 // In KitKat a file has been selected and we get the path of the folder
                 if (requestCode == 456) {
-                    String path = F.uriPathFolderKitKat(this, uri);
+                    String path = FileUtils.uriPathFolderKitKat(this, uri);
                     if (path != null) {
                         dirs.add(path);
                         save();
                     }
                 } else if (requestCode == 123) {
-                    String path = F.uriFolderPath(uri);
+                    String path = FileUtils.uriFolderPath(uri);
                     if (path != null) {
                         dirs.add(path);
                         save();
@@ -218,7 +220,7 @@ public class MediaFoldersController extends BaseController {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == 0) { // Copia
-            U.copyToClipboard(getText(android.R.string.copyUrl), ((TextView)selectedView.findViewById(R.id.cartella_url)).getText());
+            AppUtils.copyToClipboard(getText(android.R.string.copyUrl), ((TextView)selectedView.findViewById(R.id.cartella_url)).getText());
             return true;
         }
         return false;

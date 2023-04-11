@@ -33,8 +33,9 @@ import dna.familytree.NewTreeController;
 import dna.familytree.PrincipalController;
 import dna.familytree.R;
 import dna.familytree.Settings;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
+import dna.familytree.constant.Extra;
 import dna.familytree.list.SubmittersFragment;
 import dna.familytree.util.AnalyticsUtil;
 
@@ -43,20 +44,20 @@ public class SharingController extends BaseController {
     Gedcom gc;
     Settings.Tree tree;
     Exporter exporter;
-    String nomeAutore;
+    String submitterName;
     int accessible; // 0 = false, 1 = true
-    String dataId;
-    String idAutore;
-    boolean uploadSuccesso;
+    String dateId;
+    String submitterId;
+    boolean successfulUpload; // To avoid uploading twice
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.condivisione);
+        setContentView(R.layout.sharing_activity);
 
         setToolbar();
 
-        final int treeId = getIntent().getIntExtra("idAlbero", 1);
+        final int treeId = getIntent().getIntExtra(Extra.TREE_ID, 1);
         tree = Global.settings.getTree(treeId);
 
         // Title of the tree
@@ -64,27 +65,27 @@ public class SharingController extends BaseController {
         editTitle.setText(tree.title);
 
         if (tree.grade == 10)
-            ((TextView)findViewById(R.id.condividi_tit_autore)).setText(R.string.changes_submitter);
+            ((TextView)findViewById(R.id.share_submitter_title)).setText(R.string.changes_submitter);
 
         exporter = new Exporter(this);
         exporter.openTree(treeId);
         gc = Global.gc;
         if (gc != null) {
             displayShareRoot();
-            // Nome autore
-            final Submitter[] autore = new Submitter[1];
+            // Submitter name
+            final Submitter[] submitter = new Submitter[1];
             // tree in Italy with submitter referenced
             if (tree.grade == 0 && gc.getHeader() != null && gc.getHeader().getSubmitter(gc) != null)
-                autore[0] = gc.getHeader().getSubmitter(gc);
+                submitter[0] = gc.getHeader().getSubmitter(gc);
                 // in Italy there are authors but none referenced, it takes the last one
             else if (tree.grade == 0 && !gc.getSubmitters().isEmpty())
-                autore[0] = gc.getSubmitters().get(gc.getSubmitters().size() - 1);
+                submitter[0] = gc.getSubmitters().get(gc.getSubmitters().size() - 1);
                 // in Australia there are fresh authors, take one
-            else if (tree.grade == 10 && U.autoreFresco(gc) != null)
-                autore[0] = U.autoreFresco(gc);
+            else if (tree.grade == 10 && AppUtils.autoreFresco(gc) != null)
+                submitter[0] = AppUtils.autoreFresco(gc);
             final EditText editaAutore = findViewById(R.id.condividi_autore);
-            nomeAutore = autore[0] == null ? "" : autore[0].getName();
-            editaAutore.setText(nomeAutore);
+            submitterName = submitter[0] == null ? "" : submitter[0].getName();
+            editaAutore.setText(submitterName);
 
             // Display an alert for the acknowledgment of sharing
 //            if (!Global.settings.shareAgreement) {
@@ -97,15 +98,15 @@ public class SharingController extends BaseController {
 //            }
 
             // Collect share data and post to database
-            findViewById(R.id.bottone_condividi).setOnClickListener(v -> {
-                if (uploadSuccesso)
-                    conclude();
+            findViewById(R.id.share_button).setOnClickListener(v -> {
+                if (successfulUpload)
+                    concludeShare();
                 else {
                     if (controlla(editTitle, R.string.please_title) || controlla(editaAutore, R.string.please_name))
                         return;
 
                     v.setEnabled(false);
-                    findViewById(R.id.condividi_circolo).setVisibility(View.VISIBLE);
+                    findViewById(R.id.share_wheel).setVisibility(View.VISIBLE);
 
                     // Title of the tree
                     String titoloEditato = editTitle.getText().toString();
@@ -120,27 +121,27 @@ public class SharingController extends BaseController {
                         header = NewTreeController.createHeader(tree.id + ".json");
                         gc.setHeader(header);
                     } else
-                        header.setDateTime(U.actualDateTime());
-                    if (autore[0] == null) {
-                        autore[0] = SubmittersFragment.createSubmitter(null);
+                        header.setDateTime(AppUtils.actualDateTime());
+                    if (submitter[0] == null) {
+                        submitter[0] = SubmittersFragment.createSubmitter(null);
                     }
                     if (header.getSubmitterRef() == null) {
-                        header.setSubmitterRef(autore[0].getId());
+                        header.setSubmitterRef(submitter[0].getId());
                     }
                     String nomeAutoreEditato = editaAutore.getText().toString();
-                    if (!nomeAutoreEditato.equals(nomeAutore)) {
-                        nomeAutore = nomeAutoreEditato;
-                        autore[0].setName(nomeAutore);
-                        U.updateChangeDate(autore[0]);
+                    if (!nomeAutoreEditato.equals(submitterName)) {
+                        submitterName = nomeAutoreEditato;
+                        submitter[0].setName(submitterName);
+                        AppUtils.updateChangeDate(submitter[0]);
                     }
-                    idAutore = autore[0].getId();
-                    U.saveJson(gc, treeId); // bypassing the preference not to save in automatic
+                    submitterId = submitter[0].getId();
+                    AppUtils.saveJson(gc, treeId); // bypassing the preference not to save in automatic
 
                     // Tree accessibility for app developer
                     CheckBox accessibleTree = findViewById(R.id.condividi_allow);
                     accessible = accessibleTree.isChecked() ? 1 : 0;
 
-                    dataId = tree.title;
+                    dateId = tree.title;
                     File fileTree = new File(this.getCacheDir(), tree.title + ".zip");
                     if (this.exporter.exportZipBackup(this.tree.shareRoot, 9, Uri.fromFile(fileTree))) {
                         new ShareTask().execute(this);
@@ -148,7 +149,7 @@ public class SharingController extends BaseController {
                 }
             });
         } else
-            findViewById(R.id.condividi_scatola).setVisibility(View.GONE);
+            findViewById(R.id.share_layout).setVisibility(View.GONE);
     }
 
     // The person root of the tree
@@ -162,15 +163,15 @@ public class SharingController extends BaseController {
             rootId = tree.root;
             tree.shareRoot = rootId; // to be able to share the tree immediately without changing the root
         } else {
-            rootId = U.trovaRadice(gc);
+            rootId = AppUtils.trovaRadice(gc);
             tree.shareRoot = rootId;
         }
         Person person = gc.getPerson(rootId);
         if (person != null && tree.grade < 10) { // it is only shown on the first share, not on return
-            LinearLayout rootLayout = findViewById(R.id.condividi_radice);
+            LinearLayout rootLayout = findViewById(R.id.share_root);
             rootLayout.removeView(rootView);
             rootLayout.setVisibility(View.VISIBLE);
-            rootView = U.linkaPersona(rootLayout, person, 1);
+            rootView = AppUtils.linkaPersona(rootLayout, person, 1);
             rootView.setOnClickListener(v -> {
                 Intent intent = new Intent(this, PrincipalController.class);
                 intent.putExtra(Choice.PERSON, true);
@@ -220,29 +221,29 @@ public class SharingController extends BaseController {
 
                 SharingController.this.startActivity(share);
             } catch (Exception e) {
-                U.toast(questo, e.getLocalizedMessage());
+                AppUtils.toast(questo, e.getLocalizedMessage());
             }
             return questo;
         }
 
         protected void onPostExecute(SharingController questo) {
-            if (questo.uploadSuccesso) {
+            if (questo.successfulUpload) {
                 Toast.makeText(questo, R.string.correctly_uploaded, Toast.LENGTH_SHORT).show();
-                questo.conclude();
+                questo.concludeShare();
             } else {
-                questo.findViewById(R.id.bottone_condividi).setEnabled(true);
-                questo.findViewById(R.id.condividi_circolo).setVisibility(View.INVISIBLE);
+                questo.findViewById(R.id.share_button).setEnabled(true);
+                questo.findViewById(R.id.share_wheel).setVisibility(View.INVISIBLE);
             }
         }
     }
 
     // Mostra le app per condividere il link
-    void conclude() {
+    void concludeShare() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.sharing_tree));
         intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.click_this_link,
-                "https://www.familygem.app/share.php?tree=" + dataId));
+                "https://www.familygem.app/share.php?tree=" + dateId));
         //startActivity( Intent.createChooser( intent, "Condividi con" ) );
         /* Tornando indietro da una app di messaggistica il requestCode 35417 arriva sempre corretto
             Invece il resultCode può essere RESULT_OK o RESULT_CANCELED a capocchia
@@ -251,8 +252,8 @@ public class SharingController extends BaseController {
             oppure da Whatsapp è RESULT_OK sia che il messaggio è stato inviato o no
             In pratica non c'è modo di sapere se nella app di messaggistica il messaggio è stato inviato */
         startActivityForResult(Intent.createChooser(intent, getText(R.string.share_with)), 35417);
-        findViewById(R.id.bottone_condividi).setEnabled(true);
-        findViewById(R.id.condividi_circolo).setVisibility(View.INVISIBLE);
+        findViewById(R.id.share_button).setEnabled(true);
+        findViewById(R.id.share_wheel).setVisibility(View.INVISIBLE);
     }
 
     // Aggiorna le preferenze così da mostrare la nuova radice scelta in PersonsFragment

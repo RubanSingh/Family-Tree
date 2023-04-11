@@ -54,17 +54,17 @@ public class ProfileFactsFragment extends BaseFragment {
                     if (nome.getType() != null && !nome.getType().isEmpty()) {
                         tit += " (" + TypeView.getTranslatedType(nome.getType(), TypeView.Combo.NAME) + ")";
                     }
-                    placeEvent(layout, tit, U.firstAndLastName(nome, " "), nome);
+                    placeEvent(layout, tit, AppUtils.firstAndLastName(nome, " "), nome);
                 }
                 for (EventFact fact : one.getEventsFacts()) {
                     placeEvent(layout, writeEventTitle(fact), writeEventText(fact), fact);
                 }
-                for (Extension est : U.findExtensions(one)) {
+                for (Extension est : AppUtils.findExtensions(one)) {
                     placeEvent(layout, est.name, est.text, est.gedcomTag);
                 }
-                U.placeNotes(layout, one, true);
-                U.placeSourceCitations(layout, one);
-                U.placeChangeDate(layout, one.getChange());
+                AppUtils.placeNotes(layout, one, true);
+                AppUtils.placeSourceCitations(layout, one);
+                AppUtils.placeChangeDate(layout, one.getChange());
             }
         }
         return vistaEventi;
@@ -163,11 +163,11 @@ public class ProfileFactsFragment extends BaseFragment {
         }
         LinearLayout otherLayout = eventView.findViewById(R.id.evento_altro);
         if (object instanceof NoteContainer)
-            U.placeNotes(otherLayout, object, false);
+            AppUtils.placeNotes(otherLayout, object, false);
         eventView.setTag(R.id.tag_object, object);
         registerForContextMenu(eventView);
         if (object instanceof Name) {
-            U.placeMedia(otherLayout, object, false);
+            AppUtils.placeMedia(otherLayout, object, false);
             eventView.setOnClickListener(v -> {
                 // Se è un nome complesso propone la modalità esperto
                 if (!Global.settings.expert && nomeComplesso((Name)object)) {
@@ -209,10 +209,10 @@ public class ProfileFactsFragment extends BaseFragment {
                             updateMaritalRoles(one);
                             dialog.dismiss();
                             refresh();
-                            U.save(true, one);
+                            AppUtils.save(true, one);
                         }).show());
             } else { // All other events
-                U.placeMedia(otherLayout, object, false);
+                AppUtils.placeMedia(otherLayout, object, false);
                 eventView.setOnClickListener(v -> {
                     Memory.add(object);
                     startActivity(new Intent(getContext(), EventController.class));
@@ -311,7 +311,7 @@ public class ProfileFactsFragment extends BaseFragment {
             case 200: // Copia nome
             case 210: // Copia evento
             case 220: // Copia estensione
-                U.copyToClipboard(((TextView)pieceView.findViewById(R.id.evento_titolo)).getText(),
+                AppUtils.copyToClipboard(((TextView)pieceView.findViewById(R.id.evento_titolo)).getText(),
                         ((TextView)pieceView.findViewById(R.id.evento_testo)).getText());
                 return true;
             case 201: // Sposta su
@@ -323,7 +323,7 @@ public class ProfileFactsFragment extends BaseFragment {
                 nomi.remove(nomi.indexOf(pieceObject));
                 break;
             case 203: // Elimina
-                if (U.preserva(pieceObject)) return false;
+                if (AppUtils.preserva(pieceObject)) return false;
                 one.getNames().remove(pieceObject);
                 Memory.setInstanceAndAllSubsequentToNull(pieceObject);
                 pieceView.setVisibility(View.GONE);
@@ -345,23 +345,23 @@ public class ProfileFactsFragment extends BaseFragment {
                 break;
             // Estensione
             case 221: // Elimina
-                U.deleteExtension((GedcomTag)pieceObject, one, pieceView);
+                AppUtils.deleteExtension((GedcomTag)pieceObject, one, pieceView);
                 break;
             // Nota
             case 225: // Copia
-                U.copyToClipboard(getText(R.string.note), ((TextView)pieceView.findViewById(R.id.note_text)).getText());
+                AppUtils.copyToClipboard(getText(R.string.note), ((TextView)pieceView.findViewById(R.id.note_text)).getText());
                 return true;
             case 226: // Scollega
-                U.disconnectNote((Note)pieceObject, one, pieceView);
+                AppUtils.disconnectNote((Note)pieceObject, one, pieceView);
                 break;
             case 227:
-                Object[] capi = U.deleteNote((Note)pieceObject, pieceView);
-                U.save(true, capi);
+                Object[] capi = AppUtils.deleteNote((Note)pieceObject, pieceView);
+                AppUtils.save(true, capi);
                 refresh();
                 return true;
             // Citazione fonte
             case 230: // Copia
-                U.copyToClipboard(getText(R.string.source_citation),
+                AppUtils.copyToClipboard(getText(R.string.source_citation),
                         ((TextView)pieceView.findViewById(R.id.fonte_testo)).getText() + "\n"
                                 + ((TextView)pieceView.findViewById(R.id.citazione_testo)).getText());
                 return true;
@@ -375,7 +375,7 @@ public class ProfileFactsFragment extends BaseFragment {
                 return false;
         }
         refresh();
-        U.save(true, one);
+        AppUtils.save(true, one);
         return true;
     }
 

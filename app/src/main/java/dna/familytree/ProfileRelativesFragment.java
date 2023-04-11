@@ -92,11 +92,11 @@ public class ProfileRelativesFragment extends BaseFragment {
 
     void createCard(final Person person, Relation relation, Family family) {
         LinearLayout scatola = tabView.findViewById(R.id.contenuto_scheda);
-        View vistaPersona = U.placeIndividual(scatola, person,
+        View vistaPersona = AppUtils.placeIndividual(scatola, person,
                 FamilyController.getRole(person, family, relation, false) + FamilyController.writeLineage(person, family));
         vistaPersona.setOnClickListener(v -> {
-            getActivity().finish(); // Rimuove l'attività attale dallo stack
-            Memory.replaceFirst(person);
+            requireActivity().finish(); // Rimuove l'attività attale dallo stack
+            Memory.replaceLeader(person);
             Intent intento = new Intent(getContext(), ProfileController.class);
             intento.putExtra("scheda", 2); // apre la scheda famiglia
             startActivity(intento);
@@ -108,7 +108,7 @@ public class ProfileRelativesFragment extends BaseFragment {
 
     private void moveFamilyRef(int direction) {
         Collections.swap(one.getSpouseFamilyRefs(), posFam, posFam + direction);
-        U.save(true, one);
+        AppUtils.save(true, one);
         refresh();
     }
 
@@ -153,11 +153,11 @@ public class ProfileRelativesFragment extends BaseFragment {
     public boolean onContextItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == 300) { // Diagramma
-            U.askWhichParentsToShow(getContext(), person, 1);
+            AppUtils.askWhichParentsToShow(getContext(), person, 1);
         } else if (id == 301) { // Famiglia come figlio
-            U.askWhichParentsToShow(getContext(), person, 2);
+            AppUtils.askWhichParentsToShow(getContext(), person, 2);
         } else if (id == 302) { // Famiglia come coniuge
-            U.askWhichSpouceToShow(getContext(), person, family);
+            AppUtils.askWhichSpouceToShow(getContext(), person, family);
         } else if (id == 303) { // Sposta su
             moveFamilyRef(-1);
         } else if (id == 304) { // Sposta giù
@@ -171,14 +171,14 @@ public class ProfileRelativesFragment extends BaseFragment {
         } else if (id == 307) { // Scollega da questa famiglia
             FamilyController.disconnect(indiId, family);
             refresh();
-            U.controllaFamiglieVuote(getContext(), this::refresh, false, family);
-            U.save(true, family, person);
+            AppUtils.controllaFamiglieVuote(getContext(), this::refresh, false, family);
+            AppUtils.save(true, family, person);
         } else if (id == 308) { // Elimina
             new MaterialAlertDialogBuilder(getContext()).setMessage(R.string.really_delete_person)
                     .setPositiveButton(R.string.delete, (dialog, i) -> {
                         PersonsFragment.deletePerson(getContext(), indiId);
                         refresh();
-                        U.controllaFamiglieVuote(getContext(), this::refresh, false, family);
+                        AppUtils.controllaFamiglieVuote(getContext(), this::refresh, false, family);
                     }).setNeutralButton(R.string.cancel, null).show();
         } else {
             return false;

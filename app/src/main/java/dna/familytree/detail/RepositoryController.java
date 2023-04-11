@@ -9,7 +9,7 @@ import java.util.List;
 import dna.familytree.DetailController;
 import dna.familytree.Global;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.list.RepositoriesFragment;
 import dna.familytree.util.AnalyticsUtil;
 
@@ -32,8 +32,8 @@ public class RepositoryController extends DetailController {
         place(getString(R.string.fax), "Fax");
         place(getString(R.string.rin), "Rin", false, false);
         placeExtensions(a);
-        U.placeNotes(box, a, true);
-        U.placeChangeDate(box, a.getChange());
+        AppUtils.placeNotes(box, a, true);
+        AppUtils.placeChangeDate(box, a.getChange());
 
         // Collects and displays the sources citing this Repository
         List<Source> citingSources = new ArrayList<>();
@@ -42,12 +42,12 @@ public class RepositoryController extends DetailController {
                     && source.getRepositoryRef().getRef().equals(a.getId()))
                 citingSources.add(source);
         if (!citingSources.isEmpty())
-            U.placeCabinet(box, citingSources.toArray(), R.string.sources);
+            AppUtils.placeCabinet(box, citingSources.toArray(), R.string.sources);
     }
 
     @Override
     public void delete() {
-        U.updateChangeDate((Object[])RepositoriesFragment.delete(a));
+        AppUtils.updateChangeDate((Object[])RepositoriesFragment.delete(a));
     }
 
     @Override

@@ -33,7 +33,7 @@ import dna.familytree.BaseFragment;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.detail.RepositoryController;
 import dna.familytree.util.AnalyticsUtil;
@@ -66,7 +66,7 @@ public class RepositoriesFragment extends BaseFragment {
             Collections.sort(repos, (r1, r2) -> {
                 switch (order) {
                     case 1: // Ordina per id
-                        return U.extractNum(r1.getId()) - U.extractNum(r2.getId());
+                        return AppUtils.extractNum(r1.getId()) - AppUtils.extractNum(r2.getId());
                     case 2: // Ordine alfabetico
                         return r1.getName().compareToIgnoreCase(r2.getName());
                     case 3: // Ordina per numero di fonti
@@ -88,7 +88,7 @@ public class RepositoriesFragment extends BaseFragment {
                         getActivity().setResult(Activity.RESULT_OK, intent);
                         getActivity().finish();
                     } else {
-                        Memory.setFirst(repo);
+                        Memory.setLeader(repo);
                         startActivity(new Intent(getContext(), RepositoryController.class));
                     }
                 });
@@ -127,7 +127,7 @@ public class RepositoriesFragment extends BaseFragment {
      */
     public static void newRepository(Context context, Source source) {
         Repository repo = new Repository();
-        repo.setId(U.newID(gc, Repository.class));
+        repo.setId(AppUtils.newID(gc, Repository.class));
         repo.setName("");
         gc.addRepository(repo);
         if (source != null) {
@@ -135,8 +135,8 @@ public class RepositoriesFragment extends BaseFragment {
             repoRef.setRef(repo.getId());
             source.setRepositoryRef(repoRef);
         }
-        U.save(true, repo);
-        Memory.setFirst(repo);
+        AppUtils.save(true, repo);
+        Memory.setLeader(repo);
         context.startActivity(new Intent(context, RepositoryController.class));
     }
 
@@ -198,7 +198,7 @@ public class RepositoriesFragment extends BaseFragment {
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == 0) {
             Source[] fonti = delete(repository);
-            U.save(false, (Object[])fonti);
+            AppUtils.save(false, (Object[])fonti);
             getActivity().recreate();
             return true;
         }

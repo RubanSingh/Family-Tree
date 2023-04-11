@@ -27,7 +27,7 @@ import dna.familytree.Memory;
 import dna.familytree.PersonEditorController;
 import dna.familytree.ProfileController;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Gender;
 import dna.familytree.constant.Relation;
 import dna.familytree.constant.Status;
@@ -36,8 +36,8 @@ import dna.familytree.util.AnalyticsUtil;
 public class FamilyController extends DetailController {
 
     Family f;
-    static String[] lineageTexts = {U.s(R.string.undefined) + " (" + U.s(R.string.birth).toLowerCase() + ")",
-            U.s(R.string.birth), U.s(R.string.adopted), U.s(R.string.foster)};
+    static String[] lineageTexts = {AppUtils.s(R.string.undefined) + " (" + AppUtils.s(R.string.birth).toLowerCase() + ")",
+            AppUtils.s(R.string.birth), AppUtils.s(R.string.adopted), AppUtils.s(R.string.foster)};
     static String[] lineageTypes = {null, "birth", "adopted", "foster"};
 
     @Override
@@ -56,10 +56,10 @@ public class FamilyController extends DetailController {
             place(writeEventTitle(f, ef), ef);
         }
         placeExtensions(f);
-        U.placeNotes(box, f, true);
-        U.placeMedia(box, f, true);
-        U.placeSourceCitations(box, f);
-        U.placeChangeDate(box, f.getChange());
+        AppUtils.placeNotes(box, f, true);
+        AppUtils.placeMedia(box, f, true);
+        AppUtils.placeSourceCitations(box, f);
+        AppUtils.placeChangeDate(box, f.getChange());
     }
 
     /**
@@ -68,7 +68,7 @@ public class FamilyController extends DetailController {
     void addMember(SpouseRef sr, Relation relation) {
         Person p = sr.getPerson(gc);
         if (p == null) return;
-        View personView = U.placeIndividual(box, p, getRole(p, f, relation, true) + writeLineage(p, f));
+        View personView = AppUtils.placeIndividual(box, p, getRole(p, f, relation, true) + writeLineage(p, f));
         personView.setTag(R.id.tag_object, p); // For the context menu in DetailActivity
 
         /* Ref inside the individual towards the family.
@@ -97,30 +97,30 @@ public class FamilyController extends DetailController {
             List<Family> spouseFam = p.getSpouseFamilies(gc);
             // A spouse with one or more families in which he is a child
             if (relation == Relation.PARTNER && !parentFam.isEmpty()) {
-                U.askWhichParentsToShow(this, p, 2);
+                AppUtils.askWhichParentsToShow(this, p, 2);
             } // A child with one or more families in which he is a partner
             else if (relation == Relation.CHILD && !p.getSpouseFamilies(gc).isEmpty()) {
-                U.askWhichSpouceToShow(this, p, null);
+                AppUtils.askWhichSpouceToShow(this, p, null);
             } // An unmarried child who has multiple parental families
             else if (parentFam.size() > 1) {
                 if (parentFam.size() == 2) { // Swaps between the 2 parental families
                     Global.indi = p.getId();
                     Global.familyNum = parentFam.indexOf(f) == 0 ? 1 : 0;
-                    Memory.replaceFirst(parentFam.get(Global.familyNum));
+                    Memory.replaceLeader(parentFam.get(Global.familyNum));
                     recreate();
                 } else // More than two families
-                    U.askWhichParentsToShow(this, p, 2);
+                    AppUtils.askWhichParentsToShow(this, p, 2);
             } // A spouse without parents but with multiple spouse families
             else if (spouseFam.size() > 1) {
                 if (spouseFam.size() == 2) { // Swaps between the 2 spouse families
                     Global.indi = p.getId();
                     Family otherFamily = spouseFam.get(spouseFam.indexOf(f) == 0 ? 1 : 0);
-                    Memory.replaceFirst(otherFamily);
+                    Memory.replaceLeader(otherFamily);
                     recreate();
                 } else
-                    U.askWhichSpouceToShow(this, p, null);
+                    AppUtils.askWhichSpouceToShow(this, p, null);
             } else {
-                Memory.setFirst(p);
+                Memory.setLeader(p);
                 startActivity(new Intent(this, ProfileController.class));
             }
         });
@@ -270,7 +270,7 @@ public class FamilyController extends DetailController {
                     ((ProfileController)context).refresh();
                 else if (context instanceof FamilyController)
                     ((FamilyController)context).refresh();
-                U.save(true, person);
+                AppUtils.save(true, person);
             }).show();
         }
     }

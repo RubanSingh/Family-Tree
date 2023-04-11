@@ -29,10 +29,10 @@ import org.folg.gedcom.model.Submitter;
 
 import dna.familytree.BaseController;
 import dna.familytree.DetailController;
-import dna.familytree.F;
+import dna.familytree.util.FileUtils;
 import dna.familytree.Global;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class ProcessController extends BaseController {
@@ -158,7 +158,7 @@ public class ProcessController extends BaseController {
             txt = m.getFile();
             data = dataOra(m.getChange());
             vistaFoto.setVisibility(View.VISIBLE);
-            F.showImage(m, vistaFoto, null);
+            FileUtils.showImage(m, vistaFoto, null);
         } else if (o instanceof Source) {
             tipoRecord(R.string.source);
             Source s = (Source)o;
@@ -171,15 +171,15 @@ public class ProcessController extends BaseController {
         } else if (o instanceof Person) {
             tipoRecord(R.string.person);
             Person p = (Person)o;
-            tit = U.properName(p);
-            txt = U.details(p, null);
+            tit = AppUtils.properName(p);
+            txt = AppUtils.details(p, null);
             data = dataOra(p.getChange());
             vistaFoto.setVisibility(View.VISIBLE);
-            F.showMainImageForPerson(gc, p, vistaFoto);
+            FileUtils.showMainImageForPerson(gc, p, vistaFoto);
         } else if (o instanceof Family) {
             tipoRecord(R.string.family);
             Family f = (Family)o;
-            txt = U.testoFamiglia(this, gc, f, false);
+            txt = AppUtils.testoFamiglia(this, gc, f, false);
             data = dataOra(f.getChange());
         }
         TextView testoTitolo = carta.findViewById(R.id.confronto_titolo);

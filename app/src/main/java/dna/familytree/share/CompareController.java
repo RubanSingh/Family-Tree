@@ -33,7 +33,8 @@ import dna.familytree.Global;
 import dna.familytree.R;
 import dna.familytree.Settings;
 import dna.familytree.TreesController;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
+import dna.familytree.constant.Extra;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.util.LoggerUtils;
 
@@ -51,8 +52,8 @@ public class CompareController extends BaseController {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.compara);
-        int idTree1 = getIntent().getIntExtra("idAlbero", 1); // Old tree present in the app
-        int idTree2 = getIntent().getIntExtra("idAlbero2", 1); // New tree received in sharing
+        int idTree1 = getIntent().getIntExtra(Extra.TREE_ID, 1); // Old tree present in the app
+        int idTree2 = getIntent().getIntExtra(Extra.TREE_ID_2, 1); // New tree received in sharing
         Global.treeId2 = idTree2; // It will be used for the Comparison and ConfirmationActivity images
         Global.gc = TreesController.openGedcomTemporarily(idTree1, true);
         Global.gc2 = TreesController.openGedcomTemporarily(idTree2, false);
@@ -65,7 +66,7 @@ public class CompareController extends BaseController {
         TimeZone.setDefault(TimeZone.getTimeZone("Europe/Rome")); // Synchronizes all dates to the italian time zone
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss", Locale.ENGLISH);
-            sharingDate = dateFormat.parse(getIntent().getStringExtra("idData"));
+            sharingDate = dateFormat.parse(getIntent().getStringExtra(Extra.DATE_ID));
         } catch (ParseException e) {
             LoggerUtils.ErrorLog(TAG, "Exception in onCreate", e);
             e.printStackTrace();
@@ -229,7 +230,7 @@ public class CompareController extends BaseController {
         boolean itIs = false;
         if (change != null && change.getDateTime() != null) {
             try { // TODO: test also with null Time
-                String zoneId = U.castJsonString(change.getExtension("zone"));
+                String zoneId = AppUtils.castJsonString(change.getExtension("zone"));
                 if (zoneId == null)
                     zoneId = "UTC";
                 TimeZone timeZone = TimeZone.getTimeZone(zoneId);

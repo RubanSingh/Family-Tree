@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-import dna.familytree.LauncherActivity;
+import dna.familytree.LauncherController;
 import dna.familytree.R;
 import dna.familytree.util.LoggerUtils;
 
@@ -59,7 +59,7 @@ public class FirebaseService extends FirebaseMessagingService {
      */
     private void sendNotification(Context context, ArrayMap<String, String> remoteMsgHash, @NonNull RemoteMessage.Notification notification) {
 
-        Intent notifyIntent = new Intent(context, LauncherActivity.class);
+        Intent notifyIntent = new Intent(context, LauncherController.class);
         if (remoteMsgHash != null) {
             Bundle bundle = new Bundle();
 

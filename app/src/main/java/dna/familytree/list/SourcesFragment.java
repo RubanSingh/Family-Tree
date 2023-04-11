@@ -40,7 +40,7 @@ import dna.familytree.BaseFragment;
 import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.detail.SourceController;
 import dna.familytree.util.AnalyticsUtil;
@@ -154,7 +154,7 @@ public class SourcesFragment extends BaseFragment {
                 getActivity().finish();
             } else {
                 Source source = gc.getSource(idView.getText().toString());
-                Memory.setFirst(source);
+                Memory.setLeader(source);
                 startActivity(new Intent(getContext(), SourceController.class));
             }
         }
@@ -179,17 +179,17 @@ public class SourcesFragment extends BaseFragment {
             Collections.sort(sourceList, (f1, f2) -> {
                 switch (order) {
                     case 1:    // Ordina per id numerico
-                        return U.extractNum(f1.getId()) - U.extractNum(f2.getId());
+                        return AppUtils.extractNum(f1.getId()) - AppUtils.extractNum(f2.getId());
                     case 2:
-                        return U.extractNum(f2.getId()) - U.extractNum(f1.getId());
+                        return AppUtils.extractNum(f2.getId()) - AppUtils.extractNum(f1.getId());
                     case 3:    // Ordine alfabeto dei titoli
                         return titoloFonte(f1).compareToIgnoreCase(titoloFonte(f2));
                     case 4:
                         return titoloFonte(f2).compareToIgnoreCase(titoloFonte(f1));
                     case 5:    // Ordina per numero di citazioni
-                        return U.castJsonInt(f1.getExtension("citaz")) - U.castJsonInt(f2.getExtension("citaz"));
+                        return AppUtils.castJsonInt(f1.getExtension("citaz")) - AppUtils.castJsonInt(f2.getExtension("citaz"));
                     case 6:
-                        return U.castJsonInt(f2.getExtension("citaz")) - U.castJsonInt(f1.getExtension("citaz"));
+                        return AppUtils.castJsonInt(f2.getExtension("citaz")) - AppUtils.castJsonInt(f1.getExtension("citaz"));
                 }
                 return 0;
             });
@@ -255,7 +255,7 @@ public class SourcesFragment extends BaseFragment {
 
     public static void newSource(Context context, Object container) {
         Source source = new Source();
-        source.setId(U.newID(gc, Source.class));
+        source.setId(AppUtils.newID(gc, Source.class));
         source.setTitle("");
         gc.addSource(source);
         if (container != null) {
@@ -264,8 +264,8 @@ public class SourcesFragment extends BaseFragment {
             if (container instanceof Note) ((Note)container).addSourceCitation(sourceCitation);
             else ((SourceCitationContainer)container).addSourceCitation(sourceCitation);
         }
-        U.save(true, source);
-        Memory.setFirst(source);
+        AppUtils.save(true, source);
+        Memory.setLeader(source);
         context.startActivity(new Intent(context, SourceController.class));
     }
 
@@ -363,10 +363,10 @@ public class SourcesFragment extends BaseFragment {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         if (item.getItemId() == 0) { // Edit source ID
-            U.editId(getContext(), source, getActivity()::recreate);
+            AppUtils.editId(getContext(), source, getActivity()::recreate);
         } else if (item.getItemId() == 1) { // Delete source
             Object[] objects = deleteSource(source);
-            U.save(false, objects);
+            AppUtils.save(false, objects);
             getActivity().recreate();
         } else {
             return false;

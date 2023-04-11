@@ -6,6 +6,7 @@ import org.folg.gedcom.model.Person;
 public enum Gender {
 
     NONE, // No SEX tag
+    EMPTY,
     MALE, // 'SEX M'
     FEMALE, // 'SEX F'
     UNKNOWN, // 'SEX U'
@@ -42,5 +43,10 @@ public enum Gender {
 
     public static boolean isFemale(Person person) {
         return getGender(person) == FEMALE;
+    }
+
+    public static boolean isDefined(Person person) {
+        Gender gender = getGender(person);
+        return gender == MALE || gender == FEMALE || gender == OTHER;
     }
 }

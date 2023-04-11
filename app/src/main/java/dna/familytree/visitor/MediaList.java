@@ -14,7 +14,7 @@ import org.folg.gedcom.model.Visitor;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import dna.familytree.F;
+import dna.familytree.util.FileUtils;
 import dna.familytree.Global;
 
 /**
@@ -58,7 +58,7 @@ public class MediaList extends Visitor {
      * Adds only the media alleged with preview (images and videos).
      */
     private void filter(Media media) {
-        String path = F.mediaPath(Global.settings.openTree, media); // TODO: and images from URIs?
+        String path = FileUtils.mediaPath(Global.settings.openTree, media); // TODO: and images from URIs?
         if (path != null) {
             int index = path.lastIndexOf('.');
             if (index > 0) {

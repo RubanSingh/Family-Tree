@@ -24,7 +24,6 @@ import android.widget.Toast;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.gson.Gson;
 
-import org.apache.commons.io.FileUtils;
 import org.folg.gedcom.model.CharacterSet;
 import org.folg.gedcom.model.Gedcom;
 import org.folg.gedcom.model.GedcomVersion;
@@ -42,8 +41,10 @@ import java.util.Locale;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import dna.familytree.constant.Extra;
 import dna.familytree.share.CompareController;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.FileUtils;
 import dna.familytree.util.LoggerUtils;
 
 public class NewTreeController extends BaseController {
@@ -136,7 +137,7 @@ public class NewTreeController extends BaseController {
         Global.gc.createIndexes();
         JsonParser jp = new JsonParser();
         try {
-            FileUtils.writeStringToFile(jsonFile, jp.toJson(Global.gc), "UTF-8");
+            org.apache.commons.io.FileUtils.writeStringToFile(jsonFile, jp.toJson(Global.gc), "UTF-8");
         } catch (Exception e) {
             LoggerUtils.ErrorLog(TAG, "Exception in newTree", e);
             Toast.makeText(this, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
@@ -223,7 +224,7 @@ public class NewTreeController extends BaseController {
             zis.close();
             // Reads the settings and saves them in the preferences
             File settingsFile = new File(context.getCacheDir(), "settings.json");
-            String json = FileUtils.readFileToString(settingsFile, "UTF-8");
+            String json = org.apache.commons.io.FileUtils.readFileToString(settingsFile, "UTF-8");
             json = updateLanguage(json);
             Gson gson = new Gson();
             Settings.ZippedTree zipped = gson.fromJson(json, Settings.ZippedTree.class);
@@ -245,11 +246,11 @@ public class NewTreeController extends BaseController {
             } else // Example tree (Simpson) or backup tree (from LauncherActivity or from NewTreeActivity)
                 context.startActivity(new Intent(context, TreesController.class));
             Global.settings.save();
-            U.toast((Activity)context, R.string.tree_imported_ok);
+            AppUtils.toast((Activity)context, R.string.tree_imported_ok);
             return true;
         } catch (Exception e) {
             LoggerUtils.ErrorLog(TAG, "Exception in unZip", e);
-            U.toast((Activity)context, e.getLocalizedMessage());
+            AppUtils.toast((Activity)context, e.getLocalizedMessage());
         }
         return false;
     }
@@ -295,7 +296,7 @@ public class NewTreeController extends BaseController {
                 printWriter.print(jsonParser.toJson(gedcom));
                 printWriter.close();
                 // Tree name and folder path
-                String path = F.uriFilePath(uri);
+                String path = FileUtils.uriFilePath(uri);
                 String treeName;
                 String folderPath = null;
                 if (path != null && path.lastIndexOf('/') > 0) { // It's a full path to the gedcom file
@@ -309,7 +310,7 @@ public class NewTreeController extends BaseController {
                 if (treeName.lastIndexOf('.') > 0) // Remove the extension
                     treeName = treeName.substring(0, treeName.lastIndexOf('.'));
                 // Save the settings
-                String rootId = U.trovaRadice(gedcom);
+                String rootId = AppUtils.trovaRadice(gedcom);
                 Global.settings.aggiungi(new Settings.Tree(newNumber, treeName, folderPath,
                         gedcom.getPeople().size(), InfoController.quanteGenerazioni(gedcom, rootId), rootId, null, 0));
                 new Notifier(this, gedcom, newNumber, Notifier.What.CREATE);
@@ -383,9 +384,9 @@ public class NewTreeController extends BaseController {
                             if (share.dateId != null && share.dateId.equals(share2.dateId)) {
                                 if (apriCompara)
                                     contesto.startActivity(new Intent(contesto, CompareController.class)
-                                            .putExtra("idAlbero", alb.id)
-                                            .putExtra("idAlbero2", albero2.id)
-                                            .putExtra("idData", share.dateId)
+                                            .putExtra(Extra.TREE_ID, alb.id)
+                                            .putExtra(Extra.TREE_ID_2, albero2.id)
+                                            .putExtra(Extra.DATE_ID, share.dateId)
                                     );
                                 return true;
                             }
@@ -413,7 +414,7 @@ public class NewTreeController extends BaseController {
         // C'è anche Resources.getSystem().getConfiguration().locale.getLanguage() che ritorna lo stesso 'it'
         testa.setLanguage(loc.getDisplayLanguage(Locale.ENGLISH));    // ok prende la lingua di sistema in inglese, non nella lingua locale
         // in header ci sono due campi data: TRANSMISSION_DATE un po' forzatamente può contenere la data di ultima modifica
-        testa.setDateTime(U.actualDateTime());
+        testa.setDateTime(AppUtils.actualDateTime());
         return testa;
     }
 

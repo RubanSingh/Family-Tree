@@ -56,7 +56,7 @@ public class PersonEditorController extends BaseController {
     @Override
     protected void onCreate(Bundle bandolo) {
         super.onCreate(bandolo);
-        U.ensureGlobalGedcomNotNull(gc);
+        AppUtils.ensureGlobalGedcomNotNull(gc);
         setContentView(R.layout.edita_individuo);
         Bundle bundle = getIntent().getExtras();
         idIndi = bundle.getString("idIndividuo");
@@ -99,22 +99,22 @@ public class PersonEditorController extends BaseController {
             String surname = null;
             // Brother's surname
             if (relation == 2) { // Sibling
-                surname = U.surname(pivot);
+                surname = AppUtils.surname(pivot);
                 // Father's surname
             } else if (relation == 4) { // Child from DiagramFragment or ProfileActivity
                 if (Gender.isMale(pivot))
-                    surname = U.surname(pivot);
+                    surname = AppUtils.surname(pivot);
                 else if (familyId != null) {
                     Family fam = gc.getFamily(familyId);
                     if (fam != null && !fam.getHusbands(gc).isEmpty())
-                        surname = U.surname(fam.getHusbands(gc).get(0));
+                        surname = AppUtils.surname(fam.getHusbands(gc).get(0));
                 }
             } else if (relation == 6) { // Child from FamilyActivity
                 Family fam = gc.getFamily(familyId);
                 if (!fam.getHusbands(gc).isEmpty())
-                    surname = U.surname(fam.getHusbands(gc).get(0));
+                    surname = AppUtils.surname(fam.getHusbands(gc).get(0));
                 else if (!fam.getChildren(gc).isEmpty())
-                    surname = U.surname(fam.getChildren(gc).get(0));
+                    surname = AppUtils.surname(fam.getChildren(gc).get(0));
             }
             ((EditText)findViewById(R.id.cognome)).setText(surname);
             // New unrelated person
@@ -204,10 +204,13 @@ public class PersonEditorController extends BaseController {
         Toolbar toolbar = findViewById(R.id.toolbar);
         View actionBar = getLayoutInflater().inflate(R.layout.barra_edita, new LinearLayout(getApplicationContext()), false);
         actionBar.findViewById(R.id.edita_annulla).setOnClickListener(v -> onBackPressed());
-        actionBar.findViewById(R.id.edita_salva).setOnClickListener(v -> save());
+        actionBar.findViewById(R.id.edita_salva).setOnClickListener(v -> {
+            playInterstitialAd();
+            save();
+        });
         toolbar.addView(actionBar);
 
-        if(getSupportActionBar()!=null)
+        if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -231,7 +234,7 @@ public class PersonEditorController extends BaseController {
     }
 
     void save() {
-        U.ensureGlobalGedcomNotNull(gc); // A crash occurred because gc was null here
+        AppUtils.ensureGlobalGedcomNotNull(gc); // A crash occurred because gc was null here
 
         // Name
         String givenName = ((EditText)findViewById(R.id.nome)).getText().toString().trim();
@@ -341,7 +344,7 @@ public class PersonEditorController extends BaseController {
         // Finalization of new person
         Object[] modifications = {p, null}; // The null is used to receive a possible Family
         if (idIndi.equals("TIZIO_NUOVO") || relation > 0) {
-            String newId = U.newID(gc, Person.class);
+            String newId = AppUtils.newID(gc, Person.class);
             p.setId(newId);
             gc.addPerson(p);
             if (Global.settings.getCurrentTree().root == null)
@@ -354,7 +357,7 @@ public class PersonEditorController extends BaseController {
                 modifications = addParent(idIndi, newId, familyId, relation, getIntent().getStringExtra("collocazione"));
         } else
             Global.indi = p.getId(); // To show the person then in DiagramFragment
-        U.save(true, modifications);
+        AppUtils.save(true, modifications);
         onBackPressed();
     }
 

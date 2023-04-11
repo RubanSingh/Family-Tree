@@ -9,7 +9,7 @@ import org.folg.gedcom.model.SourceCitationContainer;
 import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class SourceCitationController extends DetailController {
@@ -23,7 +23,7 @@ public class SourceCitationController extends DetailController {
         if (c.getSource(gc) != null) { // Citation of an existing source
             getToolbar().setTitle(R.string.source_citation);
             setTitle(R.string.source_citation);
-            U.placeSource(box, c.getSource(gc), true);
+            AppUtils.placeSource(box, c.getSource(gc), true);
         } else if (c.getRef() != null) { // Citation of a non-existent source (maybe deleted)
             getToolbar().setTitle(R.string.inexistent_source_citation);
             setTitle(R.string.inexistent_source_citation);
@@ -41,8 +41,8 @@ public class SourceCitationController extends DetailController {
         //    U.place(box, "Data Tag Contents", c.getDataTagContents().toString()); // COMBINED DATA TEXT
         //place("Ref", "Ref", false, false); // The ID of the source, useless here
         placeExtensions(c);
-        U.placeNotes(box, c, true);
-        U.placeMedia(box, c, true);
+        AppUtils.placeNotes(box, c, true);
+        AppUtils.placeMedia(box, c, true);
     }
 
     @Override
@@ -52,7 +52,7 @@ public class SourceCitationController extends DetailController {
             ((Note)container).getSourceCitations().remove(c);
         else
             ((SourceCitationContainer)container).getSourceCitations().remove(c);
-        U.updateChangeDate(Memory.firstObject());
+        AppUtils.updateChangeDate(Memory.getLeaderObject());
         Memory.setInstanceAndAllSubsequentToNull(c);
     }
 

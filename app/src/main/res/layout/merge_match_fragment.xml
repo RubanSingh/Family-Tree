@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".merge.MergeController">
+
+    <data>
+
+        <variable
+            name="model"
+            type="dna.familytree.merge.MergeViewModel" />
+    </data>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="?attr/colorSecondaryContainer" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingTop="30dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="50dp">
+
+                <ProgressBar
+                    android:id="@+id/merge_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="@{model.matches.size}"
+                    android:progress="@{model.actualMatch + 1}"
+                    app:layout_constraintTop_toBottomOf="@+id/merge_counter" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/merge_counter"
+                    style="@style/AppTheme.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.actualMatch + 1 + `/` + model.matches.size}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="1/23" />
+
+                <LinearLayout
+                    android:id="@+id/merge_treeTitles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/merge_progress"
+                    app:layout_constraintWidth_max="600dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/merge_leftTitle"
+                        style="@style/AppTheme.Suggestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        tools:text="First tree title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/merge_rightTitle"
+                        style="@style/AppTheme.Suggestion"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom|center_horizontal"
+                        tools:text="Second tree title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/merge_persons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/merge_treeTitles"
+                    app:layout_constraintWidth_max="600dp">
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/leftPerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_weight="1"
+                        tools:layout="@layout/merge_person_fragment" />
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/rightPerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_weight="1"
+                        tools:layout="@layout/merge_person_fragment" />
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/merge_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/are_same_person"
+                    app:layout_constraintTop_toBottomOf="@+id/merge_persons" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/merge_keep"
+                    style="@style/AppTheme.ButtonNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/no"
+                    android:minWidth="100dp"
+                    app:layout_constraintEnd_toStartOf="@+id/merge_merge"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/merge_question" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/merge_merge"
+                    style="@style/AppTheme.ButtonNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:enabled="true"
+                    android:text="@string/yes"
+                    android:minWidth="100dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/merge_keep"
+                    app:layout_constraintTop_toBottomOf="@+id/merge_question" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

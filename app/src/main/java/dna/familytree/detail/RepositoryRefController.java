@@ -18,7 +18,7 @@ import org.folg.gedcom.model.Source;
 import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.R;
-import dna.familytree.U;
+import dna.familytree.AppUtils;
 import dna.familytree.util.AnalyticsUtil;
 
 public class RepositoryRefController extends DetailController {
@@ -46,7 +46,7 @@ public class RepositoryRefController extends DetailController {
         place(getString(R.string.call_number), "CallNumber");
         place(getString(R.string.media_type), "MediaType");
         placeExtensions(r);
-        U.placeNotes(box, r, true);
+        AppUtils.placeNotes(box, r, true);
     }
 
     public static View putRepository(LinearLayout layout, final Repository repo) {
@@ -56,7 +56,7 @@ public class RepositoryRefController extends DetailController {
         ((TextView)repoView.findViewById(R.id.fonte_testo)).setText(repo.getName());
         ((CardView)repoView).setCardBackgroundColor(context.getResources().getColor(R.color.repository));
         repoView.setOnClickListener(v -> {
-            Memory.setFirst(repo);
+            Memory.setLeader(repo);
             context.startActivity(new Intent(context, RepositoryController.class));
         });
         return repoView;
@@ -67,7 +67,7 @@ public class RepositoryRefController extends DetailController {
         // Delete the citation from the archive and update the date of the source that contained it
         Source container = (Source)Memory.getSecondToLastObject();
         container.setRepositoryRef(null);
-        U.updateChangeDate(container);
+        AppUtils.updateChangeDate(container);
         Memory.setInstanceAndAllSubsequentToNull(r);
     }
 
