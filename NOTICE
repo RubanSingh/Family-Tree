@@ -1,0 +1,27 @@
+Family Tree
+Copyright (C) 2018-2023 Michele Salvador
+Copyright (C) 2023-2026 Digital AI Labs
+
+This program is a modified version of Family Gem by Michele Salvador
+(https://github.com/michelesalvador/FamilyGem). Digital AI Labs modified it
+from 2023 onwards, including the Material 3 redesign, the core/designsystem and
+core/billing modules, Premium features, reminders, places and media tools.
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program (LICENSE.txt). If not, see <https://www.gnu.org/licenses/>.
+
+Third-party components keep their own licenses:
+- cropper/ : Android Image Cropper by ArthurHub (Apache License 2.0)
+- app/libs/gedcom-*.jar : Gedcom 5 Java by FamilySearch (Apache License 2.0)
+- app/libs/gedcomgraph-*.jar : GedcomGraph by Michele Salvador
+- app/libs/geonames-*.jar : GeoNames Java client (Apache License 2.0)
+- app/libs/slf4j-api-*.jar : SLF4J (MIT License)

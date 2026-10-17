@@ -26,7 +26,11 @@ Family Tree is strongly based on the library [Gedcom 5 Java](https://github.com/
    To sign with your own key and use your own ad units, copy `keystore.properties.example` to `keystore.properties` (git-ignored) and fill it in.
 
 ## License
+Copyright (C) 2018-2023 Michele Salvador  
+Copyright (C) 2023-2026 Digital AI Labs
+
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.
+See [LICENSE.txt](LICENSE.txt) for the full license and [NOTICE](NOTICE) for copyright, modification and third-party notices.
 
 ## About
 Family Tree is written in Java within Eclipse and Android Studio.  
