@@ -41,10 +41,10 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingStart="8dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="12dp"
+            android:paddingStart="@dimen/ds_space_ms"
+            android:paddingTop="@dimen/ds_space_ms"
+            android:paddingEnd="@dimen/ds_space_ms"
+            android:paddingBottom="@dimen/ds_space_md"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -61,25 +61,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/ds_space_sm"
                 android:text="@{person.getName}"
-                android:textSize="17sp"
+                android:textAppearance="@style/TextAppearance.FamilyTree.TitleMedium"
+                android:textColor="?attr/colorOnSurface"
                 tools:text="Name Surname" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/merge_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="@style/TextAppearance.FamilyTree.BodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"
                 android:visibility="@{person.data.isEmpty() ? View.GONE : View.VISIBLE}"
                 tools:text="Personal data" />
         </LinearLayout>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/merge_mourn"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            style="@style/Widget.FamilyTree.MourningBadge"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/defunto" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

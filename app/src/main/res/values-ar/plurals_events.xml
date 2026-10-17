@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="zero">ذكرى الزواج · %d سنة</item>
+        <item quantity="one">ذكرى الزواج · سنة واحدة</item>
+        <item quantity="two">ذكرى الزواج · سنتان</item>
+        <item quantity="few">ذكرى الزواج · %d سنوات</item>
+        <item quantity="many">ذكرى الزواج · %d سنة</item>
+        <item quantity="other">ذكرى الزواج · %d سنة</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="zero">ذكرى الوفاة · %d سنة</item>
+        <item quantity="one">ذكرى الوفاة · سنة واحدة</item>
+        <item quantity="two">ذكرى الوفاة · سنتان</item>
+        <item quantity="few">ذكرى الوفاة · %d سنوات</item>
+        <item quantity="many">ذكرى الوفاة · %d سنة</item>
+        <item quantity="other">ذكرى الوفاة · %d سنة</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="zero">بعد %1$d يوم · %2$s</item>
+        <item quantity="one">بعد يوم واحد · %2$s</item>
+        <item quantity="two">بعد يومين · %2$s</item>
+        <item quantity="few">بعد %1$d أيام · %2$s</item>
+        <item quantity="many">بعد %1$d يومًا · %2$s</item>
+        <item quantity="other">بعد %1$d يوم · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="zero">بعد %d يوم</item>
+        <item quantity="one">بعد يوم واحد</item>
+        <item quantity="two">بعد يومين</item>
+        <item quantity="few">بعد %d أيام</item>
+        <item quantity="many">بعد %d يومًا</item>
+        <item quantity="other">بعد %d يوم</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="zero">يبلغ %d عام</item>
+        <item quantity="one">يبلغ عامًا واحدًا</item>
+        <item quantity="two">يبلغ عامين</item>
+        <item quantity="few">يبلغ %d أعوام</item>
+        <item quantity="many">يبلغ %d عامًا</item>
+        <item quantity="other">يبلغ %d عام</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="zero">%d عام على الزواج</item>
+        <item quantity="one">عام واحد على الزواج</item>
+        <item quantity="two">عامان على الزواج</item>
+        <item quantity="few">%d أعوام على الزواج</item>
+        <item quantity="many">%d عامًا على الزواج</item>
+        <item quantity="other">%d عام على الزواج</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="zero">منذ %d سنة</item>
+        <item quantity="one">منذ سنة</item>
+        <item quantity="two">منذ سنتين</item>
+        <item quantity="few">منذ %d سنوات</item>
+        <item quantity="many">منذ %d سنة</item>
+        <item quantity="other">منذ %d سنة</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="zero">%d سنة</item>
+        <item quantity="one">سنة واحدة</item>
+        <item quantity="two">سنتان</item>
+        <item quantity="few">%d سنوات</item>
+        <item quantity="many">%d سنة</item>
+        <item quantity="other">%d سنة</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="zero">%d حدث</item>
+        <item quantity="one">حدث واحد</item>
+        <item quantity="two">حدثان</item>
+        <item quantity="few">%d أحداث</item>
+        <item quantity="many">%d حدثًا</item>
+        <item quantity="other">%d حدث</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="zero">%d شخص</item>
+        <item quantity="one">شخص واحد</item>
+        <item quantity="two">شخصان</item>
+        <item quantity="few">%d أشخاص</item>
+        <item quantity="many">%d شخصًا</item>
+        <item quantity="other">%d شخص</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="zero">%d مكان</item>
+        <item quantity="one">مكان واحد</item>
+        <item quantity="two">مكانان</item>
+        <item quantity="few">%d أماكن</item>
+        <item quantity="many">%d مكانًا</item>
+        <item quantity="other">%d مكان</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="zero">%d دولة</item>
+        <item quantity="one">دولة واحدة</item>
+        <item quantity="two">دولتان</item>
+        <item quantity="few">%d دول</item>
+        <item quantity="many">%d دولة</item>
+        <item quantity="other">%d دولة</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="zero">لا أشخاص</item>
+        <item quantity="one">شخص واحد</item>
+        <item quantity="two">شخصان</item>
+        <item quantity="few">%d أشخاص</item>
+        <item quantity="many">%d شخصًا</item>
+        <item quantity="other">%d شخص</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="zero">%d من الملفات خارج مخزن التطبيق. هل تريد نسخها إلى مخزن التطبيق لتبقى مع شجرتك وتُضمَّن في النسخ الاحتياطية؟ لن تتغير الملفات الأصلية.</item>
+        <item quantity="one">ملف واحد خارج مخزن التطبيق. هل تريد نسخه إلى مخزن التطبيق ليبقى مع شجرتك ويُضمَّن في النسخ الاحتياطية؟ لن يتغير الملف الأصلي.</item>
+        <item quantity="two">ملفان خارج مخزن التطبيق. هل تريد نسخهما إلى مخزن التطبيق ليبقيا مع شجرتك ويُضمَّنا في النسخ الاحتياطية؟ لن يتغير الملفان الأصليان.</item>
+        <item quantity="few">%d ملفات خارج مخزن التطبيق. هل تريد نسخها إلى مخزن التطبيق لتبقى مع شجرتك وتُضمَّن في النسخ الاحتياطية؟ لن تتغير الملفات الأصلية.</item>
+        <item quantity="many">%d ملفًا خارج مخزن التطبيق. هل تريد نسخها إلى مخزن التطبيق لتبقى مع شجرتك وتُضمَّن في النسخ الاحتياطية؟ لن تتغير الملفات الأصلية.</item>
+        <item quantity="other">%d ملف خارج مخزن التطبيق. هل تريد نسخها إلى مخزن التطبيق لتبقى مع شجرتك وتُضمَّن في النسخ الاحتياطية؟ لن تتغير الملفات الأصلية.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="zero">لم يُنسخ أي ملف إلى مخزن التطبيق.</item>
+        <item quantity="one">نُسخ ملف واحد إلى مخزن التطبيق.</item>
+        <item quantity="two">نُسخ ملفان إلى مخزن التطبيق.</item>
+        <item quantity="few">نُسخت %d ملفات إلى مخزن التطبيق.</item>
+        <item quantity="many">نُسخ %d ملفًا إلى مخزن التطبيق.</item>
+        <item quantity="other">نُسخ %d ملف إلى مخزن التطبيق.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="zero">%d من الوسائط مرتبطة بالمسار الكامل لملف في مخزن التطبيق. هل تريد اختصار الروابط إلى اسم الملف فقط؟ تبقى الملفات في مكانها.</item>
+        <item quantity="one">عنصر وسائط واحد مرتبط بالمسار الكامل لملف في مخزن التطبيق. هل تريد اختصار الرابط إلى اسم الملف فقط؟ يبقى الملف في مكانه.</item>
+        <item quantity="two">عنصرا وسائط مرتبطان بالمسار الكامل لملف في مخزن التطبيق. هل تريد اختصار الرابطين إلى اسم الملف فقط؟ يبقى الملفان في مكانهما.</item>
+        <item quantity="few">%d عناصر وسائط مرتبطة بالمسار الكامل لملف في مخزن التطبيق. هل تريد اختصار الروابط إلى اسم الملف فقط؟ تبقى الملفات في مكانها.</item>
+        <item quantity="many">%d عنصر وسائط مرتبطة بالمسار الكامل لملف في مخزن التطبيق. هل تريد اختصار الروابط إلى اسم الملف فقط؟ تبقى الملفات في مكانها.</item>
+        <item quantity="other">%d عنصر وسائط مرتبطة بالمسار الكامل لملف في مخزن التطبيق. هل تريد اختصار الروابط إلى اسم الملف فقط؟ تبقى الملفات في مكانها.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="zero">لم يُختصر أي مسار ملف.</item>
+        <item quantity="one">اختُصر مسار ملف واحد.</item>
+        <item quantity="two">اختُصر مسارا ملفين.</item>
+        <item quantity="few">اختُصرت %d مسارات ملفات.</item>
+        <item quantity="many">اختُصر %d مسار ملف.</item>
+        <item quantity="other">اختُصر %d مسار ملف.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="zero">لا سجلات</item>
+        <item quantity="one">سجل واحد</item>
+        <item quantity="two">سجلان</item>
+        <item quantity="few">%d سجلات</item>
+        <item quantity="many">%d سجلًا</item>
+        <item quantity="other">%d سجل</item>
+    </plurals>
+</resources>

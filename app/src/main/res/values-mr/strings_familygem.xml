@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">स्थानिक बॅकअप</string>
+    <string name="choose_folder">फोल्डर निवडा</string>
+    <string name="backup_folder">बॅकअप फोल्डर</string>
+    <string name="recover">पुनर्प्राप्त करा</string>
+    <string name="export_png">PNG निर्यात करा</string>
+    <string name="png_exported_ok">PNG निर्यात केले.</string>
+    <string name="tree_settings">वंशावळ सेटिंग्ज</string>
+    <string name="max_life_span">कमाल आयुर्मान</string>
+    <string name="years">वर्षे</string>
+    <string name="current_date">चालू तारीख</string>
+    <string name="device_date">डिव्हाइसची तारीख</string>
+    <string name="fixed_date">निश्चित तारीख</string>
+    <string name="notification_time">वाढदिवस सूचनेची वेळ</string>
+    <string name="origin_family">मूळ कुटुंब</string>
+    <string name="adoptive_family">दत्तक कुटुंब</string>
+    <string name="foster_family">संगोपन कुटुंब</string>
+    <string name="paternal_family">पितृ कुटुंब</string>
+    <string name="maternal_family">मातृ कुटुंब</string>
+    <string name="own_family">स्वतःचे कुटुंब</string>
+    <string name="numbers">संख्या</string>
+    <string name="invalid_date">अवैध GEDCOM दिनांक.</string>
+    <string name="husband_age">पतीचे वय</string>
+    <string name="search_duplicates">डुप्लिकेट शोधा</string>
+    <string name="skip">वगळा</string>
+    <string name="error_found">एक त्रुटी आढळली.</string>
+    <string name="yes_to_all">उर्वरित सर्वांना होय</string>
+    <string name="no_to_all">उर्वरित सर्वांना नाही</string>
+    <string name="wife_age">पत्नीचे वय</string>
+    <string name="less_than">पेक्षा कमी</string>
+    <string name="more_than">पेक्षा जास्त</string>
+    <string name="duplicates_lines">डुप्लिकेट रेषा</string>
+    <string name="make_shared_media">सामायिक माध्यम बनवा</string>
+    <string name="make_media">साधे माध्यम बनवा</string>
+    <string name="copy_app_storage">अ‍ॅप स्टोरेजमध्ये कॉपी करा</string>
+    <string name="shrink_path">फाईल पाथ लहान करा</string>
+    <string name="file_exists_reuse">ही फाईल आधीपासून अस्तित्वात आहे.\nतीच पुन्हा वापरायची की प्रत बनवायची?</string>
+    <string name="use_existing">विद्यमान वापरा</string>
+    <string name="make_copy">प्रत बनवा</string>
+    <string name="existing_name">हे नाव आधीपासून अस्तित्वात आहे</string>
+    <string name="invalid_name">अवैध नाव</string>
+    <string name="info">माहिती</string>
+</resources>

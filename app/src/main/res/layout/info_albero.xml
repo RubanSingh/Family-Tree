@@ -1,79 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!-- Tree info: overview card with statistics, then the GEDCOM header card -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        style="@style/Widget.FamilyTree.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="?attr/colorSecondaryContainer" />
+        android:layout_height="?actionBarSize" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/ds_space_xl">
 
         <LinearLayout
             android:id="@+id/info_scatola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:paddingStart="@dimen/ds_page_gutter"
+            android:paddingEnd="@dimen/ds_page_gutter">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/info_statistiche"
+                style="@style/Widget.FamilyTree.SectionHeader"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/ds_space_xs"
+                android:paddingTop="@dimen/ds_space_sm"
+                android:text="@string/tree_info_overview" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/ds_space_md">
+
+                    <ImageView
+                        style="@style/Widget.FamilyTree.IconContainer.Primary"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ds_ic_insights" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/info_statistiche"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/ds_space_md"
+                        android:layout_weight="1"
+                        android:lineSpacingExtra="4dp"
+                        android:textAppearance="?attr/textAppearanceBodyLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/info_aggiorna"
-                style="@style/AppTheme.ButtonNormal"
+                style="@style/Widget.FamilyTree.Button.Tonal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/ds_space_md"
                 android:text="@string/refresh"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:icon="@drawable/ds_ic_refresh" />
 
             <LinearLayout
                 android:id="@+id/info_testata"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
 
                 <com.google.android.material.textview.MaterialTextView
+                    style="@style/Widget.FamilyTree.SectionHeader"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="?attr/colorTertiary"
-                    android:paddingStart="8dp"
-                    android:paddingTop="3dp"
-                    android:paddingEnd="8dp"
-                    android:paddingBottom="3dp"
-                    android:text="@string/header"
-                    android:textColor="#fff" />
+                    android:paddingStart="@dimen/ds_space_xs"
+                    android:text="@string/header" />
 
-                <TableLayout
-                    android:id="@+id/info_tabella"
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.FamilyTree.Card"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#22960f47"
-                    android:padding="5dp"
-                    android:shrinkColumns="1" />
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/info_tabella"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/ds_space_md"
+                        android:shrinkColumns="1" />
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/info_gestisci_testata"
-                style="@style/AppTheme.ButtonNormal"
+                style="@style/Widget.FamilyTree.Button.Outlined"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:minWidth="200dp"
-                android:text="@string/update_header" />
+                android:layout_marginTop="@dimen/ds_space_lg"
+                android:text="@string/update_header"
+                app:icon="@drawable/ds_ic_edit_note" />
 
         </LinearLayout>
     </ScrollView>

@@ -13,10 +13,14 @@ import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
+import android.os.Looper;
+import android.os.Handler;
+import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
@@ -29,6 +33,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,7 +44,11 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.text.TextUtilsCompat;
 import androidx.core.view.GravityCompat;
+import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.palette.graphics.Palette;
@@ -49,6 +58,7 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 import org.folg.gedcom.model.Family;
 import org.folg.gedcom.model.Person;
+import org.folg.gedcom.model.SpouseRef;
 
 import java.io.OutputStream;
 import java.util.ArrayList;
@@ -56,23 +66,32 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import dna.familytree.feature.billing.PremiumGate;
+import dna.familytree.designsystem.PremiumBadge;
 import dna.familytree.constant.Choice;
+import dna.familytree.constant.Extra;
 import dna.familytree.constant.Gender;
 import dna.familytree.constant.Relation;
 import dna.familytree.detail.FamilyController;
+import dna.familytree.feature.ads.AdsManager;
+import dna.familytree.feature.ads.RewardedUnlock;
+import dna.familytree.feature.ads.UsageStats;
 import dna.familytree.list.PersonsFragment;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.util.FileUtils;
+import dna.familytree.util.InsetsUtil;
 import dna.familytree.util.LoggerUtils;
 import graph.gedcom.Bond;
 import graph.gedcom.CurveLine;
+import graph.gedcom.DuplicateLine;
 import graph.gedcom.FamilyNode;
 import graph.gedcom.Graph;
 import graph.gedcom.Line;
 import graph.gedcom.Metric;
 import graph.gedcom.PersonNode;
+import graph.gedcom.Util;
 
-public class DiagramFragment extends BaseFragment {
+public class DiagramFragment extends BaseFragment implements InsetsUtil.SelfInsetting {
 
     private Graph graph;
     private MoveLayout moveLayout;
@@ -82,6 +101,7 @@ public class DiagramFragment extends BaseFragment {
     private FulcrumGlow glow;
     private Lines lines;
     private Lines backLines;
+    private DuplicateLines duplicateLines;
     private float density;
     private int STROKE; // Lines thickness, in pixels
     private int DASH; // Dashed lines interval
@@ -92,6 +112,7 @@ public class DiagramFragment extends BaseFragment {
     private boolean printPDF; // We are exporting a PDF
     private final boolean leftToRight = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR;
     private boolean firstTime = true;
+    private boolean lightSystemBars; // System bars appearance outside the diagram
     private String TAG = DiagramFragment.class.getSimpleName();
 
     @Override
@@ -103,6 +124,19 @@ public class DiagramFragment extends BaseFragment {
 
         requireActivity().findViewById(R.id.toolbar).setVisibility(View.GONE); // Necessary in case of backPressed after onActivityResult
         final View view = inflater.inflate(R.layout.diagram, container, false);
+        // Edge-to-edge: the diagram is drawn behind the system bars, only its buttons keep clear of them
+        View[] buttons = {view.findViewById(R.id.diagram_hamburger), view.findViewById(R.id.diagram_options)};
+        ViewCompat.setOnApplyWindowInsetsListener(view, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
+            for (View button : buttons) {
+                Rect margin = InsetsUtil.initialMargin(button);
+                ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams)button.getLayoutParams();
+                params.setMargins(margin.left + bars.left, margin.top + bars.top, margin.right + bars.right, margin.bottom);
+                button.setLayoutParams(params);
+            }
+            return insets;
+        });
+        InsetsUtil.requestApplyInsetsWhenAttached(view);
         view.findViewById(R.id.diagram_hamburger).setOnClickListener(v -> {
             DrawerLayout drawer = requireActivity().findViewById(R.id.scatolissima);
             drawer.openDrawer(GravityCompat.START);
@@ -111,8 +145,15 @@ public class DiagramFragment extends BaseFragment {
             PopupMenu settings = new PopupMenu(requireContext(), vista);
             Menu menu = settings.getMenu();
             menu.add(0, 0, 0, R.string.diagram_settings);
-            if (gc.getPeople().size() > 0)
-                menu.add(0, 1, 0, R.string.export_pdf);
+            menu.add(0, 3, 0, R.string.tree_settings);
+            if (gc.getPeople().size() > 0) {
+                if (!PremiumGate.isPremium())
+                    AdsManager.preloadRewarded(requireContext()); // A gated export may be unlocked with a video
+                menu.add(0, 1, 0, PremiumGate.isPremiumOrLegacy() ? getText(R.string.export_pdf)
+                        : PremiumBadge.withDiamond(requireContext(), getText(R.string.export_pdf))); // Free before 1.6
+                menu.add(0, 2, 0, PremiumGate.isPremium() ? getText(R.string.export_png)
+                        : PremiumBadge.withDiamond(requireContext(), getText(R.string.export_png))); // HD image, Premium
+            }
             settings.show();
             settings.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
@@ -122,7 +163,26 @@ public class DiagramFragment extends BaseFragment {
                         break;
                     case 1: // Export PDF
                         AnalyticsUtil.logEventExportPDFTree(getFirebaseAnalytics());
-                        FileUtils.saveDocument(null, this, Global.settings.openTree, "application/pdf", "pdf", 903);
+                        if (PremiumGate.isPremiumOrLegacy())
+                            FileUtils.saveDocument(null, this, Global.settings.openTree, "application/pdf", "pdf", 903);
+                        else // Once after a video, or Premium
+                            RewardedUnlock.offer(requireActivity(), R.string.export_pdf, dna.familytree.designsystem.R.drawable.ds_ic_pdf, () -> {
+                                if (isAdded())
+                                    FileUtils.saveDocument(null, this, Global.settings.openTree, "application/pdf", "pdf", 903);
+                            });
+                        break;
+                    case 2: // Export PNG
+                        if (PremiumGate.isPremium())
+                            FileUtils.saveDocument(null, this, Global.settings.openTree, "image/png", "png", 904);
+                        else // Once after a video, or Premium
+                            RewardedUnlock.offer(requireActivity(), R.string.export_png, dna.familytree.designsystem.R.drawable.ds_ic_image, () -> {
+                                if (isAdded())
+                                    FileUtils.saveDocument(null, this, Global.settings.openTree, "image/png", "png", 904);
+                            });
+                        break;
+                    case 3: // Tree settings
+                        startActivity(new Intent(getContext(), TreeSettingsController.class)
+                                .putExtra(Extra.TREE_ID, Global.settings.openTree));
                         break;
                     default:
                         return false;
@@ -132,11 +192,17 @@ public class DiagramFragment extends BaseFragment {
         });
 
         moveLayout = view.findViewById(R.id.diagram_frame);
-        moveLayout.leftToRight = leftToRight;
+        // The graph library lays out right-to-left itself: the frame and the box always work left-to-right
+        moveLayout.leftToRight = true;
         box = view.findViewById(R.id.diagram_box);
         //box.setBackgroundColor(0x22ff0000);
-        graph = new Graph(Global.gc); // Create a diagram model
+        graph = new Graph(); // Create a diagram model
         moveLayout.graph = graph;
+        // Text of the marriage year in the bond (as before: the year written by GedcomDateConverter, otherwise a dot)
+        FamilyNode.marriageYearProvider = date -> {
+            String year = new GedcomDateConverter(date).writeDate(true);
+            return year == null || year.isEmpty() ? null : year;
+        };
         forceDraw = true; // To be sure the diagram will be drawn
 
         // Fade in animation
@@ -164,8 +230,23 @@ public class DiagramFragment extends BaseFragment {
             String[] ids = {Global.indi, Global.settings.getCurrentTree().root, AppUtils.trovaRadice(gc)};
             for (String id : ids) {
                 fulcrum = gc.getPerson(id);
-                if (fulcrum != null)
+                if (fulcrum != null) {
+                    // If fulcrum is the third (or further) spouse of a family, starts from the first one (from Family Gem)
+                    List<Family> spouseFamilies = fulcrum.getSpouseFamilies(gc);
+                    if (!spouseFamilies.isEmpty()) {
+                        // Husbands then wives, as the graph library reads them
+                        List<SpouseRef> spouseRefs = new ArrayList<>(spouseFamilies.get(0).getHusbandRefs());
+                        spouseRefs.addAll(spouseFamilies.get(0).getWifeRefs());
+                        int index = -1;
+                        for (int i = 0; i < spouseRefs.size(); i++)
+                            if (id.equals(spouseRefs.get(i).getRef())) index = i;
+                        if (index >= 2) {
+                            Person first = gc.getPerson(spouseRefs.get(0).getRef());
+                            if (first != null) fulcrum = first;
+                        }
+                    }
                     break;
+                }
             }
             // Empty diagram
             if (fulcrum == null) {
@@ -183,12 +264,15 @@ public class DiagramFragment extends BaseFragment {
                     ((View)moveLayout.getParent()).findViewById(R.id.diagram_options).setVisibility(View.GONE);
             } else {
                 Global.indi = fulcrum.getId(); // Confirms it just in case
-                graph.maxAncestors(Global.settings.diagram.ancestors)
+                graph.setGedcom(gc).setLayoutDirection(leftToRight)
+                        .maxAncestors(Global.settings.diagram.ancestors)
                         .maxGreatUncles(Global.settings.diagram.uncles)
                         .displaySpouses(Global.settings.diagram.spouses)
                         .maxDescendants(Global.settings.diagram.descendants)
                         .maxSiblingsNephews(Global.settings.diagram.siblings)
                         .maxUnclesCousins(Global.settings.diagram.cousins)
+                        .displayNumbers(Global.settings.diagram.numbers)
+                        .displayDuplicateLines(Global.settings.diagram.duplicates)
                         .showFamily(Global.familyNum)
                         .startFrom(fulcrum);
                 drawDiagram();
@@ -246,9 +330,7 @@ public class DiagramFragment extends BaseFragment {
 
         // Place various type of graphic nodes in the box taking them from the list of nodes
         for (PersonNode personNode : graph.getPersonNodes()) {
-            if (personNode.person.getId().equals(Global.indi) && !personNode.isFulcrumNode())
-                box.addView(new Asterisk(getContext(), personNode));
-            else if (personNode.mini)
+            if (personNode.mini)
                 box.addView(new GraphicMiniCard(getContext(), personNode));
             else
                 box.addView(new GraphicPerson(getContext(), personNode));
@@ -305,6 +387,8 @@ public class DiagramFragment extends BaseFragment {
                 box.addView(lines, 0);
                 backLines = new Lines(context(), graph.getBackLines(), true);
                 box.addView(backLines, 0);
+                duplicateLines = new DuplicateLines(context());
+                box.addView(duplicateLines, 0);
 
                 // Add the glow
                 PersonNode fulcrumNode = (PersonNode)fulcrumView.metric;
@@ -337,15 +421,13 @@ public class DiagramFragment extends BaseFragment {
             if (nodeView instanceof GraphicMetric) {
                 GraphicMetric graphicNode = (GraphicMetric)nodeView;
                 RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)graphicNode.getLayoutParams();
-                if (leftToRight) params.leftMargin = toPx(graphicNode.metric.x);
-                else params.rightMargin = toPx(graphicNode.metric.x);
+                params.leftMargin = toPx(graphicNode.metric.x);
                 params.topMargin = toPx(graphicNode.metric.y);
             }
         }
         // The glow follows fulcrum
         RelativeLayout.LayoutParams glowParams = (RelativeLayout.LayoutParams)glow.getLayoutParams();
-        if (leftToRight) glowParams.leftMargin = toPx(fulcrumView.metric.x) - GLOW_SPACE;
-        else glowParams.rightMargin = toPx(fulcrumView.metric.x) - GLOW_SPACE;
+        glowParams.leftMargin = toPx(fulcrumView.metric.x) - GLOW_SPACE;
         glowParams.topMargin = toPx(fulcrumView.metric.y) - GLOW_SPACE;
 
         moveLayout.childWidth = toPx(graph.getWidth()) + box.getPaddingStart() * 2;
@@ -354,12 +436,12 @@ public class DiagramFragment extends BaseFragment {
         // Update lines
         lines.invalidate();
         backLines.invalidate();
+        duplicateLines.invalidate();
 
         // Pan to fulcrum
         float scale = moveLayout.minimumScale();
         float padding = box.getPaddingTop() * scale;
-        moveLayout.panTo((int)(leftToRight ? toPx(fulcrumView.metric.centerX()) * scale - moveLayout.width / 2 + padding
-                        : moveLayout.width / 2 - toPx(fulcrumView.metric.centerX()) * scale - padding),
+        moveLayout.panTo((int)(toPx(fulcrumView.metric.centerX()) * scale - moveLayout.width / 2 + padding),
                 (int)(toPx(fulcrumView.metric.centerY()) * scale - moveLayout.height / 2 + padding));
     }
 
@@ -378,7 +460,7 @@ public class DiagramFragment extends BaseFragment {
 
         @Override
         protected void onDraw(Canvas canvas) {
-            paint.setColor(getResources().getColor(R.color.accent));
+            paint.setColor(getResources().getColor(R.color.diagram_glow));
             paint.setMaskFilter(bmf);
             setLayerType(View.LAYER_TYPE_SOFTWARE, paint);
             canvas.drawRect(GLOW_SPACE - extend, GLOW_SPACE - extend,
@@ -423,12 +505,12 @@ public class DiagramFragment extends BaseFragment {
             else if (Gender.isFemale(person))
                 border.setBackgroundResource(R.drawable.female_bg);
             background = view.findViewById(R.id.card_background);
-            if (personNode.isFulcrumNode()) {
+            if (person.getId().equals(Global.indi)) // Also its duplicates
                 background.setBackgroundResource(R.drawable.casella_sfondo_evidente);
-                fulcrumView = this;
-            } else if (personNode.acquired) {
+            else if (personNode.acquired)
                 background.setBackgroundResource(R.drawable.casella_sfondo_sposo);
-            }
+            if (personNode.isFulcrumNode())
+                fulcrumView = this;
 
             ShapeableImageView shapeableImageView = view.findViewById(R.id.card_photo);
             FileUtils.showMainImageForPerson(Global.gc, person, shapeableImageView);
@@ -463,9 +545,12 @@ public class DiagramFragment extends BaseFragment {
 
         @Override
         public void invalidate() {
-            // Change background color for PDF export
-            if (printPDF && ((PersonNode)metric).acquired) {
-                background.setBackgroundResource(R.drawable.casella_sfondo_sposo_stampa);
+            // Change background color for PDF/PNG export
+            if (printPDF) {
+                if (((PersonNode)metric).acquired)
+                    background.setBackgroundResource(R.drawable.casella_sfondo_sposo_stampa);
+                else // Removes the highlight of the selected person
+                    background.setBackgroundResource(R.drawable.casella_sfondo_base);
             }
         }
     }
@@ -488,22 +573,22 @@ public class DiagramFragment extends BaseFragment {
             //bondLayout.setBackgroundColor(0x44ff00ff);
             addView(bondLayout, new LayoutParams(toPx(bond.width), toPx(bond.height)));
             FamilyNode familyNode = bond.familyNode;
-            if (bond.marriageDate == null) {
+            if (bond.marriageYear == null) {
                 hearth = new View(context);
                 hearth.setBackgroundResource(R.drawable.diagram_hearth);
                 int diameter = toPx(familyNode.mini ? MINI_HEARTH_DIAMETER : HEARTH_DIAMETER);
                 LayoutParams hearthParams = new LayoutParams(diameter, diameter);
-                hearthParams.topMargin = toPx(familyNode.centerRelY()) - diameter / 2;
+                hearthParams.topMargin = toPx(familyNode.height / 2) - diameter / 2;
                 hearthParams.addRule(CENTER_HORIZONTAL);
                 bondLayout.addView(hearth, hearthParams);
             } else {
                 TextView year = new TextView(context);
                 year.setBackgroundResource(R.drawable.diagram_year_oval);
                 year.setGravity(Gravity.CENTER);
-                year.setText(new GedcomDateConverter(bond.marriageDate).writeDate(true));
+                year.setText(bond.marriageYear);
                 year.setTextSize(13f);
                 LayoutParams yearParams = new LayoutParams(LayoutParams.MATCH_PARENT, toPx(MARRIAGE_HEIGHT));
-                yearParams.topMargin = toPx(bond.centerRelY() - MARRIAGE_HEIGHT / 2);
+                yearParams.topMargin = toPx(bond.height / 2 - MARRIAGE_HEIGHT / 2);
                 bondLayout.addView(year, yearParams);
             }
             setOnClickListener(view -> {
@@ -536,33 +621,58 @@ public class DiagramFragment extends BaseFragment {
                 miniCardText.setBackgroundResource(R.drawable.male_bg);
             else if (sex == Gender.FEMALE)
                 miniCardText.setBackgroundResource(R.drawable.female_bg);
-            if (personNode.acquired) {
-                layout = miniCard.findViewById(R.id.minicard);
+            layout = miniCard.findViewById(R.id.minicard);
+            if (personNode.person.getId().equals(Global.indi))
+                layout.setBackgroundResource(R.drawable.casella_sfondo_evidente);
+            else if (personNode.acquired)
                 layout.setBackgroundResource(R.drawable.casella_sfondo_sposo);
-            }
             miniCard.setOnClickListener(view -> clickCard(personNode.person));
         }
 
         @Override
         public void invalidate() {
             if (printPDF && layout != null) {
-                layout.setBackgroundResource(R.drawable.casella_sfondo_sposo_stampa);
+                layout.setBackgroundResource(((PersonNode)metric).acquired
+                        ? R.drawable.casella_sfondo_sposo_stampa : R.drawable.casella_sfondo_base);
             }
         }
     }
 
     /**
-     * Replacement for another person who is actually fulcrum.
+     * Lines connecting a person displayed more than once, colored by sex (from Family Gem).
      */
-    class Asterisk extends GraphicMetric {
-        Asterisk(Context context, PersonNode personNode) {
-            super(context, personNode);
-            getLayoutInflater().inflate(R.layout.diagram_asterisk, this, true);
-            registerForContextMenu(this);
-            setOnClickListener(v -> {
-                Memory.setLeader(personNode.person);
-                startActivity(new Intent(getContext(), ProfileController.class));
-            });
+    class DuplicateLines extends View {
+        final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        final Path[] paths = {new Path(), new Path(), new Path()}; // Male, female, undefined
+        final int[] colors = {R.color.male, R.color.female, R.color.diagram_undefined};
+
+        DuplicateLines(Context context) {
+            super(context);
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(toPx(2));
+            paint.setStrokeCap(Paint.Cap.SQUARE);
+        }
+
+        @Override
+        public void invalidate() {
+            for (Path path : paths) path.reset();
+            for (DuplicateLine line : graph.getDuplicateLines()) {
+                int pathNum = line.gender == Util.Gender.MALE ? 0 : line.gender == Util.Gender.FEMALE ? 1 : 2;
+                paths[pathNum].moveTo(toPx(line.x1), toPx(line.y1));
+                paths[pathNum].quadTo(toPx(line.x3), toPx(line.y3), toPx(line.x2), toPx(line.y2));
+            }
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)getLayoutParams();
+            params.width = toPx(graph.getWidth());
+            params.height = toPx(graph.getHeight());
+            requestLayout();
+        }
+
+        @Override
+        protected void onDraw(Canvas canvas) {
+            for (int i = 0; i < paths.length; i++) {
+                paint.setColor(getResources().getColor(colors[i]));
+                canvas.drawPath(paths[i], paint);
+            }
         }
     }
 
@@ -591,7 +701,6 @@ public class DiagramFragment extends BaseFragment {
         public void invalidate() {
             paint.setColor(getResources().getColor(printPDF ? R.color.diagram_lines_print : R.color.diagram_lines_screen));
             paths.clear(); // In case of PDF print
-            float width = toPx(graph.getWidth());
             int pathNum = 0; // index of paths
             // Put the lines in one or more paths
             for (Set<Line> lineGroup : lineGroups) {
@@ -600,10 +709,6 @@ public class DiagramFragment extends BaseFragment {
                 Path path = paths.get(pathNum);
                 for (Line line : lineGroup) {
                     float x1 = toPx(line.x1), y1 = toPx(line.y1), x2 = toPx(line.x2), y2 = toPx(line.y2);
-                    if (!leftToRight) {
-                        x1 = width - x1;
-                        x2 = width - x2;
-                    }
                     path.moveTo(x1, y1);
                     if (line instanceof CurveLine) {
                         path.cubicTo(x1, y2, x2, y1, x2, y2);
@@ -723,8 +828,7 @@ public class DiagramFragment extends BaseFragment {
         PersonNode personNode = null;
         if (vista instanceof GraphicPerson)
             personNode = (PersonNode)((GraphicPerson)vista).metric;
-        else if (vista instanceof Asterisk)
-            personNode = (PersonNode)((Asterisk)vista).metric;
+        if (personNode == null) return;
         pers = personNode.person;
         if (personNode.origin != null)
             parentFam = personNode.origin.spouseFamily;
@@ -887,13 +991,87 @@ public class DiagramFragment extends BaseFragment {
                     return;
                 }
                 Toast.makeText(getContext(), R.string.pdf_exported_ok, Toast.LENGTH_LONG).show();
+                UsageStats.engage(UsageStats.POINTS_EXPORT);
+                AdsManager.onNaturalBreak(requireActivity(), AdsManager.Placement.EXPORT_DONE);
+            } // Export diagram to PNG
+            else if (requestCode == 904 && data != null && data.getData() != null) {
+                exportPng(data.getData());
             }
         }
+    }
+
+    /**
+     * Draws the diagram, styled for print as the PDF, into a PNG written to the URI.
+     * Very large trees are scaled down to fit in memory.
+     */
+    private void exportPng(Uri uri) {
+        printPDF = true;
+        for (int i = 0; i < box.getChildCount(); i++) {
+            box.getChildAt(i).invalidate();
+        }
+        fulcrumView.findViewById(R.id.card_background).setBackgroundResource(R.drawable.casella_sfondo_base);
+        long maxPixels = Runtime.getRuntime().maxMemory() / 4 / 3; // A third of the heap, 4 bytes per pixel
+        long pixels = (long)box.getWidth() * box.getHeight();
+        float scale = pixels > maxPixels ? (float)Math.sqrt((double)maxPixels / pixels) : 1f;
+        Bitmap bitmap = null;
+        while (bitmap == null && scale > 0.05f) {
+            try {
+                bitmap = Bitmap.createBitmap(Math.max(1, (int)(box.getWidth() * scale)),
+                        Math.max(1, (int)(box.getHeight() * scale)), Bitmap.Config.ARGB_8888);
+            } catch (OutOfMemoryError e) {
+                scale *= 0.8f;
+            }
+        }
+        if (bitmap != null) {
+            Canvas canvas = new Canvas(bitmap);
+            canvas.drawColor(Color.WHITE);
+            canvas.scale(scale, scale);
+            box.draw(canvas);
+        }
+        printPDF = false;
+        ripristina(); // Back to the screen look
+        Context appContext = requireContext().getApplicationContext();
+        if (bitmap == null) {
+            Toast.makeText(appContext, R.string.something_wrong, Toast.LENGTH_LONG).show();
+            return;
+        }
+        final Bitmap image = bitmap;
+        new Thread(() -> { // Compressing a big image takes a while
+            String error = null;
+            try (OutputStream out = appContext.getContentResolver().openOutputStream(uri)) {
+                if (out == null || !image.compress(Bitmap.CompressFormat.PNG, 100, out))
+                    error = appContext.getString(R.string.something_wrong);
+            } catch (Exception e) {
+                LoggerUtils.ErrorLog(TAG, "Exception in exportPng", e);
+                error = e.getLocalizedMessage();
+            }
+            image.recycle();
+            String message = error == null ? appContext.getString(R.string.png_exported_ok) : error;
+            new Handler(Looper.getMainLooper()).post(() -> Toast.makeText(appContext, message, Toast.LENGTH_LONG).show());
+        }).start();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         AnalyticsUtil.logDiagramFragment(getFirebaseAnalytics());
+        // The diagram background is dark also in light theme, and is drawn behind the system bars
+        WindowInsetsControllerCompat insetsController = getInsetsController();
+        lightSystemBars = insetsController.isAppearanceLightStatusBars();
+        insetsController.setAppearanceLightStatusBars(false);
+        insetsController.setAppearanceLightNavigationBars(false);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        WindowInsetsControllerCompat insetsController = getInsetsController();
+        insetsController.setAppearanceLightStatusBars(lightSystemBars);
+        insetsController.setAppearanceLightNavigationBars(lightSystemBars);
+    }
+
+    private WindowInsetsControllerCompat getInsetsController() {
+        Window window = requireActivity().getWindow();
+        return WindowCompat.getInsetsController(window, window.getDecorView());
     }
 }

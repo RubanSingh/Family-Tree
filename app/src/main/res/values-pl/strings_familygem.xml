@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokalna kopia zapasowa</string>
+    <string name="choose_folder">Wybierz folder</string>
+    <string name="backup_folder">Folder kopii zapasowej</string>
+    <string name="recover">Odzyskać</string>
+    <string name="export_png">Eksportuj PNG</string>
+    <string name="png_exported_ok">Wyeksportowano PNG.</string>
+    <string name="tree_settings">Ustawienia drzewa</string>
+    <string name="max_life_span">Maksymalna długość życia</string>
+    <string name="years">Lata</string>
+    <string name="current_date">Aktualna data</string>
+    <string name="device_date">Data urządzenia</string>
+    <string name="fixed_date">Ustalona data</string>
+    <string name="notification_time">Czas powiadomienia o urodzinach</string>
+    <string name="origin_family">Rodzina pochodzenia</string>
+    <string name="adoptive_family">Rodzina adopcyjna</string>
+    <string name="foster_family">Rodzina zastępcza</string>
+    <string name="paternal_family">Rodzina ojca</string>
+    <string name="maternal_family">Rodzina matki</string>
+    <string name="own_family">Własna rodzina</string>
+    <string name="numbers">Numery</string>
+    <string name="search_duplicates">Szukać duplikaty</string>
+    <string name="skip">Pominąć</string>
+    <string name="error_found">Znaleziono jeden błąd.</string>
+    <string name="yes_to_all">Tak dla wszystkich pozostałych</string>
+    <string name="no_to_all">Nie dla wszystkich pozostałych</string>
+    <string name="duplicates_lines">Linie duplikatów</string>
+    <string name="make_shared_media">Utworzyć udostępnione medium</string>
+    <string name="make_media">Utworzyć medium</string>
+    <string name="copy_app_storage">Kopiować do pamięci aplikacji</string>
+    <string name="shrink_path">Skrócić drogę do pliku</string>
+    <string name="file_exists_reuse">Ten plik już istnieje.\nCzy chcesz go ponownie wykorzystać czy zrobić jego kopię?</string>
+    <string name="use_existing">Ponownie wykorzystać istniejący</string>
+    <string name="make_copy">Zrób kopię</string>
+    <string name="existing_name">Istniejąca już nazwa</string>
+    <string name="invalid_name">Nieważna nazwa</string>
+    <string name="info">Informacje</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Nieprawidłowa data GEDCOM.</string>
+    <string name="husband_age">Wiek męża</string>
+    <string name="wife_age">Wiek żony</string>
+    <string name="less_than">Mniej niż</string>
+    <string name="more_than">Więcej niż</string>
+</resources>

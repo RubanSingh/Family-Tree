@@ -1,5 +1,7 @@
 package dna.familytree;
 
+import android.widget.TextView;
+import org.folg.gedcom.model.ParentFamilyRef;
 import static dna.familytree.Global.gc;
 
 import android.content.Intent;
@@ -48,6 +50,8 @@ public class ProfileRelativesFragment extends BaseFragment {
                 // Famiglie di origine: genitori e fratelli
                 List<Family> listaFamiglie = one.getParentFamilies(gc);
                 for (Family famiglia : listaFamiglie) {
+                    if (!famiglia.getHusbands(gc).isEmpty() || !famiglia.getWives(gc).isEmpty() || famiglia.getChildren(gc).size() > 1)
+                        addHeader(originTitle(famiglia));
                     for (Person padre : famiglia.getHusbands(gc))
                         createCard(padre, Relation.PARENT, famiglia);
                     for (Person madre : famiglia.getWives(gc))
@@ -61,20 +65,26 @@ public class ProfileRelativesFragment extends BaseFragment {
                     for (Person padre : famiglia.getHusbands(gc)) {
                         List<Family> famigliePadre = padre.getSpouseFamilies(gc);
                         famigliePadre.removeAll(listaFamiglie);
-                        for (Family fam : famigliePadre)
+                        for (Family fam : famigliePadre) {
+                            if (!fam.getChildren(gc).isEmpty()) addHeader(R.string.paternal_family);
                             for (Person fratellastro : fam.getChildren(gc))
                                 createCard(fratellastro, Relation.HALF_SIBLING, fam);
+                        }
                     }
                     for (Person madre : famiglia.getWives(gc)) {
                         List<Family> famiglieMadre = madre.getSpouseFamilies(gc);
                         famiglieMadre.removeAll(listaFamiglie);
-                        for (Family fam : famiglieMadre)
+                        for (Family fam : famiglieMadre) {
+                            if (!fam.getChildren(gc).isEmpty()) addHeader(R.string.maternal_family);
                             for (Person fratellastro : fam.getChildren(gc))
                                 createCard(fratellastro, Relation.HALF_SIBLING, fam);
+                        }
                     }
                 }
                 // Coniugi e figli
                 for (Family family : one.getSpouseFamilies(gc)) {
+                    if (family.getHusbands(gc).size() + family.getWives(gc).size() > 1 || !family.getChildren(gc).isEmpty())
+                        addHeader(R.string.own_family);
                     for (Person marito : family.getHusbands(gc))
                         if (!marito.equals(one))
                             createCard(marito, Relation.PARTNER, family);
@@ -88,6 +98,31 @@ public class ProfileRelativesFragment extends BaseFragment {
             }
         }
         return tabView;
+    }
+
+    /**
+     * Group title before the relatives of a family (adapted from Family Gem).
+     */
+    private void addHeader(int title) {
+        LinearLayout scatola = tabView.findViewById(R.id.contenuto_scheda);
+        TextView header = (TextView)LayoutInflater.from(scatola.getContext()).inflate(R.layout.relatives_section_header, scatola, false);
+        header.setText(title);
+        if (scatola.getChildCount() == 0) header.setPadding(header.getPaddingLeft(), 0, header.getPaddingRight(), header.getPaddingBottom());
+        scatola.addView(header);
+    }
+
+    /**
+     * Title of a family of origin from the lineage (GEDCOM PEDI) of this person in it.
+     */
+    private int originTitle(Family family) {
+        for (ParentFamilyRef ref : one.getParentFamilyRefs()) {
+            if (family.getId() != null && family.getId().equals(ref.getRef()) && ref.getRelationshipType() != null) {
+                String type = ref.getRelationshipType().trim().toLowerCase();
+                if (type.equals("adopted")) return R.string.adoptive_family;
+                if (type.equals("foster")) return R.string.foster_family;
+            }
+        }
+        return R.string.origin_family;
     }
 
     void createCard(final Person person, Relation relation, Family family) {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Theme-aware hero: follows the user's colour theme (primary to primary container). -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="315"
+                android:endColor="?attr/colorPrimaryContainer"
+                android:startColor="?attr/colorPrimary"
+                android:type="linear" />
+        </shape>
+    </item>
+    <!-- Soft light bloom in the top-end corner -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.85"
+                android:centerY="0.1"
+                android:endColor="#00FFFFFF"
+                android:gradientRadius="220dp"
+                android:startColor="#33FFFFFF"
+                android:type="radial" />
+        </shape>
+    </item>
+</layer-list>

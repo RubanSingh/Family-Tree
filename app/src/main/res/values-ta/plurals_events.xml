@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">திருமண ஆண்டுவிழா · %d ஆண்டு</item>
+        <item quantity="other">திருமண ஆண்டுவிழா · %d ஆண்டுகள்</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">நினைவு நாள் · %d ஆண்டு</item>
+        <item quantity="other">நினைவு நாள் · %d ஆண்டுகள்</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">%1$d நாளில் · %2$s</item>
+        <item quantity="other">%1$d நாட்களில் · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">%d நாளில்</item>
+        <item quantity="other">%d நாட்களில்</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d வயதாகிறது</item>
+        <item quantity="other">%d வயதாகிறது</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">திருமணமாகி %d ஆண்டு</item>
+        <item quantity="other">திருமணமாகி %d ஆண்டுகள்</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d ஆண்டுக்கு முன்</item>
+        <item quantity="other">%d ஆண்டுகளுக்கு முன்</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d ஆண்டு</item>
+        <item quantity="other">%d ஆண்டுகள்</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d நிகழ்வு</item>
+        <item quantity="other">%d நிகழ்வுகள்</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d நபர்</item>
+        <item quantity="other">%d நபர்கள்</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d இடம்</item>
+        <item quantity="other">%d இடங்கள்</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d நாடு</item>
+        <item quantity="other">%d நாடுகள்</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d நபர்</item>
+        <item quantity="other">%d நபர்கள்</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d கோப்பு பயன்பாட்டுச் சேமிப்பகத்திற்கு வெளியே உள்ளது. அது உங்கள் மரத்துடன் இருக்கவும் காப்புப்பிரதிகளில் சேர்க்கப்படவும், அதைப் பயன்பாட்டுச் சேமிப்பகத்திற்கு நகலெடுக்கவா? அசல் கோப்பு மாற்றப்படாது.</item>
+        <item quantity="other">%d கோப்புகள் பயன்பாட்டுச் சேமிப்பகத்திற்கு வெளியே உள்ளன. அவை உங்கள் மரத்துடன் இருக்கவும் காப்புப்பிரதிகளில் சேர்க்கப்படவும், அவற்றைப் பயன்பாட்டுச் சேமிப்பகத்திற்கு நகலெடுக்கவா? அசல் கோப்புகள் மாற்றப்படாது.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d கோப்பு பயன்பாட்டுச் சேமிப்பகத்திற்கு நகலெடுக்கப்பட்டது.</item>
+        <item quantity="other">%d கோப்புகள் பயன்பாட்டுச் சேமிப்பகத்திற்கு நகலெடுக்கப்பட்டன.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d ஊடகம் பயன்பாட்டுச் சேமிப்பகத்தில் உள்ள கோப்பின் முழுப் பாதையுடன் இணைக்கப்பட்டுள்ளது. அதைக் கோப்புப் பெயர் மட்டுமாகச் சுருக்கவா? கோப்பு இருக்கும் இடத்திலேயே இருக்கும்.</item>
+        <item quantity="other">%d ஊடகங்கள் பயன்பாட்டுச் சேமிப்பகத்தில் உள்ள கோப்பின் முழுப் பாதையுடன் இணைக்கப்பட்டுள்ளன. அவற்றைக் கோப்புப் பெயர் மட்டுமாகச் சுருக்கவா? கோப்புகள் இருக்கும் இடத்திலேயே இருக்கும்.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d கோப்புப் பாதை சுருக்கப்பட்டது.</item>
+        <item quantity="other">%d கோப்புப் பாதைகள் சுருக்கப்பட்டன.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d பதிவு</item>
+        <item quantity="other">%d பதிவுகள்</item>
+    </plurals>
+</resources>

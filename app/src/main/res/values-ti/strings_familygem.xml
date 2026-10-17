@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">ውሽጣዊ ተጠባባቒ ቅዳሕ</string>
+    <string name="choose_folder">ማህደር ምረፅ</string>
+    <string name="backup_folder">ማህደር ተጠባባቒ ቅዳሕ</string>
+    <string name="recover">ምለስ</string>
+    <string name="export_png">PNG ኣውፅእ</string>
+    <string name="png_exported_ok">PNG ወፂኡ።</string>
+    <string name="tree_settings">ቅጥዕታት ኦም</string>
+    <string name="max_life_span">ዝለዓለ ዕድመ</string>
+    <string name="years">ዓመታት</string>
+    <string name="current_date">ናይ ሎሚ ዕለት</string>
+    <string name="device_date">ዕለት መሳርሒ</string>
+    <string name="fixed_date">ዝተወሰነ ዕለት</string>
+    <string name="notification_time">ሰዓት ምልክታ መዓልቲ ልደት</string>
+    <string name="origin_family">መበቆል ስድራቤት</string>
+    <string name="adoptive_family">ብጉዲፈቻ ዝወሰደ ስድራቤት</string>
+    <string name="foster_family">ኣላዪ ስድራቤት</string>
+    <string name="paternal_family">ስድራቤት ብወገን ኣቦ</string>
+    <string name="maternal_family">ስድራቤት ብወገን ኣደ</string>
+    <string name="own_family">ናይ ገዛእ ርእሱ ስድራቤት</string>
+    <string name="numbers">ቑፅርታት</string>
+    <string name="invalid_date">ዘይቅቡል ዕለት GEDCOM።</string>
+    <string name="husband_age">ዕድመ ሰብኣይ</string>
+    <string name="search_duplicates">ድግግማት ድለ</string>
+    <string name="skip">ሕለፍ</string>
+    <string name="error_found">ሓደ ጌጋ ተረኺቡ።</string>
+    <string name="yes_to_all">ንኹሎም ዝተረፉ እወ</string>
+    <string name="no_to_all">ንኹሎም ዝተረፉ ኣይፋል</string>
+    <string name="wife_age">ዕድመ ሰበይቲ</string>
+    <string name="less_than">ዝወሓደ ካብ</string>
+    <string name="more_than">ዝበዝሐ ካብ</string>
+    <string name="duplicates_lines">መስመራት ድግግም</string>
+    <string name="make_shared_media">ናይ ሓባር ዓቛሪ ዳታ ግበሮ</string>
+    <string name="make_media">ቀሊል ዓቛሪ ዳታ ግበሮ</string>
+    <string name="copy_app_storage">ናብ መኽዘን ኣፕ ቕዳሕ</string>
+    <string name="shrink_path">መንገዲ ፋይል ኣሕፅር</string>
+    <string name="file_exists_reuse">እዚ ፋይል ድሮ ኣሎ።\nዳግም ክትጥቀመሉ ዶ ወይስ ቅዳሕ ክትገብር ትደሊ?</string>
+    <string name="use_existing">ነቲ ዘሎ ዳግም ተጠቐም</string>
+    <string name="make_copy">ቅዳሕ ግበር</string>
+    <string name="existing_name">ድሮ ዘሎ ስም</string>
+    <string name="invalid_name">ዘይቅቡል ስም</string>
+    <string name="info">ሓበሬታ</string>
+</resources>

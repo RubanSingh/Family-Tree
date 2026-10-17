@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">ಜಾಹೀರಾತುಗಳನ್ನು ತೆಗೆದುಹಾಕಿ</string>
+    <string name="ads_remove_hint">Premium ಮೂಲಕ ಜಾಹೀರಾತುಗಳಿಲ್ಲದೆ Family Tree ಅನ್ನು ಆನಂದಿಸಿ.</string>
+    <string name="privacy_options">ಜಾಹೀರಾತು ಗೌಪ್ಯತೆ ಆಯ್ಕೆಗಳು</string>
+    <string name="privacy_options_desc">ಜಾಹೀರಾತುಗಳು ನಿಮ್ಮ ಡೇಟಾವನ್ನು ಹೇಗೆ ಬಳಸುತ್ತವೆ ಎಂಬುದನ್ನು ಪರಿಶೀಲಿಸಿ ಅಥವಾ ಬದಲಿಸಿ</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">ಇದು Premium ವೈಶಿಷ್ಟ್ಯ.</string>
+    <string name="reward_watch_title">ಒಂದು ಚಿಕ್ಕ ವೀಡಿಯೊ ನೋಡಿ</string>
+    <string name="reward_watch_desc">ವೀಡಿಯೊ ಮುಗಿದ ತಕ್ಷಣ ಇದನ್ನು ಒಮ್ಮೆ ಉಚಿತವಾಗಿ ಬಳಸಿ.</string>
+    <string name="reward_loading">ವೀಡಿಯೊವನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ…</string>
+    <string name="reward_unavailable">ಸದ್ಯಕ್ಕೆ ಯಾವುದೇ ವೀಡಿಯೊ ಲಭ್ಯವಿಲ್ಲ. ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ Premium ಗೆ ಅಪ್‌ಗ್ರೇಡ್ ಮಾಡಿ.</string>
+    <string name="reward_not_earned">ಅನ್‌ಲಾಕ್ ಮಾಡಲು ವೀಡಿಯೊವನ್ನು ಕೊನೆಯವರೆಗೂ ನೋಡಿ.</string>
+    <string name="reward_premium_desc">ಅನಿಯಮಿತ ಬಳಕೆ, ಜಾಹೀರಾತುಗಳಿಲ್ಲ ಮತ್ತು ಪ್ರತಿಯೊಂದು Premium ವೈಶಿಷ್ಟ್ಯ.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">ನಿಮ್ಮ ಕುಟುಂಬದ ಕಥೆ Premium ಗೆ ಅರ್ಹವಾಗಿದೆ</string>
+    <string name="upsell_subtitle">ನೀವು ನಿರ್ಮಿಸಿದ ಎಲ್ಲವನ್ನೂ ಸುರಕ್ಷಿತವಾಗಿಡಿ ಮತ್ತು ಪ್ರತಿಯೊಂದು Premium ವೈಶಿಷ್ಟ್ಯವನ್ನು ಆನಂದಿಸಿ.</string>
+    <string name="upsell_subtitle_new">ನಿಮ್ಮ ಸಂಶೋಧನೆಯನ್ನು ರಕ್ಷಿಸಿ ಮತ್ತು ಜಾಹೀರಾತುಗಳಿಲ್ಲದೆ Family Tree ಅನ್ನು ಆನಂದಿಸಿ.</string>
+    <string name="upsell_stat_people">ವ್ಯಕ್ತಿಗಳು</string>
+    <string name="upsell_stat_trees">ಮರಗಳು</string>
+    <string name="upsell_stat_generations">ತಲೆಮಾರುಗಳು</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">ಮತ್ತು ಇನ್ನೂ %d Premium ವೈಶಿಷ್ಟ್ಯ</item>
+        <item quantity="other">ಮತ್ತು ಇನ್ನೂ %d Premium ವೈಶಿಷ್ಟ್ಯಗಳು</item>
+    </plurals>
+    <string name="upsell_price_monthly">ತಿಂಗಳಿಗೆ %1$s ರಿಂದ ಯೋಜನೆಗಳು</string>
+    <string name="upsell_price_lifetime">ಅಥವಾ %1$s ಒಮ್ಮೆ ಪಾವತಿಸಿ, ಶಾಶ್ವತವಾಗಿ ಇಟ್ಟುಕೊಳ್ಳಿ</string>
+    <string name="upsell_price_lifetime_only">%1$s ಗೆ ಜೀವಮಾನದ ಪ್ರವೇಶ, ಒಮ್ಮೆ ಮಾತ್ರ ಪಾವತಿ</string>
+    <string name="upsell_cta">Premium ಯೋಜನೆಗಳನ್ನು ನೋಡಿ</string>
+    <string name="upsell_later">ಈಗ ಬೇಡ</string>
+    <string name="upsell_trust">ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಗೊಳಿಸಿ · Google Play ಮೂಲಕ ಸುರಕ್ಷಿತ ಪಾವತಿ</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">ನಿಮ್ಮ ಕುಟುಂಬದ ಕಥೆಯನ್ನು ರಕ್ಷಿಸಲು, ಸಂಭ್ರಮಿಸಲು ಮತ್ತು ಹಂಚಿಕೊಳ್ಳಲು ಬೇಕಾದ ಎಲ್ಲವೂ.</string>
+    <string name="paywall_highlight_no_ads">ಜಾಹೀರಾತುಗಳಿಲ್ಲ</string>
+    <string name="paywall_highlight_backup">ಸ್ವಯಂ ಬ್ಯಾಕಪ್</string>
+    <string name="paywall_highlight_reminders">ಅನಿಯಮಿತ ಜ್ಞಾಪನೆಗಳು</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d ದಿನದ ಉಚಿತ ಪ್ರಯೋಗ</item>
+        <item quantity="other">%d ದಿನಗಳ ಉಚಿತ ಪ್ರಯೋಗ</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d ತಿಂಗಳ ಉಚಿತ ಪ್ರಯೋಗ</item>
+        <item quantity="other">%d ತಿಂಗಳ ಉಚಿತ ಪ್ರಯೋಗ</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">%d ತಿಂಗಳಲ್ಲೇ ಬೆಲೆ ವಸೂಲಾಗುತ್ತದೆ</item>
+        <item quantity="other">%d ತಿಂಗಳಲ್ಲೇ ಬೆಲೆ ವಸೂಲಾಗುತ್ತದೆ</item>
+    </plurals>
+    <string name="paywall_summary_monthly">ತಿಂಗಳಿಗೆ %1$s · ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಗೊಳಿಸಿ</string>
+    <string name="paywall_summary_trial">%1$s, ನಂತರ ತಿಂಗಳಿಗೆ %2$s</string>
+    <string name="paywall_summary_lifetime">ಒಮ್ಮೆ %1$s · ಶಾಶ್ವತವಾಗಿ ನಿಮ್ಮದು</string>
+    <string name="paywall_loading_prices">ಬೆಲೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ…</string>
+    <string name="paywall_compare_title">ಉಚಿತ vs Premium</string>
+    <string name="paywall_compare_free">ಉಚಿತ</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">ಒಳಗೊಂಡಿದೆ</string>
+    <string name="paywall_details_show">ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ</string>
+    <string name="paywall_details_hide">ವಿವರಗಳನ್ನು ಮರೆಮಾಡಿ</string>
+    <string name="paywall_free_label">ಉಚಿತ: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Premium ನಲ್ಲಿ ಮಾತ್ರ</string>
+    <string name="paywall_trust_title">ವಿಶ್ವಾಸದಿಂದ ಖರೀದಿಸಿ</string>
+    <string name="paywall_trust_secure">Google Play ಮೂಲಕ ಸುರಕ್ಷಿತ ಪಾವತಿ</string>
+    <string name="paywall_trust_cancel">ಮಾಸಿಕ ಯೋಜನೆಯನ್ನು ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಗೊಳಿಸಿ</string>
+    <string name="paywall_trust_devices">ನಿಮ್ಮ ಎಲ್ಲಾ ಸಾಧನಗಳಲ್ಲಿ ಮರುಸ್ಥಾಪಿಸಿ</string>
+    <string name="paywall_trust_private">ನಿಮ್ಮ ಕುಟುಂಬದ ಡೇಟಾ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತದೆ</string>
+    <string name="paywall_faq_title">ಪ್ರಶ್ನೆಗಳು ಮತ್ತು ಉತ್ತರಗಳು</string>
+    <string name="paywall_faq_plans_q">ಮಾಸಿಕ ಮತ್ತು ಜೀವಮಾನ ಯೋಜನೆಗಳ ನಡುವಿನ ವ್ಯತ್ಯಾಸವೇನು?</string>
+    <string name="paywall_faq_plans_a">ಎರಡೂ Premium ನಲ್ಲಿರುವ ಎಲ್ಲವನ್ನೂ ಅನ್‌ಲಾಕ್ ಮಾಡುತ್ತವೆ. ಮಾಸಿಕ ಯೋಜನೆ ಪ್ರತಿ ತಿಂಗಳು ನವೀಕರಣಗೊಳ್ಳುತ್ತದೆ ಮತ್ತು ನೀವು ಅದನ್ನು ಯಾವಾಗ ಬೇಕಾದರೂ ರದ್ದುಗೊಳಿಸಬಹುದು. ಜೀವಮಾನ ಯೋಜನೆಗೆ ಒಮ್ಮೆ ಪಾವತಿಸಿದರೆ ಸಾಕು, ಅದು ಎಂದಿಗೂ ಅವಧಿ ಮೀರುವುದಿಲ್ಲ.</string>
+    <string name="paywall_faq_cancel_q">ನಾನು Premium ನಿಲ್ಲಿಸಿದರೆ ನನ್ನ ಮರಗಳಿಗೆ ಏನಾಗುತ್ತದೆ?</string>
+    <string name="paywall_faq_cancel_a">ಏನೂ ಕಳೆದುಹೋಗುವುದಿಲ್ಲ. ನಿಮ್ಮ ಮರಗಳು, ಫೋಟೋಗಳು, ಜ್ಞಾಪನೆಗಳು ಮತ್ತು ಬ್ಯಾಕಪ್‌ಗಳು ಇದ್ದಂತೆಯೇ ಉಳಿಯುತ್ತವೆ: Premium ವೈಶಿಷ್ಟ್ಯಗಳು ಮಾತ್ರ ನಿಲ್ಲುತ್ತವೆ ಮತ್ತು ಜಾಹೀರಾತುಗಳು ಮತ್ತೆ ಬರುತ್ತವೆ.</string>
+    <string name="paywall_faq_device_q">ನಾನು ಫೋನ್ ಬದಲಾಯಿಸಿದ್ದೇನೆ. ಮತ್ತೆ ಪಾವತಿಸಬೇಕೇ?</string>
+    <string name="paywall_faq_device_a">ಇಲ್ಲ. ಅದೇ Google ಖಾತೆಯೊಂದಿಗೆ Family Tree ಅನ್ನು ಸ್ಥಾಪಿಸಿ ಮತ್ತು “ಖರೀದಿಗಳನ್ನು ಮರುಸ್ಥಾಪಿಸಿ” ಟ್ಯಾಪ್ ಮಾಡಿ.</string>
+    <string name="paywall_faq_privacy_q">ನನ್ನ ಕುಟುಂಬದ ಡೇಟಾವನ್ನು ಎಲ್ಲಿಗಾದರೂ ಕಳುಹಿಸಲಾಗುತ್ತದೆಯೇ?</string>
+    <string name="paywall_faq_privacy_a">ಇಲ್ಲ. ನಿಮ್ಮ ಮರಗಳನ್ನು ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಮತ್ತು ನೀವು ಆರಿಸುವ ಬ್ಯಾಕಪ್ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಇರಿಸಲಾಗುತ್ತದೆ. Premium ಖರೀದಿಸುವುದರಿಂದ ಏನನ್ನೂ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.</string>
+    <string name="paywall_faq_manage_q">ಮಾಸಿಕ ಯೋಜನೆಯನ್ನು ಹೇಗೆ ರದ್ದುಗೊಳಿಸುವುದು?</string>
+    <string name="paywall_faq_manage_a">Play Store ನಲ್ಲಿ ಪಾವತಿಗಳು ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು › ಚಂದಾದಾರಿಕೆಗಳು ತೆರೆಯಿರಿ, Family Tree ಆರಿಸಿ ಮತ್ತು ರದ್ದುಗೊಳಿಸಿ ಟ್ಯಾಪ್ ಮಾಡಿ. ಈಗಾಗಲೇ ಪಾವತಿಸಿದ ಅವಧಿ ಮುಗಿಯುವವರೆಗೆ Premium ಸಕ್ರಿಯವಾಗಿರುತ್ತದೆ.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">ಸುರಕ್ಷಿತವಾಗಿಡಿ</string>
+    <string name="pf_group_safe_desc">ವರ್ಷಗಳ ಸಂಶೋಧನೆ, ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಸಂರಕ್ಷಿತ.</string>
+    <string name="pf_group_moments">ಯಾವುದೇ ಕ್ಷಣವನ್ನು ತಪ್ಪಿಸಿಕೊಳ್ಳಬೇಡಿ</string>
+    <string name="pf_group_moments_desc">ನಿಮ್ಮ ಕುಟುಂಬದ ದಿನಾಂಕಗಳು ಮತ್ತು ಸ್ಥಳಗಳು, ಯಾವಾಗಲೂ ಕೈಗೆಟುಕುವಂತೆ.</string>
+    <string name="pf_group_share">ರಚಿಸಿ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="pf_group_share_desc">ಸುಂದರ ರಫ್ತುಗಳು ಮತ್ತು ಗಂಭೀರ ಸಂಶೋಧನೆಗಾಗಿ ಶಕ್ತಿಶಾಲಿ ಪರಿಕರಗಳು.</string>
+    <string name="pf_group_yours">ನಿಮ್ಮದಾಗಿಸಿಕೊಳ್ಳಿ</string>
+    <string name="pf_group_yours_desc">ನಿಮ್ಮ ಕುಟುಂಬದ ಕಥೆಗಾಗಿ ಶಾಂತ, ವೈಯಕ್ತಿಕ ಸ್ಥಳ.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">ಸ್ವಯಂಚಾಲಿತ ಬ್ಯಾಕಪ್</string>
+    <string name="pf_backup_summary">ಪ್ರತಿ ಬದಲಾವಣೆಯೂ ನೀವು ಆರಿಸಿದ ಫೋಲ್ಡರ್‌ಗೆ ಉಳಿಯುತ್ತದೆ, ನೀವು ಏನನ್ನೂ ಮಾಡಬೇಕಿಲ್ಲ.</string>
+    <string name="pf_backup_free">ಹಸ್ತಚಾಲಿತ ಬ್ಯಾಕಪ್</string>
+    <string name="pf_backup_premium">ಸ್ವಯಂಚಾಲಿತ</string>
+    <string name="pf_backup_detail1">ಪ್ರತಿ ಸಂಪಾದನೆಯ ಒಂದು ನಿಮಿಷದ ನಂತರ, ಮರವನ್ನು ZIP ಬ್ಯಾಕಪ್ ಆಗಿ ನಿಮ್ಮ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸಲಾಗುತ್ತದೆ: ಫೋನ್ ಸಂಗ್ರಹಣೆ, SD ಕಾರ್ಡ್ ಅಥವಾ Google Drive ನಂತಹ ಕ್ಲೌಡ್ ಫೋಲ್ಡರ್.</string>
+    <string name="pf_backup_detail2">ಪ್ರತಿ ಮರದ 3 ಇತ್ತೀಚಿನ ನಕಲುಗಳನ್ನು ಇರಿಸಿಕೊಳ್ಳಲಾಗುತ್ತದೆ, ಆದ್ದರಿಂದ ನೀವು ಯಾವಾಗಲೂ ಹಿಂದಿನ ಸ್ಥಿತಿಗೆ ಮರಳಬಹುದು.</string>
+    <string name="pf_backup_detail3">ಬ್ಯಾಕಪ್ ಮರುಸ್ಥಾಪಿಸುವುದು ಉಚಿತ ಮತ್ತು ಯಾವಾಗಲೂ ಲಭ್ಯ, Premium ಇಲ್ಲದಿದ್ದರೂ ಸಹ.</string>
+
+    <string name="pf_media_title">ಮಾಧ್ಯಮ ಸಂಘಟಕ</string>
+    <string name="pf_media_summary">ಮರದ ಪ್ರತಿಯೊಂದು ಫೋಟೋ ಮತ್ತು ದಾಖಲೆಯನ್ನು ಒಂದೇ ಬಾರಿಗೆ ಆ್ಯಪ್‌ಗೆ ನಕಲಿಸಿ.</string>
+    <string name="pf_media_free">ಒಮ್ಮೆಗೆ ಒಂದು ಫೈಲ್</string>
+    <string name="pf_media_premium">ಎಲ್ಲಾ ಫೈಲ್‌ಗಳು ಒಮ್ಮೆಲೇ</string>
+    <string name="pf_media_detail1">ಮರದ ಎಲ್ಲಾ ಮಾಧ್ಯಮವನ್ನು ಪ್ರಗತಿ ಸೂಚಕ ಮತ್ತು ರದ್ದುಗೊಳಿಸುವ ಆಯ್ಕೆಯೊಂದಿಗೆ ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಗೆ ತನ್ನಿ, ಇದರಿಂದ ಫೈಲ್‌ಗಳು ಸ್ಥಳಾಂತರಗೊಂಡರೂ ಲಿಂಕ್‌ಗಳು ಮುರಿಯುವುದಿಲ್ಲ.</string>
+    <string name="pf_media_detail2">ನಿಮ್ಮ ಮೂಲ ಫೈಲ್‌ಗಳನ್ನು ಮುಟ್ಟಲಾಗುವುದಿಲ್ಲ: ಪ್ರತಿ ಫೈಲ್ ಅನ್ನು ನಕಲಿಸಿ ಪರಿಶೀಲಿಸಿದ ನಂತರವೇ ಅದರ ಲಿಂಕ್‌ಗಳನ್ನು ನವೀಕರಿಸಲಾಗುತ್ತದೆ.</string>
+
+    <string name="pf_reminders_title">ಸ್ಮಾರ್ಟ್ ಕುಟುಂಬ ಜ್ಞಾಪನೆಗಳು</string>
+    <string name="pf_reminders_summary">ವಿವಾಹ ವಾರ್ಷಿಕೋತ್ಸವಗಳು, ಸ್ಮರಣೆಯ ದಿನಗಳು ಮತ್ತು ಅನಿಯಮಿತ ವೈಯಕ್ತಿಕ ಜ್ಞಾಪನೆಗಳು.</string>
+    <string name="pf_reminders_free">ಜನ್ಮದಿನಗಳು + 2 ಜ್ಞಾಪನೆಗಳು</string>
+    <string name="pf_reminders_premium">ಅನಿಯಮಿತ</string>
+    <string name="pf_reminders_detail1">ದಂಪತಿಗಳ ವಿವಾಹ ವಾರ್ಷಿಕೋತ್ಸವಗಳ ಬಗ್ಗೆ, ಮತ್ತು ನೀವು ಬಯಸಿದರೆ ಸ್ಮರಣೆಯ ದಿನಗಳ ಬಗ್ಗೆಯೂ ಅಧಿಸೂಚನೆ ಪಡೆಯಿರಿ.</string>
+    <string name="pf_reminders_detail2">ನಿಮಗೆ ಬೇಕಾದಷ್ಟು ಜ್ಞಾಪನೆಗಳನ್ನು ರಚಿಸಿ: ಸೀಮಂತ, ಪದವಿ ಪ್ರದಾನ, ಕುಟುಂಬ ಮಿಲನ, ಭೇಟಿಗಳು…</string>
+    <string name="pf_reminders_detail3">ಮುಂಚಿತ ಎಚ್ಚರಿಕೆಗಳು ನಿಮಗೆ ಮೊದಲೇ ತಿಳಿಸುತ್ತವೆ, ಹೀಗಾಗಿ ಕರೆ ಮಾಡಲು, ಬರೆಯಲು ಅಥವಾ ಉಡುಗೊರೆ ಯೋಜಿಸಲು ಸಮಯವಿರುತ್ತದೆ.</string>
+
+    <string name="pf_places_title">ಕುಟುಂಬದ ಸ್ಥಳಗಳು</string>
+    <string name="pf_places_summary">ನಿಮ್ಮ ಕುಟುಂಬ ಇತಿಹಾಸದ ಪ್ರತಿಯೊಂದು ಸ್ಥಳ, ಹುಡುಕಬಹುದಾದದ್ದು ಮತ್ತು ನಕ್ಷೆಯಿಂದ ಒಂದೇ ಟ್ಯಾಪ್ ದೂರದಲ್ಲಿ.</string>
+    <string name="pf_places_free">ಮೊದಲ 3 ಸ್ಥಳಗಳು</string>
+    <string name="pf_places_premium">ಎಲ್ಲಾ ಸ್ಥಳಗಳು</string>
+    <string name="pf_places_detail1">ಮರದ ಎಲ್ಲಾ ಘಟನೆಗಳ ಸ್ಥಳಗಳು ಮತ್ತು ವಿಳಾಸಗಳು, ದೇಶವಾರು ಗುಂಪು ಮಾಡಲಾಗಿದೆ, ಹುಡುಕಾಟದೊಂದಿಗೆ.</string>
+    <string name="pf_places_detail2">ಪ್ರತಿ ಸ್ಥಳದಲ್ಲಿ ಏನಾಯಿತು ಎಂಬುದನ್ನು ನೋಡಿ ಮತ್ತು ದಿಕ್ಕುಗಳೊಂದಿಗೆ ಅದನ್ನು ನಿಮ್ಮ ನಕ್ಷೆ ಆ್ಯಪ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ.</string>
+
+    <string name="pf_exports_title">ಮುದ್ರಣಕ್ಕೆ ಸಿದ್ಧ ರಫ್ತುಗಳು</string>
+    <string name="pf_exports_summary">ನಿಮ್ಮ ರೇಖಾಚಿತ್ರವನ್ನು HD ಚಿತ್ರ ಅಥವಾ PDF ಆಗಿ ಪರಿವರ್ತಿಸಿ, ಮುದ್ರಿಸಿ ಮತ್ತು ಹಂಚಿಕೊಳ್ಳಿ.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">ಪ್ರತಿ ವೀಡಿಯೊಗೆ ಒಮ್ಮೆ</string>
+    <string name="pf_exports_premium">PDF + HD ಚಿತ್ರ</string>
+    <string name="pf_exports_detail1">ರೇಖಾಚಿತ್ರವನ್ನು ಹೈ-ರೆಸಲ್ಯೂಶನ್ PNG ಚಿತ್ರವಾಗಿ ರಫ್ತು ಮಾಡಿ, ಚಾಟ್‌ಗಳು ಮತ್ತು ಸಾಮಾಜಿಕ ಜಾಲತಾಣಗಳಿಗೆ ಸೂಕ್ತ.</string>
+    <string name="pf_exports_detail2">ಸಂಪೂರ್ಣ ರೇಖಾಚಿತ್ರದ PDF ರಚಿಸಿ, ಕುಟುಂಬ ಕೂಟಗಳಿಗಾಗಿ ಪೋಸ್ಟರ್ ಆಗಿ ಮುದ್ರಿಸಲು ಸಿದ್ಧ.</string>
+    <string name="pf_exports_detail3">ಬಿಳಿ ಹಿನ್ನೆಲೆ ಮತ್ತು ಸ್ಪಷ್ಟ ರೇಖೆಗಳೊಂದಿಗೆ ಮುದ್ರಣ ಶೈಲಿ, ನಿಮ್ಮ ಮರದ ಗಾತ್ರಕ್ಕೆ ತಕ್ಕಂತೆ.</string>
+    <string name="pf_exports_detail4">Premium ಇಲ್ಲದೆಯೂ, ಒಂದು ಚಿಕ್ಕ ವೀಡಿಯೊ ನೋಡಿದ ನಂತರ ನೀವು ಒಮ್ಮೆ ರಫ್ತು ಮಾಡಬಹುದು.</string>
+
+    <string name="pf_merge_title">ಮರಗಳನ್ನು ವಿಲೀನಗೊಳಿಸಿ</string>
+    <string name="pf_merge_summary">ಎರಡು ಮರಗಳನ್ನು ಒಂದಾಗಿ ಸಂಯೋಜಿಸಿ, ನಕಲುಗಳನ್ನು ನಿಮಗಾಗಿ ಹುಡುಕಲಾಗುತ್ತದೆ.</string>
+    <string name="pf_merge_detail1">ಆ್ಯಪ್ ಎರಡೂ ಮರಗಳಲ್ಲಿ ಒಂದೇ ವ್ಯಕ್ತಿಗಳನ್ನು ಹುಡುಕುತ್ತದೆ ಮತ್ತು ಪ್ರತಿ ಹೊಂದಾಣಿಕೆಯನ್ನು ಅಥವಾ ಎಲ್ಲವನ್ನೂ ಒಮ್ಮೆಲೇ ದೃಢೀಕರಿಸಲು ನಿಮಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ.</string>
+    <string name="pf_merge_detail2">ಸಂಬಂಧಿಕರು ತಮ್ಮದೇ ಮರವನ್ನು ನಿಮಗೆ ಕಳುಹಿಸಿದಾಗ ಇದು ಅತ್ಯುತ್ತಮ.</string>
+
+    <string name="pf_advanced_title">ಸುಧಾರಿತ ಪರಿಕರಗಳು</string>
+    <string name="pf_advanced_summary">ಮೂಲಗಳು, ಭಂಡಾರಗಳು, GEDCOM ರಫ್ತು ಮತ್ತು ಸಂಪೂರ್ಣ ವಂಶಾವಳಿ ಪರಿಕರ ಸಂಗ್ರಹ.</string>
+    <string name="pf_advanced_detail1">ವೃತ್ತಿಪರ ವಂಶಾವಳಿ ತಜ್ಞರಂತೆ ಮೂಲಗಳು ಮತ್ತು ಭಂಡಾರಗಳನ್ನು ಉಲ್ಲೇಖಿಸಿ ಮತ್ತು ಸಲ್ಲಿಸುವವರನ್ನು ನಿರ್ವಹಿಸಿ.</string>
+    <string name="pf_advanced_detail2">ಯಾವುದೇ ವಂಶಾವಳಿ ಸಾಫ್ಟ್‌ವೇರ್‌ಗಾಗಿ ನಿಮ್ಮ ಮರವನ್ನು ಮಾಧ್ಯಮದೊಂದಿಗೆ ಅಥವಾ ಇಲ್ಲದೆ GEDCOM ಆಗಿ ರಫ್ತು ಮಾಡಿ ಮತ್ತು ಸಂಪೂರ್ಣ ZIP ಬ್ಯಾಕಪ್‌ಗಳನ್ನು ಮಾಡಿ.</string>
+    <string name="pf_advanced_detail3">ಹಂಚಿಕೊಂಡ ಮರಗಳನ್ನು ಹೋಲಿಕೆ ಮಾಡಿ ಮತ್ತು ಮಾಧ್ಯಮ ಫೈಲ್‌ಗಳ ಪಥಗಳನ್ನು ಅಚ್ಚುಕಟ್ಟು ಮಾಡಿ.</string>
+
+    <string name="pf_no_ads_title">ಜಾಹೀರಾತುಗಳಿಲ್ಲ</string>
+    <string name="pf_no_ads_summary">ನಿಮ್ಮ ಕುಟುಂಬದ ಕಥೆಗಾಗಿ ಶಾಂತ, ಕೇಂದ್ರೀಕೃತ ಸ್ಥಳ.</string>
+    <string name="pf_no_ads_free">ಜಾಹೀರಾತುಗಳೊಂದಿಗೆ</string>
+    <string name="pf_no_ads_premium">ಜಾಹೀರಾತುಗಳಿಲ್ಲ</string>
+    <string name="pf_no_ads_detail1">ಪಟ್ಟಿಗಳಲ್ಲಿ, ಪ್ರೊಫೈಲ್‌ಗಳಲ್ಲಿ ಅಥವಾ ಕಾರ್ಯಗಳ ನಡುವೆ ಜಾಹೀರಾತುಗಳಿಲ್ಲ.</string>
+    <string name="pf_no_ads_detail2">Premium, Family Tree ನ ಅಭಿವೃದ್ಧಿಗೂ ಬೆಂಬಲ ನೀಡುತ್ತದೆ.</string>
+
+    <string name="pf_themes_title">20 ಬಣ್ಣದ ಥೀಮ್‌ಗಳು</string>
+    <string name="pf_themes_summary">ಲೈಟ್ ಅಥವಾ ಡಾರ್ಕ್ ಮೋಡ್‌ನಲ್ಲಿ, ಆ್ಯಪ್ ಅನ್ನು ನಿಮ್ಮದಾಗಿಸಿಕೊಳ್ಳಿ.</string>
+    <string name="pf_themes_free">ಕ್ಲಾಸಿಕ್ ಥೀಮ್</string>
+    <string name="pf_themes_premium">20 ಥೀಮ್‌ಗಳು</string>
+    <string name="pf_themes_detail1">ಗಾಢ ಇಂಡಿಗೊದಿಂದ ಬೆಚ್ಚಗಿನ ಅಂಬರ್‌ವರೆಗೆ, 20 ಬಣ್ಣದ ಥೀಮ್‌ಗಳಿಂದ ಆರಿಸಿ.</string>
+    <string name="pf_themes_detail2">ಪ್ರತಿಯೊಂದು ಥೀಮ್ ಲೈಟ್ ಮತ್ತು ಡಾರ್ಕ್ ಮೋಡ್ ಎರಡರಲ್ಲೂ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತದೆ.</string>
+</resources>

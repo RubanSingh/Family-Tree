@@ -6,7 +6,8 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 import dna.familytree.Global
-import dna.familytree.PurchaseController
+import dna.familytree.feature.billing.PremiumGate
+import dna.familytree.designsystem.PremiumBadge
 import dna.familytree.R
 import dna.familytree.constant.Extra
 import dna.familytree.databinding.MergeResultFragmentBinding
@@ -24,6 +25,9 @@ class ResultFragment : BaseFragment(R.layout.merge_result_fragment) {
         // Setups radio buttons
         bind.mergeRadioAnnex.text = getString(R.string.merge_into, model.firstTree.title, model.secondTree.title)
         bind.mergeRetitle.setText("${model.firstTree.title} ${model.secondTree.title}")
+        // Merging needs Premium: say so on the button before the user taps it
+        if (!PremiumGate.isPremium())
+            bind.mergeButton.text = PremiumBadge.withDiamond(requireContext(), getString(R.string.merge))
         // Selecting a radio button
         bind.mergeRadiogroup.setOnCheckedChangeListener { _, checked ->
             if (checked == R.id.merge_radio_generate) bind.mergeRetitleContainer.visibility = View.VISIBLE
@@ -62,7 +66,7 @@ class ResultFragment : BaseFragment(R.layout.merge_result_fragment) {
                     else if (bind.mergeRadioGenerate.isChecked)
                         model.performGenerateMerge(requireContext(), bind.mergeRetitle.text.toString())
                 } else {
-                    startActivity(Intent(context, PurchaseController::class.java).putExtra(Extra.STRING, R.string.merge_tree))
+                    PremiumGate.open(requireContext(), R.string.merge_tree)
                 }
             }
         }

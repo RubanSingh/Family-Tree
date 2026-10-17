@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokalna varnostna kopija</string>
+    <string name="choose_folder">Izbirati mapo</string>
+    <string name="backup_folder">Mapa z varnostnimi kopijami</string>
+    <string name="recover">Obnoviti</string>
+    <string name="export_png">Izvoz PNG</string>
+    <string name="png_exported_ok">PNG izvožen.</string>
+    <string name="tree_settings">Nastavitve drevesa</string>
+    <string name="max_life_span">Najdaljša življenjska doba</string>
+    <string name="years">Leta</string>
+    <string name="current_date">Aktualni datum</string>
+    <string name="device_date">Datum naprave</string>
+    <string name="fixed_date">Določen datum</string>
+    <string name="notification_time">Čas opomnika za rojstni dan</string>
+    <string name="origin_family">Družina izvora</string>
+    <string name="adoptive_family">Posvojiteljska družina</string>
+    <string name="foster_family">Rejniška družina</string>
+    <string name="paternal_family">Očetova družina</string>
+    <string name="maternal_family">Matičina družina</string>
+    <string name="own_family">Lastna družina</string>
+    <string name="numbers">Številke</string>
+    <string name="search_duplicates">Poiskati podvojitve</string>
+    <string name="skip">Izpustiti</string>
+    <string name="error_found">Najdena ena napaka.</string>
+    <string name="yes_to_all">Da za vse ostale</string>
+    <string name="no_to_all">Ne za vse ostale</string>
+    <string name="duplicates_lines">Vrstice podvojenih</string>
+    <string name="make_shared_media">Ustvariti skupno medijsko datoteko</string>
+    <string name="make_media">Ustvariti medij</string>
+    <string name="copy_app_storage">Kopirati v shranjevalnik aplikacije</string>
+    <string name="file_exists_reuse">Ta datoteka že obstaja.\nŽelite jo ponovno uporabiti ali ustvariti njeno kopijo?</string>
+    <string name="use_existing">Ponovno uporabiti obstoječo</string>
+    <string name="make_copy">Ustvariti kopijo</string>
+    <string name="existing_name">Že obstoječi naziv</string>
+    <string name="invalid_name">Neveljaven naziv</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Neveljaven datum GEDCOM.</string>
+    <string name="husband_age">Starost moža</string>
+    <string name="wife_age">Starost žene</string>
+    <string name="less_than">Manj kot</string>
+    <string name="more_than">Več kot</string>
+    <string name="shrink_path">Skrajšaj pot datoteke</string>
+</resources>

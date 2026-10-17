@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Details of a place: map actions and the events that happened there (rows added in code) -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/ds_space_lg">
+
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/place_sheet_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/ds_space_lg"
+            android:paddingEnd="@dimen/ds_space_lg"
+            android:textAppearance="?attr/textAppearanceTitleLarge"
+            android:textColor="?attr/colorOnSurface" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/place_sheet_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/ds_space_lg"
+            android:paddingEnd="@dimen/ds_space_lg"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_md"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/ds_space_lg"
+            android:paddingEnd="@dimen/ds_space_lg">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/place_sheet_map"
+                style="@style/Widget.FamilyTree.Button.Tonal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/places_show_map"
+                app:icon="@drawable/ds_ic_map" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/place_sheet_directions"
+                style="@style/Widget.FamilyTree.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_space_sm"
+                android:layout_weight="1"
+                android:text="@string/places_directions"
+                app:icon="@drawable/ds_ic_directions" />
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            style="@style/Widget.FamilyTree.SectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/ds_space_lg"
+            android:text="@string/places_events_here" />
+
+        <LinearLayout
+            android:id="@+id/place_sheet_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

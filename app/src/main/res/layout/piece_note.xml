@@ -3,22 +3,33 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_marginTop="10dp">
+	android:layout_marginTop="@dimen/ds_space_sm">
 	<TextView
 		android:id="@+id/note_text"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:background="@drawable/nota_sfondo"
-		android:paddingLeft="10dp"
-		android:paddingTop="6dp"
-		android:paddingRight="10dp"
-		android:paddingBottom="8dp"/>
+		android:paddingStart="@dimen/ds_space_ms"
+		android:paddingTop="10dp"
+		android:paddingEnd="@dimen/ds_space_ms"
+		android:paddingBottom="10dp"
+		android:textAppearance="@style/TextAppearance.FamilyTree.BodyMedium"
+		android:textColor="?attr/colorOnSurface"/>
+	<!-- Number of source citations -->
 	<TextView
 		android:id="@+id/note_sources"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_alignParentBottom="true"
 		android:layout_alignParentEnd="true"
-		android:background="@color/source_citation"
-		android:padding="4dp"/>
+		android:layout_margin="6dp"
+		android:background="@drawable/ds_bg_source_badge"
+		android:minWidth="24dp"
+		android:gravity="center"
+		android:paddingStart="@dimen/ds_space_sm"
+		android:paddingTop="2dp"
+		android:paddingEnd="@dimen/ds_space_sm"
+		android:paddingBottom="2dp"
+		android:textAppearance="@style/TextAppearance.FamilyTree.LabelMedium"
+		android:textColor="?attr/colorOnTertiaryContainer"/>
 </RelativeLayout>

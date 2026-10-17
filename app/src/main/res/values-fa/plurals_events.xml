@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">سالگرد ازدواج · %d سال</item>
+        <item quantity="other">سالگرد ازدواج · %d سال</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">سالگرد درگذشت · %d سال</item>
+        <item quantity="other">سالگرد درگذشت · %d سال</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">%1$d روز دیگر · %2$s</item>
+        <item quantity="other">%1$d روز دیگر · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">%d روز دیگر</item>
+        <item quantity="other">%d روز دیگر</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d ساله می‌شود</item>
+        <item quantity="other">%d ساله می‌شود</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d سال زندگی مشترک</item>
+        <item quantity="other">%d سال زندگی مشترک</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d سال پیش</item>
+        <item quantity="other">%d سال پیش</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d سال</item>
+        <item quantity="other">%d سال</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d رویداد</item>
+        <item quantity="other">%d رویداد</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d نفر</item>
+        <item quantity="other">%d نفر</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d مکان</item>
+        <item quantity="other">%d مکان</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d کشور</item>
+        <item quantity="other">%d کشور</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d نفر</item>
+        <item quantity="other">%d نفر</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d فایل خارج از فضای حافظه برنامه است. آن را در فضای حافظه برنامه کپی کنیم تا همراه درخت شما بماند و در پشتیبان‌ها گنجانده شود؟ فایل اصلی تغییر نمی‌کند.</item>
+        <item quantity="other">%d فایل خارج از فضای حافظه برنامه هستند. آن‌ها را در فضای حافظه برنامه کپی کنیم تا همراه درخت شما بمانند و در پشتیبان‌ها گنجانده شوند؟ فایل‌های اصلی تغییر نمی‌کنند.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d فایل در فضای حافظه برنامه کپی شد.</item>
+        <item quantity="other">%d فایل در فضای حافظه برنامه کپی شد.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d رسانه با مسیر کامل یک فایل در فضای حافظه برنامه پیوند داده شده است. پیوندش فقط به نام فایل کوتاه شود؟ فایل در جای خود می‌ماند.</item>
+        <item quantity="other">%d رسانه با مسیر کامل یک فایل در فضای حافظه برنامه پیوند داده شده‌اند. پیوندهایشان فقط به نام فایل کوتاه شود؟ فایل‌ها در جای خود می‌مانند.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d مسیر فایل کوتاه شد.</item>
+        <item quantity="other">%d مسیر فایل کوتاه شد.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d رکورد</item>
+        <item quantity="other">%d رکورد</item>
+    </plurals>
+</resources>

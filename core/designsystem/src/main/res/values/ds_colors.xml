@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Family Tree brand tokens (light). Night overrides live in values-night/ds_colors.xml. -->
+<resources>
+    <!-- Seed: Google product blue, matches the launcher icon -->
+    <color name="ds_primary">#0B57D0</color>
+    <color name="ds_on_primary">#FFFFFF</color>
+    <color name="ds_primary_container">#D3E3FD</color>
+    <color name="ds_on_primary_container">#041E49</color>
+    <color name="ds_primary_inverse">#A8C7FA</color>
+
+    <color name="ds_secondary">#575E71</color>
+    <color name="ds_on_secondary">#FFFFFF</color>
+    <color name="ds_secondary_container">#DBE2F9</color>
+    <color name="ds_on_secondary_container">#141B2C</color>
+
+    <!-- Premium gold -->
+    <color name="ds_tertiary">#725C00</color>
+    <color name="ds_on_tertiary">#FFFFFF</color>
+    <color name="ds_tertiary_container">#FFE08D</color>
+    <color name="ds_on_tertiary_container">#231B00</color>
+
+    <color name="ds_error">#B3261E</color>
+    <color name="ds_on_error">#FFFFFF</color>
+    <color name="ds_error_container">#F9DEDC</color>
+    <color name="ds_on_error_container">#410E0B</color>
+
+    <color name="ds_surface">#FFFFFF</color>
+    <color name="ds_on_surface">#1F1F1F</color>
+    <color name="ds_surface_variant">#DFE3EB</color>
+    <color name="ds_on_surface_variant">#444746</color>
+    <color name="ds_surface_dim">#D9DADD</color>
+    <color name="ds_surface_bright">#FFFFFF</color>
+    <color name="ds_surface_container_lowest">#FFFFFF</color>
+    <color name="ds_surface_container_low">#F3F6FC</color>
+    <color name="ds_surface_container">#EEF2F8</color>
+    <color name="ds_surface_container_high">#E9EEF6</color>
+    <color name="ds_surface_container_highest">#E1E6ED</color>
+    <color name="ds_surface_inverse">#303030</color>
+    <color name="ds_on_surface_inverse">#F2F2F2</color>
+
+    <color name="ds_outline">#747775</color>
+    <color name="ds_outline_variant">#C4C7C5</color>
+    <color name="ds_scrim">#000000</color>
+
+    <!-- Brand gradient for splash / premium hero -->
+    <color name="ds_brand_gradient_start">#0B57D0</color>
+    <color name="ds_brand_gradient_end">#0842A0</color>
+    <color name="ds_premium_gradient_start">#FFE08D</color>
+    <color name="ds_premium_gradient_end">#FFD166</color>
+
+    <!-- Semantic -->
+    <color name="ds_success">#146C2E</color>
+    <color name="ds_success_container">#C4EED0</color>
+    <color name="ds_on_success_container">#072711</color>
+</resources>

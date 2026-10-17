@@ -10,7 +10,9 @@ import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.ProfileFactsFragment;
 import dna.familytree.R;
+import dna.familytree.AgeConverter;
 import dna.familytree.AppUtils;
+import dna.familytree.feature.places.Maps;
 import dna.familytree.util.AnalyticsUtil;
 
 public class EventController extends DetailController {
@@ -49,6 +51,15 @@ public class EventController extends DetailController {
             place(getString(R.string.cause), "Cause");
         else
             place(getString(R.string.cause), "Cause", false, false);
+        // Age at event (GEDCOM AGE, from Family Gem)
+        if (Memory.getLeaderObject() instanceof Family) {
+            if (e.getHusband() != null && e.getHusband().getAge() != null)
+                AppUtils.place(box, getString(R.string.husband_age), AgeConverter.writeAge(this, e.getHusband().getAge()));
+            if (e.getWife() != null && e.getWife().getAge() != null)
+                AppUtils.place(box, getString(R.string.wife_age), AgeConverter.writeAge(this, e.getWife().getAge()));
+        } else {
+            place(getString(R.string.age), "Age");
+        }
         place(getString(R.string.www), "Www", false, false);
         place(getString(R.string.email), "Email", false, false);
         place(getString(R.string.telephone), "Phone", false, false);
@@ -92,5 +103,21 @@ public class EventController extends DetailController {
     protected void onResume() {
         super.onResume();
         AnalyticsUtil.logEventEventActivity(getFirebaseAnalytics());
+    }
+
+    /**
+     * Map actions in the toolbar, when the standard menu is shown (not while editing).
+     */
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        if (menu.size() > 0)
+            Maps.addMenu(menu, Maps.queryOf(e));
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        return Maps.onMenuItem(this, item, Maps.queryOf(e)) || super.onOptionsItemSelected(item);
     }
 }

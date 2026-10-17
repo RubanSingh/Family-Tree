@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From Family Gem translations -->
+    <string name="info">ಮಾಹಿತಿ</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">ಸ್ಥಳೀಯ ಬ್ಯಾಕಪ್</string>
+    <string name="choose_folder">ಫೋಲ್ಡರ್ ಆರಿಸಿ</string>
+    <string name="backup_folder">ಬ್ಯಾಕಪ್ ಫೋಲ್ಡರ್</string>
+    <string name="recover">ಮರುಪಡೆಯಿರಿ</string>
+    <string name="export_png">PNG ರಫ್ತು ಮಾಡಿ</string>
+    <string name="png_exported_ok">PNG ರಫ್ತು ಮಾಡಲಾಗಿದೆ.</string>
+    <string name="tree_settings">ಮರದ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
+    <string name="max_life_span">ಗರಿಷ್ಠ ಜೀವಿತಾವಧಿ</string>
+    <string name="years">ವರ್ಷಗಳು</string>
+    <string name="current_date">ಪ್ರಸ್ತುತ ದಿನಾಂಕ</string>
+    <string name="device_date">ಸಾಧನದ ದಿನಾಂಕ</string>
+    <string name="fixed_date">ನಿಗದಿತ ದಿನಾಂಕ</string>
+    <string name="notification_time">ಜನ್ಮದಿನದ ಅಧಿಸೂಚನೆಯ ಸಮಯ</string>
+    <string name="origin_family">ಜನ್ಮ ಕುಟುಂಬ</string>
+    <string name="adoptive_family">ದತ್ತು ಕುಟುಂಬ</string>
+    <string name="foster_family">ಸಾಕು ಕುಟುಂಬ</string>
+    <string name="paternal_family">ತಂದೆಯ ಕುಟುಂಬ</string>
+    <string name="maternal_family">ತಾಯಿಯ ಕುಟುಂಬ</string>
+    <string name="own_family">ಸ್ವಂತ ಕುಟುಂಬ</string>
+    <string name="numbers">ಸಂಖ್ಯೆಗಳು</string>
+    <string name="invalid_date">ಅಮಾನ್ಯ GEDCOM ದಿನಾಂಕ.</string>
+    <string name="husband_age">ಪತಿಯ ವಯಸ್ಸು</string>
+    <string name="search_duplicates">ನಕಲುಗಳನ್ನು ಹುಡುಕಿ</string>
+    <string name="skip">ಬಿಟ್ಟುಬಿಡಿ</string>
+    <string name="error_found">ಒಂದು ದೋಷ ಕಂಡುಬಂದಿದೆ.</string>
+    <string name="yes_to_all">ಉಳಿದ ಎಲ್ಲದಕ್ಕೂ ಹೌದು</string>
+    <string name="no_to_all">ಉಳಿದ ಎಲ್ಲದಕ್ಕೂ ಇಲ್ಲ</string>
+    <string name="wife_age">ಪತ್ನಿಯ ವಯಸ್ಸು</string>
+    <string name="less_than">ಇದಕ್ಕಿಂತ ಕಡಿಮೆ</string>
+    <string name="more_than">ಇದಕ್ಕಿಂತ ಹೆಚ್ಚು</string>
+    <string name="duplicates_lines">ನಕಲು ರೇಖೆಗಳು</string>
+    <string name="make_shared_media">ಹಂಚಿದ ಮಾಧ್ಯಮವನ್ನಾಗಿ ಮಾಡಿ</string>
+    <string name="make_media">ಸರಳ ಮಾಧ್ಯಮವನ್ನಾಗಿ ಮಾಡಿ</string>
+    <string name="copy_app_storage">ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಗೆ ನಕಲಿಸಿ</string>
+    <string name="shrink_path">ಫೈಲ್ ಮಾರ್ಗವನ್ನು ಚಿಕ್ಕದಾಗಿಸಿ</string>
+    <string name="file_exists_reuse">ಈ ಫೈಲ್ ಈಗಾಗಲೇ ಇದೆ.\nಅದನ್ನು ಮರುಬಳಸಲು ಅಥವಾ ನಕಲು ಮಾಡಲು ಬಯಸುವಿರಾ?</string>
+    <string name="use_existing">ಈಗಿರುವುದನ್ನು ಮರುಬಳಸಿ</string>
+    <string name="make_copy">ನಕಲು ಮಾಡಿ</string>
+    <string name="existing_name">ಈ ಹೆಸರು ಈಗಾಗಲೇ ಇದೆ</string>
+    <string name="invalid_name">ಅಮಾನ್ಯ ಹೆಸರು</string>
+</resources>

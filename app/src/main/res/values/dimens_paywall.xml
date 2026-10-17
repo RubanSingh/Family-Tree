@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paywall_stroke">1dp</dimen>
+    <dimen name="paywall_stroke_selected">2dp</dimen>
+    <dimen name="paywall_icon_tile">72dp</dimen>
+    <dimen name="paywall_cta_height">56dp</dimen>
+</resources>

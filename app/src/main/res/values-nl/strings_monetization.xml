@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Advertenties verwijderen</string>
+    <string name="ads_remove_hint">Geniet met Premium van Family Tree zonder advertenties.</string>
+    <string name="privacy_options">Privacykeuzes voor advertenties</string>
+    <string name="privacy_options_desc">Bekijken of wijzigen hoe advertenties uw gegevens gebruiken</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Dit is een Premium-functie.</string>
+    <string name="reward_watch_title">Bekijk een korte video</string>
+    <string name="reward_watch_desc">Gebruik het één keer gratis, direct na de video.</string>
+    <string name="reward_loading">Video laden…</string>
+    <string name="reward_unavailable">Er is nu geen video beschikbaar. Probeer het later opnieuw of neem Premium.</string>
+    <string name="reward_not_earned">Bekijk de video tot het einde om dit te ontgrendelen.</string>
+    <string name="reward_premium_desc">Onbeperkt gebruik, geen advertenties en elke Premium-functie.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Uw familieverhaal verdient Premium</string>
+    <string name="upsell_subtitle">Houd alles wat u hebt opgebouwd veilig en geniet van elke Premium-functie.</string>
+    <string name="upsell_subtitle_new">Bescherm uw onderzoek en geniet van Family Tree zonder advertenties.</string>
+    <string name="upsell_stat_people">Personen</string>
+    <string name="upsell_stat_trees">Bomen</string>
+    <string name="upsell_stat_generations">Generaties</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">en nog %d Premium-functie</item>
+        <item quantity="other">en nog %d Premium-functies</item>
+    </plurals>
+    <string name="upsell_price_monthly">Abonnementen vanaf %1$s per maand</string>
+    <string name="upsell_price_lifetime">of betaal eenmalig %1$s en houd het voor altijd</string>
+    <string name="upsell_price_lifetime_only">Levenslange toegang voor %1$s, eenmalig betaald</string>
+    <string name="upsell_cta">Bekijk Premium-opties</string>
+    <string name="upsell_later">Niet nu</string>
+    <string name="upsell_trust">Altijd opzegbaar · Veilig betalen via Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Alles wat u nodig hebt om uw familieverhaal te beschermen, te vieren en te delen.</string>
+    <string name="paywall_highlight_no_ads">Geen advertenties</string>
+    <string name="paywall_highlight_backup">Automatische back-up</string>
+    <string name="paywall_highlight_reminders">Onbeperkt herinneringen</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d dag gratis proberen</item>
+        <item quantity="other">%d dagen gratis proberen</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d maand gratis proberen</item>
+        <item quantity="other">%d maanden gratis proberen</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Terugverdiend in %d maand</item>
+        <item quantity="other">Terugverdiend in %d maanden</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s per maand · altijd opzegbaar</string>
+    <string name="paywall_summary_trial">%1$s, daarna %2$s per maand</string>
+    <string name="paywall_summary_lifetime">Eenmalig %1$s · voor altijd van u</string>
+    <string name="paywall_loading_prices">Prijzen laden…</string>
+    <string name="paywall_compare_title">Gratis vs. Premium</string>
+    <string name="paywall_compare_free">Gratis</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Inbegrepen</string>
+    <string name="paywall_details_show">Hoe het werkt</string>
+    <string name="paywall_details_hide">Details verbergen</string>
+    <string name="paywall_free_label">Gratis: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Alleen in Premium</string>
+    <string name="paywall_trust_title">Koop met vertrouwen</string>
+    <string name="paywall_trust_secure">Veilig betalen via Google Play</string>
+    <string name="paywall_trust_cancel">Maandabonnement altijd opzegbaar</string>
+    <string name="paywall_trust_devices">Herstel op al uw apparaten</string>
+    <string name="paywall_trust_private">Uw familiegegevens blijven op uw apparaat</string>
+    <string name="paywall_faq_title">Vragen &amp; antwoorden</string>
+    <string name="paywall_faq_plans_q">Wat is het verschil tussen Maandelijks en Levenslang?</string>
+    <string name="paywall_faq_plans_a">Beide ontgrendelen alles in Premium. Maandelijks wordt elke maand verlengd en kunt u altijd opzeggen. Levenslang betaalt u eenmalig en verloopt nooit.</string>
+    <string name="paywall_faq_cancel_q">Wat gebeurt er met mijn bomen als ik stop met Premium?</string>
+    <string name="paywall_faq_cancel_a">Er gaat niets verloren. Uw bomen, foto\'s, herinneringen en back-ups blijven precies zoals ze zijn: alleen de Premium-functies stoppen en de advertenties komen terug.</string>
+    <string name="paywall_faq_device_q">Ik heb een andere telefoon. Moet ik opnieuw betalen?</string>
+    <string name="paywall_faq_device_a">Nee. Installeer Family Tree met hetzelfde Google-account en tik op Aankopen herstellen.</string>
+    <string name="paywall_faq_privacy_q">Worden mijn familiegegevens ergens naartoe gestuurd?</string>
+    <string name="paywall_faq_privacy_a">Nee. Uw bomen blijven op uw apparaat en in de back-upmap die u kiest. Bij het kopen van Premium wordt niets geüpload.</string>
+    <string name="paywall_faq_manage_q">Hoe zeg ik het maandabonnement op?</string>
+    <string name="paywall_faq_manage_a">Open in de Play Store Betalingen en abonnementen › Abonnementen, kies Family Tree en tik op Opzeggen. Premium blijft actief tot het einde van de al betaalde periode.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Veilig bewaard</string>
+    <string name="pf_group_safe_desc">Jaren onderzoek, automatisch beschermd.</string>
+    <string name="pf_group_moments">Mis geen enkel moment</string>
+    <string name="pf_group_moments_desc">De datums en plaatsen van uw familie, altijd bij de hand.</string>
+    <string name="pf_group_share">Maken &amp; delen</string>
+    <string name="pf_group_share_desc">Prachtige exports en krachtige tools voor serieus onderzoek.</string>
+    <string name="pf_group_yours">Helemaal van u</string>
+    <string name="pf_group_yours_desc">Een rustige, persoonlijke plek voor uw familieverhaal.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Automatische back-up</string>
+    <string name="pf_backup_summary">Elke wijziging wordt opgeslagen in een map die u kiest, zonder dat u er iets voor hoeft te doen.</string>
+    <string name="pf_backup_free">Handmatige back-up</string>
+    <string name="pf_backup_premium">Automatisch</string>
+    <string name="pf_backup_detail1">Een minuut na elke bewerking wordt de boom als ZIP-back-up in uw map opgeslagen: telefoongeheugen, SD-kaart of een cloudmap zoals Google Drive.</string>
+    <string name="pf_backup_detail2">De 3 nieuwste kopieën van elke boom worden bewaard, zodat u altijd terug kunt.</string>
+    <string name="pf_backup_detail3">Een back-up herstellen is gratis en altijd mogelijk, ook zonder Premium.</string>
+
+    <string name="pf_media_title">Mediabeheer</string>
+    <string name="pf_media_summary">Kopieer alle foto\'s en documenten van een boom in één keer naar de app.</string>
+    <string name="pf_media_free">Eén bestand tegelijk</string>
+    <string name="pf_media_premium">Alle bestanden tegelijk</string>
+    <string name="pf_media_detail1">Breng alle media van een boom naar de applicatie-opslag, met voortgang en annuleren, zodat koppelingen nooit breken als bestanden worden verplaatst.</string>
+    <string name="pf_media_detail2">Uw originelen blijven onaangeroerd: elk bestand wordt gekopieerd en gecontroleerd voordat de koppelingen worden bijgewerkt.</string>
+
+    <string name="pf_reminders_title">Slimme familieherinneringen</string>
+    <string name="pf_reminders_summary">Trouwdagen, herdenkingsdagen en onbeperkt persoonlijke herinneringen.</string>
+    <string name="pf_reminders_free">Verjaardagen + 2 herinneringen</string>
+    <string name="pf_reminders_premium">Onbeperkt</string>
+    <string name="pf_reminders_detail1">Ontvang meldingen voor de trouwdagen van stellen en, als u wilt, voor herdenkingsdagen.</string>
+    <string name="pf_reminders_detail2">Maak zoveel herinneringen als u wilt: babyshowers, diploma-uitreikingen, familiereünies, bezoekjes…</string>
+    <string name="pf_reminders_detail3">Vroege meldingen laten het u op tijd weten, zodat er tijd is om te bellen, te schrijven of een cadeau te plannen.</string>
+
+    <string name="pf_places_title">Familieplaatsen</string>
+    <string name="pf_places_summary">Elke plaats uit uw familiegeschiedenis, doorzoekbaar en met één tik op de kaart.</string>
+    <string name="pf_places_free">Eerste 3 plaatsen</string>
+    <string name="pf_places_premium">Alle plaatsen</string>
+    <string name="pf_places_detail1">Alle plaatsen van evenementen en alle adressen in de boom, gegroepeerd per land, met zoeken.</string>
+    <string name="pf_places_detail2">Zie wat er op elke plaats is gebeurd en open die in uw kaarten-app, met routebeschrijving.</string>
+
+    <string name="pf_exports_title">Afdrukklare exports</string>
+    <string name="pf_exports_summary">Maak van uw schema een HD-afbeelding of een PDF om af te drukken en te delen.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Eén keer per video</string>
+    <string name="pf_exports_premium">PDF + HD-afbeelding</string>
+    <string name="pf_exports_detail1">Exporteer het schema als PNG-afbeelding in hoge resolutie, perfect voor chats en sociale netwerken.</string>
+    <string name="pf_exports_detail2">Maak een PDF van het volledige schema, klaar om als poster af te drukken voor familiebijeenkomsten.</string>
+    <string name="pf_exports_detail3">Afdrukopmaak met een witte achtergrond en scherpe lijnen, afgestemd op de grootte van uw boom.</string>
+    <string name="pf_exports_detail4">Zonder Premium kunt u nog steeds één keer exporteren nadat u een korte video hebt bekeken.</string>
+
+    <string name="pf_merge_title">Bomen samenvoegen</string>
+    <string name="pf_merge_summary">Voeg twee bomen samen tot één, terwijl duplicaten voor u worden gevonden.</string>
+    <string name="pf_merge_detail1">De app zoekt naar dezelfde personen in beide bomen en laat u elke overeenkomst bevestigen, of allemaal tegelijk.</string>
+    <string name="pf_merge_detail2">Perfect als familieleden u hun eigen boom sturen.</string>
+
+    <string name="pf_advanced_title">Geavanceerde tools</string>
+    <string name="pf_advanced_summary">Bronnen, opslagplaatsen, GEDCOM-export en de complete gereedschapskist voor genealogie.</string>
+    <string name="pf_advanced_detail1">Citeer bronnen en opslagplaatsen en beheer indieners, net als professionele genealogen.</string>
+    <string name="pf_advanced_detail2">Exporteer uw boom als GEDCOM, met of zonder media, voor elk genealogieprogramma, en maak volledige ZIP-back-ups.</string>
+    <string name="pf_advanced_detail3">Vergelijk gedeelde bomen en ruim de paden van mediabestanden op.</string>
+
+    <string name="pf_no_ads_title">Geen advertenties</string>
+    <string name="pf_no_ads_summary">Een rustige, overzichtelijke plek voor uw familieverhaal.</string>
+    <string name="pf_no_ads_free">Met advertenties</string>
+    <string name="pf_no_ads_premium">Geen advertenties</string>
+    <string name="pf_no_ads_detail1">Geen advertenties in lijsten, in profielen of tussen taken.</string>
+    <string name="pf_no_ads_detail2">Met Premium steunt u ook de ontwikkeling van Family Tree.</string>
+
+    <string name="pf_themes_title">20 kleurthema\'s</string>
+    <string name="pf_themes_summary">Maak de app helemaal eigen, in lichte of donkere modus.</string>
+    <string name="pf_themes_free">Klassiek thema</string>
+    <string name="pf_themes_premium">20 thema\'s</string>
+    <string name="pf_themes_detail1">Kies uit 20 kleurthema\'s, van diep indigo tot warm amber.</string>
+    <string name="pf_themes_detail2">Elk thema werkt in lichte en in donkere modus.</string>
+</resources>

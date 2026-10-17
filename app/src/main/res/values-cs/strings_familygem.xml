@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokální záloha</string>
+    <string name="choose_folder">Zvolit složku</string>
+    <string name="backup_folder">Složka zálohy</string>
+    <string name="recover">Obnovit</string>
+    <string name="export_png">Exportovat PNG</string>
+    <string name="png_exported_ok">PNG exportován.</string>
+    <string name="tree_settings">Nastavení stromu</string>
+    <string name="max_life_span">Maximální délka života</string>
+    <string name="years">Roky</string>
+    <string name="current_date">Aktuální datum</string>
+    <string name="device_date">Datum zařízení</string>
+    <string name="fixed_date">Stanovené datum</string>
+    <string name="notification_time">Čas upozornění narozenin</string>
+    <string name="origin_family">Rodina původu</string>
+    <string name="adoptive_family">Adoptivní rodina</string>
+    <string name="foster_family">Pěstounská rodina</string>
+    <string name="paternal_family">Rodina otce</string>
+    <string name="maternal_family">Rodina matky</string>
+    <string name="own_family">Vlastní rodina</string>
+    <string name="numbers">Čísla</string>
+    <string name="invalid_date">Neplatná data GEDCOM.</string>
+    <string name="husband_age">Manželův věk</string>
+    <string name="search_duplicates">Hledat duplicity</string>
+    <string name="skip">Vynechat</string>
+    <string name="error_found">Nalezena jedna chyba.</string>
+    <string name="yes_to_all">Ano pro všechny zbývající</string>
+    <string name="no_to_all">Ne pro všechny zbývající</string>
+    <string name="wife_age">Manželčin věk</string>
+    <string name="less_than">Méně než</string>
+    <string name="more_than">Více než</string>
+    <string name="duplicates_lines">Linie duplicit</string>
+    <string name="make_shared_media">Vytvořit sdílené médium</string>
+    <string name="make_media">Vytvořit médium</string>
+    <string name="copy_app_storage">Kopírovat do úložiště aplikace</string>
+    <string name="shrink_path">Zkrátit cestu k souboru</string>
+    <string name="file_exists_reuse">Tento soubor již existuje.\nChcete jej znovu použít, nebo vytvořit jeho kopii?</string>
+    <string name="use_existing">Znovu použít stávající</string>
+    <string name="make_copy">Vytvořit kopii</string>
+    <string name="existing_name">Již existující název</string>
+    <string name="invalid_name">Neplatný název</string>
+    <string name="info">Info</string>
+</resources>

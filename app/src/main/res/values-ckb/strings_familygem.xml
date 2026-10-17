@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From Family Gem translations -->
+    <string name="info">زانیاری</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">پاشەکەوتی ناوخۆیی</string>
+    <string name="choose_folder">ھەڵبژاردنی بوخچە</string>
+    <string name="backup_folder">بوخچەی پاشەکەوت</string>
+    <string name="recover">گەڕاندنەوە</string>
+    <string name="export_png">ھەناردەکردنی PNG</string>
+    <string name="png_exported_ok">PNG ھەناردە کرا.</string>
+    <string name="tree_settings">ڕێکخستنەکانی دار</string>
+    <string name="max_life_span">زۆرترین تەمەن</string>
+    <string name="years">ساڵ</string>
+    <string name="current_date">ڕێکەوتی ئێستا</string>
+    <string name="device_date">ڕێکەوتی ئامێر</string>
+    <string name="fixed_date">ڕێکەوتی جێگیر</string>
+    <string name="notification_time">کاتی ئاگادارکردنەوەی ڕۆژی لەدایکبوون</string>
+    <string name="origin_family">خێزانی بنەڕەت</string>
+    <string name="adoptive_family">خێزانی بەخێوکەر</string>
+    <string name="foster_family">خێزانی سەرپەرشتیار</string>
+    <string name="paternal_family">خێزانی باوک</string>
+    <string name="maternal_family">خێزانی دایک</string>
+    <string name="own_family">خێزانی خۆی</string>
+    <string name="numbers">ژمارەکان</string>
+    <string name="invalid_date">ڕێکەوتی GEDCOM نادروستە.</string>
+    <string name="husband_age">تەمەنی مێرد</string>
+    <string name="search_duplicates">گەڕان بۆ دووبارەکان</string>
+    <string name="skip">تێپەڕاندن</string>
+    <string name="error_found">ھەڵەیەک دۆزرایەوە.</string>
+    <string name="yes_to_all">بەڵێ بۆ ھەموو ئەوانەی ماون</string>
+    <string name="no_to_all">نەخێر بۆ ھەموو ئەوانەی ماون</string>
+    <string name="wife_age">تەمەنی ژن</string>
+    <string name="less_than">کەمتر لە</string>
+    <string name="more_than">زیاتر لە</string>
+    <string name="duplicates_lines">ھێڵی دووبارەکان</string>
+    <string name="make_shared_media">کردن بە میدیای ھاوبەش</string>
+    <string name="make_media">کردن بە میدیای سادە</string>
+    <string name="copy_app_storage">لەبەرگرتنەوە بۆ بیرگەی ئەپ</string>
+    <string name="shrink_path">کورتکردنەوەی ڕێڕەوی پەڕگە</string>
+    <string name="file_exists_reuse">ئەم پەڕگەیە پێشتر ھەیە.\nدەتەوێت دووبارە بەکاری بھێنیتەوە یان لەبەرگیراوەیەک دروست بکەیت؟</string>
+    <string name="use_existing">بەکارھێنانەوەی ھەبوو</string>
+    <string name="make_copy">دروستکردنی لەبەرگیراوە</string>
+    <string name="existing_name">ناوەکە پێشتر ھەیە</string>
+    <string name="invalid_name">ناوی نادروست</string>
+</resources>

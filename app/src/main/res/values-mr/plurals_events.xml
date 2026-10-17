@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">लग्नाचा वाढदिवस · %d वर्ष</item>
+        <item quantity="other">लग्नाचा वाढदिवस · %d वर्षे</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">स्मृतिदिन · %d वर्ष</item>
+        <item quantity="other">स्मृतिदिन · %d वर्षे</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">%1$d दिवसात · %2$s</item>
+        <item quantity="other">%1$d दिवसांत · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">%d दिवसात</item>
+        <item quantity="other">%d दिवसांत</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d वर्षांचे होतील</item>
+        <item quantity="other">%d वर्षांचे होतील</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">लग्नाला %d वर्ष</item>
+        <item quantity="other">लग्नाला %d वर्षे</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d वर्षापूर्वी</item>
+        <item quantity="other">%d वर्षांपूर्वी</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d वर्ष</item>
+        <item quantity="other">%d वर्षे</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d घटना</item>
+        <item quantity="other">%d घटना</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d व्यक्ती</item>
+        <item quantity="other">%d व्यक्ती</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d ठिकाण</item>
+        <item quantity="other">%d ठिकाणे</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d देश</item>
+        <item quantity="other">%d देश</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d व्यक्ती</item>
+        <item quantity="other">%d व्यक्ती</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d फाईल अ‍ॅप स्टोरेजच्या बाहेर आहे. ती अ‍ॅप स्टोरेजमध्ये कॉपी करायची, जेणेकरून ती तुमच्या वंशावळीसोबत राहील आणि बॅकअपमध्ये समाविष्ट होईल? मूळ फाईलमध्ये बदल होणार नाही.</item>
+        <item quantity="other">%d फाईल्स अ‍ॅप स्टोरेजच्या बाहेर आहेत. त्या अ‍ॅप स्टोरेजमध्ये कॉपी करायच्या, जेणेकरून त्या तुमच्या वंशावळीसोबत राहतील आणि बॅकअपमध्ये समाविष्ट होतील? मूळ फाईल्समध्ये बदल होणार नाही.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d फाईल अ‍ॅप स्टोरेजमध्ये कॉपी केली.</item>
+        <item quantity="other">%d फाईल्स अ‍ॅप स्टोरेजमध्ये कॉपी केल्या.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d माध्यम अ‍ॅप स्टोरेजमधील फाईलच्या पूर्ण पाथसह जोडलेले आहे. ती लिंक फक्त फाईलच्या नावापुरती लहान करायची? फाईल आहे तिथेच राहील.</item>
+        <item quantity="other">%d माध्यमे अ‍ॅप स्टोरेजमधील फाईलच्या पूर्ण पाथसह जोडलेली आहेत. त्या लिंक्स फक्त फाईलच्या नावापुरत्या लहान करायच्या? फाईल्स आहेत तिथेच राहतील.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d फाईल पाथ लहान केला.</item>
+        <item quantity="other">%d फाईल पाथ लहान केले.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d रेकॉर्ड</item>
+        <item quantity="other">%d रेकॉर्ड</item>
+    </plurals>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Group title in Events & reminders and Family places -->
+<com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.FamilyTree.SectionHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="20dp"
+    android:paddingTop="@dimen/ds_space_md"
+    android:paddingEnd="20dp"
+    android:paddingBottom="@dimen/ds_space_xs" />

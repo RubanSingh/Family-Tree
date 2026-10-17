@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Yerel yedek</string>
+    <string name="choose_folder">Klasör seç</string>
+    <string name="backup_folder">Yedekleme klasörü</string>
+    <string name="recover">Geri yükle</string>
+    <string name="export_png">PNG dışa aktar</string>
+    <string name="png_exported_ok">PNG dışa aktarıldı.</string>
+    <string name="tree_settings">Soyağacı ayarları</string>
+    <string name="max_life_span">En uzun ömür</string>
+    <string name="years">Yıl</string>
+    <string name="current_date">Şu anki tarih</string>
+    <string name="device_date">Cihazın tarihi</string>
+    <string name="fixed_date">Sabit tarih</string>
+    <string name="notification_time">Doğum günü bildirim saati</string>
+    <string name="origin_family">Geldiği aile</string>
+    <string name="own_family">Kurduğu aile</string>
+    <string name="numbers">Sayılar</string>
+    <string name="search_duplicates">Tekrarlayanları bul</string>
+    <string name="skip">Atla</string>
+    <string name="error_found">Bir hata bulundu.</string>
+    <string name="yes_to_all">Tümüne evet</string>
+    <string name="no_to_all">Tümüne hayır</string>
+    <string name="duplicates_lines">Tekrarlayan satırlar</string>
+    <string name="file_exists_reuse">Bu dosya zatdn var.\nYeniden kullanmak mı, koypa oluşturmak mı istersiniz?</string>
+    <string name="use_existing">Var olanı kullan</string>
+    <string name="make_copy">Kopya oluştur</string>
+    <string name="invalid_name">Geçersiz ad</string>
+    <string name="info">Bilgi</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="adoptive_family">Evlat edinen aile</string>
+    <string name="foster_family">Koruyucu aile</string>
+    <string name="paternal_family">Baba tarafı ailesi</string>
+    <string name="maternal_family">Anne tarafı ailesi</string>
+    <string name="invalid_date">Geçersiz GEDCOM tarihi.</string>
+    <string name="husband_age">Kocanın yaşı</string>
+    <string name="wife_age">Karının yaşı</string>
+    <string name="less_than">Daha az</string>
+    <string name="more_than">Daha fazla</string>
+    <string name="make_shared_media">Paylaşılmış medya yap</string>
+    <string name="make_media">Basit medya yap</string>
+    <string name="copy_app_storage">Uygulama depolama alanına kopyala</string>
+    <string name="shrink_path">Dosya yolunu kısalt</string>
+    <string name="existing_name">Bu ad zaten mevcut</string>
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">لابردنی ڕیکلام</string>
+    <string name="ads_remove_hint">بە Premium چێژ لە Family Tree ببینە بەبێ ڕیکلام.</string>
+    <string name="privacy_options">ھەڵبژاردنەکانی تایبەتێتیی ڕیکلام</string>
+    <string name="privacy_options_desc">ببینە یان بگۆڕە ڕیکلامەکان چۆن زانیارییەکانت بەکاردەھێنن</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">ئەم تایبەتمەندییە بەشێکە لە Premium.</string>
+    <string name="reward_watch_title">ڤیدیۆیەکی کورت ببینە</string>
+    <string name="reward_watch_desc">یەک جار بێبەرامبەر بەکاری بھێنە، ڕاستەوخۆ دوای ڤیدیۆکە.</string>
+    <string name="reward_loading">ڤیدیۆکە بار دەکرێت…</string>
+    <string name="reward_unavailable">لە ئێستادا ھیچ ڤیدیۆیەک بەردەست نییە. دواتر دووبارە ھەوڵ بدەرەوە یان Premium وەربگرە.</string>
+    <string name="reward_not_earned">ڤیدیۆکە تا کۆتایی ببینە بۆ کردنەوەی ئەم تایبەتمەندییە.</string>
+    <string name="reward_premium_desc">بەکارھێنانی بێسنوور، بەبێ ڕیکلام و ھەموو تایبەتمەندییەکانی Premium.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Premium، شایستەی چیرۆکی خێزانەکەت</string>
+    <string name="upsell_subtitle">ھەموو ئەوەی دروستت کردووە بپارێزە و چێژ لە ھەموو تایبەتمەندییەکانی Premium ببینە.</string>
+    <string name="upsell_subtitle_new">لێکۆڵینەوەکانت بپارێزە و چێژ لە Family Tree ببینە بەبێ ڕیکلام.</string>
+    <string name="upsell_stat_people">کەسەکان</string>
+    <string name="upsell_stat_trees">دارەکان</string>
+    <string name="upsell_stat_generations">نەوەکان</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">و %d تایبەتمەندیی تری Premium</item>
+        <item quantity="other">و %d تایبەتمەندیی تری Premium</item>
+    </plurals>
+    <string name="upsell_price_monthly">پلانەکان مانگانە بە %1$s دەست پێدەکەن</string>
+    <string name="upsell_price_lifetime">یان یەکجار %1$s بدە و بۆ ھەمیشە ھی خۆتە</string>
+    <string name="upsell_price_lifetime_only">دەستگەیشتنی ھەتاھەتایی بە %1$s، بە یەکجار پارەدان</string>
+    <string name="upsell_cta">پلانەکانی Premium ببینە</string>
+    <string name="upsell_later">ئێستا نا</string>
+    <string name="upsell_trust">لە ھەر کاتێکدا ھەڵیبوەشێنەرەوە · پارەدانی پارێزراو لە ڕێگەی Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">ھەموو ئەوەی پێویستتە بۆ پاراستن، ئاھەنگگێڕان و ھاوبەشکردنی چیرۆکی خێزانەکەت.</string>
+    <string name="paywall_highlight_no_ads">بێ ڕیکلام</string>
+    <string name="paywall_highlight_backup">پاشەکەوتی خۆکار</string>
+    <string name="paywall_highlight_reminders">بیرخەرەوەی بێسنوور</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d ڕۆژ تاقیکردنەوەی بێبەرامبەر</item>
+        <item quantity="other">%d ڕۆژ تاقیکردنەوەی بێبەرامبەر</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d مانگ تاقیکردنەوەی بێبەرامبەر</item>
+        <item quantity="other">%d مانگ تاقیکردنەوەی بێبەرامبەر</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">لە ماوەی %d مانگدا تێچووی خۆی دەداتەوە</item>
+        <item quantity="other">لە ماوەی %d مانگدا تێچووی خۆی دەداتەوە</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s بۆ ھەر مانگێک · لە ھەر کاتێکدا ھەڵیبوەشێنەرەوە</string>
+    <string name="paywall_summary_trial">%1$s، دواتر %2$s بۆ ھەر مانگێک</string>
+    <string name="paywall_summary_lifetime">%1$s یەکجار · بۆ ھەمیشە ھی خۆتە</string>
+    <string name="paywall_loading_prices">نرخەکان بار دەکرێن…</string>
+    <string name="paywall_compare_title">بێبەرامبەر و Premium</string>
+    <string name="paywall_compare_free">بێبەرامبەر</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">تێدایە</string>
+    <string name="paywall_details_show">چۆن کار دەکات</string>
+    <string name="paywall_details_hide">شاردنەوەی وردەکارییەکان</string>
+    <string name="paywall_free_label">بێبەرامبەر: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">تەنھا لە Premium</string>
+    <string name="paywall_trust_title">بە دڵنیاییەوە بیکڕە</string>
+    <string name="paywall_trust_secure">پارەدانی پارێزراو لە ڕێگەی Google Play</string>
+    <string name="paywall_trust_cancel">پلانی مانگانە لە ھەر کاتێکدا ھەڵبوەشێنەرەوە</string>
+    <string name="paywall_trust_devices">لەسەر ھەموو ئامێرەکانت بیگەڕێنەرەوە</string>
+    <string name="paywall_trust_private">زانیارییەکانی خێزانەکەت لەسەر ئامێرەکەت دەمێننەوە</string>
+    <string name="paywall_faq_title">پرسیار و وەڵام</string>
+    <string name="paywall_faq_plans_q">جیاوازیی نێوان مانگانە و ھەتاھەتایی چییە؟</string>
+    <string name="paywall_faq_plans_a">ھەردووکیان ھەموو شتێکی Premium دەکەنەوە. پلانی مانگانە ھەموو مانگێک نوێ دەبێتەوە و دەتوانیت لە ھەر کاتێکدا ھەڵیبوەشێنیتەوە. پلانی ھەتاھەتایی یەکجار پارەی دەدرێت و ھەرگیز بەسەر ناچێت.</string>
+    <string name="paywall_faq_cancel_q">ئەگەر Premium ڕابگرم، چی بەسەر دارەکانم دێت؟</string>
+    <string name="paywall_faq_cancel_a">ھیچ شتێک لەدەست ناچێت. دارەکان، وێنەکان، بیرخەرەوەکان و پاشەکەوتەکانت وەک خۆیان دەمێننەوە: تەنھا تایبەتمەندییەکانی Premium ڕادەوەستن و ڕیکلامەکان دەگەڕێنەوە.</string>
+    <string name="paywall_faq_device_q">مۆبایلەکەمم گۆڕی. دەبێت دووبارە پارە بدەمەوە؟</string>
+    <string name="paywall_faq_device_a">نەخێر. Family Tree بە ھەمان ھەژماری Google دابمەزرێنە و لەسەر «گەڕاندنەوەی کڕینەکان» دابگرە.</string>
+    <string name="paywall_faq_privacy_q">ئایا زانیارییەکانی خێزانەکەم بۆ شوێنێک دەنێردرێن؟</string>
+    <string name="paywall_faq_privacy_a">نەخێر. دارەکانت لەسەر ئامێرەکەت و لەو بوخچەی پاشەکەوتەدا دەمێننەوە کە خۆت ھەڵیدەبژێریت. کڕینی Premium ھیچ شتێک بار ناکات.</string>
+    <string name="paywall_faq_manage_q">چۆن پلانی مانگانە ھەڵبوەشێنمەوە؟</string>
+    <string name="paywall_faq_manage_a">لە Play Store، «پارەدان و ئابوونەکان › ئابوونەکان» بکەرەوە، Family Tree ھەڵبژێرە و لەسەر «ھەڵوەشاندنەوە» دابگرە. Premium تا کۆتایی ئەو ماوەیەی پارەکەیت داوە چالاک دەمێنێتەوە.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">بیپارێزە</string>
+    <string name="pf_group_safe_desc">ساڵانێک لێکۆڵینەوە، بە شێوەی خۆکار پارێزراو.</string>
+    <string name="pf_group_moments">ھیچ ساتێک لەدەست مەدە</string>
+    <string name="pf_group_moments_desc">ڕێکەوت و شوێنەکانی خێزانەکەت، ھەمیشە لە بەردەستتدان.</string>
+    <string name="pf_group_share">دروست بکە و ھاوبەشی بکە</string>
+    <string name="pf_group_share_desc">ھەناردەی جوان و ئامرازی بەھێز بۆ لێکۆڵینەوەی جددی.</string>
+    <string name="pf_group_yours">بیکە ھی خۆت</string>
+    <string name="pf_group_yours_desc">شوێنێکی ئارام و تایبەت بۆ چیرۆکی خێزانەکەت.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">پاشەکەوتی خۆکار</string>
+    <string name="pf_backup_summary">ھەموو گۆڕانکارییەک لە بوخچەیەک کە خۆت ھەڵیدەبژێریت پاشەکەوت دەکرێت، بێ ئەوەی پەنجەیەک بجووڵێنیت.</string>
+    <string name="pf_backup_free">پاشەکەوتی دەستی</string>
+    <string name="pf_backup_premium">خۆکار</string>
+    <string name="pf_backup_detail1">خولەکێک دوای ھەر دەستکارییەک، دارەکە وەک پاشەکەوتێکی ZIP لە بوخچەکەتدا پاشەکەوت دەکرێت: بیرگەی مۆبایل، کارتی SD یان بوخچەیەکی ھەوری وەک Google Drive.</string>
+    <string name="pf_backup_detail2">٣ نوێترین لەبەرگیراوەی ھەر دارێک دەھێڵرێنەوە، بۆ ئەوەی ھەمیشە بتوانیت بگەڕێیتەوە.</string>
+    <string name="pf_backup_detail3">گەڕاندنەوەی پاشەکەوت بێبەرامبەرە و ھەمیشە بەردەستە، تەنانەت بەبێ Premium.</string>
+
+    <string name="pf_media_title">ڕێکخەری میدیا</string>
+    <string name="pf_media_summary">ھەموو وێنە و بەڵگەنامەکانی دارێک بە یەکجار بۆ ناو ئەپەکە لەبەر بگرەوە.</string>
+    <string name="pf_media_free">یەک پەڕگە لە ھەر جارێکدا</string>
+    <string name="pf_media_premium">ھەموو پەڕگەکان بە یەکجار</string>
+    <string name="pf_media_detail1">ھەموو میدیای دارێک بھێنە ناو بیرگەی ئەپ، لەگەڵ پیشاندانی ڕەوتی کارەکە و توانای ھەڵوەشاندنەوە، بۆ ئەوەی کاتێک پەڕگەکان دەگوازرێنەوە بەستەرەکان ھەرگیز نەپچڕێن.</string>
+    <string name="pf_media_detail2">پەڕگە ئەسڵییەکانت دەستیان لێ نادرێت: ھەر پەڕگەیەک لەبەر دەگیرێتەوە و دەپشکنرێت پێش ئەوەی بەستەرەکانی نوێ بکرێنەوە.</string>
+
+    <string name="pf_reminders_title">بیرخەرەوە زیرەکەکانی خێزان</string>
+    <string name="pf_reminders_summary">ساڵیادی ھاوسەرگیری، ساڵیادی کۆچی دوایی و بیرخەرەوەی کەسیی بێسنوور.</string>
+    <string name="pf_reminders_free">ڕۆژانی لەدایکبوون + ٢ بیرخەرەوە</string>
+    <string name="pf_reminders_premium">بێسنوور</string>
+    <string name="pf_reminders_detail1">ئاگادار بکرێیتەوە لە ساڵیادی ھاوسەرگیریی ژن و مێردەکان، و ئەگەر بتەوێت لە ساڵیادی کۆچی دوایی.</string>
+    <string name="pf_reminders_detail2">ھەر ئەوەندە بیرخەرەوە دروست بکە کە دەتەوێت: ئاھەنگی پێشوازی لە منداڵ، دەرچوون، کۆبوونەوەی خێزانی، سەردانەکان…</string>
+    <string name="pf_reminders_detail3">ئاگادارکردنەوەی پێشوەختە پێشتر ئاگادارت دەکاتەوە، بۆ ئەوەی کاتت ھەبێت بۆ پەیوەندیکردن، نووسین یان ئامادەکردنی دیارییەک.</string>
+
+    <string name="pf_places_title">شوێنەکانی خێزان</string>
+    <string name="pf_places_summary">ھەموو شوێنێکی مێژووی خێزانەکەت، لەگەڵ گەڕان و بە یەک دەستلێدان لەسەر نەخشە.</string>
+    <string name="pf_places_free">یەکەم ٣ شوێن</string>
+    <string name="pf_places_premium">ھەموو شوێنەکان</string>
+    <string name="pf_places_detail1">ھەموو شوێنی ڕووداوەکان و ناونیشانەکانی دارەکە، بەپێی وڵات پۆلێنکراو، لەگەڵ گەڕان.</string>
+    <string name="pf_places_detail2">ببینە لە ھەر شوێنێک چی ڕوویداوە و لە ئەپی نەخشەکەتدا بیکەرەوە، لەگەڵ ڕێنیشاندان.</string>
+
+    <string name="pf_exports_title">ھەناردەی ئامادە بۆ چاپ</string>
+    <string name="pf_exports_summary">ھێڵکارییەکەت بکە بە وێنەیەکی HD یان PDF بۆ چاپکردن و ھاوبەشکردن.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">یەک جار بۆ ھەر ڤیدیۆیەک</string>
+    <string name="pf_exports_premium">PDF + وێنەی HD</string>
+    <string name="pf_exports_detail1">ھێڵکارییەکە وەک وێنەیەکی PNG بە ڕوونیی بەرز ھەناردە بکە، گونجاو بۆ چات و تۆڕە کۆمەڵایەتییەکان.</string>
+    <string name="pf_exports_detail2">پەڕگەیەکی PDF لە ھەموو ھێڵکارییەکە دروست بکە، ئامادە بۆ چاپکردن وەک پۆستەر بۆ کۆبوونەوە خێزانییەکان.</string>
+    <string name="pf_exports_detail3">شێوازی چاپ بە باکگراوندی سپی و ھێڵی ڕوون، بە قەبارەیەکی گونجاو بۆ دارەکەت.</string>
+    <string name="pf_exports_detail4">تەنانەت بەبێ Premium، دەتوانیت دوای بینینی ڤیدیۆیەکی کورت یەک جار ھەناردە بکەیت.</string>
+
+    <string name="pf_merge_title">تێکەڵکردنی دارەکان</string>
+    <string name="pf_merge_summary">دوو دار بکە بە یەک، دووبارەکان بۆت دەدۆزرێنەوە.</string>
+    <string name="pf_merge_detail1">ئەپەکە ھەمان کەسەکان لە ھەردوو دارەکەدا دەدۆزێتەوە و ڕێگەت پێدەدات ھەر ھاوتاییەک پشتڕاست بکەیتەوە، یان ھەموویان بە یەکجار.</string>
+    <string name="pf_merge_detail2">گونجاوە کاتێک خزمەکانت داری خۆیانت بۆ دەنێرن.</string>
+
+    <string name="pf_advanced_title">ئامرازە پێشکەوتووەکان</string>
+    <string name="pf_advanced_summary">سەرچاوەکان، ئەرشیفەکان، ھەناردەکردنی GEDCOM و تەواوی ئامرازەکانی ڕەچەڵەکناسی.</string>
+    <string name="pf_advanced_detail1">وەک ڕەچەڵەکناسە پیشەگەرەکان ئاماژە بە سەرچاوە و ئەرشیفەکان بکە و بەشداران بەڕێوە ببە.</string>
+    <string name="pf_advanced_detail2">دارەکەت وەک GEDCOM ھەناردە بکە، لەگەڵ میدیا یان بەبێ میدیا، بۆ ھەر نەرمەکاڵایەکی ڕەچەڵەکناسی، و پاشەکەوتی تەواوی ZIP دروست بکە.</string>
+    <string name="pf_advanced_detail3">دارە ھاوبەشەکان بەراورد بکە و ڕێڕەوی پەڕگەکانی میدیا ڕێک بخە.</string>
+
+    <string name="pf_no_ads_title">بێ ڕیکلام</string>
+    <string name="pf_no_ads_summary">شوێنێکی ئارام و بێ پەرتبوون بۆ چیرۆکی خێزانەکەت.</string>
+    <string name="pf_no_ads_free">لەگەڵ ڕیکلام</string>
+    <string name="pf_no_ads_premium">بێ ڕیکلام</string>
+    <string name="pf_no_ads_detail1">ھیچ ڕیکلامێک لە لیستەکان، پرۆفایلەکان یان لە نێوان کارەکاندا نییە.</string>
+    <string name="pf_no_ads_detail2">ھەروەھا Premium پشتگیریی پەرەپێدانی Family Tree دەکات.</string>
+
+    <string name="pf_themes_title">٢٠ ڕووکاری ڕەنگ</string>
+    <string name="pf_themes_summary">ئەپەکە بکە ھی خۆت، بە ڕووناک یان تاریک.</string>
+    <string name="pf_themes_free">ڕووکاری کلاسیک</string>
+    <string name="pf_themes_premium">٢٠ ڕووکار</string>
+    <string name="pf_themes_detail1">لە نێوان ٢٠ ڕووکاری ڕەنگدا ھەڵبژێرە، لە نیلیی تۆخەوە تا زەردی گەرم.</string>
+    <string name="pf_themes_detail2">ھەموو ڕووکارێک لە دۆخی ڕووناک و تاریکدا کار دەکات.</string>
+</resources>

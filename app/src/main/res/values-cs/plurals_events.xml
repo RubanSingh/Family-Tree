@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Výročí svatby · %d rok</item>
+        <item quantity="few">Výročí svatby · %d roky</item>
+        <item quantity="many">Výročí svatby · %d roku</item>
+        <item quantity="other">Výročí svatby · %d let</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Den vzpomínky · %d rok</item>
+        <item quantity="few">Den vzpomínky · %d roky</item>
+        <item quantity="many">Den vzpomínky · %d roku</item>
+        <item quantity="other">Den vzpomínky · %d let</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Za %1$d den · %2$s</item>
+        <item quantity="few">Za %1$d dny · %2$s</item>
+        <item quantity="many">Za %1$d dne · %2$s</item>
+        <item quantity="other">Za %1$d dní · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">za %d den</item>
+        <item quantity="few">za %d dny</item>
+        <item quantity="many">za %d dne</item>
+        <item quantity="other">za %d dní</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d. narozeniny</item>
+        <item quantity="few">%d. narozeniny</item>
+        <item quantity="many">%d. narozeniny</item>
+        <item quantity="other">%d. narozeniny</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d rok manželství</item>
+        <item quantity="few">%d roky manželství</item>
+        <item quantity="many">%d roku manželství</item>
+        <item quantity="other">%d let manželství</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Před %d rokem</item>
+        <item quantity="few">Před %d lety</item>
+        <item quantity="many">Před %d roku</item>
+        <item quantity="other">Před %d lety</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d rok</item>
+        <item quantity="few">%d roky</item>
+        <item quantity="many">%d roku</item>
+        <item quantity="other">%d let</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d událost</item>
+        <item quantity="few">%d události</item>
+        <item quantity="many">%d události</item>
+        <item quantity="other">%d událostí</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d osoba</item>
+        <item quantity="few">%d osoby</item>
+        <item quantity="many">%d osoby</item>
+        <item quantity="other">%d osob</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d místo</item>
+        <item quantity="few">%d místa</item>
+        <item quantity="many">%d místa</item>
+        <item quantity="other">%d míst</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d země</item>
+        <item quantity="few">%d země</item>
+        <item quantity="many">%d země</item>
+        <item quantity="other">%d zemí</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d osoba</item>
+        <item quantity="few">%d osoby</item>
+        <item quantity="many">%d osoby</item>
+        <item quantity="other">%d osob</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d soubor je mimo úložiště aplikace. Zkopírovat ho do úložiště aplikace, aby zůstal u stromu a byl součástí záloh? Původní soubor se nezmění.</item>
+        <item quantity="few">%d soubory jsou mimo úložiště aplikace. Zkopírovat je do úložiště aplikace, aby zůstaly u stromu a byly součástí záloh? Původní soubory se nezmění.</item>
+        <item quantity="many">%d souboru je mimo úložiště aplikace. Zkopírovat je do úložiště aplikace, aby zůstaly u stromu a byly součástí záloh? Původní soubory se nezmění.</item>
+        <item quantity="other">%d souborů je mimo úložiště aplikace. Zkopírovat je do úložiště aplikace, aby zůstaly u stromu a byly součástí záloh? Původní soubory se nezmění.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d soubor zkopírován do úložiště aplikace.</item>
+        <item quantity="few">%d soubory zkopírovány do úložiště aplikace.</item>
+        <item quantity="many">%d souboru zkopírováno do úložiště aplikace.</item>
+        <item quantity="other">%d souborů zkopírováno do úložiště aplikace.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d médium je propojeno s úplnou cestou k souboru v úložišti aplikace. Zkrátit odkaz jen na název souboru? Soubor zůstane tam, kde je.</item>
+        <item quantity="few">%d média jsou propojena s úplnou cestou k souboru v úložišti aplikace. Zkrátit odkazy jen na název souboru? Soubory zůstanou tam, kde jsou.</item>
+        <item quantity="many">%d média je propojeno s úplnou cestou k souboru v úložišti aplikace. Zkrátit odkazy jen na název souboru? Soubory zůstanou tam, kde jsou.</item>
+        <item quantity="other">%d médií je propojeno s úplnou cestou k souboru v úložišti aplikace. Zkrátit odkazy jen na název souboru? Soubory zůstanou tam, kde jsou.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d cesta k souboru zkrácena.</item>
+        <item quantity="few">%d cesty k souborům zkráceny.</item>
+        <item quantity="many">%d cesty k souborům zkráceno.</item>
+        <item quantity="other">%d cest k souborům zkráceno.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d záznam</item>
+        <item quantity="few">%d záznamy</item>
+        <item quantity="many">%d záznamu</item>
+        <item quantity="other">%d záznamů</item>
+    </plurals>
+</resources>

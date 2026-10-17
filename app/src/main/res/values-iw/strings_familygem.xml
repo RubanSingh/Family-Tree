@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">גיבוי מקומי</string>
+    <string name="choose_folder">בחירת תיקייה</string>
+    <string name="backup_folder">תיקיית גיבוי</string>
+    <string name="recover">שחזור</string>
+    <string name="export_png">ייצוא תמונת PNG</string>
+    <string name="png_exported_ok">תמונת PNG עברה ייצוא.</string>
+    <string name="tree_settings">הגדרות עץ</string>
+    <string name="max_life_span">אורך חיים מרבי</string>
+    <string name="years">שנים</string>
+    <string name="current_date">תאריך נוכחי</string>
+    <string name="device_date">תאריך ההתקן</string>
+    <string name="fixed_date">תאריך קבוע</string>
+    <string name="notification_time">שעת התראת יום הולדת</string>
+    <string name="origin_family">משפחת מקור</string>
+    <string name="adoptive_family">משפחה מאמצת</string>
+    <string name="foster_family">משפחת אומנה</string>
+    <string name="paternal_family">משפחה מצד האבא</string>
+    <string name="maternal_family">משפחה מצד האימא</string>
+    <string name="own_family">משפחה גרעינית</string>
+    <string name="numbers">מספרים</string>
+    <string name="invalid_date">תאריך GEDCOM שגוי.</string>
+    <string name="search_duplicates">חיפוש כפילויות</string>
+    <string name="skip">דילוג</string>
+    <string name="error_found">נמצאה שגיאה אחת.</string>
+    <string name="yes_to_all">כן לכל הנותרים</string>
+    <string name="no_to_all">לא לכל הנותרים</string>
+    <string name="duplicates_lines">שורות כפולות</string>
+    <string name="make_shared_media">יצירת מדיה משותפת</string>
+    <string name="make_media">יצירת מדיה</string>
+    <string name="copy_app_storage">העתקה לאחסון היישומון</string>
+    <string name="shrink_path">כיווץ נתיב קובץ</string>
+    <string name="file_exists_reuse">הקובץ הזה כבר קיים.\nלהשתמש בו שוב או ליצור עותק?</string>
+    <string name="use_existing">להשתמש שוב</string>
+    <string name="make_copy">ליצור עותק</string>
+    <string name="existing_name">שם כבר קיים</string>
+    <string name="invalid_name">שם שגוי</string>
+    <string name="info">מידע</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="husband_age">גיל הבעל</string>
+    <string name="wife_age">גיל האישה</string>
+    <string name="less_than">פחות מ־</string>
+    <string name="more_than">יותר מ־</string>
+</resources>

@@ -23,7 +23,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -60,6 +64,7 @@ import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
 import dna.familytree.constant.Format;
 import dna.familytree.constant.Gender;
+import dna.familytree.feature.ads.NativeAdAdapter;
 import dna.familytree.util.AnalyticsUtil;
 
 public class PersonsFragment extends BaseFragment {
@@ -67,9 +72,13 @@ public class PersonsFragment extends BaseFragment {
     private List<PersonWrapper> allPeople = new ArrayList<>(); // The immutable complete list of people
     private List<PersonWrapper> selectedPeople = new ArrayList<>(); // Some persons selected by the search feature
     private PersonsAdapter adapter = new PersonsAdapter();
+    private NativeAdAdapter adAdapter = new NativeAdAdapter(); // A preloaded ad as first row, hidden while searching
     private @NonNull
     Order order = Order.NONE;
     private SearchView searchView;
+    private ChipGroup sortChips; // One-tap sort, mirrors the "Order by" menu
+    private TextView resultCountView;
+    private View emptyView;
     private boolean idsAreNumeric;
 
     private enum Order {
@@ -91,14 +100,16 @@ public class PersonsFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
-        View view = inflater.inflate(R.layout.recycler_view, container, false);
-        showSmallNativeAd(view);
+        View view = inflater.inflate(R.layout.persons_list, container, false);
         if (gc != null) {
             establishPeople();
             RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-            recyclerView.setPadding(12, 12, 12, recyclerView.getPaddingBottom());
-            recyclerView.setAdapter(adapter);
+            recyclerView.setPadding(AppUtils.dpToPx(16), AppUtils.dpToPx(8), AppUtils.dpToPx(16), recyclerView.getPaddingBottom()); // Page gutter
+            adAdapter = new NativeAdAdapter();
+            recyclerView.setAdapter(new ConcatAdapter(adAdapter, adapter));
+            adAdapter.attach(requireContext(), getViewLifecycleOwner());
             idsAreNumeric = verifyNumericIds();
+            setupSearchPanel(view);
             view.findViewById(R.id.fab).setOnClickListener(v -> {
                 AnalyticsUtil.logEventAddPerson(getFirebaseAnalytics());
                 Intent intent = new Intent(getContext(), PersonEditorController.class);
@@ -208,13 +219,13 @@ public class PersonsFragment extends BaseFragment {
             int border;
             switch (Gender.getGender(person)) {
                 case MALE:
-                    border = R.drawable.male_bg;
+                    border = R.drawable.person_ring_male;
                     break;
                 case FEMALE:
-                    border = R.drawable.female_bg;
+                    border = R.drawable.person_ring_female;
                     break;
                 default:
-                    border = R.drawable.nutral;
+                    border = R.drawable.person_ring_neutral;
             }
             indiView.findViewById(R.id.person_border).setBackgroundResource(border);
             ShapeableImageView shapeableImageView = indiView.findViewById(R.id.person_image);
@@ -257,6 +268,7 @@ public class PersonsFragment extends BaseFragment {
                 @Override
                 protected void publishResults(CharSequence cs, FilterResults fr) {
                     notifyDataSetChanged();
+                    showSearchState(cs);
                 }
             };
         }
@@ -333,6 +345,8 @@ public class PersonsFragment extends BaseFragment {
         establishPeople();
         // Update content of existing views
         adapter.notifyDataSetChanged();
+        if (getView() != null) // The search bar appears once there is more than one person
+            getView().findViewById(R.id.persons_search_panel).setVisibility(allPeople.size() > 1 ? View.VISIBLE : View.GONE);
     }
 
     // Reset the extra if leaving this fragment without choosing a person
@@ -555,9 +569,9 @@ public class PersonsFragment extends BaseFragment {
             if (start != null && start.isSingleKind() && !start.data1.isFormat(Format.D_M)) {
                 LocalDate startDate = new LocalDate(start.data1.date);
                 // If the person is still alive the end is now
-                LocalDate now = LocalDate.now();
+                LocalDate now = AppUtils.treeToday();
                 if (end == null && startDate.isBefore(now)
-                        && Years.yearsBetween(startDate, now).getYears() <= 120 && !AppUtils.isDead(person)) {
+                        && Years.yearsBetween(startDate, now).getYears() <= AppUtils.openTreeSettings().lifeSpan && !AppUtils.isDead(person)) {
                     end = new GedcomDateConverter(now.toDate());
                 }
                 if (end != null && end.isSingleKind() && !end.data1.isFormat(Format.D_M)) {
@@ -585,12 +599,19 @@ public class PersonsFragment extends BaseFragment {
         subMenu.add(0, 4, 0, R.string.age);
         subMenu.add(0, 5, 0, R.string.number_relatives);
 
-        // Search in PersonsFragment
+        // Search in PersonsFragment: the page has its own search bar, the toolbar one is only a fallback
+        if (searchView != null)
+            return;
         inflater.inflate(R.menu.search, menu); // già questo basta a far comparire la lente con il campo di ricerca
         searchView = (SearchView)menu.findItem(R.id.search_item).getActionView();
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.setOnQueryTextListener(queryListener());
+    }
+
+    private SearchView.OnQueryTextListener queryListener() {
+        return new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextChange(String query) {
+                adAdapter.setHidden(!query.trim().isEmpty());
                 adapter.getFilter().filter(query);
                 return true;
             }
@@ -600,26 +621,83 @@ public class PersonsFragment extends BaseFragment {
                 searchView.clearFocus();
                 return false;
             }
-        });
+        };
+    }
+
+    /**
+     * Search bar, sort chips and result count at the top of the list (shown when there is more than one person).
+     */
+    private void setupSearchPanel(View view) {
+        view.findViewById(R.id.persons_search_panel).setVisibility(allPeople.size() > 1 ? View.VISIBLE : View.GONE);
+        searchView = view.findViewById(R.id.persons_search);
+        searchView.setOnQueryTextListener(queryListener());
+        resultCountView = view.findViewById(R.id.persons_result_count);
+        emptyView = view.findViewById(R.id.persons_empty);
+        sortChips = view.findViewById(R.id.persons_sort);
+        view.findViewById(R.id.persons_sort_id).setVisibility(Global.settings.expert ? View.VISIBLE : View.GONE);
+        for (int i = 0; i < sortChips.getChildCount(); i++) {
+            Chip chip = (Chip)sortChips.getChildAt(i);
+            int sortId = Integer.parseInt((String)chip.getTag());
+            chip.setOnClickListener(v -> applyOrder(sortId));
+        }
+        syncSortChips();
+    }
+
+    /**
+     * Highlights the chip of the current sort, with an arrow for ascending / descending.
+     */
+    private void syncSortChips() {
+        if (sortChips == null)
+            return;
+        for (int i = 0; i < sortChips.getChildCount(); i++) {
+            Chip chip = (Chip)sortChips.getChildAt(i);
+            int sortId = Integer.parseInt((String)chip.getTag());
+            boolean ascending = order == Order.values()[sortId * 2 - 1];
+            boolean descending = order == Order.values()[sortId * 2];
+            chip.setChecked(ascending || descending);
+            chip.setChipIconResource(descending ? dna.familytree.designsystem.R.drawable.ds_ic_arrow_down
+                    : dna.familytree.designsystem.R.drawable.ds_ic_arrow_up);
+            chip.setChipIconVisible(ascending || descending);
+        }
+    }
+
+    /**
+     * Result count and empty state while a search is active.
+     */
+    private void showSearchState(CharSequence query) {
+        if (resultCountView == null || !isAdded())
+            return;
+        boolean searching = query != null && query.toString().trim().length() > 0;
+        resultCountView.setText(getString(R.string.persons_results_count, selectedPeople.size(), allPeople.size()));
+        resultCountView.setVisibility(searching ? View.VISIBLE : View.GONE);
+        emptyView.setVisibility(searching && selectedPeople.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id > 0 && id <= 5) {
-            // Clicking twice the same menu item switches sorting ASC and DESC
-            if (order == Order.values()[id * 2 - 1])
-                order = order.next();
-            else if (order == Order.values()[id * 2])
-                order = order.prev();
-            else
-                order = Order.values()[id * 2 - 1];
-            sortPeople();
-            adapter.notifyDataSetChanged();
+            applyOrder(id);
             //U.salvaJson(false); // dubbio se metterlo per salvare subito il riordino delle persone...
             return true;
         }
         return false;
+    }
+
+    /**
+     * Sorts by menu/chip id (1 id, 2 surname, 3 date, 4 age, 5 relatives).
+     * Choosing the same sort twice switches between ascending and descending.
+     */
+    private void applyOrder(int id) {
+        if (order == Order.values()[id * 2 - 1])
+            order = order.next();
+        else if (order == Order.values()[id * 2])
+            order = order.prev();
+        else
+            order = Order.values()[id * 2 - 1];
+        sortPeople();
+        adapter.notifyDataSetChanged();
+        syncSortChips();
     }
 
     // Context menu

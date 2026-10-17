@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Loka sekurkopio</string>
+    <string name="choose_folder">Elektu dosierujon</string>
+    <string name="backup_folder">Dosierujo por sekurkopio</string>
+    <string name="recover">Rekuperi</string>
+    <string name="export_png">Eksporti PNG</string>
+    <string name="png_exported_ok">PNG eksportita.</string>
+    <string name="tree_settings">Agordoj de la arbo</string>
+    <string name="max_life_span">Maksimuma vivdaŭro</string>
+    <string name="years">Jaroj</string>
+    <string name="current_date">Aktuala dato</string>
+    <string name="device_date">Dato de aparato</string>
+    <string name="fixed_date">Fiksa dato</string>
+    <string name="notification_time">Tempo de sciigo pri naskiĝtago</string>
+    <string name="origin_family">Familio de origino</string>
+    <string name="adoptive_family">Adoptita familio</string>
+    <string name="foster_family">Flegfamilio</string>
+    <string name="paternal_family">Patra familio</string>
+    <string name="maternal_family">Patrina familio</string>
+    <string name="own_family">Propra familio</string>
+    <string name="numbers">Nombroj</string>
+    <string name="search_duplicates">Serĉi duplikatojn</string>
+    <string name="skip">Preterlasi</string>
+    <string name="error_found">Unu eraro trovita.</string>
+    <string name="yes_to_all">Jes al ĉiuj ceteraj</string>
+    <string name="no_to_all">Ne al ĉiuj ceteraj</string>
+    <string name="duplicates_lines">Linioj de la duplikatoj</string>
+    <string name="make_shared_media">Krei kunhavatan amaskomunikilaron</string>
+    <string name="make_media">Krei amaskomunikilaron</string>
+    <string name="file_exists_reuse">Tiu dosiero jam ekzistas.\nĈu vi volas reuzi ĝin aŭ fari kopion?</string>
+    <string name="use_existing">Reuzi ekzistantan</string>
+    <string name="existing_name">Nomo jam ekzistas</string>
+    <string name="invalid_name">Nevalida nomo</string>
+    <string name="info">Informoj</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Nevalida GEDCOM-dato.</string>
+    <string name="husband_age">Aĝo de edzo</string>
+    <string name="wife_age">Aĝo de edzino</string>
+    <string name="less_than">Malpli ol</string>
+    <string name="more_than">Pli ol</string>
+    <string name="copy_app_storage">Kopii al aplikaĵa konservejo</string>
+    <string name="shrink_path">Mallongigi dosierindikon</string>
+    <string name="make_copy">Fari kopion</string>
+</resources>

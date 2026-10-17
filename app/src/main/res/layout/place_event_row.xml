@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- An event in a place: who, what and when -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="64dp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ds_space_lg"
+    android:paddingTop="@dimen/ds_space_sm"
+    android:paddingEnd="@dimen/ds_space_lg"
+    android:paddingBottom="@dimen/ds_space_sm">
+
+    <ImageView
+        android:id="@+id/place_event_icon"
+        style="@style/Widget.FamilyTree.IconContainer"
+        android:contentDescription="@null"
+        tools:src="@drawable/ds_ic_person" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_space_md"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/place_event_name"
+            style="@style/Widget.FamilyTree.ListTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Maria Rossi" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/place_event_what"
+            style="@style/Widget.FamilyTree.ListSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Birth · 12 Mar 1950" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ds_ic_chevron_right"
+        app:tint="?attr/colorOutline" />
+</LinearLayout>

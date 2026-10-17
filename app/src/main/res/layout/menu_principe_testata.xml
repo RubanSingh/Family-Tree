@@ -1,83 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Drawer hero: theme-coloured gradient, optionally a random photo from the tree, the tree title,
+    a chip to switch trees and (when there are unsaved changes) a Save button.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
-	android:layout_height="190dp"
-	android:background="@drawable/menu_sfondo">
+	android:layout_height="212dp"
+	android:layout_marginBottom="@dimen/ds_space_sm"
+	android:background="@drawable/ds_bg_hero_brand">
 
 	<ImageView
 		android:id="@+id/menu_immagine"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:alpha="0.75"
+		android:contentDescription="@null"
 		android:scaleType="centerCrop"/>
 
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/ds_bg_hero_scrim"/>
+
+	<!-- Tree number (expert mode) -->
 	<TextView
-		android:id="@+id/menu_titolo"
+		android:id="@+id/menu_number"
+		style="@style/Widget.FamilyTree.GlassChip"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_marginBottom="10dp"
-		android:layout_marginLeft="16dp"
-		android:layout_marginRight="16dp"
-		android:ellipsize="end"
-		android:maxLines="2"
-		android:shadowColor="#000"
-		android:shadowDy="2"
-		android:shadowRadius="5"
-		android:textColor="#fff"
-		android:textSize="26sp"/>
+		android:layout_gravity="top|end"
+		android:layout_marginTop="44dp"
+		android:layout_marginEnd="@dimen/ds_space_md"
+		android:minHeight="28dp"
+		android:paddingStart="@dimen/ds_space_ms"
+		android:paddingEnd="@dimen/ds_space_ms"
+		android:textAppearance="@style/TextAppearance.FamilyTree.LabelMedium"
+		android:textColor="@android:color/white"
+		android:visibility="gone"/>
 
 	<LinearLayout
-		android:id="@+id/menu_alberi"
-		android:layout_width="wrap_content"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_above="@+id/menu_titolo"
-		android:layout_marginBottom="8dp"
-		android:background="@drawable/menu_alberi_sfondo"
-		android:foreground="?android:attr/selectableItemBackground"
-		android:gravity="center_vertical"
-		android:paddingStart="16dp"
-		android:paddingTop="12dp"
-		android:paddingEnd="32dp"
-		android:paddingBottom="12dp">
+		android:layout_gravity="bottom"
+		android:orientation="vertical"
+		android:paddingStart="20dp"
+		android:paddingEnd="@dimen/ds_space_md"
+		android:paddingBottom="20dp">
 
-		<ImageView
-			android:layout_width="0dp"
+		<LinearLayout
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			app:srcCompat="@drawable/menu_lista" />
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<!-- Switch tree -->
+			<LinearLayout
+				android:id="@+id/menu_alberi"
+				android:layout_width="wrap_content"
+				android:layout_height="36dp"
+				android:background="@drawable/ds_bg_glass_pill"
+				android:clickable="true"
+				android:focusable="true"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingStart="@dimen/ds_space_ms"
+				android:paddingEnd="@dimen/ds_space_md">
+
+				<ImageView
+					android:layout_width="18dp"
+					android:layout_height="18dp"
+					android:contentDescription="@null"
+					app:srcCompat="@drawable/ds_ic_swap"
+					app:tint="@android:color/white" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="@dimen/ds_space_sm"
+					android:text="@string/trees"
+					android:textAppearance="@style/TextAppearance.FamilyTree.LabelLarge"
+					android:textColor="@android:color/white" />
+			</LinearLayout>
+
+			<Space
+				android:layout_width="0dp"
+				android:layout_height="0dp"
+				android:layout_weight="1" />
+
+			<!-- Unsaved changes; long press offers Revert -->
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/menu_salva"
+				style="@style/Widget.FamilyTree.Button.Premium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minHeight="36dp"
+				android:paddingStart="@dimen/ds_space_md"
+				android:paddingEnd="@dimen/ds_space_md"
+				android:text="@string/save"
+				android:visibility="gone"
+				app:icon="@drawable/ds_ic_save"
+				app:iconSize="18dp" />
+		</LinearLayout>
 
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="32dp"
-			android:text="@string/trees"
-			android:textSize="15sp" />
+			android:layout_marginTop="@dimen/ds_space_md"
+			android:alpha="0.8"
+			android:text="@string/current_tree"
+			android:textAppearance="@style/TextAppearance.FamilyTree.Overline"
+			android:textColor="@android:color/white" />
+
+		<TextView
+			android:id="@+id/menu_titolo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="2dp"
+			android:ellipsize="end"
+			android:maxLines="2"
+			android:textAppearance="@style/TextAppearance.FamilyTree.HeroTitle"/>
 	</LinearLayout>
-
-	<TextView
-		android:id="@+id/menu_number"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentTop="true"
-		android:layout_alignParentEnd="true"
-		android:layout_marginTop="40dp"
-		android:layout_marginEnd="16dp"
-		android:textSize="14sp"
-		android:textColor="#dfff"
-		android:visibility="gone"/>
-
-	<Button
-		android:id="@+id/menu_salva"
-		style="@style/AppTheme.ButtonColor"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_above="@+id/menu_titolo"
-		android:layout_alignParentEnd="true"
-		android:layout_marginEnd="16dp"
-		android:layout_marginBottom="8dp"
-		android:text="@string/save"
-		android:visibility="gone"/>
-</RelativeLayout>
+</FrameLayout>

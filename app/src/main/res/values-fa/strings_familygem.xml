@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="choose_folder">انتخاب پوشه</string>
+    <string name="export_png">استخراج PNG</string>
+    <string name="png_exported_ok">PNG استخراج شد.</string>
+    <string name="error_found">یک خطا پیدا شد.</string>
+    <string name="info">اطلاعات</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">پشتیبان محلی</string>
+    <string name="backup_folder">پوشه‌ی پشتیبان</string>
+    <string name="recover">بازیابی</string>
+    <string name="tree_settings">تنظیمات درخت</string>
+    <string name="max_life_span">حداکثر طول عمر</string>
+    <string name="years">سال</string>
+    <string name="current_date">تاریخ کنونی</string>
+    <string name="device_date">تاریخ دستگاه</string>
+    <string name="fixed_date">تاریخ ثابت</string>
+    <string name="notification_time">زمان اعلان تولد</string>
+    <string name="origin_family">خانواده‌ی اصلی</string>
+    <string name="adoptive_family">خانواده‌ی فرزندپذیر</string>
+    <string name="foster_family">خانواده‌ی سرپرست</string>
+    <string name="paternal_family">خانواده‌ی پدری</string>
+    <string name="maternal_family">خانواده‌ی مادری</string>
+    <string name="own_family">خانواده‌ی خود</string>
+    <string name="numbers">اعداد</string>
+    <string name="invalid_date">تاریخ GEDCOM نامعتبر است.</string>
+    <string name="husband_age">سن شوهر</string>
+    <string name="search_duplicates">جستجوی موارد تکراری</string>
+    <string name="skip">رد کردن</string>
+    <string name="yes_to_all">بله برای همه‌ی موارد باقی‌مانده</string>
+    <string name="no_to_all">نه برای همه‌ی موارد باقی‌مانده</string>
+    <string name="wife_age">سن زن</string>
+    <string name="less_than">کمتر از</string>
+    <string name="more_than">بیشتر از</string>
+    <string name="duplicates_lines">خطوط موارد تکراری</string>
+    <string name="make_shared_media">تبدیل به رسانه‌ی اشتراکی</string>
+    <string name="make_media">تبدیل به رسانه‌ی ساده</string>
+    <string name="copy_app_storage">کپی در فضای حافظه برنامه</string>
+    <string name="shrink_path">کوتاه کردن مسیر فایل</string>
+    <string name="file_exists_reuse">این فایل از قبل وجود دارد.\nمی‌خواهید دوباره از آن استفاده کنید یا یک کپی بسازید؟</string>
+    <string name="use_existing">استفاده از فایل موجود</string>
+    <string name="make_copy">ساخت یک کپی</string>
+    <string name="existing_name">این نام از قبل وجود دارد</string>
+    <string name="invalid_name">نام نامعتبر</string>
+</resources>

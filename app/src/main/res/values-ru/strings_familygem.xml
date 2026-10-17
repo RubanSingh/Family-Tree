@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Локальное резервное копирование</string>
+    <string name="choose_folder">Выбрать папку</string>
+    <string name="backup_folder">Папка резервного копирования</string>
+    <string name="recover">Восстановить</string>
+    <string name="export_png">Экспорт PNG</string>
+    <string name="png_exported_ok">PNG экспортирован.</string>
+    <string name="tree_settings">Настройки дерева</string>
+    <string name="max_life_span">Максимальная продолжительность жизни</string>
+    <string name="years">Годы</string>
+    <string name="current_date">Текущая дата</string>
+    <string name="device_date">Дата устройства</string>
+    <string name="fixed_date">Установленная дата</string>
+    <string name="notification_time">Время уведомления о дне рождения</string>
+    <string name="origin_family">Семья происхождения</string>
+    <string name="adoptive_family">Усыновительская семья</string>
+    <string name="foster_family">Приёмная семья</string>
+    <string name="paternal_family">Семья отца</string>
+    <string name="maternal_family">Семья матери</string>
+    <string name="own_family">Собственная семья</string>
+    <string name="numbers">Номера</string>
+    <string name="search_duplicates">Поиск дубликатов</string>
+    <string name="skip">Пропустить</string>
+    <string name="error_found">Найдена одна ошибка.</string>
+    <string name="yes_to_all">Применимо ко всем оставшимся</string>
+    <string name="no_to_all">Нет всему оставшемуся</string>
+    <string name="duplicates_lines">Дублирующиеся строки</string>
+    <string name="make_shared_media">Добавить общие медиа</string>
+    <string name="make_media">Добавить медиа</string>
+    <string name="copy_app_storage">Копировать в хранилище приложения</string>
+    <string name="shrink_path">Сократить путь к файлу</string>
+    <string name="file_exists_reuse">Этот файл уже существует.\nВы хотите использовать его повторно или сделать копию?</string>
+    <string name="use_existing">Повторно использовать существующий</string>
+    <string name="make_copy">Сделать копию</string>
+    <string name="existing_name">Уже существующее название</string>
+    <string name="invalid_name">Недействительное название</string>
+    <string name="info">Информация</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Недопустимая дата GEDCOM.</string>
+    <string name="husband_age">Возраст мужа</string>
+    <string name="wife_age">Возраст жены</string>
+    <string name="less_than">Меньше чем</string>
+    <string name="more_than">Больше чем</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="choose_folder">Velg mappe</string>
+    <string name="export_png">Eksporter PNG</string>
+    <string name="png_exported_ok">PNG eksportert.</string>
+    <string name="tree_settings">Treinnstillinger</string>
+    <string name="max_life_span">Maksimal levetid</string>
+    <string name="years">År</string>
+    <string name="current_date">Aktuell dato</string>
+    <string name="device_date">Dato for enhet</string>
+    <string name="fixed_date">Fast dato</string>
+    <string name="error_found">Én feil funnet.</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">Lokal sikkerhetskopi</string>
+    <string name="backup_folder">Mappe for sikkerhetskopier</string>
+    <string name="recover">Gjenopprett</string>
+    <string name="notification_time">Varslingstid for bursdager</string>
+    <string name="origin_family">Opprinnelsesfamilie</string>
+    <string name="adoptive_family">Adoptivfamilie</string>
+    <string name="foster_family">Fosterfamilie</string>
+    <string name="paternal_family">Farens familie</string>
+    <string name="maternal_family">Morens familie</string>
+    <string name="own_family">Egen familie</string>
+    <string name="numbers">Tall</string>
+    <string name="invalid_date">Ugyldig GEDCOM-dato.</string>
+    <string name="husband_age">Ektemannens alder</string>
+    <string name="search_duplicates">Søk etter duplikater</string>
+    <string name="skip">Hopp over</string>
+    <string name="yes_to_all">Ja til alle gjenværende</string>
+    <string name="no_to_all">Nei til alle gjenværende</string>
+    <string name="wife_age">Konens alder</string>
+    <string name="less_than">Mindre enn</string>
+    <string name="more_than">Mer enn</string>
+    <string name="duplicates_lines">Linjer for duplikater</string>
+    <string name="make_shared_media">Gjør til delt media</string>
+    <string name="make_media">Gjør til enkelt media</string>
+    <string name="copy_app_storage">Kopier til programlageret</string>
+    <string name="shrink_path">Forkort filbanen</string>
+    <string name="file_exists_reuse">Denne filen finnes allerede.\nVil du bruke den på nytt eller lage en kopi?</string>
+    <string name="use_existing">Bruk eksisterende</string>
+    <string name="make_copy">Lag en kopi</string>
+    <string name="existing_name">Navnet finnes allerede</string>
+    <string name="invalid_name">Ugyldig navn</string>
+</resources>

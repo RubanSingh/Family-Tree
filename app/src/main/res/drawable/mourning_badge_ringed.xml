@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mourning badge sitting on the avatar edge: card-coloured rim separates it from the photo -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item>
+		<shape android:shape="oval">
+			<solid android:color="?attr/colorSurfaceContainerLow" />
+		</shape>
+	</item>
+	<item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+		<shape android:shape="oval">
+			<solid android:color="@color/ds_tree_mourning" />
+		</shape>
+	</item>
+</layer-list>

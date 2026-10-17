@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- View tags used by InsetsUtil to keep the original dimensions of a view -->
+    <item name="insets_initial_padding" type="id" />
+    <item name="insets_initial_margin" type="id" />
+    <item name="insets_initial_height" type="id" />
+</resources>

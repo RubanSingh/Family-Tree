@@ -8,6 +8,9 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:clipToPadding="false"
+		android:paddingStart="12dp"
+		android:paddingTop="@dimen/ds_space_sm"
+		android:paddingEnd="12dp"
 		android:paddingBottom="80dp"
 		android:scrollbarStyle="outsideOverlay"
 		android:scrollbars="vertical"/>

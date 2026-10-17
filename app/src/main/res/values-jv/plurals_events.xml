@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="other">Ulang taun nikah · %d taun</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="other">Dina pengetan · %d taun</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="other">Ing %1$d dina · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="other">ing %d dina</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="other">Umure dadi %d</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="other">%d taun nikah</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="other">%d taun kepungkur</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="other">%d taun</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="other">%d prastawa</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="other">%d wong</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="other">%d panggonan</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="other">%d negara</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="other">%d wong</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="other">%d berkas ana ing njaba panyimpenan aplikasi. Salin menyang panyimpenan aplikasi supaya tetep bareng silsilah panjenengan lan klebu ing serep? Berkas asline ora diowahi.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="other">%d berkas disalin menyang panyimpenan aplikasi.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="other">%d media digandhengake nganggo jalur jangkep berkas ing panyimpenan aplikasi. Cekakake gandhengane dadi jeneng berkas wae? Berkase tetep ing panggonane.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="other">%d jalur berkas wis dicekakake.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="other">%d entri</item>
+    </plurals>
+</resources>

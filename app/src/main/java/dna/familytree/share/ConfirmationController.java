@@ -234,7 +234,7 @@ public class ConfirmationController extends BaseController {
                 } else
                     done();
             });
-        } else onBackPressed();
+        } else getOnBackPressedDispatcher().onBackPressed();
     }
 
     @Override
@@ -301,7 +301,7 @@ public class ConfirmationController extends BaseController {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem i) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 }

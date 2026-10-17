@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,32 +12,35 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            style="@style/Widget.FamilyTree.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:background="?attr/colorSecondaryContainer" />
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp" />
 
-        <!--  This is your template view -->
-        <dna.familytree.nativeads.TemplateView
-            android:id="@+id/my_template"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
+        <include layout="@layout/backup_prompt" />
 
         <ListView
             android:id="@+id/trees_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
-            android:paddingBottom="80dp"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:paddingStart="@dimen/ds_page_gutter"
+            android:paddingTop="@dimen/ds_space_sm"
+            android:paddingEnd="@dimen/ds_page_gutter"
+            android:paddingBottom="96dp"
             android:scrollbarStyle="outsideOverlay" />
     </LinearLayout>
 
-    <ProgressBar
+    <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/trees_progress"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center_vertical|center_horizontal" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        app:indicatorSize="56dp" />
 
     <include layout="@layout/fab" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

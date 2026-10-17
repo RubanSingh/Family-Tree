@@ -16,19 +16,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--  This is your template view -->
-            <dna.familytree.nativeads.TemplateView
+            <!-- Native ad, only when one is already loaded (FamiliesFragment) -->
+            <dna.familytree.feature.ads.NativeAdCard
                 android:id="@+id/my_template"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:gnt_template_type="@layout/gnt_small_template_view" />
+                android:paddingStart="@dimen/ds_page_gutter"
+                android:paddingTop="@dimen/ds_space_sm"
+                android:paddingEnd="@dimen/ds_page_gutter"
+                app:nativeAdSize="small" />
 
             <LinearLayout
                 android:id="@+id/scrollview_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:orientation="vertical"
+                android:paddingStart="@dimen/ds_page_gutter"
+                android:paddingTop="@dimen/ds_space_sm"
+                android:paddingEnd="@dimen/ds_page_gutter" />
         </LinearLayout>
 
     </ScrollView>

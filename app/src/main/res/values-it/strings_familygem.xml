@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Backup locale</string>
+    <string name="choose_folder">Scegli cartella</string>
+    <string name="backup_folder">Cartella di backup</string>
+    <string name="recover">Recupera</string>
+    <string name="export_png">Esporta PNG</string>
+    <string name="png_exported_ok">PNG esportata.</string>
+    <string name="tree_settings">Impostazioni albero</string>
+    <string name="max_life_span">Durata massima di vita</string>
+    <string name="years">Anni</string>
+    <string name="current_date">Data attuale</string>
+    <string name="device_date">Data del dispositivo</string>
+    <string name="fixed_date">Data fissa</string>
+    <string name="notification_time">Orario notifica compleanni</string>
+    <string name="origin_family">Famiglia d\'origine</string>
+    <string name="adoptive_family">Famiglia adottiva</string>
+    <string name="foster_family">Famiglia affidataria</string>
+    <string name="paternal_family">Famiglia paterna</string>
+    <string name="maternal_family">Famiglia materna</string>
+    <string name="own_family">Famiglia propria</string>
+    <string name="numbers">Numeri</string>
+    <string name="invalid_date">Data GEDCOM non valida.</string>
+    <string name="husband_age">Età del marito</string>
+    <string name="search_duplicates">Cerca doppioni</string>
+    <string name="skip">Salta</string>
+    <string name="error_found">Trovato un errore.</string>
+    <string name="yes_to_all">Sì a tutti i rimanenti</string>
+    <string name="no_to_all">No a tutti i rimanenti</string>
+    <string name="wife_age">Età della moglie</string>
+    <string name="less_than">Meno di</string>
+    <string name="more_than">Più di</string>
+    <string name="duplicates_lines">Linee dei doppioni</string>
+    <string name="make_shared_media">Rendi media condiviso</string>
+    <string name="make_media">Rendi media</string>
+    <string name="copy_app_storage">Copia nella memoria dell\'app</string>
+    <string name="shrink_path">Riduci percorso file</string>
+    <string name="file_exists_reuse">Questo file esiste già.\nVuoi riusarlo oppure farne una copia\?</string>
+    <string name="use_existing">Riusa esistente</string>
+    <string name="make_copy">Fai una copia</string>
+    <string name="existing_name">Nome già esistente</string>
+    <string name="invalid_name">Nome non valido</string>
+    <string name="info">Informazioni</string>
+</resources>

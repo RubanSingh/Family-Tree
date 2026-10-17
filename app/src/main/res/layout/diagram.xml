@@ -5,34 +5,35 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
+	<!-- Tree canvas: pan + pinch zoom -->
 	<dna.familytree.MoveLayout
 		android:id="@+id/diagram_frame"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:background="@drawable/diagram_background">
+		android:background="@drawable/diagram_background"
+		android:layoutDirection="ltr">
 		<RelativeLayout
 			android:id="@+id/diagram_box"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:clipChildren="false"
 			android:clipToPadding="false"
+			android:layoutDirection="ltr"
 			android:padding="50dp"/>
 	</dna.familytree.MoveLayout>
 
+	<!-- Floating frosted controls; system-bar insets are added to these margins in DiagramFragment -->
 	<androidx.appcompat.widget.AppCompatImageButton
 		android:id="@+id/diagram_hamburger"
-		android:layout_width="?attr/actionBarSize"
-		android:layout_height="?attr/actionBarSize"
-		android:background="?attr/selectableItemBackground"
-		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-		app:srcCompat="@drawable/hamburger" />
+		style="@style/Widget.FamilyTree.CanvasButton"
+		android:contentDescription="@string/drawer_open"
+		app:srcCompat="@drawable/ds_ic_menu" />
 
 	<androidx.appcompat.widget.AppCompatImageButton
 		android:id="@+id/diagram_options"
-		android:layout_width="?attr/actionBarSize"
-		android:layout_height="?attr/actionBarSize"
+		style="@style/Widget.FamilyTree.CanvasButton"
 		android:layout_gravity="end"
-		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-		style="@style/TintaBianca" />
+		android:contentDescription="@string/diagram_settings"
+		app:srcCompat="@drawable/ds_ic_tune" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

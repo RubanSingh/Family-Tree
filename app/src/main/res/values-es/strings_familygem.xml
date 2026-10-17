@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Copia de seguridad local</string>
+    <string name="choose_folder">Elegir carpeta</string>
+    <string name="backup_folder">Carpeta de la copia de seguridad</string>
+    <string name="recover">Recuperar</string>
+    <string name="export_png">Exportar PNG</string>
+    <string name="png_exported_ok">PNG exportado.</string>
+    <string name="tree_settings">Ajustes del árbol</string>
+    <string name="max_life_span">Vida útil máxima</string>
+    <string name="years">Años</string>
+    <string name="current_date">Fecha actual</string>
+    <string name="device_date">Fecha del dispositivo</string>
+    <string name="fixed_date">Fecha establecida</string>
+    <string name="notification_time">Hora de notificación del cumpleaños</string>
+    <string name="origin_family">Familia de origen</string>
+    <string name="adoptive_family">Familia adoptiva</string>
+    <string name="foster_family">Familia de acogida</string>
+    <string name="paternal_family">Familia paterna</string>
+    <string name="maternal_family">Familia materna</string>
+    <string name="own_family">Propia familia</string>
+    <string name="numbers">Números</string>
+    <string name="invalid_date">Fecha GEDCOM inválida.</string>
+    <string name="search_duplicates">Buscar duplicados</string>
+    <string name="skip">Omitir</string>
+    <string name="error_found">Un error encontrado.</string>
+    <string name="yes_to_all">Si a todo lo demás</string>
+    <string name="no_to_all">No a todo lo demás</string>
+    <string name="duplicates_lines">Líneas de duplicados</string>
+    <string name="make_shared_media">Crear medios compartidos</string>
+    <string name="make_media">Crear medios</string>
+    <string name="copy_app_storage">Copiar al almacenamiento de la aplicación</string>
+    <string name="shrink_path">Reducir la ruta del archivo</string>
+    <string name="file_exists_reuse">Este archivo ya existe\n¿Quieres reutilizarlo o hacer una copia?</string>
+    <string name="use_existing">Reutilizar existente</string>
+    <string name="make_copy">Hacer una copia</string>
+    <string name="existing_name">Nombre ya existente</string>
+    <string name="invalid_name">Nombre invalido</string>
+    <string name="info">Información</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="husband_age">Edad del marido</string>
+    <string name="wife_age">Edad de la esposa</string>
+    <string name="less_than">Menos de</string>
+    <string name="more_than">Más de</string>
+</resources>

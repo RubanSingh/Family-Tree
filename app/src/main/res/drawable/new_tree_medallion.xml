@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Light disc with a soft brand halo: keeps the multicolour tree readable in light and dark mode -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item>
+		<shape android:shape="oval">
+			<solid android:color="#290B57D0" />
+		</shape>
+	</item>
+	<item android:bottom="8dp" android:left="8dp" android:right="8dp" android:top="8dp">
+		<shape android:shape="oval">
+			<gradient
+				android:angle="270"
+				android:endColor="#E3ECFB"
+				android:startColor="#FFFFFF"
+				android:type="linear" />
+		</shape>
+	</item>
+</layer-list>

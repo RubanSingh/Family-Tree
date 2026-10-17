@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From Family Gem translations -->
+    <string name="info">معلومات</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">نسخ احتياطي محلي</string>
+    <string name="choose_folder">اختر مجلدًا</string>
+    <string name="backup_folder">مجلد النسخ الاحتياطي</string>
+    <string name="recover">استعد</string>
+    <string name="export_png">صدّر PNG</string>
+    <string name="png_exported_ok">صُدّر PNG.</string>
+    <string name="tree_settings">إعدادات الشجرة</string>
+    <string name="max_life_span">أقصى عمر</string>
+    <string name="years">سنوات</string>
+    <string name="current_date">التاريخ الحالي</string>
+    <string name="device_date">تاريخ الجهاز</string>
+    <string name="fixed_date">تاريخ ثابت</string>
+    <string name="notification_time">وقت إشعار عيد الميلاد</string>
+    <string name="origin_family">العائلة الأصلية</string>
+    <string name="adoptive_family">العائلة المتبنّية</string>
+    <string name="foster_family">العائلة الحاضنة</string>
+    <string name="paternal_family">عائلة الأب</string>
+    <string name="maternal_family">عائلة الأم</string>
+    <string name="own_family">العائلة الخاصة</string>
+    <string name="numbers">الأرقام</string>
+    <string name="invalid_date">تاريخ GEDCOM غير صالح.</string>
+    <string name="husband_age">عمر الزوج</string>
+    <string name="search_duplicates">ابحث عن التكرارات</string>
+    <string name="skip">تخطَّ</string>
+    <string name="error_found">وُجد خطأ واحد.</string>
+    <string name="yes_to_all">نعم لكل ما تبقى</string>
+    <string name="no_to_all">لا لكل ما تبقى</string>
+    <string name="wife_age">عمر الزوجة</string>
+    <string name="less_than">أقل من</string>
+    <string name="more_than">أكثر من</string>
+    <string name="duplicates_lines">خطوط التكرار</string>
+    <string name="make_shared_media">اجعله وسيطًا مشتركًا</string>
+    <string name="make_media">اجعله وسيطًا بسيطًا</string>
+    <string name="copy_app_storage">انسخ إلى مخزن التطبيق</string>
+    <string name="shrink_path">اختصر مسار الملف</string>
+    <string name="file_exists_reuse">هذا الملف موجود مسبقًا.\nهل تريد إعادة استخدامه أم إنشاء نسخة؟</string>
+    <string name="use_existing">أعد استخدام الموجود</string>
+    <string name="make_copy">أنشئ نسخة</string>
+    <string name="existing_name">اسم موجود مسبقًا</string>
+    <string name="invalid_name">اسم غير صالح</string>
+</resources>

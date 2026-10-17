@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Trouwdag · %d jaar</item>
+        <item quantity="other">Trouwdag · %d jaar</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Herdenkingsdag · %d jaar</item>
+        <item quantity="other">Herdenkingsdag · %d jaar</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Over %1$d dag · %2$s</item>
+        <item quantity="other">Over %1$d dagen · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">over %d dag</item>
+        <item quantity="other">over %d dagen</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Wordt %d</item>
+        <item quantity="other">Wordt %d</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d jaar getrouwd</item>
+        <item quantity="other">%d jaar getrouwd</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d jaar geleden</item>
+        <item quantity="other">%d jaar geleden</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d jaar</item>
+        <item quantity="other">%d jaar</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d evenement</item>
+        <item quantity="other">%d evenementen</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d persoon</item>
+        <item quantity="other">%d personen</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d plaats</item>
+        <item quantity="other">%d plaatsen</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d land</item>
+        <item quantity="other">%d landen</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d persoon</item>
+        <item quantity="other">%d personen</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d bestand staat buiten de applicatie-opslag. Naar de applicatie-opslag kopiëren, zodat het bij uw boom blijft en in back-ups wordt opgenomen? Het originele bestand wordt niet gewijzigd.</item>
+        <item quantity="other">%d bestanden staan buiten de applicatie-opslag. Naar de applicatie-opslag kopiëren, zodat ze bij uw boom blijven en in back-ups worden opgenomen? De originele bestanden worden niet gewijzigd.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d bestand gekopieerd naar de applicatie-opslag.</item>
+        <item quantity="other">%d bestanden gekopieerd naar de applicatie-opslag.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d media-item is gekoppeld met het volledige pad van een bestand in de applicatie-opslag. De koppeling inkorten tot alleen de bestandsnaam? Het bestand blijft waar het is.</item>
+        <item quantity="other">%d media zijn gekoppeld met het volledige pad van een bestand in de applicatie-opslag. De koppelingen inkorten tot alleen de bestandsnaam? De bestanden blijven waar ze zijn.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d bestandspad ingekort.</item>
+        <item quantity="other">%d bestandspaden ingekort.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+</resources>

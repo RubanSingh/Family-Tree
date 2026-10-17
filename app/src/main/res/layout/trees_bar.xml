@@ -1,49 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="?attr/actionBarSize"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ds_page_gutter"
+    android:paddingEnd="@dimen/ds_space_xs">
 
-    <com.google.android.material.textview.MaterialTextView
-        style="@style/TextAppearance.Material3.TitleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:text="@string/trees"
-        app:titleTextAppearance="?attr/textAppearanceHeadlineLarge"
-        tools:ignore="RelativeOverlap" />
-
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/trees_premium"
+    <ImageView
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginEnd="9dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_toStartOf="@id/trees_dark_theme"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/gradient_diamond" />
+        android:contentDescription="@null"
+        android:src="@mipmap/ic_launcher" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_space_ms"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/trees"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface" />
+
+    <LinearLayout
+        android:id="@+id/trees_premium"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:background="@drawable/ds_bg_pill_premium"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/ds_space_ms"
+        android:paddingEnd="@dimen/ds_space_md">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/gradient_diamond" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ds_space_xs"
+            android:text="@string/premium_short"
+            android:textAppearance="?attr/textAppearanceLabelMedium"
+            android:textColor="?attr/colorOnTertiaryContainer" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/trees_dark_theme"
-        style="?android:attr/actionButtonStyle"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        android:layout_toStartOf="@id/trees_settings"
-        android:tint="@color/text"
-        app:srcCompat="@drawable/ic_dark_mode_black_24dp" />
+        style="@style/Widget.FamilyTree.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/dark_theme"
+        app:icon="@drawable/ds_ic_dark_mode" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/trees_settings"
-        style="?android:attr/actionButtonStyle"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:tint="@color/text"
-        app:srcCompat="@drawable/gear" />
-</RelativeLayout>
+        style="@style/Widget.FamilyTree.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/settings"
+        app:icon="@drawable/ds_ic_settings" />
+</LinearLayout>

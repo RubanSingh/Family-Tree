@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Wedding anniversary · %d year</item>
+        <item quantity="other">Wedding anniversary · %d years</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Remembrance day · %d year</item>
+        <item quantity="other">Remembrance day · %d years</item>
+    </plurals>
+    <!-- Used from 2 days: 1 day is "tomorrow" (in some languages "one" also covers 21, 31...) -->
+    <plurals name="reminder_in_days">
+        <item quantity="one">In %1$d day · %2$s</item>
+        <item quantity="other">In %1$d days · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">in %d day</item>
+        <item quantity="other">in %d days</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Turns %d</item>
+        <item quantity="other">Turns %d</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d year married</item>
+        <item quantity="other">%d years married</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d year ago</item>
+        <item quantity="other">%d years ago</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d year</item>
+        <item quantity="other">%d years</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d event</item>
+        <item quantity="other">%d events</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d person</item>
+        <item quantity="other">%d people</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d place</item>
+        <item quantity="other">%d places</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d country</item>
+        <item quantity="other">%d countries</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d person</item>
+        <item quantity="other">%d persons</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d file is outside the app storage. Copy it into the app storage, so it stays with your tree and is included in backups? The original file is not changed.</item>
+        <item quantity="other">%d files are outside the app storage. Copy them into the app storage, so they stay with your tree and are included in backups? The original files are not changed.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d file copied to the app storage.</item>
+        <item quantity="other">%d files copied to the app storage.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d media is linked with the full path of a file in the app storage. Shorten the link to the file name only? The file stays where it is.</item>
+        <item quantity="other">%d media are linked with the full path of a file in the app storage. Shorten the links to the file name only? The files stay where they are.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d file path shortened.</item>
+        <item quantity="other">%d file paths shortened.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d record</item>
+        <item quantity="other">%d records</item>
+    </plurals>
+</resources>

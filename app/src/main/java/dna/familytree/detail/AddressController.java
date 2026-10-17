@@ -6,6 +6,7 @@ import dna.familytree.DetailController;
 import dna.familytree.Memory;
 import dna.familytree.R;
 import dna.familytree.AppUtils;
+import dna.familytree.feature.places.Maps;
 import dna.familytree.util.AnalyticsUtil;
 
 public class AddressController extends DetailController {
@@ -41,5 +42,21 @@ public class AddressController extends DetailController {
     protected void onResume() {
         super.onResume();
         AnalyticsUtil.logEventAddressActivity(getFirebaseAnalytics());
+    }
+
+    /**
+     * Map actions in the toolbar, when the standard menu is shown (not while editing).
+     */
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        if (menu.size() > 0)
+            Maps.addMenu(menu, Maps.queryOf(a));
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        return Maps.onMenuItem(this, item, Maps.queryOf(a)) || super.onOptionsItemSelected(item);
     }
 }

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">أزل الإعلانات</string>
+    <string name="ads_remove_hint">استمتع بـ Family Tree بلا إعلانات مع Premium.</string>
+    <string name="privacy_options">خيارات خصوصية الإعلانات</string>
+    <string name="privacy_options_desc">راجع أو غيّر كيفية استخدام الإعلانات لبياناتك</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">هذه ميزة Premium.</string>
+    <string name="reward_watch_title">شاهد فيديو قصيرًا</string>
+    <string name="reward_watch_desc">استخدمها مرة واحدة مجانًا، مباشرةً بعد الفيديو.</string>
+    <string name="reward_loading">جارٍ تحميل الفيديو…</string>
+    <string name="reward_unavailable">لا يتوفر أي فيديو حاليًا. حاول مرة أخرى لاحقًا أو انتقل إلى Premium.</string>
+    <string name="reward_not_earned">شاهد الفيديو حتى النهاية لفتح هذه الميزة.</string>
+    <string name="reward_premium_desc">استخدام غير محدود، بلا إعلانات، وكل ميزات Premium.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">قصة عائلتك تستحق Premium</string>
+    <string name="upsell_subtitle">حافظ على كل ما بنيته آمنًا، واستمتع بكل ميزات Premium.</string>
+    <string name="upsell_subtitle_new">احمِ أبحاثك واستمتع بـ Family Tree بلا إعلانات.</string>
+    <string name="upsell_stat_people">أشخاص</string>
+    <string name="upsell_stat_trees">أشجار</string>
+    <string name="upsell_stat_generations">أجيال</string>
+    <plurals name="upsell_more_features">
+        <item quantity="zero">و%d ميزة إضافية في Premium</item>
+        <item quantity="one">و%d ميزة إضافية في Premium</item>
+        <item quantity="two">وميزتان إضافيتان في Premium</item>
+        <item quantity="few">و%d ميزات إضافية في Premium</item>
+        <item quantity="many">و%d ميزة إضافية في Premium</item>
+        <item quantity="other">و%d ميزة إضافية في Premium</item>
+    </plurals>
+    <string name="upsell_price_monthly">خطط تبدأ من %1$s شهريًا</string>
+    <string name="upsell_price_lifetime">أو ادفع %1$s مرة واحدة واحتفظ به للأبد</string>
+    <string name="upsell_price_lifetime_only">وصول مدى الحياة مقابل %1$s، يُدفع مرة واحدة</string>
+    <string name="upsell_cta">اكتشف خطط Premium</string>
+    <string name="upsell_later">ليس الآن</string>
+    <string name="upsell_trust">ألغِ في أي وقت · دفع آمن عبر Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">كل ما تحتاجه لحماية قصة عائلتك والاحتفاء بها ومشاركتها.</string>
+    <string name="paywall_highlight_no_ads">بلا إعلانات</string>
+    <string name="paywall_highlight_backup">نسخ احتياطي تلقائي</string>
+    <string name="paywall_highlight_reminders">تذكيرات غير محدودة</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="zero">فترة تجريبية مجانية لمدة %d يوم</item>
+        <item quantity="one">فترة تجريبية مجانية لمدة %d يوم</item>
+        <item quantity="two">فترة تجريبية مجانية لمدة يومين</item>
+        <item quantity="few">فترة تجريبية مجانية لمدة %d أيام</item>
+        <item quantity="many">فترة تجريبية مجانية لمدة %d يومًا</item>
+        <item quantity="other">فترة تجريبية مجانية لمدة %d يوم</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="zero">فترة تجريبية مجانية لمدة %d شهر</item>
+        <item quantity="one">فترة تجريبية مجانية لمدة %d شهر</item>
+        <item quantity="two">فترة تجريبية مجانية لمدة شهرين</item>
+        <item quantity="few">فترة تجريبية مجانية لمدة %d أشهر</item>
+        <item quantity="many">فترة تجريبية مجانية لمدة %d شهرًا</item>
+        <item quantity="other">فترة تجريبية مجانية لمدة %d شهر</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="zero">يغطي تكلفته خلال %d شهر</item>
+        <item quantity="one">يغطي تكلفته خلال %d شهر</item>
+        <item quantity="two">يغطي تكلفته خلال شهرين</item>
+        <item quantity="few">يغطي تكلفته خلال %d أشهر</item>
+        <item quantity="many">يغطي تكلفته خلال %d شهرًا</item>
+        <item quantity="other">يغطي تكلفته خلال %d شهر</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s شهريًا · ألغِ في أي وقت</string>
+    <string name="paywall_summary_trial">%1$s، ثم %2$s شهريًا</string>
+    <string name="paywall_summary_lifetime">%1$s مرة واحدة · لك إلى الأبد</string>
+    <string name="paywall_loading_prices">جارٍ تحميل الأسعار…</string>
+    <string name="paywall_compare_title">المجاني مقابل Premium</string>
+    <string name="paywall_compare_free">مجاني</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">مشمول</string>
+    <string name="paywall_details_show">كيف يعمل</string>
+    <string name="paywall_details_hide">أخفِ التفاصيل</string>
+    <string name="paywall_free_label">مجاني: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">في Premium فقط</string>
+    <string name="paywall_trust_title">اشترِ بثقة</string>
+    <string name="paywall_trust_secure">دفع آمن عبر Google Play</string>
+    <string name="paywall_trust_cancel">ألغِ الخطة الشهرية في أي وقت</string>
+    <string name="paywall_trust_devices">استعِده على كل أجهزتك</string>
+    <string name="paywall_trust_private">تبقى بيانات عائلتك على جهازك</string>
+    <string name="paywall_faq_title">أسئلة وأجوبة</string>
+    <string name="paywall_faq_plans_q">ما الفرق بين الخطة الشهرية وخطة مدى الحياة؟</string>
+    <string name="paywall_faq_plans_a">كلتاهما تتيحان كل ما في Premium. تتجدد الخطة الشهرية كل شهر ويمكنك إلغاؤها في أي وقت. أما خطة مدى الحياة فتُدفع مرة واحدة ولا تنتهي أبدًا.</string>
+    <string name="paywall_faq_cancel_q">ماذا يحدث لأشجاري إذا أوقفت Premium؟</string>
+    <string name="paywall_faq_cancel_a">لن تفقد شيئًا. تبقى أشجارك وصورك وتذكيراتك ونسخك الاحتياطية كما هي تمامًا: تتوقف ميزات Premium فقط وتعود الإعلانات.</string>
+    <string name="paywall_faq_device_q">غيّرت هاتفي. هل عليّ الدفع مجددًا؟</string>
+    <string name="paywall_faq_device_a">لا. ثبّت Family Tree بحساب Google نفسه واضغط على «استعادة المشتريات».</string>
+    <string name="paywall_faq_privacy_q">هل تُرسَل بيانات عائلتي إلى أي مكان؟</string>
+    <string name="paywall_faq_privacy_a">لا. تُحفظ أشجارك على جهازك وفي مجلد النسخ الاحتياطي الذي تختاره. شراء Premium لا يرفع أي شيء.</string>
+    <string name="paywall_faq_manage_q">كيف ألغي الخطة الشهرية؟</string>
+    <string name="paywall_faq_manage_a">في متجر Play، افتح المدفوعات والاشتراكات › الاشتراكات، واختر Family Tree ثم اضغط على «إلغاء». يبقى Premium مفعّلًا حتى نهاية الفترة المدفوعة.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">في أمان دائم</string>
+    <string name="pf_group_safe_desc">سنوات من البحث، محمية تلقائيًا.</string>
+    <string name="pf_group_moments">لا تفوّت أي لحظة</string>
+    <string name="pf_group_moments_desc">تواريخ عائلتك وأماكنها، دائمًا في متناول يدك.</string>
+    <string name="pf_group_share">أنشئ وشارك</string>
+    <string name="pf_group_share_desc">تصدير أنيق وأدوات قوية للبحث الجاد.</string>
+    <string name="pf_group_yours">اجعله على ذوقك</string>
+    <string name="pf_group_yours_desc">مساحة هادئة وشخصية لقصة عائلتك.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">نسخ احتياطي تلقائي</string>
+    <string name="pf_backup_summary">يُحفظ كل تغيير في مجلد تختاره، دون أي جهد منك.</string>
+    <string name="pf_backup_free">نسخ احتياطي يدوي</string>
+    <string name="pf_backup_premium">تلقائي</string>
+    <string name="pf_backup_detail1">بعد دقيقة من كل تعديل، تُحفظ الشجرة كنسخة احتياطية بصيغة ZIP في مجلدك: ذاكرة الهاتف أو بطاقة SD أو مجلد سحابي مثل Google Drive.</string>
+    <string name="pf_backup_detail2">يُحتفظ بأحدث 3 نسخ لكل شجرة، لتتمكن دائمًا من الرجوع إليها.</string>
+    <string name="pf_backup_detail3">استعادة النسخة الاحتياطية مجانية ومتاحة دائمًا، حتى دون Premium.</string>
+
+    <string name="pf_media_title">منظّم الوسائط</string>
+    <string name="pf_media_summary">انسخ كل صور الشجرة ومستنداتها إلى التطبيق دفعة واحدة.</string>
+    <string name="pf_media_free">ملف واحد في كل مرة</string>
+    <string name="pf_media_premium">كل الملفات دفعة واحدة</string>
+    <string name="pf_media_detail1">انقل كل وسائط الشجرة إلى مخزن التطبيق، مع عرض التقدّم وإمكانية الإلغاء، كي لا تنقطع الروابط أبدًا عند نقل الملفات.</string>
+    <string name="pf_media_detail2">تبقى ملفاتك الأصلية كما هي: يُنسخ كل ملف ويُتحقق منه قبل تحديث روابطه.</string>
+
+    <string name="pf_reminders_title">تذكيرات عائلية ذكية</string>
+    <string name="pf_reminders_summary">ذكريات الزواج، وذكريات الوفاة، وتذكيرات شخصية غير محدودة.</string>
+    <string name="pf_reminders_free">أعياد الميلاد + تذكيران</string>
+    <string name="pf_reminders_premium">غير محدودة</string>
+    <string name="pf_reminders_detail1">تلقَّ تنبيهات بذكريات زواج الأزواج، وبذكريات الوفاة إن شئت.</string>
+    <string name="pf_reminders_detail2">أنشئ ما تشاء من التذكيرات: حفلات استقبال المواليد، والتخرّج، ولمّ شمل العائلة، والزيارات…</string>
+    <string name="pf_reminders_detail3">تُعلمك التنبيهات المبكرة مسبقًا، فيتّسع الوقت للاتصال أو الكتابة أو التخطيط لهدية.</string>
+
+    <string name="pf_places_title">أماكن العائلة</string>
+    <string name="pf_places_summary">كل مكان في تاريخ عائلتك، قابل للبحث وعلى بُعد نقرة من الخريطة.</string>
+    <string name="pf_places_free">أول 3 أماكن</string>
+    <string name="pf_places_premium">كل الأماكن</string>
+    <string name="pf_places_detail1">كل أماكن الأحداث والعناوين في الشجرة، مجمّعة حسب البلد، مع البحث.</string>
+    <string name="pf_places_detail2">اطّلع على ما حدث في كل مكان وافتحه في تطبيق الخرائط، مع الاتجاهات.</string>
+
+    <string name="pf_exports_title">تصدير جاهز للطباعة</string>
+    <string name="pf_exports_summary">حوّل مخططك إلى صورة عالية الدقة أو ملف PDF للطباعة والمشاركة.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">مرة واحدة لكل فيديو</string>
+    <string name="pf_exports_premium">PDF + صورة عالية الدقة</string>
+    <string name="pf_exports_detail1">صدّر المخطط كصورة PNG عالية الدقة، مثالية للمحادثات وشبكات التواصل الاجتماعي.</string>
+    <string name="pf_exports_detail2">أنشئ ملف PDF للمخطط كاملًا، جاهزًا للطباعة كملصق لتجمّعات العائلة.</string>
+    <string name="pf_exports_detail3">تنسيق للطباعة بخلفية بيضاء وخطوط واضحة، بمقاس يناسب شجرتك.</string>
+    <string name="pf_exports_detail4">حتى دون Premium، يمكنك التصدير مرة واحدة بعد مشاهدة فيديو قصير.</string>
+
+    <string name="pf_merge_title">دمج الأشجار</string>
+    <string name="pf_merge_summary">اجمع شجرتين في شجرة واحدة، ويعثر التطبيق على التكرارات نيابةً عنك.</string>
+    <string name="pf_merge_detail1">يبحث التطبيق عن الأشخاص أنفسهم في الشجرتين ويتيح لك تأكيد كل تطابق، أو تأكيدها كلها دفعة واحدة.</string>
+    <string name="pf_merge_detail2">مثالي عندما يرسل إليك أقاربك شجرتهم الخاصة.</string>
+
+    <string name="pf_advanced_title">أدوات متقدمة</string>
+    <string name="pf_advanced_summary">المصادر، والمستودعات، وتصدير GEDCOM، ومجموعة أدوات علم الأنساب كاملة.</string>
+    <string name="pf_advanced_detail1">استشهد بالمصادر والمستودعات وأدِر المقدّمين، كعلماء الأنساب المحترفين.</string>
+    <string name="pf_advanced_detail2">صدّر شجرتك بصيغة GEDCOM، مع الوسائط أو بدونها، لأي برنامج أنساب، وأنشئ نسخًا احتياطية ZIP كاملة.</string>
+    <string name="pf_advanced_detail3">قارن الأشجار المشتركة ورتّب مسارات ملفات الوسائط.</string>
+
+    <string name="pf_no_ads_title">بلا إعلانات</string>
+    <string name="pf_no_ads_summary">مساحة هادئة ومركّزة لقصة عائلتك.</string>
+    <string name="pf_no_ads_free">مع إعلانات</string>
+    <string name="pf_no_ads_premium">بلا إعلانات</string>
+    <string name="pf_no_ads_detail1">لا إعلانات في القوائم ولا في الملفات الشخصية ولا بين المهام.</string>
+    <string name="pf_no_ads_detail2">يدعم Premium أيضًا تطوير Family Tree.</string>
+
+    <string name="pf_themes_title">20 سمة لونية</string>
+    <string name="pf_themes_summary">اجعل التطبيق على ذوقك، بالوضع الفاتح أو الداكن.</string>
+    <string name="pf_themes_free">السمة الكلاسيكية</string>
+    <string name="pf_themes_premium">20 سمة</string>
+    <string name="pf_themes_detail1">اختر من بين 20 سمة لونية، من النيلي العميق إلى الكهرماني الدافئ.</string>
+    <string name="pf_themes_detail2">كل سمة تعمل بالوضعين الفاتح والداكن.</string>
+</resources>

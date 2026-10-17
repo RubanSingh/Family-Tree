@@ -1,85 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-
+<!-- New tree: one clear primary path (empty tree) and the other ways to start grouped below -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        style="@style/Widget.FamilyTree.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="?attr/colorSecondaryContainer" />
+        android:layout_height="?actionBarSize" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
                 android:orientation="vertical"
-                android:padding="30dp">
+                android:paddingStart="@dimen/ds_space_lg"
+                android:paddingTop="@dimen/ds_space_md"
+                android:paddingEnd="@dimen/ds_space_lg"
+                android:paddingBottom="@dimen/ds_space_xl">
+
+                <!-- Hero -->
+                <FrameLayout
+                    android:layout_width="148dp"
+                    android:layout_height="148dp"
+                    android:background="@drawable/new_tree_medallion">
+
+                    <ImageView
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@null"
+                        android:src="@drawable/new_tree_hero" />
+                </FrameLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_lg"
+                    android:gravity="center"
+                    android:text="@string/new_tree_hero_title"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_sm"
+                    android:gravity="center"
+                    android:maxWidth="360dp"
+                    android:text="@string/new_tree_hero_subtitle"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <!-- Primary path -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_empty_tree"
+                    style="@style/Widget.FamilyTree.Button.Option.Primary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_xl"
+                    android:text="@string/empty_tree"
+                    app:icon="@drawable/ds_ic_add" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/new_download_shared"
-                    style="@style/AppTheme.ButtonColor"
-                    android:layout_width="wrap_content"
+                    style="@style/Widget.FamilyTree.Button.Option"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:minWidth="350dp"
-                    android:text="@string/download_shared_tree" />
+                    android:layout_marginTop="@dimen/ds_space_ms"
+                    android:text="@string/download_shared_tree"
+                    app:icon="@drawable/ds_ic_cloud_download" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/new_empty_tree"
-                    style="@style/AppTheme.ButtonColor"
-                    android:layout_width="wrap_content"
+                <!-- Other ways to start -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:minWidth="350dp"
-                    android:text="@string/empty_tree" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/new_download_example"
-                    style="@style/AppTheme.ButtonNormal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:minWidth="350dp"
-                    android:text="@string/download_example" />
+                    android:layout_marginTop="@dimen/ds_space_lg"
+                    android:layout_marginBottom="@dimen/ds_space_sm"
+                    android:paddingStart="@dimen/ds_space_xs"
+                    android:text="@string/new_tree_more_ways"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/new_import_gedcom"
-                    style="@style/AppTheme.ButtonNormal"
-                    android:layout_width="wrap_content"
+                    style="@style/Widget.FamilyTree.Button.Option.Outlined"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:minWidth="350dp"
-                    android:text="@string/import_gedcom" />
+                    android:text="@string/import_gedcom"
+                    app:icon="@drawable/ds_ic_upload_file" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/new_download_example"
+                    style="@style/Widget.FamilyTree.Button.Option.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_sm"
+                    android:text="@string/download_example"
+                    app:icon="@drawable/ds_ic_download" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/new_recover_backup"
-                    style="@style/AppTheme.ButtonNormal"
-                    android:layout_width="wrap_content"
+                    style="@style/Widget.FamilyTree.Button.Option.Outlined"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minWidth="350dp"
-                    android:text="@string/import_backup" />
+                    android:layout_marginTop="@dimen/ds_space_sm"
+                    android:text="@string/import_backup"
+                    app:icon="@drawable/ds_ic_restore" />
             </LinearLayout>
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
                 android:id="@+id/new_progress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_gravity="top"
                 android:indeterminate="true"
                 android:visibility="gone" />
-        </RelativeLayout>
+        </FrameLayout>
     </ScrollView>
 </LinearLayout>

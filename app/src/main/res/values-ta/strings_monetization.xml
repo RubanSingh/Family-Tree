@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">விளம்பரங்களை அகற்று</string>
+    <string name="ads_remove_hint">Premium மூலம் விளம்பரங்கள் இல்லாமல் Family Tree-ஐ அனுபவியுங்கள்.</string>
+    <string name="privacy_options">விளம்பரத் தனியுரிமைத் தேர்வுகள்</string>
+    <string name="privacy_options_desc">விளம்பரங்கள் உங்கள் தரவை எப்படிப் பயன்படுத்துகின்றன என்பதைப் பார்க்கவும் அல்லது மாற்றவும்</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">இது ஒரு Premium அம்சம்.</string>
+    <string name="reward_watch_title">ஒரு சிறிய வீடியோவைப் பாருங்கள்</string>
+    <string name="reward_watch_desc">வீடியோ முடிந்ததும் இதை ஒருமுறை இலவசமாகப் பயன்படுத்துங்கள்.</string>
+    <string name="reward_loading">வீடியோ ஏற்றப்படுகிறது…</string>
+    <string name="reward_unavailable">இப்போது வீடியோ எதுவும் கிடைக்கவில்லை. பிறகு மீண்டும் முயலுங்கள் அல்லது Premium-க்கு மாறுங்கள்.</string>
+    <string name="reward_not_earned">திறக்க, வீடியோவை இறுதிவரை பாருங்கள்.</string>
+    <string name="reward_premium_desc">வரம்பற்ற பயன்பாடு, விளம்பரங்கள் இல்லை, அனைத்து Premium அம்சங்களும்.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">உங்கள் குடும்பக் கதை Premium-க்குத் தகுதியானது</string>
+    <string name="upsell_subtitle">நீங்கள் உருவாக்கிய அனைத்தையும் பாதுகாப்பாக வைத்திருங்கள், ஒவ்வொரு Premium அம்சத்தையும் அனுபவியுங்கள்.</string>
+    <string name="upsell_subtitle_new">உங்கள் ஆராய்ச்சியைப் பாதுகாத்து, விளம்பரங்கள் இல்லாமல் Family Tree-ஐ அனுபவியுங்கள்.</string>
+    <string name="upsell_stat_people">நபர்கள்</string>
+    <string name="upsell_stat_trees">மரங்கள்</string>
+    <string name="upsell_stat_generations">தலைமுறைகள்</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">மேலும் %d Premium அம்சம்</item>
+        <item quantity="other">மேலும் %d Premium அம்சங்கள்</item>
+    </plurals>
+    <string name="upsell_price_monthly">மாதத்திற்கு %1$s முதல் திட்டங்கள்</string>
+    <string name="upsell_price_lifetime">அல்லது %1$s ஒருமுறை செலுத்தி, என்றென்றும் வைத்திருங்கள்</string>
+    <string name="upsell_price_lifetime_only">%1$s-க்கு வாழ்நாள் அணுகல், ஒருமுறை மட்டும் கட்டணம்</string>
+    <string name="upsell_cta">Premium திட்டங்களைப் பார்</string>
+    <string name="upsell_later">இப்போது வேண்டாம்</string>
+    <string name="upsell_trust">எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம் · Google Play மூலம் பாதுகாப்பான கட்டணம்</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">உங்கள் குடும்பக் கதையைப் பாதுகாக்க, கொண்டாட, பகிர தேவையான அனைத்தும்.</string>
+    <string name="paywall_highlight_no_ads">விளம்பரங்கள் இல்லை</string>
+    <string name="paywall_highlight_backup">தானியங்கு காப்புப்பிரதி</string>
+    <string name="paywall_highlight_reminders">வரம்பற்ற நினைவூட்டல்கள்</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d நாள் இலவச சோதனை</item>
+        <item quantity="other">%d நாள் இலவச சோதனை</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d மாத இலவச சோதனை</item>
+        <item quantity="other">%d மாத இலவச சோதனை</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">%d மாதத்திலேயே விலை ஈடாகிவிடும்</item>
+        <item quantity="other">%d மாதங்களிலேயே விலை ஈடாகிவிடும்</item>
+    </plurals>
+    <string name="paywall_summary_monthly">மாதத்திற்கு %1$s · எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம்</string>
+    <string name="paywall_summary_trial">%1$s, பின்னர் மாதத்திற்கு %2$s</string>
+    <string name="paywall_summary_lifetime">ஒருமுறை %1$s · என்றென்றும் உங்களுடையது</string>
+    <string name="paywall_loading_prices">விலைகள் ஏற்றப்படுகின்றன…</string>
+    <string name="paywall_compare_title">இலவசம் vs Premium</string>
+    <string name="paywall_compare_free">இலவசம்</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">உள்ளடங்கியது</string>
+    <string name="paywall_details_show">இது எப்படிச் செயல்படுகிறது</string>
+    <string name="paywall_details_hide">விவரங்களை மறை</string>
+    <string name="paywall_free_label">இலவசம்: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Premium-இல் மட்டும்</string>
+    <string name="paywall_trust_title">நம்பிக்கையுடன் வாங்குங்கள்</string>
+    <string name="paywall_trust_secure">Google Play மூலம் பாதுகாப்பான கட்டணம்</string>
+    <string name="paywall_trust_cancel">மாதாந்திரத் திட்டத்தை எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம்</string>
+    <string name="paywall_trust_devices">உங்கள் எல்லாச் சாதனங்களிலும் மீட்டெடுக்கலாம்</string>
+    <string name="paywall_trust_private">உங்கள் குடும்பத் தரவு உங்கள் சாதனத்திலேயே இருக்கும்</string>
+    <string name="paywall_faq_title">கேள்விகள் &amp; பதில்கள்</string>
+    <string name="paywall_faq_plans_q">மாதாந்திரத் திட்டத்திற்கும் வாழ்நாள் திட்டத்திற்கும் என்ன வித்தியாசம்?</string>
+    <string name="paywall_faq_plans_a">இரண்டும் Premium-இல் உள்ள அனைத்தையும் திறக்கும். மாதாந்திரத் திட்டம் ஒவ்வொரு மாதமும் புதுப்பிக்கப்படும், அதை எப்போது வேண்டுமானாலும் ரத்துசெய்யலாம். வாழ்நாள் திட்டத்திற்கு ஒருமுறை செலுத்தினால் போதும், அது ஒருபோதும் காலாவதியாகாது.</string>
+    <string name="paywall_faq_cancel_q">நான் Premium-ஐ நிறுத்தினால் என் மரங்களுக்கு என்ன ஆகும்?</string>
+    <string name="paywall_faq_cancel_a">எதுவும் இழக்கப்படாது. உங்கள் மரங்கள், புகைப்படங்கள், நினைவூட்டல்கள் மற்றும் காப்புப்பிரதிகள் அப்படியே இருக்கும்: Premium அம்சங்கள் மட்டும் நின்றுவிடும், விளம்பரங்கள் மீண்டும் வரும்.</string>
+    <string name="paywall_faq_device_q">நான் தொலைபேசியை மாற்றிவிட்டேன். மீண்டும் பணம் செலுத்த வேண்டுமா?</string>
+    <string name="paywall_faq_device_a">இல்லை. அதே Google கணக்குடன் Family Tree-ஐ நிறுவி, வாங்குதல்களை மீட்டெடு என்பதைத் தட்டுங்கள்.</string>
+    <string name="paywall_faq_privacy_q">என் குடும்பத் தரவு எங்காவது அனுப்பப்படுகிறதா?</string>
+    <string name="paywall_faq_privacy_a">இல்லை. உங்கள் மரங்கள் உங்கள் சாதனத்திலும் நீங்கள் தேர்வுசெய்யும் காப்புப்பிரதி கோப்புறையிலும் மட்டுமே வைக்கப்படுகின்றன. Premium வாங்குவதால் எதுவும் பதிவேற்றப்படாது.</string>
+    <string name="paywall_faq_manage_q">மாதாந்திரத் திட்டத்தை எப்படி ரத்துசெய்வது?</string>
+    <string name="paywall_faq_manage_a">Play Store-இல் கட்டணங்கள் &amp; சந்தாக்கள் › சந்தாக்கள் என்பதைத் திறந்து, Family Tree-ஐத் தேர்வுசெய்து, ரத்துசெய் என்பதைத் தட்டுங்கள். ஏற்கனவே செலுத்திய காலம் முடியும் வரை Premium செயலில் இருக்கும்.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">பாதுகாப்பாக வைத்திருங்கள்</string>
+    <string name="pf_group_safe_desc">பல ஆண்டு ஆராய்ச்சி, தானாகவே பாதுகாக்கப்படுகிறது.</string>
+    <string name="pf_group_moments">எந்தத் தருணத்தையும் தவறவிடாதீர்கள்</string>
+    <string name="pf_group_moments_desc">உங்கள் குடும்பத்தின் தேதிகளும் இடங்களும், எப்போதும் கைவசம்.</string>
+    <string name="pf_group_share">உருவாக்குங்கள் &amp; பகிருங்கள்</string>
+    <string name="pf_group_share_desc">அழகான ஏற்றுமதிகளும், தீவிர ஆராய்ச்சிக்கான சக்திவாய்ந்த கருவிகளும்.</string>
+    <string name="pf_group_yours">உங்களுக்கானதாக்குங்கள்</string>
+    <string name="pf_group_yours_desc">உங்கள் குடும்பக் கதைக்கான அமைதியான, தனிப்பட்ட இடம்.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">தானியங்கு காப்புப்பிரதி</string>
+    <string name="pf_backup_summary">ஒவ்வொரு மாற்றமும் நீங்கள் தேர்வுசெய்யும் கோப்புறையில், எந்த முயற்சியும் இல்லாமல் சேமிக்கப்படும்.</string>
+    <string name="pf_backup_free">கைமுறை காப்புப்பிரதி</string>
+    <string name="pf_backup_premium">தானியங்கு</string>
+    <string name="pf_backup_detail1">ஒவ்வொரு திருத்தத்திற்கும் ஒரு நிமிடம் கழித்து, மரம் ZIP காப்புப்பிரதியாக உங்கள் கோப்புறையில் சேமிக்கப்படும்: தொலைபேசிச் சேமிப்பகம், SD கார்டு அல்லது Google Drive போன்ற கிளவுட் கோப்புறை.</string>
+    <string name="pf_backup_detail2">ஒவ்வொரு மரத்தின் சமீபத்திய 3 நகல்கள் வைக்கப்படும், எனவே நீங்கள் எப்போதும் முந்தைய நிலைக்குத் திரும்பலாம்.</string>
+    <string name="pf_backup_detail3">காப்புப்பிரதியை மீட்டெடுப்பது இலவசம், எப்போதும் கிடைக்கும், Premium இல்லாவிட்டாலும் கூட.</string>
+
+    <string name="pf_media_title">ஊடக ஒழுங்கமைப்பான்</string>
+    <string name="pf_media_summary">ஒரு மரத்தின் ஒவ்வொரு புகைப்படத்தையும் ஆவணத்தையும் ஒரே முறையில் பயன்பாட்டிற்குள் நகலெடுங்கள்.</string>
+    <string name="pf_media_free">ஒரு நேரத்தில் ஒரு கோப்பு</string>
+    <string name="pf_media_premium">எல்லாக் கோப்புகளும் ஒரே முறையில்</string>
+    <string name="pf_media_detail1">ஒரு மரத்தின் அனைத்து ஊடகங்களையும் பயன்பாட்டுச் சேமிப்பகத்திற்குக் கொண்டு வாருங்கள், முன்னேற்றத்தைப் பார்க்கலாம், ரத்தும் செய்யலாம்; கோப்புகள் இடம் மாறினாலும் இணைப்புகள் உடையாது.</string>
+    <string name="pf_media_detail2">உங்கள் அசல் கோப்புகள் தொடப்படாது: ஒவ்வொரு கோப்பும் நகலெடுக்கப்பட்டுச் சரிபார்க்கப்பட்ட பிறகே அதன் இணைப்புகள் புதுப்பிக்கப்படும்.</string>
+
+    <string name="pf_reminders_title">ஸ்மார்ட் குடும்ப நினைவூட்டல்கள்</string>
+    <string name="pf_reminders_summary">திருமண ஆண்டுவிழாக்கள், நினைவு நாட்கள் மற்றும் வரம்பற்ற தனிப்பட்ட நினைவூட்டல்கள்.</string>
+    <string name="pf_reminders_free">பிறந்தநாள்கள் + 2 நினைவூட்டல்கள்</string>
+    <string name="pf_reminders_premium">வரம்பற்றது</string>
+    <string name="pf_reminders_detail1">தம்பதிகளின் திருமண ஆண்டுவிழாக்களுக்கும், நீங்கள் விரும்பினால் நினைவு நாட்களுக்கும் அறிவிப்புகளைப் பெறுங்கள்.</string>
+    <string name="pf_reminders_detail2">நீங்கள் விரும்பும் அளவுக்கு நினைவூட்டல்களை உருவாக்குங்கள்: வளைகாப்பு, பட்டமளிப்பு, குடும்ப ஒன்றுகூடல், சந்திப்புகள்…</string>
+    <string name="pf_reminders_detail3">முன்கூட்டிய விழிப்பூட்டல்கள் முன்னதாகவே தெரிவிக்கும், எனவே அழைக்க, எழுத அல்லது பரிசு திட்டமிட நேரம் கிடைக்கும்.</string>
+
+    <string name="pf_places_title">குடும்ப இடங்கள்</string>
+    <string name="pf_places_summary">உங்கள் குடும்ப வரலாற்றின் ஒவ்வொரு இடமும், தேடக்கூடியது, வரைபடத்தில் காண ஒரு தட்டல் போதும்.</string>
+    <string name="pf_places_free">முதல் 3 இடங்கள்</string>
+    <string name="pf_places_premium">அனைத்து இடங்களும்</string>
+    <string name="pf_places_detail1">மரத்தின் அனைத்து நிகழ்வு இடங்களும் முகவரிகளும், நாடு வாரியாகத் தொகுக்கப்பட்டு, தேடல் வசதியுடன்.</string>
+    <string name="pf_places_detail2">ஒவ்வொரு இடத்திலும் என்ன நடந்தது என்பதைப் பார்த்து, வழிகாட்டுதல்களுடன் உங்கள் வரைபடப் பயன்பாட்டில் திறக்கலாம்.</string>
+
+    <string name="pf_exports_title">அச்சுக்குத் தயாரான ஏற்றுமதிகள்</string>
+    <string name="pf_exports_summary">உங்கள் வரைபடத்தை HD படமாகவோ PDF ஆகவோ மாற்றி, அச்சிட்டுப் பகிருங்கள்.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">ஒவ்வொரு வீடியோவுக்கும் ஒருமுறை</string>
+    <string name="pf_exports_premium">PDF + HD படம்</string>
+    <string name="pf_exports_detail1">வரைபடத்தை உயர் தெளிவுத்திறன் கொண்ட PNG படமாக ஏற்றுமதி செய்யுங்கள், அரட்டைகளுக்கும் சமூக வலைதளங்களுக்கும் ஏற்றது.</string>
+    <string name="pf_exports_detail2">முழு வரைபடத்தின் PDF-ஐ உருவாக்குங்கள், குடும்ப ஒன்றுகூடல்களுக்குச் சுவரொட்டியாக அச்சிடத் தயார்.</string>
+    <string name="pf_exports_detail3">வெள்ளைப் பின்னணியும் தெளிவான கோடுகளும் கொண்ட அச்சு வடிவமைப்பு, உங்கள் மரத்தின் அளவுக்கு ஏற்ப.</string>
+    <string name="pf_exports_detail4">Premium இல்லாவிட்டாலும், ஒரு சிறிய வீடியோவைப் பார்த்த பிறகு ஒருமுறை ஏற்றுமதி செய்யலாம்.</string>
+
+    <string name="pf_merge_title">மரங்களை ஒன்றிணைத்தல்</string>
+    <string name="pf_merge_summary">இரண்டு மரங்களை ஒன்றாக இணையுங்கள், நகல்களை பயன்பாடே கண்டறியும்.</string>
+    <string name="pf_merge_detail1">இரண்டு மரங்களிலும் உள்ள ஒரே நபர்களைப் பயன்பாடு தேடுகிறது; ஒவ்வொரு பொருத்தத்தையும் தனித்தனியாகவோ அனைத்தையும் ஒரே நேரத்திலோ நீங்கள் உறுதிப்படுத்தலாம்.</string>
+    <string name="pf_merge_detail2">உறவினர்கள் தங்கள் சொந்த மரத்தை உங்களுக்கு அனுப்பும்போது மிகவும் பயனுள்ளது.</string>
+
+    <string name="pf_advanced_title">மேம்பட்ட கருவிகள்</string>
+    <string name="pf_advanced_summary">மூலங்கள், களஞ்சியங்கள், GEDCOM ஏற்றுமதி மற்றும் முழுமையான வம்சாவளி ஆய்வுக் கருவித்தொகுப்பு.</string>
+    <string name="pf_advanced_detail1">தொழில்முறை வம்சாவளி ஆய்வாளர்களைப் போல மூலங்களையும் களஞ்சியங்களையும் மேற்கோள் காட்டி, சமர்ப்பிப்பாளர்களை நிர்வகியுங்கள்.</string>
+    <string name="pf_advanced_detail2">எந்த வம்சாவளி மென்பொருளுக்கும் ஏற்ற வகையில், ஊடகங்களுடனோ இல்லாமலோ உங்கள் மரத்தை GEDCOM ஆக ஏற்றுமதி செய்யுங்கள், முழுமையான ZIP காப்புப்பிரதிகளையும் உருவாக்குங்கள்.</string>
+    <string name="pf_advanced_detail3">பகிரப்பட்ட மரங்களை ஒப்பிட்டு, ஊடகக் கோப்புகளின் பாதைகளை ஒழுங்குபடுத்துங்கள்.</string>
+
+    <string name="pf_no_ads_title">விளம்பரங்கள் இல்லை</string>
+    <string name="pf_no_ads_summary">உங்கள் குடும்பக் கதைக்கான அமைதியான, கவனம் சிதறாத இடம்.</string>
+    <string name="pf_no_ads_free">விளம்பரங்களுடன்</string>
+    <string name="pf_no_ads_premium">விளம்பரங்கள் இல்லை</string>
+    <string name="pf_no_ads_detail1">பட்டியல்களிலோ, சுயவிவரங்களிலோ, பணிகளுக்கு இடையிலோ விளம்பரங்கள் இல்லை.</string>
+    <string name="pf_no_ads_detail2">Premium, Family Tree-இன் மேம்பாட்டுக்கும் ஆதரவளிக்கிறது.</string>
+
+    <string name="pf_themes_title">20 வண்ணத் தீம்கள்</string>
+    <string name="pf_themes_summary">ஒளி அல்லது இருண்ட பயன்முறையில், பயன்பாட்டை உங்களுக்கானதாக்குங்கள்.</string>
+    <string name="pf_themes_free">கிளாசிக் தீம்</string>
+    <string name="pf_themes_premium">20 தீம்கள்</string>
+    <string name="pf_themes_detail1">அடர் இண்டிகோ முதல் இதமான அம்பர் வரை, 20 வண்ணத் தீம்களில் இருந்து தேர்வுசெய்யுங்கள்.</string>
+    <string name="pf_themes_detail2">ஒவ்வொரு தீமும் ஒளி மற்றும் இருண்ட பயன்முறைகளில் செயல்படும்.</string>
+</resources>

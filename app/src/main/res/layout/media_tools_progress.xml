@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Progress of a media files task -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/ds_space_lg"
+    android:paddingTop="@dimen/ds_space_sm"
+    android:paddingEnd="@dimen/ds_space_lg">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/media_progress_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/media_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_space_md"
+        android:indeterminate="true" />
+</LinearLayout>

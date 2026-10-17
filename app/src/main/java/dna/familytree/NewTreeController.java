@@ -21,6 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.gson.Gson;
 
@@ -42,6 +44,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import dna.familytree.constant.Extra;
+import dna.familytree.feature.ads.UsageStats;
 import dna.familytree.share.CompareController;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.util.FileUtils;
@@ -111,11 +114,11 @@ public class NewTreeController extends BaseController {
         importGedcom.setOnClickListener(v -> {
             AnalyticsUtil.logEventImportGEDCOM(getFirebaseAnalytics());
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            // KitKat disables .ged files in the Download folder if the type is 'application/*'
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT)
-                intent.setType("*/*");
-            else
-                intent.setType("application/*");
+            // '.ged' has no standard MIME type: depending on the device it's seen as GEDCOM, plain text or generic binary.
+            // Same types accepted as before ('application/*') plus those, so no GEDCOM file shows greyed out (from Family Gem).
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{"application/*", "text/vnd.familysearch.gedcom",
+                    "text/x-gedcom", "text/plain", "vnd.android.document/file"});
             startActivityForResult(intent, 630);
         });
 
@@ -130,6 +133,7 @@ public class NewTreeController extends BaseController {
 
     // Create a brand new tree
     void newTree(String title) {
+        UsageStats.engage(UsageStats.POINTS_TREE_CREATED);
         int num = Global.settings.max() + 1;
         File jsonFile = new File(getFilesDir(), num + ".json");
         Global.gc = new Gedcom();
@@ -146,7 +150,7 @@ public class NewTreeController extends BaseController {
         Global.settings.aggiungi(new Settings.Tree(num, title, null, 0, 0, null, null, 0));
         Global.settings.openTree = num;
         Global.settings.save();
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         Toast.makeText(this, R.string.tree_created, Toast.LENGTH_SHORT).show();
     }
 
@@ -180,13 +184,15 @@ public class NewTreeController extends BaseController {
                 unregisterReceiver(this);
             }
         };
-        registerReceiver(alCompletamento, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        // Exported because the broadcast comes from the DownloadManager process; required from Android 14
+        ContextCompat.registerReceiver(this, alCompletamento, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE),
+                ContextCompat.RECEIVER_EXPORTED);
         // ACTION_DOWNLOAD_COMPLETE intende il completamento di QUALSIASI download che è in corso, non solo questo.
     }
 
     // Unzip a ZIP file in the device storage
     // Used equally by: Simpsons example, backup files and shared trees
-    static boolean unZip(Context context, String zipPath, Uri zipUri) {
+    public static boolean unZip(Context context, String zipPath, Uri zipUri) {
         int treeNumber = Global.settings.max() + 1;
         File mediaDir = context.getExternalFilesDir(String.valueOf(treeNumber));
         String sourceDir = context.getApplicationInfo().sourceDir;
@@ -230,6 +236,8 @@ public class NewTreeController extends BaseController {
             Settings.ZippedTree zipped = gson.fromJson(json, Settings.ZippedTree.class);
             Settings.Tree tree = new Settings.Tree(treeNumber, zipped.title, mediaDir.getPath(),
                     zipped.persons, zipped.generations, zipped.root, zipped.shares, zipped.grade);
+            tree.settings = zipped.settings; // Null in ZIPs made before version 1.6
+            tree.reminders = zipped.reminders;
             Global.settings.aggiungi(tree);
             settingsFile.delete();
             // Sharing tree intended for comparison
@@ -279,6 +287,7 @@ public class NewTreeController extends BaseController {
         super.onActivityResult(requestCode, resultCode, data);
         // Import a Gedcom file chosen with SAF
         if (resultCode == RESULT_OK && requestCode == 630) {
+            UsageStats.engage(UsageStats.POINTS_TREE_CREATED);
             try {
                 // Read the input
                 Uri uri = data.getData();
@@ -314,6 +323,7 @@ public class NewTreeController extends BaseController {
                 Global.settings.aggiungi(new Settings.Tree(newNumber, treeName, folderPath,
                         gedcom.getPeople().size(), InfoController.quanteGenerazioni(gedcom, rootId), rootId, null, 0));
                 new Notifier(this, gedcom, newNumber, Notifier.What.CREATE);
+                dna.familytree.feature.reminders.ReminderScheduler.onTreeSaved(this, gedcom, newNumber);
                 // If necessary propose to show advanced tools
                 if (!gedcom.getSources().isEmpty() && !Global.settings.expert) {
                     new MaterialAlertDialogBuilder(this).setMessage(R.string.complex_tree_advanced_tools)
@@ -367,7 +377,7 @@ public class NewTreeController extends BaseController {
     }
 
     void concludiImportaGedcom() {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         Toast.makeText(this, R.string.tree_imported_ok, Toast.LENGTH_SHORT).show();
     }
 
@@ -421,7 +431,7 @@ public class NewTreeController extends BaseController {
     // Freccia indietro nella toolbar come quella hardware
     @Override
     public boolean onOptionsItemSelected(MenuItem i) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 }

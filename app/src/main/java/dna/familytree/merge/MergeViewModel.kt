@@ -79,13 +79,14 @@ class MergeViewModel(state: SavedStateHandle) : ViewModel() {
     /**
      * Searches for persons with the same name in the first and second GEDCOM
      */
-    fun findMatches() {
+    /** @param searchDuplicates False to merge without looking for persons with the same name ("Skip", from Family Gem) */
+    fun findMatches(searchDuplicates: Boolean = true) {
         coroutine = viewModelScope.launch(Dispatchers.Default) {
             setState(State.ACTIVE)
             firstGedcom = TreesController.readJson(firstNum)
             if (isActive) secondGedcom = TreesController.readJson(secondNum.value!!) else return@launch
             matches.clear()
-            for (person1 in firstGedcom.people) {
+            if (searchDuplicates) for (person1 in firstGedcom.people) {
                 yield()
                 val name1 = getNameValue(person1)
                 if (name1 != null) {
@@ -134,6 +135,15 @@ class MergeViewModel(state: SavedStateHandle) : ViewModel() {
             actualMatch++
             true
         } else false
+    }
+
+    /** "Yes / No to all remaining": applies the same choice to the current and all the next matches (from Family Gem). */
+    fun resolveRemainingMatches(will: Will) {
+        val actual = actualMatch
+        while (nextMatch(will)) {
+            // All done
+        }
+        actualMatch = actual // To display the last visible match when going back from ResultFragment
     }
 
     fun previousMatch() {

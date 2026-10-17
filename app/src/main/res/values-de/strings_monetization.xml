@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Werbung entfernen</string>
+    <string name="ads_remove_hint">Genieße Family Tree ohne Werbung – mit Premium.</string>
+    <string name="privacy_options">Datenschutzoptionen für Werbung</string>
+    <string name="privacy_options_desc">Prüfen oder ändern, wie Werbung deine Daten nutzt</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Das ist eine Premium-Funktion.</string>
+    <string name="reward_watch_title">Kurzes Video ansehen</string>
+    <string name="reward_watch_desc">Einmal kostenlos nutzen, direkt nach dem Video.</string>
+    <string name="reward_loading">Video wird geladen…</string>
+    <string name="reward_unavailable">Gerade ist kein Video verfügbar. Versuch es später noch einmal oder hol dir Premium.</string>
+    <string name="reward_not_earned">Sieh dir das Video bis zum Ende an, um die Funktion freizuschalten.</string>
+    <string name="reward_premium_desc">Unbegrenzte Nutzung, keine Werbung und jede Premium-Funktion.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Deine Familiengeschichte verdient Premium</string>
+    <string name="upsell_subtitle">Bewahre alles, was du aufgebaut hast, sicher auf und genieße jede Premium-Funktion.</string>
+    <string name="upsell_subtitle_new">Schütze deine Forschung und genieße Family Tree ohne Werbung.</string>
+    <string name="upsell_stat_people">Personen</string>
+    <string name="upsell_stat_trees">Stammbäume</string>
+    <string name="upsell_stat_generations">Generationen</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">und %d weitere Premium-Funktion</item>
+        <item quantity="other">und %d weitere Premium-Funktionen</item>
+    </plurals>
+    <string name="upsell_price_monthly">Tarife ab %1$s pro Monat</string>
+    <string name="upsell_price_lifetime">oder einmal %1$s zahlen und für immer behalten</string>
+    <string name="upsell_price_lifetime_only">Lebenslanger Zugang für %1$s, einmalig bezahlt</string>
+    <string name="upsell_cta">Premium-Tarife ansehen</string>
+    <string name="upsell_later">Nicht jetzt</string>
+    <string name="upsell_trust">Jederzeit kündbar · Sichere Zahlung über Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Alles, was du brauchst, um deine Familiengeschichte zu schützen, zu feiern und zu teilen.</string>
+    <string name="paywall_highlight_no_ads">Keine Werbung</string>
+    <string name="paywall_highlight_backup">Automatische Sicherung</string>
+    <string name="paywall_highlight_reminders">Unbegrenzte Erinnerungen</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d Tag kostenlos testen</item>
+        <item quantity="other">%d Tage kostenlos testen</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d Monat kostenlos testen</item>
+        <item quantity="other">%d Monate kostenlos testen</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Rechnet sich nach %d Monat</item>
+        <item quantity="other">Rechnet sich nach %d Monaten</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s pro Monat · jederzeit kündbar</string>
+    <string name="paywall_summary_trial">%1$s, danach %2$s pro Monat</string>
+    <string name="paywall_summary_lifetime">Einmalig %1$s · für immer deins</string>
+    <string name="paywall_loading_prices">Preise werden geladen…</string>
+    <string name="paywall_compare_title">Kostenlos vs. Premium</string>
+    <string name="paywall_compare_free">Kostenlos</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Inklusive</string>
+    <string name="paywall_details_show">So funktioniert es</string>
+    <string name="paywall_details_hide">Details ausblenden</string>
+    <string name="paywall_free_label">Kostenlos: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Nur in Premium</string>
+    <string name="paywall_trust_title">Kaufe mit gutem Gefühl</string>
+    <string name="paywall_trust_secure">Sichere Zahlung über Google Play</string>
+    <string name="paywall_trust_cancel">Monatliches Abo jederzeit kündbar</string>
+    <string name="paywall_trust_devices">Auf all deinen Geräten wiederherstellen</string>
+    <string name="paywall_trust_private">Deine Familiendaten bleiben auf deinem Gerät</string>
+    <string name="paywall_faq_title">Fragen &amp; Antworten</string>
+    <string name="paywall_faq_plans_q">Was ist der Unterschied zwischen Monatlich und Lebenslang?</string>
+    <string name="paywall_faq_plans_a">Beide schalten alles in Premium frei. Monatlich verlängert sich jeden Monat und ist jederzeit kündbar. Lebenslang zahlst du nur einmal, und es läuft nie ab.</string>
+    <string name="paywall_faq_cancel_q">Was passiert mit meinen Stammbäumen, wenn ich Premium beende?</string>
+    <string name="paywall_faq_cancel_a">Nichts geht verloren. Deine Stammbäume, Fotos, Erinnerungen und Sicherungen bleiben genau so, wie sie sind: Nur die Premium-Funktionen enden, und die Werbung kehrt zurück.</string>
+    <string name="paywall_faq_device_q">Ich habe ein neues Handy. Muss ich noch einmal bezahlen?</string>
+    <string name="paywall_faq_device_a">Nein. Installiere Family Tree mit demselben Google-Konto und tippe auf Käufe wiederherstellen.</string>
+    <string name="paywall_faq_privacy_q">Werden meine Familiendaten irgendwohin gesendet?</string>
+    <string name="paywall_faq_privacy_a">Nein. Deine Stammbäume bleiben auf deinem Gerät und in dem Sicherungsordner, den du wählst. Beim Kauf von Premium wird nichts hochgeladen.</string>
+    <string name="paywall_faq_manage_q">Wie kündige ich das monatliche Abo?</string>
+    <string name="paywall_faq_manage_a">Öffne im Play Store Zahlungen &amp; Abos › Abos, wähle Family Tree und tippe auf Kündigen. Premium bleibt bis zum Ende des bereits bezahlten Zeitraums aktiv.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Sicher aufbewahrt</string>
+    <string name="pf_group_safe_desc">Jahre der Forschung, automatisch geschützt.</string>
+    <string name="pf_group_moments">Keinen Moment verpassen</string>
+    <string name="pf_group_moments_desc">Die wichtigen Tage und Orte deiner Familie, immer griffbereit.</string>
+    <string name="pf_group_share">Gestalten &amp; teilen</string>
+    <string name="pf_group_share_desc">Schöne Exporte und starke Werkzeuge für ernsthafte Forschung.</string>
+    <string name="pf_group_yours">Ganz nach deinem Stil</string>
+    <string name="pf_group_yours_desc">Ein ruhiger, persönlicher Ort für deine Familiengeschichte.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Automatische Sicherung</string>
+    <string name="pf_backup_summary">Jede Änderung wird in einem Ordner deiner Wahl gesichert – ganz ohne dein Zutun.</string>
+    <string name="pf_backup_free">Manuelle Sicherung</string>
+    <string name="pf_backup_premium">Automatisch</string>
+    <string name="pf_backup_detail1">Eine Minute nach jeder Bearbeitung wird der Stammbaum als ZIP-Sicherung in deinem Ordner gespeichert: im Gerätespeicher, auf der SD-Karte oder in einem Cloud-Ordner wie Google Drive.</string>
+    <string name="pf_backup_detail2">Die 3 neuesten Kopien jedes Stammbaums werden aufbewahrt, sodass du jederzeit zurückgehen kannst.</string>
+    <string name="pf_backup_detail3">Das Wiederherstellen einer Sicherung ist kostenlos und immer möglich, auch ohne Premium.</string>
+
+    <string name="pf_media_title">Medienverwaltung</string>
+    <string name="pf_media_summary">Kopiere alle Fotos und Dokumente eines Stammbaums in einem Schritt in die App.</string>
+    <string name="pf_media_free">Eine Datei nach der anderen</string>
+    <string name="pf_media_premium">Alle Dateien auf einmal</string>
+    <string name="pf_media_detail1">Hole alle Medien eines Stammbaums in den Programm-Speicher, mit Fortschrittsanzeige und Abbruchmöglichkeit, damit Links nie ins Leere führen, wenn Dateien verschoben werden.</string>
+    <string name="pf_media_detail2">Deine Originale bleiben unberührt: Jede Datei wird kopiert und geprüft, bevor ihre Links aktualisiert werden.</string>
+
+    <string name="pf_reminders_title">Intelligente Familien-Erinnerungen</string>
+    <string name="pf_reminders_summary">Hochzeitstage, Gedenktage und unbegrenzte persönliche Erinnerungen.</string>
+    <string name="pf_reminders_free">Geburtstage + 2 Erinnerungen</string>
+    <string name="pf_reminders_premium">Unbegrenzt</string>
+    <string name="pf_reminders_detail1">Lass dich an die Hochzeitstage von Paaren erinnern und, wenn du möchtest, auch an Gedenktage.</string>
+    <string name="pf_reminders_detail2">Erstelle so viele Erinnerungen, wie du möchtest: Babypartys, Abschlussfeiern, Familientreffen, Besuche…</string>
+    <string name="pf_reminders_detail3">Frühzeitige Benachrichtigungen geben dir rechtzeitig Bescheid, damit Zeit bleibt, anzurufen, zu schreiben oder ein Geschenk zu planen.</string>
+
+    <string name="pf_places_title">Familienorte</string>
+    <string name="pf_places_summary">Jeder Ort deiner Familiengeschichte, durchsuchbar und nur einen Tipp von der Karte entfernt.</string>
+    <string name="pf_places_free">Die ersten 3 Orte</string>
+    <string name="pf_places_premium">Alle Orte</string>
+    <string name="pf_places_detail1">Alle Ereignisorte und Adressen des Stammbaums, nach Ländern gruppiert und mit Suche.</string>
+    <string name="pf_places_detail2">Sieh, was an jedem Ort geschehen ist, und öffne ihn mit Routenplanung in deiner Karten-App.</string>
+
+    <string name="pf_exports_title">Druckfertige Exporte</string>
+    <string name="pf_exports_summary">Mach aus deinem Diagramm ein HD-Bild oder ein PDF zum Drucken und Teilen.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Einmal pro Video</string>
+    <string name="pf_exports_premium">PDF + HD-Bild</string>
+    <string name="pf_exports_detail1">Exportiere das Diagramm als hochauflösendes PNG-Bild – ideal für Chats und soziale Netzwerke.</string>
+    <string name="pf_exports_detail2">Erstelle ein PDF des gesamten Diagramms, bereit zum Drucken als Poster für Familientreffen.</string>
+    <string name="pf_exports_detail3">Druckoptimierte Gestaltung mit weißem Hintergrund und klaren Linien, passend zur Größe deines Stammbaums.</string>
+    <string name="pf_exports_detail4">Ohne Premium kannst du nach einem kurzen Video trotzdem einmal exportieren.</string>
+
+    <string name="pf_merge_title">Stammbäume zusammenführen</string>
+    <string name="pf_merge_summary">Vereine zwei Stammbäume zu einem – Dubletten werden für dich gefunden.</string>
+    <string name="pf_merge_detail1">Die App sucht in beiden Stammbäumen nach denselben Personen und lässt dich jede Übereinstimmung bestätigen – oder alle auf einmal.</string>
+    <string name="pf_merge_detail2">Perfekt, wenn dir Verwandte ihren eigenen Stammbaum schicken.</string>
+
+    <string name="pf_advanced_title">Erweiterte Werkzeuge</string>
+    <string name="pf_advanced_summary">Quellen, Archive, GEDCOM-Export und alle Werkzeuge der Ahnenforschung.</string>
+    <string name="pf_advanced_detail1">Zitiere Quellen und Archive und verwalte Autoren – wie professionelle Genealogen.</string>
+    <string name="pf_advanced_detail2">Exportiere deinen Stammbaum als GEDCOM, mit oder ohne Medien, für jede Genealogie-Software, und erstelle vollständige ZIP-Sicherungen.</string>
+    <string name="pf_advanced_detail3">Vergleiche geteilte Stammbäume und räume die Pfade von Mediendateien auf.</string>
+
+    <string name="pf_no_ads_title">Keine Werbung</string>
+    <string name="pf_no_ads_summary">Ein ruhiger, konzentrierter Ort für deine Familiengeschichte.</string>
+    <string name="pf_no_ads_free">Mit Werbung</string>
+    <string name="pf_no_ads_premium">Keine Werbung</string>
+    <string name="pf_no_ads_detail1">Keine Werbung in Listen, in Profilen oder zwischen Aufgaben.</string>
+    <string name="pf_no_ads_detail2">Mit Premium unterstützt du außerdem die Entwicklung von Family Tree.</string>
+
+    <string name="pf_themes_title">20 Farbdesigns</string>
+    <string name="pf_themes_summary">Gestalte die App nach deinem Geschmack, hell oder dunkel.</string>
+    <string name="pf_themes_free">Klassisches Design</string>
+    <string name="pf_themes_premium">20 Designs</string>
+    <string name="pf_themes_detail1">Wähle aus 20 Farbdesigns, von tiefem Indigo bis zu warmem Bernstein.</string>
+    <string name="pf_themes_detail2">Jedes Design funktioniert im hellen und im dunklen Modus.</string>
+</resources>

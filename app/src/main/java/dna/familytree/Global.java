@@ -1,18 +1,13 @@
 package dna.familytree;
 
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.multidex.MultiDexApplication;
 
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.material.color.DynamicColors;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 
@@ -23,10 +18,14 @@ import org.folg.gedcom.model.Media;
 import java.io.File;
 import java.util.Locale;
 
+import dna.familytree.feature.ads.AdsManager;
+import dna.familytree.feature.ads.UsageStats;
+import dna.familytree.feature.backup.BackupManager;
+import dna.familytree.feature.reminders.ReminderScheduler;
 import dna.familytree.util.LoggerUtils;
 import dna.familytree.util.MemoryUtil;
 
-public class Global extends MultiDexApplication {
+public class Global extends Application {
 
     private static final String TAG = Global.class.getSimpleName();
     public static boolean forceRestartSettings;
@@ -69,18 +68,17 @@ public class Global extends MultiDexApplication {
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         memoryUtil = MemoryUtil.getInstance(this);
 
-        //apply dynamic theme colors
-        DynamicColors.applyToActivitiesIfAvailable(this);
-
-        //Call the function to initialize AdMob SDK
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-            }
-        });
+        // Dynamic (wallpaper) colours are intentionally NOT applied: the brand palette in
+        // :core:designsystem (Theme.FamilyTree) must stay consistent across devices.
 
         applyDarkMode();
         start(context);
+        UsageStats.init(this); // Sessions and engagement, for ads and the Premium invitation
+        AdsManager.init(this); // Mobile Ads SDK, only for free users
+        BackupManager.init(context); // Local backup: settings migration and background flush
+        Notifier.migrateLegacyAlarms(context); // Birthdays: from one alarm each to the reminders alarm
+        ReminderScheduler.reschedule(context); // Also after a change of Premium status
+        ReminderScheduler.repairBirthdays(context);
     }
 
     public FirebaseAnalytics getFirebaseInstance() {
@@ -100,6 +98,7 @@ public class Global extends MultiDexApplication {
         try {
             String jsonString = FileUtils.readFileToString(settingsFile, "UTF-8");
             jsonString = updateSettings(jsonString);
+            jsonString = addDiagramNumbers(jsonString);
             Gson gson = new Gson();
             settings = gson.fromJson(jsonString, Settings.class);
         } catch (Exception e) {
@@ -128,8 +127,15 @@ public class Global extends MultiDexApplication {
                 }
             }
             // Some tree has been restored
-            if (!settings.trees.isEmpty())
+            if (!settings.trees.isEmpty()) {
                 settings.referrer = null;
+                settings.legacyUser = true; // Used the app before: keeps what was free
+            }
+            settings.save();
+        } else if (settings.installedAt == 0) {
+            // Settings saved by a version before 1.6: features free until then stay free
+            settings.installedAt = System.currentTimeMillis();
+            settings.legacyUser = true;
             settings.save();
         }
         // Diagram settings were (probably) introduced in version 0.7.4
@@ -164,6 +170,20 @@ public class Global extends MultiDexApplication {
                 .replace("\"radiceCondivisione\":", "\"shareRoot\":")
                 .replace("\"grado\":", "\"grade\":")
                 .replace("\"data\":", "\"dateId\":");
+    }
+
+    /**
+     * Diagram settings saved before version 1.6 have no "numbers": the little number cards were always shown,
+     * so they stay on. Done on the JSON because a missing boolean would otherwise become false.
+     */
+    private static String addDiagramNumbers(String json) {
+        if (json.contains("\"diagram\":{") && !json.contains("\"numbers\":")) {
+            if (json.contains("\"diagram\":{}"))
+                json = json.replace("\"diagram\":{}", "\"diagram\":{\"numbers\":true}");
+            else
+                json = json.replace("\"diagram\":{", "\"diagram\":{\"numbers\":true,");
+        }
+        return json;
     }
 
     @Override

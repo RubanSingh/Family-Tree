@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">Serep lokal</string>
+    <string name="choose_folder">Pilih folder</string>
+    <string name="backup_folder">Folder serep</string>
+    <string name="recover">Pulihake</string>
+    <string name="export_png">Ekspor PNG</string>
+    <string name="png_exported_ok">PNG wis diekspor.</string>
+    <string name="tree_settings">Setelan silsilah</string>
+    <string name="max_life_span">Umur maksimal</string>
+    <string name="years">Taun</string>
+    <string name="current_date">Tanggal saiki</string>
+    <string name="device_date">Tanggal piranti</string>
+    <string name="fixed_date">Tanggal tetep</string>
+    <string name="notification_time">Wektu kabar ulang taun</string>
+    <string name="origin_family">Kulawarga asal</string>
+    <string name="adoptive_family">Kulawarga angkat</string>
+    <string name="foster_family">Kulawarga asuh</string>
+    <string name="paternal_family">Kulawarga saka bapak</string>
+    <string name="maternal_family">Kulawarga saka ibu</string>
+    <string name="own_family">Kulawarga dhewe</string>
+    <string name="numbers">Angka</string>
+    <string name="invalid_date">Tanggal GEDCOM ora valid.</string>
+    <string name="husband_age">Umure bojo lanang</string>
+    <string name="search_duplicates">Golek duplikat</string>
+    <string name="skip">Liwati</string>
+    <string name="error_found">Ditemokake siji kasalahan.</string>
+    <string name="yes_to_all">Ya kanggo kabeh sing isih ana</string>
+    <string name="no_to_all">Ora kanggo kabeh sing isih ana</string>
+    <string name="wife_age">Umure bojo wadon</string>
+    <string name="less_than">Kurang saka</string>
+    <string name="more_than">Luwih saka</string>
+    <string name="duplicates_lines">Garis duplikat</string>
+    <string name="make_shared_media">Dadekake media bebarengan</string>
+    <string name="make_media">Dadekake media prasaja</string>
+    <string name="copy_app_storage">Salin menyang panyimpenan aplikasi</string>
+    <string name="shrink_path">Cekakake jalur berkas</string>
+    <string name="file_exists_reuse">Berkas iki wis ana.\nApa panjenengan arep nganggo maneh utawa gawe salinan?</string>
+    <string name="use_existing">Enggo sing wis ana</string>
+    <string name="make_copy">Gawe salinan</string>
+    <string name="existing_name">Jeneng wis ana</string>
+    <string name="invalid_name">Jeneng ora valid</string>
+    <string name="info">Info</string>
+</resources>

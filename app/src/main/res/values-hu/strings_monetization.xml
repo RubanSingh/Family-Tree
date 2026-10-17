@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Hirdetések eltávolítása</string>
+    <string name="ads_remove_hint">A Premiummal hirdetések nélkül használhatja a Family Tree alkalmazást.</string>
+    <string name="privacy_options">Hirdetési adatvédelmi beállítások</string>
+    <string name="privacy_options_desc">Tekintse át vagy módosítsa, hogyan használják a hirdetések az adatait</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Ez egy Premium-funkció.</string>
+    <string name="reward_watch_title">Rövid videó megtekintése</string>
+    <string name="reward_watch_desc">Egyszer ingyen használhatja, közvetlenül a videó után.</string>
+    <string name="reward_loading">Videó betöltése…</string>
+    <string name="reward_unavailable">Jelenleg nem érhető el videó. Próbálja újra később, vagy váltson Premiumra.</string>
+    <string name="reward_not_earned">A feloldáshoz nézze meg a videót a végéig.</string>
+    <string name="reward_premium_desc">Korlátlan használat, hirdetések nélkül, az összes Premium-funkcióval.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Családja története megérdemli a Premiumot</string>
+    <string name="upsell_subtitle">Őrizze biztonságban mindazt, amit eddig felépített, és élvezze az összes Premium-funkciót.</string>
+    <string name="upsell_subtitle_new">Védje meg kutatómunkáját, és használja a Family Tree alkalmazást hirdetések nélkül.</string>
+    <string name="upsell_stat_people">Személyek</string>
+    <string name="upsell_stat_trees">Fák</string>
+    <string name="upsell_stat_generations">Generációk</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">és még %d Premium-funkció</item>
+        <item quantity="other">és még %d Premium-funkció</item>
+    </plurals>
+    <string name="upsell_price_monthly">Csomagok már havi %1$s áron</string>
+    <string name="upsell_price_lifetime">vagy fizessen egyszer %1$s összeget, és használja örökre</string>
+    <string name="upsell_price_lifetime_only">Élethosszig tartó hozzáférés %1$s áron, egyszeri fizetéssel</string>
+    <string name="upsell_cta">Premium csomagok megtekintése</string>
+    <string name="upsell_later">Most nem</string>
+    <string name="upsell_trust">Bármikor lemondható · Biztonságos fizetés a Google Playen keresztül</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Minden, ami ahhoz kell, hogy megóvja, ünnepelje és megossza családja történetét.</string>
+    <string name="paywall_highlight_no_ads">Hirdetések nélkül</string>
+    <string name="paywall_highlight_backup">Automatikus mentés</string>
+    <string name="paywall_highlight_reminders">Korlátlan emlékeztetők</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d napos ingyenes próbaidőszak</item>
+        <item quantity="other">%d napos ingyenes próbaidőszak</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d hónapos ingyenes próbaidőszak</item>
+        <item quantity="other">%d hónapos ingyenes próbaidőszak</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">%d hónap alatt megtérül</item>
+        <item quantity="other">%d hónap alatt megtérül</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s havonta · bármikor lemondható</string>
+    <string name="paywall_summary_trial">%1$s, majd havonta %2$s</string>
+    <string name="paywall_summary_lifetime">%1$s egyszer · örökre az Öné</string>
+    <string name="paywall_loading_prices">Árak betöltése…</string>
+    <string name="paywall_compare_title">Ingyenes vagy Premium</string>
+    <string name="paywall_compare_free">Ingyenes</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Benne van</string>
+    <string name="paywall_details_show">Így működik</string>
+    <string name="paywall_details_hide">Részletek elrejtése</string>
+    <string name="paywall_free_label">Ingyenes: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Csak a Premiumban</string>
+    <string name="paywall_trust_title">Vásároljon nyugodtan</string>
+    <string name="paywall_trust_secure">Biztonságos fizetés a Google Playen keresztül</string>
+    <string name="paywall_trust_cancel">A havi csomag bármikor lemondható</string>
+    <string name="paywall_trust_devices">Visszaállítás az összes eszközén</string>
+    <string name="paywall_trust_private">Családi adatai az eszközén maradnak</string>
+    <string name="paywall_faq_title">Kérdések és válaszok</string>
+    <string name="paywall_faq_plans_q">Mi a különbség a havi és az élethosszig tartó csomag között?</string>
+    <string name="paywall_faq_plans_a">Mindkettő a Premium összes funkcióját feloldja. A havi csomag minden hónapban megújul, és bármikor lemondhatja. Az élethosszig tartó csomagot csak egyszer kell kifizetni, és soha nem jár le.</string>
+    <string name="paywall_faq_cancel_q">Mi lesz a fáimmal, ha már nem használom a Premiumot?</string>
+    <string name="paywall_faq_cancel_a">Semmi sem vész el. A fák, fényképek, emlékeztetők és biztonsági mentések pontosan úgy maradnak, ahogy vannak: csak a Premium-funkciók szűnnek meg, és a hirdetések visszatérnek.</string>
+    <string name="paywall_faq_device_q">Telefont cseréltem. Újra fizetnem kell?</string>
+    <string name="paywall_faq_device_a">Nem. Telepítse a Family Tree alkalmazást ugyanazzal a Google-fiókkal, és érintse meg a Vásárlások visszaállítása gombot.</string>
+    <string name="paywall_faq_privacy_q">Elküldik valahová a családi adataimat?</string>
+    <string name="paywall_faq_privacy_a">Nem. A fák az eszközén és az Ön által választott biztonsági mentési mappában maradnak. A Premium megvásárlása semmit sem tölt fel.</string>
+    <string name="paywall_faq_manage_q">Hogyan mondhatom le a havi csomagot?</string>
+    <string name="paywall_faq_manage_a">A Play Áruházban nyissa meg a Fizetések és előfizetések › Előfizetések menüpontot, válassza a Family Tree alkalmazást, és érintse meg a Lemondás gombot. A Premium a már kifizetett időszak végéig aktív marad.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Minden biztonságban</string>
+    <string name="pf_group_safe_desc">Évek kutatómunkája, automatikusan védve.</string>
+    <string name="pf_group_moments">Egyetlen pillanatról se maradjon le</string>
+    <string name="pf_group_moments_desc">Családja fontos dátumai és helyei, mindig kéznél.</string>
+    <string name="pf_group_share">Alkosson és osszon meg</string>
+    <string name="pf_group_share_desc">Gyönyörű exportok és hatékony eszközök a komoly kutatáshoz.</string>
+    <string name="pf_group_yours">Tegye a sajátjává</string>
+    <string name="pf_group_yours_desc">Nyugodt, személyes tér családja történetéhez.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Automatikus biztonsági mentés</string>
+    <string name="pf_backup_summary">Minden módosítás magától az Ön által választott mappába kerül.</string>
+    <string name="pf_backup_free">Kézi mentés</string>
+    <string name="pf_backup_premium">Automatikus</string>
+    <string name="pf_backup_detail1">Minden szerkesztés után egy perccel a fa ZIP biztonsági mentésként a mappájába kerül: a telefon tárhelyére, SD-kártyára vagy egy felhőalapú mappába, például a Google Drive-ba.</string>
+    <string name="pf_backup_detail2">Minden fáról a 3 legújabb másolat marad meg, így mindig visszatérhet egy korábbi állapothoz.</string>
+    <string name="pf_backup_detail3">A biztonsági mentés visszaállítása ingyenes és mindig elérhető, Premium nélkül is.</string>
+
+    <string name="pf_media_title">Médiarendező</string>
+    <string name="pf_media_summary">Egy fa összes fényképét és dokumentumát egy lépésben átmásolhatja az alkalmazásba.</string>
+    <string name="pf_media_free">Egyszerre egy fájl</string>
+    <string name="pf_media_premium">Minden fájl egyszerre</string>
+    <string name="pf_media_detail1">Egy fa összes médiafájlját átviheti az alkalmazástárhelyre, folyamatjelzővel és megszakítási lehetőséggel, így a hivatkozások akkor sem szakadnak meg, ha a fájlok máshová kerülnek.</string>
+    <string name="pf_media_detail2">Az eredeti fájlok érintetlenek maradnak: az alkalmazás minden fájlt átmásol és ellenőriz, mielőtt frissítené a hivatkozásait.</string>
+
+    <string name="pf_reminders_title">Okos családi emlékeztetők</string>
+    <string name="pf_reminders_summary">Házassági évfordulók, emléknapok és korlátlan személyes emlékeztetők.</string>
+    <string name="pf_reminders_free">Születésnapok + 2 emlékeztető</string>
+    <string name="pf_reminders_premium">Korlátlan</string>
+    <string name="pf_reminders_detail1">Értesítést kaphat a párok házassági évfordulóiról, és ha szeretné, az emléknapokról is.</string>
+    <string name="pf_reminders_detail2">Annyi emlékeztetőt hozhat létre, amennyit csak szeretne: babaváró, diplomaosztó, családi összejövetel, látogatás…</string>
+    <string name="pf_reminders_detail3">A korai értesítések időben szólnak, így marad ideje telefonálni, írni vagy ajándékot választani.</string>
+
+    <string name="pf_places_title">Családi helyek</string>
+    <string name="pf_places_summary">Családtörténete minden helyszíne kereshetően, egyetlen koppintásra a térképtől.</string>
+    <string name="pf_places_free">Az első 3 hely</string>
+    <string name="pf_places_premium">Minden hely</string>
+    <string name="pf_places_detail1">A fa összes eseményhelyszíne és címe országok szerint csoportosítva, kereséssel.</string>
+    <string name="pf_places_detail2">Nézze meg, mi történt az egyes helyeken, és nyissa meg őket a térképalkalmazásban, útvonaltervvel.</string>
+
+    <string name="pf_exports_title">Nyomtatásra kész exportok</string>
+    <string name="pf_exports_summary">Alakítsa diagramját HD képpé vagy PDF fájllá nyomtatáshoz és megosztáshoz.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Videónként egyszer</string>
+    <string name="pf_exports_premium">PDF + HD kép</string>
+    <string name="pf_exports_detail1">Exportálja a diagramot nagy felbontású PNG képként, amely tökéletes csevegésekhez és közösségi oldalakhoz.</string>
+    <string name="pf_exports_detail2">Készítsen PDF fájlt a teljes diagramból, amelyet poszterként kinyomtathat a családi összejövetelekre.</string>
+    <string name="pf_exports_detail3">Nyomtatási stílus fehér háttérrel és éles vonalakkal, a fa méretéhez igazítva.</string>
+    <string name="pf_exports_detail4">Premium nélkül is exportálhat egyszer egy rövid videó megtekintése után.</string>
+
+    <string name="pf_merge_title">Fák egyesítése</string>
+    <string name="pf_merge_summary">Két fa egyesítése egyetlen fába, a duplikátumok automatikus felismerésével.</string>
+    <string name="pf_merge_detail1">Az alkalmazás megkeresi ugyanazokat a személyeket mindkét fában, Ön pedig egyenként vagy egyszerre hagyhatja jóvá az egyezéseket.</string>
+    <string name="pf_merge_detail2">Tökéletes, ha rokonai elküldik a saját fájukat.</string>
+
+    <string name="pf_advanced_title">Speciális eszközök</string>
+    <string name="pf_advanced_summary">Források, adattárak, GEDCOM-exportálás és a teljes genealógiai eszköztár.</string>
+    <string name="pf_advanced_detail1">Hivatkozzon forrásokra és adattárakra, és kezelje a beküldőket, akár egy profi genealógus.</string>
+    <string name="pf_advanced_detail2">Exportálja fáját GEDCOM formátumban, médiával vagy anélkül, bármely családfaprogramhoz, és készítsen teljes ZIP biztonsági mentéseket.</string>
+    <string name="pf_advanced_detail3">Hasonlítsa össze a megosztott fákat, és rendezze a médiafájlok elérési útjait.</string>
+
+    <string name="pf_no_ads_title">Hirdetések nélkül</string>
+    <string name="pf_no_ads_summary">Nyugodt, zavartalan tér családja történetéhez.</string>
+    <string name="pf_no_ads_free">Hirdetésekkel</string>
+    <string name="pf_no_ads_premium">Hirdetések nélkül</string>
+    <string name="pf_no_ads_detail1">Nincsenek hirdetések a listákban, a profilokban és a feladatok között.</string>
+    <string name="pf_no_ads_detail2">A Premium a Family Tree fejlesztését is támogatja.</string>
+
+    <string name="pf_themes_title">20 színtéma</string>
+    <string name="pf_themes_summary">Tegye sajátjává az alkalmazást, világos vagy sötét módban.</string>
+    <string name="pf_themes_free">Klasszikus téma</string>
+    <string name="pf_themes_premium">20 téma</string>
+    <string name="pf_themes_detail1">Válasszon 20 színtéma közül, a mély indigótól a meleg borostyánig.</string>
+    <string name="pf_themes_detail2">Minden téma világos és sötét módban is működik.</string>
+</resources>

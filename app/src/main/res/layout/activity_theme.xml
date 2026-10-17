@@ -6,9 +6,9 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        style="@style/Widget.FamilyTree.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="?attr/colorSecondaryContainer" />
+        android:layout_height="?actionBarSize" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_themes"

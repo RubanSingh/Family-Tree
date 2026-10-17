@@ -63,16 +63,12 @@ public class ThemeAdapter extends RecyclerView.Adapter<ThemeAdapter.ViewHolder> 
                     ? ColorStateList.valueOf(holder.themeLayout.getContext().getResources().getColor(R.color.ghost_white))
                     : ColorStateList.valueOf(holder.themeLayout.getContext().getResources().getColor(R.color.ghost_black)));
         }
-//
-//        if (AppConfig.getInstance().isPremiumThemeEnabled()) {
-//            holder.premiumTheme.setVisibility(View.INVISIBLE);
-//        } else {
-//            if (premiumThemeArray[position]) {
-//                holder.premiumTheme.setVisibility(View.VISIBLE);
-//            } else {
-//                holder.premiumTheme.setVisibility(View.INVISIBLE);
-//            }
-//        }
+
+        boolean locked = premiumThemeArray[position] && !dna.familytree.feature.billing.PremiumGate.isPremium();
+        holder.premiumTheme.setVisibility(locked ? View.VISIBLE : View.INVISIBLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            holder.premiumTheme.setImageTintList(ColorStateList.valueOf(secondaryArray[position]));
+        }
 
         if (position == selectedIndex) {
             holder.tickIcon.setVisibility(View.VISIBLE);

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Components for the family tree surfaces: diagram canvas, drawer, person cards, tree settings. -->
+<resources>
+
+    <!-- ===== Type ===== -->
+    <style name="TextAppearance.FamilyTree.Overline" parent="TextAppearance.FamilyTree.LabelSmall">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+    <style name="TextAppearance.FamilyTree.HeroTitle" parent="TextAppearance.FamilyTree.HeadlineSmall">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- ===== Diagram canvas ===== -->
+    <!-- Round frosted button floating over the tree (menu, options) -->
+    <style name="Widget.FamilyTree.CanvasButton" parent="">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">@dimen/ds_space_ms</item>
+        <item name="android:background">@drawable/ds_bg_canvas_button</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:scaleType">center</item>
+        <item name="tint">@color/ds_on_canvas_glass</item>
+    </style>
+
+    <!-- Inverse-surface hint bubble (M3 plain tooltip) -->
+    <style name="Widget.FamilyTree.Tooltip" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">@drawable/ds_bg_tooltip</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.BodyMedium</item>
+        <item name="android:textColor">?attr/colorOnSurfaceInverse</item>
+        <item name="android:paddingStart">@dimen/ds_space_md</item>
+        <item name="android:paddingEnd">@dimen/ds_space_md</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:maxWidth">280dp</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <style name="Widget.FamilyTree.Tooltip.Canvas">
+        <item name="android:background">@drawable/ds_bg_tooltip_canvas</item>
+        <item name="android:textColor">@color/ds_on_canvas_glass</item>
+    </style>
+
+    <!-- Silhouette shown behind a person's photo; visible when the person has no picture -->
+    <style name="Widget.FamilyTree.AvatarPlaceholder" parent="">
+        <item name="android:background">@drawable/ds_bg_avatar_placeholder</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="srcCompat">@drawable/ds_ic_person</item>
+        <item name="tint">?attr/colorOnSecondaryContainer</item>
+        <item name="android:contentDescription">@null</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <!-- Mourning ribbon badge on person cards -->
+    <style name="Widget.FamilyTree.MourningBadge" parent="">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">@drawable/ds_bg_mourning_badge</item>
+        <item name="srcCompat">@drawable/ds_ic_ribbon</item>
+        <item name="tint">@color/ds_on_tree_mourning</item>
+        <item name="android:contentDescription">@null</item>
+    </style>
+
+    <!-- ===== Premium ===== -->
+    <!-- Gold "◆ Premium" pill shown on features that need Premium (hidden once the user has it) -->
+    <style name="Widget.FamilyTree.PremiumBadge" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">@drawable/ds_bg_premium_badge</item>
+        <item name="android:drawableStart">@drawable/ds_ic_diamond_small</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:text">@string/ds_label_premium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.LabelSmall</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textColor">?attr/colorOnTertiaryContainer</item>
+    </style>
+
+    <!-- ===== Drawer ===== -->
+    <style name="Widget.FamilyTree.NavigationDrawer" parent="Widget.Material3.NavigationView">
+        <item name="android:background">?attr/colorSurfaceContainerLow</item>
+        <item name="itemTextAppearance">@style/TextAppearance.FamilyTree.LabelLarge</item>
+        <item name="itemTextColor">@color/ds_drawer_item_text</item>
+        <item name="itemIconTint">@color/ds_drawer_item_icon</item>
+        <item name="itemIconSize">22dp</item>
+        <item name="itemShapeFillColor">@color/ds_drawer_item_fill</item>
+        <item name="itemVerticalPadding">0dp</item>
+        <item name="drawerLayoutCornerSize">@dimen/ds_radius_lg</item>
+    </style>
+    <style name="Widget.FamilyTree.CountBadge" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">@drawable/ds_bg_count_badge</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.LabelMedium</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:minWidth">28dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/ds_space_sm</item>
+        <item name="android:paddingEnd">@dimen/ds_space_sm</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+    </style>
+    <style name="Widget.FamilyTree.GlassChip" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">@drawable/ds_bg_glass_pill</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.LabelLarge</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingStart">@dimen/ds_space_ms</item>
+        <item name="android:paddingEnd">@dimen/ds_space_md</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- ===== Settings / forms ===== -->
+    <style name="Widget.FamilyTree.SeekBar" parent="Widget.AppCompat.SeekBar.Discrete">
+        <item name="android:progressDrawable">@drawable/ds_seekbar_track</item>
+        <item name="android:thumb">@drawable/ds_seekbar_thumb</item>
+        <item name="tickMark">@drawable/ds_seekbar_tick</item>
+        <item name="android:tickMark">@drawable/ds_seekbar_tick</item>
+        <item name="android:splitTrack">false</item>
+        <item name="android:minHeight">8dp</item>
+        <item name="android:maxHeight">8dp</item>
+        <item name="android:paddingStart">@dimen/ds_space_ms</item>
+        <item name="android:paddingEnd">@dimen/ds_space_ms</item>
+        <item name="android:paddingTop">@dimen/ds_space_ms</item>
+        <item name="android:paddingBottom">@dimen/ds_space_ms</item>
+        <item name="android:background">@null</item>
+    </style>
+    <!-- Floating value bubble shown while dragging a slider -->
+    <style name="Widget.FamilyTree.ValueBubble" parent="Widget.MaterialComponents.TextView">
+        <item name="android:background">@drawable/ds_bg_value_chip</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.LabelLarge</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:minWidth">32dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <!-- Large choice button: leading icon, start-aligned label (new tree options, info actions) -->
+    <style name="Widget.FamilyTree.Button.Option" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.TitleSmall</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="iconPadding">@dimen/ds_space_md</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconGravity">start</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.FamilyTree.Option</item>
+    </style>
+    <style name="Widget.FamilyTree.Button.Option.Primary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.TitleSmall</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="iconPadding">@dimen/ds_space_md</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconGravity">start</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.FamilyTree.Option</item>
+    </style>
+    <style name="Widget.FamilyTree.Button.Option.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">64dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.TitleSmall</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="iconPadding">@dimen/ds_space_md</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconGravity">start</item>
+        <item name="strokeColor">?attr/colorOutlineVariant</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.FamilyTree.Option</item>
+    </style>
+    <style name="ShapeAppearance.FamilyTree.Option" parent="ShapeAppearance.Material3.Corner.Large">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
+    <!-- ===== Profile ===== -->
+    <style name="Widget.FamilyTree.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="tabIndicator">@drawable/ds_bg_tab_indicator</item>
+        <item name="tabIndicatorColor">?attr/colorPrimary</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabIndicatorAnimationMode">elastic</item>
+        <item name="tabSelectedTextColor">?attr/colorPrimary</item>
+        <item name="tabTextColor">?attr/colorOnSurfaceVariant</item>
+        <item name="tabTextAppearance">@style/TextAppearance.FamilyTree.TitleSmall</item>
+        <item name="tabRippleColor">?attr/colorControlHighlight</item>
+    </style>
+    <style name="ShapeAppearance.FamilyTree.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">ሪክላም ኣወግድ</string>
+    <string name="ads_remove_hint">ብ Premium፡ Family Tree ብዘይ ሪክላም ተሓጎሰሉ።</string>
+    <string name="privacy_options">ምርጫታት ብሕትውና ሪክላም</string>
+    <string name="privacy_options_desc">ሪክላም ብዳታኻ ብኸመይ ከም ዝጥቀም ርአ ወይ ቀይር</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">እዚ ባህሪ Premium እዩ።</string>
+    <string name="reward_watch_title">ሓፂር ቪድዮ ርአ</string>
+    <string name="reward_watch_desc">ቪድዮ ምስ ተወድአ፡ ሓንሳእ ብናፃ ተጠቐመሉ።</string>
+    <string name="reward_loading">ቪድዮ ይፅዓን ኣሎ…</string>
+    <string name="reward_unavailable">ሕጂ ዝርከብ ቪድዮ የለን። ደሓር እንደገና ፈትን ወይ ናብ Premium ሕለፍ።</string>
+    <string name="reward_not_earned">ንምኽፋቱ፡ ነቲ ቪድዮ ክሳብ መወዳእታ ርአዮ።</string>
+    <string name="reward_premium_desc">ዘይተገደበ ኣጠቓቕማ፡ ብዘይ ሪክላም፡ ኩሉ ባህርያት Premium።</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">ታሪኽ ስድራቤትካ Premium ይግብኦ</string>
+    <string name="upsell_subtitle">ዝሃነፅካዮ ኩሉ ብውሕስና ሓልዎ፡ ብኹሉ ባህርያት Premium ድማ ተሓጎስ።</string>
+    <string name="upsell_subtitle_new">ምርምርካ ሓልዎ፡ Family Tree ድማ ብዘይ ሪክላም ተሓጎሰሉ።</string>
+    <string name="upsell_stat_people">ሰባት</string>
+    <string name="upsell_stat_trees">ኦማት</string>
+    <string name="upsell_stat_generations">ወለዶታት</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">ከምኡ\'ውን %d ተወሳኺ ባህሪ Premium</item>
+        <item quantity="other">ከምኡ\'ውን %d ተወሳኺ ባህርያት Premium</item>
+    </plurals>
+    <string name="upsell_price_monthly">መደባት ካብ %1$s ኣብ ወርሒ ይጅምሩ</string>
+    <string name="upsell_price_lifetime">ወይ ሓንሳእ %1$s ክፈል፡ ንሓዋሩ ሓዝ</string>
+    <string name="upsell_price_lifetime_only">ናይ ንሓዋሩ ኣገልግሎት ብ %1$s፡ ሓንሳእ ጥራይ ዝኽፈል</string>
+    <string name="upsell_cta">መደባት Premium ርአ</string>
+    <string name="upsell_later">ሕጂ ኣይኮነን</string>
+    <string name="upsell_trust">ኣብ ዝኾነ ግዜ ኣቋርፅ · ውሑስ ክፍሊት ብ Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">ታሪኽ ስድራቤትካ ንምሕላው፡ ንምብዓልን ንምክፋልን ዘድልየካ ኩሉ።</string>
+    <string name="paywall_highlight_no_ads">ሪክላም የለን</string>
+    <string name="paywall_highlight_backup">ኣውቶማቲክ ተጠባባቒ ቅዳሕ</string>
+    <string name="paywall_highlight_reminders">ዘይተገደበ መተሓሳሰብታት</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d መዓልቲ ናፃ ፈተነ</item>
+        <item quantity="other">%d መዓልታት ናፃ ፈተነ</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d ወርሒ ናፃ ፈተነ</item>
+        <item quantity="other">%d ኣዋርሕ ናፃ ፈተነ</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">ኣብ %d ወርሒ ዋግኡ ይመልስ</item>
+        <item quantity="other">ኣብ %d ኣዋርሕ ዋግኡ ይመልስ</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s ኣብ ወርሒ · ኣብ ዝኾነ ግዜ ኣቋርፅ</string>
+    <string name="paywall_summary_trial">%1$s፡ ድሕሪኡ %2$s ኣብ ወርሒ</string>
+    <string name="paywall_summary_lifetime">ሓንሳእ %1$s · ንሓዋሩ ናትካ</string>
+    <string name="paywall_loading_prices">ዋጋታት ይፅዓን ኣሎ…</string>
+    <string name="paywall_compare_title">ናፃ ኣንፃር Premium</string>
+    <string name="paywall_compare_free">ናፃ</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">ተኻቲቱ</string>
+    <string name="paywall_details_show">ከመይ ይሰርሕ</string>
+    <string name="paywall_details_hide">ዝርዝራት ሕባእ</string>
+    <string name="paywall_free_label">ናፃ፡ %1$s</string>
+    <string name="paywall_premium_label">Premium፡ %1$s</string>
+    <string name="paywall_premium_only">ኣብ Premium ጥራይ</string>
+    <string name="paywall_trust_title">ብእምነት ዕደግ</string>
+    <string name="paywall_trust_secure">ውሑስ ክፍሊት ብ Google Play</string>
+    <string name="paywall_trust_cancel">ወርሓዊ መደብ ኣብ ዝኾነ ግዜ ኣቋርፅ</string>
+    <string name="paywall_trust_devices">ኣብ ኩሎም መሳርሒታትካ ምለስ</string>
+    <string name="paywall_trust_private">ዳታ ስድራቤትካ ኣብ መሳርሒኻ ይፀንሕ</string>
+    <string name="paywall_faq_title">ሕቶታትን መልስታትን</string>
+    <string name="paywall_faq_plans_q">ኣብ መንጎ ወርሓውን ንሓዋሩን መደብ እንታይ ፍልልይ ኣሎ?</string>
+    <string name="paywall_faq_plans_a">ክልቲኦም ኣብ Premium ዘሎ ኩሉ ይኸፍቱ። ወርሓዊ መደብ ነፍሲ ወከፍ ወርሒ ይሕደስ፡ ኣብ ዝኾነ ግዜ ድማ ከተቋርፆ ትኽእል ኢኻ። ናይ ንሓዋሩ መደብ ሓንሳእ ጥራይ ይኽፈል፡ ግዜኡ ድማ ፈፂሙ ኣይውዳእን።</string>
+    <string name="paywall_faq_cancel_q">Premium እንተ ኣቋሪፀ ኦማተይ እንታይ ይኾኑ?</string>
+    <string name="paywall_faq_cancel_a">ዝጠፍእ ነገር የለን። ኦማትካ፡ ስእልታት፡ መተሓሳሰብታትን ተጠባባቒ ቅዳሓትን ከምዘለዉ ይፀንሑ። ባህርያት Premium ጥራይ ይቋረፁ፡ ሪክላም ድማ ይምለስ።</string>
+    <string name="paywall_faq_device_q">ተሌፎን ቀይረ ኣለኹ። እንደገና ክኸፍል ኣለኒ ዶ?</string>
+    <string name="paywall_faq_device_a">ኣይፋልን። Family Tree ብተመሳሳሊ ሕሳብ Google ፅዓን፡ ድሕሪኡ “ዕድጊታት ምለስ” ጠውቕ።</string>
+    <string name="paywall_faq_privacy_q">ዳታ ስድራቤተይ ናብ ካልእ ቦታ ይለኣኽ ዶ?</string>
+    <string name="paywall_faq_privacy_a">ኣይፋልን። ኦማትካ ኣብ መሳርሒኻን ኣብቲ ዝመረፅካዮ ማህደር ተጠባባቒ ቅዳሕን ይዕቀቡ። Premium ብምዕዳግ ዋላ ሓንቲ ነገር ኣይድይብን።</string>
+    <string name="paywall_faq_manage_q">ወርሓዊ መደብ ብኸመይ የቋርፆ?</string>
+    <string name="paywall_faq_manage_a">ኣብ Play Store፡ Payments &amp; subscriptions › Subscriptions ክፈት፡ Family Tree ምረፅ፡ ድሕሪኡ Cancel ጠውቕ። Premium ክሳዕ መወዳእታ እቲ ዝተኸፍሎ ግዜ ንጡፍ ይፀንሕ።</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">ብውሕስና ሓልዎ</string>
+    <string name="pf_group_safe_desc">ናይ ዓመታት ምርምር፡ ባዕሉ ይሕሎ።</string>
+    <string name="pf_group_moments">ዝኾነ ህሞት ኣይተሕልፍ</string>
+    <string name="pf_group_moments_desc">ዕለታትን ቦታታትን ስድራቤትካ፡ ኩሉ ግዜ ኣብ ኢድካ።</string>
+    <string name="pf_group_share">ፍጠርን ኣካፍልን</string>
+    <string name="pf_group_share_desc">ፅቡቓት ምውፃኣትን ንዕሙቕ ምርምር ዝኸውን ሓያላት መሳርሒታትን።</string>
+    <string name="pf_group_yours">ናትካ ግበሮ</string>
+    <string name="pf_group_yours_desc">ንታሪኽ ስድራቤትካ ህዱእን ውልቃውን ቦታ።</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">ኣውቶማቲክ ተጠባባቒ ቅዳሕ</string>
+    <string name="pf_backup_summary">ነፍሲ ወከፍ ለውጢ ብዘይ ዝኾነ ፃዕሪ ኣብ ዝመረፅካዮ ማህደር ይዕቀብ።</string>
+    <string name="pf_backup_free">ብኢድ ተጠባባቒ ቅዳሕ</string>
+    <string name="pf_backup_premium">ኣውቶማቲክ</string>
+    <string name="pf_backup_detail1">ድሕሪ ነፍሲ ወከፍ ምስትኽኻል ሓንቲ ደቒቕ፡ እቲ ኦም ከም ተጠባባቒ ቅዳሕ ZIP ኣብ ማህደርካ ይዕቀብ፡ ኣብ መኽዘን ተሌፎን፡ SD ካርድ ወይ ከም Google Drive ዝኣመሰለ ማህደር ደመና።</string>
+    <string name="pf_backup_detail2">ናይ ነፍሲ ወከፍ ኦም 3 ሓደስቲ ቅዳሓት ይዕቀቡ፡ ስለዚ ኩሉ ግዜ ናብ ዝሓለፈ ክትምለስ ትኽእል ኢኻ።</string>
+    <string name="pf_backup_detail3">ተጠባባቒ ቅዳሕ ምምላስ ናፃ እዩ፡ ኩሉ ግዜ ድማ ይርከብ፡ ዋላ ብዘይ Premium።</string>
+
+    <string name="pf_media_title">ኣሰናዳኢ ዓቛሪ ዳታ</string>
+    <string name="pf_media_summary">ኩሉ ስእልታትን ሰነዳትን ሓደ ኦም ብሓደ ግዜ ናብ ኣፕ ቕዳሕ።</string>
+    <string name="pf_media_free">ሓደ ፋይል ብሓደ ግዜ</string>
+    <string name="pf_media_premium">ኩሎም ፋይላት ብሓደ ግዜ</string>
+    <string name="pf_media_detail1">ኩሉ ዓቛሪ ዳታ ሓደ ኦም ናብ መኽዘን ኣፕ ኣምፅእ፡ ምዕባለ እናረኣኻን ከተቋርፅ እናኸኣልካን፡ ስለዚ ፋይላት ዋላ እንተ ተንቀሳቐሱ ሊንክታት ኣይበላሸዉን።</string>
+    <string name="pf_media_detail2">መበቆላዊ ፋይላትካ ኣይንከፉን፡ ሊንክታት ነፍሲ ወከፍ ፋይል ዝሕደሱ እቲ ፋይል ተቐዲሑ ምስ ተመርመረ ጥራይ እዩ።</string>
+
+    <string name="pf_reminders_title">ስማርት መተሓሳሰብታት ስድራቤት</string>
+    <string name="pf_reminders_summary">ዝኽሪ መርዓ፡ መዓልትታት ዝኽሪን ዘይተገደበ ውልቃዊ መተሓሳሰብታትን።</string>
+    <string name="pf_reminders_free">መዓልትታት ልደት + 2 መተሓሳሰብታት</string>
+    <string name="pf_reminders_premium">ዘይተገደበ</string>
+    <string name="pf_reminders_detail1">ብዛዕባ ዝኽሪ መርዓ ሰብ ሓዳር፡ እንተ ደሊኻ ድማ ብዛዕባ መዓልትታት ዝኽሪ ምልክታ ተቐበል።</string>
+    <string name="pf_reminders_detail2">ዝደለኻዮ ክንደይ መተሓሳሰብታት ፍጠር፡ በዓል ምቕባል ህፃን፡ ምምራቕ፡ ርክብ ስድራቤት፡ ምብፃሕ…</string>
+    <string name="pf_reminders_detail3">ቅድመ መጠንቀቕታታት ኣቐዲሞም የፍልጡኻ፡ ስለዚ ንምድዋል፡ ንምፅሓፍ ወይ ህያብ ንምድላው ግዜ ይህልወካ።</string>
+
+    <string name="pf_places_title">ቦታታት ስድራቤት</string>
+    <string name="pf_places_summary">ነፍሲ ወከፍ ቦታ ታሪኽ ስድራቤትካ፡ ክድለ ዝኽእልን ብሓደ ምጥዋቕ ኣብ ካርታ ዝኽፈትን።</string>
+    <string name="pf_places_free">ቀዳሞት 3 ቦታታት</string>
+    <string name="pf_places_premium">ኩሎም ቦታታት</string>
+    <string name="pf_places_detail1">ኩሎም ቦታታት ፍፃመታትን ኣድራሻታትን ናይቲ ኦም፡ ብሃገር ተጠርኒፎም፡ ምስ ምድላይ።</string>
+    <string name="pf_places_detail2">ኣብ ነፍሲ ወከፍ ቦታ እንታይ ከም ዝተፈፀመ ርአ፡ ምስ መምርሒ መንገዲ ድማ ኣብ ኣፕ ካርታኻ ክፈቶ።</string>
+
+    <string name="pf_exports_title">ንሕትመት ድሉዋት ምውፃኣት</string>
+    <string name="pf_exports_summary">ስእል ሕንፃፅካ ናብ HD ስእሊ ወይ PDF ቐይሮ፡ ሕተሞን ኣካፍሎን።</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">ንነፍሲ ወከፍ ቪድዮ ሓንሳእ</string>
+    <string name="pf_exports_premium">PDF + HD ስእሊ</string>
+    <string name="pf_exports_detail1">ስእል ሕንፃፅ ከም ልዑል ጥራት ዘለዎ PNG ስእሊ ኣውፅእ፡ ንቻትን ማሕበራዊ መርበባትን ዝበቅዕ።</string>
+    <string name="pf_exports_detail2">PDF ናይ ምሉእ ስእል ሕንፃፅ ፍጠር፡ ንርክባት ስድራቤት ከም ፖስተር ንምሕታም ድሉው።</string>
+    <string name="pf_exports_detail3">ናይ ሕትመት ቅዲ ምስ ፃዕዳ ድሕሪት ባይታን ንፁራት መስመራትን፡ ብመጠን ኦምካ ዝተሰርሐ።</string>
+    <string name="pf_exports_detail4">ብዘይ Premium እውን፡ ሓፂር ቪድዮ ምስ ረኣኻ ሓንሳእ ከተውፅእ ትኽእል ኢኻ።</string>
+
+    <string name="pf_merge_title">ኦማት ምውህሃድ</string>
+    <string name="pf_merge_summary">ክልተ ኦማት ናብ ሓደ ኣጠርንፍ፡ ድግግማት ድማ ንዓኻ ይርከቡ።</string>
+    <string name="pf_merge_detail1">እቲ ኣፕ ኣብ ክልቲኦም ኦማት ሓደ ዓይነት ሰባት ይደሊ፡ ነፍሲ ወከፍ ምስምማዕ ወይ ኩሉ ብሓደ ግዜ ከተረጋግፅ የፍቅደልካ።</string>
+    <string name="pf_merge_detail2">ኣዝማድ ናይ ገዛእ ርእሶም ኦም ክሰዱልካ ከለዉ ፍሉይ ጠቓሚ እዩ።</string>
+
+    <string name="pf_advanced_title">ምዕቡላት መሳርሒታት</string>
+    <string name="pf_advanced_summary">ፍልፍላት፡ ኣባይቲ መዛግብቲ፡ GEDCOM ምውፃእን ምሉእ መሳርሒታት ምርምር ትውልድን።</string>
+    <string name="pf_advanced_detail1">ከም ክኢላታት ተመራመርቲ ትውልዲ፡ ፍልፍላትን ኣባይቲ መዛግብትን ጥቐስ፡ ኣቕረብቲ ድማ ኣመሓድር።</string>
+    <string name="pf_advanced_detail2">ኦምካ ምስ ዓቛሪ ዳታ ወይ ብዘይኡ ከም GEDCOM ንዝኾነ ሶፍትዌር ትውልዲ ኣውፅእ፡ ምሉእ ተጠባባቒ ቅዳሓት ZIP ድማ ስራሕ።</string>
+    <string name="pf_advanced_detail3">ናይ ሓባር ኦማት ኣወዳድር፡ መንገድታት ፋይላት ዓቛሪ ዳታ ድማ ኣሰናድእ።</string>
+
+    <string name="pf_no_ads_title">ሪክላም የለን</string>
+    <string name="pf_no_ads_summary">ንታሪኽ ስድራቤትካ ህዱእን ዘተኮረን ቦታ።</string>
+    <string name="pf_no_ads_free">ምስ ሪክላም</string>
+    <string name="pf_no_ads_premium">ሪክላም የለን</string>
+    <string name="pf_no_ads_detail1">ኣብ ዝርዝራት፡ ኣብ ፕሮፋይላት ወይ ኣብ መንጎ ስራሓት ሪክላም የለን።</string>
+    <string name="pf_no_ads_detail2">Premium ብተወሳኺ ንምዕባለ Family Tree ይድግፍ።</string>
+
+    <string name="pf_themes_title">20 ሕብራዊ ቴማታት</string>
+    <string name="pf_themes_summary">ኣፕ ናትካ ግበሮ፡ ብብሩህ ወይ ብፀልማት ኣገባብ።</string>
+    <string name="pf_themes_free">ክላሲክ ቴማ</string>
+    <string name="pf_themes_premium">20 ቴማታት</string>
+    <string name="pf_themes_detail1">ካብ ዓሚቕ ኢንዲጎ ክሳዕ ውዑይ ኣምበር፡ ካብ 20 ሕብራዊ ቴማታት ምረፅ።</string>
+    <string name="pf_themes_detail2">ነፍሲ ወከፍ ቴማ ብብሩህን ብፀልማትን ኣገባብ ይሰርሕ።</string>
+</resources>

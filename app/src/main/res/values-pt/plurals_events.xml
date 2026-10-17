@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Aniversário de casamento · %d ano</item>
+        <item quantity="many">Aniversário de casamento · %d anos</item>
+        <item quantity="other">Aniversário de casamento · %d anos</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Dia da lembrança · %d ano</item>
+        <item quantity="many">Dia da lembrança · %d anos</item>
+        <item quantity="other">Dia da lembrança · %d anos</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Em %1$d dia · %2$s</item>
+        <item quantity="many">Em %1$d dias · %2$s</item>
+        <item quantity="other">Em %1$d dias · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">em %d dia</item>
+        <item quantity="many">em %d dias</item>
+        <item quantity="other">em %d dias</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Completa %d ano</item>
+        <item quantity="many">Completa %d anos</item>
+        <item quantity="other">Completa %d anos</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d ano de casamento</item>
+        <item quantity="many">%d anos de casamento</item>
+        <item quantity="other">%d anos de casamento</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Há %d ano</item>
+        <item quantity="many">Há %d anos</item>
+        <item quantity="other">Há %d anos</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d ano</item>
+        <item quantity="many">%d anos</item>
+        <item quantity="other">%d anos</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d evento</item>
+        <item quantity="many">%d eventos</item>
+        <item quantity="other">%d eventos</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d pessoa</item>
+        <item quantity="many">%d pessoas</item>
+        <item quantity="other">%d pessoas</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d lugar</item>
+        <item quantity="many">%d lugares</item>
+        <item quantity="other">%d lugares</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d país</item>
+        <item quantity="many">%d países</item>
+        <item quantity="other">%d países</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d pessoa</item>
+        <item quantity="many">%d pessoas</item>
+        <item quantity="other">%d pessoas</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d arquivo está fora do armazenamento do aplicativo. Copiá-lo para o armazenamento do aplicativo, para que fique com sua árvore e seja incluído nos backups? O arquivo original não é alterado.</item>
+        <item quantity="many">%d arquivos estão fora do armazenamento do aplicativo. Copiá-los para o armazenamento do aplicativo, para que fiquem com sua árvore e sejam incluídos nos backups? Os arquivos originais não são alterados.</item>
+        <item quantity="other">%d arquivos estão fora do armazenamento do aplicativo. Copiá-los para o armazenamento do aplicativo, para que fiquem com sua árvore e sejam incluídos nos backups? Os arquivos originais não são alterados.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d arquivo copiado para o armazenamento do aplicativo.</item>
+        <item quantity="many">%d arquivos copiados para o armazenamento do aplicativo.</item>
+        <item quantity="other">%d arquivos copiados para o armazenamento do aplicativo.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d mídia está vinculada com o caminho completo de um arquivo no armazenamento do aplicativo. Encurtá-la apenas para o nome do arquivo? O arquivo fica onde está.</item>
+        <item quantity="many">%d mídias estão vinculadas com o caminho completo de um arquivo no armazenamento do aplicativo. Encurtá-las apenas para o nome do arquivo? Os arquivos ficam onde estão.</item>
+        <item quantity="other">%d mídias estão vinculadas com o caminho completo de um arquivo no armazenamento do aplicativo. Encurtá-las apenas para o nome do arquivo? Os arquivos ficam onde estão.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d caminho de arquivo encurtado.</item>
+        <item quantity="many">%d caminhos de arquivo encurtados.</item>
+        <item quantity="other">%d caminhos de arquivo encurtados.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d registro</item>
+        <item quantity="many">%d registros</item>
+        <item quantity="other">%d registros</item>
+    </plurals>
+</resources>

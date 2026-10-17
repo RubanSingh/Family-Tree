@@ -53,7 +53,7 @@ public class FamiliesFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = inflater.inflate(R.layout.scrollview, container, false);
-        showSmallNativeAd(view);
+        showNativeAdIfReady(view);
 
         layout = view.findViewById(R.id.scrollview_layout);
 

@@ -1,5 +1,6 @@
 package dna.familytree.util;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -1119,5 +1120,44 @@ public abstract class AnalyticsUtil {
         bundle.putString(FirebaseAnalytics.Param.SCREEN_NAME, EVENT_SHARE_ID);
         bundle.putString(FirebaseAnalytics.Param.SCREEN_CLASS, EVENT_SHARE_NAME);
         firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW, bundle);
+    }
+
+    /**
+     * Monetisation funnel (docs/specs): an interstitial shown at a natural break.
+     */
+    public static void logEventInterstitial(Context context, String placement) {
+        Bundle bundle = new Bundle();
+        bundle.putString("placement", placement);
+        FirebaseAnalytics.getInstance(context).logEvent("ad_interstitial", bundle);
+    }
+
+    /**
+     * Premium invitation: "shown", "cta", "more", "later" or "dismiss".
+     */
+    public static void logEventUpsell(Context context, String action) {
+        Bundle bundle = new Bundle();
+        bundle.putString("action", action);
+        FirebaseAnalytics.getInstance(context).logEvent("premium_invitation", bundle);
+    }
+
+    /**
+     * Paywall: "open" (with the reason), "purchase_monthly" / "purchase_lifetime" (button), "purchased_..." (done).
+     */
+    public static void logEventPaywall(Context context, String action, String reason) {
+        Bundle bundle = new Bundle();
+        bundle.putString("action", action);
+        if (reason != null)
+            bundle.putString("reason", reason);
+        FirebaseAnalytics.getInstance(context).logEvent("paywall", bundle);
+    }
+
+    /**
+     * Rewarded video for a one-off Premium action: "offered", "watch", "unavailable", "earned", "not_earned", "premium".
+     */
+    public static void logEventRewarded(Context context, String action, String placement) {
+        Bundle bundle = new Bundle();
+        bundle.putString("action", action);
+        bundle.putString("placement", placement);
+        FirebaseAnalytics.getInstance(context).logEvent("ad_rewarded", bundle);
     }
 }

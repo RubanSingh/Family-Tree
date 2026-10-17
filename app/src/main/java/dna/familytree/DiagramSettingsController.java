@@ -12,7 +12,9 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.text.TextUtilsCompat;
 import androidx.core.view.ViewCompat;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import dna.familytree.util.AnalyticsUtil;
 
@@ -23,6 +25,7 @@ public class DiagramSettingsController extends BaseController {
     private SeekBar siblings;
     private SeekBar cousins;
     private LinearLayout indicator;
+    private final Map<SeekBar, TextView> valueViews = new HashMap<>(); // Value pill next to each slider title
     private AnimatorSet animator;
     private final boolean leftToRight = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_LTR;
 
@@ -98,6 +101,22 @@ public class DiagramSettingsController extends BaseController {
             save();
         });
 
+        // Little cards with the number of hidden ancestors/descendants
+        SwitchCompat numbers = findViewById(R.id.settings_numbers);
+        numbers.setChecked(Global.settings.diagram.numbers);
+        numbers.setOnCheckedChangeListener((button, active) -> {
+            Global.settings.diagram.numbers = active;
+            save();
+        });
+
+        // Lines connecting duplicated persons
+        SwitchCompat duplicates = findViewById(R.id.settings_duplicates);
+        duplicates.setChecked(Global.settings.diagram.duplicates);
+        duplicates.setOnCheckedChangeListener((button, active) -> {
+            Global.settings.diagram.duplicates = active;
+            save();
+        });
+
         // Number of descendants
         SeekBar descendants = findViewById(R.id.settings_descendants);
         descendants.setProgress(decode(Global.settings.diagram.descendants));
@@ -166,6 +185,14 @@ public class DiagramSettingsController extends BaseController {
             }
         });
 
+        valueViews.put(ancestors, findViewById(R.id.settings_ancestors_value));
+        valueViews.put(uncles, findViewById(R.id.settings_great_uncles_value));
+        valueViews.put(descendants, findViewById(R.id.settings_descendants_value));
+        valueViews.put(siblings, findViewById(R.id.settings_siblings_nephews_value));
+        valueViews.put(cousins, findViewById(R.id.settings_uncles_cousins_value));
+        for (SeekBar seekBar : valueViews.keySet())
+            showValue(seekBar);
+
         ObjectAnimator alphaIn = ObjectAnimator.ofFloat(indicator, View.ALPHA, 1);
         alphaIn.setDuration(0);
         ObjectAnimator alphaOut = ObjectAnimator.ofFloat(indicator, View.ALPHA, 1, 0);
@@ -183,17 +210,31 @@ public class DiagramSettingsController extends BaseController {
         AnalyticsUtil.logEventDiagramSettingsActivity(getFirebaseAnalytics());
     }
 
+    private void showValue(SeekBar seekBar) {
+        TextView valueView = valueViews.get(seekBar);
+        if (valueView != null)
+            valueView.setText(String.valueOf(convert(seekBar.getProgress())));
+    }
+
     private void indicator(SeekBar seekBar) {
         int i = seekBar.getProgress();
+        showValue(seekBar);
         ((TextView)indicator.findViewById(R.id.settings_indicator_text)).setText(String.valueOf(convert(i)));
+        // The seek bars sit inside cards: get their position in the coordinates of the indicator's parent
+        int[] barLocation = new int[2];
+        int[] parentLocation = new int[2];
+        seekBar.getLocationInWindow(barLocation);
+        ((View)indicator.getParent()).getLocationInWindow(parentLocation);
+        float barX = barLocation[0] - parentLocation[0];
+        float barY = barLocation[1] - parentLocation[1];
         int width = seekBar.getWidth() - seekBar.getPaddingLeft() - seekBar.getPaddingRight();
         float x;
         if (leftToRight)
-            x = seekBar.getX() + seekBar.getPaddingLeft() + width / 9f * i - indicator.getWidth() / 2f;
+            x = barX + seekBar.getPaddingLeft() + width / 9f * i - indicator.getWidth() / 2f;
         else
-            x = seekBar.getX() + seekBar.getWidth() + seekBar.getPaddingRight() - width / 9f * (i + 1) - indicator.getWidth() / 2f;
+            x = barX + seekBar.getWidth() + seekBar.getPaddingRight() - width / 9f * (i + 1) - indicator.getWidth() / 2f;
         indicator.setX(x);
-        indicator.setY(seekBar.getY() - indicator.getHeight());
+        indicator.setY(barY - indicator.getHeight());
         animator.cancel();
         animator.start();
     }

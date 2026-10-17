@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dna.familytree.constant.Extra;
+import dna.familytree.feature.media.MediaAccess;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.util.FileUtils;
 
@@ -32,6 +34,8 @@ public class MediaFoldersController extends BaseController {
     int treeId;
     List<String> dirs;
     List<String> uris;
+    String reconnectingDir; // Folder being granted again with the folder picker (Android 13+)
+    boolean reconnectAll; // Opened by the reconnect invitation: grants again the folders one after the other
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -44,19 +48,12 @@ public class MediaFoldersController extends BaseController {
         setToolbar();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         findViewById(R.id.fab).setOnClickListener(v -> {
-            final String[] requiredPermissions;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                requiredPermissions = new String[] {
-                        Manifest.permission.READ_MEDIA_IMAGES,
-                        Manifest.permission.READ_MEDIA_VIDEO,
-                        Manifest.permission.READ_MEDIA_AUDIO,
-                };
-            } else {
-                requiredPermissions = new String[] {
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                };
+            // Android 13+: the folder picker itself grants the access, no permission needed
+            if (MediaAccess.needsGrantedFolders()) {
+                chooseFolder();
+                return;
             }
-
+            final String[] requiredPermissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
             final int perm = FileUtils.checkMultiplePermissions(this, requiredPermissions);
             if (perm == PackageManager.PERMISSION_DENIED)
                 ActivityCompat.requestPermissions(this, requiredPermissions, 3517);
@@ -65,6 +62,47 @@ public class MediaFoldersController extends BaseController {
         });
         if (Global.settings.getTree(treeId).dirs.isEmpty() && Global.settings.getTree(treeId).uris.isEmpty())
             new SpeechBubble(this, R.string.add_device_folder).show();
+        if (bundle != null) {
+            reconnectingDir = bundle.getString("reconnectingDir");
+            reconnectAll = bundle.getBoolean("reconnectAll");
+        } else if (getIntent().getBooleanExtra(MediaAccess.EXTRA_RECONNECT, false)) {
+            reconnectAll = true;
+            reconnectNext();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("reconnectingDir", reconnectingDir);
+        outState.putBoolean("reconnectAll", reconnectAll);
+    }
+
+    /**
+     * Opens the folder picker on the next folder that lost access, if any.
+     */
+    void reconnectNext() {
+        for (String dir : MediaAccess.foldersToReconnect(this, Global.settings.getTree(treeId))) {
+            if (!MediaAccess.isRestricted(this, dir)) {
+                reconnect(dir);
+                return;
+            }
+        }
+        reconnectAll = false;
+    }
+
+    /**
+     * Grants again a media folder with the folder picker, opened right on it.
+     */
+    void reconnect(String dir) {
+        reconnectingDir = dir;
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
+        Uri initialUri = MediaAccess.initialUri(this, dir);
+        if (initialUri != null)
+            intent.putExtra(DocumentsContract.EXTRA_INITIAL_URI, initialUri);
+        intent.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        startActivityForResult(intent, 124);
     }
 
     @Override
@@ -90,6 +128,7 @@ public class MediaFoldersController extends BaseController {
     void updateList() {
         LinearLayout layout = findViewById(R.id.cartelle_scatola);
         layout.removeAllViews();
+        List<String> toReconnect = MediaAccess.foldersToReconnect(this, Global.settings.getTree(treeId));
         for (String dir : dirs) {
             View folderView = getLayoutInflater().inflate(R.layout.pezzo_cartella, layout, false);
             layout.addView(folderView);
@@ -113,6 +152,18 @@ public class MediaFoldersController extends BaseController {
                                 save();
                             }).setNeutralButton(R.string.cancel, null).show();
                 });
+            }
+            // Android 13+: the files of this folder are readable only after granting it with the folder picker
+            if (toReconnect.contains(dir)) {
+                TextView statusView = folderView.findViewById(R.id.cartella_stato);
+                statusView.setVisibility(View.VISIBLE);
+                if (MediaAccess.isRestricted(this, dir)) {
+                    statusView.setText(R.string.media_folder_restricted);
+                    statusView.setTextColor(getResources().getColor(R.color.gray_text));
+                } else {
+                    statusView.setText(R.string.media_folder_reconnect);
+                    folderView.setOnClickListener(v -> reconnect(dir));
+                }
             }
             registerForContextMenu(folderView);
         }
@@ -172,13 +223,25 @@ public class MediaFoldersController extends BaseController {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 124) {
+            String dir = reconnectingDir;
+            reconnectingDir = null;
+            boolean granted = resultCode == Activity.RESULT_OK && data != null && data.getData() != null
+                    && grantFolder(data.getData()) && dir != null
+                    && !MediaAccess.foldersToReconnect(this, Global.settings.getTree(treeId)).contains(dir);
+            if (granted && reconnectAll)
+                reconnectNext();
+            else
+                reconnectAll = false; // Canceled, or another folder chosen
+            return;
+        }
         if (resultCode == Activity.RESULT_OK) {
             Uri uri = data.getData();
             if (uri != null) {
@@ -190,7 +253,8 @@ public class MediaFoldersController extends BaseController {
                         save();
                     }
                 } else if (requestCode == 123) {
-                    String path = FileUtils.uriFolderPath(uri);
+                    // Android 13+ keeps the granted folder: its path alone would not be readable
+                    String path = MediaAccess.needsGrantedFolders() ? null : FileUtils.uriFolderPath(uri);
                     if (path != null) {
                         dirs.add(path);
                         save();
@@ -207,6 +271,22 @@ public class MediaFoldersController extends BaseController {
             } else
                 Toast.makeText(this, R.string.something_wrong, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * Keeps the read access to a folder chosen with the folder picker and adds it to the media folders.
+     */
+    boolean grantFolder(Uri uri) {
+        getContentResolver().takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        DocumentFile docDir = DocumentFile.fromTreeUri(this, uri);
+        if (docDir == null || !docDir.canRead()) {
+            Toast.makeText(this, "Could not read this position.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (!uris.contains(uri.toString()))
+            uris.add(uri.toString());
+        save();
+        return true;
     }
 
     View selectedView;

@@ -16,6 +16,25 @@ import dna.familytree.util.LoggerUtils;
  */
 public class GedcomDateConverter {
 
+    /**
+     * Whether a date written by hand follows the GEDCOM grammar (from Family Gem).
+     * Only a hint for the user: an invalid date is still saved as typed.
+     */
+    public static boolean isValidGedcomDate(String gedcomDate) {
+        String date = gedcomDate == null ? "" : gedcomDate.trim().toUpperCase(Locale.US);
+        if (date.isEmpty() || (date.startsWith("(") && date.endsWith(")"))) return true; // Empty or date phrase
+        String day = "\\d{1,2}";
+        String month = "(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)";
+        String year = "\\d{1,4}(/\\d{2})?";
+        String part = "(" + day + " " + month + " " + year + "|" + month + " " + year + "|" + year + "( B\\.C\\.)?)";
+        return date.matches(part)
+                || date.matches("(ABT|CAL|EST|BEF|AFT|FROM|TO) " + part)
+                || date.matches("BET " + part + " AND " + part)
+                || date.matches("FROM " + part + " TO " + part)
+                || date.matches("INT " + part + " \\(.*\\)");
+    }
+
+
     public Data data1;
     Data data2;
     String phrase; // The one that will go in parentheses

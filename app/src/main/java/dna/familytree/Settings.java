@@ -40,11 +40,11 @@ public class Settings {
      * It is not reset by closing the tree, to load last opened tree at startup.
      */
     public int openTree;
-    boolean autoSave;
+    public boolean autoSave;
     /**
      * At startup load last opened tree.
      */
-    boolean loadTree;
+    public boolean loadTree;
 
     /**
      * Used to display or hide all advanced tools.
@@ -52,6 +52,42 @@ public class Settings {
     public boolean expert;
     public boolean shareAgreement;
     public boolean premium;
+    /**
+     * Automatic local backup of the trees into a folder chosen by the user (introduced in version 1.6, works with Premium).
+     * Settings saved before don't have {@link #backupUri}: BackupManager.init() then switches this on, without a folder,
+     * so nothing is backed up until a folder is chosen.
+     */
+    public boolean backup;
+    /** The backup folder chosen with the system picker, or BackupManager.NO_URI. */
+    public String backupUri;
+    /** The user closed the "choose a backup folder" card on the trees screen. */
+    public boolean backupPromptDismissed;
+    /** Time of birthday notifications as "HH:mm" (introduced in version 1.6). Null means midday, as before. */
+    public String notifyTime;
+    /** Wedding anniversaries are not notified. Negative, so that settings saved before keep the default (notified, with Premium). */
+    public boolean anniversaryAlertsOff;
+    /** Remembrance days (anniversaries of death) are notified, with Premium. Off by default. */
+    public boolean remembranceAlerts;
+    /** Last time the reminders were checked, so that none is missed or notified twice. */
+    public long remindersCheckedAt;
+    /** The one alarm per birthday of versions before 1.6 has been cancelled: birthdays are now notified by ReminderScheduler. */
+    public boolean birthdayAlarmsMigrated;
+    /**
+     * Which plan granted Premium: "MONTHLY" or "LIFETIME" (see dna.familytree.billing.PremiumPlan).
+     * Null for legacy buyers until the next reconcile with Google Play.
+     */
+    public String premiumPlan;
+    public String premiumToken;
+    public long premiumSince;
+    /**
+     * First launch of version 1.6 or later. 0 in settings saved by older versions: see {@link #legacyUser}.
+     */
+    public long installedAt;
+    /**
+     * The app was installed before version 1.6, when Premium started to include features that were free until then
+     * (export of the diagram as PDF): they stay free for these users (see PremiumGate.isPremiumOrLegacy()).
+     */
+    public boolean legacyUser;
     Diagram diagram;
 
     /**
@@ -63,6 +99,29 @@ public class Settings {
         trees = new ArrayList<>();
         autoSave = true;
         diagram = new Diagram().init();
+        installedAt = System.currentTimeMillis();
+    }
+
+    /**
+     * Number of persons in all the trees, as counted at the last save of each tree.
+     */
+    public int totalPersons() {
+        int total = 0;
+        if (trees != null)
+            for (Tree tree : trees)
+                total += tree.persons;
+        return total;
+    }
+
+    /**
+     * Highest number of generations among the trees.
+     */
+    public int maxGenerations() {
+        int max = 0;
+        if (trees != null)
+            for (Tree tree : trees)
+                max = Math.max(max, tree.generations);
+        return max;
     }
 
     public int max() {
@@ -152,6 +211,10 @@ public class Settings {
         int siblings;
         int cousins;
         boolean spouses;
+        /** Little cards with the number of hidden ancestors/descendants (always shown before version 1.6). */
+        boolean numbers;
+        /** Lines connecting a person displayed more than once (introduced in version 1.6). */
+        boolean duplicates;
 
         // Default values
         Diagram init() {
@@ -161,6 +224,8 @@ public class Settings {
             siblings = 2;
             cousins = 1;
             spouses = true;
+            numbers = true;
+            duplicates = false;
             return this;
         }
     }
@@ -191,6 +256,14 @@ public class Settings {
          */
         public int grade;
         Set<Birthday> birthdays;
+        /** Included in the local backup (introduced in version 1.6). */
+        public boolean backup;
+        /** Tree-level settings. Null on trees saved before version 1.6, which means the defaults: see {@link #getTreeSettings()}. */
+        public TreeSettings settings;
+        /** Reminders added by the user (introduced in version 1.6). Null if none. */
+        public List<Reminder> reminders;
+        /** Wedding anniversaries and remembrance days found in the tree, refreshed when it's saved. Null if none. */
+        public List<Occasion> occasions;
 
         public Tree(int id, String title, String dir, int persons, int generations, String root, List<Share> shares, int grade) {
             this.id = id;
@@ -205,6 +278,21 @@ public class Settings {
             this.shares = shares;
             this.grade = grade;
             birthdays = new HashSet<>();
+            backup = true;
+        }
+
+        public int getPersons() {
+            return persons;
+        }
+
+        /** Next birthdays of the living people, saved when the tree is saved. May be null. */
+        public Set<Birthday> getBirthdays() {
+            return birthdays;
+        }
+
+        /** Settings of this tree, or the defaults (same behaviour as before tree settings existed). Never null. */
+        public TreeSettings getTreeSettings() {
+            return settings != null ? settings : new TreeSettings();
         }
 
         public void aggiungiCondivisione(Share share) {
@@ -212,6 +300,58 @@ public class Settings {
                 shares = new ArrayList<>();
             shares.add(share);
         }
+    }
+
+    /**
+     * Settings at tree level, saved for each tree and inside its backup ZIP.
+     * Defaults reproduce the behaviour of the app before they existed.
+     */
+    public static class TreeSettings {
+        public static final int DEFAULT_LIFE_SPAN = 120;
+        /** A person without a recorded death is considered living only up to this age. */
+        public int lifeSpan = DEFAULT_LIFE_SPAN;
+        /** True to compute ages at {@link #fixedDate} instead of today. */
+        public boolean customDate;
+        /** ISO date 'yyyy-MM-dd', used when {@link #customDate} is true. */
+        public String fixedDate;
+    }
+
+    /**
+     * An event to remember, added by the user: a baby shower, a reunion, a birthday not in the tree...
+     */
+    public static class Reminder {
+        /** Unique, also among trees. */
+        public long id;
+        /** One of {@code BIRTHDAY, ANNIVERSARY, BABY_SHOWER, WEDDING, GRADUATION, REUNION, MEMORIAL, OTHER}. */
+        public String kind;
+        public String title;
+        /** The person it's about, or null. */
+        public String personId;
+        /** ISO date 'yyyy-MM-dd'. */
+        public String date;
+        /** 'HH:mm', or null for the time of birthday notifications. */
+        public String time;
+        /** Repeats every year on the same day. */
+        public boolean yearly;
+        /** Notified also this number of days before (0 = only on the day). */
+        public int daysBefore;
+        public String note;
+    }
+
+    /**
+     * A yearly event found in the tree: wedding anniversary ('MARR') or remembrance day ('DEAT').
+     */
+    public static class Occasion {
+        public String kind;
+        /** Family or person ID. */
+        public String id;
+        /** The person to open from the notification. */
+        public String personId;
+        public String name;
+        public int month; // 1-12
+        public int day;
+        /** 0 if unknown. */
+        public int year;
     }
 
     // The essential data of a share
@@ -226,7 +366,7 @@ public class Settings {
     }
 
     // Birthday of one person
-    static class Birthday {
+    public static class Birthday {
         String id; // E.g. 'I123'
         String given; // 'John'
         String name; // 'John Doe III'
@@ -239,6 +379,34 @@ public class Settings {
             this.name = name;
             this.date = date;
             this.age = age;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getGiven() {
+            return given;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public long getDate() {
+            return date;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        /**
+         * Read correctly from the settings: in release builds before 1.6 the field names were obfuscated,
+         * so entries saved by an older version may come back empty.
+         */
+        public boolean isValid() {
+            return id != null && name != null && date > 0 && age >= 0;
         }
 
         @Override
@@ -262,6 +430,10 @@ public class Settings {
          * Coming from {@link Tree#grade}.
          */
         int grade;
+        /** Coming from {@link Tree#settings}; null in ZIPs made before version 1.6. */
+        TreeSettings settings;
+        /** Coming from {@link Tree#reminders}. */
+        List<Reminder> reminders;
 
         ZippedTree(String title, int persons, int generations, String root, List<Share> shares, int grade) {
             this.title = title;
@@ -273,7 +445,12 @@ public class Settings {
         }
 
         File save() {
-            File settingsFile = new File(Global.context.getCacheDir(), "settings.json");
+            return save(Global.context.getCacheDir());
+        }
+
+        /** Writes 'settings.json' in the given folder (background backups use their own folder). */
+        File save(File folder) {
+            File settingsFile = new File(folder, "settings.json");
             Gson gson = new Gson();
             String json = gson.toJson(this);
             try {

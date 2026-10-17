@@ -61,7 +61,7 @@ public class ThemeController extends BaseController implements ThemeSelectionInt
 
     @Override
     public boolean onOptionsItemSelected(MenuItem i) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 
@@ -72,6 +72,10 @@ public class ThemeController extends BaseController implements ThemeSelectionInt
 
     @Override
     public void onThemeSelected(int themeColor, boolean darkMode, boolean isPremiumTheme) {
+        if (isPremiumTheme && !dna.familytree.feature.billing.PremiumGate.isPremium()) {
+            dna.familytree.feature.billing.PremiumGate.open(this, R.string.theme);
+            return;
+        }
         changeTheme(darkMode);
         MemoryUtil.getInstance(getApplicationContext()).getSharedPreferences().edit()
                 .putInt(getString(R.string.theme_key), themeColor).apply();

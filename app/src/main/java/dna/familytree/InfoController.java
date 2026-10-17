@@ -331,7 +331,7 @@ public class InfoController extends BaseController {
     // freccia indietro nella toolbar come quella hardware
     @Override
     public boolean onOptionsItemSelected(MenuItem i) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
     }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">ساڵیادی ھاوسەرگیری · %d ساڵ</item>
+        <item quantity="other">ساڵیادی ھاوسەرگیری · %d ساڵ</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">ساڵیادی کۆچی دوایی · %d ساڵ</item>
+        <item quantity="other">ساڵیادی کۆچی دوایی · %d ساڵ</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">دوای %1$d ڕۆژ · %2$s</item>
+        <item quantity="other">دوای %1$d ڕۆژ · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">دوای %d ڕۆژ</item>
+        <item quantity="other">دوای %d ڕۆژ</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">دەبێتە %d ساڵ</item>
+        <item quantity="other">دەبێتە %d ساڵ</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d ساڵ ھاوسەرگیری</item>
+        <item quantity="other">%d ساڵ ھاوسەرگیری</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d ساڵ لەمەوبەر</item>
+        <item quantity="other">%d ساڵ لەمەوبەر</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d ساڵ</item>
+        <item quantity="other">%d ساڵ</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d ڕووداو</item>
+        <item quantity="other">%d ڕووداو</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d کەس</item>
+        <item quantity="other">%d کەس</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d شوێن</item>
+        <item quantity="other">%d شوێن</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d وڵات</item>
+        <item quantity="other">%d وڵات</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d کەس</item>
+        <item quantity="other">%d کەس</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d پەڕگە لە دەرەوەی بیرگەی ئەپە. لەبەری بگیرێتەوە بۆ بیرگەی ئەپ، بۆ ئەوەی لەگەڵ دارەکەت بمێنێتەوە و لە پاشەکەوتەکاندا ھەبێت؟ پەڕگە ڕەسەنەکە ناگۆڕدرێت.</item>
+        <item quantity="other">%d پەڕگە لە دەرەوەی بیرگەی ئەپن. لەبەریان بگیرێتەوە بۆ بیرگەی ئەپ، بۆ ئەوەی لەگەڵ دارەکەت بمێننەوە و لە پاشەکەوتەکاندا ھەبن؟ پەڕگە ڕەسەنەکان ناگۆڕدرێن.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d پەڕگە بۆ بیرگەی ئەپ لەبەرگیرایەوە.</item>
+        <item quantity="other">%d پەڕگە بۆ بیرگەی ئەپ لەبەرگیرانەوە.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d میدیا بە ڕێڕەوی تەواوی پەڕگەیەک لە بیرگەی ئەپدا بەستراوەتەوە. بەستەرەکە تەنھا بۆ ناوی پەڕگە کورت بکرێتەوە؟ پەڕگەکە لە شوێنی خۆی دەمێنێتەوە.</item>
+        <item quantity="other">%d میدیا بە ڕێڕەوی تەواوی پەڕگەیەک لە بیرگەی ئەپدا بەستراونەتەوە. بەستەرەکان تەنھا بۆ ناوی پەڕگە کورت بکرێنەوە؟ پەڕگەکان لە شوێنی خۆیان دەمێننەوە.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d ڕێڕەوی پەڕگە کورت کرایەوە.</item>
+        <item quantity="other">%d ڕێڕەوی پەڕگە کورت کرانەوە.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d تۆمار</item>
+        <item quantity="other">%d تۆمار</item>
+    </plurals>
+</resources>

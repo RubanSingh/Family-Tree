@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">移除广告</string>
+    <string name="ads_remove_hint">升级高级版，畅享无广告的 Family Tree。</string>
+    <string name="privacy_options">广告隐私选项</string>
+    <string name="privacy_options_desc">查看或更改广告如何使用你的数据</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">这是高级版功能。</string>
+    <string name="reward_watch_title">观看一段短视频</string>
+    <string name="reward_watch_desc">看完视频后，即可免费使用一次。</string>
+    <string name="reward_loading">正在加载视频…</string>
+    <string name="reward_unavailable">暂时没有可用的视频。请稍后再试，或升级到高级版。</string>
+    <string name="reward_not_earned">完整看完视频即可解锁。</string>
+    <string name="reward_premium_desc">无限使用、无广告，畅享全部高级版功能。</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">你的家族故事，值得拥有高级版</string>
+    <string name="upsell_subtitle">守护你用心构建的一切，畅享全部高级版功能。</string>
+    <string name="upsell_subtitle_new">守护你的研究成果，畅享无广告的 Family Tree。</string>
+    <string name="upsell_stat_people">人员</string>
+    <string name="upsell_stat_trees">家谱</string>
+    <string name="upsell_stat_generations">世代</string>
+    <plurals name="upsell_more_features">
+        <item quantity="other">以及另外 %d 项高级版功能</item>
+    </plurals>
+    <string name="upsell_price_monthly">方案低至每月 %1$s</string>
+    <string name="upsell_price_lifetime">或一次性支付 %1$s，永久拥有</string>
+    <string name="upsell_price_lifetime_only">终身使用仅需 %1$s，一次付清</string>
+    <string name="upsell_cta">查看高级版方案</string>
+    <string name="upsell_later">以后再说</string>
+    <string name="upsell_trust">可随时取消 · 由 Google Play 提供安全支付</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">守护、纪念和分享家族故事，所需一应俱全。</string>
+    <string name="paywall_highlight_no_ads">无广告</string>
+    <string name="paywall_highlight_backup">自动备份</string>
+    <string name="paywall_highlight_reminders">无限提醒</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="other">%d 天免费试用</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="other">%d 个月免费试用</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="other">%d 个月即可回本</item>
+    </plurals>
+    <string name="paywall_summary_monthly">每月 %1$s · 可随时取消</string>
+    <string name="paywall_summary_trial">%1$s，之后每月 %2$s</string>
+    <string name="paywall_summary_lifetime">一次性 %1$s · 永久拥有</string>
+    <string name="paywall_loading_prices">正在加载价格…</string>
+    <string name="paywall_compare_title">免费版与高级版对比</string>
+    <string name="paywall_compare_free">免费版</string>
+    <string name="paywall_compare_premium">高级版</string>
+    <string name="compare_included">已包含</string>
+    <string name="paywall_details_show">了解详情</string>
+    <string name="paywall_details_hide">收起详情</string>
+    <string name="paywall_free_label">免费版：%1$s</string>
+    <string name="paywall_premium_label">高级版：%1$s</string>
+    <string name="paywall_premium_only">高级版专享</string>
+    <string name="paywall_trust_title">放心购买</string>
+    <string name="paywall_trust_secure">由 Google Play 提供安全支付</string>
+    <string name="paywall_trust_cancel">按月方案可随时取消</string>
+    <string name="paywall_trust_devices">可在你的所有设备上恢复</string>
+    <string name="paywall_trust_private">你的家族数据始终保存在你的设备上</string>
+    <string name="paywall_faq_title">常见问题</string>
+    <string name="paywall_faq_plans_q">按月方案和终身方案有什么区别？</string>
+    <string name="paywall_faq_plans_a">两者都能解锁高级版的全部功能。按月方案每月自动续订，可随时取消。终身方案只需支付一次，永不过期。</string>
+    <string name="paywall_faq_cancel_q">如果我停用高级版，我的家谱会怎样？</string>
+    <string name="paywall_faq_cancel_a">什么都不会丢失。你的家谱、照片、提醒和备份都会原样保留：只是高级版功能停止，广告重新出现。</string>
+    <string name="paywall_faq_device_q">我换了手机，需要重新付费吗？</string>
+    <string name="paywall_faq_device_a">不需要。使用同一个 Google 账号安装 Family Tree，然后点按“恢复购买”。</string>
+    <string name="paywall_faq_privacy_q">我的家族数据会被发送到其他地方吗？</string>
+    <string name="paywall_faq_privacy_a">不会。你的家谱保存在你的设备上以及你选择的备份文件夹中。购买高级版不会上传任何内容。</string>
+    <string name="paywall_faq_manage_q">如何取消按月方案？</string>
+    <string name="paywall_faq_manage_a">在 Play 商店中，打开“付款和订阅 › 订阅”，选择 Family Tree，然后点按“取消订阅”。高级版会一直有效，直到已付费周期结束。</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">安全无忧</string>
+    <string name="pf_group_safe_desc">多年的研究成果，自动妥善保护。</string>
+    <string name="pf_group_moments">不错过每个时刻</string>
+    <string name="pf_group_moments_desc">家人的重要日子和地点，随时触手可及。</string>
+    <string name="pf_group_share">创作与分享</string>
+    <string name="pf_group_share_desc">精美的导出，以及专业研究所需的强大工具。</string>
+    <string name="pf_group_yours">打造专属空间</string>
+    <string name="pf_group_yours_desc">为你的家族故事打造一个宁静、专属的空间。</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">自动备份</string>
+    <string name="pf_backup_summary">每次更改都会自动保存到你选择的文件夹，无需动手。</string>
+    <string name="pf_backup_free">手动备份</string>
+    <string name="pf_backup_premium">自动</string>
+    <string name="pf_backup_detail1">每次编辑约一分钟后，家谱会以 ZIP 备份的形式保存到你的文件夹：手机存储、SD 卡或 Google Drive 等云端文件夹。</string>
+    <string name="pf_backup_detail2">每个家谱都会保留最近的 3 份副本，让你随时可以回到之前的版本。</string>
+    <string name="pf_backup_detail3">恢复备份完全免费且随时可用，即使没有高级版也可以。</string>
+
+    <string name="pf_media_title">媒体整理</string>
+    <string name="pf_media_summary">一次性将家谱中的所有照片和文档复制到应用中。</string>
+    <string name="pf_media_free">每次一个文件</string>
+    <string name="pf_media_premium">一次处理全部文件</string>
+    <string name="pf_media_detail1">将家谱的所有媒体导入应用存储，显示进度并可随时取消，即使文件移动，链接也不会失效。</string>
+    <string name="pf_media_detail2">你的原始文件不受影响：每个文件都会先复制并校验，然后才更新其链接。</string>
+
+    <string name="pf_reminders_title">智能家庭提醒</string>
+    <string name="pf_reminders_summary">结婚纪念日、逝世纪念日以及无限个人提醒。</string>
+    <string name="pf_reminders_free">生日 + 2 个提醒</string>
+    <string name="pf_reminders_premium">无限</string>
+    <string name="pf_reminders_detail1">接收夫妇结婚纪念日的通知，也可以按需接收逝世纪念日的通知。</string>
+    <string name="pf_reminders_detail2">想创建多少提醒都可以：迎婴派对、毕业典礼、家庭聚会、探访…</string>
+    <string name="pf_reminders_detail3">提前提醒让你预先知晓，留出时间打电话、写信或准备礼物。</string>
+
+    <string name="pf_places_title">家族地点</string>
+    <string name="pf_places_summary">家族历史中的每个地点，均可搜索，一点即可在地图中查看。</string>
+    <string name="pf_places_free">前 3 个地点</string>
+    <string name="pf_places_premium">全部地点</string>
+    <string name="pf_places_detail1">家谱中的所有事件地点和地址，按国家分组，并支持搜索。</string>
+    <string name="pf_places_detail2">查看每个地点发生过的事件，并在地图应用中打开，获取路线。</string>
+
+    <string name="pf_exports_title">可直接打印的导出</string>
+    <string name="pf_exports_summary">将你的家谱图转换为高清图片或 PDF，方便打印和分享。</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">每看一次视频可用一次</string>
+    <string name="pf_exports_premium">PDF + 高清图片</string>
+    <string name="pf_exports_detail1">将家谱图导出为高分辨率 PNG 图片，非常适合在聊天和社交网络中分享。</string>
+    <string name="pf_exports_detail2">生成整个家谱图的 PDF，可直接打印成海报，用于家庭聚会。</string>
+    <string name="pf_exports_detail3">打印样式采用白色背景和清晰线条，尺寸随家谱自动调整。</string>
+    <string name="pf_exports_detail4">没有高级版时，看完一段短视频后仍可导出一次。</string>
+
+    <string name="pf_merge_title">合并家谱</string>
+    <string name="pf_merge_summary">将两个家谱合并为一个，并自动为你找出重复项。</string>
+    <string name="pf_merge_detail1">应用会在两个家谱中查找相同的人，你可以逐一确认匹配，也可以一次全部确认。</string>
+    <string name="pf_merge_detail2">当亲戚把他们自己的家谱发给你时，这再合适不过。</string>
+
+    <string name="pf_advanced_title">高级工具</string>
+    <string name="pf_advanced_summary">来源、存储库、GEDCOM 导出以及完整的家谱研究工具集。</string>
+    <string name="pf_advanced_detail1">像专业家谱学家一样引用来源和存储库，并管理提交人。</string>
+    <string name="pf_advanced_detail2">将家谱导出为 GEDCOM（可含或不含媒体），适用于任何家谱软件，还可创建完整的 ZIP 备份。</string>
+    <string name="pf_advanced_detail3">比较共享的家谱，并整理媒体文件的路径。</string>
+
+    <string name="pf_no_ads_title">无广告</string>
+    <string name="pf_no_ads_summary">为你的家族故事打造宁静、专注的空间。</string>
+    <string name="pf_no_ads_free">含广告</string>
+    <string name="pf_no_ads_premium">无广告</string>
+    <string name="pf_no_ads_detail1">列表中、个人资料中以及操作之间都不会出现广告。</string>
+    <string name="pf_no_ads_detail2">高级版还能支持 Family Tree 的持续开发。</string>
+
+    <string name="pf_themes_title">20 种颜色主题</string>
+    <string name="pf_themes_summary">打造专属于你的应用，浅色或深色模式皆可。</string>
+    <string name="pf_themes_free">经典主题</string>
+    <string name="pf_themes_premium">20 种主题</string>
+    <string name="pf_themes_detail1">从深靛蓝到暖琥珀色，20 种颜色主题任你选择。</string>
+    <string name="pf_themes_detail2">每个主题都支持浅色和深色模式。</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Geedziĝa datreveno · %d jaro</item>
+        <item quantity="other">Geedziĝa datreveno · %d jaroj</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Memortago · %d jaro</item>
+        <item quantity="other">Memortago · %d jaroj</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Post %1$d tago · %2$s</item>
+        <item quantity="other">Post %1$d tagoj · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">post %d tago</item>
+        <item quantity="other">post %d tagoj</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Fariĝas %d-jara</item>
+        <item quantity="other">Fariĝas %d-jara</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d jaro da geedzeco</item>
+        <item quantity="other">%d jaroj da geedzeco</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Antaŭ %d jaro</item>
+        <item quantity="other">Antaŭ %d jaroj</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d jaro</item>
+        <item quantity="other">%d jaroj</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d okazaĵo</item>
+        <item quantity="other">%d okazaĵoj</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d persono</item>
+        <item quantity="other">%d personoj</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d loko</item>
+        <item quantity="other">%d lokoj</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d lando</item>
+        <item quantity="other">%d landoj</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d persono</item>
+        <item quantity="other">%d personoj</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d dosiero estas ekster la aplikaĵa konservejo. Ĉu kopii ĝin en la aplikaĵan konservejon, por ke ĝi restu kun via arbo kaj estu inkluzivita en sekurkopioj? La originala dosiero ne ŝanĝiĝas.</item>
+        <item quantity="other">%d dosieroj estas ekster la aplikaĵa konservejo. Ĉu kopii ilin en la aplikaĵan konservejon, por ke ili restu kun via arbo kaj estu inkluzivitaj en sekurkopioj? La originalaj dosieroj ne ŝanĝiĝas.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d dosiero kopiita al la aplikaĵa konservejo.</item>
+        <item quantity="other">%d dosieroj kopiitaj al la aplikaĵa konservejo.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d aŭdvidaĵo estas ligita per la plena dosierindiko de dosiero en la aplikaĵa konservejo. Ĉu mallongigi la ligilon al nur la dosiernomo? La dosiero restas, kie ĝi estas.</item>
+        <item quantity="other">%d aŭdvidaĵoj estas ligitaj per la plena dosierindiko de dosiero en la aplikaĵa konservejo. Ĉu mallongigi la ligilojn al nur la dosiernomo? La dosieroj restas, kie ili estas.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d dosierindiko mallongigita.</item>
+        <item quantity="other">%d dosierindikoj mallongigitaj.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d registro</item>
+        <item quantity="other">%d registroj</item>
+    </plurals>
+</resources>

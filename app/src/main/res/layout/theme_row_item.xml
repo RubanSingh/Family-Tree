@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="130dp"
-    app:cardElevation="5dp"
-    app:cardUseCompatPadding="true"
-    style="@style/Widget.Material3.CardView.Elevated">
+    android:layout_marginStart="@dimen/ds_space_sm"
+    android:layout_marginEnd="@dimen/ds_space_sm"
+    android:layout_marginBottom="@dimen/ds_space_sm"
+    style="@style/Widget.FamilyTree.Card.Outlined">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"
-                android:src="@drawable/ic_stars_black_24dp__1_" />
+                android:src="@drawable/ds_ic_lock" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

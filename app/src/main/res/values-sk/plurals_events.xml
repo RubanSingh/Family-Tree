@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Výročie svadby · %d rok</item>
+        <item quantity="few">Výročie svadby · %d roky</item>
+        <item quantity="many">Výročie svadby · %d rokov</item>
+        <item quantity="other">Výročie svadby · %d rokov</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Výročie úmrtia · %d rok</item>
+        <item quantity="few">Výročie úmrtia · %d roky</item>
+        <item quantity="many">Výročie úmrtia · %d rokov</item>
+        <item quantity="other">Výročie úmrtia · %d rokov</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">O %1$d deň · %2$s</item>
+        <item quantity="few">O %1$d dni · %2$s</item>
+        <item quantity="many">O %1$d dní · %2$s</item>
+        <item quantity="other">O %1$d dní · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">o %d deň</item>
+        <item quantity="few">o %d dni</item>
+        <item quantity="many">o %d dní</item>
+        <item quantity="other">o %d dní</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Dovŕši %d rok</item>
+        <item quantity="few">Dovŕši %d roky</item>
+        <item quantity="many">Dovŕši %d rokov</item>
+        <item quantity="other">Dovŕši %d rokov</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d rok manželstva</item>
+        <item quantity="few">%d roky manželstva</item>
+        <item quantity="many">%d rokov manželstva</item>
+        <item quantity="other">%d rokov manželstva</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Pred %d rokom</item>
+        <item quantity="few">Pred %d rokmi</item>
+        <item quantity="many">Pred %d rokmi</item>
+        <item quantity="other">Pred %d rokmi</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d rok</item>
+        <item quantity="few">%d roky</item>
+        <item quantity="many">%d rokov</item>
+        <item quantity="other">%d rokov</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d udalosť</item>
+        <item quantity="few">%d udalosti</item>
+        <item quantity="many">%d udalostí</item>
+        <item quantity="other">%d udalostí</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d osoba</item>
+        <item quantity="few">%d osoby</item>
+        <item quantity="many">%d osôb</item>
+        <item quantity="other">%d osôb</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d miesto</item>
+        <item quantity="few">%d miesta</item>
+        <item quantity="many">%d miest</item>
+        <item quantity="other">%d miest</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d krajina</item>
+        <item quantity="few">%d krajiny</item>
+        <item quantity="many">%d krajín</item>
+        <item quantity="other">%d krajín</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d osoba</item>
+        <item quantity="few">%d osoby</item>
+        <item quantity="many">%d osoby</item>
+        <item quantity="other">%d osôb</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d súbor je mimo úložiska aplikácie. Skopírovať ho do úložiska aplikácie, aby zostal s vaším stromom a bol zahrnutý v zálohách? Pôvodný súbor sa nezmení.</item>
+        <item quantity="few">%d súbory sú mimo úložiska aplikácie. Skopírovať ich do úložiska aplikácie, aby zostali s vaším stromom a boli zahrnuté v zálohách? Pôvodné súbory sa nezmenia.</item>
+        <item quantity="many">%d súboru je mimo úložiska aplikácie. Skopírovať ich do úložiska aplikácie, aby zostali s vaším stromom a boli zahrnuté v zálohách? Pôvodné súbory sa nezmenia.</item>
+        <item quantity="other">%d súborov je mimo úložiska aplikácie. Skopírovať ich do úložiska aplikácie, aby zostali s vaším stromom a boli zahrnuté v zálohách? Pôvodné súbory sa nezmenia.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d súbor bol skopírovaný do úložiska aplikácie.</item>
+        <item quantity="few">%d súbory boli skopírované do úložiska aplikácie.</item>
+        <item quantity="many">%d súboru bolo skopírovaných do úložiska aplikácie.</item>
+        <item quantity="other">%d súborov bolo skopírovaných do úložiska aplikácie.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d médium je prepojené s úplnou cestou k súboru v úložisku aplikácie. Skrátiť ho iba na názov súboru? Súbor zostane tam, kde je.</item>
+        <item quantity="few">%d médiá sú prepojené s úplnou cestou k súboru v úložisku aplikácie. Skrátiť ich iba na názov súboru? Súbory zostanú tam, kde sú.</item>
+        <item quantity="many">%d média je prepojených s úplnou cestou k súboru v úložisku aplikácie. Skrátiť ich iba na názov súboru? Súbory zostanú tam, kde sú.</item>
+        <item quantity="other">%d médií je prepojených s úplnou cestou k súboru v úložisku aplikácie. Skrátiť ich iba na názov súboru? Súbory zostanú tam, kde sú.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d cesta k súboru bola skrátená.</item>
+        <item quantity="few">%d cesty k súborom boli skrátené.</item>
+        <item quantity="many">%d cesty k súborom bolo skrátených.</item>
+        <item quantity="other">%d ciest k súborom bolo skrátených.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d záznam</item>
+        <item quantity="few">%d záznamy</item>
+        <item quantity="many">%d záznamu</item>
+        <item quantity="other">%d záznamov</item>
+    </plurals>
+</resources>

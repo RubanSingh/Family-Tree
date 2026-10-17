@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Odstrani oglase</string>
+    <string name="ads_remove_hint">S Premium uživajte v aplikaciji Family Tree brez oglasov.</string>
+    <string name="privacy_options">Možnosti zasebnosti za oglase</string>
+    <string name="privacy_options_desc">Preglejte ali spremenite, kako oglasi uporabljajo vaše podatke</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">To je funkcija Premium.</string>
+    <string name="reward_watch_title">Oglejte si kratek videoposnetek</string>
+    <string name="reward_watch_desc">Funkcijo enkrat uporabite brezplačno, takoj po videoposnetku.</string>
+    <string name="reward_loading">Nalaganje videoposnetka…</string>
+    <string name="reward_unavailable">Trenutno ni na voljo nobenega videoposnetka. Poskusite znova pozneje ali nadgradite na Premium.</string>
+    <string name="reward_not_earned">Za odklepanje si oglejte videoposnetek do konca.</string>
+    <string name="reward_premium_desc">Neomejena uporaba, brez oglasov in vse funkcije Premium.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Zgodba vaše družine si zasluži Premium</string>
+    <string name="upsell_subtitle">Zaščitite vse, kar ste doslej ustvarili, in uživajte v vseh funkcijah Premium.</string>
+    <string name="upsell_subtitle_new">Zaščitite svoje raziskovanje in uživajte v aplikaciji Family Tree brez oglasov.</string>
+    <string name="upsell_stat_people">Osebe</string>
+    <string name="upsell_stat_trees">Drevesa</string>
+    <string name="upsell_stat_generations">Generacije</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">in še %d funkcija Premium</item>
+        <item quantity="two">in še %d funkciji Premium</item>
+        <item quantity="few">in še %d funkcije Premium</item>
+        <item quantity="other">in še %d funkcij Premium</item>
+    </plurals>
+    <string name="upsell_price_monthly">Paketi že od %1$s na mesec</string>
+    <string name="upsell_price_lifetime">ali enkrat plačajte %1$s in obdržite za vedno</string>
+    <string name="upsell_price_lifetime_only">Doživljenjski dostop za %1$s, z enkratnim plačilom</string>
+    <string name="upsell_cta">Oglejte si pakete Premium</string>
+    <string name="upsell_later">Ne zdaj</string>
+    <string name="upsell_trust">Prekličete lahko kadar koli · Varno plačilo prek Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Vse, kar potrebujete, da zgodbo svoje družine zaščitite, proslavite in delite.</string>
+    <string name="paywall_highlight_no_ads">Brez oglasov</string>
+    <string name="paywall_highlight_backup">Samodejne kopije</string>
+    <string name="paywall_highlight_reminders">Neomejeni opomniki</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d-dnevni brezplačni preizkus</item>
+        <item quantity="two">%d-dnevni brezplačni preizkus</item>
+        <item quantity="few">%d-dnevni brezplačni preizkus</item>
+        <item quantity="other">%d-dnevni brezplačni preizkus</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d-mesečni brezplačni preizkus</item>
+        <item quantity="two">%d-mesečni brezplačni preizkus</item>
+        <item quantity="few">%d-mesečni brezplačni preizkus</item>
+        <item quantity="other">%d-mesečni brezplačni preizkus</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Izplača se v %d mesecu</item>
+        <item quantity="two">Izplača se v %d mesecih</item>
+        <item quantity="few">Izplača se v %d mesecih</item>
+        <item quantity="other">Izplača se v %d mesecih</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s na mesec · prekličete lahko kadar koli</string>
+    <string name="paywall_summary_trial">%1$s, nato %2$s na mesec</string>
+    <string name="paywall_summary_lifetime">%1$s enkratno · Premium ostane vaš za vedno</string>
+    <string name="paywall_loading_prices">Nalaganje cen…</string>
+    <string name="paywall_compare_title">Brezplačno ali Premium</string>
+    <string name="paywall_compare_free">Brezplačno</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Vključeno</string>
+    <string name="paywall_details_show">Kako deluje</string>
+    <string name="paywall_details_hide">Skrij podrobnosti</string>
+    <string name="paywall_free_label">Brezplačno: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Samo s Premium</string>
+    <string name="paywall_trust_title">Kupujte brez skrbi</string>
+    <string name="paywall_trust_secure">Varno plačilo prek Google Play</string>
+    <string name="paywall_trust_cancel">Mesečni paket lahko prekličete kadar koli</string>
+    <string name="paywall_trust_devices">Obnovitev na vseh vaših napravah</string>
+    <string name="paywall_trust_private">Podatki vaše družine ostanejo v vaši napravi</string>
+    <string name="paywall_faq_title">Vprašanja in odgovori</string>
+    <string name="paywall_faq_plans_q">Kakšna je razlika med mesečnim in doživljenjskim paketom?</string>
+    <string name="paywall_faq_plans_a">Oba odkleneta vse, kar ponuja Premium. Mesečni paket se podaljša vsak mesec in ga lahko kadar koli prekličete. Doživljenjski se plača enkrat in nikoli ne poteče.</string>
+    <string name="paywall_faq_cancel_q">Kaj se zgodi z mojimi drevesi, če neham uporabljati Premium?</string>
+    <string name="paywall_faq_cancel_a">Nič se ne izgubi. Vaša drevesa, fotografije, opomniki in varnostne kopije ostanejo popolnoma nespremenjeni: ustavijo se le funkcije Premium, oglasi pa se vrnejo.</string>
+    <string name="paywall_faq_device_q">Imam nov telefon. Ali moram znova plačati?</string>
+    <string name="paywall_faq_device_a">Ne. Namestite Family Tree z istim Google računom in tapnite Obnovi nakupe.</string>
+    <string name="paywall_faq_privacy_q">Ali se podatki o moji družini kam pošiljajo?</string>
+    <string name="paywall_faq_privacy_a">Ne. Vaša drevesa so shranjena v vaši napravi in v mapi za varnostne kopije, ki jo izberete. Z nakupom paketa Premium se ne naloži nič.</string>
+    <string name="paywall_faq_manage_q">Kako prekličem mesečni paket?</string>
+    <string name="paywall_faq_manage_a">V Trgovini Play odprite Plačila in naročnine › Naročnine, izberite Family Tree in tapnite Prekliči. Premium ostane aktiven do konca že plačanega obdobja.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Varno shranjeno</string>
+    <string name="pf_group_safe_desc">Leta raziskovanja, samodejno zaščitena.</string>
+    <string name="pf_group_moments">Ne zamudite nobenega trenutka</string>
+    <string name="pf_group_moments_desc">Datumi in kraji vaše družine, vedno pri roki.</string>
+    <string name="pf_group_share">Ustvarjajte in delite</string>
+    <string name="pf_group_share_desc">Čudoviti izvozi in zmogljiva orodja za resno raziskovanje.</string>
+    <string name="pf_group_yours">Po vaši meri</string>
+    <string name="pf_group_yours_desc">Miren, oseben prostor za zgodbo vaše družine.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Samodejna varnostna kopija</string>
+    <string name="pf_backup_summary">Vsaka sprememba se brez vašega posredovanja shrani v mapo, ki jo izberete.</string>
+    <string name="pf_backup_free">Ročno kopiranje</string>
+    <string name="pf_backup_premium">Samodejno</string>
+    <string name="pf_backup_detail1">Minuto po vsaki spremembi se drevo shrani kot varnostna kopija ZIP v vašo mapo: v pomnilnik telefona, na kartico SD ali v mapo v oblaku, kot je Google Drive.</string>
+    <string name="pf_backup_detail2">Ohranijo se 3 najnovejše kopije vsakega drevesa, zato se lahko vedno vrnete nazaj.</string>
+    <string name="pf_backup_detail3">Obnovitev varnostne kopije je brezplačna in vedno na voljo, tudi brez paketa Premium.</string>
+
+    <string name="pf_media_title">Organizator medijev</string>
+    <string name="pf_media_summary">Vse fotografije in dokumente drevesa kopirajte v aplikacijo naenkrat.</string>
+    <string name="pf_media_free">Datoteko za datoteko</string>
+    <string name="pf_media_premium">Vse datoteke naenkrat</string>
+    <string name="pf_media_detail1">Prenesite vse medije drevesa v skladišče aplikacije, s prikazom napredka in možnostjo preklica, da se povezave ne prekinejo, ko se datoteke premaknejo.</string>
+    <string name="pf_media_detail2">Vaši izvirniki ostanejo nedotaknjeni: vsaka datoteka se kopira in preveri, preden se posodobijo njene povezave.</string>
+
+    <string name="pf_reminders_title">Pametni družinski opomniki</string>
+    <string name="pf_reminders_summary">Obletnice poroke, obletnice smrti in neomejeni osebni opomniki.</string>
+    <string name="pf_reminders_free">Rojstni dnevi + 2 opomnika</string>
+    <string name="pf_reminders_premium">Neomejeno</string>
+    <string name="pf_reminders_detail1">Prejemajte obvestila o obletnicah poroke parov in po želji tudi o obletnicah smrti.</string>
+    <string name="pf_reminders_detail2">Ustvarite poljubno število opomnikov: zabave pred rojstvom otroka, diplome, družinska srečanja, obiske…</string>
+    <string name="pf_reminders_detail3">Zgodnja opozorila vas obvestijo vnaprej, da imate čas poklicati, napisati sporočilo ali izbrati darilo.</string>
+
+    <string name="pf_places_title">Družinski kraji</string>
+    <string name="pf_places_summary">Vsak kraj vaše družinske zgodovine, z iskanjem in le en dotik od zemljevida.</string>
+    <string name="pf_places_free">Prvi 3 kraji</string>
+    <string name="pf_places_premium">Vsi kraji</string>
+    <string name="pf_places_detail1">Vsi kraji dogodkov in naslovi v drevesu, razvrščeni po državah, z iskanjem.</string>
+    <string name="pf_places_detail2">Oglejte si, kaj se je zgodilo v posameznem kraju, in ga odprite v aplikaciji za zemljevide z navodili za pot.</string>
+
+    <string name="pf_exports_title">Izvozi, pripravljeni za tisk</string>
+    <string name="pf_exports_summary">Svoj diagram pretvorite v sliko HD ali PDF za tiskanje in deljenje.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Enkrat na videoposnetek</string>
+    <string name="pf_exports_premium">PDF + slika HD</string>
+    <string name="pf_exports_detail1">Izvozite diagram kot sliko PNG visoke ločljivosti, kot nalašč za klepete in družbena omrežja.</string>
+    <string name="pf_exports_detail2">Ustvarite PDF celotnega diagrama, pripravljen za tisk kot plakat za družinska srečanja.</string>
+    <string name="pf_exports_detail3">Slog za tisk z belim ozadjem in ostrimi črtami, prilagojen velikosti vašega drevesa.</string>
+    <string name="pf_exports_detail4">Brez paketa Premium lahko še vedno enkrat izvozite, ko si ogledate kratek videoposnetek.</string>
+
+    <string name="pf_merge_title">Združevanje dreves</string>
+    <string name="pf_merge_summary">Združite dve drevesi v eno, s samodejnim iskanjem podvojitev.</string>
+    <string name="pf_merge_detail1">Aplikacija poišče iste osebe v obeh drevesih in vam omogoči, da potrdite vsako ujemanje posebej ali vsa hkrati.</string>
+    <string name="pf_merge_detail2">Kot nalašč, ko vam sorodniki pošljejo svoje drevo.</string>
+
+    <string name="pf_advanced_title">Napredna orodja</string>
+    <string name="pf_advanced_summary">Viri, repozitoriji, izvoz GEDCOM in celoten nabor rodoslovnih orodij.</string>
+    <string name="pf_advanced_detail1">Navajajte vire in repozitorije ter upravljajte predlagatelje kot poklicni rodoslovci.</string>
+    <string name="pf_advanced_detail2">Izvozite drevo kot GEDCOM, z mediji ali brez njih, za katero koli rodoslovno programsko opremo in ustvarite popolne varnostne kopije ZIP.</string>
+    <string name="pf_advanced_detail3">Primerjajte deljena drevesa in uredite poti medijskih datotek.</string>
+
+    <string name="pf_no_ads_title">Brez oglasov</string>
+    <string name="pf_no_ads_summary">Miren in zbran prostor za zgodbo vaše družine.</string>
+    <string name="pf_no_ads_free">Z oglasi</string>
+    <string name="pf_no_ads_premium">Brez oglasov</string>
+    <string name="pf_no_ads_detail1">Brez oglasov na seznamih, v profilih in med opravili.</string>
+    <string name="pf_no_ads_detail2">Premium podpira tudi razvoj aplikacije Family Tree.</string>
+
+    <string name="pf_themes_title">20 barvnih tem</string>
+    <string name="pf_themes_summary">Prilagodite si aplikacijo, v svetlem ali temnem načinu.</string>
+    <string name="pf_themes_free">Klasična tema</string>
+    <string name="pf_themes_premium">20 tem</string>
+    <string name="pf_themes_detail1">Izbirajte med 20 barvnimi temami, od globoke indigo do tople jantarne.</string>
+    <string name="pf_themes_detail2">Vsaka tema deluje v svetlem in temnem načinu.</string>
+</resources>

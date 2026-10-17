@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Evlilik yıl dönümü · %d yıl</item>
+        <item quantity="other">Evlilik yıl dönümü · %d yıl</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Anma günü · %d yıl</item>
+        <item quantity="other">Anma günü · %d yıl</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">%1$d gün sonra · %2$s</item>
+        <item quantity="other">%1$d gün sonra · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">%d gün sonra</item>
+        <item quantity="other">%d gün sonra</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d yaşına giriyor</item>
+        <item quantity="other">%d yaşına giriyor</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d yıllık evli</item>
+        <item quantity="other">%d yıllık evli</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d yıl önce</item>
+        <item quantity="other">%d yıl önce</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d yıl</item>
+        <item quantity="other">%d yıl</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d olay</item>
+        <item quantity="other">%d olay</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d kişi</item>
+        <item quantity="other">%d kişi</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d yer</item>
+        <item quantity="other">%d yer</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d ülke</item>
+        <item quantity="other">%d ülke</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d kişi</item>
+        <item quantity="other">%d kişi</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d dosya uygulama depolama alanının dışında. Ağacınızla birlikte kalması ve yedeklere dahil edilmesi için uygulama depolama alanına kopyalansın mı? Orijinal dosya değiştirilmez.</item>
+        <item quantity="other">%d dosya uygulama depolama alanının dışında. Ağacınızla birlikte kalmaları ve yedeklere dahil edilmeleri için uygulama depolama alanına kopyalansınlar mı? Orijinal dosyalar değiştirilmez.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d dosya uygulama depolama alanına kopyalandı.</item>
+        <item quantity="other">%d dosya uygulama depolama alanına kopyalandı.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d medya, uygulama depolama alanındaki bir dosyanın tam yoluyla bağlantılı. Bağlantı yalnızca dosya adına kısaltılsın mı? Dosya yerinde kalır.</item>
+        <item quantity="other">%d medya, uygulama depolama alanındaki bir dosyanın tam yoluyla bağlantılı. Bağlantılar yalnızca dosya adına kısaltılsın mı? Dosyalar yerinde kalır.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d dosya yolu kısaltıldı.</item>
+        <item quantity="other">%d dosya yolu kısaltıldı.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d kayıt</item>
+        <item quantity="other">%d kayıt</item>
+    </plurals>
+</resources>

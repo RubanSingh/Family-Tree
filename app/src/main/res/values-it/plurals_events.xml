@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Anniversario di matrimonio · %d anno</item>
+        <item quantity="many">Anniversario di matrimonio · %d anni</item>
+        <item quantity="other">Anniversario di matrimonio · %d anni</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Anniversario della scomparsa · %d anno</item>
+        <item quantity="many">Anniversario della scomparsa · %d anni</item>
+        <item quantity="other">Anniversario della scomparsa · %d anni</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Tra %1$d giorno · %2$s</item>
+        <item quantity="many">Tra %1$d giorni · %2$s</item>
+        <item quantity="other">Tra %1$d giorni · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">tra %d giorno</item>
+        <item quantity="many">tra %d giorni</item>
+        <item quantity="other">tra %d giorni</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Compie %d anno</item>
+        <item quantity="many">Compie %d anni</item>
+        <item quantity="other">Compie %d anni</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d anno di matrimonio</item>
+        <item quantity="many">%d anni di matrimonio</item>
+        <item quantity="other">%d anni di matrimonio</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d anno fa</item>
+        <item quantity="many">%d anni fa</item>
+        <item quantity="other">%d anni fa</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d anno</item>
+        <item quantity="many">%d anni</item>
+        <item quantity="other">%d anni</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d evento</item>
+        <item quantity="many">%d eventi</item>
+        <item quantity="other">%d eventi</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d persona</item>
+        <item quantity="many">%d persone</item>
+        <item quantity="other">%d persone</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d luogo</item>
+        <item quantity="many">%d luoghi</item>
+        <item quantity="other">%d luoghi</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d paese</item>
+        <item quantity="many">%d paesi</item>
+        <item quantity="other">%d paesi</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d persona</item>
+        <item quantity="many">%d persone</item>
+        <item quantity="other">%d persone</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d file si trova fuori dalla memoria dell’app. Copiarlo nella memoria dell’app, così resta con il tuo albero e viene incluso nei backup? Il file originale non viene modificato.</item>
+        <item quantity="many">%d file si trovano fuori dalla memoria dell’app. Copiarli nella memoria dell’app, così restano con il tuo albero e vengono inclusi nei backup? I file originali non vengono modificati.</item>
+        <item quantity="other">%d file si trovano fuori dalla memoria dell’app. Copiarli nella memoria dell’app, così restano con il tuo albero e vengono inclusi nei backup? I file originali non vengono modificati.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d file copiato nella memoria dell’app.</item>
+        <item quantity="many">%d file copiati nella memoria dell’app.</item>
+        <item quantity="other">%d file copiati nella memoria dell’app.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d media è collegato con il percorso completo di un file nella memoria dell’app. Accorciare il collegamento al solo nome del file? Il file resta dov’è.</item>
+        <item quantity="many">%d media sono collegati con il percorso completo di un file nella memoria dell’app. Accorciare i collegamenti al solo nome del file? I file restano dove sono.</item>
+        <item quantity="other">%d media sono collegati con il percorso completo di un file nella memoria dell’app. Accorciare i collegamenti al solo nome del file? I file restano dove sono.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d percorso file accorciato.</item>
+        <item quantity="many">%d percorsi file accorciati.</item>
+        <item quantity="other">%d percorsi file accorciati.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d record</item>
+        <item quantity="many">%d record</item>
+        <item quantity="other">%d record</item>
+    </plurals>
+</resources>

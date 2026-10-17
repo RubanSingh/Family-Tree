@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Годовщина свадьбы · %d год</item>
+        <item quantity="few">Годовщина свадьбы · %d года</item>
+        <item quantity="many">Годовщина свадьбы · %d лет</item>
+        <item quantity="other">Годовщина свадьбы · %d года</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">День памяти · %d год</item>
+        <item quantity="few">День памяти · %d года</item>
+        <item quantity="many">День памяти · %d лет</item>
+        <item quantity="other">День памяти · %d года</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Через %1$d день · %2$s</item>
+        <item quantity="few">Через %1$d дня · %2$s</item>
+        <item quantity="many">Через %1$d дней · %2$s</item>
+        <item quantity="other">Через %1$d дня · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">через %d день</item>
+        <item quantity="few">через %d дня</item>
+        <item quantity="many">через %d дней</item>
+        <item quantity="other">через %d дня</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Исполняется %d год</item>
+        <item quantity="few">Исполняется %d года</item>
+        <item quantity="many">Исполняется %d лет</item>
+        <item quantity="other">Исполняется %d года</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d год в браке</item>
+        <item quantity="few">%d года в браке</item>
+        <item quantity="many">%d лет в браке</item>
+        <item quantity="other">%d года в браке</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d год назад</item>
+        <item quantity="few">%d года назад</item>
+        <item quantity="many">%d лет назад</item>
+        <item quantity="other">%d года назад</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d год</item>
+        <item quantity="few">%d года</item>
+        <item quantity="many">%d лет</item>
+        <item quantity="other">%d года</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d событие</item>
+        <item quantity="few">%d события</item>
+        <item quantity="many">%d событий</item>
+        <item quantity="other">%d события</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d человек</item>
+        <item quantity="few">%d человека</item>
+        <item quantity="many">%d человек</item>
+        <item quantity="other">%d человека</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d место</item>
+        <item quantity="few">%d места</item>
+        <item quantity="many">%d мест</item>
+        <item quantity="other">%d места</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d страна</item>
+        <item quantity="few">%d страны</item>
+        <item quantity="many">%d стран</item>
+        <item quantity="other">%d страны</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d человек</item>
+        <item quantity="few">%d человека</item>
+        <item quantity="many">%d человек</item>
+        <item quantity="other">%d человека</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d файл находится вне хранилища приложения. Скопировать его в хранилище приложения, чтобы он оставался с деревом и попадал в резервные копии? Исходный файл не изменится.</item>
+        <item quantity="few">%d файла находятся вне хранилища приложения. Скопировать их в хранилище приложения, чтобы они оставались с деревом и попадали в резервные копии? Исходные файлы не изменятся.</item>
+        <item quantity="many">%d файлов находятся вне хранилища приложения. Скопировать их в хранилище приложения, чтобы они оставались с деревом и попадали в резервные копии? Исходные файлы не изменятся.</item>
+        <item quantity="other">%d файла находятся вне хранилища приложения. Скопировать их в хранилище приложения, чтобы они оставались с деревом и попадали в резервные копии? Исходные файлы не изменятся.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d файл скопирован в хранилище приложения.</item>
+        <item quantity="few">%d файла скопированы в хранилище приложения.</item>
+        <item quantity="many">%d файлов скопировано в хранилище приложения.</item>
+        <item quantity="other">%d файла скопировано в хранилище приложения.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d медиа связано с полным путём к файлу в хранилище приложения. Сократить путь до имени файла? Сам файл останется на месте.</item>
+        <item quantity="few">%d медиа связаны с полным путём к файлу в хранилище приложения. Сократить пути до имени файла? Сами файлы останутся на месте.</item>
+        <item quantity="many">%d медиа связаны с полным путём к файлу в хранилище приложения. Сократить пути до имени файла? Сами файлы останутся на месте.</item>
+        <item quantity="other">%d медиа связаны с полным путём к файлу в хранилище приложения. Сократить пути до имени файла? Сами файлы останутся на месте.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d путь к файлу сокращён.</item>
+        <item quantity="few">%d пути к файлам сокращены.</item>
+        <item quantity="many">%d путей к файлам сокращено.</item>
+        <item quantity="other">%d пути к файлам сокращено.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d запись</item>
+        <item quantity="few">%d записи</item>
+        <item quantity="many">%d записей</item>
+        <item quantity="other">%d записи</item>
+    </plurals>
+</resources>

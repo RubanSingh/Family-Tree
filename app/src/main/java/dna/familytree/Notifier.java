@@ -18,41 +18,71 @@ import java.util.Date;
 import java.util.HashSet;
 
 import dna.familytree.constant.Format;
+import dna.familytree.feature.reminders.ReminderScheduler;
 import dna.familytree.util.LoggerUtils;
 
 /**
  * Manager of birthday notifications.
  */
-class Notifier {
-    static final String TREE_ID_KEY = "targetTreeId";
-    static final String INDI_ID_KEY = "targetIndiId";
-    static final String NOTIFY_ID_KEY = "notifyId";
-    static final String CHANNEL_ID = "birthdays";
-    private final int FACTOR = 100000;
+public class Notifier {
+    // Extras of the intent opened by a notification (also by the reminders)
+    public static final String TREE_ID_KEY = "targetTreeId";
+    public static final String INDI_ID_KEY = "targetIndiId";
+    public static final String NOTIFY_ID_KEY = "notifyId";
+    public static final String CHANNEL_ID = "birthdays";
+    private static final int LEGACY_FACTOR = 100000; // Request codes of the alarms before version 1.6
     private final Date now = new Date();
+    /** Default time of birthday notifications, as before it could be chosen. */
+    public static final String DEFAULT_NOTIFY_TIME = "12:00";
+    private final int notifyHour;
+    private final int notifyMinute;
     private String TAG = Notifier.class.getSimpleName();
 
-    enum What {REBOOT, CREATE, DELETE, DEFAULT}
+    enum What {REBOOT, CREATE, DELETE, DEFAULT, UPDATE}
 
     Notifier(Context context, Gedcom gedcom, int treeId, What toDo) {
+        int[] time = notifyTime();
+        notifyHour = time[0];
+        notifyMinute = time[1];
+        Settings.Tree tree = Global.settings.getTree(treeId);
+        // With a fixed date the ages are historical: birthday notifications make no sense
+        if (tree != null && tree.getTreeSettings().customDate && toDo != What.DELETE) return;
 
-        // Creates the notification channel, necessary only on API 26+
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, context.getText(R.string.birthdays),
-                    NotificationManager.IMPORTANCE_DEFAULT);
-            channel.setDescription(context.getString(R.string.birthday_notified_midday));
-            context.getSystemService(NotificationManager.class).createNotificationChannel(channel);
-        }
+        createChannel(context);
 
         // Deletes previous Workish notifications
         WorkManager.getInstance(context).cancelAllWork(); // Todo remove after version 0.9.1
 
-        Settings.Tree tree = Global.settings.getTree(treeId);
         switch (toDo) {
             case REBOOT: // After reboot restores all alarms from settings
                 for (Settings.Tree tree1 : Global.settings.trees) {
+                    if (tree1.getTreeSettings().customDate) continue;
                     createAlarms(context, tree1);
                 }
+                break;
+            case UPDATE: // The notification time changed: moves every birthday to the new time and recreates the alarms
+                for (Settings.Tree tree1 : Global.settings.trees) {
+                    if (tree1.getTreeSettings().customDate || tree1.birthdays == null) continue;
+                    deleteAlarms(context, tree1);
+                    for (Settings.Birthday birthday : tree1.birthdays) {
+                        Date date = new Date(birthday.date);
+                        date.setHours(notifyHour);
+                        date.setMinutes(notifyMinute);
+                        date.setSeconds(0);
+                        // A birthday moved to next year because today's old time had passed, but the new time is still ahead
+                        if (date.getYear() > now.getYear() && date.getMonth() == now.getMonth() && date.getDate() == now.getDate()) {
+                            Date today = new Date(date.getTime());
+                            today.setYear(now.getYear());
+                            if (today.after(now)) {
+                                date = today;
+                                birthday.age -= 1;
+                            }
+                        }
+                        birthday.date = date.getTime();
+                    }
+                    createAlarms(context, tree1);
+                }
+                Global.settings.save();
                 break;
             case DELETE: // Only deletes alarms
                 deleteAlarms(context, tree);
@@ -78,7 +108,7 @@ class Notifier {
         for (Person person : gedcom.getPeople()) {
             Date birth = findBirth(person);
             if (birth != null) {
-                int years = findAge(birth);
+                int years = findAge(birth, tree.getTreeSettings().lifeSpan);
                 if (years >= 0) {
                     tree.birthdays.add(new Settings.Birthday(person.getId(), AppUtils.givenName(person),
                             AppUtils.properName(person), nextBirthday(birth), years));
@@ -103,55 +133,95 @@ class Notifier {
         return null;
     }
 
-    // Counts the number of years that will be turned on the next birthday
-    private int findAge(Date birth) {
+    // Counts the number of years that will be turned on the next birthday (-1 if beyond the tree's life span)
+    private int findAge(Date birth, int lifeSpan) {
         int years = now.getYear() - birth.getYear();
         if (birth.getMonth() < now.getMonth()
                 || (birth.getMonth() == now.getMonth() && birth.getDate() < now.getDate())
-                || (birth.getMonth() == now.getMonth() && birth.getDate() == now.getDate() && now.getHours() >= 12))
+                || (birth.getMonth() == now.getMonth() && birth.getDate() == now.getDate()
+                && now.getHours() * 60 + now.getMinutes() >= notifyHour * 60 + notifyMinute))
             years++;
-        return years <= 120 ? years : -1;
+        return years <= lifeSpan ? years : -1;
     }
 
     // From birth Date finds next birthday as long timestamp
     private long nextBirthday(Date birth) {
         birth.setYear(now.getYear());
-        birth.setHours(12);
-        //birth.setMinutes(0);
+        birth.setHours(notifyHour);
+        birth.setMinutes(notifyMinute);
+        birth.setSeconds(0);
         if (now.after(birth))
             birth.setYear(now.getYear() + 1);
         return birth.getTime();
     }
 
-    // Generates an alarm from each birthday of the provided tree
-    void createAlarms(Context context, Settings.Tree tree) {
-        if (tree.birthdays == null) return;
-        int eventId = tree.id * FACTOR;  // Different for every tree
-        AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-        for (Settings.Birthday birthday : tree.birthdays) {
-            if (birthday.date > now.getTime()) { // Avoid setting alarm for a past birthday
-                Intent intent = new Intent(context, NotifyReceiver.class)
-                        .putExtra("id", eventId)
-                        .putExtra("title", birthday.name + " (" + tree.title + ")")
-                        .putExtra("text", context.getString(R.string.turns_years_old, birthday.given, birthday.age))
-                        .putExtra("treeId", tree.id)
-                        .putExtra("indiId", birthday.id);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(context, eventId++, intent,
-                        PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_CANCEL_CURRENT);
-                try {
-                    alarmManager.setExact(AlarmManager.RTC, birthday.date, pendingIntent);
-                } catch (Exception e) {
-                    LoggerUtils.ErrorLog(TAG, "Exception in createAlarms", e);
-                    break; // There is a limit of 500 alarms on some devices
-                }
-            }
+    /** Notification time from the settings as {hour, minute}; midday when not set or invalid. */
+    public static int[] notifyTime() {
+        String time = Global.settings != null && Global.settings.notifyTime != null ? Global.settings.notifyTime : DEFAULT_NOTIFY_TIME;
+        try {
+            String[] parts = time.split(":");
+            int hour = Integer.parseInt(parts[0]), minute = Integer.parseInt(parts[1]);
+            if (hour >= 0 && hour < 24 && minute >= 0 && minute < 60) return new int[]{hour, minute};
+        } catch (Exception ignored) {
+        }
+        return new int[]{12, 0};
+    }
+
+    /** Applies a new notification time to all the scheduled birthdays. */
+    public static void updateNotifyTime(Context context) {
+        new Notifier(context, null, 0, What.UPDATE);
+    }
+
+    /** Creates the notification channel of birthdays, necessary only on API 26+. */
+    public static void createChannel(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, context.getText(R.string.birthdays),
+                    NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription(context.getString(R.string.birthday_notified_midday));
+            context.getSystemService(NotificationManager.class).createNotificationChannel(channel);
         }
     }
 
-    // Deletes all alarms already set for a tree
+    /**
+     * Birthdays of the tree are notified by the single alarm of {@link ReminderScheduler}:
+     * Android allows at most 500 alarms per app, too few for big trees, and setting them at every save was slow.
+     */
+    void createAlarms(Context context, Settings.Tree tree) {
+        ReminderScheduler.reschedule(context);
+    }
+
+    /**
+     * Cancels once the alarms set by versions before 1.6, one per birthday, of all trees.
+     */
+    public static void migrateLegacyAlarms(Context context) {
+        if (Global.settings == null || Global.settings.birthdayAlarmsMigrated) return;
+        for (Settings.Tree tree : Global.settings.trees)
+            cancelLegacyAlarms(context, tree);
+        Global.settings.birthdayAlarmsMigrated = true;
+        Global.settings.save();
+    }
+
+    /** Recomputes and saves the birthdays of a tree. */
+    public static void refreshBirthdays(Context context, Gedcom gedcom, int treeId) {
+        new Notifier(context, gedcom, treeId, What.CREATE);
+    }
+
+    /** The birthdays saved for the tree can be used (see {@link Settings.Birthday#isValid()}). */
+    public static boolean birthdaysValid(Settings.Tree tree) {
+        if (tree.birthdays == null) return false;
+        for (Settings.Birthday birthday : tree.birthdays)
+            if (!birthday.isValid()) return false;
+        return true;
+    }
+
+    // Deletes all alarms already set for a tree: only those of versions before 1.6 can exist
     void deleteAlarms(Context context, Settings.Tree tree) {
+        if (!Global.settings.birthdayAlarmsMigrated) cancelLegacyAlarms(context, tree);
+    }
+
+    private static void cancelLegacyAlarms(Context context, Settings.Tree tree) {
         if (tree.birthdays == null) return;
-        int eventId = tree.id * FACTOR;
+        int eventId = tree.id * LEGACY_FACTOR;
         AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
         for (Settings.Birthday b : tree.birthdays) {
             Intent intent = new Intent(context, NotifyReceiver.class);

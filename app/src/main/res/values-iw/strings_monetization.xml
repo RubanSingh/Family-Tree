@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">הסרת מודעות</string>
+    <string name="ads_remove_hint">עם פרימיום נהנים מ־Family Tree ללא מודעות.</string>
+    <string name="privacy_options">אפשרויות פרטיות למודעות</string>
+    <string name="privacy_options_desc">בדיקה או שינוי של השימוש בנתונים שלך במודעות</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">זו תכונת פרימיום.</string>
+    <string name="reward_watch_title">צפייה בסרטון קצר</string>
+    <string name="reward_watch_desc">שימוש חד־פעמי בחינם, מיד אחרי הסרטון.</string>
+    <string name="reward_loading">הסרטון נטען…</string>
+    <string name="reward_unavailable">אין סרטון זמין כרגע. אפשר לנסות שוב מאוחר יותר או לעבור לפרימיום.</string>
+    <string name="reward_not_earned">כדי לפתוח את התכונה יש לצפות בסרטון עד הסוף.</string>
+    <string name="reward_premium_desc">שימוש ללא הגבלה, ללא מודעות וכל תכונות הפרימיום.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">סיפור המשפחה שלך ראוי לפרימיום</string>
+    <string name="upsell_subtitle">לשמור בבטחה על כל מה שבנית, וליהנות מכל התכונות של פרימיום.</string>
+    <string name="upsell_subtitle_new">להגן על המחקר שלך וליהנות מ־Family Tree ללא מודעות.</string>
+    <string name="upsell_stat_people">אנשים</string>
+    <string name="upsell_stat_trees">עצים</string>
+    <string name="upsell_stat_generations">דורות</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">ועוד %d תכונת פרימיום</item>
+        <item quantity="two">ועוד %d תכונות פרימיום</item>
+        <item quantity="other">ועוד %d תכונות פרימיום</item>
+    </plurals>
+    <string name="upsell_price_monthly">תוכניות החל מ־%1$s לחודש</string>
+    <string name="upsell_price_lifetime">או תשלום חד־פעמי של %1$s, והכול שלך לתמיד</string>
+    <string name="upsell_price_lifetime_only">גישה לכל החיים ב־%1$s, בתשלום חד־פעמי</string>
+    <string name="upsell_cta">לתוכניות הפרימיום</string>
+    <string name="upsell_later">לא עכשיו</string>
+    <string name="upsell_trust">אפשר לבטל בכל עת · תשלום מאובטח דרך Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">כל מה שצריך כדי לשמור, לחגוג ולשתף את סיפור המשפחה שלך.</string>
+    <string name="paywall_highlight_no_ads">ללא מודעות</string>
+    <string name="paywall_highlight_backup">גיבוי אוטומטי</string>
+    <string name="paywall_highlight_reminders">תזכורות ללא הגבלה</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d יום ניסיון חינם</item>
+        <item quantity="two">%d ימי ניסיון חינם</item>
+        <item quantity="other">%d ימי ניסיון חינם</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d חודש ניסיון חינם</item>
+        <item quantity="two">%d חודשי ניסיון חינם</item>
+        <item quantity="other">%d חודשי ניסיון חינם</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">מחזיר את עצמו תוך %d חודש</item>
+        <item quantity="two">מחזיר את עצמו תוך %d חודשים</item>
+        <item quantity="other">מחזיר את עצמו תוך %d חודשים</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s לחודש · אפשר לבטל בכל עת</string>
+    <string name="paywall_summary_trial">%1$s, ואחר כך %2$s לחודש</string>
+    <string name="paywall_summary_lifetime">%1$s בתשלום חד־פעמי · שלך לתמיד</string>
+    <string name="paywall_loading_prices">המחירים נטענים…</string>
+    <string name="paywall_compare_title">חינם מול פרימיום</string>
+    <string name="paywall_compare_free">חינם</string>
+    <string name="paywall_compare_premium">פרימיום</string>
+    <string name="compare_included">כלול</string>
+    <string name="paywall_details_show">איך זה עובד</string>
+    <string name="paywall_details_hide">הסתרת הפרטים</string>
+    <string name="paywall_free_label">חינם: %1$s</string>
+    <string name="paywall_premium_label">פרימיום: %1$s</string>
+    <string name="paywall_premium_only">רק בפרימיום</string>
+    <string name="paywall_trust_title">קנייה בראש שקט</string>
+    <string name="paywall_trust_secure">תשלום מאובטח דרך Google Play</string>
+    <string name="paywall_trust_cancel">אפשר לבטל את התוכנית החודשית בכל עת</string>
+    <string name="paywall_trust_devices">שחזור בכל המכשירים שלך</string>
+    <string name="paywall_trust_private">נתוני המשפחה שלך נשארים במכשיר שלך</string>
+    <string name="paywall_faq_title">שאלות ותשובות</string>
+    <string name="paywall_faq_plans_q">מה ההבדל בין התוכנית החודשית לתוכנית לכל החיים?</string>
+    <string name="paywall_faq_plans_a">שתיהן פותחות את כל מה שכלול בפרימיום. התוכנית החודשית מתחדשת מדי חודש ואפשר לבטל אותה בכל עת. התוכנית לכל החיים משולמת פעם אחת ולעולם אינה פגה.</string>
+    <string name="paywall_faq_cancel_q">מה קורה לעצים שלי אם אפסיק את הפרימיום?</string>
+    <string name="paywall_faq_cancel_a">שום דבר לא הולך לאיבוד. העצים, התמונות, התזכורות והגיבויים שלך נשארים בדיוק כפי שהם: רק תכונות הפרימיום מפסיקות לפעול, והמודעות חוזרות.</string>
+    <string name="paywall_faq_device_q">החלפתי טלפון. צריך לשלם שוב?</string>
+    <string name="paywall_faq_device_a">לא. יש להתקין את Family Tree עם אותו חשבון Google ולהקיש על \"שחזור רכישות\".</string>
+    <string name="paywall_faq_privacy_q">האם נתוני המשפחה שלי נשלחים לאנשהו?</string>
+    <string name="paywall_faq_privacy_a">לא. העצים שלך נשמרים במכשיר שלך ובתיקיית הגיבוי שבחרת. רכישת פרימיום לא מעלה שום דבר.</string>
+    <string name="paywall_faq_manage_q">איך מבטלים את התוכנית החודשית?</string>
+    <string name="paywall_faq_manage_a">ב־Play Store יש לפתוח את \"תשלומים ומינויים › מינויים\", לבחור ב־Family Tree ולהקיש על \"ביטול\". הפרימיום נשאר פעיל עד סוף התקופה שכבר שולמה.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">תמיד מוגן</string>
+    <string name="pf_group_safe_desc">שנים של מחקר, מוגנות באופן אוטומטי.</string>
+    <string name="pf_group_moments">לא לפספס אף רגע</string>
+    <string name="pf_group_moments_desc">התאריכים והמקומות של המשפחה שלך, תמיד בהישג יד.</string>
+    <string name="pf_group_share">יצירה ושיתוף</string>
+    <string name="pf_group_share_desc">ייצוא מרהיב וכלים עוצמתיים למחקר רציני.</string>
+    <string name="pf_group_yours">בסגנון שלך</string>
+    <string name="pf_group_yours_desc">מרחב רגוע ואישי לסיפור המשפחה שלך.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">גיבוי אוטומטי</string>
+    <string name="pf_backup_summary">כל שינוי נשמר בתיקייה שבחרת, בלי להזיז אצבע.</string>
+    <string name="pf_backup_free">גיבוי ידני</string>
+    <string name="pf_backup_premium">אוטומטי</string>
+    <string name="pf_backup_detail1">דקה אחרי כל עריכה, העץ נשמר כגיבוי ZIP בתיקייה שלך: אחסון הטלפון, כרטיס SD או תיקייה בענן כמו Google Drive.</string>
+    <string name="pf_backup_detail2">נשמרים 3 העותקים החדשים ביותר של כל עץ, כך שתמיד אפשר לחזור אחורה.</string>
+    <string name="pf_backup_detail3">שחזור גיבוי הוא בחינם וזמין תמיד, גם בלי פרימיום.</string>
+
+    <string name="pf_media_title">מארגן המדיה</string>
+    <string name="pf_media_summary">העתקת כל התמונות והמסמכים של עץ אל היישומון בבת אחת.</string>
+    <string name="pf_media_free">קובץ אחד בכל פעם</string>
+    <string name="pf_media_premium">כל הקבצים בבת אחת</string>
+    <string name="pf_media_detail1">כל המדיה של העץ עוברת לאחסון היישומון, עם מעקב התקדמות ואפשרות ביטול, כך שהקישורים לא נשברים גם כשקבצים זזים.</string>
+    <string name="pf_media_detail2">קובצי המקור שלך לא משתנים: כל קובץ מועתק ונבדק לפני שהקישורים שלו מתעדכנים.</string>
+
+    <string name="pf_reminders_title">תזכורות משפחתיות חכמות</string>
+    <string name="pf_reminders_summary">ימי נישואים, ימי זיכרון ותזכורות אישיות ללא הגבלה.</string>
+    <string name="pf_reminders_free">ימי הולדת + 2 תזכורות</string>
+    <string name="pf_reminders_premium">ללא הגבלה</string>
+    <string name="pf_reminders_detail1">התראות על ימי הנישואים של זוגות, ואם רוצים, גם על ימי זיכרון.</string>
+    <string name="pf_reminders_detail2">אפשר ליצור כמה תזכורות שרוצים: בייבי שאוור, טקסי סיום לימודים, מפגשים משפחתיים, ביקורים…</string>
+    <string name="pf_reminders_detail3">התראות מוקדמות מודיעות מראש, כך שיש זמן להתקשר, לכתוב או לתכנן מתנה.</string>
+
+    <string name="pf_places_title">מקומות המשפחה</string>
+    <string name="pf_places_summary">כל מקום בהיסטוריה המשפחתית שלך, עם חיפוש ובמרחק הקשה אחת מהמפה.</string>
+    <string name="pf_places_free">3 המקומות הראשונים</string>
+    <string name="pf_places_premium">כל המקומות</string>
+    <string name="pf_places_detail1">כל מקומות האירועים והכתובות שבעץ, מקובצים לפי ארץ, עם חיפוש.</string>
+    <string name="pf_places_detail2">אפשר לראות מה קרה בכל מקום ולפתוח אותו ביישומון המפות, עם הוראות הגעה.</string>
+
+    <string name="pf_exports_title">ייצוא מוכן להדפסה</string>
+    <string name="pf_exports_summary">הפיכת התרשים לתמונת HD או ל־PDF להדפסה ולשיתוף.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">פעם אחת לכל סרטון</string>
+    <string name="pf_exports_premium">PDF + תמונת HD</string>
+    <string name="pf_exports_detail1">ייצוא התרשים כתמונת PNG ברזולוציה גבוהה, מושלמת לצ׳אטים ולרשתות חברתיות.</string>
+    <string name="pf_exports_detail2">יצירת PDF של התרשים כולו, מוכן להדפסה כפוסטר למפגשים משפחתיים.</string>
+    <string name="pf_exports_detail3">עיצוב להדפסה עם רקע לבן וקווים חדים, בגודל שמותאם לעץ שלך.</string>
+    <string name="pf_exports_detail4">גם בלי פרימיום אפשר לייצא פעם אחת אחרי צפייה בסרטון קצר.</string>
+
+    <string name="pf_merge_title">מיזוג עצים</string>
+    <string name="pf_merge_summary">איחוד שני עצים לעץ אחד, והכפילויות נמצאות בשבילך.</string>
+    <string name="pf_merge_detail1">היישומון מחפש את אותם אנשים בשני העצים ומאפשר לאשר כל התאמה בנפרד, או את כולן בבת אחת.</string>
+    <string name="pf_merge_detail2">מושלם כשקרובי משפחה שולחים לך את העץ שלהם.</string>
+
+    <string name="pf_advanced_title">כלים מתקדמים</string>
+    <string name="pf_advanced_summary">מקורות, מאגרים, ייצוא GEDCOM וכל ארגז הכלים הגנאלוגי.</string>
+    <string name="pf_advanced_detail1">ציטוט מקורות ומאגרים וניהול מגישים, כמו גנאלוגים מקצועיים.</string>
+    <string name="pf_advanced_detail2">ייצוא העץ כ־GEDCOM, עם מדיה או בלעדיה, לכל תוכנת גנאלוגיה, ויצירת גיבויי ZIP מלאים.</string>
+    <string name="pf_advanced_detail3">השוואת עצים משותפים וסידור הנתיבים של קובצי המדיה.</string>
+
+    <string name="pf_no_ads_title">ללא מודעות</string>
+    <string name="pf_no_ads_summary">מרחב רגוע וממוקד לסיפור המשפחה שלך.</string>
+    <string name="pf_no_ads_free">עם מודעות</string>
+    <string name="pf_no_ads_premium">ללא מודעות</string>
+    <string name="pf_no_ads_detail1">אין מודעות ברשימות, בפרופילים או בין משימות.</string>
+    <string name="pf_no_ads_detail2">פרימיום גם תומך בפיתוח של Family Tree.</string>
+
+    <string name="pf_themes_title">20 ערכות צבעים</string>
+    <string name="pf_themes_summary">התאמה אישית של היישומון, במצב בהיר או כהה.</string>
+    <string name="pf_themes_free">ערכת נושא קלאסית</string>
+    <string name="pf_themes_premium">20 ערכות נושא</string>
+    <string name="pf_themes_detail1">בחירה מתוך 20 ערכות צבעים, מאינדיגו עמוק ועד ענבר חם.</string>
+    <string name="pf_themes_detail2">כל ערכת נושא פועלת גם במצב בהיר וגם במצב כהה.</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- "Remove ads" link under a native ad (outside the NativeAdView, so it is never counted as an ad click). -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ad_remove"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:layout_gravity="end"
+    android:background="?attr/selectableItemBackground"
+    android:drawablePadding="6dp"
+    android:gravity="center_vertical"
+    android:paddingStart="@dimen/ds_space_md"
+    android:paddingEnd="@dimen/ds_space_md"
+    android:text="@string/ads_remove_action"
+    android:textAppearance="?attr/textAppearanceLabelMedium"
+    android:textColor="?attr/colorTertiary"
+    app:drawableStartCompat="@drawable/ds_ic_diamond_small"
+    app:drawableTint="?attr/colorTertiary" />

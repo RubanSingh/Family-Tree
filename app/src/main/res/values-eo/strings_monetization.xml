@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Forigi reklamojn</string>
+    <string name="ads_remove_hint">Ĝuu Family Tree sen reklamoj per Premium.</string>
+    <string name="privacy_options">Privatecaj elektoj pri reklamoj</string>
+    <string name="privacy_options_desc">Revidi aŭ ŝanĝi, kiel reklamoj uzas viajn datumojn</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Ĉi tio estas Premium-funkcio.</string>
+    <string name="reward_watch_title">Spekti mallongan videon</string>
+    <string name="reward_watch_desc">Uzu ĝin unufoje senpage, tuj post la video.</string>
+    <string name="reward_loading">Ŝargante la videon…</string>
+    <string name="reward_unavailable">Neniu video disponeblas nun. Reprovu poste aŭ transiru al Premium.</string>
+    <string name="reward_not_earned">Spektu la videon ĝis la fino por malŝlosi ĝin.</string>
+    <string name="reward_premium_desc">Senlima uzado, sen reklamoj kaj ĉiuj Premium-funkcioj.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Via familia historio meritas Premium</string>
+    <string name="upsell_subtitle">Tenu sekura ĉion, kion vi konstruis, kaj ĝuu ĉiun Premium-funkcion.</string>
+    <string name="upsell_subtitle_new">Protektu vian esploradon kaj ĝuu Family Tree sen reklamoj.</string>
+    <string name="upsell_stat_people">Personoj</string>
+    <string name="upsell_stat_trees">Arboj</string>
+    <string name="upsell_stat_generations">Generacioj</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">kaj %d plia Premium-funkcio</item>
+        <item quantity="other">kaj %d pliaj Premium-funkcioj</item>
+    </plurals>
+    <string name="upsell_price_monthly">Planoj ekde %1$s monate</string>
+    <string name="upsell_price_lifetime">aŭ pagu unufoje %1$s kaj gardu ĝin por ĉiam</string>
+    <string name="upsell_price_lifetime_only">Dumviva aliro por %1$s, pagita unufoje</string>
+    <string name="upsell_cta">Vidi Premium-planojn</string>
+    <string name="upsell_later">Ne nun</string>
+    <string name="upsell_trust">Nuligebla iam ajn · Sekura pago per Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Ĉio, kion vi bezonas por protekti, festi kaj kunhavigi vian familian historion.</string>
+    <string name="paywall_highlight_no_ads">Sen reklamoj</string>
+    <string name="paywall_highlight_backup">Aŭtomata sekurkopio</string>
+    <string name="paywall_highlight_reminders">Senlimaj memorigiloj</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d-taga senpaga provperiodo</item>
+        <item quantity="other">%d-taga senpaga provperiodo</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d-monata senpaga provperiodo</item>
+        <item quantity="other">%d-monata senpaga provperiodo</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Repagas sin post %d monato</item>
+        <item quantity="other">Repagas sin post %d monatoj</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s monate · nuligebla iam ajn</string>
+    <string name="paywall_summary_trial">%1$s, poste %2$s monate</string>
+    <string name="paywall_summary_lifetime">%1$s unufoje · via por ĉiam</string>
+    <string name="paywall_loading_prices">Ŝargante prezojn…</string>
+    <string name="paywall_compare_title">Senpaga kontraŭ Premium</string>
+    <string name="paywall_compare_free">Senpaga</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Inkluzivita</string>
+    <string name="paywall_details_show">Kiel ĝi funkcias</string>
+    <string name="paywall_details_hide">Kaŝi detalojn</string>
+    <string name="paywall_free_label">Senpaga: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Nur en Premium</string>
+    <string name="paywall_trust_title">Aĉetu kun fido</string>
+    <string name="paywall_trust_secure">Sekura pago per Google Play</string>
+    <string name="paywall_trust_cancel">Nuligu la monatan abonon iam ajn</string>
+    <string name="paywall_trust_devices">Restaŭru en ĉiuj viaj aparatoj</string>
+    <string name="paywall_trust_private">Viaj familiaj datumoj restas en via aparato</string>
+    <string name="paywall_faq_title">Demandoj kaj respondoj</string>
+    <string name="paywall_faq_plans_q">Kio estas la diferenco inter Monata kaj Dumviva?</string>
+    <string name="paywall_faq_plans_a">Ambaŭ malŝlosas ĉion en Premium. Monata renoviĝas ĉiun monaton, kaj vi povas nuligi ĝin iam ajn. Dumviva estas pagata unufoje kaj neniam eksvalidiĝas.</string>
+    <string name="paywall_faq_cancel_q">Kio okazos al miaj arboj, se mi ĉesigos Premium?</string>
+    <string name="paywall_faq_cancel_a">Nenio perdiĝas. Viaj arboj, fotoj, memorigiloj kaj sekurkopioj restas ĝuste kiel ili estas: nur la Premium-funkcioj ĉesas kaj la reklamoj revenas.</string>
+    <string name="paywall_faq_device_q">Mi ŝanĝis telefonon. Ĉu mi devas pagi denove?</string>
+    <string name="paywall_faq_device_a">Ne. Instalu Family Tree per la sama Google-konto kaj tuŝetu Restaŭri aĉetojn.</string>
+    <string name="paywall_faq_privacy_q">Ĉu miaj familiaj datumoj estas senditaj ien?</string>
+    <string name="paywall_faq_privacy_a">Ne. Viaj arboj restas en via aparato kaj en la sekurkopia dosierujo, kiun vi elektas. Aĉeti Premium alŝutas nenion.</string>
+    <string name="paywall_faq_manage_q">Kiel mi nuligas la monatan abonon?</string>
+    <string name="paywall_faq_manage_a">En Play Store, malfermu Pagoj kaj abonoj › Abonoj, elektu Family Tree kaj tuŝetu Nuligi. Premium restas aktiva ĝis la fino de la jam pagita periodo.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Tenu ĝin sekura</string>
+    <string name="pf_group_safe_desc">Jaroj da esplorado, aŭtomate protektitaj.</string>
+    <string name="pf_group_moments">Neniam maltrafu momenton</string>
+    <string name="pf_group_moments_desc">La datoj kaj lokoj de via familio, ĉiam ĉe mano.</string>
+    <string name="pf_group_share">Krei kaj kunhavigi</string>
+    <string name="pf_group_share_desc">Belaj elportoj kaj potencaj iloj por serioza esplorado.</string>
+    <string name="pf_group_yours">Faru ĝin via</string>
+    <string name="pf_group_yours_desc">Trankvila, persona spaco por via familia historio.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Aŭtomata sekurkopio</string>
+    <string name="pf_backup_summary">Ĉiu ŝanĝo estas konservata en dosierujo de via elekto, sen ke vi levu eĉ fingron.</string>
+    <string name="pf_backup_free">Permana sekurkopio</string>
+    <string name="pf_backup_premium">Aŭtomata</string>
+    <string name="pf_backup_detail1">Unu minuton post ĉiu redakto, la arbo estas konservata kiel ZIP-sekurkopio en via dosierujo: telefona memoro, SD-karto aŭ nuba dosierujo kiel Google Drive.</string>
+    <string name="pf_backup_detail2">La 3 plej novaj kopioj de ĉiu arbo estas konservataj, do vi ĉiam povas reveni.</string>
+    <string name="pf_backup_detail3">Restaŭri sekurkopion estas senpage kaj ĉiam eble, eĉ sen Premium.</string>
+
+    <string name="pf_media_title">Organizilo de aŭdvidaĵoj</string>
+    <string name="pf_media_summary">Kopiu ĉiujn fotojn kaj dokumentojn de arbo en la apon per unu sola ago.</string>
+    <string name="pf_media_free">Po unu dosiero</string>
+    <string name="pf_media_premium">Ĉiuj dosieroj samtempe</string>
+    <string name="pf_media_detail1">Portu ĉiujn aŭdvidaĵojn de arbo en la aplikaĵan konservejon, kun progreso kaj nuligo, por ke ligiloj neniam rompiĝu, kiam dosieroj moviĝas.</string>
+    <string name="pf_media_detail2">Viaj originaloj restas netuŝitaj: ĉiu dosiero estas kopiata kaj kontrolata antaŭ ol ĝiaj ligiloj estas ĝisdatigitaj.</string>
+
+    <string name="pf_reminders_title">Inteligentaj familiaj memorigiloj</string>
+    <string name="pf_reminders_summary">Geedziĝaj datrevenoj, memortagoj kaj senlimaj personaj memorigiloj.</string>
+    <string name="pf_reminders_free">Naskiĝtagoj + 2 memorigiloj</string>
+    <string name="pf_reminders_premium">Senlimaj</string>
+    <string name="pf_reminders_detail1">Ricevu avertojn pri la geedziĝaj datrevenoj de paroj, kaj pri memortagoj, se vi deziras.</string>
+    <string name="pf_reminders_detail2">Kreu tiom da memorigiloj, kiom vi volas: bebofestoj, diplomiĝoj, familiaj renkontiĝoj, vizitoj…</string>
+    <string name="pf_reminders_detail3">Fruaj avertoj sciigas vin anticipe, do restas tempo por telefoni, skribi aŭ plani donacon.</string>
+
+    <string name="pf_places_title">Familiaj lokoj</string>
+    <string name="pf_places_summary">Ĉiu loko de via familia historio, serĉebla kaj je unu tuŝeto de la mapo.</string>
+    <string name="pf_places_free">Unuaj 3 lokoj</string>
+    <string name="pf_places_premium">Ĉiuj lokoj</string>
+    <string name="pf_places_detail1">Ĉiuj lokoj de okazaĵoj kaj adresoj de la arbo, grupigitaj laŭ lando, kun serĉo.</string>
+    <string name="pf_places_detail2">Vidu, kio okazis en ĉiu loko, kaj malfermu ĝin en via mapa apo, kun itinero.</string>
+
+    <string name="pf_exports_title">Presopretaj elportoj</string>
+    <string name="pf_exports_summary">Faru el via diagramo HD-bildon aŭ PDF-on por presi kaj kunhavigi.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Unufoje por ĉiu video</string>
+    <string name="pf_exports_premium">PDF + HD-bildo</string>
+    <string name="pf_exports_detail1">Elportu la diagramon kiel altdistingivan PNG-bildon, perfektan por babilejoj kaj sociaj retoj.</string>
+    <string name="pf_exports_detail2">Kreu PDF-on de la tuta diagramo, pretan por presi kiel afiŝon por familiaj renkontiĝoj.</string>
+    <string name="pf_exports_detail3">Presa aspekto kun blanka fono kaj akraj linioj, laŭ la grando de via arbo.</string>
+    <string name="pf_exports_detail4">Sen Premium vi tamen povas elporti unufoje post spekto de mallonga video.</string>
+
+    <string name="pf_merge_title">Kunfandi arbojn</string>
+    <string name="pf_merge_summary">Kunigu du arbojn en unu, kaj la duplikatoj estos trovitaj por vi.</string>
+    <string name="pf_merge_detail1">La apo serĉas la samajn personojn en ambaŭ arboj kaj lasas vin konfirmi ĉiun kongruon, aŭ ĉiujn samtempe.</string>
+    <string name="pf_merge_detail2">Perfekta, kiam parencoj sendas al vi sian propran arbon.</string>
+
+    <string name="pf_advanced_title">Altnivelaj iloj</string>
+    <string name="pf_advanced_summary">Fontoj, deponejoj, GEDCOM-elporto kaj la kompleta genealogia ilaro.</string>
+    <string name="pf_advanced_detail1">Citu fontojn kaj deponejojn kaj administru submetintojn, kiel profesiaj genealogoj.</string>
+    <string name="pf_advanced_detail2">Elportu vian arbon kiel GEDCOM, kun aŭ sen aŭdvidaĵoj, por ajna genealogia programo, kaj faru kompletajn ZIP-sekurkopiojn.</string>
+    <string name="pf_advanced_detail3">Komparu kunhavigitajn arbojn kaj ordigu la dosierindikojn de aŭdvidaĵaj dosieroj.</string>
+
+    <string name="pf_no_ads_title">Sen reklamoj</string>
+    <string name="pf_no_ads_summary">Trankvila, koncentriga spaco por via familia historio.</string>
+    <string name="pf_no_ads_free">Kun reklamoj</string>
+    <string name="pf_no_ads_premium">Sen reklamoj</string>
+    <string name="pf_no_ads_detail1">Neniuj reklamoj en listoj, en profiloj aŭ inter taskoj.</string>
+    <string name="pf_no_ads_detail2">Premium ankaŭ subtenas la disvolvadon de Family Tree.</string>
+
+    <string name="pf_themes_title">20 koloraj etosoj</string>
+    <string name="pf_themes_summary">Personigu la apon, en hela aŭ malhela reĝimo.</string>
+    <string name="pf_themes_free">Klasika etoso</string>
+    <string name="pf_themes_premium">20 etosoj</string>
+    <string name="pf_themes_detail1">Elektu inter 20 koloraj etosoj, de profunda indigo ĝis varma sukceno.</string>
+    <string name="pf_themes_detail2">Ĉiu etoso funkcias en hela kaj en malhela reĝimo.</string>
+</resources>

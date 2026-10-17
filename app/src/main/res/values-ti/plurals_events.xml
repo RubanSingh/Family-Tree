@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">ዝኽሪ መርዓ · %d ዓመት</item>
+        <item quantity="other">ዝኽሪ መርዓ · %d ዓመታት</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">መዓልቲ ዝኽሪ · %d ዓመት</item>
+        <item quantity="other">መዓልቲ ዝኽሪ · %d ዓመታት</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">ድሕሪ %1$d መዓልቲ · %2$s</item>
+        <item quantity="other">ድሕሪ %1$d መዓልታት · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">ድሕሪ %d መዓልቲ</item>
+        <item quantity="other">ድሕሪ %d መዓልታት</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">መበል %d ዓመት</item>
+        <item quantity="other">መበል %d ዓመት</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d ዓመት ሓዳር</item>
+        <item quantity="other">%d ዓመታት ሓዳር</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">ቅድሚ %d ዓመት</item>
+        <item quantity="other">ቅድሚ %d ዓመታት</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d ዓመት</item>
+        <item quantity="other">%d ዓመታት</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d ፍፃመ</item>
+        <item quantity="other">%d ፍፃመታት</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d ሰብ</item>
+        <item quantity="other">%d ሰባት</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d ቦታ</item>
+        <item quantity="other">%d ቦታታት</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d ሃገር</item>
+        <item quantity="other">%d ሃገራት</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d ሰብ</item>
+        <item quantity="other">%d ሰባት</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d ፋይል ካብ መኽዘን ኣፕ ወፃኢ ኣሎ። ምስ ኦምካ ክፀንሕን ኣብ ተጠባባቒ ቅዳሓት ክኣቱን ናብ መኽዘን ኣፕ ይቕዳሕ ዶ? እቲ መበቆላዊ ፋይል ኣይቅየርን።</item>
+        <item quantity="other">%d ፋይላት ካብ መኽዘን ኣፕ ወፃኢ ኣለዉ። ምስ ኦምካ ክፀንሑን ኣብ ተጠባባቒ ቅዳሓት ክኣትዉን ናብ መኽዘን ኣፕ ይቕድሑ ዶ? እቶም መበቆላውያን ፋይላት ኣይቅየሩን።</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d ፋይል ናብ መኽዘን ኣፕ ተቐዲሑ።</item>
+        <item quantity="other">%d ፋይላት ናብ መኽዘን ኣፕ ተቐዲሖም።</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d ዓቛሪ ዳታ ብምሉእ መንገዲ ናይ ሓደ ፋይል ኣብ መኽዘን ኣፕ ተኣሳሲሩ ኣሎ። ናብ ስም ፋይል ጥራይ ይሕፀር ዶ? እቲ ፋይል ኣብ ቦታኡ ይፀንሕ።</item>
+        <item quantity="other">%d ዓቛሪ ዳታ ብምሉእ መንገዲ ናይ ሓደ ፋይል ኣብ መኽዘን ኣፕ ተኣሳሲሮም ኣለዉ። ናብ ስም ፋይል ጥራይ ይሕፀሩ ዶ? እቶም ፋይላት ኣብ ቦታኦም ይፀንሑ።</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d መንገዲ ፋይል ሓፂሩ።</item>
+        <item quantity="other">%d መንገድታት ፋይል ሓፂሮም።</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d መዝገብ</item>
+        <item quantity="other">%d መዝገባት</item>
+    </plurals>
+</resources>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Obletnica poroke · %d leto</item>
+        <item quantity="two">Obletnica poroke · %d leti</item>
+        <item quantity="few">Obletnica poroke · %d leta</item>
+        <item quantity="other">Obletnica poroke · %d let</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Obletnica smrti · %d leto</item>
+        <item quantity="two">Obletnica smrti · %d leti</item>
+        <item quantity="few">Obletnica smrti · %d leta</item>
+        <item quantity="other">Obletnica smrti · %d let</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Čez %1$d dan · %2$s</item>
+        <item quantity="two">Čez %1$d dneva · %2$s</item>
+        <item quantity="few">Čez %1$d dni · %2$s</item>
+        <item quantity="other">Čez %1$d dni · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">čez %d dan</item>
+        <item quantity="two">čez %d dneva</item>
+        <item quantity="few">čez %d dni</item>
+        <item quantity="other">čez %d dni</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Dopolni %d leto</item>
+        <item quantity="two">Dopolni %d leti</item>
+        <item quantity="few">Dopolni %d leta</item>
+        <item quantity="other">Dopolni %d let</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d leto v zakonu</item>
+        <item quantity="two">%d leti v zakonu</item>
+        <item quantity="few">%d leta v zakonu</item>
+        <item quantity="other">%d let v zakonu</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Pred %d letom</item>
+        <item quantity="two">Pred %d letoma</item>
+        <item quantity="few">Pred %d leti</item>
+        <item quantity="other">Pred %d leti</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d leto</item>
+        <item quantity="two">%d leti</item>
+        <item quantity="few">%d leta</item>
+        <item quantity="other">%d let</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d dogodek</item>
+        <item quantity="two">%d dogodka</item>
+        <item quantity="few">%d dogodki</item>
+        <item quantity="other">%d dogodkov</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d oseba</item>
+        <item quantity="two">%d osebi</item>
+        <item quantity="few">%d osebe</item>
+        <item quantity="other">%d oseb</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d kraj</item>
+        <item quantity="two">%d kraja</item>
+        <item quantity="few">%d kraji</item>
+        <item quantity="other">%d krajev</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d država</item>
+        <item quantity="two">%d državi</item>
+        <item quantity="few">%d države</item>
+        <item quantity="other">%d držav</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d oseba</item>
+        <item quantity="two">%d osebi</item>
+        <item quantity="few">%d osebe</item>
+        <item quantity="other">%d oseb</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d datoteka je zunaj skladišča aplikacije. Jo želite kopirati v skladišče aplikacije, da ostane z vašim drevesom in je vključena v varnostne kopije? Izvirna datoteka se ne spremeni.</item>
+        <item quantity="two">%d datoteki sta zunaj skladišča aplikacije. Ju želite kopirati v skladišče aplikacije, da ostaneta z vašim drevesom in sta vključeni v varnostne kopije? Izvirni datoteki se ne spremenita.</item>
+        <item quantity="few">%d datoteke so zunaj skladišča aplikacije. Jih želite kopirati v skladišče aplikacije, da ostanejo z vašim drevesom in so vključene v varnostne kopije? Izvirne datoteke se ne spremenijo.</item>
+        <item quantity="other">%d datotek je zunaj skladišča aplikacije. Jih želite kopirati v skladišče aplikacije, da ostanejo z vašim drevesom in so vključene v varnostne kopije? Izvirne datoteke se ne spremenijo.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d datoteka je kopirana v skladišče aplikacije.</item>
+        <item quantity="two">%d datoteki sta kopirani v skladišče aplikacije.</item>
+        <item quantity="few">%d datoteke so kopirane v skladišče aplikacije.</item>
+        <item quantity="other">%d datotek je kopiranih v skladišče aplikacije.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d medij je povezan s polno potjo datoteke v skladišču aplikacije. Ga želite skrajšati samo na ime datoteke? Datoteka ostane, kjer je.</item>
+        <item quantity="two">%d medija sta povezana s polno potjo datoteke v skladišču aplikacije. Ju želite skrajšati samo na ime datoteke? Datoteki ostaneta, kjer sta.</item>
+        <item quantity="few">%d mediji so povezani s polno potjo datoteke v skladišču aplikacije. Jih želite skrajšati samo na ime datoteke? Datoteke ostanejo, kjer so.</item>
+        <item quantity="other">%d medijev je povezanih s polno potjo datoteke v skladišču aplikacije. Jih želite skrajšati samo na ime datoteke? Datoteke ostanejo, kjer so.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d pot datoteke je skrajšana.</item>
+        <item quantity="two">%d poti datotek sta skrajšani.</item>
+        <item quantity="few">%d poti datotek so skrajšane.</item>
+        <item quantity="other">%d poti datotek je skrajšanih.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d zapis</item>
+        <item quantity="two">%d zapisa</item>
+        <item quantity="few">%d zapisi</item>
+        <item quantity="other">%d zapisov</item>
+    </plurals>
+</resources>

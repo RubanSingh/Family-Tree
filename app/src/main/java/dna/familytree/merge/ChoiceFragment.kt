@@ -46,6 +46,7 @@ class ChoiceFragment : BaseFragment(R.layout.merge_choice_fragment) {
                 }
             }
             binding.mergeNext.isEnabled = true
+            binding.mergeSkip.isEnabled = true
         }
         // Searching state
         model.state.observe(viewLifecycleOwner) {
@@ -57,6 +58,7 @@ class ChoiceFragment : BaseFragment(R.layout.merge_choice_fragment) {
                     treeView.findViewById<RadioButton>(R.id.merge_radio).isEnabled = false
                 }
                 binding.mergeNext.isEnabled = false
+                binding.mergeSkip.isEnabled = false
                 requireActivity().findViewById<ProgressBar>(R.id.progress_wheel)?.visibility = View.VISIBLE
             } else if (it == State.COMPLETE) {
                 if (model.matches.any())
@@ -69,6 +71,9 @@ class ChoiceFragment : BaseFragment(R.layout.merge_choice_fragment) {
         // Action button
         binding.mergeNext.setOnClickListener {
             model.findMatches()
+        }
+        binding.mergeSkip.setOnClickListener {
+            model.findMatches(false)
         }
 
         setToolbar(view)

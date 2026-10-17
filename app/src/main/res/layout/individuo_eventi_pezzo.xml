@@ -1,46 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<!-- One fact on the profile Events tab (name, birth, occupation...) as a tonal card -->
+<com.google.android.material.card.MaterialCardView
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Widget.FamilyTree.Card"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:background="?android:attr/selectableItemBackground" >
+	android:layout_marginTop="4dp"
+	android:layout_marginBottom="4dp">
 
-	<TextView
-		android:id="@+id/evento_titolo"
+	<RelativeLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="8dp"
-		style="@style/AppTheme.LittleTitle"/>
+		android:paddingStart="@dimen/ds_space_md"
+		android:paddingTop="14dp"
+		android:paddingEnd="@dimen/ds_space_md"
+		android:paddingBottom="14dp">
 
-	<TextView
-		android:id="@+id/evento_testo"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@+id/evento_titolo"
-		android:textSize="17sp" />
+		<TextView
+			android:id="@+id/evento_titolo"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_toStartOf="@+id/evento_fonti"
+			android:layout_alignWithParentIfMissing="true"
+			android:textAppearance="@style/TextAppearance.FamilyTree.LabelLarge"
+			android:textColor="?attr/colorPrimary"/>
 
-	<LinearLayout
-		android:id="@+id/evento_altro"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@+id/evento_testo"
-		android:orientation="vertical" />
+		<TextView
+			android:id="@+id/evento_testo"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/evento_titolo"
+			android:layout_marginTop="4dp"
+			android:textAppearance="@style/TextAppearance.FamilyTree.BodyLarge"
+			android:textColor="?attr/colorOnSurface"
+			android:lineSpacingExtra="2dp"/>
 
-	<TextView
-		android:id="@+id/evento_fonti"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentBottom="true"
-		android:layout_alignParentEnd="true"
-		android:layout_marginBottom="8dp"
-		android:background="@color/source_citation"
-		android:padding="4dp"
-		android:visibility="gone" />
+		<LinearLayout
+			android:id="@+id/evento_altro"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/evento_testo"
+			android:orientation="vertical" />
 
-	<View
-		android:layout_width="match_parent"
-		android:layout_height="1dp"
-		android:layout_below="@+id/evento_altro"
-		android:layout_marginTop="8dp"
-		android:background="?attr/colorPrimary" />
-</RelativeLayout>
+		<!-- Number of source citations (expert mode) -->
+		<TextView
+			android:id="@+id/evento_fonti"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentEnd="true"
+			android:layout_marginStart="@dimen/ds_space_sm"
+			android:background="@drawable/ds_bg_source_badge"
+			android:minWidth="24dp"
+			android:gravity="center"
+			android:paddingStart="@dimen/ds_space_sm"
+			android:paddingTop="2dp"
+			android:paddingEnd="@dimen/ds_space_sm"
+			android:paddingBottom="2dp"
+			android:textAppearance="@style/TextAppearance.FamilyTree.LabelMedium"
+			android:textColor="?attr/colorOnTertiaryContainer"
+			android:visibility="gone" />
+	</RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

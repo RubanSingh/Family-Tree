@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">ವಿವಾಹ ವಾರ್ಷಿಕೋತ್ಸವ · %d ವರ್ಷ</item>
+        <item quantity="other">ವಿವಾಹ ವಾರ್ಷಿಕೋತ್ಸವ · %d ವರ್ಷಗಳು</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">ಸ್ಮರಣೆಯ ದಿನ · %d ವರ್ಷ</item>
+        <item quantity="other">ಸ್ಮರಣೆಯ ದಿನ · %d ವರ್ಷಗಳು</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">%1$d ದಿನದಲ್ಲಿ · %2$s</item>
+        <item quantity="other">%1$d ದಿನಗಳಲ್ಲಿ · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">%d ದಿನದಲ್ಲಿ</item>
+        <item quantity="other">%d ದಿನಗಳಲ್ಲಿ</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d ವರ್ಷ ತುಂಬುತ್ತದೆ</item>
+        <item quantity="other">%d ವರ್ಷ ತುಂಬುತ್ತದೆ</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">ವಿವಾಹವಾಗಿ %d ವರ್ಷ</item>
+        <item quantity="other">ವಿವಾಹವಾಗಿ %d ವರ್ಷಗಳು</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d ವರ್ಷದ ಹಿಂದೆ</item>
+        <item quantity="other">%d ವರ್ಷಗಳ ಹಿಂದೆ</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d ವರ್ಷ</item>
+        <item quantity="other">%d ವರ್ಷಗಳು</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d ಘಟನೆ</item>
+        <item quantity="other">%d ಘಟನೆಗಳು</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d ವ್ಯಕ್ತಿ</item>
+        <item quantity="other">%d ಜನರು</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d ಸ್ಥಳ</item>
+        <item quantity="other">%d ಸ್ಥಳಗಳು</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d ದೇಶ</item>
+        <item quantity="other">%d ದೇಶಗಳು</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d ವ್ಯಕ್ತಿ</item>
+        <item quantity="other">%d ವ್ಯಕ್ತಿಗಳು</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d ಫೈಲ್ ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಯ ಹೊರಗಿದೆ. ಅದು ನಿಮ್ಮ ಮರದೊಂದಿಗೆ ಉಳಿಯಲು ಮತ್ತು ಬ್ಯಾಕಪ್‌ಗಳಲ್ಲಿ ಸೇರಲು ಅದನ್ನು ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಗೆ ನಕಲಿಸಬೇಕೇ? ಮೂಲ ಫೈಲ್ ಬದಲಾಗುವುದಿಲ್ಲ.</item>
+        <item quantity="other">%d ಫೈಲ್‌ಗಳು ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಯ ಹೊರಗಿವೆ. ಅವು ನಿಮ್ಮ ಮರದೊಂದಿಗೆ ಉಳಿಯಲು ಮತ್ತು ಬ್ಯಾಕಪ್‌ಗಳಲ್ಲಿ ಸೇರಲು ಅವುಗಳನ್ನು ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಗೆ ನಕಲಿಸಬೇಕೇ? ಮೂಲ ಫೈಲ್‌ಗಳು ಬದಲಾಗುವುದಿಲ್ಲ.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d ಫೈಲ್ ಅನ್ನು ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಗೆ ನಕಲಿಸಲಾಗಿದೆ.</item>
+        <item quantity="other">%d ಫೈಲ್‌ಗಳನ್ನು ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಗೆ ನಕಲಿಸಲಾಗಿದೆ.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d ಮಾಧ್ಯಮ ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಯಲ್ಲಿರುವ ಫೈಲ್‌ನ ಪೂರ್ಣ ಮಾರ್ಗದೊಂದಿಗೆ ಲಿಂಕ್ ಆಗಿದೆ. ಲಿಂಕ್ ಅನ್ನು ಫೈಲ್ ಹೆಸರಿಗೆ ಮಾತ್ರ ಚಿಕ್ಕದಾಗಿಸಬೇಕೇ? ಫೈಲ್ ಇರುವಲ್ಲೇ ಉಳಿಯುತ್ತದೆ.</item>
+        <item quantity="other">%d ಮಾಧ್ಯಮಗಳು ಆ್ಯಪ್ ಸಂಗ್ರಹಣೆಯಲ್ಲಿರುವ ಫೈಲ್‌ನ ಪೂರ್ಣ ಮಾರ್ಗದೊಂದಿಗೆ ಲಿಂಕ್ ಆಗಿವೆ. ಲಿಂಕ್‌ಗಳನ್ನು ಫೈಲ್ ಹೆಸರಿಗೆ ಮಾತ್ರ ಚಿಕ್ಕದಾಗಿಸಬೇಕೇ? ಫೈಲ್‌ಗಳು ಇರುವಲ್ಲೇ ಉಳಿಯುತ್ತವೆ.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d ಫೈಲ್ ಮಾರ್ಗವನ್ನು ಚಿಕ್ಕದಾಗಿಸಲಾಗಿದೆ.</item>
+        <item quantity="other">%d ಫೈಲ್ ಮಾರ್ಗಗಳನ್ನು ಚಿಕ್ಕದಾಗಿಸಲಾಗಿದೆ.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d ದಾಖಲೆ</item>
+        <item quantity="other">%d ದಾಖಲೆಗಳು</item>
+    </plurals>
+</resources>

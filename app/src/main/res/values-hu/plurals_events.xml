@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Házassági évforduló · %d év</item>
+        <item quantity="other">Házassági évforduló · %d év</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Emléknap · %d év</item>
+        <item quantity="other">Emléknap · %d év</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">%1$d nap múlva · %2$s</item>
+        <item quantity="other">%1$d nap múlva · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">%d nap múlva</item>
+        <item quantity="other">%d nap múlva</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">%d éves lesz</item>
+        <item quantity="other">%d éves lesz</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d éves házasság</item>
+        <item quantity="other">%d éves házasság</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d éve</item>
+        <item quantity="other">%d éve</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d év</item>
+        <item quantity="other">%d év</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d esemény</item>
+        <item quantity="other">%d esemény</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d személy</item>
+        <item quantity="other">%d személy</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d hely</item>
+        <item quantity="other">%d hely</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d ország</item>
+        <item quantity="other">%d ország</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d személy</item>
+        <item quantity="other">%d személy</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d fájl az alkalmazástárhelyen kívül található. Átmásolja az alkalmazástárhelyre, hogy a fával együtt maradjon, és bekerüljön a biztonsági mentésekbe? Az eredeti fájl nem változik.</item>
+        <item quantity="other">%d fájl az alkalmazástárhelyen kívül található. Átmásolja őket az alkalmazástárhelyre, hogy a fával együtt maradjanak, és bekerüljenek a biztonsági mentésekbe? Az eredeti fájlok nem változnak.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d fájl átmásolva az alkalmazástárhelyre.</item>
+        <item quantity="other">%d fájl átmásolva az alkalmazástárhelyre.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d média az alkalmazástárhelyen lévő fájl teljes útvonalával van csatolva. Lerövidíti a hivatkozást csak a fájlnévre? A fájl a helyén marad.</item>
+        <item quantity="other">%d média az alkalmazástárhelyen lévő fájl teljes útvonalával van csatolva. Lerövidíti a hivatkozásokat csak a fájlnévre? A fájlok a helyükön maradnak.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d fájlútvonal lerövidítve.</item>
+        <item quantity="other">%d fájlútvonal lerövidítve.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d rekord</item>
+        <item quantity="other">%d rekord</item>
+    </plurals>
+</resources>

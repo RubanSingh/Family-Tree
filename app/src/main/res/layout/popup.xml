@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hint bubble shown above a card on the tree canvas -->
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -11,18 +12,16 @@
 	app:layout_constraintEnd_toEndOf="parent">
 	<TextView
 		android:id="@+id/popup_testo"
+		style="@style/Widget.FamilyTree.Tooltip.Canvas"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:background="@drawable/popup_baloon"
-		android:paddingTop="8dp"
-		android:paddingStart="15dp"
-		android:paddingEnd="12dp"
-		android:paddingBottom="10dp"
-		android:text="@string/long_press_menu"
-		android:textSize="12sp"/>
+		android:elevation="0dp"
+		android:gravity="center"
+		android:text="@string/long_press_menu"/>
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		app:srcCompat="@drawable/popup_fiato"
-		android:layout_marginTop="-2dp"/>
+		android:layout_marginBottom="@dimen/ds_space_xs"
+		android:contentDescription="@null"
+		app:srcCompat="@drawable/ds_tooltip_tail_canvas"/>
 </LinearLayout>

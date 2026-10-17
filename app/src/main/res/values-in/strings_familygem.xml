@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Cadangan lokal</string>
+    <string name="choose_folder">Pilih folder</string>
+    <string name="backup_folder">Folder cadangan</string>
+    <string name="recover">Pulihkan</string>
+    <string name="export_png">Ekspor PNG</string>
+    <string name="png_exported_ok">PNG berhasil diekspor.</string>
+    <string name="tree_settings">Pengaturan pohon</string>
+    <string name="max_life_span">Rentang hidup maksimum</string>
+    <string name="years">Tahun</string>
+    <string name="current_date">Tanggal saat ini</string>
+    <string name="device_date">Tanggal perangkat</string>
+    <string name="fixed_date">Tanggal tetap</string>
+    <string name="notification_time">Waktu pemberitahuan ulang tahun</string>
+    <string name="origin_family">Keluarga asal</string>
+    <string name="adoptive_family">Keluarga angkat</string>
+    <string name="foster_family">Keluarga asuh</string>
+    <string name="paternal_family">Keluarga pihak ayah</string>
+    <string name="maternal_family">Keluarga pihak ibu</string>
+    <string name="own_family">Keluarga sendiri</string>
+    <string name="numbers">Angka</string>
+    <string name="invalid_date">Tanggal GEDCOM tidak valid.</string>
+    <string name="search_duplicates">Cari duplikat</string>
+    <string name="skip">Lewati</string>
+    <string name="error_found">Satu error ditemukan.</string>
+    <string name="yes_to_all">Ya untuk semua yang tersisa</string>
+    <string name="no_to_all">Tidak untuk semua yang tersisa</string>
+    <string name="duplicates_lines">Baris duplikat</string>
+    <string name="make_shared_media">Jadikan media bersama</string>
+    <string name="make_media">Buat media</string>
+    <string name="copy_app_storage">Salin ke penyimpanan aplikasi</string>
+    <string name="shrink_path">Persingkat jalur file</string>
+    <string name="file_exists_reuse">File ini sudah ada.\nApakah Anda ingin menggunakannya kembali atau membuat salinan?</string>
+    <string name="use_existing">Gunakan yang sudah ada</string>
+    <string name="make_copy">Buat salinan</string>
+    <string name="existing_name">Nama sudah ada</string>
+    <string name="invalid_name">Nama tidak valid</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="husband_age">Usia suami</string>
+    <string name="wife_age">Usia istri</string>
+    <string name="less_than">Kurang dari</string>
+    <string name="more_than">Lebih dari</string>
+</resources>

@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:background="?android:attr/selectableItemBackground"
-	android:paddingStart="16dp">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/ds_space_sm">
 
-	<com.google.android.material.textview.MaterialTextView
-		android:id="@+id/albero_titolo"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="8dp"
-		android:layout_toStartOf="@id/albero_menu"
-		android:textSize="20sp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/albero_card"
+        style="@style/Widget.FamilyTree.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false">
 
-	<com.google.android.material.textview.MaterialTextView
-		android:id="@+id/albero_dati"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/albero_titolo"
-		android:layout_marginBottom="8dp"
-		android:layout_toStartOf="@id/albero_menu"
-		android:textSize="14sp"
-		android:textColor="@color/gray_text"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/ds_space_md"
+            android:paddingTop="@dimen/ds_space_ms"
+            android:paddingEnd="@dimen/ds_space_xs"
+            android:paddingBottom="@dimen/ds_space_ms">
 
-	<ImageButton
-		android:id="@+id/albero_menu"
-		style="?android:attr/actionOverflowButtonStyle"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_alignParentEnd="true"
-		android:layout_centerVertical="true" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/albero_avatar"
+                android:layout_width="@dimen/ds_avatar"
+                android:layout_height="@dimen/ds_avatar"
+                android:background="@drawable/ds_bg_avatar"
+                android:gravity="center"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                tools:text="S" />
 
-</RelativeLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_space_md"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/albero_titolo"
+                    style="@style/Widget.FamilyTree.ListTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Smith family" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/albero_dati"
+                    style="@style/Widget.FamilyTree.ListSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    tools:text="42 persons · 5 generations · 12 media" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/albero_menu"
+                android:layout_width="@dimen/ds_touch_target"
+                android:layout_height="@dimen/ds_touch_target"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@null"
+                android:src="@drawable/ds_ic_more_vert"
+                app:tint="?attr/colorOnSurfaceVariant" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

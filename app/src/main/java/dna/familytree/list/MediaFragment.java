@@ -18,8 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.theartofdev.edmodo.cropper.CropImageConstant;
-
 import org.folg.gedcom.model.Media;
 import org.folg.gedcom.model.MediaContainer;
 import org.folg.gedcom.model.MediaRef;
@@ -38,6 +36,9 @@ import dna.familytree.Memory;
 import dna.familytree.R;
 import dna.familytree.AppUtils;
 import dna.familytree.constant.Choice;
+import dna.familytree.designsystem.PremiumBadge;
+import dna.familytree.feature.billing.PremiumGate;
+import dna.familytree.feature.media.MediaToolsUi;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.visitor.FindStack;
 import dna.familytree.visitor.MediaContainerList;
@@ -91,6 +92,7 @@ public class MediaFragment extends BaseFragment {
      * Updates the contents of the gallery.
      */
     public void recreate() {
+        if (!isAdded()) return; // Called back after the screen was closed
         mediaVisitor.mediaList.clear();
         gc.accept(mediaVisitor);
         adapter.notifyDataSetChanged();
@@ -176,9 +178,13 @@ public class MediaFragment extends BaseFragment {
     // Contextual menu
     private Media media;
 
+    private static final int MENU_COPY_ALL = 401;
+    private static final int MENU_SHRINK_ALL = 402;
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo info) {
         media = (Media)view.getTag(R.id.tag_object);
+        MediaToolsUi.addConversionItem(menu, media);
         menu.add(0, 0, 0, R.string.delete);
     }
 
@@ -191,12 +197,25 @@ public class MediaFragment extends BaseFragment {
             AppUtils.save(false, modified);
             return true;
         }
+        Object[] modified = MediaToolsUi.convert((AppCompatActivity)requireActivity(), item.getItemId(), media);
+        if (modified != null) {
+            recreate();
+            AppUtils.save(false, modified);
+            return true;
+        }
         return false;
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.add(0, 0, 0, R.string.media_folders);
+        if (gc != null && !getActivity().getIntent().getBooleanExtra(Choice.MEDIA, false)
+                && mediaVisitor != null && !mediaVisitor.mediaList.isEmpty()) {
+            menu.add(0, MENU_COPY_ALL, 0, PremiumGate.isPremium() ? getText(R.string.copy_app_storage)
+                    : PremiumBadge.withDiamond(requireContext(), getText(R.string.copy_app_storage)));
+            if (Global.settings.expert) // The file links are shown only to experts
+                menu.add(0, MENU_SHRINK_ALL, 0, R.string.shrink_path);
+        }
     }
 
     @Override
@@ -206,6 +225,12 @@ public class MediaFragment extends BaseFragment {
             startActivity(new Intent(getContext(), MediaFoldersController.class)
                     .putExtra(Extra.TREE_ID, Global.settings.openTree)
             );
+            return true;
+        } else if (item.getItemId() == MENU_COPY_ALL) {
+            MediaToolsUi.copyAllToAppStorage((AppCompatActivity)requireActivity(), this::recreate);
+            return true;
+        } else if (item.getItemId() == MENU_SHRINK_ALL) {
+            MediaToolsUi.shrinkAllPaths((AppCompatActivity)requireActivity(), this::recreate);
             return true;
         }
         return false;

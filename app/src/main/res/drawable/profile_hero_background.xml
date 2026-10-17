@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Profile hero: theme tint at the top melting into the page surface where the name and tabs sit -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+	<gradient
+		android:angle="270"
+		android:startColor="?attr/colorPrimaryContainer"
+		android:centerColor="?attr/colorSurfaceContainerLow"
+		android:endColor="?attr/colorSurface"
+		android:type="linear" />
+</shape>

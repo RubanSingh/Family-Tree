@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Hapus iklan</string>
+    <string name="ads_remove_hint">Nikmati Family Tree tanpa iklan dengan Premium.</string>
+    <string name="privacy_options">Pilihan privasi iklan</string>
+    <string name="privacy_options_desc">Tinjau atau ubah cara iklan menggunakan data Anda</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Ini adalah fitur Premium.</string>
+    <string name="reward_watch_title">Tonton video singkat</string>
+    <string name="reward_watch_desc">Gunakan sekali secara gratis, langsung setelah video.</string>
+    <string name="reward_loading">Memuat video…</string>
+    <string name="reward_unavailable">Tidak ada video yang tersedia saat ini. Coba lagi nanti atau beralih ke Premium.</string>
+    <string name="reward_not_earned">Tonton video sampai selesai untuk membuka fitur ini.</string>
+    <string name="reward_premium_desc">Penggunaan tanpa batas, tanpa iklan, dan setiap fitur Premium.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Kisah keluarga Anda layak mendapatkan Premium</string>
+    <string name="upsell_subtitle">Jaga semua yang telah Anda bangun tetap aman, dan nikmati setiap fitur Premium.</string>
+    <string name="upsell_subtitle_new">Lindungi riset Anda dan nikmati Family Tree tanpa iklan.</string>
+    <string name="upsell_stat_people">Orang</string>
+    <string name="upsell_stat_trees">Silsilah</string>
+    <string name="upsell_stat_generations">Generasi</string>
+    <plurals name="upsell_more_features">
+        <item quantity="other">dan %d fitur Premium lainnya</item>
+    </plurals>
+    <string name="upsell_price_monthly">Paket mulai %1$s per bulan</string>
+    <string name="upsell_price_lifetime">atau bayar sekali %1$s dan miliki selamanya</string>
+    <string name="upsell_price_lifetime_only">Akses seumur hidup seharga %1$s, sekali bayar</string>
+    <string name="upsell_cta">Lihat paket Premium</string>
+    <string name="upsell_later">Jangan sekarang</string>
+    <string name="upsell_trust">Batalkan kapan saja · Pembayaran aman melalui Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Semua yang Anda perlukan untuk melindungi, merayakan, dan membagikan kisah keluarga Anda.</string>
+    <string name="paywall_highlight_no_ads">Tanpa iklan</string>
+    <string name="paywall_highlight_backup">Backup otomatis</string>
+    <string name="paywall_highlight_reminders">Pengingat tanpa batas</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="other">Uji coba gratis %d hari</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="other">Uji coba gratis %d bulan</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="other">Balik modal dalam %d bulan</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s per bulan · batalkan kapan saja</string>
+    <string name="paywall_summary_trial">%1$s, lalu %2$s per bulan</string>
+    <string name="paywall_summary_lifetime">%1$s sekali bayar · milik Anda selamanya</string>
+    <string name="paywall_loading_prices">Memuat harga…</string>
+    <string name="paywall_compare_title">Gratis vs Premium</string>
+    <string name="paywall_compare_free">Gratis</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Termasuk</string>
+    <string name="paywall_details_show">Cara kerjanya</string>
+    <string name="paywall_details_hide">Sembunyikan detail</string>
+    <string name="paywall_free_label">Gratis: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Hanya di Premium</string>
+    <string name="paywall_trust_title">Beli dengan tenang</string>
+    <string name="paywall_trust_secure">Pembayaran aman melalui Google Play</string>
+    <string name="paywall_trust_cancel">Batalkan paket bulanan kapan saja</string>
+    <string name="paywall_trust_devices">Pulihkan di semua perangkat Anda</string>
+    <string name="paywall_trust_private">Data keluarga Anda tetap di perangkat Anda</string>
+    <string name="paywall_faq_title">Tanya &amp; jawab</string>
+    <string name="paywall_faq_plans_q">Apa bedanya Bulanan dan Seumur hidup?</string>
+    <string name="paywall_faq_plans_a">Keduanya membuka semua fitur Premium. Bulanan diperpanjang setiap bulan dan dapat Anda batalkan kapan saja. Seumur hidup dibayar sekali dan tidak pernah berakhir.</string>
+    <string name="paywall_faq_cancel_q">Apa yang terjadi pada silsilah saya jika saya berhenti menggunakan Premium?</string>
+    <string name="paywall_faq_cancel_a">Tidak ada yang hilang. Silsilah, foto, pengingat, dan backup Anda tetap persis seperti semula: hanya fitur Premium yang berhenti dan iklan muncul kembali.</string>
+    <string name="paywall_faq_device_q">Saya ganti ponsel. Apakah saya harus membayar lagi?</string>
+    <string name="paywall_faq_device_a">Tidak. Instal Family Tree dengan akun Google yang sama, lalu ketuk Pulihkan pembelian.</string>
+    <string name="paywall_faq_privacy_q">Apakah data keluarga saya dikirim ke suatu tempat?</string>
+    <string name="paywall_faq_privacy_a">Tidak. Silsilah Anda disimpan di perangkat Anda dan di folder backup yang Anda pilih. Membeli Premium tidak mengunggah apa pun.</string>
+    <string name="paywall_faq_manage_q">Bagaimana cara membatalkan paket bulanan?</string>
+    <string name="paywall_faq_manage_a">Di Play Store, buka Pembayaran &amp; langganan › Langganan, pilih Family Tree, lalu ketuk Batalkan langganan. Premium tetap aktif hingga akhir periode yang sudah dibayar.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Tetap aman</string>
+    <string name="pf_group_safe_desc">Riset bertahun-tahun, terlindungi secara otomatis.</string>
+    <string name="pf_group_moments">Jangan lewatkan satu momen pun</string>
+    <string name="pf_group_moments_desc">Tanggal dan tempat penting keluarga Anda, selalu di ujung jari.</string>
+    <string name="pf_group_share">Buat &amp; bagikan</string>
+    <string name="pf_group_share_desc">Ekspor yang indah dan alat yang andal untuk riset serius.</string>
+    <string name="pf_group_yours">Sesuai gaya Anda</string>
+    <string name="pf_group_yours_desc">Ruang yang tenang dan personal untuk kisah keluarga Anda.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Backup otomatis</string>
+    <string name="pf_backup_summary">Setiap perubahan disimpan ke folder pilihan Anda, tanpa perlu repot.</string>
+    <string name="pf_backup_free">Backup manual</string>
+    <string name="pf_backup_premium">Otomatis</string>
+    <string name="pf_backup_detail1">Satu menit setelah setiap perubahan, silsilah disimpan sebagai backup ZIP di folder Anda: penyimpanan ponsel, kartu SD, atau folder cloud seperti Google Drive.</string>
+    <string name="pf_backup_detail2">3 salinan terbaru dari setiap silsilah disimpan, jadi Anda selalu bisa kembali.</string>
+    <string name="pf_backup_detail3">Memulihkan backup gratis dan selalu tersedia, bahkan tanpa Premium.</string>
+
+    <string name="pf_media_title">Pengelola media</string>
+    <string name="pf_media_summary">Salin semua foto dan dokumen sebuah silsilah ke aplikasi sekaligus.</string>
+    <string name="pf_media_free">Satu per satu</string>
+    <string name="pf_media_premium">Semua file sekaligus</string>
+    <string name="pf_media_detail1">Bawa semua media sebuah silsilah ke penyimpanan aplikasi, dengan progres dan opsi batal, agar tautan tidak pernah rusak saat file dipindahkan.</string>
+    <string name="pf_media_detail2">File asli Anda tidak diubah: setiap file disalin dan diperiksa sebelum tautannya diperbarui.</string>
+
+    <string name="pf_reminders_title">Pengingat keluarga pintar</string>
+    <string name="pf_reminders_summary">Ulang tahun pernikahan, hari peringatan, dan pengingat pribadi tanpa batas.</string>
+    <string name="pf_reminders_free">Ulang tahun + 2 pengingat</string>
+    <string name="pf_reminders_premium">Tanpa batas</string>
+    <string name="pf_reminders_detail1">Dapatkan notifikasi ulang tahun pernikahan para pasangan, juga hari peringatan jika Anda mau.</string>
+    <string name="pf_reminders_detail2">Buat pengingat sebanyak yang Anda mau: baby shower, wisuda, reuni, kunjungan…</string>
+    <string name="pf_reminders_detail3">Peringatan dini memberi tahu Anda lebih awal, jadi ada waktu untuk menelepon, menulis, atau menyiapkan hadiah.</string>
+
+    <string name="pf_places_title">Tempat keluarga</string>
+    <string name="pf_places_summary">Setiap tempat dalam sejarah keluarga Anda, bisa dicari dan hanya satu ketukan dari peta.</string>
+    <string name="pf_places_free">3 tempat pertama</string>
+    <string name="pf_places_premium">Semua tempat</string>
+    <string name="pf_places_detail1">Semua tempat peristiwa dan alamat di silsilah, dikelompokkan per negara, dengan pencarian.</string>
+    <string name="pf_places_detail2">Lihat apa yang terjadi di setiap tempat dan buka di aplikasi peta Anda, lengkap dengan petunjuk arah.</string>
+
+    <string name="pf_exports_title">Ekspor siap cetak</string>
+    <string name="pf_exports_summary">Ubah diagram Anda menjadi gambar HD atau PDF untuk dicetak dan dibagikan.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Sekali per video</string>
+    <string name="pf_exports_premium">PDF + gambar HD</string>
+    <string name="pf_exports_detail1">Ekspor diagram sebagai gambar PNG resolusi tinggi, sempurna untuk chat dan media sosial.</string>
+    <string name="pf_exports_detail2">Buat PDF dari seluruh diagram, siap dicetak sebagai poster untuk acara kumpul keluarga.</string>
+    <string name="pf_exports_detail3">Gaya cetak dengan latar putih dan garis tajam, disesuaikan dengan ukuran silsilah Anda.</string>
+    <string name="pf_exports_detail4">Tanpa Premium, Anda tetap bisa mengekspor sekali setelah menonton video singkat.</string>
+
+    <string name="pf_merge_title">Gabungkan silsilah</string>
+    <string name="pf_merge_summary">Satukan dua silsilah menjadi satu, dengan duplikat yang ditemukan otomatis.</string>
+    <string name="pf_merge_detail1">Aplikasi mencari orang yang sama di kedua silsilah dan memungkinkan Anda mengonfirmasi setiap kecocokan, atau semuanya sekaligus.</string>
+    <string name="pf_merge_detail2">Sangat cocok saat kerabat mengirimkan silsilah mereka sendiri.</string>
+
+    <string name="pf_advanced_title">Alat lanjutan</string>
+    <string name="pf_advanced_summary">Sumber, repositori, ekspor GEDCOM, dan perangkat genealogi lengkap.</string>
+    <string name="pf_advanced_detail1">Kutip sumber dan repositori serta kelola pengirim, seperti ahli genealogi profesional.</string>
+    <string name="pf_advanced_detail2">Ekspor silsilah Anda sebagai GEDCOM, dengan atau tanpa media, untuk software genealogi apa pun, dan buat backup ZIP lengkap.</string>
+    <string name="pf_advanced_detail3">Bandingkan silsilah yang dibagikan dan rapikan jalur file media.</string>
+
+    <string name="pf_no_ads_title">Tanpa iklan</string>
+    <string name="pf_no_ads_summary">Ruang yang tenang dan fokus untuk kisah keluarga Anda.</string>
+    <string name="pf_no_ads_free">Dengan iklan</string>
+    <string name="pf_no_ads_premium">Tanpa iklan</string>
+    <string name="pf_no_ads_detail1">Tidak ada iklan di daftar, di profil, atau di sela-sela tugas.</string>
+    <string name="pf_no_ads_detail2">Premium juga mendukung pengembangan Family Tree.</string>
+
+    <string name="pf_themes_title">20 tema warna</string>
+    <string name="pf_themes_summary">Jadikan aplikasi milik Anda, dalam mode terang atau gelap.</string>
+    <string name="pf_themes_free">Tema klasik</string>
+    <string name="pf_themes_premium">20 tema</string>
+    <string name="pf_themes_detail1">Pilih di antara 20 tema warna, dari indigo pekat hingga amber yang hangat.</string>
+    <string name="pf_themes_detail2">Setiap tema berfungsi dalam mode terang maupun gelap.</string>
+</resources>

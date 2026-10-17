@@ -57,6 +57,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -73,6 +74,8 @@ import dna.familytree.R;
 import dna.familytree.cropper.CropImage;
 import dna.familytree.detail.MediaController;
 import dna.familytree.list.MediaFragment;
+import dna.familytree.feature.media.MediaAccess;
+import dna.familytree.feature.media.MediaFileTools;
 import dna.familytree.visitor.MediaList;
 
 /**
@@ -416,6 +419,10 @@ public class FileUtils {
     public static Uri mediaUri(int treeId, Media m) {
         String file = m.getFile();
         if (file != null && !file.isEmpty()) {
+            // By the original path, inside the granted folders (photos outside the app storage on Android 13+)
+            Uri found = MediaAccess.resolve(Global.context, Global.settings.getTree(treeId), file);
+            if (found != null)
+                return found;
             // OBJE.FILE is never a Uri, always a path (Windows or Android)
             String filename = new File(file.replace("\\", "/")).getName();
             for (String uri : Global.settings.getTree(treeId).uris) {
@@ -618,26 +625,18 @@ public class FileUtils {
      * Offers a nice list of apps for capturing images
      */
     public static void displayImageCaptureDialog(Context context, Fragment fragment, int code, MediaContainer container) {
-        // Request permission to access device memory
-        final String[] requiredPermissions;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            requiredPermissions = new String[] {
-                    Manifest.permission.READ_MEDIA_IMAGES,
-                    Manifest.permission.READ_MEDIA_VIDEO,
-                    Manifest.permission.READ_MEDIA_AUDIO,
-            };
-        } else {
-            requiredPermissions = new String[] {
-                    Manifest.permission.READ_EXTERNAL_STORAGE,
-            };
-        }
-        final int perm = checkMultiplePermissions(context, requiredPermissions);
-        if (perm == PackageManager.PERMISSION_DENIED) {
-            if (fragment != null) { // MediaFragment
-                fragment.requestPermissions(requiredPermissions, code);
-            } else
-                ActivityCompat.requestPermissions((AppCompatActivity)context, requiredPermissions, code);
-            return;
+        // Request permission to access device memory, to link the chosen files by path
+        // Android 13+ needs none: files the app can't read by path are copied into app storage (proposeCropping)
+        if (!MediaAccess.needsGrantedFolders()) {
+            final String[] requiredPermissions = {Manifest.permission.READ_EXTERNAL_STORAGE};
+            final int perm = checkMultiplePermissions(context, requiredPermissions);
+            if (perm == PackageManager.PERMISSION_DENIED) {
+                if (fragment != null) { // MediaFragment
+                    fragment.requestPermissions(requiredPermissions, code);
+                } else
+                    ActivityCompat.requestPermissions((AppCompatActivity)context, requiredPermissions, code);
+                return;
+            }
         }
         // Collect intents useful to capture images
         List<ResolveInfo> resolveInfos = new ArrayList<>();
@@ -759,20 +758,26 @@ public class FileUtils {
 
         // Creates the file
         File[] fileMedia = new File[1]; // Because must be final
-        if (path != null && path.lastIndexOf('/') > 0) { // If it is a full path to the file
+        if (path != null && path.lastIndexOf('/') > 0 && (uri == null || isReadable(new File(path)))) { // If it is a full path to a readable file
             // Directly points to the file
             fileMedia[0] = new File(path);
-        } else { // It is just the file name 'myFile.ext' or more rarely null
+        } else { // It is just the file name 'myFile.ext', a file not readable by path (Android 13+) or more rarely null
             // External app storage: /storage/emulated/0/Android/data/app.familygem/files/12
             File externalFilesDir = context.getExternalFilesDir(String.valueOf(Global.settings.openTree));
             try { // We use the URI
-                InputStream input = context.getContentResolver().openInputStream(uri);
-                // TODO: if the file already exists, do not duplicate it but reuse it: as in ConfirmationActivity.copyFiles
                 if (path == null) { // Null filename, must be created from scratch
                     String type = context.getContentResolver().getType(uri);
                     path = type.substring(0, type.indexOf('/')) + "."
                             + MimeTypeMap.getSingleton().getExtensionFromMimeType(type);
+                } else
+                    path = new File(path).getName();
+                // The same file is already in app storage: proposes to reuse it instead of making another copy
+                File identical = MediaFileTools.findIdenticalFile(context, uri, path);
+                if (identical != null) {
+                    proposeReuse(context, fragment, media, uri, path, identical);
+                    return true;
                 }
+                InputStream input = context.getContentResolver().openInputStream(uri);
                 fileMedia[0] = nextAvailableFileName(externalFilesDir.getAbsolutePath(), path);
                 org.apache.commons.io.FileUtils.copyInputStreamToFile(input, fileMedia[0]); // Crea la cartella se non esiste
             } catch (Exception e) {
@@ -781,14 +786,41 @@ public class FileUtils {
                 Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
             }
         }
+        if (fileMedia[0] == null) // The file could not be created
+            return false;
+        linkFile(media, fileMedia[0]);
+        return proposeCroppingDialog(context, fragment, media, fileMedia[0]);
+    }
+
+    /**
+     * Without READ_MEDIA_IMAGES (Android 13+) files of other apps can't be opened by path.
+     */
+    private static boolean isReadable(File file) {
+        try (InputStream ignored = new FileInputStream(file)) {
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Sets the file in the Media, adding its folder to the media folders of the tree.
+     */
+    private static void linkFile(Media media, File file) {
         // Adds the folder path in the Tree in settings
-        if (Global.settings.getCurrentTree().dirs.add(fileMedia[0].getParent())) // true if it added the folder
+        if (Global.settings.getCurrentTree().dirs.add(file.getParent())) // true if it added the folder
             Global.settings.save();
         // Sets the found path in the Media
-        media.setFile(fileMedia[0].getAbsolutePath());
+        media.setFile(file.getAbsolutePath());
+    }
 
-        // If it is an image it opens the cropping proposal dialog
-        String mimeType = URLConnection.guessContentTypeFromName(fileMedia[0].getName());
+    /**
+     * If the file is an image opens the cropping proposal dialog.
+     *
+     * @return true if the dialog is opened
+     */
+    private static boolean proposeCroppingDialog(Context context, Fragment fragment, Media media, File file) {
+        String mimeType = URLConnection.guessContentTypeFromName(file.getName());
         if (mimeType != null && mimeType.startsWith("image/")) {
             ImageView imageView = new ImageView(context);
             showImage(media, imageView, null);
@@ -797,7 +829,7 @@ public class FileUtils {
             new MaterialAlertDialogBuilder(context)
                     .setView(imageView)
                     .setMessage(R.string.want_crop_image)
-                    .setPositiveButton(R.string.yes, (dialog, id) -> cropImage(context, fileMedia[0], null, fragment))
+                    .setPositiveButton(R.string.yes, (dialog, id) -> cropImage(context, file, null, fragment))
                     .setNeutralButton(R.string.no, (dialog, which) -> {
                         finishProposeCropping(context, fragment);
                     }).setOnCancelListener(dialog -> { // Click out of the dialog
@@ -808,6 +840,48 @@ public class FileUtils {
             return true;
         }
         return false;
+    }
+
+    /**
+     * The chosen file is identical to one already in app storage (adapted from Family Gem).
+     * The media is linked to the existing file at once, so the tree saved by the caller is consistent;
+     * "Make a copy" then copies it and continues as usual, with the cropping proposal.
+     * A reused file is never cropped, because cropping would change it for every media using it.
+     */
+    private static void proposeReuse(Context context, Fragment fragment, Media media, Uri uri, String name, File existing) {
+        linkFile(media, existing);
+        Global.edited = false; // Not to refresh the activity under the dialog
+        ImageView imageView = new ImageView(context);
+        showImage(media, imageView, null);
+        new MaterialAlertDialogBuilder(context)
+                .setIcon(dna.familytree.designsystem.R.drawable.ds_ic_image)
+                .setTitle(R.string.media_reuse_title)
+                .setView(imageView)
+                .setMessage(R.string.file_exists_reuse)
+                .setCancelable(false)
+                .setPositiveButton(R.string.use_existing, (dialog, which) -> finishProposeCropping(context, fragment))
+                .setNegativeButton(R.string.make_copy, (dialog, which) -> {
+                    File copy = null;
+                    try (InputStream input = context.getContentResolver().openInputStream(uri)) {
+                        copy = MediaFileTools.availableFile(existing.getParentFile(), name);
+                        org.apache.commons.io.FileUtils.copyInputStreamToFile(input, copy);
+                    } catch (Exception e) {
+                        LoggerUtils.ErrorLog(TAG, "Exception in proposeReuse", e);
+                        Toast.makeText(context, R.string.something_wrong, Toast.LENGTH_LONG).show();
+                        if (copy != null) copy.delete();
+                        copy = null;
+                    }
+                    if (copy == null) { // Keeps the existing file
+                        finishProposeCropping(context, fragment);
+                        return;
+                    }
+                    linkFile(media, copy);
+                    AppUtils.save(false);
+                    if (!proposeCroppingDialog(context, fragment, media, copy))
+                        finishProposeCropping(context, fragment);
+                }).show();
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, AppUtils.dpToPx(240));
+        imageView.setLayoutParams(params); // After creating the dialog
     }
 
     /**
@@ -837,8 +911,9 @@ public class FileUtils {
         if (!externalFilesDir.exists())
             externalFilesDir.mkdir();
         File destinationFile;
-        if (fileMedia != null && fileMedia.getAbsolutePath().startsWith(externalFilesDir.getAbsolutePath()))
-            destinationFile = fileMedia; // Files already in the storage folder are overwritten
+        if (fileMedia != null && fileMedia.getAbsolutePath().startsWith(externalFilesDir.getAbsolutePath())
+                && !MediaFileTools.isLinkedByOtherMedia(fileMedia, Global.croppedMedia))
+            destinationFile = fileMedia; // Files already in the storage folder are overwritten, unless other media use them
         else {
             String name;
             if (fileMedia != null)
@@ -866,14 +941,7 @@ public class FileUtils {
      * If a file with that name already exists in that folder, increment it appending 1 2 3...
      */
     public static File nextAvailableFileName(String dir, String name) {
-        File file = new File(dir, name);
-        int increment = 0;
-        while (file.exists()) {
-            increment++;
-            file = new File(dir, name.substring(0, name.lastIndexOf('.'))
-                    + increment + name.substring(name.lastIndexOf('.')));
-        }
-        return file;
+        return MediaFileTools.availableFile(new File(dir), name);
     }
 
     /**

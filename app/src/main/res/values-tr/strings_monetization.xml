@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Reklamları kaldır</string>
+    <string name="ads_remove_hint">Premium ile Family Tree\'nin keyfini reklamsız çıkarın.</string>
+    <string name="privacy_options">Reklam gizlilik seçenekleri</string>
+    <string name="privacy_options_desc">Reklamların verilerinizi nasıl kullandığını inceleyin veya değiştirin</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Bu bir Premium özelliğidir.</string>
+    <string name="reward_watch_title">Kısa bir video izleyin</string>
+    <string name="reward_watch_desc">Videonun hemen ardından bir kez ücretsiz kullanın.</string>
+    <string name="reward_loading">Video yükleniyor…</string>
+    <string name="reward_unavailable">Şu anda kullanılabilir video yok. Daha sonra tekrar deneyin veya Premium\'a geçin.</string>
+    <string name="reward_not_earned">Kilidi açmak için videoyu sonuna kadar izleyin.</string>
+    <string name="reward_premium_desc">Sınırsız kullanım, reklamsız deneyim ve tüm Premium özellikleri.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Aile hikâyeniz Premium\'u hak ediyor</string>
+    <string name="upsell_subtitle">Oluşturduğunuz her şeyi güvende tutun ve tüm Premium özelliklerinin keyfini çıkarın.</string>
+    <string name="upsell_subtitle_new">Araştırmanızı koruyun ve Family Tree\'yi reklamsız kullanın.</string>
+    <string name="upsell_stat_people">Kişi</string>
+    <string name="upsell_stat_trees">Ağaç</string>
+    <string name="upsell_stat_generations">Nesil</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">ve %d Premium özelliği daha</item>
+        <item quantity="other">ve %d Premium özelliği daha</item>
+    </plurals>
+    <string name="upsell_price_monthly">Planlar ayda %1$s fiyatından başlar</string>
+    <string name="upsell_price_lifetime">veya bir kez %1$s ödeyin, sonsuza dek sizin olsun</string>
+    <string name="upsell_price_lifetime_only">Tek seferlik %1$s ödemeyle ömür boyu erişim</string>
+    <string name="upsell_cta">Premium planlarını gör</string>
+    <string name="upsell_later">Şimdi değil</string>
+    <string name="upsell_trust">İstediğiniz zaman iptal edin · Google Play ile güvenli ödeme</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Aile hikâyenizi korumak, kutlamak ve paylaşmak için ihtiyacınız olan her şey.</string>
+    <string name="paywall_highlight_no_ads">Reklam yok</string>
+    <string name="paywall_highlight_backup">Otomatik yedekleme</string>
+    <string name="paywall_highlight_reminders">Sınırsız hatırlatıcı</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d günlük ücretsiz deneme</item>
+        <item quantity="other">%d günlük ücretsiz deneme</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d aylık ücretsiz deneme</item>
+        <item quantity="other">%d aylık ücretsiz deneme</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">%d ayda kendini amorti eder</item>
+        <item quantity="other">%d ayda kendini amorti eder</item>
+    </plurals>
+    <string name="paywall_summary_monthly">Aylık %1$s · istediğiniz zaman iptal edin</string>
+    <string name="paywall_summary_trial">%1$s, ardından aylık %2$s</string>
+    <string name="paywall_summary_lifetime">Tek seferlik %1$s · sonsuza dek sizin</string>
+    <string name="paywall_loading_prices">Fiyatlar yükleniyor…</string>
+    <string name="paywall_compare_title">Ücretsiz ve Premium</string>
+    <string name="paywall_compare_free">Ücretsiz</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Dahil</string>
+    <string name="paywall_details_show">Nasıl çalışır</string>
+    <string name="paywall_details_hide">Ayrıntıları gizle</string>
+    <string name="paywall_free_label">Ücretsiz: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Yalnızca Premium\'da</string>
+    <string name="paywall_trust_title">Gönül rahatlığıyla satın alın</string>
+    <string name="paywall_trust_secure">Google Play ile güvenli ödeme</string>
+    <string name="paywall_trust_cancel">Aylık planı istediğiniz zaman iptal edin</string>
+    <string name="paywall_trust_devices">Tüm cihazlarınızda geri yükleyin</string>
+    <string name="paywall_trust_private">Aile verileriniz cihazınızda kalır</string>
+    <string name="paywall_faq_title">Sorular ve yanıtlar</string>
+    <string name="paywall_faq_plans_q">Aylık ve Ömür boyu planlar arasındaki fark nedir?</string>
+    <string name="paywall_faq_plans_a">İkisi de Premium\'daki her şeyin kilidini açar. Aylık plan her ay yenilenir ve istediğiniz zaman iptal edilebilir. Ömür boyu plan bir kez ödenir ve hiçbir zaman sona ermez.</string>
+    <string name="paywall_faq_cancel_q">Premium\'u bırakırsam ağaçlarıma ne olur?</string>
+    <string name="paywall_faq_cancel_a">Hiçbir şey kaybolmaz. Ağaçlarınız, fotoğraflarınız, hatırlatıcılarınız ve yedekleriniz olduğu gibi kalır: yalnızca Premium özellikleri durur ve reklamlar geri gelir.</string>
+    <string name="paywall_faq_device_q">Telefonumu değiştirdim. Yeniden ödemem gerekir mi?</string>
+    <string name="paywall_faq_device_a">Hayır. Family Tree\'yi aynı Google hesabıyla yükleyin ve “Satın alımları geri yükle” seçeneğine dokunun.</string>
+    <string name="paywall_faq_privacy_q">Aile verilerim bir yere gönderiliyor mu?</string>
+    <string name="paywall_faq_privacy_a">Hayır. Ağaçlarınız cihazınızda ve seçtiğiniz yedekleme klasöründe saklanır. Premium satın almak hiçbir şeyi karşıya yüklemez.</string>
+    <string name="paywall_faq_manage_q">Aylık planı nasıl iptal ederim?</string>
+    <string name="paywall_faq_manage_a">Play Store\'da “Ödemeler ve abonelikler › Abonelikler” bölümünü açın, Family Tree\'yi seçin ve “İptal et” düğmesine dokunun. Premium, ödemesi yapılmış dönemin sonuna kadar etkin kalır.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Güvende tutun</string>
+    <string name="pf_group_safe_desc">Yılların emeği, otomatik olarak korunur.</string>
+    <string name="pf_group_moments">Hiçbir anı kaçırmayın</string>
+    <string name="pf_group_moments_desc">Ailenizin tarihleri ve yerleri her zaman elinizin altında.</string>
+    <string name="pf_group_share">Oluşturun ve paylaşın</string>
+    <string name="pf_group_share_desc">Ciddi araştırmalar için şık dışa aktarımlar ve güçlü araçlar.</string>
+    <string name="pf_group_yours">Size özel</string>
+    <string name="pf_group_yours_desc">Aile hikâyeniz için sakin ve kişisel bir alan.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Otomatik yedekleme</string>
+    <string name="pf_backup_summary">Her değişiklik, parmağınızı bile kıpırdatmadan seçtiğiniz klasöre kaydedilir.</string>
+    <string name="pf_backup_free">Elle yedekleme</string>
+    <string name="pf_backup_premium">Otomatik</string>
+    <string name="pf_backup_detail1">Her düzenlemeden bir dakika sonra ağaç, klasörünüze ZIP yedeği olarak kaydedilir: telefon belleği, SD kart ya da Google Drive gibi bir bulut klasörü.</string>
+    <string name="pf_backup_detail2">Her ağacın en yeni 3 kopyası saklanır; böylece her zaman geri dönebilirsiniz.</string>
+    <string name="pf_backup_detail3">Bir yedeği geri yüklemek ücretsizdir ve Premium olmadan da her zaman kullanılabilir.</string>
+
+    <string name="pf_media_title">Medya düzenleyici</string>
+    <string name="pf_media_summary">Bir ağacın tüm fotoğraf ve belgelerini tek seferde uygulamaya kopyalayın.</string>
+    <string name="pf_media_free">Her seferinde bir dosya</string>
+    <string name="pf_media_premium">Tüm dosyalar tek seferde</string>
+    <string name="pf_media_detail1">Bir ağacın tüm medyasını, ilerleme durumu ve iptal seçeneğiyle uygulama depolama alanına taşıyın; dosyalar yer değiştirse de bağlantılar asla kopmaz.</string>
+    <string name="pf_media_detail2">Orijinal dosyalarınıza dokunulmaz: her dosya, bağlantıları güncellenmeden önce kopyalanır ve kontrol edilir.</string>
+
+    <string name="pf_reminders_title">Akıllı aile hatırlatıcıları</string>
+    <string name="pf_reminders_summary">Evlilik yıl dönümleri, anma günleri ve sınırsız kişisel hatırlatıcı.</string>
+    <string name="pf_reminders_free">Doğum günleri + 2 hatırlatıcı</string>
+    <string name="pf_reminders_premium">Sınırsız</string>
+    <string name="pf_reminders_detail1">Çiftlerin evlilik yıl dönümlerinden ve dilerseniz anma günlerinden haberdar olun.</string>
+    <string name="pf_reminders_detail2">İstediğiniz kadar hatırlatıcı oluşturun: baby shower, mezuniyetler, aile buluşmaları, ziyaretler…</string>
+    <string name="pf_reminders_detail3">Erken uyarılar sizi önceden bilgilendirir; böylece aramak, yazmak ya da bir hediye planlamak için zamanınız olur.</string>
+
+    <string name="pf_places_title">Aile yerleri</string>
+    <string name="pf_places_summary">Aile tarihinizdeki her yer, aranabilir ve haritaya tek dokunuş uzaklıkta.</string>
+    <string name="pf_places_free">İlk 3 yer</string>
+    <string name="pf_places_premium">Tüm yerler</string>
+    <string name="pf_places_detail1">Ağaçtaki tüm olay yerleri ve adresler, ülkeye göre gruplanmış ve aranabilir.</string>
+    <string name="pf_places_detail2">Her yerde neler olduğunu görün ve yol tarifiyle birlikte harita uygulamanızda açın.</string>
+
+    <string name="pf_exports_title">Baskıya hazır dışa aktarımlar</string>
+    <string name="pf_exports_summary">Diyagramınızı yazdırmak ve paylaşmak için HD bir görüntüye ya da PDF\'ye dönüştürün.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Video başına bir kez</string>
+    <string name="pf_exports_premium">PDF + HD görüntü</string>
+    <string name="pf_exports_detail1">Diyagramı yüksek çözünürlüklü bir PNG görüntüsü olarak dışa aktarın; sohbetler ve sosyal ağlar için ideal.</string>
+    <string name="pf_exports_detail2">Tüm diyagramın PDF\'sini oluşturun; aile buluşmaları için poster olarak basılmaya hazır.</string>
+    <string name="pf_exports_detail3">Beyaz arka plan ve net çizgilerle, ağacınıza göre boyutlandırılmış baskı stili.</string>
+    <string name="pf_exports_detail4">Premium olmadan da kısa bir video izledikten sonra bir kez dışa aktarabilirsiniz.</string>
+
+    <string name="pf_merge_title">Ağaçları birleştir</string>
+    <string name="pf_merge_summary">İki ağacı tek bir ağaçta birleştirin; tekrarlanan kayıtlar sizin için bulunur.</string>
+    <string name="pf_merge_detail1">Uygulama her iki ağaçta da aynı kişileri arar; her eşleşmeyi tek tek ya da hepsini birden onaylayabilirsiniz.</string>
+    <string name="pf_merge_detail2">Akrabalarınız size kendi ağaçlarını gönderdiğinde ideal.</string>
+
+    <string name="pf_advanced_title">Gelişmiş araçlar</string>
+    <string name="pf_advanced_summary">Kaynaklar, depolar, GEDCOM dışa aktarma ve eksiksiz soy araştırması araç seti.</string>
+    <string name="pf_advanced_detail1">Profesyonel soy araştırmacıları gibi kaynak ve depolara atıf yapın, gönderenleri yönetin.</string>
+    <string name="pf_advanced_detail2">Ağacınızı medyalı ya da medyasız olarak, her soy ağacı yazılımı için GEDCOM biçiminde dışa aktarın ve eksiksiz ZIP yedekleri oluşturun.</string>
+    <string name="pf_advanced_detail3">Paylaşılan ağaçları karşılaştırın ve medya dosyalarının yollarını düzenleyin.</string>
+
+    <string name="pf_no_ads_title">Reklam yok</string>
+    <string name="pf_no_ads_summary">Aile hikâyeniz için sakin ve odaklı bir alan.</string>
+    <string name="pf_no_ads_free">Reklamlı</string>
+    <string name="pf_no_ads_premium">Reklamsız</string>
+    <string name="pf_no_ads_detail1">Listelerde, profillerde ya da işlemler arasında reklam yok.</string>
+    <string name="pf_no_ads_detail2">Premium, Family Tree\'nin geliştirilmesine de destek olur.</string>
+
+    <string name="pf_themes_title">20 renk teması</string>
+    <string name="pf_themes_summary">Uygulamayı açık ya da koyu modda kendinize göre ayarlayın.</string>
+    <string name="pf_themes_free">Klasik tema</string>
+    <string name="pf_themes_premium">20 tema</string>
+    <string name="pf_themes_detail1">Koyu çivit mavisinden sıcak kehribara kadar 20 renk teması arasından seçim yapın.</string>
+    <string name="pf_themes_detail2">Her tema hem açık hem koyu modda çalışır.</string>
+</resources>

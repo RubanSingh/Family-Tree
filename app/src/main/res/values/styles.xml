@@ -1,34 +1,10 @@
 <resources>
 
-    <style name="SplashTheme" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/logo_bg</item>
+    <style name="SplashTheme" parent="Theme.FamilyTree.Splash">
+        <item name="android:windowBackground">@drawable/splash_background</item>
     </style>
 
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/m3_blue_primary</item>
-        <item name="colorOnPrimary">@color/m3_blue_on_primary</item>
-        <item name="colorPrimaryContainer">@color/m3_blue_primary_container</item>
-        <item name="colorOnPrimaryContainer">@color/m3_blue_on_primary_container</item>
-        <item name="colorSecondary">@color/m3_blue_secondary</item>
-        <item name="colorOnSecondary">@color/m3_blue_on_secondary</item>
-        <item name="colorSecondaryContainer">@color/m3_blue_secondary_container</item>
-        <item name="colorOnSecondaryContainer">@color/m3_blue_on_secondary_container</item>
-        <item name="colorTertiary">@color/m3_blue_tertiary</item>
-        <item name="colorOnTertiary">@color/m3_blue_on_tertiary</item>
-        <item name="colorTertiaryContainer">@color/m3_blue_tertiary_container</item>
-        <item name="colorOnTertiaryContainer">@color/m3_blue_on_tertiary_container</item>
-        <item name="colorError">@color/m3_red_error</item>
-        <item name="colorOnError">@color/m3_red_on_error</item>
-        <item name="colorErrorContainer">@color/m3_red_error_container</item>
-        <item name="colorOnErrorContainer">@color/m3_red_on_error_container</item>
-        <item name="colorOnBackground">@color/m3_blue_on_background</item>
-        <item name="colorSurface">@color/m3_blue_surface</item>
-        <item name="colorOnSurface">@color/m3_blue_on_surface</item>
-        <item name="colorOutline">@color/m3_blue_outline</item>
-        <item name="colorSurfaceVariant">@color/m3_blue_surface_variant</item>
-        <item name="colorOnSurfaceInverse">@color/m3_blue_on_surface_variant</item>
-
-        <item name="android:windowBackground">@color/background</item>
+    <style name="AppTheme" parent="Theme.FamilyTree">
         <!-- TextView -->
         <!--<item name="android:textAppearanceSmall">@style/AppTheme.BasicText</item>-->
         <item name="android:textAppearanceSmall">@style/AppTheme.BasicText</item>
@@ -1066,15 +1042,14 @@
     </style>
 
     <!-- DARK THEME -->
-    <style name="RTE_ToolbarBaseThemeDark" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="RTE_ToolbarBaseThemeDark" parent="Theme.FamilyTree" />
 
     <!-- LIGHT THEME -->
-    <style name="RTE_ToolbarBaseThemeLight" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="RTE_ToolbarBaseThemeLight" parent="Theme.FamilyTree" />
 
     <!-- dark theme. -->
-    <style name="DarkTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="DarkTheme" parent="Theme.FamilyTree">
         <item name="popupTheme">@style/ThemeOverlay.Material3.Dialog.Alert</item>
-        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
     <style name="AppTheme.BasicText">
@@ -1105,11 +1080,15 @@
     </style>
 
     <style name="AppTheme.ExpandedAppBar">
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="AppTheme.CollapsedAppBar">
         <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
     </style>
 
     <style name="AppTheme.Slug">
@@ -1129,7 +1108,6 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="android:windowTranslucentStatus">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -1152,6 +1130,7 @@
 
     <style name="AppTheme.ButtonColor" parent="@style/Widget.Material3.Button.IconButton.Filled">
         <item name="android:textColor">?colorSurface</item>
+        <item name="android:backgroundTint">?attr/colorTertiary</item>
     </style>
 
     <style name="roundedImageViewRounded">
@@ -1176,15 +1155,19 @@
         <item name="linesColor">@color/diagram_lines_print</item>
     </style>
 
-    <style name="AppTheme.AdAttribution">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">left</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">12sp</item>
-        <item name="android:text">@string/ad_attribution</item>
-        <item name="android:background">#FFCC66</item>
-        <item name="android:width">15dp</item>
-        <item name="android:height">15dp</item>
+    <!-- Glass chip with a check on the gold Premium hero (paywall, Premium invitation) -->
+    <style name="Widget.FamilyTree.PremiumHeroChip" parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_margin">4dp</item>
+        <item name="android:background">@drawable/premium_hero_chip_bg</item>
+        <item name="android:drawablePadding">6dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.FamilyTree.LabelLarge</item>
+        <item name="android:textColor">?attr/colorOnTertiaryContainer</item>
+        <item name="drawableStartCompat">@drawable/ic_check_small</item>
+        <item name="drawableTint">?attr/colorOnTertiaryContainer</item>
     </style>
 </resources>

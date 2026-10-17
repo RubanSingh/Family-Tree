@@ -1,80 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Person card for lists (persons, relatives).
+    person_border = gender ring around the avatar (set in code); the silhouette shows when there is no photo;
+    person_mourning sits on the avatar edge like a status badge.
+-->
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_container"
-    style="?attr/materialCardViewElevatedStyle"
+    style="@style/Widget.FamilyTree.Card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="3dp"
-    android:layout_marginBottom="3dp"
-    android:minHeight="80dp"
-    app:cardCornerRadius="2dp">
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="20dp">
 
-    <View
-        android:id="@+id/person_border"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/nutral" />
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:padding="8dp">
+        android:gravity="center_vertical"
+        android:minHeight="88dp"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/ds_space_ms"
+        android:paddingTop="@dimen/ds_space_ms"
+        android:paddingEnd="@dimen/ds_space_sm"
+        android:paddingBottom="@dimen/ds_space_ms">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/person_info"
-            android:layout_width="wrap_content"
+        <!-- Avatar: ring (gender) > gap > photo or silhouette, mourning badge on the edge -->
+        <FrameLayout
+            android:id="@+id/person_avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp">
+
+            <View
+                android:id="@+id/person_border"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/person_ring_neutral" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/Widget.FamilyTree.AvatarPlaceholder"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:padding="13dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/person_image"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:shapeAppearance="@style/ShapeAppearance.FamilyTree.Circle" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/person_mourning"
+                style="@style/Widget.FamilyTree.MourningBadge"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="bottom|end"
+                android:background="@drawable/mourning_badge_ringed"
+                android:padding="5dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textAllCaps="true"
-            android:textColor="@color/gray_text"
-            android:textSize="14sp" />
+            android:layout_marginStart="@dimen/ds_space_md"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/person_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/person_info"
-            android:layout_toStartOf="@+id/person_image"
-            android:textSize="17sp" />
+            <!-- Role (relatives) or sort key (persons list) -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/person_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ds_bg_pill_primary"
+                android:paddingStart="@dimen/ds_space_sm"
+                android:paddingTop="1dp"
+                android:paddingEnd="@dimen/ds_space_sm"
+                android:paddingBottom="1dp"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.FamilyTree.LabelSmall"
+                android:textColor="?attr/colorOnPrimaryContainer" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/person_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/person_name"
-            android:textSize="15sp"
-            android:textStyle="italic" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/person_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.FamilyTree.TitleMedium"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="17sp" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/person_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/person_title"
-            android:layout_toStartOf="@+id/person_image"
-            android:textColor="@color/gray_text"
-            android:textSize="14sp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/person_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.FamilyTree.BodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:textStyle="italic" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/person_image"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:scaleType="centerCrop"
-            android:padding="1dp"
-            app:shapeAppearance="@style/roundedImageViewRounded"
-            app:strokeColor="?attr/colorPrimary"
-            app:strokeWidth="2dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/person_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textAppearance="@style/TextAppearance.FamilyTree.BodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+        </LinearLayout>
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/person_mourning"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="-8dp"
-            android:layout_marginEnd="-8dp"
-            android:autoMirrored="true"
-            app:srcCompat="@drawable/defunto" />
-    </RelativeLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/ds_space_xs"
+            android:contentDescription="@null"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ds_ic_chevron_right"
+            app:tint="?attr/colorOutline" />
+    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

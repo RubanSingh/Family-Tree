@@ -7,42 +7,53 @@
 	<group android:checkableBehavior="single">
 		<item
 			android:id="@+id/nav_diagramma"
-			android:icon="@drawable/menu_diagramma"
+			android:icon="@drawable/ds_ic_account_tree"
 			android:title="@string/diagram" />
 		<item
 			android:id="@+id/nav_persone"
-			android:icon="@drawable/menu_persona"
+			android:icon="@drawable/ds_ic_person"
 			android:title="@string/persons"
 			app:actionLayout="@layout/menu_item_extra"/>
 		<item
 			android:id="@+id/nav_famiglie"
-			android:icon="@drawable/menu_famiglia"
+			android:icon="@drawable/ds_ic_family"
 			android:title="@string/families"
 			app:actionLayout="@layout/menu_item_extra"/>
 		<item
 			android:id="@+id/nav_media"
-			android:icon="@drawable/menu_ritratto"
+			android:icon="@drawable/ds_ic_photo"
 			android:title="@string/media"
 			app:actionLayout="@layout/menu_item_extra"/>
 		<item
 			android:id="@+id/nav_note"
-			android:icon="@drawable/menu_nota"
+			android:icon="@drawable/ds_ic_note"
 			android:title="@string/notes"
 			app:actionLayout="@layout/menu_item_extra"/>
 		<item
 			android:id="@+id/nav_fonti"
-			android:icon="@drawable/menu_fonte"
+			android:icon="@drawable/ds_ic_source"
 			android:title="@string/sources"
 			app:actionLayout="@layout/menu_item_extra"/>
 		<item
 			android:id="@+id/nav_archivi"
-			android:icon="@drawable/menu_tempio"
+			android:icon="@drawable/ds_ic_repository"
 			android:title="@string/repositories"
 			app:actionLayout="@layout/menu_item_extra"/>
 		<item
 			android:id="@+id/nav_autore"
-			android:icon="@drawable/menu_autore"
+			android:icon="@drawable/ds_ic_submitter"
 			android:title="@string/submitters"
 			app:actionLayout="@layout/menu_item_extra"/>
+	</group>
+	<!-- Screens of their own, after the lists above whose positions are used to show their counts -->
+	<group android:id="@+id/nav_group_tools">
+		<item
+			android:id="@+id/nav_events"
+			android:icon="@drawable/ds_ic_event"
+			android:title="@string/events_title" />
+		<item
+			android:id="@+id/nav_places"
+			android:icon="@drawable/ds_ic_place"
+			android:title="@string/places_title" />
 	</group>
 </menu>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Ukloni oglase</string>
+    <string name="ads_remove_hint">Uživaj u aplikaciji Family Tree bez oglasa uz Premium.</string>
+    <string name="privacy_options">Podešavanja privatnosti oglasa</string>
+    <string name="privacy_options_desc">Pregledaj ili promeni kako oglasi koriste tvoje podatke</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Ovo je Premium funkcija.</string>
+    <string name="reward_watch_title">Pogledaj kratak video</string>
+    <string name="reward_watch_desc">Iskoristi funkciju jednom besplatno, odmah posle videa.</string>
+    <string name="reward_loading">Učitavanje videa…</string>
+    <string name="reward_unavailable">Trenutno nema dostupnog videa. Pokušaj ponovo kasnije ili pređi na Premium.</string>
+    <string name="reward_not_earned">Pogledaj video do kraja za otključavanje.</string>
+    <string name="reward_premium_desc">Neograničeno korišćenje, bez oglasa i sve Premium funkcije.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Priča tvoje porodice zaslužuje Premium</string>
+    <string name="upsell_subtitle">Zaštiti sav svoj dosadašnji trud i uživaj u svim Premium funkcijama.</string>
+    <string name="upsell_subtitle_new">Zaštiti svoje istraživanje i uživaj u aplikaciji Family Tree bez oglasa.</string>
+    <string name="upsell_stat_people">Osobe</string>
+    <string name="upsell_stat_trees">Stabla</string>
+    <string name="upsell_stat_generations">Generacije</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">i još %d Premium funkcija</item>
+        <item quantity="few">i još %d Premium funkcije</item>
+        <item quantity="other">i još %d Premium funkcija</item>
+    </plurals>
+    <string name="upsell_price_monthly">Paketi već od %1$s mesečno</string>
+    <string name="upsell_price_lifetime">ili jednom plati %1$s i zadrži zauvek</string>
+    <string name="upsell_price_lifetime_only">Doživotni pristup za %1$s, uz jednokratno plaćanje</string>
+    <string name="upsell_cta">Pogledaj Premium pakete</string>
+    <string name="upsell_later">Ne sada</string>
+    <string name="upsell_trust">Otkaži bilo kada · Bezbedno plaćanje preko usluge Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Sve što ti treba da zaštitiš, proslaviš i podeliš priču svoje porodice.</string>
+    <string name="paywall_highlight_no_ads">Bez oglasa</string>
+    <string name="paywall_highlight_backup">Automatska kopija</string>
+    <string name="paywall_highlight_reminders">Neograničeni podsetnici</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d dan besplatnog probnog perioda</item>
+        <item quantity="few">%d dana besplatnog probnog perioda</item>
+        <item quantity="other">%d dana besplatnog probnog perioda</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d mesec besplatnog probnog perioda</item>
+        <item quantity="few">%d meseca besplatnog probnog perioda</item>
+        <item quantity="other">%d meseci besplatnog probnog perioda</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Isplati se za %d mesec</item>
+        <item quantity="few">Isplati se za %d meseca</item>
+        <item quantity="other">Isplati se za %d meseci</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s mesečno · otkaži bilo kada</string>
+    <string name="paywall_summary_trial">%1$s, zatim %2$s mesečno</string>
+    <string name="paywall_summary_lifetime">%1$s jednokratno · Premium je zauvek tvoj</string>
+    <string name="paywall_loading_prices">Učitavanje cena…</string>
+    <string name="paywall_compare_title">Besplatno ili Premium</string>
+    <string name="paywall_compare_free">Besplatno</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Uključeno</string>
+    <string name="paywall_details_show">Kako funkcioniše</string>
+    <string name="paywall_details_hide">Sakrij detalje</string>
+    <string name="paywall_free_label">Besplatno: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Samo uz Premium</string>
+    <string name="paywall_trust_title">Kupuj bez brige</string>
+    <string name="paywall_trust_secure">Bezbedno plaćanje preko usluge Google Play</string>
+    <string name="paywall_trust_cancel">Mesečni paket otkaži bilo kada</string>
+    <string name="paywall_trust_devices">Vrati kupovinu na svim svojim uređajima</string>
+    <string name="paywall_trust_private">Podaci tvoje porodice ostaju na tvom uređaju</string>
+    <string name="paywall_faq_title">Pitanja i odgovori</string>
+    <string name="paywall_faq_plans_q">Koja je razlika između mesečnog i doživotnog paketa?</string>
+    <string name="paywall_faq_plans_a">Oba otključavaju sve što nudi Premium. Mesečni paket se obnavlja svakog meseca i možeš da ga otkažeš bilo kada. Doživotni se plaća jednom i nikada ne ističe.</string>
+    <string name="paywall_faq_cancel_q">Šta će biti sa mojim stablima ako prestanem da koristim Premium?</string>
+    <string name="paywall_faq_cancel_a">Ništa se ne gubi. Tvoja stabla, fotografije, podsetnici i sigurnosne kopije ostaju potpuno nepromenjeni: isključuju se samo Premium funkcije i vraćaju se oglasi.</string>
+    <string name="paywall_faq_device_q">Imam novi telefon. Da li moram ponovo da platim?</string>
+    <string name="paywall_faq_device_a">Ne. Instaliraj Family Tree sa istim Google nalogom i dodirni Vrati kupovine.</string>
+    <string name="paywall_faq_privacy_q">Da li se podaci moje porodice negde šalju?</string>
+    <string name="paywall_faq_privacy_a">Ne. Tvoja stabla se čuvaju na tvom uređaju i u fascikli za sigurnosne kopije koju izabereš. Kupovinom Premiuma ništa se ne šalje.</string>
+    <string name="paywall_faq_manage_q">Kako da otkažem mesečni paket?</string>
+    <string name="paywall_faq_manage_a">U Play prodavnici otvori Plaćanja i pretplate › Pretplate, izaberi Family Tree i dodirni Otkaži. Premium ostaje aktivan do kraja već plaćenog perioda.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Čuvaj na sigurnom</string>
+    <string name="pf_group_safe_desc">Godine istraživanja, automatski zaštićene.</string>
+    <string name="pf_group_moments">Ne propusti nijedan trenutak</string>
+    <string name="pf_group_moments_desc">Datumi i mesta tvoje porodice, uvek pri ruci.</string>
+    <string name="pf_group_share">Stvaraj i deli</string>
+    <string name="pf_group_share_desc">Prelepi izvozi i moćni alati za ozbiljno istraživanje.</string>
+    <string name="pf_group_yours">Prilagodi po svom</string>
+    <string name="pf_group_yours_desc">Miran, lični prostor za priču tvoje porodice.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Automatska sigurnosna kopija</string>
+    <string name="pf_backup_summary">Svaka promena se čuva u fascikli koju izabereš, bez ikakvog truda.</string>
+    <string name="pf_backup_free">Ručno kopiranje</string>
+    <string name="pf_backup_premium">Automatsko</string>
+    <string name="pf_backup_detail1">Minut nakon svake izmene stablo se čuva kao ZIP sigurnosna kopija u tvojoj fascikli: u memoriji telefona, na SD kartici ili u fascikli u oblaku, kao što je Google Drive.</string>
+    <string name="pf_backup_detail2">Čuvaju se 3 najnovije kopije svakog stabla, tako da uvek možeš da se vratiš.</string>
+    <string name="pf_backup_detail3">Vraćanje sigurnosne kopije je besplatno i uvek dostupno, čak i bez Premiuma.</string>
+
+    <string name="pf_media_title">Organizator medija</string>
+    <string name="pf_media_summary">Kopiraj sve fotografije i dokumente stabla u aplikaciju odjednom.</string>
+    <string name="pf_media_free">Jedna po jedna datoteka</string>
+    <string name="pf_media_premium">Sve datoteke odjednom</string>
+    <string name="pf_media_detail1">Prebaci sve medije stabla u skladište aplikacije, uz prikaz napretka i mogućnost otkazivanja, da se linkovi nikada ne bi prekinuli kada se datoteke premeste.</string>
+    <string name="pf_media_detail2">Tvoji originali ostaju netaknuti: svaka datoteka se kopira i proverava pre nego što se ažuriraju njeni linkovi.</string>
+
+    <string name="pf_reminders_title">Pametni porodični podsetnici</string>
+    <string name="pf_reminders_summary">Godišnjice braka, dani sećanja i neograničeni lični podsetnici.</string>
+    <string name="pf_reminders_free">Rođendani + 2 podsetnika</string>
+    <string name="pf_reminders_premium">Neograničeno</string>
+    <string name="pf_reminders_detail1">Primaj obaveštenja o godišnjicama braka parova, a po želji i o danima sećanja.</string>
+    <string name="pf_reminders_detail2">Napravi koliko god želiš podsetnika: proslave za bebu, diplomiranja, porodična okupljanja, posete…</string>
+    <string name="pf_reminders_detail3">Rana upozorenja te obaveštavaju unapred, pa imaš vremena da pozoveš, napišeš poruku ili smisliš poklon.</string>
+
+    <string name="pf_places_title">Porodična mesta</string>
+    <string name="pf_places_summary">Svako mesto iz istorije tvoje porodice, sa pretragom i samo jedan dodir od mape.</string>
+    <string name="pf_places_free">Prva 3 mesta</string>
+    <string name="pf_places_premium">Sva mesta</string>
+    <string name="pf_places_detail1">Sva mesta događaja i adrese iz stabla, sa pretragom i podelom po državama.</string>
+    <string name="pf_places_detail2">Pogledaj šta se dogodilo na svakom mestu i otvori ga u aplikaciji za mape, sa uputstvima za put.</string>
+
+    <string name="pf_exports_title">Izvozi spremni za štampu</string>
+    <string name="pf_exports_summary">Pretvori svoj dijagram u HD sliku ili PDF za štampu i deljenje.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Jednom po videu</string>
+    <string name="pf_exports_premium">PDF + HD slika</string>
+    <string name="pf_exports_detail1">Izvezi dijagram kao PNG sliku visoke rezolucije, savršenu za poruke i društvene mreže.</string>
+    <string name="pf_exports_detail2">Napravi PDF celog dijagrama, spreman za štampu kao poster za porodična okupljanja.</string>
+    <string name="pf_exports_detail3">Stil za štampu sa belom pozadinom i oštrim linijama, prilagođen veličini tvog stabla.</string>
+    <string name="pf_exports_detail4">Bez Premiuma i dalje možeš jednom da izvezeš nakon gledanja kratkog videa.</string>
+
+    <string name="pf_merge_title">Spajanje stabala</string>
+    <string name="pf_merge_summary">Spoji dva stabla u jedno, uz automatsko pronalaženje duplikata.</string>
+    <string name="pf_merge_detail1">Aplikacija traži iste osobe u oba stabla i omogućava ti da potvrdiš svako podudaranje posebno ili sva odjednom.</string>
+    <string name="pf_merge_detail2">Savršeno kada ti rođaci pošalju svoje stablo.</string>
+
+    <string name="pf_advanced_title">Napredni alati</string>
+    <string name="pf_advanced_summary">Izvori, skladišta, izvoz u GEDCOM formatu i kompletan skup genealoških alata.</string>
+    <string name="pf_advanced_detail1">Navodi izvore i skladišta i upravljaj podnosiocima, kao profesionalni genealozi.</string>
+    <string name="pf_advanced_detail2">Izvezi svoje stablo u GEDCOM formatu, sa medijima ili bez njih, za bilo koji genealoški program i napravi kompletne ZIP sigurnosne kopije.</string>
+    <string name="pf_advanced_detail3">Uporedi deljena stabla i sredi putanje medijskih datoteka.</string>
+
+    <string name="pf_no_ads_title">Bez oglasa</string>
+    <string name="pf_no_ads_summary">Miran, fokusiran prostor za priču tvoje porodice.</string>
+    <string name="pf_no_ads_free">Sa oglasima</string>
+    <string name="pf_no_ads_premium">Bez oglasa</string>
+    <string name="pf_no_ads_detail1">Nema oglasa u listama, u profilima ni između zadataka.</string>
+    <string name="pf_no_ads_detail2">Premium takođe podržava razvoj aplikacije Family Tree.</string>
+
+    <string name="pf_themes_title">20 tema boja</string>
+    <string name="pf_themes_summary">Prilagodi aplikaciju sebi, u svetlom ili tamnom režimu.</string>
+    <string name="pf_themes_free">Klasična tema</string>
+    <string name="pf_themes_premium">20 tema</string>
+    <string name="pf_themes_detail1">Izaberi jednu od 20 tema boja, od duboke indigo plave do tople ćilibarne.</string>
+    <string name="pf_themes_detail2">Svaka tema radi u svetlom i u tamnom režimu.</string>
+</resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Odstranit reklamy</string>
+    <string name="ads_remove_hint">S Premium si užijete Family Tree bez reklam.</string>
+    <string name="privacy_options">Možnosti ochrany soukromí u reklam</string>
+    <string name="privacy_options_desc">Zkontrolovat nebo změnit, jak reklamy používají vaše data</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Toto je funkce Premium.</string>
+    <string name="reward_watch_title">Zhlédnout krátké video</string>
+    <string name="reward_watch_desc">Použijte ji jednou zdarma, hned po videu.</string>
+    <string name="reward_loading">Načítání videa…</string>
+    <string name="reward_unavailable">Momentálně není k dispozici žádné video. Zkuste to později nebo přejděte na Premium.</string>
+    <string name="reward_not_earned">Pro odemknutí zhlédněte video až do konce.</string>
+    <string name="reward_premium_desc">Neomezené používání, žádné reklamy a všechny funkce Premium.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Příběh vaší rodiny si zaslouží Premium</string>
+    <string name="upsell_subtitle">Uchovejte vše, co jste vytvořili, v bezpečí a užívejte si všechny funkce Premium.</string>
+    <string name="upsell_subtitle_new">Chraňte svůj výzkum a užívejte si Family Tree bez reklam.</string>
+    <string name="upsell_stat_people">Osoby</string>
+    <string name="upsell_stat_trees">Stromy</string>
+    <string name="upsell_stat_generations">Generace</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">a %d další funkce Premium</item>
+        <item quantity="few">a %d další funkce Premium</item>
+        <item quantity="many">a %d další funkce Premium</item>
+        <item quantity="other">a %d dalších funkcí Premium</item>
+    </plurals>
+    <string name="upsell_price_monthly">Předplatné od %1$s měsíčně</string>
+    <string name="upsell_price_lifetime">nebo zaplaťte jednou %1$s a máte navždy</string>
+    <string name="upsell_price_lifetime_only">Doživotní přístup za %1$s, jednorázová platba</string>
+    <string name="upsell_cta">Zobrazit tarify Premium</string>
+    <string name="upsell_later">Teď ne</string>
+    <string name="upsell_trust">Kdykoli zrušitelné · Bezpečná platba přes Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Vše, co potřebujete k ochraně, oslavě a sdílení příběhu vaší rodiny.</string>
+    <string name="paywall_highlight_no_ads">Bez reklam</string>
+    <string name="paywall_highlight_backup">Automatické zálohy</string>
+    <string name="paywall_highlight_reminders">Neomezené připomínky</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d den zdarma</item>
+        <item quantity="few">%d dny zdarma</item>
+        <item quantity="many">%d dne zdarma</item>
+        <item quantity="other">%d dní zdarma</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d měsíc zdarma</item>
+        <item quantity="few">%d měsíce zdarma</item>
+        <item quantity="many">%d měsíce zdarma</item>
+        <item quantity="other">%d měsíců zdarma</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Vyplatí se za %d měsíc</item>
+        <item quantity="few">Vyplatí se za %d měsíce</item>
+        <item quantity="many">Vyplatí se za %d měsíce</item>
+        <item quantity="other">Vyplatí se za %d měsíců</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s měsíčně · kdykoli zrušitelné</string>
+    <string name="paywall_summary_trial">%1$s, poté %2$s měsíčně</string>
+    <string name="paywall_summary_lifetime">%1$s jednorázově · Premium navždy</string>
+    <string name="paywall_loading_prices">Načítání cen…</string>
+    <string name="paywall_compare_title">Verze zdarma a Premium</string>
+    <string name="paywall_compare_free">Zdarma</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">V ceně</string>
+    <string name="paywall_details_show">Jak to funguje</string>
+    <string name="paywall_details_hide">Skrýt podrobnosti</string>
+    <string name="paywall_free_label">Zdarma: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Pouze v Premium</string>
+    <string name="paywall_trust_title">Nakupujte s jistotou</string>
+    <string name="paywall_trust_secure">Bezpečná platba přes Google Play</string>
+    <string name="paywall_trust_cancel">Měsíční předplatné můžete kdykoli zrušit</string>
+    <string name="paywall_trust_devices">Obnovení na všech vašich zařízeních</string>
+    <string name="paywall_trust_private">Data vaší rodiny zůstávají ve vašem zařízení</string>
+    <string name="paywall_faq_title">Otázky a odpovědi</string>
+    <string name="paywall_faq_plans_q">Jaký je rozdíl mezi tarifem Měsíční a Doživotní?</string>
+    <string name="paywall_faq_plans_a">Oba odemykají vše v Premium. Měsíční se obnovuje každý měsíc a můžete ho kdykoli zrušit. Doživotní zaplatíte jen jednou a jeho platnost nikdy nevyprší.</string>
+    <string name="paywall_faq_cancel_q">Co se stane s mými stromy, když Premium ukončím?</string>
+    <string name="paywall_faq_cancel_a">Nic se neztratí. Vaše stromy, fotky, připomínky a zálohy zůstanou přesně tak, jak jsou: přestanou fungovat jen funkce Premium a vrátí se reklamy.</string>
+    <string name="paywall_faq_device_q">Mám nový telefon. Musím platit znovu?</string>
+    <string name="paywall_faq_device_a">Ne. Nainstalujte Family Tree se stejným účtem Google a klepněte na „Obnovit nákupy“.</string>
+    <string name="paywall_faq_privacy_q">Odesílají se data mé rodiny někam?</string>
+    <string name="paywall_faq_privacy_a">Ne. Vaše stromy jsou uložené ve vašem zařízení a ve složce pro zálohy, kterou si zvolíte. Nákup Premium nic nenahrává.</string>
+    <string name="paywall_faq_manage_q">Jak zruším měsíční předplatné?</string>
+    <string name="paywall_faq_manage_a">V Obchodě Play otevřete „Platby a odběry“ › „Odběry“, vyberte Family Tree a klepněte na „Zrušit odběr“. Premium zůstane aktivní až do konce již zaplaceného období.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">V bezpečí</string>
+    <string name="pf_group_safe_desc">Roky výzkumu, automaticky chráněné.</string>
+    <string name="pf_group_moments">Nezmeškejte žádnou chvíli</string>
+    <string name="pf_group_moments_desc">Důležitá data a místa vaší rodiny vždy po ruce.</string>
+    <string name="pf_group_share">Tvořte a sdílejte</string>
+    <string name="pf_group_share_desc">Krásné exporty a výkonné nástroje pro důkladný výzkum.</string>
+    <string name="pf_group_yours">Po svém</string>
+    <string name="pf_group_yours_desc">Klidný, osobní prostor pro příběh vaší rodiny.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Automatické zálohování</string>
+    <string name="pf_backup_summary">Každá změna se uloží do zvolené složky, aniž byste hnuli prstem.</string>
+    <string name="pf_backup_free">Ruční zálohování</string>
+    <string name="pf_backup_premium">Automaticky</string>
+    <string name="pf_backup_detail1">Minutu po každé úpravě se strom uloží jako záloha ZIP do vaší složky: do úložiště telefonu, na SD kartu nebo do cloudové složky, například Google Drive.</string>
+    <string name="pf_backup_detail2">U každého stromu se uchovávají 3 nejnovější kopie, takže se můžete vždy vrátit zpět.</string>
+    <string name="pf_backup_detail3">Obnovení zálohy je zdarma a vždy dostupné, i bez Premium.</string>
+
+    <string name="pf_media_title">Správce médií</string>
+    <string name="pf_media_summary">Zkopírujte všechny fotky a dokumenty stromu do aplikace najednou.</string>
+    <string name="pf_media_free">Jeden soubor po druhém</string>
+    <string name="pf_media_premium">Všechny soubory najednou</string>
+    <string name="pf_media_detail1">Přeneste všechna média stromu do úložiště aplikace s ukazatelem průběhu a možností zrušení, aby se odkazy nepřerušily, když se soubory přesunou.</string>
+    <string name="pf_media_detail2">Vaše originály zůstanou nedotčené: každý soubor se zkopíruje a zkontroluje dřív, než se aktualizují jeho odkazy.</string>
+
+    <string name="pf_reminders_title">Chytré rodinné připomínky</string>
+    <string name="pf_reminders_summary">Výročí svatby, dny vzpomínky a neomezené osobní připomínky.</string>
+    <string name="pf_reminders_free">Narozeniny + 2 připomínky</string>
+    <string name="pf_reminders_premium">Neomezeně</string>
+    <string name="pf_reminders_detail1">Dostávejte upozornění na výročí svatby párů, a pokud chcete, i na dny vzpomínky.</string>
+    <string name="pf_reminders_detail2">Vytvořte si tolik připomínek, kolik chcete: baby shower, promoce, rodinná setkání, návštěvy…</string>
+    <string name="pf_reminders_detail3">Včasná upozornění vám dají vědět předem, abyste stihli zavolat, napsat nebo vymyslet dárek.</string>
+
+    <string name="pf_places_title">Rodinná místa</string>
+    <string name="pf_places_summary">Všechna místa historie vaší rodiny, s vyhledáváním a jedno klepnutí od mapy.</string>
+    <string name="pf_places_free">První 3 místa</string>
+    <string name="pf_places_premium">Všechna místa</string>
+    <string name="pf_places_detail1">Všechna místa událostí a adresy ve stromu, seskupená podle zemí, s vyhledáváním.</string>
+    <string name="pf_places_detail2">Podívejte se, co se na každém místě stalo, a otevřete ho v mapové aplikaci s navigací.</string>
+
+    <string name="pf_exports_title">Exporty připravené k tisku</string>
+    <string name="pf_exports_summary">Proměňte diagram v obrázek v HD nebo PDF k tisku a sdílení.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Jednou za video</string>
+    <string name="pf_exports_premium">PDF + obrázek v HD</string>
+    <string name="pf_exports_detail1">Exportujte diagram jako obrázek PNG ve vysokém rozlišení, ideální pro chaty a sociální sítě.</string>
+    <string name="pf_exports_detail2">Vytvořte PDF celého diagramu, připravené k tisku jako plakát na rodinná setkání.</string>
+    <string name="pf_exports_detail3">Tiskový styl s bílým pozadím a ostrými liniemi, velikostí přizpůsobený vašemu stromu.</string>
+    <string name="pf_exports_detail4">I bez Premium můžete po zhlédnutí krátkého videa jednou exportovat.</string>
+
+    <string name="pf_merge_title">Slučování stromů</string>
+    <string name="pf_merge_summary">Spojte dva stromy do jednoho a duplicity za vás najde aplikace.</string>
+    <string name="pf_merge_detail1">Aplikace vyhledá stejné osoby v obou stromech a nechá vás potvrdit každou shodu, nebo všechny najednou.</string>
+    <string name="pf_merge_detail2">Ideální, když vám příbuzní pošlou svůj vlastní strom.</string>
+
+    <string name="pf_advanced_title">Pokročilé nástroje</string>
+    <string name="pf_advanced_summary">Prameny, archivy, export GEDCOM a kompletní sada genealogických nástrojů.</string>
+    <string name="pf_advanced_detail1">Citujte prameny a archivy a spravujte zadavatele jako profesionální genealogové.</string>
+    <string name="pf_advanced_detail2">Exportujte strom do GEDCOM, s médii i bez nich, pro jakýkoli genealogický program a vytvářejte úplné zálohy ZIP.</string>
+    <string name="pf_advanced_detail3">Porovnávejte sdílené stromy a udělejte pořádek v cestách k mediálním souborům.</string>
+
+    <string name="pf_no_ads_title">Bez reklam</string>
+    <string name="pf_no_ads_summary">Klidný prostor, kde se můžete soustředit na příběh své rodiny.</string>
+    <string name="pf_no_ads_free">S reklamami</string>
+    <string name="pf_no_ads_premium">Bez reklam</string>
+    <string name="pf_no_ads_detail1">Žádné reklamy v seznamech, profilech ani mezi úkoly.</string>
+    <string name="pf_no_ads_detail2">Premium také podporuje vývoj Family Tree.</string>
+
+    <string name="pf_themes_title">20 barevných motivů</string>
+    <string name="pf_themes_summary">Přizpůsobte si aplikaci ve světlém i tmavém režimu.</string>
+    <string name="pf_themes_free">Klasický motiv</string>
+    <string name="pf_themes_premium">20 motivů</string>
+    <string name="pf_themes_detail1">Vyberte si z 20 barevných motivů, od sytě indigové po teplou jantarovou.</string>
+    <string name="pf_themes_detail2">Každý motiv funguje ve světlém i tmavém režimu.</string>
+</resources>

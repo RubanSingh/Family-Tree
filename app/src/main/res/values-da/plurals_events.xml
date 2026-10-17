@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Bryllupsdag · %d år</item>
+        <item quantity="other">Bryllupsdag · %d år</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Mindedag · %d år</item>
+        <item quantity="other">Mindedag · %d år</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Om %1$d dag · %2$s</item>
+        <item quantity="other">Om %1$d dage · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">om %d dag</item>
+        <item quantity="other">om %d dage</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Fylder %d</item>
+        <item quantity="other">Fylder %d</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">Gift i %d år</item>
+        <item quantity="other">Gift i %d år</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">For %d år siden</item>
+        <item quantity="other">For %d år siden</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d år</item>
+        <item quantity="other">%d år</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d begivenhed</item>
+        <item quantity="other">%d begivenheder</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d person</item>
+        <item quantity="other">%d personer</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d sted</item>
+        <item quantity="other">%d steder</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d land</item>
+        <item quantity="other">%d lande</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d person</item>
+        <item quantity="other">%d personer</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d fil ligger uden for app-lagringen. Vil du kopiere den til app-lagringen, så den bliver sammen med dit træ og kommer med i backups? Den originale fil ændres ikke.</item>
+        <item quantity="other">%d filer ligger uden for app-lagringen. Vil du kopiere dem til app-lagringen, så de bliver sammen med dit træ og kommer med i backups? De originale filer ændres ikke.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d fil kopieret til app-lagringen.</item>
+        <item quantity="other">%d filer kopieret til app-lagringen.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d medie er linket med den fulde sti til en fil i app-lagringen. Vil du forkorte linket til kun filnavnet? Filen bliver, hvor den er.</item>
+        <item quantity="other">%d medier er linket med den fulde sti til en fil i app-lagringen. Vil du forkorte linkene til kun filnavnet? Filerne bliver, hvor de er.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d filsti forkortet.</item>
+        <item quantity="other">%d filstier forkortet.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d post</item>
+        <item quantity="other">%d poster</item>
+    </plurals>
+</resources>

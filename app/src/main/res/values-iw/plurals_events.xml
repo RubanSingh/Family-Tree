@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">יום נישואים · שנה אחת</item>
+        <item quantity="two">יום נישואים · שנתיים</item>
+        <item quantity="other">יום נישואים · %d שנים</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">יום זיכרון · שנה אחת</item>
+        <item quantity="two">יום זיכרון · שנתיים</item>
+        <item quantity="other">יום זיכרון · %d שנים</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">בעוד יום אחד · %2$s</item>
+        <item quantity="two">בעוד יומיים · %2$s</item>
+        <item quantity="other">בעוד %1$d ימים · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">בעוד יום אחד</item>
+        <item quantity="two">בעוד יומיים</item>
+        <item quantity="other">בעוד %d ימים</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">יום הולדת %d</item>
+        <item quantity="two">יום הולדת %d</item>
+        <item quantity="other">יום הולדת %d</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">שנה אחת של נישואים</item>
+        <item quantity="two">שנתיים של נישואים</item>
+        <item quantity="other">%d שנות נישואים</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">לפני שנה</item>
+        <item quantity="two">לפני שנתיים</item>
+        <item quantity="other">לפני %d שנים</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">שנה אחת</item>
+        <item quantity="two">שנתיים</item>
+        <item quantity="other">%d שנים</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">אירוע אחד</item>
+        <item quantity="two">%d אירועים</item>
+        <item quantity="other">%d אירועים</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">אדם אחד</item>
+        <item quantity="two">%d אנשים</item>
+        <item quantity="other">%d אנשים</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">מקום אחד</item>
+        <item quantity="two">%d מקומות</item>
+        <item quantity="other">%d מקומות</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">ארץ אחת</item>
+        <item quantity="two">%d ארצות</item>
+        <item quantity="other">%d ארצות</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">אדם אחד</item>
+        <item quantity="two">%d אנשים</item>
+        <item quantity="other">%d אנשים</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">קובץ אחד נמצא מחוץ לאחסון היישומון. להעתיק אותו לאחסון היישומון, כדי שיישאר עם העץ שלך וייכלל בגיבויים? הקובץ המקורי לא ישתנה.</item>
+        <item quantity="two">%d קבצים נמצאים מחוץ לאחסון היישומון. להעתיק אותם לאחסון היישומון, כדי שיישארו עם העץ שלך וייכללו בגיבויים? הקבצים המקוריים לא ישתנו.</item>
+        <item quantity="other">%d קבצים נמצאים מחוץ לאחסון היישומון. להעתיק אותם לאחסון היישומון, כדי שיישארו עם העץ שלך וייכללו בגיבויים? הקבצים המקוריים לא ישתנו.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">קובץ אחד הועתק לאחסון היישומון.</item>
+        <item quantity="two">%d קבצים הועתקו לאחסון היישומון.</item>
+        <item quantity="other">%d קבצים הועתקו לאחסון היישומון.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">פריט מדיה אחד מקושר עם הנתיב המלא של קובץ באחסון היישומון. לקצר את הקישור לשם הקובץ בלבד? הקובץ נשאר במקומו.</item>
+        <item quantity="two">%d פריטי מדיה מקושרים עם הנתיב המלא של קובץ באחסון היישומון. לקצר את הקישורים לשם הקובץ בלבד? הקבצים נשארים במקומם.</item>
+        <item quantity="other">%d פריטי מדיה מקושרים עם הנתיב המלא של קובץ באחסון היישומון. לקצר את הקישורים לשם הקובץ בלבד? הקבצים נשארים במקומם.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">נתיב קובץ אחד קוצר.</item>
+        <item quantity="two">%d נתיבי קבצים קוצרו.</item>
+        <item quantity="other">%d נתיבי קבצים קוצרו.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">רשומה אחת</item>
+        <item quantity="two">%d רשומות</item>
+        <item quantity="other">%d רשומות</item>
+    </plurals>
+</resources>

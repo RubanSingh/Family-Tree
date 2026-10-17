@@ -31,6 +31,8 @@ import java.util.Set;
 import dna.familytree.constant.Gender;
 import dna.familytree.detail.EventController;
 import dna.familytree.detail.FamilyController;
+import dna.familytree.feature.ads.AdsManager;
+import dna.familytree.feature.ads.UsageStats;
 import dna.familytree.list.FamiliesFragment;
 import dna.familytree.util.AnalyticsUtil;
 
@@ -203,9 +205,10 @@ public class PersonEditorController extends BaseController {
     public void setToolbar() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         View actionBar = getLayoutInflater().inflate(R.layout.barra_edita, new LinearLayout(getApplicationContext()), false);
-        actionBar.findViewById(R.id.edita_annulla).setOnClickListener(v -> onBackPressed());
+        actionBar.findViewById(R.id.edita_annulla).setOnClickListener(v -> getOnBackPressedDispatcher().onBackPressed());
         actionBar.findViewById(R.id.edita_salva).setOnClickListener(v -> {
-            playInterstitialAd();
+            UsageStats.engage(idIndi.equals("TIZIO_NUOVO") || relation > 0 ? UsageStats.POINTS_PERSON_ADDED : UsageStats.POINTS_PERSON_SAVED);
+            AdsManager.onNaturalBreak(this, AdsManager.Placement.PERSON_SAVED);
             save();
         });
         toolbar.addView(actionBar);
@@ -358,7 +361,7 @@ public class PersonEditorController extends BaseController {
         } else
             Global.indi = p.getId(); // To show the person then in DiagramFragment
         AppUtils.save(true, modifications);
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
     }
 
     /**

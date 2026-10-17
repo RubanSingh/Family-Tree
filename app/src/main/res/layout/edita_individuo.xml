@@ -1,210 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Add / edit person: Name & sex, Birth and Death grouped in cards. Cancel / Done live in the toolbar (barra_edita). -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        style="@style/Widget.FamilyTree.Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="?attr/colorSecondaryContainer" />
+        android:layout_height="?actionBarSize" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/ds_space_xl">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
-            android:padding="16dp">
+            android:orientation="vertical"
+            android:paddingStart="@dimen/ds_page_gutter"
+            android:paddingTop="@dimen/ds_space_xs"
+            android:paddingEnd="@dimen/ds_page_gutter">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/nome_label"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/given"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nome"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords|textPersonName"
-                    android:nextFocusForward="@+id/cognome" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/cognome_label"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/surname"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nome_label">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/cognome"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords|textPersonName"
-                    android:nextFocusForward="@+id/data_nascita" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cognome_label">
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/sesso1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/male" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/sesso2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/female" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/sesso3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/unknown" />
-            </RadioGroup>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/data_nascita_label"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="@string/birth_date"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/data_nascita"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionNext"
-                    android:inputType="textCapCharacters"
-                    android:nextFocusForward="@+id/luogo_nascita" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <dna.familytree.DateEditorLayout
-                android:id="@+id/editore_data_nascita"
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/data_nascita_label" />
+                android:layout_marginTop="@dimen/ds_space_xs">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/luogo_nascita_label"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/birth_place"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editore_data_nascita">
-
-                <dna.familytree.PlaceFinderTextView
-                    android:id="@+id/luogo_nascita"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                    android:textAppearance="?attr/textAppearanceBodyLarge"
-                    android:minHeight="60dp"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:padding="@dimen/ds_space_md">
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/defunto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/dead"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/luogo_nascita_label" />
-
-            <LinearLayout
-                android:id="@+id/morte"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/defunto">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/data_morte_label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="@string/death_date"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/data_morte"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:imeOptions="actionNext"
-                        android:inputType="textCapCharacters"
-                        android:nextFocusForward="@id/luogo_morte" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_marginBottom="@dimen/ds_space_ms"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                <dna.familytree.DateEditorLayout
-                    android:id="@+id/editore_data_morte"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/data_morte_label" />
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ds_ic_person"
+                            app:tint="?attr/colorPrimary" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/death_place"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editore_data_morte">
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/ds_space_sm"
+                            android:text="@string/name"
+                            android:textAppearance="?attr/textAppearanceLabelLarge"
+                            android:textColor="?attr/colorPrimary" />
+                    </LinearLayout>
 
-                    <dna.familytree.PlaceFinderTextView
-                        android:id="@+id/luogo_morte"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/nome_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                        android:textAppearance="?attr/textAppearanceBodyLarge"
-                        android:inputType="textCapWords"
-                        android:minHeight="60dp"
-                        android:paddingStart="16dp"
-                        android:paddingEnd="16dp"/>
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:hint="@string/given">
 
-            </LinearLayout>
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords|textPersonName"
+                            android:nextFocusForward="@+id/cognome" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/cognome_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_ms"
+                        android:hint="@string/surname">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/cognome"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords|textPersonName"
+                            android:nextFocusForward="@+id/data_nascita" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_md"
+                        android:text="@string/sex"
+                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_xs"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/sesso1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/male" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/sesso2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/female" />
+
+                        <com.google.android.material.radiobutton.MaterialRadioButton
+                            android:id="@+id/sesso3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/unknown" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ds_space_ms">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ds_space_md">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/ds_space_ms"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ds_ic_event"
+                            app:tint="?attr/colorPrimary" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/ds_space_sm"
+                            android:text="@string/birth"
+                            android:textAppearance="?attr/textAppearanceLabelLarge"
+                            android:textColor="?attr/colorPrimary" />
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/data_nascita_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/birth_date">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/data_nascita"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapCharacters"
+                            android:nextFocusForward="@+id/luogo_nascita" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <dna.familytree.DateEditorLayout
+                        android:id="@+id/editore_data_nascita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/luogo_nascita_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_ms"
+                        android:hint="@string/birth_place">
+
+                        <dna.familytree.PlaceFinderTextView
+                            android:id="@+id/luogo_nascita"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="60dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ds_space_ms">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/ds_space_md">
+
+                    <!-- Deceased: reveals the death fields below -->
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/defunto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="@dimen/ds_touch_target"
+                        android:text="@string/dead"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        android:textColor="?attr/colorOnSurface" />
+
+                    <LinearLayout
+                        android:id="@+id/morte"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ds_space_xs"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/data_morte_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ds_space_sm"
+                            android:hint="@string/death_date">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/data_morte"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapCharacters"
+                                android:nextFocusForward="@id/luogo_morte" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <dna.familytree.DateEditorLayout
+                            android:id="@+id/editore_data_morte"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/ds_space_ms"
+                            android:hint="@string/death_place">
+
+                            <dna.familytree.PlaceFinderTextView
+                                android:id="@+id/luogo_morte"
+                                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapWords"
+                                android:minHeight="60dp"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                android:textAppearance="?attr/textAppearanceBodyLarge" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">உள்ளக காப்புப்பிரதி</string>
+    <string name="choose_folder">கோப்புறையைத் தேர்வுசெய்க</string>
+    <string name="backup_folder">காப்பு கோப்புறை</string>
+    <string name="recover">மீட்க</string>
+    <string name="export_png">ஏற்றுமதி png</string>
+    <string name="png_exported_ok">பி.என்.சி ஏற்றுமதி செய்யப்பட்டது.</string>
+    <string name="tree_settings">மர அமைப்புகள்</string>
+    <string name="max_life_span">அதிகபட்ச ஆயுட்காலம்</string>
+    <string name="years">ஆண்டுகள்</string>
+    <string name="current_date">தற்போதைய தேதி</string>
+    <string name="device_date">சாதனத்தின் தேதி</string>
+    <string name="fixed_date">நிலையான தேதி</string>
+    <string name="notification_time">பிறந்தநாள் அறிவிப்பு நேரம்</string>
+    <string name="origin_family">தோற்றம் குடும்பம்</string>
+    <string name="adoptive_family">வளர்ப்பு குடும்பம்</string>
+    <string name="foster_family">வளர்ப்பு குடும்பம்</string>
+    <string name="paternal_family">தந்தைவழி குடும்பம்</string>
+    <string name="maternal_family">தாய்வழி குடும்பம்</string>
+    <string name="own_family">சொந்த குடும்பம்</string>
+    <string name="numbers">எண்கள்</string>
+    <string name="husband_age">கணவர் வயது</string>
+    <string name="search_duplicates">நகல்களைத் தேடுங்கள்</string>
+    <string name="skip">தவிர்</string>
+    <string name="error_found">ஒரு பிழை காணப்பட்டது.</string>
+    <string name="yes_to_all">மீதமுள்ள அனைவருக்கும் ஆம்</string>
+    <string name="no_to_all">மீதமுள்ள அனைவருக்கும் இல்லை</string>
+    <string name="wife_age">மனைவி வயது</string>
+    <string name="duplicates_lines">கோடுகள் நகல்</string>
+    <string name="make_shared_media">பகிரப்பட்ட ஊடகத்தை உருவாக்குங்கள்</string>
+    <string name="make_media">ஊடகத்தை உருவாக்குங்கள்</string>
+    <string name="copy_app_storage">நகலெடு பெறுநர் பயன்பாடு storage</string>
+    <string name="shrink_path">கோப்பு பாதையை சுருக்கவும்</string>
+    <string name="file_exists_reuse">இந்த கோப்பு ஏற்கனவே உள்ளது. \nநீங்கள் அதை மீண்டும் பயன்படுத்த விரும்புகிறீர்களா அல்லது நகலை உருவாக்க விரும்புகிறீர்களா?</string>
+    <string name="use_existing">மீண்டும் பயன்படுத்தவும்</string>
+    <string name="make_copy">ஒரு நகலை உருவாக்குங்கள்</string>
+    <string name="existing_name">ஏற்கனவே இருக்கும் பெயர்</string>
+    <string name="invalid_name">செல்லுபடியாகாத பெயர்</string>
+    <string name="info">தகவல்</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">தவறான GEDCOM தேதி.</string>
+    <string name="less_than">குறைவாக</string>
+    <string name="more_than">அதிகமாக</string>
+</resources>

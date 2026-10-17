@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Empty state of Events & reminders and Family places -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/ds_space_xl">
+
+    <ImageView
+        android:id="@+id/events_empty_icon"
+        style="@style/Widget.FamilyTree.IconContainer"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:padding="18dp"
+        android:contentDescription="@null"
+        tools:src="@drawable/ds_ic_event" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/events_empty_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_space_md"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="?attr/colorOnSurface"
+        tools:text="Nothing coming up" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/events_empty_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ds_space_xs"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurfaceVariant" />
+</LinearLayout>

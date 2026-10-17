@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Title + value row on detail screens. Keep fatto_edita a direct child of the root:
+    DetailController swaps it for a place / type picker by index.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:attr/selectableItemBackground"
+    android:background="@drawable/ds_ripple_card"
     android:orientation="vertical"
-    android:paddingTop="10dp">
+    android:paddingStart="@dimen/ds_space_xs"
+    android:paddingTop="@dimen/ds_space_ms"
+    android:paddingEnd="@dimen/ds_space_xs"
+    android:paddingBottom="@dimen/ds_space_ms">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/fatto_titolo"
-        style="@style/AppTheme.Title"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.FamilyTree.LabelLarge"
+        android:textColor="?attr/colorPrimary" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/fatto_testo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="17sp" />
+        android:layout_marginTop="2dp"
+        android:lineSpacingExtra="2dp"
+        android:textAppearance="@style/TextAppearance.FamilyTree.BodyLarge"
+        android:textColor="?attr/colorOnSurface" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/fatto_edita"

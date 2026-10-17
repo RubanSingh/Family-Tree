@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Persons list with an always-visible search bar and one-tap sort chips.
+    persons_search is the SearchView that PersonsFragment filters with (the toolbar search is not added when it exists);
+    each chip's tag is the sort id used by the "Order by" menu (1 id, 2 surname, 3 date, 4 age, 5 relatives).
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/persons_search_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/ds_space_xs"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/persons_search"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="@dimen/ds_page_gutter"
+                android:layout_marginEnd="@dimen/ds_page_gutter"
+                android:background="@drawable/search_bar_background"
+                android:imeOptions="actionSearch|flagNoExtractUi"
+                app:iconifiedByDefault="false"
+                app:queryBackground="@null"
+                app:queryHint="@string/persons_search_hint"
+                app:searchHintIcon="@null"
+                app:submitBackground="@null" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/ds_page_gutter"
+                android:paddingEnd="@dimen/ds_page_gutter"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/persons_sort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleLine="true"
+                    app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/persons_sort_id"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="1"
+                    android:text="@string/id"
+                    app:checkedIconVisible="false"
+                    app:chipIconTint="?attr/colorOnSecondaryContainer"
+                    app:chipIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/persons_sort_surname"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="2"
+                    android:text="@string/surname"
+                    app:checkedIconVisible="false"
+                    app:chipIconTint="?attr/colorOnSecondaryContainer"
+                    app:chipIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/persons_sort_date"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="3"
+                    android:text="@string/date"
+                    app:checkedIconVisible="false"
+                    app:chipIconTint="?attr/colorOnSecondaryContainer"
+                    app:chipIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/persons_sort_age"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="4"
+                    android:text="@string/age"
+                    app:checkedIconVisible="false"
+                    app:chipIconTint="?attr/colorOnSecondaryContainer"
+                    app:chipIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/persons_sort_relatives"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tag="5"
+                    android:text="@string/number_relatives"
+                    app:checkedIconVisible="false"
+                    app:chipIconTint="?attr/colorOnSecondaryContainer"
+                    app:chipIconVisible="false" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/persons_result_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="@dimen/ds_space_xs"
+                android:textAppearance="?attr/textAppearanceLabelMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/ds_page_gutter"
+            android:paddingTop="@dimen/ds_space_xs"
+            android:paddingEnd="@dimen/ds_page_gutter"
+            android:paddingBottom="@dimen/bottom_padding"
+            android:scrollbarStyle="outsideOverlay"
+            app:layoutManager="LinearLayoutManager" />
+    </LinearLayout>
+
+    <!-- No search results -->
+    <LinearLayout
+        android:id="@+id/persons_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/ds_space_xl"
+        android:visibility="gone">
+
+        <ImageView
+            style="@style/Widget.FamilyTree.IconContainer"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:padding="18dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ds_ic_person" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/persons_empty_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_md"
+            android:gravity="center"
+            android:text="@string/persons_no_results"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textColor="?attr/colorOnSurface" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_xs"
+            android:gravity="center"
+            android:text="@string/persons_no_results_hint"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurfaceVariant" />
+    </LinearLayout>
+
+    <include layout="@layout/fab" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

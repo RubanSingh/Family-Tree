@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A kind of reminder in the editor -->
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.FamilyTree.Chip.Filter"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:checkedIconVisible="false"
+    app:chipIconVisible="true" />

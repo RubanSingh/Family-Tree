@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokale back-up</string>
+    <string name="choose_folder">Kies map</string>
+    <string name="backup_folder">Back-up map</string>
+    <string name="recover">Herstel</string>
+    <string name="export_png">PNG exporteren</string>
+    <string name="png_exported_ok">PNG geëxporteerd.</string>
+    <string name="tree_settings">Boominstellingen</string>
+    <string name="max_life_span">Maximale levensduur</string>
+    <string name="years">Jaren</string>
+    <string name="current_date">Actuele datum</string>
+    <string name="device_date">Apparaatdatum</string>
+    <string name="fixed_date">Vaste datum</string>
+    <string name="notification_time">Tijd melding geboortedag</string>
+    <string name="origin_family">Herkomst familie</string>
+    <string name="adoptive_family">Adoptiefamilie</string>
+    <string name="foster_family">Pleeggezin</string>
+    <string name="paternal_family">Familie paternel</string>
+    <string name="maternal_family">Familie maternel</string>
+    <string name="own_family">Eigen familie</string>
+    <string name="numbers">Nummers</string>
+    <string name="error_found">Eén fout gevonden.</string>
+    <string name="make_shared_media">Maak gedeelde media</string>
+    <string name="make_media">Maak media</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Ongeldige GEDCOM-datum.</string>
+    <string name="husband_age">Leeftijd echtgenoot</string>
+    <string name="search_duplicates">Zoeken naar duplicaten</string>
+    <string name="skip">Overslaan</string>
+    <string name="yes_to_all">Ja voor alle resterende</string>
+    <string name="no_to_all">Nee voor alle resterende</string>
+    <string name="wife_age">Leeftijd echtgenote</string>
+    <string name="less_than">Minder dan</string>
+    <string name="more_than">Meer dan</string>
+    <string name="duplicates_lines">Lijnen voor duplicaten</string>
+    <string name="copy_app_storage">Kopiëren naar applicatie-opslag</string>
+    <string name="shrink_path">Bestandspad inkorten</string>
+    <string name="file_exists_reuse">Dit bestand bestaat al.\nWilt u het hergebruiken of een kopie maken?</string>
+    <string name="use_existing">Bestaande hergebruiken</string>
+    <string name="make_copy">Een kopie maken</string>
+    <string name="existing_name">Naam bestaat reeds</string>
+    <string name="invalid_name">Ongeldige naam</string>
+</resources>

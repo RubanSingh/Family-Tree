@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ds_canvas_center">#17223D</color>
+    <color name="ds_canvas_edge">#05080F</color>
+    <color name="ds_canvas_line">#7489B6</color>
+    <color name="ds_canvas_glass">#F2282A2C</color>
+    <color name="ds_on_canvas_glass">#E3E3E3</color>
+    <color name="ds_canvas_glow">#EAC248</color>
+
+    <color name="ds_tree_card">#202226</color>
+    <color name="ds_tree_card_partner">#16181C</color>
+    <color name="ds_tree_card_focus_start">#4D3D00</color>
+    <color name="ds_tree_card_focus_end">#6E5600</color>
+    <color name="ds_tree_male">#8EA9F5</color>
+    <color name="ds_tree_female">#F08DB4</color>
+    <color name="ds_tree_neutral">#4A505C</color>
+    <color name="ds_tree_mourning">#E3E3E3</color>
+    <color name="ds_on_tree_mourning">#1F1F1F</color>
+
+    <color name="ds_hero_scrim_top">#00000000</color>
+    <color name="ds_hero_scrim_bottom">#B3000000</color>
+</resources>

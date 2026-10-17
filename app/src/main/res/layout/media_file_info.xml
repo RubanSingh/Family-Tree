@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File info bottom sheet of a media: header, detail rows (added by MediaToolsUi), contextual actions -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/ds_space_lg">
+
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/ds_space_lg"
+            android:paddingEnd="@dimen/ds_space_lg">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/media_info_thumb"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="?attr/colorSurfaceContainerHigh"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.FamilyTree.Large" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_space_md"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/media_info_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="middle"
+                    android:maxLines="2"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    tools:text="grandma_wedding_1952.jpg" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/media_info_location"
+                    style="@style/Widget.FamilyTree.Pill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/ds_space_xs"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    tools:text="App storage" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ds_space_lg"
+            android:layout_marginTop="@dimen/ds_space_md"
+            android:layout_marginEnd="@dimen/ds_space_lg" />
+
+        <LinearLayout
+            android:id="@+id/media_info_rows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/ds_space_xs" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/media_info_hint"
+            style="@style/Widget.FamilyTree.ListSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ds_space_lg"
+            android:layout_marginTop="@dimen/ds_space_xs"
+            android:layout_marginEnd="@dimen/ds_space_lg"
+            android:visibility="gone" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/media_info_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/ds_space_md"
+            android:paddingStart="@dimen/ds_space_lg"
+            android:paddingEnd="@dimen/ds_space_md"
+            app:flexWrap="wrap"
+            app:justifyContent="flex_end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/media_info_rename"
+                style="@style/Widget.FamilyTree.Button.Tonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ds_space_sm"
+                android:layout_marginBottom="@dimen/ds_space_sm"
+                android:text="@string/media_rename_file"
+                android:visibility="gone"
+                app:icon="@drawable/ds_ic_edit_note" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/media_info_copy"
+                style="@style/Widget.FamilyTree.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/ds_space_sm"
+                android:layout_marginBottom="@dimen/ds_space_sm"
+                android:text="@string/copy_app_storage"
+                android:visibility="gone"
+                app:icon="@drawable/ds_ic_download" />
+        </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

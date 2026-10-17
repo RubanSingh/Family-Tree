@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="other">结婚纪念日 · %d 周年</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="other">逝世纪念日 · %d 周年</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="other">%1$d 天后 · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="other">%d 天后</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="other">满 %d 岁</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="other">结婚 %d 年</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="other">%d 年前</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="other">%d 年</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="other">%d 个事件</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="other">%d 人</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="other">%d 个地点</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="other">%d 个国家</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="other">%d 人</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="other">有 %d 个文件位于应用存储之外。要将它们复制到应用存储中，使其随家谱保存并包含在备份中吗？原始文件不会改变。</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="other">已将 %d 个文件复制到应用存储。</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="other">有 %d 个媒体使用应用存储中文件的完整路径进行链接。要将链接缩短为仅文件名吗？文件仍保留在原位置。</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="other">已缩短 %d 个文件路径。</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="other">%d 条记录</item>
+    </plurals>
+</resources>

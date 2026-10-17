@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Tree canvas: see ds_bg_canvas in :core:designsystem (colours switch for night via ds_colors_tree) -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
 	<gradient
-		android:type="radial"
-		android:startColor="#555"
-		android:endColor="#222"
-		android:gradientRadius="300dp" />
+		android:centerX="0.5"
+		android:centerY="0.38"
+		android:endColor="@color/ds_canvas_edge"
+		android:gradientRadius="560dp"
+		android:startColor="@color/ds_canvas_center"
+		android:type="radial" />
 </shape>

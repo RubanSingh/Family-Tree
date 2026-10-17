@@ -32,10 +32,12 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import dna.familytree.feature.places.Maps;
 import dna.familytree.constant.Gender;
 import dna.familytree.detail.EventController;
 import dna.familytree.detail.ExtensionController;
 import dna.familytree.detail.NameController;
+import dna.familytree.feature.ads.NativeAdCard;
 import dna.familytree.util.AnalyticsUtil;
 
 public class ProfileFactsFragment extends BaseFragment {
@@ -65,6 +67,11 @@ public class ProfileFactsFragment extends BaseFragment {
                 AppUtils.placeNotes(layout, one, true);
                 AppUtils.placeSourceCitations(layout, one);
                 AppUtils.placeChangeDate(layout, one.getChange());
+                // Native ad at the end of the facts: appearing late, it moves nothing
+                NativeAdCard adCard = new NativeAdCard(requireContext());
+                adCard.setLarge(true);
+                layout.addView(adCard);
+                adCard.show(getViewLifecycleOwner(), true);
             }
         }
         return vistaEventi;
@@ -140,7 +147,8 @@ public class ProfileFactsFragment extends BaseFragment {
         if (event.getPlace() != null) txt += event.getPlace() + "\n";
         Address indirizzo = event.getAddress();
         if (indirizzo != null) txt += DetailController.writeAddress(indirizzo, true) + "\n";
-        if (event.getCause() != null) txt += event.getCause();
+        if (event.getCause() != null) txt += event.getCause() + "\n";
+        if (event.getAge() != null) txt += AgeConverter.writeAge(Global.context, event.getAge());
         return txt.trim();
     }
 
@@ -286,6 +294,10 @@ public class ProfileFactsFragment extends BaseFragment {
                 menu.add(0, 211, 0, R.string.move_up);
             if (one.getEventsFacts().indexOf(pieceObject) < one.getEventsFacts().size() - 1)
                 menu.add(0, 212, 0, R.string.move_down);
+            if (Maps.queryOf((EventFact)pieceObject) != null) {
+                menu.add(0, 214, 0, R.string.places_show_map);
+                menu.add(0, 215, 0, R.string.places_directions);
+            }
             menu.add(0, 213, 0, R.string.delete);
         } else if (pieceObject instanceof GedcomTag) {
             menu.add(0, 220, 0, R.string.copy);
@@ -306,6 +318,14 @@ public class ProfileFactsFragment extends BaseFragment {
     public boolean onContextItemSelected(MenuItem item) {
         List<Name> nomi = one.getNames();
         List<EventFact> fatti = one.getEventsFacts();
+        if (item.getItemId() == 214 || item.getItemId() == 215) { // Place of the event on the map
+            String query = Maps.queryOf((EventFact)pieceObject);
+            if (query != null) {
+                if (item.getItemId() == 214) Maps.show(requireContext(), query);
+                else Maps.directions(requireContext(), query);
+            }
+            return true;
+        }
         switch (item.getItemId()) {
             // Nome
             case 200: // Copia nome

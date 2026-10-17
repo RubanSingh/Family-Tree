@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">本地备份</string>
+    <string name="choose_folder">选择文件夹</string>
+    <string name="backup_folder">备份文件夹</string>
+    <string name="recover">恢复</string>
+    <string name="export_png">导出 PNG</string>
+    <string name="png_exported_ok">PNG 已导出。</string>
+    <string name="tree_settings">家谱树设置</string>
+    <string name="max_life_span">最大存在寿命</string>
+    <string name="years">年</string>
+    <string name="current_date">现在日期</string>
+    <string name="device_date">设备日期</string>
+    <string name="fixed_date">修改日期</string>
+    <string name="notification_time">生日通知时间</string>
+    <string name="origin_family">原家庭</string>
+    <string name="adoptive_family">收养家庭</string>
+    <string name="foster_family">寄养家庭</string>
+    <string name="paternal_family">父系家族</string>
+    <string name="maternal_family">母系家族</string>
+    <string name="own_family">自己的家庭</string>
+    <string name="numbers">数字</string>
+    <string name="search_duplicates">搜索重复项</string>
+    <string name="skip">跳过</string>
+    <string name="error_found">发现一个错误。</string>
+    <string name="yes_to_all">全部应用是</string>
+    <string name="no_to_all">全部应用否</string>
+    <string name="duplicates_lines">重复连线</string>
+    <string name="make_shared_media">制作共享媒体</string>
+    <string name="make_media">制作媒体</string>
+    <string name="copy_app_storage">复制到应用存储</string>
+    <string name="shrink_path">收缩文件路径</string>
+    <string name="file_exists_reuse">该文件已存在。\n您要重复使用还是复制？</string>
+    <string name="use_existing">重复使用现有的</string>
+    <string name="make_copy">创建副本</string>
+    <string name="existing_name">已存在的名字</string>
+    <string name="invalid_name">无效的名字</string>
+    <string name="info">信息</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">无效的 GEDCOM 日期。</string>
+    <string name="husband_age">丈夫年龄</string>
+    <string name="wife_age">妻子年龄</string>
+    <string name="less_than">少于</string>
+    <string name="more_than">多于</string>
+</resources>

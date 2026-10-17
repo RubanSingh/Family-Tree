@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -25,6 +26,8 @@ import androidx.appcompat.widget.Toolbar;
 import com.android.installreferrer.api.InstallReferrerClient;
 import com.android.installreferrer.api.InstallReferrerStateListener;
 import com.android.installreferrer.api.ReferrerDetails;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.color.MaterialColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import org.folg.gedcom.model.ChildRef;
@@ -47,9 +50,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import dna.familytree.feature.backup.BackupManager;
+import dna.familytree.feature.reminders.ReminderScheduler;
+import dna.familytree.feature.backup.BackupController;
+import dna.familytree.feature.update.InAppUpdates;
 import dna.familytree.constant.Code;
+import dna.familytree.designsystem.PremiumBadge;
 import dna.familytree.merge.MergeController;
 import dna.familytree.constant.Extra;
+import dna.familytree.feature.ads.ConsentManager;
+import dna.familytree.feature.ads.NativeAdCard;
+import dna.familytree.feature.billing.EntitlementSync;
+import dna.familytree.feature.billing.PremiumGate;
+import dna.familytree.feature.billing.UpsellPrompt;
+import dna.familytree.feature.settings.SettingsController;
 import dna.familytree.share.SharingController;
 import dna.familytree.util.AnalyticsUtil;
 import dna.familytree.util.FileUtils;
@@ -73,7 +87,17 @@ public class TreesController extends BaseController {
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
         setContentView(R.layout.trees);
-        showNativeAd();
+        new InAppUpdates(this); // Google Play updates (forced when the release requires it)
+        ConsentManager.gatherAndStartAds(this); // Privacy consent where required, then ads (free users)
+        findViewById(R.id.backup_prompt_choose).setOnClickListener(v ->
+                startActivity(new Intent(this, BackupController.class).putExtra(BackupController.EXTRA_PICK_FOLDER, true)));
+        findViewById(R.id.backup_prompt_later).setOnClickListener(v -> {
+            Global.settings.backupPromptDismissed = true;
+            Global.settings.save();
+            findViewById(R.id.backup_prompt).setVisibility(View.GONE);
+        });
+        // Revokes Premium if a monthly subscription lapsed while the app was closed
+        EntitlementSync.reconcileOnce(this, () -> AppUtils.toast(this, R.string.premium_expired));
         ListView listView = findViewById(R.id.trees_list);
         progress = findViewById(R.id.trees_progress);
         welcome = new SpeechBubble(this, R.string.tap_add_tree);
@@ -117,9 +141,16 @@ public class TreesController extends BaseController {
                     Settings.Tree tree = Global.settings.getTree(treeId);
                     boolean derived = tree.grade == 20;
                     boolean exhausted = tree.grade == 30;
+                    MaterialCardView card = treeView.findViewById(R.id.albero_card);
+                    TextView avatar = treeView.findViewById(R.id.albero_avatar);
+                    String title = treeList.get(position).get("titolo");
+                    avatar.setText(title == null || title.trim().isEmpty() ? "?" : title.trim().substring(0, 1).toUpperCase());
+                    ((TextView)treeView.findViewById(R.id.albero_titolo)).setTextColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorOnSurface));
+                    ((TextView)treeView.findViewById(R.id.albero_dati)).setTextColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorOnSurfaceVariant));
                     if (derived) {
-                        treeView.setBackgroundColor(getResources().getColor(R.color.accent_medium));
-                        ((TextView)treeView.findViewById(R.id.albero_dati)).setTextColor(getResources().getColor(R.color.text));
+                        card.setCardBackgroundColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorTertiaryContainer));
+                        ((TextView)treeView.findViewById(R.id.albero_dati)).setTextColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorOnTertiaryContainer));
+                        ((TextView)treeView.findViewById(R.id.albero_titolo)).setTextColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorOnTertiaryContainer));
                         treeView.setOnClickListener(v -> {
                             if (!NewTreeController.confronta(TreesController.this, tree, true)) {
                                 tree.grade = 10; // viene retrocesso
@@ -129,8 +160,8 @@ public class TreesController extends BaseController {
                             }
                         });
                     } else if (exhausted) {
-                        treeView.setBackgroundColor(getResources().getColor(R.color.consumed));
-                        ((TextView)treeView.findViewById(R.id.albero_titolo)).setTextColor(getResources().getColor(R.color.gray_text));
+                        card.setCardBackgroundColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorSurfaceContainerHighest));
+                        ((TextView)treeView.findViewById(R.id.albero_titolo)).setTextColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorOnSurfaceVariant));
                         treeView.setOnClickListener(v -> {
                             if (!NewTreeController.confronta(TreesController.this, tree, true)) {
                                 tree.grade = 10; // viene retrocesso
@@ -140,7 +171,7 @@ public class TreesController extends BaseController {
                             }
                         });
                     } else {
-                        treeView.setBackgroundColor(getResources().getColor(R.color.back_element));
+                        card.setCardBackgroundColor(MaterialColors.getColor(card, com.google.android.material.R.attr.colorSurfaceContainerLow));
                         treeView.setOnClickListener(v -> {
                             progress.setVisibility(View.VISIBLE);
                             if (!(Global.gc != null && treeId == Global.settings.openTree)) { // se non è già aperto
@@ -162,6 +193,8 @@ public class TreesController extends BaseController {
                             menu.add(0, 0, 0, R.string.open);
                         if (!exhausted || Global.settings.expert)
                             menu.add(0, 1, 0, R.string.tree_info);
+                        if (exists && !exhausted)
+                            menu.add(0, 11, 0, R.string.tree_settings);
                         if ((!derived && !exhausted) || Global.settings.expert)
                             menu.add(0, 2, 0, R.string.rename);
                         if (exists && (!derived || Global.settings.expert) && !exhausted)
@@ -171,7 +204,8 @@ public class TreesController extends BaseController {
                         if (exists && !derived && !exhausted) // non si può ri-condividere un albero ricevuto indietro, anche se sei esperto..
                             menu.add(0, 5, 0, R.string.share_tree);
                         if (exists && !derived && !exhausted && /*Global.settings.expert &&*/ Global.settings.trees.size() > 1)
-                            menu.add(0, 6, 0, R.string.merge_tree);
+                            menu.add(0, 6, 0, PremiumGate.isPremium() ? getText(R.string.merge_tree)
+                                    : PremiumBadge.withDiamond(TreesController.this, getText(R.string.merge_tree)));
                         if (exists && !derived && !exhausted && Global.settings.expert && Global.settings.trees.size() > 1
                                 && tree.shares != null && tree.grade != 0) // cioè dev'essere 9 o 10
                             menu.add(0, 7, 0, R.string.compare);
@@ -194,6 +228,9 @@ public class TreesController extends BaseController {
                                 Intent intent = new Intent(TreesController.this, InfoController.class);
                                 intent.putExtra(Extra.TREE_ID, treeId);
                                 startActivity(intent);
+                            } else if (id == 11) { // Tree settings
+                                startActivity(new Intent(TreesController.this, TreeSettingsController.class)
+                                        .putExtra(Extra.TREE_ID, treeId));
                             } else if (id == 2) { // Rinomina albero
                                 AnalyticsUtil.logEventRenameTree(getFirebaseAnalytics());
                                 MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(TreesController.this);
@@ -286,6 +323,12 @@ public class TreesController extends BaseController {
                     return treeView;
                 }
             };
+            // Native ad after the trees: appearing late, it moves nothing
+            FrameLayout adFooter = new FrameLayout(this);
+            NativeAdCard adCard = new NativeAdCard(this);
+            adFooter.addView(adCard, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            listView.addFooterView(adFooter, null, false);
+            adCard.show(this, true);
             listView.setAdapter(adapter);
             aggiornaLista();
         }
@@ -315,7 +358,7 @@ public class TreesController extends BaseController {
 
     public void setToolbar() {
         Toolbar bar = findViewById(R.id.toolbar);
-        View treesBar = getLayoutInflater().inflate(R.layout.trees_bar, null);
+        View treesBar = getLayoutInflater().inflate(R.layout.trees_bar, bar, false);
 
         //option settings
         treesBar.findViewById(R.id.trees_settings).setOnClickListener(v -> {
@@ -334,11 +377,11 @@ public class TreesController extends BaseController {
         );
 
         //premium mode
-        treesBar.findViewById(R.id.trees_premium).setOnClickListener(v -> {
+        View premiumPill = treesBar.findViewById(R.id.trees_premium);
+        premiumPill.setVisibility(PremiumGate.isPremium() ? View.GONE : View.VISIBLE);
+        premiumPill.setOnClickListener(v -> {
                     AnalyticsUtil.logEventPremiumAction(TreesController.this.getFirebaseAnalytics());
-                    Intent purchaseIntent = new Intent(this, PurchaseController.class);
-                    purchaseIntent.putExtra(Extra.STRING, R.string.family_tree_premium);
-                    startActivity(purchaseIntent);
+                    PremiumGate.open(this, R.string.family_tree_premium);
                 }
         );
 
@@ -355,6 +398,11 @@ public class TreesController extends BaseController {
         if (Global.forceRestartLauncher) {
             recreate();
             Global.forceRestartLauncher = false;
+        } else {
+            View premiumPill = findViewById(R.id.trees_premium);
+            if (premiumPill != null) premiumPill.setVisibility(PremiumGate.isPremium() ? View.GONE : View.VISIBLE);
+            findViewById(R.id.backup_prompt).setVisibility(BackupManager.shouldPromptForFolder() ? View.VISIBLE : View.GONE);
+            UpsellPrompt.maybeShow(this);
         }
     }
 
@@ -388,7 +436,8 @@ public class TreesController extends BaseController {
             new Handler().post(() -> {
                 if (openGedcom(treeId, true)) {
                     progress.setVisibility(View.VISIBLE);
-                    Global.indi = intent.getStringExtra(Notifier.INDI_ID_KEY);
+                    String personId = intent.getStringExtra(Notifier.INDI_ID_KEY);
+                    if (personId != null) Global.indi = personId; // Reminders without a person open the tree as usual
                     consumedNotifications.add(notifyId);
                     startActivity(new Intent(this, PrincipalController.class));
                     new Notifier(this, Global.gc, treeId, Notifier.What.DEFAULT); // Actually delete present notification
@@ -533,15 +582,18 @@ public class TreesController extends BaseController {
         }
         // This Notifier was introduced in version 0.9.1
         // Todo: Can be removed from here in the future because tree.birthdays will never more be null
-        if (Global.settings.getTree(treeId).birthdays == null) {
+        if (!Notifier.birthdaysValid(Global.settings.getTree(treeId))) { // Also birthdays unreadable after an update
             new Notifier(Global.context, gedcom, treeId, Notifier.What.CREATE);
         }
+        // Trees saved before version 1.6 get their anniversaries and remembrance days
+        if (Global.settings.getTree(treeId).occasions == null)
+            ReminderScheduler.onTreeSaved(Global.context, gedcom, treeId);
         return gedcom;
     }
 
     // Replace Italian with English in Json tree data
     // Introduced in Family Gem 0.8
-    static String updateLanguage(String json) {
+    public static String updateLanguage(String json) {
         json = json.replace("\"zona\":", "\"zone\":");
         json = json.replace("\"famili\":", "\"kin\":");
         json = json.replace("\"passato\":", "\"passed\":");
@@ -558,6 +610,7 @@ public class TreesController extends BaseController {
         }
         new Notifier(context, null, treeId, Notifier.What.DELETE);
         Global.settings.deleteTree(treeId);
+        ReminderScheduler.reschedule(context); // Without the reminders of the deleted tree
     }
 
     static void deleteFilesAndDirs(File fileOrDirectory) {
@@ -880,7 +933,8 @@ public class TreesController extends BaseController {
 
         if (!correct) {
             MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
-            dialog.setMessage(errors == 0 ? getText(R.string.all_ok) : getString(R.string.errors_found, errors));
+            dialog.setMessage(errors == 0 ? getText(R.string.all_ok)
+                    : errors == 1 ? getText(R.string.error_found) : getString(R.string.errors_found, errors));
             if (errors > 0) {
                 dialog.setPositiveButton(R.string.correct, (dialogo, i) -> {
                     dialogo.cancel();

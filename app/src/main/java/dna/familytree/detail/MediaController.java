@@ -9,11 +9,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.StrictMode;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.core.content.FileProvider;
-import androidx.multidex.BuildConfig;
+import dna.familytree.BuildConfig;
 
 import org.folg.gedcom.model.Media;
 
@@ -27,9 +29,14 @@ import dna.familytree.Global;
 import dna.familytree.Memory;
 import dna.familytree.R;
 import dna.familytree.AppUtils;
+import dna.familytree.feature.media.MediaConversions;
+import dna.familytree.feature.media.MediaFileTools;
+import dna.familytree.feature.media.MediaToolsUi;
 import dna.familytree.list.MediaFragment;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.Snackbars;
 import dna.familytree.util.LoggerUtils;
+import dna.familytree.visitor.FindStack;
 import dna.familytree.visitor.MediaReferences;
 
 public class MediaController extends DetailController {
@@ -37,6 +44,13 @@ public class MediaController extends DetailController {
     Media m;
     View imageView;
     private final String TAG = MediaController.class.getSimpleName();
+    // File tools in the options menu
+    private static final int MENU_INFO = 420;
+    private static final int MENU_COPY = 421;
+    private static final int MENU_RENAME = 422;
+    private static final int MENU_SHRINK = 423;
+    private static final int MENU_SHARED = 424;
+    private static final int MENU_SIMPLE = 425;
 
     @Override
     public void format() {
@@ -134,6 +148,95 @@ public class MediaController extends DetailController {
     @Override
     public void delete() {
         AppUtils.updateChangeDate(MediaFragment.deleteMedia(m, null));
+    }
+
+    /**
+     * Adds the file tools to the standard menu, before Delete.
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        if (menu.findItem(MENU_CHOOSE_FILE) == null) // Editor mode, without options menu
+            return true;
+        boolean deletable = menu.findItem(MENU_DELETE) != null;
+        menu.removeItem(MENU_DELETE);
+        View photo = box.findViewById(R.id.immagine_foto);
+        Uri knownUri = photo != null && photo.getTag(R.id.tag_uri) instanceof Uri ? (Uri)photo.getTag(R.id.tag_uri) : null;
+        int treeId = Global.settings.openTree;
+        MediaFileTools.Resolved resolved = MediaFileTools.resolve(this, m, treeId, false, knownUri);
+        menu.add(0, MENU_INFO, 0, R.string.info);
+        if (resolved.canCopy())
+            menu.add(0, MENU_COPY, 0, R.string.copy_app_storage);
+        if (resolved.canRename())
+            menu.add(0, MENU_RENAME, 0, R.string.media_rename_file);
+        if (Global.settings.expert && MediaFileTools.shortName(this, m, resolved, treeId) != null)
+            menu.add(0, MENU_SHRINK, 0, R.string.shrink_path);
+        if (m.getId() == null)
+            menu.add(0, MENU_SHARED, 0, R.string.make_shared_media);
+        else if (MediaConversions.canMakeSimple(gc, m))
+            menu.add(0, MENU_SIMPLE, 0, R.string.make_media);
+        if (deletable)
+            menu.add(0, MENU_DELETE, 0, R.string.delete);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_INFO:
+                MediaToolsUi.showFileInfo(this, m, this::mediaChanged);
+                return true;
+            case MENU_COPY:
+                MediaToolsUi.copyToAppStorage(this, m, this::mediaChanged);
+                return true;
+            case MENU_RENAME:
+                MediaToolsUi.rename(this, m, this::mediaChanged);
+                return true;
+            case MENU_SHRINK:
+                MediaToolsUi.shrinkPath(this, m, this::mediaChanged);
+                return true;
+            case MENU_SHARED:
+                makeShared();
+                return true;
+            case MENU_SIMPLE:
+                makeSimple();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void mediaChanged() {
+        refresh();
+        invalidateOptionsMenu();
+    }
+
+    /**
+     * The simple media becomes a shared media record, which now leads its own breadcrumb.
+     */
+    private void makeShared() {
+        Object[] leaders = MediaConversions.makeShared(gc, m, AppUtils.newID(gc, Media.class));
+        AppUtils.save(true, leaders);
+        Memory.stepBack();
+        Memory.setInstanceAndAllSubsequentToNull(m);
+        Memory.setLeader(m);
+        getIntent().removeExtra("daSolo");
+        mediaChanged();
+        Snackbars.show(this, getString(R.string.media_made_shared));
+    }
+
+    /**
+     * The shared media becomes a simple media in each record that linked it; this one is shown inside its first record.
+     */
+    private void makeSimple() {
+        Object[] leaders = MediaConversions.makeSimple(gc, m);
+        if (leaders.length == 0) return;
+        AppUtils.save(true, leaders);
+        Memory.stepBack();
+        Memory.setInstanceAndAllSubsequentToNull(m);
+        new FindStack(gc, m); // Temporary stack, removed going back
+        getIntent().putExtra("daSolo", true); // To show the record containing it
+        mediaChanged();
+        Snackbars.show(this, getString(R.string.media_made_simple));
     }
 
     @Override

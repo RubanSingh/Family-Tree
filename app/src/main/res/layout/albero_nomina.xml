@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Tree name dialog (create / rename) -->
 <LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:padding="16dp">
+	android:paddingStart="@dimen/ds_space_lg"
+	android:paddingTop="@dimen/ds_space_sm"
+	android:paddingEnd="@dimen/ds_space_lg">
 
 	<com.google.android.material.textview.MaterialTextView
 		android:id="@+id/nuovo_nome_testo"
-		style="@style/AppTheme.Suggestion"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginStart="8dp"
+		android:layout_marginBottom="@dimen/ds_space_ms"
+		android:textAppearance="?attr/textAppearanceBodyMedium"
+		android:textColor="?attr/colorOnSurfaceVariant"
 		android:visibility="gone" />
 
-	<com.google.android.material.textfield.TextInputEditText
-		android:id="@+id/nuovo_nome_albero"
+	<com.google.android.material.textfield.TextInputLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:hint="@string/name_of_tree"
-		android:inputType="textCapWords"
-		android:maxLines="1"
-		android:selectAllOnFocus="true" />
+		android:hint="@string/name_of_tree">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/nuovo_nome_albero"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="textCapWords"
+			android:maxLines="1"
+			android:selectAllOnFocus="true" />
+	</com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

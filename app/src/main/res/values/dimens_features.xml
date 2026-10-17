@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Small icons inside texts -->
+    <dimen name="inline_icon">16dp</dimen>
+    <dimen name="inline_icon_small">14dp</dimen>
+</resources>

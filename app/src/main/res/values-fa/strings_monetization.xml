@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">حذف تبلیغات</string>
+    <string name="ads_remove_hint">با پریمیوم، از Family Tree بدون تبلیغات لذت ببرید.</string>
+    <string name="privacy_options">گزینه‌های حریم خصوصی تبلیغات</string>
+    <string name="privacy_options_desc">بررسی یا تغییر نحوه‌ی استفاده‌ی تبلیغات از داده‌های شما</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">این یکی از امکانات پریمیوم است.</string>
+    <string name="reward_watch_title">تماشای یک ویدیوی کوتاه</string>
+    <string name="reward_watch_desc">بلافاصله پس از ویدیو، یک بار رایگان از آن استفاده کنید.</string>
+    <string name="reward_loading">در حال بارگیری ویدیو…</string>
+    <string name="reward_unavailable">در حال حاضر ویدیویی در دسترس نیست. بعداً دوباره امتحان کنید یا به پریمیوم ارتقا دهید.</string>
+    <string name="reward_not_earned">برای باز کردن قفل، ویدیو را تا انتها تماشا کنید.</string>
+    <string name="reward_premium_desc">استفاده‌ی نامحدود، بدون تبلیغات و همه‌ی امکانات پریمیوم.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">داستان خانواده‌ی شما شایسته‌ی پریمیوم است</string>
+    <string name="upsell_subtitle">هر آنچه ساخته‌اید را ایمن نگه دارید و از همه‌ی امکانات پریمیوم لذت ببرید.</string>
+    <string name="upsell_subtitle_new">از پژوهش‌های خود محافظت کنید و از Family Tree بدون تبلیغات لذت ببرید.</string>
+    <string name="upsell_stat_people">افراد</string>
+    <string name="upsell_stat_trees">درخت‌ها</string>
+    <string name="upsell_stat_generations">نسل‌ها</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">و %d امکان دیگر در پریمیوم</item>
+        <item quantity="other">و %d امکان دیگر در پریمیوم</item>
+    </plurals>
+    <string name="upsell_price_monthly">پلن‌ها از %1$s در ماه</string>
+    <string name="upsell_price_lifetime">یا یک بار %1$s بپردازید و برای همیشه داشته باشید</string>
+    <string name="upsell_price_lifetime_only">دسترسی مادام‌العمر با %1$s، پرداخت یک‌باره</string>
+    <string name="upsell_cta">مشاهده‌ی پلن‌های پریمیوم</string>
+    <string name="upsell_later">الان نه</string>
+    <string name="upsell_trust">لغو در هر زمان · پرداخت امن از طریق Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">هر آنچه برای محافظت، گرامی‌داشت و اشتراک‌گذاری داستان خانواده‌تان نیاز دارید.</string>
+    <string name="paywall_highlight_no_ads">بدون تبلیغات</string>
+    <string name="paywall_highlight_backup">پشتیبان‌گیری خودکار</string>
+    <string name="paywall_highlight_reminders">یادآورهای نامحدود</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">دوره‌ی آزمایشی رایگان %d روزه</item>
+        <item quantity="other">دوره‌ی آزمایشی رایگان %d روزه</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">دوره‌ی آزمایشی رایگان %d ماهه</item>
+        <item quantity="other">دوره‌ی آزمایشی رایگان %d ماهه</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">هزینه‌اش طی %d ماه جبران می‌شود</item>
+        <item quantity="other">هزینه‌اش طی %d ماه جبران می‌شود</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s در ماه · لغو در هر زمان</string>
+    <string name="paywall_summary_trial">%1$s، سپس %2$s در ماه</string>
+    <string name="paywall_summary_lifetime">%1$s یک‌باره · برای همیشه از آن شما</string>
+    <string name="paywall_loading_prices">در حال بارگیری قیمت‌ها…</string>
+    <string name="paywall_compare_title">رایگان در برابر پریمیوم</string>
+    <string name="paywall_compare_free">رایگان</string>
+    <string name="paywall_compare_premium">پریمیوم</string>
+    <string name="compare_included">شامل می‌شود</string>
+    <string name="paywall_details_show">چگونه کار می‌کند</string>
+    <string name="paywall_details_hide">پنهان کردن جزئیات</string>
+    <string name="paywall_free_label">رایگان: %1$s</string>
+    <string name="paywall_premium_label">پریمیوم: %1$s</string>
+    <string name="paywall_premium_only">فقط در پریمیوم</string>
+    <string name="paywall_trust_title">با اطمینان خرید کنید</string>
+    <string name="paywall_trust_secure">پرداخت امن از طریق Google Play</string>
+    <string name="paywall_trust_cancel">لغو پلن ماهانه در هر زمان</string>
+    <string name="paywall_trust_devices">بازیابی در همه‌ی دستگاه‌های شما</string>
+    <string name="paywall_trust_private">داده‌های خانوادگی شما روی دستگاه خودتان می‌ماند</string>
+    <string name="paywall_faq_title">پرسش‌ها و پاسخ‌ها</string>
+    <string name="paywall_faq_plans_q">تفاوت پلن ماهانه و مادام‌العمر چیست؟</string>
+    <string name="paywall_faq_plans_a">هر دو همه‌ی امکانات پریمیوم را باز می‌کنند. پلن ماهانه هر ماه تمدید می‌شود و هر زمان بخواهید می‌توانید آن را لغو کنید. پلن مادام‌العمر یک بار پرداخت می‌شود و هرگز منقضی نمی‌شود.</string>
+    <string name="paywall_faq_cancel_q">اگر پریمیوم را متوقف کنم، چه بر سر درخت‌هایم می‌آید؟</string>
+    <string name="paywall_faq_cancel_a">هیچ چیز از دست نمی‌رود. درخت‌ها، عکس‌ها، یادآورها و پشتیبان‌های شما دقیقاً همان‌طور که هستند باقی می‌مانند: فقط امکانات پریمیوم متوقف می‌شوند و تبلیغات برمی‌گردند.</string>
+    <string name="paywall_faq_device_q">گوشی‌ام را عوض کرده‌ام. باید دوباره پرداخت کنم؟</string>
+    <string name="paywall_faq_device_a">خیر. Family Tree را با همان حساب Google نصب کنید و روی «بازیابی خریدها» بزنید.</string>
+    <string name="paywall_faq_privacy_q">آیا داده‌های خانوادگی من به جایی ارسال می‌شود؟</string>
+    <string name="paywall_faq_privacy_a">خیر. درخت‌های شما روی دستگاه‌تان و در پوشه‌ی پشتیبانی که انتخاب می‌کنید نگه داشته می‌شوند. خرید پریمیوم هیچ چیزی را بارگذاری نمی‌کند.</string>
+    <string name="paywall_faq_manage_q">چگونه پلن ماهانه را لغو کنم؟</string>
+    <string name="paywall_faq_manage_a">در Play Store، بخش «پرداخت‌ها و اشتراک‌ها › اشتراک‌ها» را باز کنید، Family Tree را انتخاب کنید و روی «لغو» بزنید. پریمیوم تا پایان دوره‌ای که پرداخت کرده‌اید فعال می‌ماند.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">همیشه در امان</string>
+    <string name="pf_group_safe_desc">سال‌ها پژوهش، به‌طور خودکار محافظت می‌شود.</string>
+    <string name="pf_group_moments">هیچ لحظه‌ای را از دست ندهید</string>
+    <string name="pf_group_moments_desc">تاریخ‌ها و مکان‌های خانواده‌تان، همیشه در دسترس.</string>
+    <string name="pf_group_share">بسازید و به اشتراک بگذارید</string>
+    <string name="pf_group_share_desc">خروجی‌های زیبا و ابزارهای قدرتمند برای پژوهش جدی.</string>
+    <string name="pf_group_yours">به سلیقه‌ی خودتان</string>
+    <string name="pf_group_yours_desc">فضایی آرام و شخصی برای داستان خانواده‌ی شما.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">پشتیبان‌گیری خودکار</string>
+    <string name="pf_backup_summary">هر تغییر، بی‌آنکه انگشتی تکان دهید، در پوشه‌ای که انتخاب می‌کنید ذخیره می‌شود.</string>
+    <string name="pf_backup_free">پشتیبان‌گیری دستی</string>
+    <string name="pf_backup_premium">خودکار</string>
+    <string name="pf_backup_detail1">یک دقیقه پس از هر ویرایش، درخت به‌صورت یک پشتیبان ZIP در پوشه‌ی شما ذخیره می‌شود: حافظه‌ی گوشی، کارت SD یا یک پوشه‌ی ابری مانند Google Drive.</string>
+    <string name="pf_backup_detail2">۳ نسخه‌ی جدیدتر از هر درخت نگه داشته می‌شود تا همیشه بتوانید به عقب برگردید.</string>
+    <string name="pf_backup_detail3">بازیابی پشتیبان رایگان است و همیشه در دسترس است، حتی بدون پریمیوم.</string>
+
+    <string name="pf_media_title">سازمان‌دهنده‌ی رسانه</string>
+    <string name="pf_media_summary">همه‌ی عکس‌ها و اسناد یک درخت را یک‌جا در برنامه کپی کنید.</string>
+    <string name="pf_media_free">هر بار یک فایل</string>
+    <string name="pf_media_premium">همه‌ی فایل‌ها یک‌جا</string>
+    <string name="pf_media_detail1">همه‌ی رسانه‌های یک درخت را، با نمایش پیشرفت و امکان لغو، به فضای حافظه‌ی برنامه بیاورید تا با جابه‌جایی فایل‌ها، پیوندها هرگز خراب نشوند.</string>
+    <string name="pf_media_detail2">فایل‌های اصلی شما دست‌نخورده می‌مانند: هر فایل پیش از به‌روزرسانی پیوندهایش کپی و بررسی می‌شود.</string>
+
+    <string name="pf_reminders_title">یادآورهای هوشمند خانوادگی</string>
+    <string name="pf_reminders_summary">سالگردهای ازدواج، سالگردهای درگذشت و یادآورهای شخصی نامحدود.</string>
+    <string name="pf_reminders_free">تولدها + ۲ یادآور</string>
+    <string name="pf_reminders_premium">نامحدود</string>
+    <string name="pf_reminders_detail1">از سالگرد ازدواج زوج‌ها و در صورت تمایل، از سالگردهای درگذشت باخبر شوید.</string>
+    <string name="pf_reminders_detail2">هر تعداد یادآور که بخواهید بسازید: جشن سیسمونی، فارغ‌التحصیلی، دورهمی‌ها، دیدارها…</string>
+    <string name="pf_reminders_detail3">هشدارهای زودهنگام از قبل خبرتان می‌کنند تا برای تماس، نوشتن یا تدارک هدیه وقت داشته باشید.</string>
+
+    <string name="pf_places_title">مکان‌های خانوادگی</string>
+    <string name="pf_places_summary">همه‌ی مکان‌های تاریخچه‌ی خانواده‌تان، قابل جستجو و با یک ضربه روی نقشه.</string>
+    <string name="pf_places_free">۳ مکان نخست</string>
+    <string name="pf_places_premium">همه‌ی مکان‌ها</string>
+    <string name="pf_places_detail1">همه‌ی مکان‌های رویدادها و نشانی‌های درخت، دسته‌بندی‌شده بر اساس کشور، همراه با جستجو.</string>
+    <string name="pf_places_detail2">ببینید در هر مکان چه رخ داده و آن را با مسیریابی در برنامه‌ی نقشه‌تان باز کنید.</string>
+
+    <string name="pf_exports_title">خروجی‌های آماده‌ی چاپ</string>
+    <string name="pf_exports_summary">نمودار خود را برای چاپ و اشتراک‌گذاری به تصویر HD یا PDF تبدیل کنید.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">یک بار برای هر ویدیو</string>
+    <string name="pf_exports_premium">PDF + تصویر HD</string>
+    <string name="pf_exports_detail1">نمودار را به‌صورت تصویر PNG با وضوح بالا استخراج کنید؛ مناسب برای گفتگوها و شبکه‌های اجتماعی.</string>
+    <string name="pf_exports_detail2">از کل نمودار یک PDF بسازید، آماده‌ی چاپ به‌صورت پوستر برای دورهمی‌های خانوادگی.</string>
+    <string name="pf_exports_detail3">سبک چاپی با پس‌زمینه‌ی سفید و خطوط واضح، متناسب با اندازه‌ی درخت شما.</string>
+    <string name="pf_exports_detail4">بدون پریمیوم هم می‌توانید پس از تماشای یک ویدیوی کوتاه، یک بار خروجی بگیرید.</string>
+
+    <string name="pf_merge_title">ادغام درخت‌ها</string>
+    <string name="pf_merge_summary">دو درخت را در یک درخت ترکیب کنید؛ موارد تکراری برایتان پیدا می‌شوند.</string>
+    <string name="pf_merge_detail1">برنامه افراد یکسان را در هر دو درخت پیدا می‌کند و به شما امکان می‌دهد هر تطابق را جداگانه، یا همه را یک‌جا تأیید کنید.</string>
+    <string name="pf_merge_detail2">ایده‌آل برای زمانی که بستگانتان درخت خودشان را برایتان می‌فرستند.</string>
+
+    <string name="pf_advanced_title">ابزارهای پیشرفته</string>
+    <string name="pf_advanced_summary">منابع، مخازن، استخراج GEDCOM و مجموعه‌ی کامل ابزارهای شجره‌نامه.</string>
+    <string name="pf_advanced_detail1">مانند تبارشناسان حرفه‌ای به منابع و مخازن ارجاع دهید و ارسال‌کنندگان را مدیریت کنید.</string>
+    <string name="pf_advanced_detail2">درخت خود را با یا بدون رسانه، به‌صورت GEDCOM برای هر نرم‌افزار شجره‌نامه استخراج کنید و پشتیبان‌های کامل ZIP بسازید.</string>
+    <string name="pf_advanced_detail3">درخت‌های اشتراکی را مقایسه کنید و مسیرهای فایل‌های رسانه را مرتب کنید.</string>
+
+    <string name="pf_no_ads_title">بدون تبلیغات</string>
+    <string name="pf_no_ads_summary">فضایی آرام و متمرکز برای داستان خانواده‌ی شما.</string>
+    <string name="pf_no_ads_free">با تبلیغات</string>
+    <string name="pf_no_ads_premium">بدون تبلیغات</string>
+    <string name="pf_no_ads_detail1">بدون تبلیغ در فهرست‌ها، در نمایه‌ها یا میان کارها.</string>
+    <string name="pf_no_ads_detail2">پریمیوم همچنین از توسعه‌ی Family Tree حمایت می‌کند.</string>
+
+    <string name="pf_themes_title">۲۰ طرح رنگی</string>
+    <string name="pf_themes_summary">برنامه را به سلیقه‌ی خود درآورید، در حالت روشن یا تیره.</string>
+    <string name="pf_themes_free">طرح زمینه‌ی کلاسیک</string>
+    <string name="pf_themes_premium">۲۰ طرح زمینه</string>
+    <string name="pf_themes_detail1">از میان ۲۰ طرح رنگی، از نیلی عمیق تا کهربایی گرم، انتخاب کنید.</string>
+    <string name="pf_themes_detail2">هر طرح زمینه در حالت روشن و تیره کار می‌کند.</string>
+</resources>

@@ -9,20 +9,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--  This is your template view -->
-        <dna.familytree.nativeads.TemplateView
-            android:id="@+id/my_template"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:gnt_template_type="@layout/gnt_small_template_view" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
+            android:paddingStart="@dimen/ds_page_gutter"
+            android:paddingTop="@dimen/ds_space_sm"
+            android:paddingEnd="@dimen/ds_page_gutter"
             android:paddingBottom="@dimen/bottom_padding"
+            android:scrollbarStyle="outsideOverlay"
             app:layoutManager="LinearLayoutManager" />
     </LinearLayout>
 

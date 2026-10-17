@@ -1,23 +1,9 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0'
-
-        classpath 'com.google.gms:google-services:4.3.15'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.4'
-        classpath 'com.google.firebase:perf-plugin:1.4.2'
-    }
-}
-allprojects {
-    repositories {
-        jcenter()
-        google()
-        mavenCentral()
-        mavenLocal()
-        maven { url 'https://jitpack.io' } // For FastScrollerAndRecyclerViewFixes
-    }
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    // AGP 9 has built-in Kotlin support: this only pins a newer Kotlin than the AGP bundled one
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.google.services) apply false
+    alias(libs.plugins.firebase.crashlytics) apply false
+    alias(libs.plugins.firebase.perf) apply false
 }

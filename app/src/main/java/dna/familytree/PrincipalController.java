@@ -18,6 +18,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -30,7 +31,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import dna.familytree.feature.media.MediaAccess;
+import dna.familytree.feature.places.PlacesController;
+import dna.familytree.feature.reminders.EventsController;
+import dna.familytree.feature.update.InAppUpdates;
 import dna.familytree.constant.Choice;
+import dna.familytree.feature.ads.AdsManager;
+import dna.familytree.feature.ads.ConsentManager;
+import dna.familytree.feature.ads.UsageStats;
+import dna.familytree.feature.billing.UpsellPrompt;
 import dna.familytree.list.FamiliesFragment;
 import dna.familytree.list.SubmittersFragment;
 import dna.familytree.list.PersonsFragment;
@@ -48,6 +57,7 @@ public class PrincipalController extends BaseController implements NavigationVie
     DrawerLayout scatolissima;
     Toolbar toolbar;
     NavigationView menuPrincipe;
+    private boolean resumedBefore;
     List<Integer> idMenu = Arrays.asList(R.id.nav_diagramma, R.id.nav_persone, R.id.nav_famiglie,
             R.id.nav_media, R.id.nav_note, R.id.nav_fonti, R.id.nav_archivi, R.id.nav_autore);
     List<Class> frammenti = Arrays.asList(DiagramFragment.class, PersonsFragment.class, FamiliesFragment.class,
@@ -56,8 +66,13 @@ public class PrincipalController extends BaseController implements NavigationVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setOnBackHandler(this::onBack);
         setContentView(R.layout.principe);
-        showInterstitialAd();
+        new InAppUpdates(this); // Google Play updates also when the app opens straight into a tree
+        ConsentManager.gatherAndStartAds(this); // Also when the app opens straight into a tree
+        AdsManager.preloadInterstitial(this); // For the natural breaks inside the tree
+        if (savedInstanceState == null)
+            UsageStats.engage(UsageStats.POINTS_TREE_OPENED);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -93,6 +108,7 @@ public class PrincipalController extends BaseController implements NavigationVie
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.contenitore_fragment, fragment)
                     .addToBackStack(backName).commit();
+            MediaAccess.maybeAskReconnect(this, Global.settings.openTree); // Photo folders that lost access on Android 13+
         }
 
         menuPrincipe.getHeaderView(0).findViewById(R.id.menu_alberi).setOnClickListener(v -> {
@@ -121,6 +137,10 @@ public class PrincipalController extends BaseController implements NavigationVie
     protected void onResume() {
         super.onResume();
         AnalyticsUtil.logEventPrincipalActivity(getFirebaseAnalytics());
+        // Premium invitation when coming back from a profile or an editor, never right when the tree opens
+        if (resumedBefore)
+            UpsellPrompt.maybeShow(this);
+        resumedBefore = true;
     }
 
     // Aggiorna i contenuti quando si torna indietro con backPressed()
@@ -253,24 +273,28 @@ public class PrincipalController extends BaseController implements NavigationVie
             fragment = getSupportFragmentManager().findFragmentById(R.id.contenitore_fragment);
         if (fragment != null) {
             int numFram = frammenti.indexOf(fragment.getClass());
+            if (numFram < 0) // Not one of the screens of the menu: a dialog, or a headless fragment of a library
+                return;
             if (menuPrincipe != null)
                 menuPrincipe.setCheckedItem(idMenu.get(numFram));
             if (toolbar == null)
                 toolbar = findViewById(R.id.toolbar);
-            if (toolbar != null)
+            if (toolbar != null) {
                 toolbar.setVisibility(numFram == 0 ? View.GONE : View.VISIBLE);
+                ViewCompat.requestApplyInsets(toolbar); // The status bar inset goes to the toolbar or to the diagram
+            }
         }
     }
 
-    @Override
-    public void onBackPressed() {
+    private void onBack() {
         if (scatolissima.isDrawerOpen(GravityCompat.START)) {
             scatolissima.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            defaultBack();
             if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                AdsManager.onNaturalBreak(this, AdsManager.Placement.TREE_CLOSED);
                 // Fa tornare a TreesActivity invece di rivedere il primo diagramma del backstack
-                super.onBackPressed();
+                defaultBack();
             } else
                 aggiornaInterfaccia(null);
         }
@@ -278,6 +302,11 @@ public class PrincipalController extends BaseController implements NavigationVie
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.nav_events || item.getItemId() == R.id.nav_places) { // Their own screens
+            startActivity(new Intent(this, item.getItemId() == R.id.nav_events ? EventsController.class : PlacesController.class));
+            scatolissima.closeDrawer(GravityCompat.START);
+            return false; // Not selected: the current list stays highlighted
+        }
         Fragment fragment = null;
         try {
             fragment = (Fragment)frammenti.get(idMenu.indexOf(item.getItemId())).newInstance();

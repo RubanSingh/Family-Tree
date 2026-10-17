@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokale Datensicherung</string>
+    <string name="choose_folder">Wähle einen Ordner</string>
+    <string name="backup_folder">Sicherungsordner</string>
+    <string name="recover">Wiederherstellen</string>
+    <string name="export_png">PNG exportieren</string>
+    <string name="png_exported_ok">PNG exportiert.</string>
+    <string name="tree_settings">Stammbaum Einstellungen</string>
+    <string name="max_life_span">Maximale Lebensspanne</string>
+    <string name="years">Jahre</string>
+    <string name="current_date">Aktuelles Datum</string>
+    <string name="device_date">Datum des Geräts</string>
+    <string name="fixed_date">Festes Datum</string>
+    <string name="notification_time">Benachrichtigungszeit zum Geburtstag</string>
+    <string name="origin_family">Herkunftsfamilie</string>
+    <string name="adoptive_family">Adoptivfamilie</string>
+    <string name="foster_family">Pflegefamilie</string>
+    <string name="paternal_family">Väterliche Familie</string>
+    <string name="maternal_family">Mütterliche Familie</string>
+    <string name="own_family">Eigene Familie</string>
+    <string name="numbers">Nummern</string>
+    <string name="invalid_date">Ungültiges GEDCOM Datum.</string>
+    <string name="search_duplicates">Dubletten suchen</string>
+    <string name="skip">Auslassen</string>
+    <string name="error_found">Ein Fehler gefunden.</string>
+    <string name="yes_to_all">Ja für alle verbleibende</string>
+    <string name="no_to_all">Nein für alle verbleibende</string>
+    <string name="duplicates_lines">Linien verdoppeln</string>
+    <string name="make_shared_media">Geteilte Datei erstellen</string>
+    <string name="copy_app_storage">Zum Speicher der Anwendung kopieren</string>
+    <string name="shrink_path">Den Weg zur Datei verkürzen</string>
+    <string name="file_exists_reuse">Diese Datei existiert bereits.\nMöchten Sie sie wiederverwenden oder eine Kopie erstellen?</string>
+    <string name="use_existing">Vorhandene Datei wiederverwenden</string>
+    <string name="make_copy">Kopie erstellen</string>
+    <string name="existing_name">Bereits vorhandener Name</string>
+    <string name="invalid_name">Ungültiger Name</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="husband_age">Alter des Ehemanns</string>
+    <string name="wife_age">Alter der Ehefrau</string>
+    <string name="less_than">Weniger als</string>
+    <string name="more_than">Mehr als</string>
+    <string name="make_media">Einfache Datei erstellen</string>
+</resources>

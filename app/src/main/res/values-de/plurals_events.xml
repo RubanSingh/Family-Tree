@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Hochzeitstag · %d Jahr</item>
+        <item quantity="other">Hochzeitstag · %d Jahre</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Gedenktag · %d Jahr</item>
+        <item quantity="other">Gedenktag · %d Jahre</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">In %1$d Tag · %2$s</item>
+        <item quantity="other">In %1$d Tagen · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">in %d Tag</item>
+        <item quantity="other">in %d Tagen</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Wird %d</item>
+        <item quantity="other">Wird %d</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d Jahr verheiratet</item>
+        <item quantity="other">%d Jahre verheiratet</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Vor %d Jahr</item>
+        <item quantity="other">Vor %d Jahren</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d Jahr</item>
+        <item quantity="other">%d Jahre</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d Ereignis</item>
+        <item quantity="other">%d Ereignisse</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d Person</item>
+        <item quantity="other">%d Personen</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d Ort</item>
+        <item quantity="other">%d Orte</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d Land</item>
+        <item quantity="other">%d Länder</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d Person</item>
+        <item quantity="other">%d Personen</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d Datei befindet sich außerhalb des Programm-Speichers. In den Programm-Speicher kopieren, damit sie bei deinem Stammbaum bleibt und in Sicherungen enthalten ist? Die Originaldatei wird nicht verändert.</item>
+        <item quantity="other">%d Dateien befinden sich außerhalb des Programm-Speichers. In den Programm-Speicher kopieren, damit sie bei deinem Stammbaum bleiben und in Sicherungen enthalten sind? Die Originaldateien werden nicht verändert.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d Datei in den Programm-Speicher kopiert.</item>
+        <item quantity="other">%d Dateien in den Programm-Speicher kopiert.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d Medium ist mit dem vollständigen Pfad einer Datei im Programm-Speicher verknüpft. Den Link auf den reinen Dateinamen verkürzen? Die Datei bleibt, wo sie ist.</item>
+        <item quantity="other">%d Medien sind mit dem vollständigen Pfad einer Datei im Programm-Speicher verknüpft. Die Links auf den reinen Dateinamen verkürzen? Die Dateien bleiben, wo sie sind.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d Dateipfad verkürzt.</item>
+        <item quantity="other">%d Dateipfade verkürzt.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d Eintrag</item>
+        <item quantity="other">%d Einträge</item>
+    </plurals>
+</resources>

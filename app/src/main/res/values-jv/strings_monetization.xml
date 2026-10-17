@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Busak iklan</string>
+    <string name="ads_remove_hint">Nikmati Family Tree tanpa iklan nganggo Premium.</string>
+    <string name="privacy_options">Pilihan privasi iklan</string>
+    <string name="privacy_options_desc">Priksa utawa ganti cara iklan nggunakake data panjenengan</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Iki fitur Premium.</string>
+    <string name="reward_watch_title">Tonton video cekak</string>
+    <string name="reward_watch_desc">Gunakake sepisan kanthi gratis, langsung sawise video.</string>
+    <string name="reward_loading">Ngemot video…</string>
+    <string name="reward_unavailable">Saiki ora ana video sing kasedhiya. Coba maneh mengko utawa pindhah menyang Premium.</string>
+    <string name="reward_not_earned">Tonton video nganti rampung kanggo mbukak fitur iki.</string>
+    <string name="reward_premium_desc">Panggunaan tanpa wates, tanpa iklan lan kabeh fitur Premium.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Crita kulawarga panjenengan pantes oleh Premium</string>
+    <string name="upsell_subtitle">Jaga kabeh sing wis panjenengan bangun tetep aman, lan nikmati kabeh fitur Premium.</string>
+    <string name="upsell_subtitle_new">Lindhungi riset panjenengan lan nikmati Family Tree tanpa iklan.</string>
+    <string name="upsell_stat_people">Wong</string>
+    <string name="upsell_stat_trees">Silsilah</string>
+    <string name="upsell_stat_generations">Generasi</string>
+    <plurals name="upsell_more_features">
+        <item quantity="other">lan %d fitur Premium liyane</item>
+    </plurals>
+    <string name="upsell_price_monthly">Paket wiwit %1$s saben sasi</string>
+    <string name="upsell_price_lifetime">utawa mbayar sapisan %1$s, duweke salawase</string>
+    <string name="upsell_price_lifetime_only">Akses seumur urip kanthi %1$s, mung mbayar sapisan</string>
+    <string name="upsell_cta">Deleng paket Premium</string>
+    <string name="upsell_later">Ora saiki</string>
+    <string name="upsell_trust">Batalake kapan wae · Pambayaran aman liwat Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Kabeh sing panjenengan butuhake kanggo njaga, ngrayakake lan mbagekake crita kulawarga panjenengan.</string>
+    <string name="paywall_highlight_no_ads">Tanpa iklan</string>
+    <string name="paywall_highlight_backup">Serep otomatis</string>
+    <string name="paywall_highlight_reminders">Pangeling tanpa wates</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="other">Uji coba gratis %d dina</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="other">Uji coba gratis %d sasi</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="other">Bali modal sajrone %d sasi</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s saben sasi · batalake kapan wae</string>
+    <string name="paywall_summary_trial">%1$s, banjur %2$s saben sasi</string>
+    <string name="paywall_summary_lifetime">%1$s sapisan · duweke salawase</string>
+    <string name="paywall_loading_prices">Ngemot rega…</string>
+    <string name="paywall_compare_title">Gratis utawa Premium</string>
+    <string name="paywall_compare_free">Gratis</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Klebu</string>
+    <string name="paywall_details_show">Carane makarya</string>
+    <string name="paywall_details_hide">Dhelikake rincian</string>
+    <string name="paywall_free_label">Gratis: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Mung ing Premium</string>
+    <string name="paywall_trust_title">Tuku kanthi ayem</string>
+    <string name="paywall_trust_secure">Pambayaran aman liwat Google Play</string>
+    <string name="paywall_trust_cancel">Paket saben sasi bisa dibatalake kapan wae</string>
+    <string name="paywall_trust_devices">Pulihake ing kabeh piranti panjenengan</string>
+    <string name="paywall_trust_private">Data kulawarga panjenengan tetep ana ing piranti panjenengan</string>
+    <string name="paywall_faq_title">Pitakon &amp; wangsulan</string>
+    <string name="paywall_faq_plans_q">Apa bedane paket Saben sasi lan Seumur urip?</string>
+    <string name="paywall_faq_plans_a">Loro-lorone mbukak kabeh sing ana ing Premium. Saben sasi dianyari saben sasi lan bisa dibatalake kapan wae. Seumur urip mung dibayar sapisan lan ora bakal kadaluwarsa.</string>
+    <string name="paywall_faq_cancel_q">Kepiye silsilahku yen aku mandheg nganggo Premium?</string>
+    <string name="paywall_faq_cancel_a">Ora ana sing ilang. Silsilah, foto, pangeling lan serep panjenengan tetep kaya saiki: mung fitur Premium sing mandheg lan iklan bakal katon maneh.</string>
+    <string name="paywall_faq_device_q">Aku ganti telpon. Apa kudu mbayar maneh?</string>
+    <string name="paywall_faq_device_a">Ora. Instal Family Tree nganggo akun Google sing padha lan tutul Pulihake tukon.</string>
+    <string name="paywall_faq_privacy_q">Apa data kulawargaku dikirim menyang endi wae?</string>
+    <string name="paywall_faq_privacy_a">Ora. Silsilah panjenengan disimpen ing piranti panjenengan lan ing folder serep sing panjenengan pilih. Tuku Premium ora ngunggah apa-apa.</string>
+    <string name="paywall_faq_manage_q">Kepiye carane mbatalake paket saben sasi?</string>
+    <string name="paywall_faq_manage_a">Ing Play Store, bukak Pambayaran &amp; langganan › Langganan, pilih Family Tree lan tutul Batal. Premium tetep aktif nganti pungkasane periode sing wis dibayar.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Tetep aman</string>
+    <string name="pf_group_safe_desc">Riset pirang-pirang taun, dilindhungi kanthi otomatis.</string>
+    <string name="pf_group_moments">Aja nganti kliwatan momen</string>
+    <string name="pf_group_moments_desc">Tanggal lan panggonan kulawarga panjenengan, tansah cumawis.</string>
+    <string name="pf_group_share">Gawe &amp; bagekake</string>
+    <string name="pf_group_share_desc">Ekspor sing endah lan piranti sing mumpuni kanggo riset sing tenanan.</string>
+    <string name="pf_group_yours">Dadekake duweke panjenengan</string>
+    <string name="pf_group_yours_desc">Papan sing tentrem lan pribadi kanggo crita kulawarga panjenengan.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Serep otomatis</string>
+    <string name="pf_backup_summary">Saben owahan disimpen ing folder pilihan panjenengan, tanpa kudu nindakake apa-apa.</string>
+    <string name="pf_backup_free">Serep manual</string>
+    <string name="pf_backup_premium">Otomatis</string>
+    <string name="pf_backup_detail1">Sak menit sawise saben suntingan, silsilah disimpen minangka serep ZIP ing folder panjenengan: panyimpenan telpon, kertu SD utawa folder cloud kayata Google Drive.</string>
+    <string name="pf_backup_detail2">3 salinan paling anyar saka saben silsilah disimpen, dadi panjenengan tansah bisa bali.</string>
+    <string name="pf_backup_detail3">Mulihake serep iku gratis lan tansah kasedhiya, sanajan tanpa Premium.</string>
+
+    <string name="pf_media_title">Pangatur media</string>
+    <string name="pf_media_summary">Salin kabeh foto lan dokumen saka silsilah menyang aplikasi sakaligus.</string>
+    <string name="pf_media_free">Siji-siji berkas</string>
+    <string name="pf_media_premium">Kabeh berkas sakaligus</string>
+    <string name="pf_media_detail1">Lebokake kabeh media silsilah menyang panyimpenan aplikasi, kanthi tampilan kemajuan lan bisa dibatalake, supaya pranala ora tau putus nalika berkas dipindhah.</string>
+    <string name="pf_media_detail2">Berkas asli panjenengan ora diowahi: saben berkas disalin lan dipriksa dhisik sadurunge pranalane dianyari.</string>
+
+    <string name="pf_reminders_title">Pangeling kulawarga sing pinter</string>
+    <string name="pf_reminders_summary">Ulang taun nikah, dina pengetan lan pangeling pribadi tanpa wates.</string>
+    <string name="pf_reminders_free">Ulang taun + 2 pangeling</string>
+    <string name="pf_reminders_premium">Tanpa wates</string>
+    <string name="pf_reminders_detail1">Entuk kabar babagan ulang taun nikah saben pasangan, lan uga dina pengetan yen panjenengan kersa.</string>
+    <string name="pf_reminders_detail2">Gawe pangeling sabanyak-banyake: mitoni, wisuda, kumpul kulawarga, tetuwi…</string>
+    <string name="pf_reminders_detail3">Pangeling luwih awal menehi kabar sadurunge, dadi isih ana wektu kanggo nelpon, nulis utawa nyiapake hadiah.</string>
+
+    <string name="pf_places_title">Panggonan kulawarga</string>
+    <string name="pf_places_summary">Saben panggonan ing sejarah kulawarga panjenengan, bisa digoleki lan mung sak tutul saka peta.</string>
+    <string name="pf_places_free">3 panggonan kapisan</string>
+    <string name="pf_places_premium">Kabeh panggonan</string>
+    <string name="pf_places_detail1">Kabeh panggonan prastawa lan alamat ing silsilah, diklompokake miturut negara, kanthi panggolekan.</string>
+    <string name="pf_places_detail2">Delengen apa sing kedadeyan ing saben panggonan lan bukak ing aplikasi peta, kanthi pituduh dalan.</string>
+
+    <string name="pf_exports_title">Ekspor siap cetak</string>
+    <string name="pf_exports_summary">Owahi diagram panjenengan dadi gambar HD utawa PDF kanggo dicetak lan dibagekake.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Sepisan saben video</string>
+    <string name="pf_exports_premium">PDF + gambar HD</string>
+    <string name="pf_exports_detail1">Ekspor diagram minangka gambar PNG resolusi dhuwur, pas banget kanggo obrolan lan media sosial.</string>
+    <string name="pf_exports_detail2">Gawe PDF saka kabeh diagram, siap dicetak dadi poster kanggo kumpul kulawarga.</string>
+    <string name="pf_exports_detail3">Gaya cetak kanthi latar putih lan garis sing landhep, ukurane cocog karo silsilah panjenengan.</string>
+    <string name="pf_exports_detail4">Tanpa Premium, panjenengan isih bisa ngekspor sepisan sawise nonton video cekak.</string>
+
+    <string name="pf_merge_title">Gabungake silsilah</string>
+    <string name="pf_merge_summary">Gabungake rong silsilah dadi siji, duplikat digoleki kanthi otomatis.</string>
+    <string name="pf_merge_detail1">Aplikasi nggoleki wong sing padha ing loro silsilah lan panjenengan bisa ngonfirmasi saben sing cocog, utawa kabeh sakaligus.</string>
+    <string name="pf_merge_detail2">Pas banget yen sedulur ngirimi panjenengan silsilahe dhewe.</string>
+
+    <string name="pf_advanced_title">Piranti lanjutan</string>
+    <string name="pf_advanced_summary">Sumber, repositori, ekspor GEDCOM lan piranti genealogi sing lengkap.</string>
+    <string name="pf_advanced_detail1">Kutip sumber lan repositori lan atur pangirim, kaya ahli genealogi profesional.</string>
+    <string name="pf_advanced_detail2">Ekspor silsilah panjenengan minangka GEDCOM, nganggo media utawa ora, kanggo piranti lunak genealogi apa wae, lan gawe serep ZIP sing jangkep.</string>
+    <string name="pf_advanced_detail3">Bandhingake silsilah sing dibagekake lan rapekake jalur berkas media.</string>
+
+    <string name="pf_no_ads_title">Tanpa iklan</string>
+    <string name="pf_no_ads_summary">Papan sing tentrem lan fokus kanggo crita kulawarga panjenengan.</string>
+    <string name="pf_no_ads_free">Nganggo iklan</string>
+    <string name="pf_no_ads_premium">Tanpa iklan</string>
+    <string name="pf_no_ads_detail1">Ora ana iklan ing dhaptar, ing profil utawa ing antarane tugas.</string>
+    <string name="pf_no_ads_detail2">Premium uga nyengkuyung pangembangan Family Tree.</string>
+
+    <string name="pf_themes_title">20 tema warna</string>
+    <string name="pf_themes_summary">Dadekake aplikasi iki duweke panjenengan, mode padhang utawa peteng.</string>
+    <string name="pf_themes_free">Tema klasik</string>
+    <string name="pf_themes_premium">20 tema</string>
+    <string name="pf_themes_detail1">Pilih saka 20 tema warna, saka indigo jero nganti amber anget.</string>
+    <string name="pf_themes_detail2">Saben tema bisa digunakake ing mode padhang lan peteng.</string>
+</resources>

@@ -27,6 +27,18 @@
 		android:textSize="14sp"
 		android:textColor="@color/gray_text"/>
 
+	<!-- Android 13+: folder to grant again with the folder picker -->
+	<TextView
+		android:id="@+id/cartella_stato"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/cartella_url"
+		android:layout_toStartOf="@id/cartella_elimina"
+		android:layout_marginTop="2dp"
+		android:textSize="14sp"
+		android:textColor="?attr/colorPrimary"
+		android:visibility="gone"/>
+
 	<ImageButton
 		android:id="@+id/cartella_elimina"
 		android:layout_width="wrap_content"

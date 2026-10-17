@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="choose_folder">Odaberite fasciklu</string>
+    <string name="export_png">Izvoz PNG</string>
+    <string name="png_exported_ok">PNG izvezen.</string>
+    <string name="tree_settings">Podešavanja stabla</string>
+    <string name="max_life_span">Maksimalni životni vek</string>
+    <string name="years">Godine</string>
+    <string name="current_date">Trenutni datum</string>
+    <string name="device_date">Datum uređaja</string>
+    <string name="fixed_date">Fiksni datum</string>
+    <string name="origin_family">Porodica porekla</string>
+    <string name="adoptive_family">Usvojiteljska porodica</string>
+    <string name="foster_family">Hraniteljska porodica</string>
+    <string name="paternal_family">Očeva porodica</string>
+    <string name="maternal_family">Majkina porodica</string>
+    <string name="own_family">Sopstvena porodica</string>
+    <string name="numbers">Brojevi</string>
+    <string name="error_found">Pronađena jedna greška.</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="local_backup">Lokalna sigurnosna kopija</string>
+    <string name="backup_folder">Fascikla za sigurnosne kopije</string>
+    <string name="recover">Obnovi</string>
+    <string name="notification_time">Vreme obaveštenja o rođendanu</string>
+    <string name="invalid_date">Neispravan GEDCOM datum.</string>
+    <string name="husband_age">Godine muža</string>
+    <string name="search_duplicates">Traži duplikate</string>
+    <string name="skip">Preskoči</string>
+    <string name="yes_to_all">Da za sve preostale</string>
+    <string name="no_to_all">Ne za sve preostale</string>
+    <string name="wife_age">Godine žene</string>
+    <string name="less_than">Manje od</string>
+    <string name="more_than">Više od</string>
+    <string name="duplicates_lines">Linije duplikata</string>
+    <string name="make_shared_media">Napravi deljeni medij</string>
+    <string name="make_media">Napravi jednostavni medij</string>
+    <string name="copy_app_storage">Kopiraj u skladište aplikacije</string>
+    <string name="shrink_path">Skrati putanju datoteke</string>
+    <string name="file_exists_reuse">Ova datoteka već postoji.\nŽeliš li da je ponovo upotrebiš ili da napraviš kopiju?</string>
+    <string name="use_existing">Upotrebi postojeću</string>
+    <string name="make_copy">Napravi kopiju</string>
+    <string name="existing_name">Već postojeće ime</string>
+    <string name="invalid_name">Neispravno ime</string>
+</resources>

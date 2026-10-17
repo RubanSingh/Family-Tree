@@ -2,9 +2,14 @@ package dna.familytree;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.ViewGroup;
+
+import androidx.activity.EdgeToEdge;
+import androidx.activity.SystemBarStyle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -13,13 +18,17 @@ import java.util.Locale;
 
 import dna.familytree.constant.Extra;
 import dna.familytree.util.AnalyticsUtil;
+import dna.familytree.util.InsetsUtil;
 
 public class LauncherController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        // Edge-to-edge, with light system bar icons on the dark splash background
+        EdgeToEdge.enable(this, SystemBarStyle.dark(Color.TRANSPARENT), SystemBarStyle.dark(Color.TRANSPARENT));
         setContentView(R.layout.splash);
+        InsetsUtil.applyTo(((ViewGroup)findViewById(android.R.id.content)).getChildAt(0));
 
         new Handler(this.getMainLooper()).postDelayed(() -> {
             Intent intent = getIntent();

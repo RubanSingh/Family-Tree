@@ -51,6 +51,10 @@ public class CompareController extends BaseController {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        setOnBackHandler(() -> {
+            defaultBack();
+            Comparison.reset(); // Resets the Comparison singleton
+        });
         setContentView(R.layout.compara);
         int idTree1 = getIntent().getIntExtra(Extra.TREE_ID, 1); // Old tree present in the app
         int idTree2 = getIntent().getIntExtra(Extra.TREE_ID_2, 1); // New tree received in sharing
@@ -59,7 +63,7 @@ public class CompareController extends BaseController {
         Global.gc2 = TreesController.openGedcomTemporarily(idTree2, false);
         if (Global.gc == null || Global.gc2 == null) {
             Toast.makeText(this, R.string.no_useful_data, Toast.LENGTH_LONG).show();
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
             return;
         }
 
@@ -165,7 +169,7 @@ public class CompareController extends BaseController {
             button1.setText(R.string.delete_imported_tree);
             button1.setOnClickListener(v -> {
                 TreesController.deleteTree(CompareController.this, idTree2);
-                onBackPressed();
+                getOnBackPressedDispatcher().onBackPressed();
             });
             button2.setVisibility(View.GONE);
         }
@@ -315,13 +319,7 @@ public class CompareController extends BaseController {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem i) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Comparison.reset(); // Resets the Comparison singleton
     }
 }

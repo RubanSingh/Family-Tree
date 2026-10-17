@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hint bubble variant for the dark tree canvas -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="@color/ds_canvas_glass" />
+    <corners android:radius="12dp" />
+</shape>

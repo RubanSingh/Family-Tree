@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A backup ZIP found in the folder -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="72dp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/ds_space_md"
+    android:paddingTop="@dimen/ds_space_sm"
+    android:paddingEnd="@dimen/ds_space_xs"
+    android:paddingBottom="@dimen/ds_space_sm">
+
+    <ImageView
+        android:id="@+id/backup_file_icon"
+        style="@style/Widget.FamilyTree.IconContainer.Primary"
+        android:contentDescription="@null"
+        android:src="@drawable/ds_ic_history" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ds_space_md"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/backup_file_title"
+            style="@style/Widget.FamilyTree.ListTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/backup_file_detail"
+            style="@style/Widget.FamilyTree.ListSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backup_file_restore"
+        style="@style/Widget.FamilyTree.Button.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp"
+        android:paddingStart="@dimen/ds_space_md"
+        android:paddingEnd="@dimen/ds_space_md"
+        android:text="@string/recover" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backup_file_delete"
+        style="@style/Widget.FamilyTree.IconButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/delete"
+        app:icon="@drawable/ds_ic_delete" />
+</LinearLayout>

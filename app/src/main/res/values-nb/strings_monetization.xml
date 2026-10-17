@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Ads -->
+    <string name="ads_remove_action">Fjern reklame</string>
+    <string name="ads_remove_hint">Nyt Family Tree uten reklame med Premium.</string>
+    <string name="privacy_options">Personvernvalg for reklame</string>
+    <string name="privacy_options_desc">Se gjennom eller endre hvordan reklame bruker dataene dine</string>
+
+    <!-- Rewarded video: a one-off Premium action, once -->
+    <string name="reward_premium_feature">Dette er en Premium-funksjon.</string>
+    <string name="reward_watch_title">Se en kort video</string>
+    <string name="reward_watch_desc">Bruk den gratis én gang, rett etter videoen.</string>
+    <string name="reward_loading">Laster inn videoen…</string>
+    <string name="reward_unavailable">Ingen video er tilgjengelig akkurat nå. Prøv igjen senere, eller oppgrader til Premium.</string>
+    <string name="reward_not_earned">Se videoen helt til slutt for å låse den opp.</string>
+    <string name="reward_premium_desc">Ubegrenset bruk, ingen reklame og alle Premium-funksjonene.</string>
+
+    <!-- Premium invitation -->
+    <string name="upsell_title">Familiehistorien din fortjener Premium</string>
+    <string name="upsell_subtitle">Ta godt vare på alt du har bygget opp, og nyt alle Premium-funksjonene.</string>
+    <string name="upsell_subtitle_new">Beskytt forskningen din, og nyt Family Tree uten reklame.</string>
+    <string name="upsell_stat_people">Personer</string>
+    <string name="upsell_stat_trees">Trær</string>
+    <string name="upsell_stat_generations">Generasjoner</string>
+    <plurals name="upsell_more_features">
+        <item quantity="one">og %d Premium-funksjon til</item>
+        <item quantity="other">og %d Premium-funksjoner til</item>
+    </plurals>
+    <string name="upsell_price_monthly">Abonnementer fra %1$s per måned</string>
+    <string name="upsell_price_lifetime">eller betal %1$s én gang og behold det for alltid</string>
+    <string name="upsell_price_lifetime_only">Livstidstilgang for %1$s, betalt én gang</string>
+    <string name="upsell_cta">Se Premium-alternativene</string>
+    <string name="upsell_later">Ikke nå</string>
+    <string name="upsell_trust">Kan sies opp når som helst · Sikker betaling via Google Play</string>
+
+    <!-- Paywall -->
+    <string name="paywall_subtitle">Alt du trenger for å beskytte, feire og dele familiehistorien din.</string>
+    <string name="paywall_highlight_no_ads">Ingen reklame</string>
+    <string name="paywall_highlight_backup">Automatisk sikkerhetskopi</string>
+    <string name="paywall_highlight_reminders">Ubegrensede påminnelser</string>
+    <plurals name="paywall_trial_days">
+        <item quantity="one">%d dags gratis prøveperiode</item>
+        <item quantity="other">%d dagers gratis prøveperiode</item>
+    </plurals>
+    <plurals name="paywall_trial_months">
+        <item quantity="one">%d måneds gratis prøveperiode</item>
+        <item quantity="other">%d måneders gratis prøveperiode</item>
+    </plurals>
+    <plurals name="paywall_pays_off">
+        <item quantity="one">Tjener seg inn på %d måned</item>
+        <item quantity="other">Tjener seg inn på %d måneder</item>
+    </plurals>
+    <string name="paywall_summary_monthly">%1$s per måned · kan sies opp når som helst</string>
+    <string name="paywall_summary_trial">%1$s, deretter %2$s per måned</string>
+    <string name="paywall_summary_lifetime">%1$s én gang · ditt for alltid</string>
+    <string name="paywall_loading_prices">Laster inn priser…</string>
+    <string name="paywall_compare_title">Gratis vs. Premium</string>
+    <string name="paywall_compare_free">Gratis</string>
+    <string name="paywall_compare_premium">Premium</string>
+    <string name="compare_included">Inkludert</string>
+    <string name="paywall_details_show">Slik fungerer det</string>
+    <string name="paywall_details_hide">Skjul detaljer</string>
+    <string name="paywall_free_label">Gratis: %1$s</string>
+    <string name="paywall_premium_label">Premium: %1$s</string>
+    <string name="paywall_premium_only">Bare i Premium</string>
+    <string name="paywall_trust_title">Kjøp med trygghet</string>
+    <string name="paywall_trust_secure">Sikker betaling via Google Play</string>
+    <string name="paywall_trust_cancel">Månedsabonnementet kan sies opp når som helst</string>
+    <string name="paywall_trust_devices">Gjenopprett på alle enhetene dine</string>
+    <string name="paywall_trust_private">Familiedataene dine blir værende på enheten din</string>
+    <string name="paywall_faq_title">Spørsmål og svar</string>
+    <string name="paywall_faq_plans_q">Hva er forskjellen på Månedlig og Livstid?</string>
+    <string name="paywall_faq_plans_a">Begge låser opp alt i Premium. Månedlig fornyes hver måned og kan sies opp når som helst. Livstid betales én gang og utløper aldri.</string>
+    <string name="paywall_faq_cancel_q">Hva skjer med trærne mine hvis jeg avslutter Premium?</string>
+    <string name="paywall_faq_cancel_a">Ingenting går tapt. Trærne, bildene, påminnelsene og sikkerhetskopiene dine forblir akkurat som de er: Bare Premium-funksjonene stopper, og reklamen kommer tilbake.</string>
+    <string name="paywall_faq_device_q">Jeg har byttet telefon. Må jeg betale på nytt?</string>
+    <string name="paywall_faq_device_a">Nei. Installer Family Tree med den samme Google-kontoen, og trykk på Gjenopprett kjøp.</string>
+    <string name="paywall_faq_privacy_q">Blir familiedataene mine sendt noe sted?</string>
+    <string name="paywall_faq_privacy_a">Nei. Trærne dine lagres på enheten din og i sikkerhetskopimappen du velger. Kjøp av Premium laster ikke opp noe.</string>
+    <string name="paywall_faq_manage_q">Hvordan sier jeg opp månedsabonnementet?</string>
+    <string name="paywall_faq_manage_a">Åpne Betalinger og abonnementer › Abonnementer i Play Butikk, velg Family Tree og trykk på Si opp. Premium er fortsatt aktivt til slutten av perioden som allerede er betalt.</string>
+
+    <!-- Premium features: groups -->
+    <string name="pf_group_safe">Trygt bevart</string>
+    <string name="pf_group_safe_desc">Mange års forskning, beskyttet automatisk.</string>
+    <string name="pf_group_moments">Gå aldri glipp av et øyeblikk</string>
+    <string name="pf_group_moments_desc">Familiens datoer og steder, alltid for hånden.</string>
+    <string name="pf_group_share">Lag og del</string>
+    <string name="pf_group_share_desc">Vakre eksporter og kraftige verktøy for seriøs forskning.</string>
+    <string name="pf_group_yours">Gjør det til ditt eget</string>
+    <string name="pf_group_yours_desc">Et rolig, personlig sted for familiehistorien din.</string>
+
+    <!-- Premium features -->
+    <string name="pf_backup_title">Automatisk sikkerhetskopi</string>
+    <string name="pf_backup_summary">Hver endring lagres i en mappe du velger, uten at du trenger å løfte en finger.</string>
+    <string name="pf_backup_free">Manuell sikkerhetskopi</string>
+    <string name="pf_backup_premium">Automatisk</string>
+    <string name="pf_backup_detail1">Ett minutt etter hver endring lagres treet som en ZIP-sikkerhetskopi i mappen din: telefonlagring, SD-kort eller en skymappe som Google Drive.</string>
+    <string name="pf_backup_detail2">De 3 nyeste kopiene av hvert tre beholdes, så du alltid kan gå tilbake.</string>
+    <string name="pf_backup_detail3">Det er gratis og alltid mulig å gjenopprette en sikkerhetskopi, også uten Premium.</string>
+
+    <string name="pf_media_title">Medieorganisering</string>
+    <string name="pf_media_summary">Kopier alle bilder og dokumenter i et tre inn i appen på én gang.</string>
+    <string name="pf_media_free">Én fil om gangen</string>
+    <string name="pf_media_premium">Alle filer på én gang</string>
+    <string name="pf_media_detail1">Hent alle mediene i et tre inn i programlageret, med fremdriftsvisning og mulighet til å avbryte, så lenker aldri brytes når filer flyttes.</string>
+    <string name="pf_media_detail2">Originalene dine forblir urørt: Hver fil kopieres og kontrolleres før lenkene oppdateres.</string>
+
+    <string name="pf_reminders_title">Smarte familiepåminnelser</string>
+    <string name="pf_reminders_summary">Bryllupsdager, minnedager og ubegrensede personlige påminnelser.</string>
+    <string name="pf_reminders_free">Bursdager + 2 påminnelser</string>
+    <string name="pf_reminders_premium">Ubegrenset</string>
+    <string name="pf_reminders_detail1">Få varsel om bryllupsdagene til par, og om minnedager hvis du ønsker det.</string>
+    <string name="pf_reminders_detail2">Opprett så mange påminnelser du vil: babyshowere, uteksamineringer, familietreff, besøk…</string>
+    <string name="pf_reminders_detail3">Forhåndsvarsler gir deg beskjed i god tid, så du rekker å ringe, skrive eller planlegge en gave.</string>
+
+    <string name="pf_places_title">Familiens steder</string>
+    <string name="pf_places_summary">Alle stedene i familiehistorien din, søkbare og ett trykk unna kartet.</string>
+    <string name="pf_places_free">De første 3 stedene</string>
+    <string name="pf_places_premium">Alle steder</string>
+    <string name="pf_places_detail1">Alle hendelsessteder og adresser i treet, gruppert etter land, med søk.</string>
+    <string name="pf_places_detail2">Se hva som skjedde på hvert sted, og åpne det i kartappen din med veibeskrivelse.</string>
+
+    <string name="pf_exports_title">Utskriftsklare eksporter</string>
+    <string name="pf_exports_summary">Gjør diagrammet ditt om til et HD-bilde eller en PDF du kan skrive ut og dele.</string>
+    <string name="pf_exports_free_legacy">PDF</string>
+    <string name="pf_exports_free_video">Én gang per video</string>
+    <string name="pf_exports_premium">PDF + HD-bilde</string>
+    <string name="pf_exports_detail1">Eksporter diagrammet som et PNG-bilde med høy oppløsning, perfekt for chatter og sosiale nettverk.</string>
+    <string name="pf_exports_detail2">Lag en PDF av hele diagrammet, klar til utskrift som plakat til familietreff.</string>
+    <string name="pf_exports_detail3">Utskriftsvennlig stil med hvit bakgrunn og skarpe linjer, tilpasset størrelsen på treet ditt.</string>
+    <string name="pf_exports_detail4">Uten Premium kan du fortsatt eksportere én gang etter å ha sett en kort video.</string>
+
+    <string name="pf_merge_title">Slå sammen trær</string>
+    <string name="pf_merge_summary">Kombiner to trær til ett, og la appen finne duplikatene for deg.</string>
+    <string name="pf_merge_detail1">Appen ser etter de samme personene i begge trærne og lar deg bekrefte hvert treff, eller alle på én gang.</string>
+    <string name="pf_merge_detail2">Perfekt når slektninger sender deg sitt eget tre.</string>
+
+    <string name="pf_advanced_title">Avanserte verktøy</string>
+    <string name="pf_advanced_summary">Kilder, depoter, GEDCOM-eksport og hele verktøykassen for slektsforskning.</string>
+    <string name="pf_advanced_detail1">Henvis til kilder og depoter, og administrer innsendere, akkurat som profesjonelle slektsforskere.</string>
+    <string name="pf_advanced_detail2">Eksporter treet ditt som GEDCOM, med eller uten medier, til ethvert slektsprogram, og lag komplette ZIP-sikkerhetskopier.</string>
+    <string name="pf_advanced_detail3">Sammenlign delte trær, og rydd opp i filbanene til mediefiler.</string>
+
+    <string name="pf_no_ads_title">Ingen reklame</string>
+    <string name="pf_no_ads_summary">Et rolig, fokusert sted for familiehistorien din.</string>
+    <string name="pf_no_ads_free">Med reklame</string>
+    <string name="pf_no_ads_premium">Ingen reklame</string>
+    <string name="pf_no_ads_detail1">Ingen reklame i lister, i profiler eller mellom oppgaver.</string>
+    <string name="pf_no_ads_detail2">Med Premium støtter du også utviklingen av Family Tree.</string>
+
+    <string name="pf_themes_title">20 fargetemaer</string>
+    <string name="pf_themes_summary">Gjør appen til din egen, i lys eller mørk modus.</string>
+    <string name="pf_themes_free">Klassisk tema</string>
+    <string name="pf_themes_premium">20 temaer</string>
+    <string name="pf_themes_detail1">Velg blant 20 fargetemaer, fra dyp indigo til varm rav.</string>
+    <string name="pf_themes_detail2">Alle temaene fungerer i både lys og mørk modus.</string>
+</resources>

@@ -99,6 +99,12 @@ public abstract class DetailController extends BaseController {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        setOnBackHandler(() -> {
+            defaultBack();
+            if (object instanceof EventFact)
+                EventController.cleanUpTag((EventFact)object);
+            Memory.stepBack();
+        });
         setContentView(R.layout.activity_detail);
         showNativeAd();
         Toolbar toolbar = getToolbar();
@@ -111,7 +117,7 @@ public abstract class DetailController extends BaseController {
 
         object = Memory.getLastObject();
         if (object == null) {
-            onBackPressed(); // Skip all previous details without object
+            getOnBackPressedDispatcher().onBackPressed(); // Skip all previous details without object
         } else
             format();
 
@@ -492,7 +498,7 @@ public abstract class DetailController extends BaseController {
                 casted = aClass.newInstance();
             casted = aClass.cast(object);
         } catch (Exception e) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
         }
         return casted;
     }
@@ -700,12 +706,21 @@ public abstract class DetailController extends BaseController {
         Address address = ef.getAddress();
         if (address != null)
             txt += writeAddress(address, true) + "\n";
+        // Ages of the spouses at the event (GEDCOM AGE, from Family Gem)
+        if (ef.getHusband() != null && ef.getHusband().getAge() != null)
+            txt += Global.context.getString(R.string.husband_age) + ": " + AgeConverter.writeAge(Global.context, ef.getHusband().getAge()) + "\n";
+        if (ef.getWife() != null && ef.getWife().getAge() != null)
+            txt += Global.context.getString(R.string.wife_age) + ": " + AgeConverter.writeAge(Global.context, ef.getWife().getAge()) + "\n";
         if (txt.endsWith("\n"))
             txt = txt.substring(0, txt.length() - 1);
         return txt;
     }
 
     EditText editText;
+    /** Options menu item to choose the file of a media. */
+    public static final int MENU_CHOOSE_FILE = 3;
+    /** Options menu item to delete the object. */
+    public static final int MENU_DELETE = 5;
     int whichMenu = 1; // Used to hide the options menu when entering editor mode TODO: replace with a boolean as 'editMode'
     View editBar;
 
@@ -854,12 +869,12 @@ public abstract class DetailController extends BaseController {
             if (object instanceof Media) {
                 if (box.findViewById(R.id.immagine_foto).getTag(R.id.tag_file_type).equals(1))
                     menu.add(0, 2, 0, R.string.crop);
-                menu.add(0, 3, 0, R.string.choose_file);
+                menu.add(0, MENU_CHOOSE_FILE, 0, R.string.choose_file);
             }
             if (object instanceof Family)
                 menu.add(0, 4, 0, R.string.delete);
             else if (!(object instanceof Submitter && AppUtils.submitterHasShared((Submitter)object))) // Submitter who shared cannot be deleted
-                menu.add(0, 5, 0, R.string.delete);
+                menu.add(0, MENU_DELETE, 0, R.string.delete);
         }
         return true;
     }
@@ -874,7 +889,7 @@ public abstract class DetailController extends BaseController {
             SubmittersFragment.mainSubmitter((Submitter)object);
         } else if (id == 2) { // Image: crop
             cropImage(box);
-        } else if (id == 3) { // Image: choose
+        } else if (id == MENU_CHOOSE_FILE) { // Image: choose
             FileUtils.displayImageCaptureDialog(this, null, 5173, null);
         } else if (id == 4) { // Family
             Family fam = (Family)object;
@@ -882,19 +897,19 @@ public abstract class DetailController extends BaseController {
                 new MaterialAlertDialogBuilder(this).setMessage(R.string.really_delete_family)
                         .setPositiveButton(android.R.string.yes, (dialog, i) -> {
                             FamiliesFragment.deleteFamily(fam);
-                            onBackPressed();
+                            getOnBackPressedDispatcher().onBackPressed();
                         }).setNeutralButton(android.R.string.cancel, null).show();
             } else {
                 FamiliesFragment.deleteFamily(fam);
-                onBackPressed();
+                getOnBackPressedDispatcher().onBackPressed();
             }
-        } else if (id == 5) { // All the others objects
+        } else if (id == MENU_DELETE) { // All the others objects
             // TODO: confirm deletion of all objects
             delete();
             AppUtils.save(true); // The update of the change dates takes place in the Overrides of delete()
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
         } else if (id == android.R.id.home) {
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
         }
         return true;
     }
@@ -903,14 +918,6 @@ public abstract class DetailController extends BaseController {
     protected void onResume() {
         super.onResume();
         AnalyticsUtil.logEventDetailsActivity(getFirebaseAnalytics());
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if (object instanceof EventFact)
-            EventController.cleanUpTag((EventFact)object);
-        Memory.stepBack();
     }
 
     public void delete() {

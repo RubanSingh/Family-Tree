@@ -11,9 +11,9 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            style="@style/Widget.FamilyTree.Toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="?attr/colorSecondaryContainer" />
+            android:layout_height="?actionBarSize" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -51,14 +51,28 @@
                         android:layout_marginBottom="50dp"
                         android:orientation="vertical" />
 
+                    <!-- Searches persons with the same name in both trees, to merge them -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/merge_next"
+                        style="@style/Widget.FamilyTree.Button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:enabled="false"
-                        android:minWidth="200dp"
-                        android:text="@string/next" />
+                        android:minWidth="240dp"
+                        android:text="@string/search_duplicates" />
+
+                    <!-- Merges the trees without searching duplicates (from Family Gem) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/merge_skip"
+                        style="@style/Widget.FamilyTree.Button.Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/ds_space_sm"
+                        android:enabled="false"
+                        android:minWidth="240dp"
+                        android:text="@string/skip" />
                 </LinearLayout>
             </ScrollView>
 

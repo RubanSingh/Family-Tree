@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokalna sigurnosna kopija</string>
+    <string name="choose_folder">Odaberi mapu</string>
+    <string name="backup_folder">Mapa sigurnosnih kopija</string>
+    <string name="recover">Obnovi</string>
+    <string name="export_png">Izvezi PNG</string>
+    <string name="png_exported_ok">PNG je izvezen.</string>
+    <string name="tree_settings">Postavke stabla</string>
+    <string name="max_life_span">Maksimalan životni vijek</string>
+    <string name="years">Godine</string>
+    <string name="current_date">Trenutačni datum</string>
+    <string name="device_date">Datum uređaja</string>
+    <string name="fixed_date">Fiksni datum</string>
+    <string name="notification_time">Vrijeme obavještavanja o rođendanu</string>
+    <string name="origin_family">Obitelj porijekla</string>
+    <string name="adoptive_family">Posvojiteljska obitelj</string>
+    <string name="foster_family">Udomiteljska obitelj</string>
+    <string name="paternal_family">Očeva obitelj</string>
+    <string name="maternal_family">Majčina obitelj</string>
+    <string name="own_family">Vlastita obitelj</string>
+    <string name="numbers">Brojevi</string>
+    <string name="invalid_date">Neispravan GEDCOM datum.</string>
+    <string name="search_duplicates">Traži duplikate</string>
+    <string name="skip">Preskoči</string>
+    <string name="error_found">Pronađena jedna greška.</string>
+    <string name="yes_to_all">Da za sve prostale</string>
+    <string name="no_to_all">Ne za sve prostale</string>
+    <string name="duplicates_lines">Linije duplikata</string>
+    <string name="make_shared_media">Stvori dijeljeni medij</string>
+    <string name="make_media">Stvori medij</string>
+    <string name="copy_app_storage">Kopiraj u memoriju aplikacije</string>
+    <string name="shrink_path">Skrati putanju datoteke</string>
+    <string name="file_exists_reuse">Ova datoteka već postoji.\nŽeliš li je ponovo koristiti ili izraditi kopiju?</string>
+    <string name="use_existing">Ponovo koristi postojeću</string>
+    <string name="make_copy">Izradi kopiju</string>
+    <string name="existing_name">Već postojeće ime</string>
+    <string name="invalid_name">Neispravno ime</string>
+    <string name="info">Informacije</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="husband_age">Dob muža</string>
+    <string name="wife_age">Dob žene</string>
+    <string name="less_than">Manje od</string>
+    <string name="more_than">Više od</string>
+</resources>

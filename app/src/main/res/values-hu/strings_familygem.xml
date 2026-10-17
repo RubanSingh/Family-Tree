@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Lokális biztonsági mentés</string>
+    <string name="choose_folder">Válassza ki a mappát</string>
+    <string name="backup_folder">Biztonsági mentési mappa</string>
+    <string name="recover">Visszaállít</string>
+    <string name="export_png">PNG exportálása</string>
+    <string name="png_exported_ok">PNG exportálva.</string>
+    <string name="tree_settings">Fa beállítások</string>
+    <string name="max_life_span">Maximális élettartam</string>
+    <string name="years">Évek</string>
+    <string name="current_date">Aktuális dátum</string>
+    <string name="device_date">Készülék dátuma</string>
+    <string name="fixed_date">Fix dátum</string>
+    <string name="notification_time">Születésnapi értesítési idő</string>
+    <string name="origin_family">Származási család</string>
+    <string name="adoptive_family">Örökbefogadó család</string>
+    <string name="foster_family">Nevelőcsalád</string>
+    <string name="paternal_family">Apa családja</string>
+    <string name="maternal_family">Anya családja</string>
+    <string name="own_family">Saját család</string>
+    <string name="numbers">Számok</string>
+    <string name="search_duplicates">Keresés duplikátumok után</string>
+    <string name="skip">Kihagyás</string>
+    <string name="error_found">Egy hiba található.</string>
+    <string name="yes_to_all">Igen az összesre</string>
+    <string name="no_to_all">Nem az összesre</string>
+    <string name="duplicates_lines">Duplikátum vonalak</string>
+    <string name="info">Info</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Érvénytelen GEDCOM dátum.</string>
+    <string name="husband_age">Férj életkora</string>
+    <string name="wife_age">Feleség életkora</string>
+    <string name="less_than">Kevesebb mint</string>
+    <string name="more_than">Több mint</string>
+    <string name="make_shared_media">Átalakítás megosztott médiává</string>
+    <string name="make_media">Átalakítás egyszerű médiává</string>
+    <string name="copy_app_storage">Másolás az alkalmazástárhelyre</string>
+    <string name="shrink_path">Fájlútvonal rövidítése</string>
+    <string name="file_exists_reuse">Ez a fájl már létezik.\nÚjra szeretné használni, vagy másolatot készít?</string>
+    <string name="use_existing">Meglévő újrahasználása</string>
+    <string name="make_copy">Másolat készítése</string>
+    <string name="existing_name">Ez a név már létezik</string>
+    <string name="invalid_name">Érvénytelen név</string>
+</resources>

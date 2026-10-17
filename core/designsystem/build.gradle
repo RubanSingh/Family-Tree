@@ -1,0 +1,22 @@
+plugins {
+	alias(libs.plugins.android.library)
+}
+
+android {
+	namespace = 'dna.familytree.designsystem'
+	compileSdk = libs.versions.compileSdk.get().toInteger()
+	defaultConfig {
+		minSdk = libs.versions.minSdk.get().toInteger()
+		vectorDrawables.useSupportLibrary = true
+	}
+	compileOptions {
+		sourceCompatibility = JavaVersion.VERSION_17
+		targetCompatibility = JavaVersion.VERSION_17
+	}
+}
+
+dependencies {
+	api libs.google.material
+	api libs.androidx.appcompat
+	implementation libs.androidx.core
+}

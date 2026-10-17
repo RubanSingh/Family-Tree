@@ -367,14 +367,14 @@
     <string name="edit_id">Edit ID</string>
     <string name="invalid_id">Invalid ID</string>
     <string name="existing_id">Already existing ID</string>
-    <string name="default_notification_channel_id"><![CDATA[<string name=\"default_notification_channel_id\" translatable=\"false\">FIREBASE_PUSH_CHANNEL</string>]]></string>
+    <string name="default_notification_channel_id" translatable="false"><![CDATA[<string name=\"default_notification_channel_id\" translatable=\"false\">FIREBASE_PUSH_CHANNEL</string>]]></string>
     <string name="theme">Theme</string>
-    <string name="theme_key">theme_key</string>
-    <string name="dark_key">dark_theme_key</string>
+    <string name="theme_key" translatable="false">theme_key</string>
+    <string name="dark_key" translatable="false">dark_theme_key</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="rate">Rate App</string>
     <string name="feedback">Feedback</string>
-    <string name="app_mail">digitalailabs@gmail.com</string>
+    <string name="app_mail" translatable="false">digitalailabs@gmail.com</string>
     <string name="share">Share App</string>
     <string name="merge_tree">Merge tree</string>
     <string name="family_tree_premium">Family Tree Premium</string>
@@ -418,4 +418,62 @@
         <item>Blue Gray</item>
         <item>Dynamic</item>
     </string-array>
+    <!-- Premium / billing (rebrand) -->
+    <string name="premium_tagline">Your family story, beautifully kept.</string>
+    <string name="premium_benefits">Everything in Premium</string>
+    <string name="benefit_no_ads">No ads</string>
+    <string name="benefit_no_ads_desc">A clean, focused workspace for your research.</string>
+    <string name="benefit_themes">20 colour themes</string>
+    <string name="benefit_themes_desc">Make the app yours, in light or dark.</string>
+    <string name="benefit_advanced">Advanced tools</string>
+    <string name="benefit_advanced_desc">Expert fields, sources, repositories and more.</string>
+    <string name="benefit_merge">Merge trees</string>
+    <string name="benefit_merge_desc">Combine two trees into one, without duplicates.</string>
+    <string name="choose_plan">Choose your plan</string>
+    <string name="plan_monthly">Monthly</string>
+    <string name="plan_lifetime">Lifetime</string>
+    <string name="plan_per_month">per month</string>
+    <string name="plan_per_month_with_trial">per month, after free trial</string>
+    <string name="plan_one_time_payment">one-time payment</string>
+    <string name="plan_cancel_anytime">Cancel anytime</string>
+    <string name="plan_pay_once">Pay once, keep forever</string>
+    <string name="plan_best_value">Best value</string>
+    <string name="cta_start_monthly">Start monthly plan</string>
+    <string name="cta_buy_lifetime">Get lifetime access</string>
+    <string name="restore_purchases">Restore purchases</string>
+    <string name="manage_subscription">Manage subscription</string>
+    <string name="legal_subscription">Billed monthly through Google Play. Renews automatically until cancelled in Play Store › Subscriptions.</string>
+    <string name="legal_one_time">Charged once through Google Play. Available on every device signed in with the same Google account.</string>
+    <string name="paywall_reason">Unlocks: %s</string>
+    <string name="premium_restored">Premium restored.</string>
+    <string name="nothing_to_restore">No previous purchase found for this Google account.</string>
+    <string name="purchase_pending">Your purchase is pending. Premium will activate once payment completes.</string>
+    <string name="premium_expired">Your Premium subscription has ended.</string>
+    <string name="premium_status_monthly">Premium · Monthly</string>
+    <string name="premium_status_lifetime">Premium · Lifetime</string>
+    <string name="premium_status_active">Active on this Google account</string>
+    <string name="go_premium">Go Premium</string>
+    <string name="go_premium_desc">No ads, 20 themes, advanced tools and tree merging.</string>
+
+    <!-- Settings (rebrand) -->
+    <string name="settings_section_general">General</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_section_advanced">Advanced</string>
+    <string name="settings_section_support">Support</string>
+    <string name="auto_save_desc">Save every change automatically</string>
+    <string name="load_tree_startup_desc">Skip the tree list on launch</string>
+    <string name="show_advanced_functions_desc">Expert fields, IDs and extra editors</string>
+    <string name="dark_theme_desc">Easier on the eyes at night</string>
+    <string name="theme_desc">Pick an accent colour</string>
+    <string name="language_desc">Change the app language</string>
+    <string name="rate_desc">Tell others what you think</string>
+    <string name="feedback_desc">Report a bug or suggest a feature</string>
+    <string name="share_desc">Invite relatives to the app</string>
+    <string name="about_desc">Version, licence and credits</string>
+    <string name="new_tree_cta">New tree</string>
+    <string name="trees_empty_title">Start your first tree</string>
+    <string name="trees_empty_desc">Create one from scratch or import a GEDCOM file.</string>
+    <string name="open_source_license">Open source · GPL v3</string>
+    <string name="website">Website</string>
+    <string name="premium_short">Premium</string>
 </resources>

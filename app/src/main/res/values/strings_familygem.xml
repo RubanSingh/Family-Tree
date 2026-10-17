@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Labels adapted from Family Gem (same keys and wording, so its community translations can be reused).
+    Translations of these keys live in values-xx/strings_familygem.xml.
+-->
+<resources>
+    <string name="local_backup">Local backup</string>
+    <string name="choose_folder">Choose folder</string>
+    <string name="backup_folder">Backup folder</string>
+    <string name="recover">Recover</string>
+    <string name="export_png">Export PNG</string>
+    <string name="png_exported_ok">PNG exported.</string>
+    <string name="tree_settings">Tree settings</string>
+    <string name="max_life_span">Maximum life span</string>
+    <string name="years">Years</string>
+    <string name="current_date">Current date</string>
+    <string name="device_date">Date of device</string>
+    <string name="fixed_date">Fixed date</string>
+    <string name="notification_time">Birthday notification time</string>
+    <string name="origin_family">Origin family</string>
+    <string name="adoptive_family">Adoptive family</string>
+    <string name="foster_family">Foster family</string>
+    <string name="paternal_family">Paternal family</string>
+    <string name="maternal_family">Maternal family</string>
+    <string name="own_family">Own family</string>
+    <string name="numbers">Numbers</string>
+    <string name="invalid_date">Invalid GEDCOM date.</string>
+    <string name="husband_age">Husband age</string>
+    <string name="search_duplicates">Search for duplicates</string>
+    <string name="skip">Skip</string>
+    <string name="error_found">One error found.</string>
+    <string name="yes_to_all">Yes to all remaining</string>
+    <string name="no_to_all">No to all remaining</string>
+    <string name="wife_age">Wife age</string>
+    <string name="less_than">Less than</string>
+    <string name="more_than">More than</string>
+    <string name="duplicates_lines">Duplicates lines</string>
+    <string name="make_shared_media">Make shared media</string>
+    <string name="make_media">Make simple media</string>
+    <string name="copy_app_storage">Copy to app storage</string>
+    <string name="shrink_path">Shrink file path</string>
+    <string name="file_exists_reuse">This file already exists.\nDo you want to reuse it or make a copy?</string>
+    <string name="use_existing">Reuse existing</string>
+    <string name="make_copy">Make a copy</string>
+    <string name="existing_name">Already existing name</string>
+    <string name="invalid_name">Invalid name</string>
+    <string name="info">Info</string>
+</resources>

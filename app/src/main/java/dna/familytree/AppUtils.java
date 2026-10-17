@@ -79,6 +79,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 
+import dna.familytree.feature.backup.BackupManager;
+import dna.familytree.feature.reminders.ReminderScheduler;
 import dna.familytree.constant.Choice;
 import dna.familytree.constant.Format;
 import dna.familytree.constant.Gender;
@@ -264,6 +266,28 @@ public class AppUtils {
     }
 
     // Riceve una person e trova se è morto o seppellito
+    /**
+     * Settings of the open tree (defaults when no tree is open).
+     */
+    public static Settings.TreeSettings openTreeSettings() {
+        Settings.Tree tree = Global.settings != null ? Global.settings.getCurrentTree() : null;
+        return tree != null ? tree.getTreeSettings() : new Settings.TreeSettings();
+    }
+
+    /**
+     * "Today" for ages in the open tree: the device date, or the fixed date chosen in the tree settings.
+     */
+    public static LocalDate treeToday() {
+        Settings.TreeSettings treeSettings = openTreeSettings();
+        if (treeSettings.customDate && treeSettings.fixedDate != null) {
+            try {
+                return new LocalDate(treeSettings.fixedDate);
+            } catch (Exception ignored) { // Invalid stored date: falls back to the device date
+            }
+        }
+        return LocalDate.now();
+    }
+
     public static boolean isDead(Person person) {
         for (EventFact eventFact : person.getEventsFacts()) {
             if (eventFact.getTag().equals("DEAT") || eventFact.getTag().equals("BURI"))
@@ -340,9 +364,9 @@ public class AppUtils {
         if (start != null && start.isSingleKind() && !start.data1.isFormat(Format.D_M)) {
             LocalDate startDate = new LocalDate(start.data1.date); // Converted to joda time
             // If the person is still alive the end is now
-            LocalDate now = LocalDate.now();
+            LocalDate now = treeToday();
             if (end == null && (startDate.isBefore(now) || startDate.isEqual(now))
-                    && Years.yearsBetween(startDate, now).getYears() <= 120 && !isDead(person)) {
+                    && Years.yearsBetween(startDate, now).getYears() <= openTreeSettings().lifeSpan && !isDead(person)) {
                 end = new GedcomDateConverter(now.toDate());
                 endYear = end.writeDate(false);
             }
@@ -672,9 +696,9 @@ public class AppUtils {
         if (!isDead(persona))
             vistaIndi.findViewById(R.id.person_mourning).setVisibility(View.GONE);
         if (Gender.isMale(persona))
-            vistaIndi.findViewById(R.id.person_border).setBackgroundResource(R.drawable.male_bg);
+            vistaIndi.findViewById(R.id.person_border).setBackgroundResource(R.drawable.person_ring_male);
         else if (Gender.isFemale(persona))
-            vistaIndi.findViewById(R.id.person_border).setBackgroundResource(R.drawable.female_bg);
+            vistaIndi.findViewById(R.id.person_border).setBackgroundResource(R.drawable.person_ring_female);
         vistaIndi.setTag(persona.getId());
         return vistaIndi;
     }
@@ -865,9 +889,9 @@ public class AppUtils {
         if (!isDead(p))
             vistaPersona.findViewById(R.id.collega_lutto).setVisibility(View.GONE);
         if (Gender.isMale(p))
-            vistaPersona.findViewById(R.id.collega_bordo).setBackgroundResource(R.drawable.male_bg);
+            vistaPersona.findViewById(R.id.collega_bordo).setBackgroundResource(R.drawable.person_ring_male);
         else if (Gender.isFemale(p))
-            vistaPersona.findViewById(R.id.collega_bordo).setBackgroundResource(R.drawable.female_bg);
+            vistaPersona.findViewById(R.id.collega_bordo).setBackgroundResource(R.drawable.person_ring_female);
         vistaPersona.setOnClickListener(v -> {
             Memory.setLeader(p);
             Intent intent = new Intent(scatola.getContext(), ProfileController.class);
@@ -1081,11 +1105,13 @@ public class AppUtils {
                     new File(Global.context.getFilesDir(), treeId + ".json"),
                     new JsonParser().toJson(gedcom), "UTF-8"
             );
+            BackupManager.schedule(treeId); // Local backup a minute later, if switched on
         } catch (IOException e) {
             LoggerUtils.ErrorLog(TAG, "Exception in saveJson", e);
             Toast.makeText(Global.context, e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
         }
         new Notifier(Global.context, gedcom, treeId, Notifier.What.DEFAULT);
+        ReminderScheduler.onTreeSaved(Global.context, gedcom, treeId); // Anniversaries and remembrance days
     }
 
     public static int castJsonInt(Object unknown) {

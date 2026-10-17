@@ -5,12 +5,16 @@
 
 package dna.familytree;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
 
 public class NotifyReceiver extends BroadcastReceiver {
 
@@ -20,6 +24,7 @@ public class NotifyReceiver extends BroadcastReceiver {
 		if( Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction()) ) {
 
 			new Notifier(context, null, 0, Notifier.What.REBOOT);
+			dna.familytree.feature.reminders.ReminderScheduler.reschedule(context);
 
 		} else { // Create notification
 
@@ -39,6 +44,10 @@ public class NotifyReceiver extends BroadcastReceiver {
 					.setCategory(NotificationCompat.CATEGORY_EVENT);
 
 			NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+			// From Android 13 notifications need the user's permission: without it nothing can be shown
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && ContextCompat.checkSelfPermission(context,
+					Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED)
+				return;
 			notificationManager.notify(intent.getIntExtra("id", 1), builder.build());
 		}
 	}

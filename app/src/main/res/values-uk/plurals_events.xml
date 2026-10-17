@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Річниця весілля · %d рік</item>
+        <item quantity="few">Річниця весілля · %d роки</item>
+        <item quantity="many">Річниця весілля · %d років</item>
+        <item quantity="other">Річниця весілля · %d року</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">День пам\'яті · %d рік</item>
+        <item quantity="few">День пам\'яті · %d роки</item>
+        <item quantity="many">День пам\'яті · %d років</item>
+        <item quantity="other">День пам\'яті · %d року</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Через %1$d день · %2$s</item>
+        <item quantity="few">Через %1$d дні · %2$s</item>
+        <item quantity="many">Через %1$d днів · %2$s</item>
+        <item quantity="other">Через %1$d дня · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">через %d день</item>
+        <item quantity="few">через %d дні</item>
+        <item quantity="many">через %d днів</item>
+        <item quantity="other">через %d дня</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Виповнюється %d рік</item>
+        <item quantity="few">Виповнюється %d роки</item>
+        <item quantity="many">Виповнюється %d років</item>
+        <item quantity="other">Виповнюється %d року</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d рік у шлюбі</item>
+        <item quantity="few">%d роки в шлюбі</item>
+        <item quantity="many">%d років у шлюбі</item>
+        <item quantity="other">%d року в шлюбі</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">%d рік тому</item>
+        <item quantity="few">%d роки тому</item>
+        <item quantity="many">%d років тому</item>
+        <item quantity="other">%d року тому</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d рік</item>
+        <item quantity="few">%d роки</item>
+        <item quantity="many">%d років</item>
+        <item quantity="other">%d року</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d подія</item>
+        <item quantity="few">%d події</item>
+        <item quantity="many">%d подій</item>
+        <item quantity="other">%d події</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d особа</item>
+        <item quantity="few">%d особи</item>
+        <item quantity="many">%d осіб</item>
+        <item quantity="other">%d особи</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d місце</item>
+        <item quantity="few">%d місця</item>
+        <item quantity="many">%d місць</item>
+        <item quantity="other">%d місця</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d країна</item>
+        <item quantity="few">%d країни</item>
+        <item quantity="many">%d країн</item>
+        <item quantity="other">%d країни</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d особа</item>
+        <item quantity="few">%d особи</item>
+        <item quantity="many">%d осіб</item>
+        <item quantity="other">%d особи</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d файл перебуває поза сховищем програми. Скопіювати його в сховище програми, щоб він залишався з деревом і потрапляв у резервні копії? Оригінальний файл не зміниться.</item>
+        <item quantity="few">%d файли перебувають поза сховищем програми. Скопіювати їх у сховище програми, щоб вони залишалися з деревом і потрапляли в резервні копії? Оригінальні файли не зміняться.</item>
+        <item quantity="many">%d файлів перебувають поза сховищем програми. Скопіювати їх у сховище програми, щоб вони залишалися з деревом і потрапляли в резервні копії? Оригінальні файли не зміняться.</item>
+        <item quantity="other">%d файла перебувають поза сховищем програми. Скопіювати їх у сховище програми, щоб вони залишалися з деревом і потрапляли в резервні копії? Оригінальні файли не зміняться.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d файл скопійовано в сховище програми.</item>
+        <item quantity="few">%d файли скопійовано в сховище програми.</item>
+        <item quantity="many">%d файлів скопійовано в сховище програми.</item>
+        <item quantity="other">%d файла скопійовано в сховище програми.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d медіа пов\'язано з повним шляхом до файлу в сховищі програми. Скоротити шлях лише до імені файлу? Сам файл залишиться на місці.</item>
+        <item quantity="few">%d медіа пов\'язано з повним шляхом до файлу в сховищі програми. Скоротити шляхи лише до імені файлу? Самі файли залишаться на місці.</item>
+        <item quantity="many">%d медіа пов\'язано з повним шляхом до файлу в сховищі програми. Скоротити шляхи лише до імені файлу? Самі файли залишаться на місці.</item>
+        <item quantity="other">%d медіа пов\'язано з повним шляхом до файлу в сховищі програми. Скоротити шляхи лише до імені файлу? Самі файли залишаться на місці.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d шлях до файлу скорочено.</item>
+        <item quantity="few">%d шляхи до файлів скорочено.</item>
+        <item quantity="many">%d шляхів до файлів скорочено.</item>
+        <item quantity="other">%d шляху до файлів скорочено.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d запис</item>
+        <item quantity="few">%d записи</item>
+        <item quantity="many">%d записів</item>
+        <item quantity="other">%d запису</item>
+    </plurals>
+</resources>

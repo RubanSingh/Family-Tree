@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_marginTop="10dp"
-	android:background="@color/source_citation"
-	android:foreground="?android:attr/selectableItemBackground"
+	android:layout_marginTop="@dimen/ds_space_sm"
+	android:background="@drawable/citation_background"
+	android:foreground="@drawable/ds_ripple_card"
 	android:orientation="vertical"
-	android:padding="6dp">
+	android:padding="@dimen/ds_space_ms">
 
 	<include
 		android:id="@+id/citazione_fonte"
@@ -17,7 +17,9 @@
 	<com.google.android.material.textview.MaterialTextView
 		android:id="@+id/citazione_testo"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"/>
+		android:layout_height="wrap_content"
+		android:layout_marginTop="@dimen/ds_space_xs"
+		android:textAppearance="@style/TextAppearance.FamilyTree.BodyMedium"/>
 
 	<LinearLayout
 		android:id="@+id/citazione_note"

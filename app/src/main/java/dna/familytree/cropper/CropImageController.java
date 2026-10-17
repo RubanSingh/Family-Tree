@@ -67,6 +67,7 @@ public class CropImageController extends BaseController
     @SuppressLint("NewApi")
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setOnBackHandler(this::setResultCancel);
         setContentView(com.theartofdev.edmodo.cropper.R.layout.crop_image_activity);
 
         mCropImageView = findViewById(com.theartofdev.edmodo.cropper.R.id.cropImageView);
@@ -191,12 +192,6 @@ public class CropImageController extends BaseController
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        setResultCancel();
     }
 
     @Override

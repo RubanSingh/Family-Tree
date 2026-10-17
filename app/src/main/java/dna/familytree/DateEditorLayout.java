@@ -184,8 +184,26 @@ public class DateEditorLayout extends LinearLayout {
                 if (veroImputTesto)
                     impostaTutto();
                 veroImputTesto = true;
+                showValidity();
             }
         });
+        showValidity(); // Also an existing date can be invalid
+    }
+
+    /**
+     * Shows "Invalid GEDCOM date" on the field while the text doesn't follow the GEDCOM grammar (only a hint).
+     */
+    private void showValidity() {
+        boolean valid = (gedcomDateConverter != null && gedcomDateConverter.kind == Kind.PHRASE)
+                || GedcomDateConverter.isValidGedcomDate(editaTesto.getText().toString());
+        CharSequence error = valid ? null : getContext().getString(R.string.invalid_date);
+        View parent = (View)editaTesto.getParent();
+        while (parent != null && !(parent instanceof com.google.android.material.textfield.TextInputLayout))
+            parent = parent.getParent() instanceof View ? (View)parent.getParent() : null;
+        if (parent != null)
+            ((com.google.android.material.textfield.TextInputLayout)parent).setError(error);
+        else if (valid ? editaTesto.getError() != null : true)
+            editaTesto.setError(error);
     }
 
     // Prepara le quattro ruote di un carro con le impostazioni iniziali

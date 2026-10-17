@@ -5,3 +5,15 @@ build/
 app/libs-source-data/
 chiavi.properties
 local.properties
+# Java heap dumps written when a build runs out of memory
+*.hprof
+# Signing and private config: never commit
+keystore.properties
+*.jks
+*.keystore
+app/release/
+# OS / editor leftovers
+.DS_Store
+*.bak
+*.iml
+.kotlin/

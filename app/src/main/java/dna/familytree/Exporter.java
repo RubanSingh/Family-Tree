@@ -8,6 +8,8 @@ import android.provider.OpenableColumns;
 
 import androidx.documentfile.provider.DocumentFile;
 
+import org.folg.gedcom.parser.JsonParser;
+
 import org.folg.gedcom.model.Gedcom;
 import org.folg.gedcom.model.Header;
 import org.folg.gedcom.model.Media;
@@ -19,8 +21,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.zip.ZipEntry;
@@ -41,6 +45,7 @@ public class Exporter {
     private Uri targetUri;
     public String errorMessage; // Message of possible error
     public String successMessage; // Message of the obtained result
+    private File backupSnapshot; // Tree JSON read by openTreeForBackup()
     private String TAG = Exporter.class.getSimpleName();
 
     public Exporter(Context context) {
@@ -120,24 +125,73 @@ public class Exporter {
      */
     public boolean exportZipBackup(String root, int grade, Uri targetUri) {
         this.targetUri = targetUri;
-        // Media
-        Map<DocumentFile, Integer> files = collectMedia();
-        // Tree's JSON
-        File fileTree = new File(context.getFilesDir(), treeId + ".json");
-        files.put(DocumentFile.fromFile(fileTree), 1);
-        // Settings' JSON
-        // title, root and grade can be modified by SharingActivity
+        // Settings' JSON: title, root and grade can be modified by SharingActivity
         Settings.Tree tree = Global.settings.getTree(treeId);
         if (root == null) root = tree.root;
         if (grade < 0) grade = tree.grade;
-        Settings.ZippedTree settings = new Settings.ZippedTree(
-                tree.title, tree.persons, tree.generations, root, tree.shares, grade);
-        File fileSettings = settings.save();
-        files.put(DocumentFile.fromFile(fileSettings), 0);
-        if (!createZipFile(files))
+        File fileSettings = zippedSettings(tree, root, grade).save();
+        // Tree's JSON
+        File fileTree = new File(context.getFilesDir(), treeId + ".json");
+        if (!createZipFile(zipContent(fileSettings, fileTree)))
             return false;
         context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, targetUri));
         return success(R.string.zip_exported_ok);
+    }
+
+    /**
+     * Opens a tree for a background backup: reads a snapshot of its JSON from disk,
+     * without toasts and without touching the tree open in the app.
+     *
+     * @param workDir private folder where the snapshot and the ZIP settings are written
+     */
+    public boolean openTreeForBackup(int treeId, File workDir) {
+        this.treeId = treeId;
+        File treeFile = new File(context.getFilesDir(), treeId + ".json");
+        if (!treeFile.exists() || treeFile.length() == 0) return error(R.string.backup_tree_unreadable);
+        try {
+            String json = org.apache.commons.io.FileUtils.readFileToString(treeFile, "UTF-8");
+            gedcom = new JsonParser().fromJson(TreesController.updateLanguage(json));
+            if (gedcom == null) return error(R.string.no_useful_data);
+            // The ZIP gets exactly the snapshot that was parsed, even if the tree is saved again meanwhile
+            backupSnapshot = new File(workDir, treeId + ".json");
+            org.apache.commons.io.FileUtils.writeStringToFile(backupSnapshot, json, "UTF-8");
+        } catch (Throwable e) { // Also OutOfMemoryError on huge trees
+            return error(String.valueOf(e.getLocalizedMessage()));
+        }
+        return true;
+    }
+
+    /**
+     * Writes a backup ZIP (tree, settings and media) of the tree opened with {@link #openTreeForBackup}.
+     * Safe to call from a background thread.
+     */
+    public boolean exportBackup(Uri targetUri, File workDir) {
+        this.targetUri = targetUri;
+        Settings.Tree tree = Global.settings.getTree(treeId);
+        File fileSettings = zippedSettings(tree, tree.root, tree.grade).save(workDir);
+        return createZipFile(zipContent(fileSettings, backupSnapshot));
+    }
+
+    /**
+     * Settings of the tree as saved in the ZIP.
+     */
+    private static Settings.ZippedTree zippedSettings(Settings.Tree tree, String root, int grade) {
+        Settings.ZippedTree zipped = new Settings.ZippedTree(tree.title, tree.persons, tree.generations, root, tree.shares, grade);
+        zipped.settings = tree.settings;
+        if (tree.reminders != null) // A copy, because a background backup may run while they are edited
+            zipped.reminders = new ArrayList<>(tree.reminders);
+        return zipped;
+    }
+
+    /**
+     * Files of a ZIP backup: settings first (so the title is quickly found), then the tree and its media.
+     */
+    private Map<DocumentFile, Integer> zipContent(File settings, File tree) {
+        Map<DocumentFile, Integer> files = new LinkedHashMap<>();
+        files.put(DocumentFile.fromFile(settings), 0);
+        files.put(DocumentFile.fromFile(tree), 1);
+        files.putAll(collectMedia());
+        return files;
     }
 
     /**
@@ -257,26 +311,25 @@ public class Exporter {
      * Returns error message or true if all is well.
      */
     boolean createZipFile(Map<DocumentFile, Integer> files) {
-        byte[] buffer = new byte[128];
-        try {
-            ZipOutputStream zos = new ZipOutputStream(context.getContentResolver().openOutputStream(targetUri));
+        byte[] buffer = new byte[8192];
+        try (ZipOutputStream zos = new ZipOutputStream(context.getContentResolver().openOutputStream(targetUri))) {
             for (Map.Entry<DocumentFile, Integer> fileType : files.entrySet()) {
                 DocumentFile file = fileType.getKey();
-                InputStream input = context.getContentResolver().openInputStream(file.getUri());
                 String filename = file.getName(); // Files that are not renamed ('settings.json', 'family.ged')
                 if (fileType.getValue() == 1)
                     filename = "tree.json";
                 else if (fileType.getValue() == 2)
                     filename = "media/" + file.getName();
-                zos.putNextEntry(new ZipEntry(filename));
-                int read;
-                while ((read = input.read(buffer)) != -1) {
-                    zos.write(buffer, 0, read);
+                try (InputStream input = context.getContentResolver().openInputStream(file.getUri())) {
+                    if (input == null) continue; // Provider without content
+                    zos.putNextEntry(new ZipEntry(filename));
+                    int read;
+                    while ((read = input.read(buffer)) != -1) {
+                        zos.write(buffer, 0, read);
+                    }
+                    zos.closeEntry();
                 }
-                zos.closeEntry();
-                input.close();
             }
-            zos.close();
         } catch (IOException e) {
             return error(e.getLocalizedMessage());
         }

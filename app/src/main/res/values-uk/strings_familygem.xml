@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Translations from Family Gem (Weblate) -->
+<resources>
+    <string name="local_backup">Локальна резервна копія</string>
+    <string name="choose_folder">Оберіть папку</string>
+    <string name="backup_folder">Папка для резервної копії</string>
+    <string name="recover">Відновити</string>
+    <string name="export_png">Експортувати файл PNG</string>
+    <string name="png_exported_ok">PNG експортовано.</string>
+    <string name="tree_settings">Налаштування дерева</string>
+    <string name="max_life_span">Максимальна тривалість життя</string>
+    <string name="years">Роки</string>
+    <string name="current_date">Актуальна дата</string>
+    <string name="device_date">Дата пристрою</string>
+    <string name="fixed_date">Фіксована дата</string>
+    <string name="notification_time">Час сповіщення про день народження</string>
+    <string name="origin_family">Сім\'я походження</string>
+    <string name="adoptive_family">Усиновлена сім\'я</string>
+    <string name="foster_family">Прийомна сім\'я</string>
+    <string name="paternal_family">Сім\'я батька</string>
+    <string name="maternal_family">Сім\'я матері</string>
+    <string name="own_family">Власна сім\'я</string>
+    <string name="numbers">Числа</string>
+    <string name="search_duplicates">Шукати дублікати</string>
+    <string name="skip">Пропустити</string>
+    <string name="error_found">Знайдена одна помилка.</string>
+    <string name="yes_to_all">Так для всіх інших</string>
+    <string name="no_to_all">Не для всіх інших</string>
+    <string name="duplicates_lines">Дублює рядки</string>
+    <string name="make_shared_media">Створити спільні медіа</string>
+    <string name="make_media">Створити медіа</string>
+    <string name="copy_app_storage">Копіювати в сховище програми</string>
+    <string name="shrink_path">Зменшити шлях до файлу</string>
+    <string name="file_exists_reuse">Цей файл вже існує.\nВи хочете використати його повторно чи зробити копію?</string>
+    <string name="use_existing">Повторно використовуйте існуюче</string>
+    <string name="make_copy">Зробити копію</string>
+    <string name="existing_name">Вже існуюча назва</string>
+    <string name="invalid_name">Недійсне ім\'я</string>
+    <string name="info">Інформація</string>
+    <!-- Translations added in version 1.6 -->
+    <string name="invalid_date">Недійсна дата GEDCOM.</string>
+    <string name="husband_age">Вік чоловіка</string>
+    <string name="wife_age">Вік дружини</string>
+    <string name="less_than">Менше ніж</string>
+    <string name="more_than">Більше ніж</string>
+</resources>

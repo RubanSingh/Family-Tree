@@ -1,124 +1,311 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="?attr/colorSurface">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="?attr/colorSecondaryContainer" />
-
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/opzioni_salva"
-        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/auto_save"
-        android:textAppearance="?attr/textAppearanceBodyLarge"
-        app:useMaterialThemeColors="false" />
+        app:liftOnScroll="true">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/opzioni_carica"
-        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.FamilyTree.Toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/load_tree_startup"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/ds_space_xl"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/opzioni_esperto"
-        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/show_advanced_functions"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/dark_theme"
-        style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/dark_theme"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+            <!-- Premium banner -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/settings_premium_banner"
+                style="@style/Widget.FamilyTree.Card.Premium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_page_gutter"
+                android:layout_marginTop="@dimen/ds_space_sm"
+                android:layout_marginEnd="@dimen/ds_page_gutter"
+                android:clickable="true"
+                android:focusable="true">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/opzioni_language"
-        style="@style/Widget.Material3.CheckedTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/ds_space_md">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/theme"
-        style="@style/Widget.Material3.CheckedTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/theme"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <ImageView
+                        style="@style/Widget.FamilyTree.IconContainer.Premium"
+                        android:background="@drawable/ds_bg_logo_tile"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ds_ic_premium"
+                        app:tint="@color/ds_tertiary" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/rate_app"
-        style="@style/Widget.Material3.CheckedTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/rate"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/ds_space_md"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/feedback"
-        style="@style/Widget.Material3.CheckedTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/feedback"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/settings_premium_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/go_premium"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="?attr/colorOnTertiaryContainer" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/share"
-        style="@style/Widget.Material3.CheckedTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/share"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/settings_premium_subtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/go_premium_desc"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnTertiaryContainer" />
+                    </LinearLayout>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/opzioni_lapide"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/about"
-        android:textAppearance="?attr/textAppearanceBodyLarge" />
+                    <ImageView
+                        android:id="@+id/settings_premium_cta"
+                        android:layout_width="@dimen/ds_icon"
+                        android:layout_height="@dimen/ds_icon"
+                        android:layout_marginStart="@dimen/ds_space_sm"
+                        android:contentDescription="@string/go_premium"
+                        android:src="@drawable/ds_ic_chevron_right"
+                        app:tint="?attr/colorOnTertiaryContainer" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-</LinearLayout>
+            <!-- General -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Widget.FamilyTree.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_section_general" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_page_gutter"
+                android:layout_marginEnd="@dimen/ds_page_gutter">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/opzioni_salva"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_save"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/auto_save_desc"
+                        app:dsTitle="@string/auto_save"
+                        app:dsTrailing="switchControl" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/opzioni_carica"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_account_tree"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/load_tree_startup_desc"
+                        app:dsTitle="@string/load_tree_startup"
+                        app:dsTrailing="switchControl" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/notify_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_cake"
+                        app:dsShowDivider="true"
+                        app:dsTitle="@string/notification_time"
+                        app:dsTrailing="value" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/local_backup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_backup"
+                        app:dsIconStyle="primary"
+                        app:dsTitle="@string/local_backup"
+                        app:dsTrailing="chevron" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Appearance -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Widget.FamilyTree.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_section_appearance" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_page_gutter"
+                android:layout_marginEnd="@dimen/ds_page_gutter">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/dark_theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_dark_mode"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/dark_theme_desc"
+                        app:dsTitle="@string/dark_theme"
+                        app:dsTrailing="switchControl" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_palette"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/theme_desc"
+                        app:dsTitle="@string/theme"
+                        app:dsTrailing="chevron" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/opzioni_language"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_language"
+                        app:dsSubtitle="@string/language_desc"
+                        app:dsTitle="@string/language"
+                        app:dsTrailing="value" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Advanced -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Widget.FamilyTree.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_section_advanced" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_page_gutter"
+                android:layout_marginEnd="@dimen/ds_page_gutter">
+
+                <dna.familytree.designsystem.SettingsRowView
+                    android:id="@+id/opzioni_esperto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:dsIcon="@drawable/ds_ic_bolt"
+                    app:dsIconStyle="primary"
+                    app:dsSubtitle="@string/show_advanced_functions_desc"
+                    app:dsTitle="@string/show_advanced_functions"
+                    app:dsTrailing="switchControl" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Support -->
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/Widget.FamilyTree.SectionHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_section_support" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.FamilyTree.Card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/ds_page_gutter"
+                android:layout_marginEnd="@dimen/ds_page_gutter">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/rate_app"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_star"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/rate_desc"
+                        app:dsTitle="@string/rate"
+                        app:dsTrailing="chevron" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/feedback"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_feedback"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/feedback_desc"
+                        app:dsTitle="@string/feedback"
+                        app:dsTrailing="chevron" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/share"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_share"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/share_desc"
+                        app:dsTitle="@string/share"
+                        app:dsTrailing="chevron" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/check_updates"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_system_update"
+                        app:dsShowDivider="true"
+                        app:dsTitle="@string/update_check"
+                        app:dsTrailing="chevron" />
+
+                    <!-- Only where the consent rules require it (ConsentManager.isPrivacyOptionsRequired) -->
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/privacy_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:dsIcon="@drawable/ic_privacy_tip"
+                        app:dsShowDivider="true"
+                        app:dsSubtitle="@string/privacy_options_desc"
+                        app:dsTitle="@string/privacy_options"
+                        app:dsTrailing="chevron" />
+
+                    <dna.familytree.designsystem.SettingsRowView
+                        android:id="@+id/opzioni_lapide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:dsIcon="@drawable/ds_ic_info"
+                        app:dsSubtitle="@string/about_desc"
+                        app:dsTitle="@string/about"
+                        app:dsTrailing="chevron" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

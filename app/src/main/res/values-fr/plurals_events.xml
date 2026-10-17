@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Anniversaire de mariage · %d an</item>
+        <item quantity="many">Anniversaire de mariage · %d ans</item>
+        <item quantity="other">Anniversaire de mariage · %d ans</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Jour du souvenir · %d an</item>
+        <item quantity="many">Jour du souvenir · %d ans</item>
+        <item quantity="other">Jour du souvenir · %d ans</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Dans %1$d jour · %2$s</item>
+        <item quantity="many">Dans %1$d jours · %2$s</item>
+        <item quantity="other">Dans %1$d jours · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">dans %d jour</item>
+        <item quantity="many">dans %d jours</item>
+        <item quantity="other">dans %d jours</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Aura %d an</item>
+        <item quantity="many">Aura %d ans</item>
+        <item quantity="other">Aura %d ans</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d an de mariage</item>
+        <item quantity="many">%d ans de mariage</item>
+        <item quantity="other">%d ans de mariage</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Il y a %d an</item>
+        <item quantity="many">Il y a %d ans</item>
+        <item quantity="other">Il y a %d ans</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d an</item>
+        <item quantity="many">%d ans</item>
+        <item quantity="other">%d ans</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d évènement</item>
+        <item quantity="many">%d évènements</item>
+        <item quantity="other">%d évènements</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d personne</item>
+        <item quantity="many">%d personnes</item>
+        <item quantity="other">%d personnes</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d lieu</item>
+        <item quantity="many">%d lieux</item>
+        <item quantity="other">%d lieux</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d pays</item>
+        <item quantity="many">%d pays</item>
+        <item quantity="other">%d pays</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d personne</item>
+        <item quantity="many">%d de personnes</item>
+        <item quantity="other">%d personnes</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d fichier se trouve hors du stockage de l’app. Le copier dans le stockage de l’app pour qu’il reste avec votre arbre et soit inclus dans les sauvegardes ? Le fichier d’origine n’est pas modifié.</item>
+        <item quantity="many">%d de fichiers se trouvent hors du stockage de l’app. Les copier dans le stockage de l’app pour qu’ils restent avec votre arbre et soient inclus dans les sauvegardes ? Les fichiers d’origine ne sont pas modifiés.</item>
+        <item quantity="other">%d fichiers se trouvent hors du stockage de l’app. Les copier dans le stockage de l’app pour qu’ils restent avec votre arbre et soient inclus dans les sauvegardes ? Les fichiers d’origine ne sont pas modifiés.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d fichier copié dans le stockage de l’app.</item>
+        <item quantity="many">%d de fichiers copiés dans le stockage de l’app.</item>
+        <item quantity="other">%d fichiers copiés dans le stockage de l’app.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d média est lié avec le chemin complet d’un fichier du stockage de l’app. Raccourcir le lien au seul nom de fichier ? Le fichier reste à sa place.</item>
+        <item quantity="many">%d de médias sont liés avec le chemin complet d’un fichier du stockage de l’app. Raccourcir les liens au seul nom de fichier ? Les fichiers restent à leur place.</item>
+        <item quantity="other">%d médias sont liés avec le chemin complet d’un fichier du stockage de l’app. Raccourcir les liens au seul nom de fichier ? Les fichiers restent à leur place.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d chemin de fichier raccourci.</item>
+        <item quantity="many">%d de chemins de fichier raccourcis.</item>
+        <item quantity="other">%d chemins de fichier raccourcis.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d enregistrement</item>
+        <item quantity="many">%d d’enregistrements</item>
+        <item quantity="other">%d enregistrements</item>
+    </plurals>
+</resources>

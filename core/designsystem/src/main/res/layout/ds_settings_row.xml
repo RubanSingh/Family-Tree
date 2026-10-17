@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout"
+    tools:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ds_row_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/ds_list_row_min_height"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/ds_space_md"
+        android:paddingTop="@dimen/ds_space_ms"
+        android:paddingEnd="@dimen/ds_space_md"
+        android:paddingBottom="@dimen/ds_space_ms">
+
+        <ImageView
+            android:id="@+id/ds_row_icon"
+            style="@style/Widget.FamilyTree.IconContainer"
+            android:contentDescription="@null"
+            tools:src="@drawable/ds_ic_settings" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ds_space_md"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ds_row_premium"
+                style="@style/Widget.FamilyTree.PremiumBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:visibility="gone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ds_row_title"
+                style="@style/Widget.FamilyTree.ListTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Auto save" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ds_row_subtitle"
+                style="@style/Widget.FamilyTree.ListSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:visibility="gone"
+                tools:text="Save every change automatically"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ds_space_ms">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/ds_row_value"
+                style="@style/Widget.FamilyTree.ListSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="?attr/colorPrimary"
+                android:visibility="gone"
+                tools:text="English" />
+
+            <ImageView
+                android:id="@+id/ds_row_chevron"
+                android:layout_width="@dimen/ds_icon"
+                android:layout_height="@dimen/ds_icon"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@null"
+                android:src="@drawable/ds_ic_chevron_right"
+                android:visibility="gone"
+                app:tint="?attr/colorOnSurfaceVariant" />
+
+            <ImageView
+                android:id="@+id/ds_row_lock"
+                android:layout_width="@dimen/ds_icon"
+                android:layout_height="@dimen/ds_icon"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@null"
+                android:src="@drawable/ds_ic_lock"
+                android:visibility="gone"
+                app:tint="?attr/colorTertiary" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/ds_row_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="false"
+                android:focusable="false"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/ds_row_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginEnd="@dimen/ds_space_md"
+        android:visibility="gone" />
+</merge>

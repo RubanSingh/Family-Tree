@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Theme.FamilyTree: the single base theme for the whole app.
+        Every colour theme the user can pick (Red, Pink, ... Dark) extends this,
+        so components, type and shape stay consistent while colours change.
+    -->
+    <style name="Theme.FamilyTree" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colour roles -->
+        <item name="colorPrimary">@color/ds_primary</item>
+        <item name="colorOnPrimary">@color/ds_on_primary</item>
+        <item name="colorPrimaryContainer">@color/ds_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/ds_on_primary_container</item>
+        <item name="colorPrimaryInverse">@color/ds_primary_inverse</item>
+        <item name="colorSecondary">@color/ds_secondary</item>
+        <item name="colorOnSecondary">@color/ds_on_secondary</item>
+        <item name="colorSecondaryContainer">@color/ds_secondary_container</item>
+        <item name="colorOnSecondaryContainer">@color/ds_on_secondary_container</item>
+        <item name="colorTertiary">@color/ds_tertiary</item>
+        <item name="colorOnTertiary">@color/ds_on_tertiary</item>
+        <item name="colorTertiaryContainer">@color/ds_tertiary_container</item>
+        <item name="colorOnTertiaryContainer">@color/ds_on_tertiary_container</item>
+        <item name="colorError">@color/ds_error</item>
+        <item name="colorOnError">@color/ds_on_error</item>
+        <item name="colorErrorContainer">@color/ds_error_container</item>
+        <item name="colorOnErrorContainer">@color/ds_on_error_container</item>
+        <item name="android:colorBackground">@color/ds_surface</item>
+        <item name="colorOnBackground">@color/ds_on_surface</item>
+        <item name="colorSurface">@color/ds_surface</item>
+        <item name="colorOnSurface">@color/ds_on_surface</item>
+        <item name="colorSurfaceVariant">@color/ds_surface_variant</item>
+        <item name="colorOnSurfaceVariant">@color/ds_on_surface_variant</item>
+        <item name="colorSurfaceDim">@color/ds_surface_dim</item>
+        <item name="colorSurfaceBright">@color/ds_surface_bright</item>
+        <item name="colorSurfaceContainerLowest">@color/ds_surface_container_lowest</item>
+        <item name="colorSurfaceContainerLow">@color/ds_surface_container_low</item>
+        <item name="colorSurfaceContainer">@color/ds_surface_container</item>
+        <item name="colorSurfaceContainerHigh">@color/ds_surface_container_high</item>
+        <item name="colorSurfaceContainerHighest">@color/ds_surface_container_highest</item>
+        <item name="colorSurfaceInverse">@color/ds_surface_inverse</item>
+        <item name="colorOnSurfaceInverse">@color/ds_on_surface_inverse</item>
+        <item name="colorOutline">@color/ds_outline</item>
+        <item name="colorOutlineVariant">@color/ds_outline_variant</item>
+        <item name="scrimBackground">@color/ds_scrim</item>
+
+        <!-- Window -->
+        <item name="android:windowBackground">@color/ds_surface</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Type -->
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.FamilyTree.DisplaySmall</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.FamilyTree.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.FamilyTree.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.FamilyTree.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.FamilyTree.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.FamilyTree.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.FamilyTree.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.FamilyTree.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.FamilyTree.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.FamilyTree.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.FamilyTree.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.FamilyTree.LabelSmall</item>
+
+        <!-- Shape -->
+        <item name="shapeAppearanceCornerSmall">@style/ShapeAppearance.FamilyTree.Small</item>
+        <item name="shapeAppearanceCornerMedium">@style/ShapeAppearance.FamilyTree.Medium</item>
+        <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.FamilyTree.Large</item>
+
+        <!-- Component defaults: every screen inherits these -->
+        <item name="toolbarStyle">@style/Widget.FamilyTree.Toolbar</item>
+        <item name="materialCardViewStyle">@style/Widget.FamilyTree.Card</item>
+        <item name="materialButtonStyle">@style/Widget.FamilyTree.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.FamilyTree.Button.Outlined</item>
+        <item name="borderlessButtonStyle">@style/Widget.FamilyTree.Button.Text</item>
+        <item name="floatingActionButtonStyle">@style/Widget.FamilyTree.FAB</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.FamilyTree.ExtendedFAB</item>
+        <item name="materialSwitchStyle">@style/Widget.FamilyTree.Switch</item>
+        <item name="chipStyle">@style/Widget.FamilyTree.Chip</item>
+        <item name="materialDividerStyle">@style/Widget.FamilyTree.Divider</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.FamilyTree.Dialog</item>
+    </style>
+
+    <!-- Splash: brand colour behind the logo while the app starts -->
+    <style name="Theme.FamilyTree.Splash">
+        <item name="android:windowBackground">@drawable/ds_bg_brand_gradient</item>
+    </style>
+</resources>

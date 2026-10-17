@@ -1,52 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- New relative dialog: relationship choice, then the family to add into -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:padding="24dp">
+	android:paddingStart="@dimen/ds_space_lg"
+	android:paddingTop="@dimen/ds_space_sm"
+	android:paddingEnd="@dimen/ds_space_lg"
+	android:paddingBottom="@dimen/ds_space_sm">
 
 	<RadioGroup
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
-		<RadioButton
+		<com.google.android.material.radiobutton.MaterialRadioButton
 			android:id="@+id/nuovoparente_1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:minHeight="@dimen/ds_touch_target"
 			android:text="@string/parent"
-			android:textSize="16sp"/>
-		<RadioButton
+			android:textAppearance="?attr/textAppearanceBodyLarge"/>
+		<com.google.android.material.radiobutton.MaterialRadioButton
 			android:id="@+id/nuovoparente_2"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:minHeight="@dimen/ds_touch_target"
 			android:text="@string/sibling"
-			android:textSize="16sp"/>
-		<RadioButton
+			android:textAppearance="?attr/textAppearanceBodyLarge"/>
+		<com.google.android.material.radiobutton.MaterialRadioButton
 			android:id="@+id/nuovoparente_3"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:minHeight="@dimen/ds_touch_target"
 			android:text="@string/partner"
-			android:textSize="16sp"/>
-		<RadioButton
+			android:textAppearance="?attr/textAppearanceBodyLarge"/>
+		<com.google.android.material.radiobutton.MaterialRadioButton
 			android:id="@+id/nuovoparente_4"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:minHeight="@dimen/ds_touch_target"
 			android:text="@string/child"
-			android:textSize="16sp"/>
+			android:textAppearance="?attr/textAppearanceBodyLarge"/>
 	</RadioGroup>
 
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="8dp"
+		android:layout_marginTop="@dimen/ds_space_md"
 		android:orientation="vertical">
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/into"
-			android:textSize="16sp"/>
+			android:textAppearance="?attr/textAppearanceLabelLarge"
+			android:textColor="?attr/colorOnSurfaceVariant"/>
 		<Spinner
 			android:id="@+id/nuovoparente_famiglie"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content" />
+			android:layout_height="wrap_content"
+			android:minHeight="@dimen/ds_touch_target" />
 	</LinearLayout>
 </LinearLayout>

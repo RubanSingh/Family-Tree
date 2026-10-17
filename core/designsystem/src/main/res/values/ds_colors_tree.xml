@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Family tree surfaces (light). Night overrides live in values-night/ds_colors_tree.xml.
+    The diagram canvas stays deep in both modes so person cards float above it like a constellation.
+-->
+<resources>
+    <!-- Diagram canvas -->
+    <color name="ds_canvas_center">#22396B</color>
+    <color name="ds_canvas_edge">#0B1530</color>
+    <color name="ds_canvas_line">#9DB4E3</color>
+    <color name="ds_canvas_glass">#F2FFFFFF</color>
+    <color name="ds_on_canvas_glass">#1F1F1F</color>
+    <color name="ds_canvas_glow">#FFD166</color>
+
+    <!-- Person cards (diagram, lists, relatives) -->
+    <color name="ds_tree_card">#FFFFFF</color>
+    <color name="ds_tree_card_partner">#E4EAF5</color>
+    <color name="ds_tree_card_focus_start">#FFF6DA</color>
+    <color name="ds_tree_card_focus_end">#FFDF85</color>
+    <color name="ds_tree_male">#3D63C8</color>
+    <color name="ds_tree_female">#C2457A</color>
+    <color name="ds_tree_neutral">#B4BCCB</color>
+    <color name="ds_tree_mourning">#3C4043</color>
+    <color name="ds_on_tree_mourning">#FFFFFF</color>
+
+    <!-- Hero header behind profile / drawer -->
+    <color name="ds_hero_scrim_top">#00000000</color>
+    <color name="ds_hero_scrim_bottom">#99000000</color>
+</resources>

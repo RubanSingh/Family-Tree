@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ds_space_xs">4dp</dimen>
+    <dimen name="ds_space_sm">8dp</dimen>
+    <dimen name="ds_space_ms">12dp</dimen>
+    <dimen name="ds_space_md">16dp</dimen>
+    <dimen name="ds_space_lg">24dp</dimen>
+    <dimen name="ds_space_xl">32dp</dimen>
+    <dimen name="ds_space_xxl">48dp</dimen>
+
+    <dimen name="ds_radius_sm">8dp</dimen>
+    <dimen name="ds_radius_md">16dp</dimen>
+    <dimen name="ds_radius_lg">28dp</dimen>
+
+    <dimen name="ds_touch_target">48dp</dimen>
+    <dimen name="ds_icon">24dp</dimen>
+    <dimen name="ds_icon_container">40dp</dimen>
+    <dimen name="ds_avatar">44dp</dimen>
+    <dimen name="ds_hero_icon">96dp</dimen>
+    <dimen name="ds_list_row_min_height">56dp</dimen>
+    <dimen name="ds_page_gutter">16dp</dimen>
+    <dimen name="ds_content_max_width">600dp</dimen>
+</resources>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,7 @@ import org.folg.gedcom.model.Media;
 import org.folg.gedcom.model.MediaContainer;
 import org.folg.gedcom.model.Person;
 
+import dna.familytree.feature.media.MediaToolsUi;
 import dna.familytree.list.MediaAdapter;
 import dna.familytree.list.MediaFragment;
 import dna.familytree.util.AnalyticsUtil;
@@ -61,6 +63,7 @@ public class ProfileMediaFragment extends BaseFragment {
             menu.add(0, 0, 0, R.string.primary_media);
         if (media.getId() != null)
             menu.add(0, 1, 0, R.string.unlink);
+        MediaToolsUi.addConversionItem(menu, media);
         menu.add(0, 2, 0, R.string.delete);
     }
 
@@ -85,6 +88,12 @@ public class ProfileMediaFragment extends BaseFragment {
         } else if (id == 2) { // Elimina
             Object[] capi = MediaFragment.deleteMedia(media, null);
             AppUtils.save(true, capi);
+            refresh();
+            return true;
+        }
+        Object[] modified = MediaToolsUi.convert((AppCompatActivity)requireActivity(), id, media);
+        if (modified != null) {
+            AppUtils.save(true, modified);
             refresh();
             return true;
         }

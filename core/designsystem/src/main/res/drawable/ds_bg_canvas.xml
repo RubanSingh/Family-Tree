@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Family tree canvas: deep brand night sky, brighter towards the upper centre where the focus person sits. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient
+        android:centerX="0.5"
+        android:centerY="0.38"
+        android:endColor="@color/ds_canvas_edge"
+        android:gradientRadius="560dp"
+        android:startColor="@color/ds_canvas_center"
+        android:type="radial" />
+</shape>

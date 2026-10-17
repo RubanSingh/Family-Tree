@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Labels added by the tree screens redesign (English; other locales fall back until translated). -->
+<resources>
+    <!-- Drawer -->
+    <string name="current_tree">Current tree</string>
+
+    <!-- Diagram settings -->
+    <string name="diagram_settings_hint_title">Shape your tree view</string>
+    <string name="diagram_settings_section_ancestry">Ancestry</string>
+    <string name="diagram_settings_section_partners">Partners</string>
+    <string name="diagram_settings_section_descendants">Descendants &amp; relatives</string>
+    <string name="diagram_settings_ancestors_desc">Parents, grandparents and further back</string>
+    <string name="diagram_settings_great_uncles_desc">Siblings of your ancestors</string>
+    <string name="diagram_settings_partners_desc">Show spouses and partners beside each person</string>
+    <string name="diagram_settings_descendants_desc">Children, grandchildren and further down</string>
+    <string name="diagram_settings_siblings_desc">Brothers, sisters and their children</string>
+    <string name="diagram_settings_cousins_desc">Uncles, aunts and their children</string>
+    <string name="diagram_settings_section_display">Display</string>
+    <string name="diagram_settings_numbers_desc">Small cards counting the hidden ancestors and descendants</string>
+    <string name="diagram_settings_duplicates_desc">Connect a person who appears more than once</string>
+
+    <!-- New tree -->
+    <string name="new_tree_hero_title">Start your family story</string>
+    <string name="new_tree_hero_subtitle">Begin from scratch, or bring in a tree you already have.</string>
+    <string name="new_tree_more_ways">Other ways to start</string>
+
+    <!-- Persons search -->
+    <string name="persons_search_hint">Search names, places, years…</string>
+    <string name="persons_results_count">Showing %1$d of %2$d</string>
+    <string name="persons_no_results">No one matches your search</string>
+    <string name="persons_no_results_hint">Try part of a name, a place or a year.</string>
+
+    <!-- Family card -->
+    <string name="family_card_children">Children</string>
+
+    <!-- Tree info -->
+    <string name="tree_info_overview">Overview</string>
+
+    <!-- Local backup -->
+    <string name="backup_auto_title">Automatic backup</string>
+    <string name="backup_folder_unavailable">Can’t open the backup folder. Choose it again.</string>
+    <string name="backup_folder_not_writable">Can’t write in the backup folder. Choose it again.</string>
+    <string name="backup_cant_create">Can’t create %1$s in the backup folder.</string>
+    <string name="backup_tree_unreadable">The tree file can’t be read.</string>
+    <string name="backup_premium">Back up now, or every change automatically with Premium</string>
+    <string name="backup_auto_desc">Your trees are copied to a folder you choose about a minute after every change. The 3 newest copies of each tree are kept.</string>
+    <string name="backup_no_folder">No folder chosen</string>
+    <string name="backup_folder_ready">New backups are saved here</string>
+    <string name="backup_change">Change</string>
+    <string name="backup_trees_section">Trees to back up</string>
+    <string name="backup_now">Back up now</string>
+    <string name="backup_saved_section">Saved backups</string>
+    <string name="backup_none">No backups yet. They appear here after the first one.</string>
+    <string name="backup_done">Backup completed</string>
+    <string name="backup_failed">Backup failed: %1$s</string>
+    <string name="backup_invalid_file">Not a valid backup</string>
+    <string name="backup_restore_title">Restore this backup?</string>
+    <string name="backup_restore_message">“%1$s” will be added as a new tree. Your current trees are not changed.</string>
+    <string name="backup_delete_title">Delete this backup?</string>
+    <string name="backup_prompt_title">Keep your trees safe</string>
+    <string name="backup_prompt_desc">Choose a folder and every change is backed up automatically.</string>
+    <string name="backup_not_now">Not now</string>
+    <string name="backup_off">Off</string>
+
+    <!-- Tree settings -->
+    <string name="tree_settings_intro">These settings apply only to “%1$s”.</string>
+    <string name="tree_settings_life_desc">People without a recorded death are treated as living until this age: their age is shown and their birthday is notified.</string>
+    <string name="tree_settings_date_desc">Ages of living people are counted up to this date.</string>
+    <string name="tree_settings_years_error">Between 1 and 999</string>
+    <string name="tree_settings_living">Living people</string>
+    <string name="tree_settings_ages">Ages</string>
+
+    <!-- In-app updates -->
+    <string name="update_check">Check for updates</string>
+    <string name="update_version">Version %1$s</string>
+    <string name="update_latest">You’re using the latest version.</string>
+    <string name="update_unavailable">Couldn’t check for updates. Updates are delivered through Google Play.</string>
+    <string name="update_required_title">Update required</string>
+    <string name="update_required_message">This version is no longer supported. Please update to keep using Family Tree.</string>
+    <string name="update_now">Update</string>
+    <string name="update_close_app">Close app</string>
+    <string name="update_downloaded">An update has been downloaded.</string>
+    <string name="update_restart">Restart</string>
+
+    <!-- Media file tools -->
+    <string name="media_rename_file">Rename file</string>
+    <string name="media_checking">Checking media files…</string>
+    <string name="media_copy_none">All media files are already in the app storage.</string>
+    <string name="media_copying">Copying %1$d of %2$d…</string>
+    <string name="media_copied_partly">Copied: %1$d. Couldn’t copy: %2$d.</string>
+    <string name="media_copy_size">Total size: %1$s</string>
+    <string name="media_copied_one">Copied to the app storage.</string>
+    <string name="media_error_storage">The app storage is not available.</string>
+    <string name="media_error_read">Can’t read %1$s</string>
+    <string name="media_error_server">The web server answered with error %1$d.</string>
+    <string name="media_error_web_page">The link leads to a web page, not to a file.</string>
+    <string name="media_error_incomplete">The copy of %1$s is incomplete.</string>
+    <string name="media_error_create">Can’t create %1$s</string>
+    <string name="media_copy_failed">Couldn’t copy the file: %1$s</string>
+    <string name="media_shrink_none">No file paths to shorten.</string>
+    <string name="media_shrunk_one">File path shortened.</string>
+    <string name="media_renamed">File renamed.</string>
+    <string name="media_rename_failed">Couldn’t rename the file.</string>
+    <string name="media_made_shared">Now a shared media: it can be linked to other records too.</string>
+    <string name="media_made_simple">Now a separate media in each record that used it.</string>
+    <string name="media_reuse_title">Already in your tree</string>
+    <string name="media_location_app">App storage</string>
+    <string name="media_location_device">On this device</string>
+    <string name="media_location_document">Media folder</string>
+    <string name="media_location_web">Web</string>
+    <string name="media_location_missing">File not found</string>
+    <string name="media_location_none">No file linked</string>
+    <string name="media_info_name">File name</string>
+    <string name="media_info_folder">Folder</string>
+    <string name="media_info_size">Size</string>
+    <string name="media_info_type">Type</string>
+    <string name="media_info_dimensions">Dimensions</string>
+    <string name="media_info_modified">Modified</string>
+    <string name="media_info_link">Link in the tree</string>
+    <string name="media_info_used_by">Used by</string>
+    <string name="media_dimensions_value">%1$d × %2$d px</string>
+    <string name="media_hint_missing">The file can’t be found. Add the folder that contains it in Media folders, or choose another file.</string>
+    <string name="media_hint_outside">Copy it into the app storage to keep it with your tree and include it in backups.</string>
+
+    <!-- Premium benefits of the features added in version 1.6 -->
+    <string name="benefit_reminders">Family reminders</string>
+    <string name="benefit_reminders_desc">Wedding anniversaries, remembrance days, early alerts and unlimited reminders.</string>
+    <string name="benefit_places">Family places &amp; maps</string>
+    <string name="benefit_places_desc">Every place of your tree, with search, countries and directions.</string>
+    <string name="benefit_backup">Automatic backup &amp; tools</string>
+    <string name="benefit_backup_desc">Every change backed up to your folder, HD diagram images and media tools.</string>
+
+    <!-- Events and reminders -->
+    <string name="events_title">Events &amp; reminders</string>
+    <string name="events_next_up">Next up</string>
+    <string name="events_today">Today</string>
+    <string name="events_tomorrow">tomorrow</string>
+    <string name="reminder_tomorrow">Tomorrow · %1$s</string>
+    <string name="events_section_today">Today</string>
+    <string name="events_section_week">This week</string>
+    <string name="events_section_month">Within a month</string>
+    <string name="events_section_later">Later</string>
+    <string name="events_section_past">Past reminders</string>
+    <string name="events_filter_all">All</string>
+    <string name="events_filter_birthdays">Birthdays</string>
+    <string name="events_filter_anniversaries">Anniversaries</string>
+    <string name="events_filter_remembrance">Remembrance</string>
+    <string name="events_filter_reminders">My reminders</string>
+    <string name="events_empty_title">Nothing coming up</string>
+    <string name="events_empty_desc">Add exact dates of birth and marriage to your tree, or create a reminder for any family moment.</string>
+    <string name="events_add">Add reminder</string>
+    <string name="event_birthday">Birthday</string>
+    <string name="event_anniversary">Wedding anniversary</string>
+    <string name="event_remembrance">Remembrance day</string>
+    <string name="events_notify_title">Turn on notifications</string>
+    <string name="events_notify_desc">Allow notifications to be reminded of birthdays and family events.</string>
+    <string name="events_allow">Allow</string>
+    <string name="events_premium_title">Never miss a family moment</string>
+    <string name="events_premium_desc">Get alerts for anniversaries and remembrance days, early alerts and unlimited reminders.</string>
+    <string name="events_unlock">Unlock</string>
+    <string name="events_notify_anniversaries">Notify wedding anniversaries</string>
+    <string name="events_notify_remembrance">Notify remembrance days</string>
+    <string name="events_notify_time">Notification time</string>
+    <string name="events_summary">%1$s this month</string>
+    <string name="events_notified">Notified</string>
+    <string name="events_not_notified">Not notified</string>
+    <string name="reminders_channel">Events &amp; reminders</string>
+    <string name="reminders_channel_desc">Wedding anniversaries, remembrance days and your reminders</string>
+    <string name="reminder_new">New reminder</string>
+    <string name="reminder_edit">Edit reminder</string>
+    <string name="reminder_title_hint">Title</string>
+    <string name="reminder_person_hint">Person (optional)</string>
+    <string name="reminder_date">Date</string>
+    <string name="reminder_time">Time</string>
+    <string name="reminder_once">Once</string>
+    <string name="reminder_yearly">Every year</string>
+    <string name="reminder_when">Remind me</string>
+    <string name="reminder_on_day">On the day</string>
+    <string name="reminder_day_before">1 day before</string>
+    <string name="reminder_week_before">1 week before</string>
+    <string name="reminder_note_hint">Note</string>
+    <string name="reminder_saved">Reminder saved.</string>
+    <string name="reminder_deleted">Reminder deleted.</string>
+    <string name="reminder_delete_confirm">Delete this reminder?</string>
+    <string name="reminder_title_required">Enter a title</string>
+    <string name="reminder_unlimited">Unlimited reminders</string>
+    <string name="reminder_early_alerts">Early alerts</string>
+    <string name="reminder_kind_birthday">Birthday</string>
+    <string name="reminder_kind_anniversary">Anniversary</string>
+    <string name="reminder_kind_baby_shower">Baby shower</string>
+    <string name="reminder_kind_wedding">Wedding</string>
+    <string name="reminder_kind_graduation">Graduation</string>
+    <string name="reminder_kind_reunion">Family reunion</string>
+    <string name="reminder_kind_memorial">Memorial</string>
+    <string name="reminder_kind_other">Other event</string>
+
+    <!-- Places and maps -->
+    <string name="places_title">Family places</string>
+    <string name="places_search">Search places</string>
+    <string name="places_show_map">Show on map</string>
+    <string name="places_directions">Directions</string>
+    <string name="places_all_countries">All</string>
+    <string name="places_empty_title">No places yet</string>
+    <string name="places_empty_desc">Add places to births, marriages, residences and other events to see where your family lived.</string>
+    <string name="places_no_results">No places match your search.</string>
+    <string name="places_hero_desc">Where your family was born, married and lived.</string>
+    <string name="places_premium_title">Explore every family place</string>
+    <string name="places_premium_desc">Premium shows all the places of your tree, with search, countries and the events of each place.</string>
+    <string name="places_no_maps">No maps app found.</string>
+    <string name="places_events_here">Events here</string>
+
+    <!-- Photo folders to grant again on Android 13+ (MediaAccess) -->
+    <string name="media_reconnect_title">Reconnect your photos</string>
+    <string name="media_reconnect_message">Android now asks you to choose the folders that hold your photos. Choose each folder once and the photos of this tree will show again. Nothing has been deleted.</string>
+    <string name="media_reconnect">Reconnect</string>
+    <string name="media_reconnect_later">Not now</string>
+    <string name="media_folder_reconnect">Tap to reconnect</string>
+    <string name="media_folder_restricted">Android doesn\'t let apps open this folder. Move the photos to another folder, or add them again.</string>
+</resources>

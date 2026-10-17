@@ -1,18 +1,13 @@
 package dna.familytree;
 
 import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
-import dna.familytree.nativeads.NativeTemplateStyle;
-import dna.familytree.nativeads.TemplateView;
-import dna.familytree.util.ApplicationConstants;
+import dna.familytree.feature.ads.NativeAdCard;
 
 public class BaseFragment extends Fragment {
 
@@ -21,27 +16,12 @@ public class BaseFragment extends Fragment {
     }
 
     /**
-     * only non premium users only can view ads
+     * Shows the native ad card R.id.my_template of the view to free users, only if an ad is already loaded:
+     * the card is at the top of the page and must not push the content down later. Call it from onCreateView().
      */
-    public void showSmallNativeAd(@NonNull View container) {
-        ViewGroup view = container.findViewById(R.id.my_template);
-        if (!Global.settings.premium && view != null) {
-            loadSmallNativeAds(view);
-        }
-    }
-
-    private void loadSmallNativeAds(ViewGroup view) {
-        AdLoader adLoader = new AdLoader.Builder(requireContext(), ApplicationConstants.NATIVE_AD_UNIT_ID)
-                .forNativeAd(nativeAd -> {
-                    NativeTemplateStyle styles = new
-                            NativeTemplateStyle.Builder().build();
-                    TemplateView template = (TemplateView)view;
-                    template.setVisibility(View.VISIBLE);
-                    template.setStyles(styles);
-                    template.setNativeAd(nativeAd);
-                })
-                .build();
-
-        adLoader.loadAd(new AdRequest.Builder().build());
+    public void showNativeAdIfReady(@NonNull View container) {
+        NativeAdCard card = container.findViewById(R.id.my_template);
+        if (card != null)
+            card.show(getViewLifecycleOwner(), false);
     }
 }

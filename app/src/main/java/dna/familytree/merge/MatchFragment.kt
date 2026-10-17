@@ -4,6 +4,10 @@ import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.MenuProvider
+import android.view.MenuItem
+import android.view.MenuInflater
+import android.view.Menu
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.commit
@@ -42,6 +46,25 @@ class MatchFragment : BaseFragment(R.layout.merge_match_fragment) {
             if (destiny == Will.KEEP) binding.mergeKeep.backgroundTintList = tint
             else if (destiny == Will.MERGE) binding.mergeMerge.backgroundTintList = tint
         }
+
+        // "Yes / No to all remaining" in the options menu (from Family Gem)
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menu.add(0, 0, 0, R.string.yes_to_all)
+                menu.add(0, 1, 0, R.string.no_to_all)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                val will = when (menuItem.itemId) {
+                    0 -> Will.MERGE
+                    1 -> Will.KEEP
+                    else -> return false
+                }
+                model.resolveRemainingMatches(will)
+                findNavController().navigate(R.id.merge_matchFragment_to_resultFragment)
+                return true
+            }
+        }, viewLifecycleOwner)
 
         setToolbar(view)
     }

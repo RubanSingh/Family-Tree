@@ -1,2 +1,21 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = 'https://jitpack.io' } // For FastScrollerAndRecyclerViewFixes
+    }
+}
+
+rootProject.name = 'FamilyTree'
 include ':app'
 include ':cropper'
+include ':core:designsystem'
+include ':core:billing'

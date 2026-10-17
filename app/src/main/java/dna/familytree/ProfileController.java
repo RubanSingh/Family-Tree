@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import dna.familytree.feature.reminders.ReminderEditor;
 import dna.familytree.constant.Choice;
 import dna.familytree.constant.Gender;
 import dna.familytree.cropper.CropImage;
@@ -70,6 +71,10 @@ public class ProfileController extends BaseController {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        setOnBackHandler(() -> {
+            Memory.stepBack();
+            defaultBack();
+        });
         AppUtils.ensureGlobalGedcomNotNull(gc);
         one = (Person)Memory.getLastObject();
         // If the app goes into the background and is stopped, 'Memory' is reset and therefore 'one' will be null
@@ -171,7 +176,7 @@ public class ProfileController extends BaseController {
             one = gc.getPerson(Global.indi);
 
         if (one == null) { // ritornando indietro nella Scheda di un individuo che è stato eliminato
-            onBackPressed();
+            getOnBackPressedDispatcher().onBackPressed();
             return;
         }
 
@@ -502,12 +507,6 @@ public class ProfileController extends BaseController {
     }
 
     @Override
-    public void onBackPressed() {
-        Memory.stepBack();
-        super.onBackPressed();
-    }
-
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, 0, 0, R.string.diagram);
         String[] familyLabels = DiagramFragment.getFamilyLabels(this, one, null);
@@ -518,6 +517,7 @@ public class ProfileController extends BaseController {
         if (Global.settings.getCurrentTree().root == null || !Global.settings.getCurrentTree().root.equals(one.getId()))
             menu.add(0, 3, 0, R.string.make_root);
         menu.add(0, 4, 0, R.string.modify);
+        menu.add(0, 6, 0, R.string.events_add);
         menu.add(0, 5, 0, R.string.delete);
         return true;
     }
@@ -544,16 +544,19 @@ public class ProfileController extends BaseController {
                 intent1.putExtra("idIndividuo", one.getId());
                 startActivity(intent1);
                 return true;
+            case 6: // New reminder about this person
+                ReminderEditor.show(this, null, one.getId(), null);
+                return true;
             case 5:    // Delete
                 new MaterialAlertDialogBuilder(this).setMessage(R.string.really_delete_person)
                         .setPositiveButton(R.string.delete, (dialog, i) -> {
                             Family[] famiglie = PersonsFragment.deletePerson(this, one.getId());
-                            if (!AppUtils.controllaFamiglieVuote(this, this::onBackPressed, true, famiglie))
-                                onBackPressed();
+                            if (!AppUtils.controllaFamiglieVuote(this, getOnBackPressedDispatcher()::onBackPressed, true, famiglie))
+                                getOnBackPressedDispatcher().onBackPressed();
                         }).setNeutralButton(R.string.cancel, null).show();
                 return true;
             default:
-                onBackPressed();
+                getOnBackPressedDispatcher().onBackPressed();
         }
         return false;
     }

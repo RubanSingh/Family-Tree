@@ -43,6 +43,11 @@ public class ProcessController extends BaseController {
     @Override
     protected void onCreate(Bundle bandolo) {
         super.onCreate(bandolo);
+        setOnBackHandler(() -> {
+            defaultBack();
+            if (Comparison.get().autoContinue)
+                Comparison.get().choicesMade--;
+        });
         setContentView(R.layout.confronto);
 
         if (Comparison.getList().size() > 0) {
@@ -116,7 +121,7 @@ public class ProcessController extends BaseController {
                 vaiAvanti();
             });
         } else
-            onBackPressed(); // Ritorna a Compara
+            getOnBackPressedDispatcher().onBackPressed(); // Ritorna a Compara
     }
 
     @Override
@@ -245,14 +250,7 @@ public class ProcessController extends BaseController {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem i) {
-        onBackPressed();
+        getOnBackPressedDispatcher().onBackPressed();
         return true;
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        if (Comparison.get().autoContinue)
-            Comparison.get().choicesMade--;
     }
 }

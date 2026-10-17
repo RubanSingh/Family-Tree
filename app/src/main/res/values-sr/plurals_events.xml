@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Translations added in version 1.6 -->
+    <plurals name="event_anniversary_years">
+        <item quantity="one">Godišnjica braka · %d godina</item>
+        <item quantity="few">Godišnjica braka · %d godine</item>
+        <item quantity="other">Godišnjica braka · %d godina</item>
+    </plurals>
+    <plurals name="event_remembrance_years">
+        <item quantity="one">Dan sećanja · %d godina</item>
+        <item quantity="few">Dan sećanja · %d godine</item>
+        <item quantity="other">Dan sećanja · %d godina</item>
+    </plurals>
+    <plurals name="reminder_in_days">
+        <item quantity="one">Za %1$d dan · %2$s</item>
+        <item quantity="few">Za %1$d dana · %2$s</item>
+        <item quantity="other">Za %1$d dana · %2$s</item>
+    </plurals>
+    <plurals name="events_in_days">
+        <item quantity="one">za %d dan</item>
+        <item quantity="few">za %d dana</item>
+        <item quantity="other">za %d dana</item>
+    </plurals>
+    <plurals name="events_turns">
+        <item quantity="one">Puni %d godinu</item>
+        <item quantity="few">Puni %d godine</item>
+        <item quantity="other">Puni %d godina</item>
+    </plurals>
+    <plurals name="events_married_years">
+        <item quantity="one">%d godina braka</item>
+        <item quantity="few">%d godine braka</item>
+        <item quantity="other">%d godina braka</item>
+    </plurals>
+    <plurals name="events_years_since">
+        <item quantity="one">Pre %d godine</item>
+        <item quantity="few">Pre %d godine</item>
+        <item quantity="other">Pre %d godina</item>
+    </plurals>
+    <plurals name="events_reminder_years">
+        <item quantity="one">%d godina</item>
+        <item quantity="few">%d godine</item>
+        <item quantity="other">%d godina</item>
+    </plurals>
+    <plurals name="places_events">
+        <item quantity="one">%d događaj</item>
+        <item quantity="few">%d događaja</item>
+        <item quantity="other">%d događaja</item>
+    </plurals>
+    <plurals name="places_people">
+        <item quantity="one">%d osoba</item>
+        <item quantity="few">%d osobe</item>
+        <item quantity="other">%d osoba</item>
+    </plurals>
+    <plurals name="places_count">
+        <item quantity="one">%d mesto</item>
+        <item quantity="few">%d mesta</item>
+        <item quantity="other">%d mesta</item>
+    </plurals>
+    <plurals name="places_countries">
+        <item quantity="one">%d država</item>
+        <item quantity="few">%d države</item>
+        <item quantity="other">%d država</item>
+    </plurals>
+    <plurals name="backup_persons">
+        <item quantity="one">%d osoba</item>
+        <item quantity="few">%d osobe</item>
+        <item quantity="other">%d osoba</item>
+    </plurals>
+    <plurals name="media_copy_confirm_count">
+        <item quantity="one">%d datoteka je van skladišta aplikacije. Kopirati je u skladište aplikacije da bi ostala uz tvoje stablo i bila uključena u sigurnosne kopije? Originalna datoteka se ne menja.</item>
+        <item quantity="few">%d datoteke su van skladišta aplikacije. Kopirati ih u skladište aplikacije da bi ostale uz tvoje stablo i bile uključene u sigurnosne kopije? Originalne datoteke se ne menjaju.</item>
+        <item quantity="other">%d datoteka je van skladišta aplikacije. Kopirati ih u skladište aplikacije da bi ostale uz tvoje stablo i bile uključene u sigurnosne kopije? Originalne datoteke se ne menjaju.</item>
+    </plurals>
+    <plurals name="media_copied_count">
+        <item quantity="one">%d datoteka je kopirana u skladište aplikacije.</item>
+        <item quantity="few">%d datoteke su kopirane u skladište aplikacije.</item>
+        <item quantity="other">%d datoteka je kopirano u skladište aplikacije.</item>
+    </plurals>
+    <plurals name="media_shrink_confirm_count">
+        <item quantity="one">%d medij je povezan punom putanjom do datoteke u skladištu aplikacije. Skratiti ga samo na naziv datoteke? Datoteka ostaje gde jeste.</item>
+        <item quantity="few">%d medija su povezana punom putanjom do datoteke u skladištu aplikacije. Skratiti ih samo na naziv datoteke? Datoteke ostaju gde jesu.</item>
+        <item quantity="other">%d medija je povezano punom putanjom do datoteke u skladištu aplikacije. Skratiti ih samo na naziv datoteke? Datoteke ostaju gde jesu.</item>
+    </plurals>
+    <plurals name="media_shrunk_count">
+        <item quantity="one">%d putanja datoteke je skraćena.</item>
+        <item quantity="few">%d putanje datoteka su skraćene.</item>
+        <item quantity="other">%d putanja datoteka je skraćeno.</item>
+    </plurals>
+    <plurals name="media_info_records_count">
+        <item quantity="one">%d zapis</item>
+        <item quantity="few">%d zapisa</item>
+        <item quantity="other">%d zapisa</item>
+    </plurals>
+</resources>
